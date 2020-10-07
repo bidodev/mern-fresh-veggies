@@ -1,0 +1,27 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "## About:",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bidodev/mern-veggy-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bidodev/mern-veggy-website/issues"
+  },
+  "homepage": "https://github.com/bidodev/mern-veggy-website#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "mongoose": "^5.10.8",
+    "morgan": "^1.10.0"
+  }
+}
