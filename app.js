@@ -12,6 +12,7 @@ app.use(helmet());
 
 //import routes
 const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
 
 if (process.env.NODE_ENV === 'development') {
   app.use(logger('dev'));
@@ -25,5 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
  * routes Middleware
  */
 app.use('/', indexRouter);
+app.use('/account', authRouter);
 
 module.exports = app;
