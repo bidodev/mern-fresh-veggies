@@ -10,6 +10,9 @@ const logger = require('morgan');
 const app = express();
 app.use(helmet());
 
+/* Error controller */
+const errorHandler = require("./controllers/errorController");
+
 //import routes
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
@@ -28,4 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/account', authRouter);
 
+
+/**
+ * When an error is trow we catch it here and forward to errorController
+ */
+app.use(errorHandler);
 module.exports = app;
