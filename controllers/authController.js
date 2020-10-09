@@ -8,6 +8,7 @@ const User = require('../models/userModel');
 const AppError = require('../utils/appError.js');
 const asyncWrapper = require('../utils/asyncWrapper');
 const signToken = require('../utils/signToken.js');
+const sendEmail = require('../utils/sendEmail');
 
 /**
  * @function
@@ -32,15 +33,44 @@ exports.signin = asyncWrapper(async (req, res, next) => {
   //3. Sign a new token for the user
   const jwt = signToken(user._id);
 
+  const message = `Your account was created: Here is your email: ${email} and password: ${password}`;
+
   //4. Send the response to client
-  res.status(201).json({
-    status: 'success',
-    jwt,
-    user: {
-      id: user._id,
+  try {
+    await sendEmail({
       email: user.email,
-    },
-  });
+      subject: 'Account Created',
+      message,
+    });
+
+    cookieOptions = {
+      expires: new Date(
+        Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      ),
+      httpOnly: true,
+      ...(process.env.NODE_ENV === 'production' && { secure: true }),
+    };
+    
+    res.cookie('jwt', jwt, cookieOptions);
+
+    //3. Send back the email
+    res.status(201).json({
+      status: 'success',
+      jwt,
+      user: {
+        id: user._id,
+        email: user.email,
+      },
+    });
+  } catch (error) {
+    return next(
+      new AppError(
+        'There was an error sending the email. Try again later',
+        500,
+        'fail'
+      )
+    );
+  }
 });
 
 exports.login = asyncWrapper(async (req, res, next) => {

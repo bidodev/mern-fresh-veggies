@@ -39,6 +39,11 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+/**
+ * Decrypt the password that is saved inside the documment and compare with the given password
+ * @param {str} givenPassword 
+ * @return true / false
+ */
 userSchema.methods.comparePasswords = function (givenPassword) {
   console.log(givenPassword)
   return bcrypt.compare(givenPassword, this.password)

@@ -22,7 +22,7 @@ exports.validateData = [
   body('name').exists(),
 
   // username must be an email
-  body('email').isEmail().normalizeEmail().custom(userExist),
+  body('email').isEmail().custom(userExist),
 
   // password must be at least 5 chars long
   body('password')
