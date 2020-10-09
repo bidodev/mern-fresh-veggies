@@ -9,6 +9,11 @@ const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize')
 
 const app = express();
+
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(helmet());
 
 /* Error controller */
