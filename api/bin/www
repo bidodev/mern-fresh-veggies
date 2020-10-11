@@ -44,11 +44,11 @@ function onError(error) {
   switch (error.code) {
     case 'EACCES':
       // eslint-disable-next-line no-console
-      console.error(`${bind} requires elevated privileges`);
+      console.error(`💥 ${bind} requires elevated privileges`);
       process.exit(1);
     case 'EADDRINUSE':
       // eslint-disable-next-line no-console
-      console.error(`${bind} is already in use`);
+      console.error(`💥 ${bind} is already in use`);
       process.exit(1);
     default:
       throw error;
@@ -62,11 +62,6 @@ function onError(error) {
 function onListening() {
   const addr = server.address();
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
-  console.log(
-    process.env.NODE_ENV === 'development'
-      ? '🚀 Connected to mongodb://localhost:27017'
-      : '🚀 Connected to Atlas MongoDB'
-  );
   console.log(`🚀 Server running on ${bind}...`);
 }
 
@@ -89,6 +84,13 @@ mongoose
     useCreateIndex: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
+  })
+  .then(() => {
+    console.log(
+      process.env.NODE_ENV === 'development'
+        ? '🚀 Connected to mongodb://localhost:27017'
+        : '🚀 Connected to Atlas MongoDB'
+    );
   })
   .then(() => {
     server.listen(port);
