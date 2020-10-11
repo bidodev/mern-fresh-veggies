@@ -2,9 +2,10 @@
   "name": "final-project",
   "version": "1.0.0",
   "description": "## About:",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "server": "nodemon ./bin/www"
+    "start:dev": "NODE_ENV=development nodemon ./bin/www",
+    "start:production": "NODE_ENV=production node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,6 @@
     "mongoose": "^5.10.8",
     "morgan": "^1.10.0",
     "nodemailer": "^6.4.13",
-    "pug": "^3.0.0",
-    "x-xss-protection": "^2.0.0"
+    "pug": "^3.0.0"
   }
 }
