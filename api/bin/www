@@ -1,34 +1,115 @@
-#!/usr/bin/env node
-
+/* eslint-disable no-console */
 /**
  * Module dependencies.
  */
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-dotenv.config({ path: "./config.env" });
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const http = require('http');
 
-const app = require("../app");
+process.on('uncaughtException', (err) => {
+  console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+  console.log(err.name, err.message);
+  process.exit(1);
+});
+
+dotenv.config({
+  path: './config.env',
+});
+const app = require('../app');
 
 /**
- * Get port from environment and store
- * If no PORT defined, use 5000.
+ * Get port from environment and store in Express.
  */
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || '5000';
+app.set('port', port);
 
 /**
- * Mongoose connection and start the server
- * We only run our server if the connection with Database is succefull.
+ * Create HTTP server.
  */
+
+const server = http.createServer(app);
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+  const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      // eslint-disable-next-line no-console
+      console.error(`💥 ${bind} requires elevated privileges`);
+      process.exit(1);
+    case 'EADDRINUSE':
+      // eslint-disable-next-line no-console
+      console.error(`💥 ${bind} is already in use`);
+      process.exit(1);
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  const addr = server.address();
+  const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
+  console.log(`🚀 Server running on ${bind}...`);
+}
+
+/**Mongoose connect and start the server */
+
+/* In production use atlas database */
+let urlMongoDB = process.env.DATABASE_ATLAS.replace(
+  '<PASSWORD>',
+  process.env.PASSWORD
+);
+
+/* In development use local connection to mongoDB */
+if (process.env.NODE_ENV === 'development') {
+  urlMongoDB = process.env.DATABASE_LOCALHOST;
+}
+
 mongoose
-  .connect(process.env.DATABASE_LOCALHOST, {
+  .connect(urlMongoDB, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
   })
   .then(() => {
-    console.log("Database Connected...");
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    console.log(
+      process.env.NODE_ENV === 'development'
+        ? '🚀 Connected to mongodb://localhost:27017'
+        : '🚀 Connected to Atlas MongoDB'
+    );
   })
-  .catch((err) => console.log(err.message));
+  .then(() => {
+    server.listen(port);
+    server.on('error', onError);
+    server.on('listening', onListening);
+  })
+  .catch((err) => console.error(err.message));
+
+process.on('unhandledRejection', (err) => {
+  console.log('UNHANDLED REJECTION! 💥 Shutting down...');
+  console.log(err.name, err.message);
+  server.close(() => {
+    process.exit(1);
+  });
+});
+
+process.on('SIGTERM', () => {
+  console.log('👋 SIGTERM RECEIVED. Shutting down gracefully');
+  server.close(() => {
+    console.log('💥 Process terminated!');
+  });
+});

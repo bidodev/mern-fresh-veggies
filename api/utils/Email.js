@@ -4,10 +4,11 @@ const htmlToText = require('html-to-text');
 
 class Email {
   constructor(user, url) {
-      this.receiver = user.email;
-      this.name = user.name;
-      this.from = `Suport Veggy <${process.env.EMAIL_FROM}>`;
-      this.url = url;
+    this.receiver = user.email;
+    this.name = user.name;
+    this.role = user.role;
+    this.from = `Suport Veggy <${process.env.EMAIL_FROM}>`;
+    this.url = url;
   }
 
   transport() {
@@ -30,6 +31,7 @@ class Email {
     const html = pug.renderFile(`${__dirname}/../views/email/${template}.pug`, {
       name: this.name,
       url: this.url,
+      role: this.role,
       subject,
     });
 
@@ -49,11 +51,10 @@ class Email {
   async sendWelcome() {
     await this.send('welcome', 'Welcome to the Veggy Family!');
   }
-    
+
   async sendRecover() {
     await this.send('recover', 'Reset your Password!');
   }
 }
 
 module.exports = Email;
-

@@ -2,8 +2,13 @@ extends baseEmail
 
 block content
   p Hi #{name},
-  p Welcome to Veggy Family, we're glad to have you 🎉🙏
-  p We're all a big familiy here, so make sure to upload your user photo so we get to know you a bit better!
+
+  if({role} == "user")
+    p Welcome to Veggy Family, we're glad to have you 🎉🙏
+    p We're all a big familiy here, so make sure to upload your user photo so we get to know you a bit better!
+  else
+  p Welcome to Veggy Family, we're glad to connect your and our custommers 🎉🙏
+
   table.btn.btn-primary(role='presentation' border='0' cellpadding='0' cellspacing='0')
     tbody
       tr
@@ -12,6 +17,9 @@ block content
             tbody
               tr
                 td
-                  a(href=`${url}`, target='_blank') Upload user photo
-  p If you need any help with booking your next tour, please don't hesitate to contact me!
+                  if({role} == "user")
+                    a(href=`${url}`, target='_blank') Upload user photo
+                  else
+                    a(href=`${url}`, target='_blank') Upload Products
+  p If you need any help, please don't hesitate to contact us!
   p - Veggy Team

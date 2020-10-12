@@ -40,7 +40,14 @@ const createSendToken = (user, status, req, res) => {
  * Create a new account and sign a toke for the account
  */
 exports.signin = asyncWrapper(async (req, res, next) => {
+  const { role } = req.params;
   const { name, email, password } = req.body;
+
+  /* Avoid someone to create an account as admin */
+  const roles = ['user', 'farmer'];
+  if (!roles.includes(role)) {
+    return next(new AppError(`Invalid Request`, 400, 'fail'));
+  }
 
   //1. Finds the validation errors in this request and wraps them in an object with handy functions
   const errors = validationResult(req);
@@ -53,10 +60,11 @@ exports.signin = asyncWrapper(async (req, res, next) => {
     name,
     email,
     password,
+    role,
   });
 
   //3. Send an welcome email to the user
-  const url = `${req.protocol}://${req.get('host')}/account`;
+  const url = `${req.protocol}://${req.get('host')}/account/${user.role}`;
   await new Email(user, url).sendWelcome();
 
   //4. Send the response to the client

@@ -5,8 +5,6 @@
      if(promisse reject).catch(err)  //promise rejected catch the error and send to the errorController
  }
  */
-const AppError = require("./AppError.js");
-
 module.exports = (fn) => {
   return (req, res, next) => {
     fn(req, res, next).catch((err) => next(err));
