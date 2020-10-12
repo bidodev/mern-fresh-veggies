@@ -1,0 +1,36 @@
+[
+  {
+    "_id": "1",
+    "name": "Apple",
+    "benefits": "Apples are incredibly good for you, and eating them is linked to a lower risk of many major diseases, including diabetes and cancer.",
+    "recipes": [
+      {
+        "name": "Apple Pie",
+        "description": "A homemade apple pie that will even impress your grandma.",
+        "ingredients": ["3 call-purpose flour", "1 buttercut into 1/2 pieces"]
+      },
+      {
+        "name": "Caramel Apples",
+        "description": "This fall staple is delicious AND fun to make!",
+        "ingredients": ["3 call-purpose flour", "1 buttercut into 1/2 pieces"]
+      }
+    ]
+  },
+  {
+    "_id": "2",
+    "name": "Banana",
+    "benefits": "Bananas are respectable sources of vitamin C, Manganese and Potassium.",
+    "recipes": [
+      {
+        "name": "Best Banana Bread",
+        "description": "A homemade apple pie that will even impress your grandma.",
+        "ingredients": ["3 call-purpose flour", "1 buttercut into 1/2 pieces"]
+      },
+      {
+        "name": "Death by Chocolate Banana Bread",
+        "description": "Cocoa powder and chocolate chips make this banana bread a chocolate lover's dream.",
+        "ingredients": ["3 call-purpose flour", "1 buttercut into 1/2 pieces"]
+      }
+    ]
+  }
+]
