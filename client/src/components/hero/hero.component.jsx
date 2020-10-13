@@ -1,19 +1,20 @@
 import React from 'react';
 import './hero.styles.scss';
-import { HashLink as Link } from 'react-router-hash-link';
+
+import { HashLink } from 'react-router-hash-link';
+
 const Hero = () => {
   return (
     <div className="hero-component">
       <header>
-        <Link
-          smooth
-          to="/about"
+        <HashLink
+          to="#story"
           scroll={(el) =>
-            el.scrollIntoView({ behavior: 'instant', block: 'end' })
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }
         >
           <p className="hero-component__button">Our Story</p>
-        </Link>
+        </HashLink>
       </header>
       <div className="hero-component__main">
         <div className="hero-component__main__text-component">
