@@ -3,7 +3,7 @@ const router = express.Router();
 
 /**
  * if the user need be logged, add the protected middleware to your route
- * if the router is restricted to a specific role add restrictedAccess
+ * if the router is restricted to a specific role add restrictedAccess('role')
  */
 
 const {
@@ -13,16 +13,20 @@ const {
 
 /* stock controller */
 const { retrieveFarmerProducts, retrieveProduct, createProduct } = require('../controllers/farmerController');
-/*
- * METHOD: POST - Create a product
- */
+
 const authMiddlewares = [
   protected,
   restrictedAccess('farmer', 'admin'),
 ];
 
-router.route('/product/:id').get(...authMiddlewares, retrieveProduct);
+/* all the routes from this point have are restricted to 'farmer' and 'admin' */
+router.use(...authMiddlewares)
 
-router.route('/products').get(...authMiddlewares, retrieveFarmerProducts).post(...authMiddlewares, createProduct);;
+/*
+ * METHOD: POST - Create a product
+ * METHOD: GET - Retrieve all the products
+ */
+router.route('/product/:name').get(retrieveProduct);
+router.route('/products').get(retrieveFarmerProducts).post(createProduct);
 
 module.exports = router;
