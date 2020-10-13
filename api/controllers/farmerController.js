@@ -26,9 +26,37 @@ exports.retrieveFarmerProducts = asyncWrapper(async (req, res, next) => {
   });
 });
 
-exports.retrieveProduct = asyncWrapper(async (req, res, next) => {});
 
 exports.createProduct = asyncWrapper(async (req, res, next) => {
+  //1. Grab our user
+  const user = req.user;
+
+  //2. Create a new product
   const product = await Product.create(req.body);
-  res.send(product);
+
+  //3. Add the product ObjectId to the array of products
+  user.products.push(product._id);
+
+  //4. Save the user
+  await user.save();
+
+  res.status(201).json({
+    status: 'success',
+    data: {
+      product,
+    },
+  });
 });
+
+exports.retrieveProduct = asyncWrapper(async (req, res, next) => {});
+
+exports.deleteProduct = asyncWrapper(async (req, res, next) => {
+  res.status(201).json({
+    status: 'success',
+    data: {
+      product,
+    },
+  });
+});
+
+exports.updateProduct = asyncWrapper(async (req, res, next) => {});
