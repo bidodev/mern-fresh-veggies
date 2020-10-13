@@ -12,7 +12,13 @@ const {
 } = require('../controllers/authController');
 
 /* stock controller */
-const { retrieveFarmerProducts, retrieveProduct, createProduct } = require('../controllers/farmerController');
+const { getAllFarmers, getFarmerPage, retrieveFarmerProducts, retrieveProduct, createProduct } = require('../controllers/farmerController');
+
+/* select the farmer page based on the id */
+router.route('/').get(getAllFarmers)
+router.route('/:id').get(getFarmerPage)
+
+
 
 const authMiddlewares = [
   protected,
