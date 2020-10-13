@@ -7,7 +7,7 @@
     justify-content: space-evenly;
 
     @media (max-width: 800px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: center;
     }
 
@@ -34,6 +34,9 @@
         @media (max-width: 1050px) {
           font-size: $font-size__header__small;
         }
+        @media (max-width: 800px) {
+          text-align: center;
+        }
       }
 
       &--text {
@@ -43,6 +46,9 @@
         @media (max-width: 1050px) {
           margin: 1vh 0;
           font-size: $font-size__small;
+        }
+        @media (max-width: 800px) {
+          text-align: center;
         }
       }
     }
