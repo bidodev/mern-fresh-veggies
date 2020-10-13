@@ -12,7 +12,7 @@ const {
 } = require('../controllers/authController');
 
 /* stock controller */
-const { retrieveProducts, retrieveProduct, createProduct } = require('../controllers/farmerController');
+const { retrieveFarmerProducts, retrieveProduct, createProduct } = require('../controllers/farmerController');
 /*
  * METHOD: POST - Create a product
  */
@@ -23,6 +23,6 @@ const authMiddlewares = [
 
 router.route('/product/:id').get(...authMiddlewares, retrieveProduct);
 
-router.route('/products').get(...authMiddlewares, retrieveProducts).post(...authMiddlewares, createProduct);;
+router.route('/products').get(...authMiddlewares, retrieveFarmerProducts).post(...authMiddlewares, createProduct);;
 
 module.exports = router;
