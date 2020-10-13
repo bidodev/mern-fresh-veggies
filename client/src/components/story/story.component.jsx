@@ -1,14 +1,13 @@
 import React from 'react';
-
 import './story.styles.scss';
 
 const Story = () => {
   return (
     <React.Fragment>
-      <section className="story">
+      <section className="story" id="story">
         {/* ---- First Raw ---- */}
         <div className="first-raw">
-          <div className="first-raw__img-container">
+          <div className="first-raw__img-container" >
             <img
               className="first-raw__img-container--img"
               src="./images/farm-1.jpg"
