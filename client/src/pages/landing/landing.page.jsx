@@ -1,11 +1,16 @@
 import React from 'react';
 
-import './Landing.styles.scss';
+import Story from 'components/story/story.component';
+
+import './landing.styles.scss';
+
 
 const Landing = () => {
   return (
     <React.Fragment>
-      <div className="landing-page">Welcome to Landing Page!</div>
+      <div className="landing">Welcome to Landing Page!</div>
+      <Story />
+
     </React.Fragment>
   );
 };

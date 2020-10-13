@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Shop.styles.scss';
+import './shop.styles.scss';
 
 const Shop = () => {
   return (
