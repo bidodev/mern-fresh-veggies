@@ -58,7 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/', indexRouter);
 app.use('/account', authRouter);
-app.use('/farmer', farmerRouter);
+app.use('/farmers', farmerRouter);
 
 /**
  * When an error is trow we catch it here and forward to errorController
