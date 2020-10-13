@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Landing from 'pages/landing/Landing.page';
-import Authentication from 'pages/authentication/Authentication.page';
-import Shop from 'pages/shop/Shop.page';
+import Landing from 'pages/landing/landing.page';
+import Authentication from 'pages/authentication/authentication.page';
+import Shop from 'pages/shop/shop.page';
 
 const App = () => {
   return (
