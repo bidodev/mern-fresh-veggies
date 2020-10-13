@@ -3,7 +3,6 @@
  */
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const validator = require('validator');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -20,12 +19,21 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: ['true', 'Please provide a password'],
   },
-
   role: {
     type: String,
     enum: ['user', 'farmer', 'admin'],
     default: 'user',
   },
+  photo: {
+    type: String,
+    default: 'default.jpg'
+  },
+  products: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Product'
+    }
+  ]
 });
 
 //this Middleware will run before save the documment

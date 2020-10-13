@@ -1,4 +1,7 @@
-/*Express validator */
+/* jwt */
+const jwt = require('jsonwebtoken');
+
+/* Express validator */
 const { validationResult } = require('express-validator');
 
 /* Models */
@@ -6,11 +9,18 @@ const User = require('../models/userModel');
 
 /* Utils */
 const AppError = require('../utils/AppError.js');
+const Email = require('../utils/Email');
 const asyncWrapper = require('../utils/asyncWrapper');
 const signToken = require('../utils/signToken.js');
-const sendEmail = require('../utils/sendEmail');
-const Email = require('../utils/Email');
 
+/**
+ * Sign token and cookie and send it to the client
+ *
+ * @param {*} user  | user documment
+ * @param {*} status | Http status
+ * @param {*} req
+ * @param {*} res
+ */
 const createSendToken = (user, status, req, res) => {
   const jwt = signToken(user._id);
 
@@ -27,6 +37,7 @@ const createSendToken = (user, status, req, res) => {
 
   res.status(status).json({
     status: 'success',
+    jwt,
     data: {
       name,
       email,
@@ -85,12 +96,61 @@ exports.login = asyncWrapper(async (req, res, next) => {
     );
   }
 
-  //3. Sign a new token for the user
-  const jwt = signToken(user._id);
-
-  //4. Send the answer back to the user
-  res.status(200).json({
-    status: 'success',
-    jwt,
-  });
+  //3. Send the response to the client
+  createSendToken(user, 200, req, res);
 });
+
+/* protected route */
+exports.protected = asyncWrapper(async (req, res, next) => {
+  const { authorization } = req.headers;
+
+  let token;
+  //1. check if the token is sent along with headers.
+
+  if (!authorization) {
+    return next(new AppError(`Authorization Header is missing`, 400, 'fail'));
+  }
+
+  //2.1 If there is header and start with Bearer ,we use substring to take the rest and save in the token var
+  if (authorization.startsWith('Bearer')) {
+    token = authorization.substring('Bearer '.length);
+  }
+
+  //2.2. If no token, return.
+  if (!token) {
+    return next(new AppError(`You are not logged in`, 401, 'fail'));
+  }
+
+  //3. Verification token
+  const jwtVerification = jwt.verify(token, process.env.JWT_SECRET);
+
+  //4. Check if the user still exists
+  const tokenOwner = await User.findById(jwtVerification.id);
+  if (!tokenOwner) {
+    return next(new AppError(`This user was deleted`, 401, 'fail'));
+  }
+
+  //6.2 Send the user into the request
+  req.user = tokenOwner;
+
+  //6. If all conditions were satisfed continue to next middleware
+  //6.1 Grant access to the protected route
+  next();
+});
+
+exports.restrictedAccess = (...roles) => {
+  return (req, res, next) => {
+    const { role } = req.user;
+    
+    if (!roles.includes(role)) {
+      return next(
+        new AppError(
+          `You don't have permission to access on this server`,
+          403,
+          'fail'
+        )
+      );
+    }
+    next();
+  };
+};
