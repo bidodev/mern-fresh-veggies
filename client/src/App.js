@@ -11,12 +11,9 @@ const App = () => {
   return (
     <div className="App">
       <Switch>
-        <Route path="/" exact component={Landing} />
+        <Route exact path="/" exact component={Landing} />
         <Route path="/authentication" exact component={Authentication} />
-        <Route path="/shop">
-            <Shop />
-          </Route>
-        <Redirect to="/" />
+        <Route path="/shop" component={Shop}/>
       </Switch>
     </div>
   );
