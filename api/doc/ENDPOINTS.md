@@ -1,4 +1,4 @@
-## Register an Account
+# Register an Account
 Method: POST
 URL: localhost:5000
 
@@ -14,4 +14,25 @@ URL: localhost:5000
     "email": "bido.cd@gmail.com",
     "password": "password102030",
     "passwordConfirmation": "password102030"
+}
+
+# Manage Products
+## role: farmer or admin
+METHOD: GET / POST / PATCH / DELETE
+
+## Retrieve all products from the farmer
+METHOD: GET
+ENDPOINT: /farmer/products
+
+Obs: You don't neet pass any aditional param to the query, we just have to be logged with the account of the farmer you want the products
+
+## Create Product
+METHOD: POST
+ENDPOINT: /farmer/products
+
+## Json Body
+{
+    "name": "Claudinei",
+    "type": "type of the item",
+    "description": "description of the product",
 }

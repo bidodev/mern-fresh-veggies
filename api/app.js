@@ -22,6 +22,7 @@ const errorHandler = require('./controllers/errorController');
 //import routes
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
+const farmerRouter = require('./routes/farmer');
 
 /* Global Midlewares */
 if (process.env.NODE_ENV === 'development') {
@@ -57,6 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/', indexRouter);
 app.use('/account', authRouter);
+app.use('/farmer', farmerRouter);
 
 /**
  * When an error is trow we catch it here and forward to errorController
