@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Authentication.styles.scss';
+import './authentication.styles.scss';
 
 const Authentication = () => {
   return (

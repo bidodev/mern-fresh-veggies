@@ -1,7 +1,7 @@
 import React from 'react';
-import Story from 'components/story/Story.component';
+import Story from 'components/story/story.component';
 
-import './Landing.styles.scss';
+import './landing.styles.scss';
 
 const Landing = () => {
   return (

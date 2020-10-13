@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Story.styles.scss';
+import './story.styles.scss';
 
 const Story = () => {
   return (
