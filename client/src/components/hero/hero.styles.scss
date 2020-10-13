@@ -1,0 +1,109 @@
+@import '../../scss/variables';
+
+.hero-component {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  header {
+    grid-column: 4 / span 2;
+    justify-self: right;
+    align-self: center;
+  }
+  &__main {
+    display: grid;
+    grid-column: 1 /-1;
+    grid-row: 2 / -1;
+    grid-template-columns: repeat(auto-fit, minmax(500, 1fr));
+    grid-template-rows: repeat(5, 1fr);
+    &__text-component {
+      display: grid;
+      grid-row: 2/5;
+      grid-column: 1/5;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      // background-color: violet;
+      justify-content: center;
+      align-items: center;
+      & > * {
+        justify-self: center;
+      }
+      p {
+        font-size: $font-size__extra-large-title;
+        grid-column: 1/-1;
+        span {
+          display: block;
+          font-size: 6rem;
+        }
+      }
+      button {
+        width: 9rem;
+        height: 2.5rem;
+        border-radius: 10px;
+        background-color: transparent;
+        justify-self: left;
+        margin: 0 1vw;
+        &:first-of-type {
+          justify-self: right;
+        }
+      }
+    }
+  }
+}
+
+// with flexbox
+
+// .hero-component {
+//   width: 100vw;
+//   height: 100vh;
+//   display: grid;
+//   grid-template-columns: repeat(6, 1fr);
+//   grid-template-rows: repeat(5, 1fr);
+//   header {
+//     grid-column: 4 / span 2;
+//     justify-self: right;
+//     align-self: center;
+//   }
+//   &__main {
+//     grid-column: 1 /-1;
+//     grid-row: 2 / -1;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-start;
+
+//     &__text-component {
+//       width: 30rem;
+//       height: 20rem;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-around;
+//       align-items: center;
+//       & > * {
+//         //width: 30rem;
+//         text-align: center;
+//       }
+//       p {
+//         font-size: $font-size__extra-large-title;
+//         span {
+//           display: block;
+//           font-size: 6rem;
+//         }
+//       }
+//       &__button-box {
+//         button {
+//           width: 9rem;
+//           height: 2.5rem;
+//           border-radius: 10px;
+//           background-color: transparent;
+//           justify-self: left;
+//           margin: 0 1vw;
+//           &:first-of-type {
+//             justify-self: right;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
