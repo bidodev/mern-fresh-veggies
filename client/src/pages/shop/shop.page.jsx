@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom';
 
 import axios from 'axios';
-
 import './shop.styles.scss';
 
 function Farmer() {
@@ -53,6 +52,7 @@ function Shop() {
       })
       .catch((err) => console.log(err.message));
   }, []);
+
 
   return (
     <div>
