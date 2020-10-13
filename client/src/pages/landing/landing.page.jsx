@@ -6,7 +6,7 @@ import './landing.styles.scss';
 const Landing = () => {
   return (
     <React.Fragment>
-      <div className="landing-page">Welcome to Landing Page!</div>
+      <div className="landing">Welcome to Landing Page!</div>
       <Story />
     </React.Fragment>
   );
