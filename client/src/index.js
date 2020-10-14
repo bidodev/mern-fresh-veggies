@@ -10,6 +10,9 @@ import allReducers from 'reducers';
 import './scss/index.scss';
 import * as serviceWorker from './serviceWorker';
 
+//import fontawesome
+import "./lib/icons";
+
 const store = createStore(
   allReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

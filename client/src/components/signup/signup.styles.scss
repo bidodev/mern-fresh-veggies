@@ -1,0 +1,17 @@
+.sign-up {
+    width: 30%;
+    font-size: 1.6rem;
+    //border: 1px solid red;
+  
+    span {
+      color: #909090;
+    }
+  
+    .title {
+      margin: 20px 0;
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }

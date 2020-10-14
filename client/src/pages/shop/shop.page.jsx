@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+
+/* Spinner */
+import Spinner from 'components/spinner/spinner.component';
+
 import {
-  Switch,
   Route,
   Link,
-  useRouteMatch,
   useParams,
 } from 'react-router-dom';
 
@@ -12,11 +14,13 @@ import './shop.styles.scss';
 
 const FarmerOverview = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
+  const [isLoading, setStatusLoading] = useState(true);
 
   useEffect(() => {
     axios(`/farmers`)
       .then(({ data }) => {
         setFarmers(data.data.farmers);
+        setStatusLoading(false);
       })
       .catch((err) => console.log(err.message));
   }, []);
@@ -37,14 +41,16 @@ const FarmerOverview = ({ match }) => {
           
           
           */}
-        <h2>Farmers</h2>
-        {farmers
-          ? farmers.map((farmer) => (
-              <li>
-                <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
-              </li>
-            ))
-          : ''}
+        <h2>Featured Farmers</h2>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          farmers.map((farmer) => (
+            <li>
+              <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
+            </li>
+          ))
+        )}
       </section>
     </div>
   );
