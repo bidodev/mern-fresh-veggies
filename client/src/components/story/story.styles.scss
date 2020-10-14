@@ -1,8 +1,8 @@
 @import '../../scss/variables';
 
 .story {
-  .first-raw,
-  .second-raw {
+  .first-row,
+  .second-row {
     display: flex;
     justify-content: space-evenly;
 
@@ -41,7 +41,6 @@
 
       &--text {
         margin: 2vh 0;
-        font-size: $font-size__medium;
 
         @media (max-width: 1050px) {
           margin: 1vh 0;
@@ -54,11 +53,11 @@
     }
   }
 
-  .second-raw {
+  .second-row {
     background: #eee;
   }
 
-  .third-raw {
+  .third-row {
     &__header {
       text-align: center;
       margin: 2vh 0;
@@ -66,7 +65,7 @@
       font-weight: $font-weight__bold;
 
       @media (max-width: 800px) {
-        font-size: $font-size__header__medium;
+        font-size: $font-size__header__small;
       }
     }
 
