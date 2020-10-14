@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./signup.styles.scss";
 
-import FormInput from "../forms/input.component";
-import CustomButton from "../custom-button/custom-button.component";
+import FormInput from "components/forms/input.component";
+import CustomButton from "components/custom-button/custom-button.component";
 
 
 const SignUp = () => {
