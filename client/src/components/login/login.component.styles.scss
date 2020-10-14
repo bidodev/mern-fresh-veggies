@@ -1,0 +1,18 @@
+.sign-in {
+    font-size: 1.6rem;
+    //border: 1px solid red;
+    width: 30%;
+    
+    span {
+      color: #909090;
+    }
+  
+    .title {
+      margin: 20px 0;
+  
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }

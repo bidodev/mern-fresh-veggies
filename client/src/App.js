@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 //import { useSelector, useDispatch } from 'react-redux';
 
 import Landing from 'pages/landing/landing.page';
@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" exact component={Landing} />
+        <Route exact path="/" component={Landing} />
         <Route path="/shop" component={Shop} />
          
         {/* if the farmer is logged already we show the farmerAdmin */}

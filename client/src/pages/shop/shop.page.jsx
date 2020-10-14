@@ -4,10 +4,8 @@ import React, { useEffect, useState } from 'react';
 import Spinner from 'components/spinner/spinner.component';
 
 import {
-  Switch,
   Route,
   Link,
-  useRouteMatch,
   useParams,
 } from 'react-router-dom';
 
