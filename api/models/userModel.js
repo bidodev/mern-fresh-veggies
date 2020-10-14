@@ -46,6 +46,17 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
+//query Middleware
+//pupolate products when use find
+userSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'products',
+    select: '-__v'
+  });
+
+  next();
+});
+
 /**
  * Decrypt the password that is saved inside the documment and compare with the given password
  * @param {str} givenPassword

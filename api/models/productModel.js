@@ -4,7 +4,6 @@ const productSchema = new mongoose.Schema({
   owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
   name: {
       type: String,
-      unique: true
     },
   type: String,
   description: {

@@ -2,6 +2,7 @@
  * This router is restricted to admin and farmers
  * The user is already in the request
  */
+const mongoose = require('mongoose');
 
 /* Models */
 const Product = require('../models/productModel');
@@ -10,6 +11,46 @@ const User = require('../models/userModel');
 /* Utils */
 const AppError = require('../utils/AppError.js');
 const asyncWrapper = require('../utils/asyncWrapper');
+
+/**
+ * get all farmers
+ */
+exports.getAllFarmers = asyncWrapper(async (req, res, next) => {
+  const farmers = await User.find({ role: 'farmer' }).select('-password');
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      farmers,
+    }
+  })
+})
+
+/**
+ * get a farmer page
+ */
+exports.getFarmerPage = asyncWrapper(async (req, res, next) => {
+
+  //check if its a valid ObjectId
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    return next(new AppError('Not valid id', 400, 'fail'));
+  }
+  
+  //find the user
+  const user = await User.findById(req.params.id);
+  
+  if (!user || user.role !== 'farmer') {
+    return next(new AppError('You could not find a farmer page with the given id', 404, 'fail'));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      name: user.name,
+      products: user.products,
+    },
+  });
+});
 
 exports.retrieveFarmerProducts = asyncWrapper(async (req, res, next) => {
   const products = await User.find(req.user._id).select('products').populate({
@@ -25,7 +66,6 @@ exports.retrieveFarmerProducts = asyncWrapper(async (req, res, next) => {
     },
   });
 });
-
 
 exports.createProduct = asyncWrapper(async (req, res, next) => {
   //1. Grab our user
