@@ -1,0 +1,13 @@
+/*
+@spinner
+* 
+*/
+
+.loading {
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: center;
+    font-size: 3rem;
+    color:#358b20;
+    background-color: inherit;
+  }

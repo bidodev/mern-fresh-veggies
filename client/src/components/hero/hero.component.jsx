@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 import './hero.styles.scss';
 
@@ -22,8 +23,12 @@ const Hero = () => {
             Happiest bio <span>veggies</span>
           </p>
           {/* <div className="hero-component__main__text-component__button-box"> */}
-          <button>I am a Farmer</button>
-          <button>I am here to shop</button>
+          <button>
+            <Link to="/farmer/admin">I am a Farmer</Link>
+          </button>
+          <button>
+            <Link to="/shop">I am here to shop</Link>
+          </button>
           {/* </div> */}
         </div>
       </div>
