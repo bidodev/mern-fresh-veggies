@@ -1,18 +1,17 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+//import { useSelector, useDispatch } from 'react-redux';
 
 import Landing from 'pages/landing/landing.page';
 import Authentication from 'pages/authentication/authentication.page';
 import Shop from 'pages/shop/shop.page';
-import Farmer from 'pages/farmer/farmer.page';
 
 const App = () => {
   return (
     <div className="App">
       <Switch>
         <Route exact path="/" exact component={Landing} />
-        <Route path="/authentication" exact component={Authentication} />
+        <Route exact path="/authentication" exact component={Authentication} />
         <Route path="/shop" component={Shop} />
       </Switch>
     </div>

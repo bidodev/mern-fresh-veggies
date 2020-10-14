@@ -10,39 +10,7 @@ import {
 import axios from 'axios';
 import './shop.styles.scss';
 
-function Farmer() {
-  let { id } = useParams();
-  const [farmer, setFarmer] = useState([]);
-
-  useEffect(() => {
-    axios(`/farmers/${id}`)
-      .then(({ data }) => {
-        setFarmer(data.data);
-      })
-      .catch((err) => console.log(err.message));
-  }, [id]);
-
-  return (
-    <div>
-      <h3>Hello {farmer.name}</h3>
-      {farmer.products
-        ? farmer.products.map((product) => (
-            <div>
-              <h2>{product.name}</h2>
-              <h3>{product.type}</h3>
-              <p>{product.description}</p>
-            </div>
-          ))
-        : <h2>This Farmer Page has no Products</h2>}
-    </div>
-
-    // query the specific farm and show his profile
-  );
-}
-
-function Shop() {
-  let match = useRouteMatch();
-
+const FarmerOverview = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
 
   useEffect(() => {
@@ -53,33 +21,74 @@ function Shop() {
       .catch((err) => console.log(err.message));
   }, []);
 
+  return (
+    <div>
+      <header>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, vel!
+      </header>
+      <section className="featured-proucts">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
+        deleniti.
+      </section>
+
+      <section className="featured-farmers">
+        {/* We load a previous a grid with some farmers maybe 4
+           * Then we have an option to load more farmers
+          
+          
+          */}
+        <h2>Farmers</h2>
+        {farmers
+          ? farmers.map((farmer) => (
+              <li>
+                <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
+              </li>
+            ))
+          : ''}
+      </section>
+    </div>
+  );
+};
+
+function ProfilePage() {
+  let { farmerId } = useParams();
+  const [farmer, setFarmer] = useState([]);
+
+  useEffect(() => {
+    axios(`/farmers/${farmerId}`)
+      .then(({ data }) => {
+        setFarmer(data.data);
+      })
+      .catch((err) => console.log(err.message));
+  }, [farmerId]);
 
   return (
     <div>
-      <h2>Shop</h2>
-      <h3>Farmers</h3>
-
-      {farmers
-        ? farmers.map((farmer) => (
-            <li>
-              <Link to={`${match.url}/farmer/${farmer._id}`}>
-                {farmer.name}
-              </Link>
-            </li>
-          ))
-        : ''}
-
-      {/* The Shop page has its own <Switch> with more routes
-          that build on the /Shop URL path. You can think of the
-          2nd <Route> here as an "index" page for all Shop, or
-          the page that is shown when no topic is selected */}
-      <Switch>
-        <Route path={`${match.path}/farmer/:id`}>
-          <Farmer />
-        </Route>
-      </Switch>
+      <h3>Hello {farmer.name}</h3>
+      {farmer.products ? (
+        farmer.products.map((product) => (
+          <div>
+            <h2>{product.name}</h2>
+            <h3>{product.type}</h3>
+            <p>{product.description}</p>
+          </div>
+        ))
+      ) : (
+        <h2>This Farmer Page has no Products</h2>
+      )}
     </div>
+
+    // query the specific farm and show his profile
   );
 }
+
+const Shop = ({ match }) => {
+  return (
+    <div className="shop-page">
+      <Route exact path={`${match.path}`} component={FarmerOverview} />
+      <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
+    </div>
+  );
+};
 
 export default Shop;
