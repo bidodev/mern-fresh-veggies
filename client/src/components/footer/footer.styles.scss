@@ -1,0 +1,15 @@
+@import '../../scss/variables';
+
+footer {
+  height: 20vh;
+  margin: 2vh 3vw;
+  border-top: 2px solid $color__black;
+
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

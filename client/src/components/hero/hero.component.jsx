@@ -1,7 +1,7 @@
 import React from 'react';
-import './hero.styles.scss';
-
 import { HashLink } from 'react-router-hash-link';
+
+import './hero.styles.scss';
 
 const Hero = () => {
   return (

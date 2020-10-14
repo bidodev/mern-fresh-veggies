@@ -1,10 +1,11 @@
 import React from 'react';
 
 /**
- * loading components to compuse landing page
+ * components that compose landing page
  */
 import Hero from 'components/hero/hero.component';
 import Story from 'components/story/story.component';
+import Footer from 'components/footer/footer.component';
 
 /* styles */
 import './landing.styles.scss';
@@ -14,6 +15,7 @@ const Landing = () => {
     <React.Fragment>
       <Hero />
       <Story />
+      <Footer />
     </React.Fragment>
   );
 };

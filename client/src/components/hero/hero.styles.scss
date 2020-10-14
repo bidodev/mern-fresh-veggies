@@ -6,17 +6,20 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 1fr);
+
   header {
     grid-column: 4 / span 2;
     justify-self: right;
     align-self: center;
   }
+
   &__main {
     display: grid;
     grid-column: 1 /-1;
     grid-row: 2 / -1;
     grid-template-columns: repeat(auto-fit, minmax(500, 1fr));
     grid-template-rows: repeat(5, 1fr);
+
     &__text-component {
       display: grid;
       grid-row: 2/5;
@@ -26,17 +29,21 @@
       // background-color: violet;
       justify-content: center;
       align-items: center;
+
       & > * {
         justify-self: center;
       }
+
       p {
-        font-size: $font-size__extra-large-title;
+        font-size: $font-size__header__large;
         grid-column: 1/-1;
+
         span {
           display: block;
           font-size: 6rem;
         }
       }
+
       button {
         width: 9rem;
         height: 2.5rem;

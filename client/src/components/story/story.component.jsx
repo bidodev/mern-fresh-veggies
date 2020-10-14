@@ -5,22 +5,22 @@ const Story = () => {
   return (
     <React.Fragment>
       <section className="story" id="story">
-        {/* ---- First Raw ---- */}
-        <div className="first-raw">
-          <div className="first-raw__img-container" >
+        {/* ---- First Row ---- */}
+        <div className="first-row">
+          <div className="first-row__img-container">
             <img
-              className="first-raw__img-container--img"
+              className="first-row__img-container--img"
               src="./images/farm-1.jpg"
               alt="img"
             />
           </div>
 
-          <div className="first-raw__description-container">
-            <div className="first-raw__description-container--header">
+          <div className="first-row__description-container">
+            <div className="first-row__description-container--header">
               Lorem ipsum consectetur
             </div>
 
-            <div className="first-raw__description-container--text">
+            <div className="first-row__description-container--text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Assumenda incidunt porro nihil, temporibus accusantium ut esse
               quam rerum eos magni aliquam voluptatum ipsa distinctio rem enim
@@ -32,14 +32,14 @@ const Story = () => {
           </div>
         </div>
 
-        {/* ---- Second Raw ---- */}
-        <div className="second-raw">
-          <div className="second-raw__description-container">
-            <div className="second-raw__description-container--header">
+        {/* ---- Second Row ---- */}
+        <div className="second-row">
+          <div className="second-row__description-container">
+            <div className="second-row__description-container--header">
               Lorem ipsum sit amet
             </div>
 
-            <div className="second-raw__description-container--text">
+            <div className="second-row__description-container--text">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Laboriosam assumenda consequatur, asperiores magnam ullam expedita
               quae saepe, cupiditate in a accusantium! Tenetur illum recusandae
@@ -52,36 +52,36 @@ const Story = () => {
             </div>
           </div>
 
-          <div className="second-raw__img-container">
+          <div className="second-row__img-container">
             <img
-              className="second-raw__img-container--img"
+              className="second-row__img-container--img"
               src="./images/farm-2.jpg"
               alt="img"
             />
           </div>
         </div>
 
-        {/* ---- Third Raw ---- */}
-        <div className="third-raw">
-          <div className="third-raw__header">You're in good compagny</div>
+        {/* ---- Third Row ---- */}
+        <div className="third-row">
+          <div className="third-row__header">You're in good compagny</div>
 
-          <div className="third-raw__img-container">
+          <div className="third-row__img-container">
             <img
               src="./images/debora.png"
               alt="img"
-              className="third-raw__img-container--img-1"
+              className="third-row__img-container--img-1"
             />
 
             <img
               src="./images/don.png"
               alt="img"
-              className="third-raw__img-container--img-2"
+              className="third-row__img-container--img-2"
             />
 
             <img
               src="./images/grace.png"
               alt="img"
-              className="third-raw__img-container--img-3"
+              className="third-row__img-container--img-3"
             />
           </div>
         </div>
