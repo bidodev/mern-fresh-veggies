@@ -20,7 +20,6 @@ URL: localhost:5000
 "passwordConfirmation": "password102030"
 }
 
-
 # Login 
 ## Login into an Account
 METHOD: POST
@@ -59,12 +58,19 @@ ENDPOINT: /farmer/products
     "description": "description of the product",
 }
 
+## Delete Product
+METHOD: DELETE
+ENDPOINT: /farmers/products/:id
+
+## Select single Product
+METHOD: GET
+ENDPOINT: /farmers/products/:id
+
 
 # Retrieve farmers
 ## Select all the Farmers
 METHOD: GET
 ENDPOINT /farmers
-
 
 ## Select only 1 Farmer
 ##
