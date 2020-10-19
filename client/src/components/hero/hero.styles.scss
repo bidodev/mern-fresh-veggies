@@ -1,7 +1,7 @@
 @import '../../scss/variables';
 
 .hero-component {
-  width: 100vw;
+  width: 100vw; // can use 100% to remove bottom scroll bar but create error - Simona knows
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
