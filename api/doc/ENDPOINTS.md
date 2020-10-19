@@ -1,6 +1,6 @@
 # Register an Account
 
-Method: POST
+METHOD: POST
 URL: localhost:5000
 
 ## Create an account as user
@@ -20,13 +20,18 @@ URL: localhost:5000
 "passwordConfirmation": "password102030"
 }
 
-## Login as farmer:
 
-/account/login
+# Login 
+## Login into an Account
+METHOD: POST
+ENDPOINT: /account/login/
 
-## Get all farmers:
+### JSON Body
+{
+    "email": "claudinei.bido@gmail.com"
+    "password": "102030"
+}
 
-/farmers
 
 # Manage Products
 
@@ -49,7 +54,18 @@ ENDPOINT: /farmer/products
 ## Json Body
 
 {
-"name": "Claudinei",
-"type": "type of the item",
-"description": "description of the product",
+    "name": "Claudinei",
+    "type": "type of the item",
+    "description": "description of the product",
 }
+
+
+# Retrieve farmers
+## Select all the Farmers
+METHOD: GET
+ENDPOINT /farmers
+
+
+## Select only 1 Farmer
+##
+
