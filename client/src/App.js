@@ -5,7 +5,7 @@ import Landing from 'pages/landing/landing.page';
 import Authentication from 'pages/authentication/authentication.page';
 import Shop from 'pages/shop/shop.page';
 
-import FarmerAdmin from 'pages/farmer/farmer.admin.page';
+import FarmerAdmin from 'pages/farmer/farmer-admin.page';
 
 const App = () => {
   const farmerUser = {};
