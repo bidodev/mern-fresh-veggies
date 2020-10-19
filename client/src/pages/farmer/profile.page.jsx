@@ -13,7 +13,7 @@ function ProfilePage() {
   const [isLoading, setStatusLoading] = useState(true);
 
   useEffect(() => {
-    axios(`/farmers/${farmerId}`)
+    axios(`/farmers/farmer/${farmerId}`)
       .then(({ data }) => {
         setFarmer(data.data);
         setStatusLoading(false);
