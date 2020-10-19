@@ -10,6 +10,7 @@ $main-color: #f75d37;
 .group {
   position: relative;
   margin: 4.5rem 0;
+  height: 2rem;
 
   .form-input {
     background: none;
@@ -22,15 +23,14 @@ $main-color: #f75d37;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
-    margin: 25px 0;
-
+    // margin: 25px 0;
 
     &:focus {
       outline: none;
       background-color: transparent;
     }
 
-    &:valid{
+    &:valid {
       background-color: transparent;
     }
 
@@ -38,7 +38,7 @@ $main-color: #f75d37;
       @include shrinkLabel();
     }
 
-    &::placeholder{
+    &::placeholder {
       background-color: transparent;
     }
   }
