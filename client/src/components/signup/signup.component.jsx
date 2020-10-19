@@ -1,16 +1,19 @@
-import React, { useState } from "react";
-import "./signup.styles.scss";
-
-import FormInput from "components/forms/input.component";
-import CustomButton from "components/custom-button/custom-button.component";
-
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import './signup.styles.scss';
+import axios from 'axios';
+import FormInput from 'components/forms/input.component';
+import CustomButton from 'components/custom-button/custom-button.component';
+import { loggedIn } from '../../actions';
 
 const SignUp = () => {
-  const [displayName, setDisplayName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
+  const [displayName, setDisplayName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const history = useHistory();
+  const dispatch = useDispatch();
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -18,8 +21,6 @@ const SignUp = () => {
       alert("Passwords don't match...");
       return;
     }
-
-    try {
     //   const { user } = await auth.createUserWithEmailAndPassword(
     //     userEmail,
     //     userPassword
@@ -31,9 +32,23 @@ const SignUp = () => {
     //     setConfirmPassword("");
     //     alert("Account Created with Sucess");
     //   }
-    } catch (error) {
-      console.log("Error creating user", error.message);
-    }
+
+    //Connecting CLIENT with the API
+    const data = {
+      name: displayName,
+      email: userEmail,
+      password: userPassword,
+      passwordConfirmation: confirmPassword,
+    };
+    const response = axios
+      .post('/account/register/farmer', data)
+      .then(({ data }) => {
+        console.log(data);
+        alert('An account has been created!');
+        dispatch(loggedIn());
+        history.push('/farmer/admin');
+      })
+      .catch((error) => console.log('Error creating user', error.message));
   };
 
   //update localState
@@ -41,13 +56,13 @@ const SignUp = () => {
     const { value, name } = event.target;
 
     switch (name) {
-      case "displayName":
+      case 'displayName':
         return setDisplayName(value);
-      case "email":
+      case 'email':
         return setUserEmail(value);
-      case "password":
+      case 'password':
         return setUserPassword(value);
-      case "confirmPassword":
+      case 'confirmPassword':
         return setConfirmPassword(value);
       default:
     }

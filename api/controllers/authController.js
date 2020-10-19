@@ -141,7 +141,7 @@ exports.protected = asyncWrapper(async (req, res, next) => {
 exports.restrictedAccess = (...roles) => {
   return (req, res, next) => {
     const { role } = req.user;
-    
+
     if (!roles.includes(role)) {
       return next(
         new AppError(
