@@ -3,14 +3,11 @@ import React, { useEffect, useState } from 'react';
 /* Spinner */
 import Spinner from 'components/spinner/spinner.component';
 
-import {
-  Route,
-  Link,
-  useParams,
-} from 'react-router-dom';
+import { Route, Link, useParams } from 'react-router-dom';
 
 import axios from 'axios';
 import './shop.styles.scss';
+import ProfilePage from 'pages/farmer/profile.page';
 
 const FarmerOverview = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
@@ -27,13 +24,10 @@ const FarmerOverview = ({ match }) => {
 
   return (
     <div>
-      <header>
+      <header className="header">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, vel!
       </header>
-      <section className="featured-proucts">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-        deleniti.
-      </section>
+      <section className="featured-products">List of featured products</section>
 
       <section className="featured-farmers">
         {/* We load a previous a grid with some farmers maybe 4
@@ -45,48 +39,18 @@ const FarmerOverview = ({ match }) => {
         {isLoading ? (
           <Spinner />
         ) : (
-          farmers.map((farmer) => (
-            <li>
-              <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
-            </li>
-          ))
+          <div className="featured-farmers__list">
+            {farmers.map((farmer) => (
+              <li>
+                <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
+              </li>
+            ))}
+          </div>
         )}
       </section>
     </div>
   );
 };
-
-function ProfilePage() {
-  let { farmerId } = useParams();
-  const [farmer, setFarmer] = useState([]);
-
-  useEffect(() => {
-    axios(`/farmers/${farmerId}`)
-      .then(({ data }) => {
-        setFarmer(data.data);
-      })
-      .catch((err) => console.log(err.message));
-  }, [farmerId]);
-
-  return (
-    <div>
-      <h3>Hello {farmer.name}</h3>
-      {farmer.products ? (
-        farmer.products.map((product) => (
-          <div>
-            <h2>{product.name}</h2>
-            <h3>{product.type}</h3>
-            <p>{product.description}</p>
-          </div>
-        ))
-      ) : (
-        <h2>This Farmer Page has no Products</h2>
-      )}
-    </div>
-
-    // query the specific farm and show his profile
-  );
-}
 
 const Shop = ({ match }) => {
   return (

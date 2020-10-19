@@ -1,15 +1,16 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-//import { useSelector, useDispatch } from 'react-redux';
-
+import { useSelector } from 'react-redux';
 import Landing from 'pages/landing/landing.page';
 import Authentication from 'pages/authentication/authentication.page';
 import Shop from 'pages/shop/shop.page';
-import FarmerAdmin from 'pages/farmer/farmer-admin.page';
+
+import FarmerAdmin from 'pages/farmer/farmer.admin.page';
 
 const App = () => {
-  const farmerIsLogged = true;
   const farmerUser = {};
+  //Redux state
+  const isLogged = useSelector((state) => state.isLogged);
 
   return (
     <div className="App">
@@ -22,11 +23,7 @@ const App = () => {
           exact
           path="/farmer/admin"
           render={() =>
-            farmerIsLogged ? (
-              <FarmerAdmin user={farmerUser} />
-            ) : (
-              <Authentication />
-            )
+            isLogged ? <FarmerAdmin user={farmerUser} /> : <Authentication />
           }
         />
       </Switch>

@@ -1,17 +1,31 @@
 .sign-up {
-    width: 30%;
-    font-size: 1.6rem;
-    //border: 1px solid red;
-  
+  width: 60%;
+  font-size: 1.6rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  .title {
+    margin: 20px 0;
+  }
+
+  span {
+    color: #909090;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    margin-bottom: 10vh;
     span {
-      color: #909090;
+      text-align: center;
     }
-  
     .title {
-      margin: 20px 0;
+      text-align: center;
     }
   }
+
   .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
+}
