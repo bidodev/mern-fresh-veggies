@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import './signup.styles.scss';
 import axios from 'axios';
 import FormInput from 'components/forms/input.component';
 import CustomButton from 'components/custom-button/custom-button.component';
+import { loggedIn } from '../../actions';
 
 const SignUp = () => {
   const [displayName, setDisplayName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
+  const history = useHistory();
+  const dispatch = useDispatch();
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -41,6 +45,8 @@ const SignUp = () => {
       .then(({ data }) => {
         console.log(data);
         alert('An account has been created!');
+        dispatch(loggedIn());
+        history.push('/farmer/admin');
       })
       .catch((error) => console.log('Error creating user', error.message));
   };

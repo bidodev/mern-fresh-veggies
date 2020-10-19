@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { loggedIn } from '../../actions/index';
+import { loggedIn } from '../../actions/';
 import './login.component.styles.scss';
 
 import axios from 'axios';

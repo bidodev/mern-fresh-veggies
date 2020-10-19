@@ -8,6 +8,7 @@ import FarmerAdmin from 'pages/farmer/farmer.admin.page';
 
 const App = () => {
   const farmerUser = {};
+  //Redux state
   const isLogged = useSelector((state) => state.isLogged);
   return (
     <div className="App">
