@@ -40,7 +40,7 @@ const SignUp = () => {
       password: userPassword,
       passwordConfirmation: confirmPassword,
     };
-    const response = axios
+    axios
       .post('/account/register/farmer', data)
       .then(({ data }) => {
         console.log(data);
