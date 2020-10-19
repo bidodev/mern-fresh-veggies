@@ -3,11 +3,7 @@ import React, { useEffect, useState } from 'react';
 /* Spinner */
 import Spinner from 'components/spinner/spinner.component';
 
-import {
-  Route,
-  Link,
-  useParams,
-} from 'react-router-dom';
+import { Route, Link, useParams } from 'react-router-dom';
 
 import axios from 'axios';
 import './shop.styles.scss';
@@ -27,13 +23,10 @@ const FarmerOverview = ({ match }) => {
 
   return (
     <div>
-      <header>
+      <header className="header">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, vel!
       </header>
-      <section className="featured-proucts">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-        deleniti.
-      </section>
+      <section className="featured-products">List of featured products</section>
 
       <section className="featured-farmers">
         {/* We load a previous a grid with some farmers maybe 4
@@ -45,11 +38,13 @@ const FarmerOverview = ({ match }) => {
         {isLoading ? (
           <Spinner />
         ) : (
-          farmers.map((farmer) => (
-            <li>
-              <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
-            </li>
-          ))
+          <div className="featured-farmers__list">
+            {farmers.map((farmer) => (
+              <li>
+                <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
+              </li>
+            ))}
+          </div>
         )}
       </section>
     </div>
