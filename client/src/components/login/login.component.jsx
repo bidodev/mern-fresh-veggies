@@ -21,7 +21,7 @@ const Login = () => {
       password: userPassword,
     };
 
-    const response = axios
+    axios
       .post('/account/login', data)
       .then(({ data }) => {
         console.log(data);
