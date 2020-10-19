@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { loggedIn } from '../../actions/index';
 import './login.component.styles.scss';
 
+import axios from 'axios';
 import FormInput from 'components/forms/input.component';
 import CustomButton from 'components/custom-button/custom-button.component';
-import axios from 'axios';
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-
+  const history = useHistory();
+  const dispatch = useDispatch();
   //update redux
   const handleLoginData = async (event) => {
     event.preventDefault();
@@ -17,12 +21,13 @@ const Login = () => {
       password: userPassword,
     };
 
-    console.log(data);
     const response = axios
       .post('/account/login', data)
       .then(({ data }) => {
         console.log(data);
-        alert('Logged with Sucess');
+        alert('Logged in successfully!');
+        dispatch(loggedIn());
+        history.push('/farmer/admin');
       })
       .catch((error) => console.log('Error in the login', error.message));
   };
