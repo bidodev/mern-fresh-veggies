@@ -7,6 +7,7 @@ import { Route, Link, useParams } from 'react-router-dom';
 
 import axios from 'axios';
 import './shop.styles.scss';
+import ProfilePage from 'pages/farmer/profile.page';
 
 const FarmerOverview = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
@@ -50,38 +51,6 @@ const FarmerOverview = ({ match }) => {
     </div>
   );
 };
-
-function ProfilePage() {
-  let { farmerId } = useParams();
-  const [farmer, setFarmer] = useState([]);
-
-  useEffect(() => {
-    axios(`/farmers/${farmerId}`)
-      .then(({ data }) => {
-        setFarmer(data.data);
-      })
-      .catch((err) => console.log(err.message));
-  }, [farmerId]);
-
-  return (
-    <div>
-      <h3>Hello {farmer.name}</h3>
-      {farmer.products ? (
-        farmer.products.map((product) => (
-          <div>
-            <h2>{product.name}</h2>
-            <h3>{product.type}</h3>
-            <p>{product.description}</p>
-          </div>
-        ))
-      ) : (
-        <h2>This Farmer Page has no Products</h2>
-      )}
-    </div>
-
-    // query the specific farm and show his profile
-  );
-}
 
 const Shop = ({ match }) => {
   return (
