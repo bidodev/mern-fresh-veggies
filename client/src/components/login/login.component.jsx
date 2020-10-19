@@ -3,6 +3,7 @@ import './login.component.styles.scss';
 
 import FormInput from 'components/forms/input.component';
 import CustomButton from 'components/custom-button/custom-button.component';
+import axios from 'axios';
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState('');
@@ -11,14 +12,19 @@ const Login = () => {
   //update redux
   const handleLoginData = async (event) => {
     event.preventDefault();
+    const data = {
+      email: userEmail,
+      password: userPassword,
+    };
 
-    try {
-      setUserEmail('');
-      setUserPassword('');
-      alert('Logged with Sucess');
-    } catch (error) {
-      console.log('Error in the login', error.message);
-    }
+    console.log(data);
+    const response = axios
+      .post('/account/login', data)
+      .then(({ data }) => {
+        console.log(data);
+        alert('Logged with Sucess');
+      })
+      .catch((error) => console.log('Error in the login', error.message));
   };
 
   //update localState
