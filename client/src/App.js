@@ -17,7 +17,7 @@ const App = () => {
         <Route exact path="/" component={Landing} />
         <Route path="/shop" component={Shop} />
 
-        {/* <farmerAdmin/> is displayed once farmer is logged */}
+        {/* <FarmerAdmin/> is displayed once farmer is logged */}
         <Route
           exact
           path="/farmer/admin"
