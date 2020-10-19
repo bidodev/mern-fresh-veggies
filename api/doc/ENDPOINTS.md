@@ -1,5 +1,5 @@
 # Register an Account
-Method: POST
+METHOD: POST
 URL: localhost:5000
 
 ## Create an account as user
@@ -14,6 +14,17 @@ URL: localhost:5000
     "email": "bido.cd@gmail.com",
     "password": "password102030",
     "passwordConfirmation": "password102030"
+}
+
+# Login 
+## Login into an Account
+METHOD: POST
+ENDPOINT: /account/login/
+
+### JSON Body
+{
+    "email": "claudinei.bido@gmail.com"
+    "password": "102030"
 }
 
 # Manage Products
@@ -36,3 +47,13 @@ ENDPOINT: /farmer/products
     "type": "type of the item",
     "description": "description of the product",
 }
+
+
+# Retrieve farmers
+## Select all the Farmers
+METHOD: GET
+ENDPOINT /farmers
+
+
+## Select only 1 Farmer
+##

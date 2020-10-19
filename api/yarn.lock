@@ -1052,8 +1052,3 @@ with@^7.0.0:
     "@babel/types" "^7.9.6"
     assert-never "^1.2.1"
     babel-walk "3.0.0-canary-5"
-
-x-xss-protection@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/x-xss-protection/-/x-xss-protection-2.0.0.tgz#217819c1b5344c4143927355b5d9aa6258c9ed20"
-  integrity sha512-2meB9rRv0kIpwIqH37HjHUvxpUeoJPDQvKUH+Pt3tIjySxh+fMge2MQskM73lKW/2foaBck0fOuhUJTxjhK2EQ==
