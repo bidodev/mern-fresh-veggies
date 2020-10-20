@@ -8,9 +8,16 @@
   grid-template-rows: repeat(5, 1fr);
 
   header {
-    grid-column: 4 / span 2;
-    justify-self: right;
-    align-self: center;
+    grid-column: 4 / span 3;
+    // justify-self: right;
+    // align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .hero-component__button {
+      margin-right: 3vw;
+    }
   }
 
   &__main {
