@@ -11,7 +11,7 @@ const chromeRedux =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 if (process.env.NODE_ENV === "development") {
-  middlewares.push(logger);
+  //middlewares.push(logger);
   enhancers.push(chromeRedux);
 }
 
