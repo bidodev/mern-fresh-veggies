@@ -33,8 +33,9 @@ const Stock = ({jwt}) => {
         <div className="stock__overview--products">
           {products ? (
             products.map((product) => (
-              <div>
+              <div key={product._id}>
                 <h2>{product.name}</h2>
+                <h2>{product.description}</h2>
               </div>
             ))
           ) : (
