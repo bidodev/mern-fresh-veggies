@@ -1,24 +1,30 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import Reviews from 'components/reviews/reviews.component';
 
 import './profile.styles.scss';
 
-const Profile = () => {
+const Profile = ({ farmerData }) => {
+  
+  const { name } = farmerData;
+  const dispatch = useDispatch();
+
   return (
     <section className="profile">
       <div className="profile__profile-container">
         <h2 className="profile__profile-container--header">YOUR PROFILE</h2>
+        <button onClick={()=> dispatch({ type: 'LOGOUT_USER'})}>LOGOUT</button>
         <div className="profile__profile-container__information">
           <div className="profile__profile-container__information--avatar">
             <img
-              src="../../images/owen.jpg"
+              src="/images/owen.jpg"
               alt="avatar"
               className="avatar-img"
             />
           </div>
           <div className="profile__profile-container__information--biography">
-            Owen Merkel <br />
+            Welcome to your profile {name} <br />
             🐰🥕🧑‍🌾🚜 <br />
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Reprehenderit omnis aliquid, nam quisquam hic vitae commodi!
@@ -34,21 +40,21 @@ const Profile = () => {
         <div className="profile__profile-container__gallery">
           <div className="profile__profile-container__gallery--img">
             <img
-              src="../../images/farm-1.jpg"
+              src="/images/farm-1.jpg"
               alt="img"
               className="gallery-img"
             />
           </div>
           <div className="profile__profile-container__gallery--img">
             <img
-              src="../../images/donkey.jpg"
+              src="/images/donkey.jpg"
               alt="img"
               className="gallery-img"
             />
           </div>
           <div className="profile__profile-container__gallery--img">
             <img
-              src="../../images/farm-3.jpg"
+              src="/images/farm-3.jpg"
               alt="img"
               className="gallery-img"
             />

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
+/* Import Pages */
 import Landing from 'pages/landing/landing.page';
 import Authentication from 'pages/authentication/authentication.page';
 import Shop from 'pages/shop/shop.page';
@@ -8,9 +10,11 @@ import Shop from 'pages/shop/shop.page';
 import FarmerAdmin from 'pages/farmer/farmer.admin.page';
 
 const App = () => {
-  const farmerUser = {};
-  //Redux state
-  const isLogged = useSelector((state) => state.isLogged);
+  /*
+   * Pull out the userFarmer from the LocalStorage
+   */
+  const farmerUser = useSelector(({login}) => login.farmerUser);
+
 
   return (
     <div className="App">
@@ -23,7 +27,7 @@ const App = () => {
           exact
           path="/farmer/admin"
           render={() =>
-            isLogged ? <FarmerAdmin user={farmerUser} /> : <Authentication />
+            farmerUser ? <FarmerAdmin user={farmerUser} /> : <Authentication />
           }
         />
       </Switch>

@@ -5,7 +5,6 @@ import './signup.styles.scss';
 import axios from 'axios';
 import FormInput from 'components/forms/input.component';
 import CustomButton from 'components/custom-button/custom-button.component';
-import { loggedIn } from '../../actions';
 
 const SignUp = () => {
   const [displayName, setDisplayName] = useState('');
@@ -43,9 +42,7 @@ const SignUp = () => {
     axios
       .post('/account/register/farmer', data)
       .then(({ data }) => {
-        console.log(data);
-        alert('An account has been created!');
-        dispatch(loggedIn());
+        dispatch({ type: 'LOGIN_USER', payload: data })
         history.push('/farmer/admin');
       })
       .catch((error) => console.log('Error creating user', error.message));
