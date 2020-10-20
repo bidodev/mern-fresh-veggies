@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import './signup.styles.scss';
 import axios from 'axios';
+
+/* Component Imports */
 import FormInput from 'components/forms/input.component';
 import CustomButton from 'components/custom-button/custom-button.component';
+
+/* Styles */
+import './signup.styles.scss';
 
 const SignUp = () => {
   const [displayName, setDisplayName] = useState('');
@@ -20,19 +24,21 @@ const SignUp = () => {
       alert("Passwords don't match...");
       return;
     }
-    //   const { user } = await auth.createUserWithEmailAndPassword(
-    //     userEmail,
-    //     userPassword
-    //   );
-    //   if (await createUserProfileDocument(user, { displayName })) {
-    //     setDisplayName("");
-    //     setUserEmail("");
-    //     setUserPassword("");
-    //     setConfirmPassword("");
-    //     alert("Account Created with Sucess");
-    //   }
+    /* *****  
+       const { user } = await auth.createUserWithEmailAndPassword(
+        userEmail,
+        userPassword
+      );
+      if (await createUserProfileDocument(user, { displayName })) {
+        setDisplayName("");
+        setUserEmail("");
+        setUserPassword("");
+        setConfirmPassword("");
+        alert("Account Created with Sucess");
+      } 
+      *** */
 
-    //Connecting CLIENT with the API
+    // Connecting CLIENT with the API
     const data = {
       name: displayName,
       email: userEmail,
@@ -42,13 +48,13 @@ const SignUp = () => {
     axios
       .post('/account/register/farmer', data)
       .then(({ data }) => {
-        dispatch({ type: 'LOGIN_USER', payload: data })
+        dispatch({ type: 'LOGIN_USER', payload: data });
         history.push('/farmer/admin');
       })
       .catch((error) => console.log('Error creating user', error.message));
   };
 
-  //update localState
+  // Update localState
   const handleInputValue = (event) => {
     const { value, name } = event.target;
 

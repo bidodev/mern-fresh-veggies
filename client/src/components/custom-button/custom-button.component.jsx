@@ -1,11 +1,13 @@
- 
-import React from "react";
-import "./custom-button.styles.scss";
+import React from 'react';
+
+/* Styles */
+import './custom-button.styles.scss';
 
 function CustomButton({ children, isGoogleSingIn, size, ...restProps }) {
   return (
     <button
-      className={`${isGoogleSingIn ? "google-sign-in" : ''} ${size ? size : ''} custom-button `}
+      className={`${isGoogleSingIn ? 'google-sign-in' : ''} 
+      ${size ? size : ''} custom-button `}
       {...restProps}
     >
       {children}

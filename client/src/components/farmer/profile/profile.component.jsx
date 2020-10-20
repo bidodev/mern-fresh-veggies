@@ -69,3 +69,4 @@ const Profile = ({ farmerData }) => {
 };
 
 export default Profile;
+

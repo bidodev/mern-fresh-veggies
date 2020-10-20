@@ -3,7 +3,7 @@
 footer {
   height: 20vh;
   margin: 2vh 3vw;
-  border-top: 2px solid $color__black;
+  border-top: 1px solid $color__black;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -12,8 +12,10 @@ footer {
     width: 13rem;
     height: fit-content;
     margin-right: 10vw;
+
     p {
       margin-bottom: 1vh;
+
       &:first-of-type {
         margin-bottom: 3vh;
         font-weight: bold;
