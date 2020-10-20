@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 /* Spinner */
-import Spinner from 'components/spinner/spinner.component';
+//import Spinner from 'components/spinner/spinner.component';
 
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 /* Page Imports */
 import ProfilePage from 'pages/farmer/profile.page';
