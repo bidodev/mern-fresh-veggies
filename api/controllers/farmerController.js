@@ -53,7 +53,6 @@ exports.getFarmerPage = asyncWrapper(async (req, res, next) => {
 });
 
 exports.retrieveFarmerProducts = asyncWrapper(async (req, res, next) => {
-  console.log(req.user._id)
   const products = await User.find(req.user._id).select('products').populate({
     path: 'products',
     select: '-__v',
@@ -61,10 +60,8 @@ exports.retrieveFarmerProducts = asyncWrapper(async (req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    data: {
-      farmer: req.user.name,
-      products: products,
-    },
+    farmer: req.user.name,
+    products
   });
 });
 

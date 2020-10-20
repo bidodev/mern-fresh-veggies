@@ -7,9 +7,10 @@ const path = require('path');
 const logger = require('morgan');
 const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize')
+const cors = require('cors');
 
 const app = express();
-
+app.use(cors());
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
