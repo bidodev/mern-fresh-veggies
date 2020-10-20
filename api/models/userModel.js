@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: 'default.jpg'
   },
+  description: {
+    type: String,
+    default: ''
+  },
   products: [
     {
       type: mongoose.Schema.ObjectId,
