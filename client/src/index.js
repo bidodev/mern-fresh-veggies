@@ -1,34 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-
-import App from './App';
-import allReducers from 'reducers';
-
-import './scss/index.scss';
 import * as serviceWorker from './serviceWorker';
 
-//import fontawesome
-import "./lib/icons";
+/* React Router Dom */
+import { BrowserRouter as Router } from 'react-router-dom';
 
-const store = createStore(
-  allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  // https://github.com/zalmoxisus/redux-devtools-extension
-);
+/* Redux Imports */
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './redux/store';
+
+//import fontawesome
+import './lib/icons';
+
+/* Import Root APP */
+import App from './App';
+import './scss/index.scss';
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Router>
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();
