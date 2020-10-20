@@ -14,7 +14,7 @@ const Stock = ({ jwt }) => {
   /// style for the modal:
   const customStyles = {
     content: {
-      width: '70%',
+      width: '50rem',
       top: '50%',
       left: '50%',
       right: 'auto',
