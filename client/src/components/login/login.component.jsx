@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import axios from 'axios';
+
+/* Component Imports */
 import FormInput from 'components/forms/input.component';
 import CustomButton from 'components/custom-button/custom-button.component';
 
+/* Styles */
 import './login.component.styles.scss';
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-
   const dispatch = useDispatch();
 
-  //update redux
+  // update redux
   const handleLoginData = async (event) => {
     event.preventDefault();
 
@@ -25,12 +26,12 @@ const Login = () => {
     axios
       .post('/account/login', data)
       .then(({ data }) => {
-        dispatch({ type: 'LOGIN_USER', payload: data })
+        dispatch({ type: 'LOGIN_USER', payload: data });
       })
       .catch((error) => console.log('Error in the login', error.message));
   };
 
-  //update localState
+  // update localState
   const handleInputValue = (event) => {
     const { value, name } = event.target;
 

@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
-/* Spinner */
-import Spinner from 'components/spinner/spinner.component';
-
 import { Route, Link, useParams } from 'react-router-dom';
-
 import axios from 'axios';
-import './shop.styles.scss';
+
+/* Page Imports */
 import ProfilePage from 'pages/farmer/profile.page';
+
+/* Component Imports */
+import Spinner from 'components/spinner/spinner.component';
+import Navbar from 'components/navbar/navbar.component';
+import Feed from 'components/feed/feed.component';
+import Footer from 'components/footer/footer.component';
+
+/* Styles */
+import './shop.styles.scss';
 
 const FarmerOverview = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
@@ -24,22 +30,18 @@ const FarmerOverview = ({ match }) => {
 
   return (
     <div>
-      <header className="header">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, vel!
-      </header>
-      <section className="featured-products">List of featured products</section>
+      <Navbar />
+      <header className="header">FREE SECTION FOR IDEAS</header>
+      <Feed />
 
-      <section className="featured-farmers">
-        {/* We load a previous a grid with some farmers maybe 4
-           * Then we have an option to load more farmers
-          
-          
-          */}
+      {/* === NEED TO CREATE A NEW COMPONENT FOR FARMER-LIST === */}
+      <section className="farmer-list">
+        {/* First we load a grid with 4 farmers, then we have an option to load more */}
         <h2>Featured Farmers</h2>
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="featured-farmers__list">
+          <div className="farmer-list__list">
             {farmers.map((farmer) => (
               <li>
                 <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
@@ -48,16 +50,19 @@ const FarmerOverview = ({ match }) => {
           </div>
         )}
       </section>
+      {/* ======== */}
+
+      <Footer />
     </div>
   );
 };
 
 const Shop = ({ match }) => {
   return (
-    <div className="shop-page">
+    <section className="shop-page">
       <Route exact path={`${match.path}`} component={FarmerOverview} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
-    </div>
+    </section>
   );
 };
 

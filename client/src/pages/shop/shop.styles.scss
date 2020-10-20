@@ -1,23 +1,22 @@
 @import '../../scss/variables';
 
-.header{
-    height: 40vh;
+.header {
+  height: 40vh;
+  text-align: center;
 }
 
-.featured-products {
-    border: 1px solid red;
-    height: 30vh;
-}
+.farmer-list {
+  height: 30vh;
+  margin-bottom: 5vh;
+  background: #888;
 
-.featured-farmers{
-    height: 30vh;
-    h2 {
-        text-align: center;
-    }
-    &__list{
-        border: 1px solid red;
-        display: flex;
-        height: 100%;
-        justify-content: space-around;
-    }
+  h2 {
+    text-align: center;
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
 }
