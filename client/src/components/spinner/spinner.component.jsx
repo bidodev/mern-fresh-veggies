@@ -1,5 +1,9 @@
 import React from 'react';
+
+/* Fontawesome Import */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+/* Component Imports */
 import './spinner.styles.scss';
 
 const Spinner = () => {
