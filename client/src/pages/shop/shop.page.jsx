@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 /* Spinner */
 import Spinner from 'components/spinner/spinner.component';
 
-import { Route, Link, useParams } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 import axios from 'axios';
 import './shop.styles.scss';

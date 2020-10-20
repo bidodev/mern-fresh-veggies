@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-    farmerUser: null
+    farmerUser: null,
+    custommerUser: null
 }
 
 const loginReducer = (state = INITIAL_STATE, action) => {
