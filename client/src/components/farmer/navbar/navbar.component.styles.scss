@@ -1,0 +1,73 @@
+.wrapper .navbar {
+  width: 15vw;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+  border-radius: 5px;
+  margin-left: auto;
+}
+
+.wrapper .navbar ul {
+  list-style: none;
+}
+
+.wrapper .navbar ul li a {
+  color: #f75d37;
+  font-size: 1.6rem;
+}
+
+.wrapper .navbar .left ul,
+.wrapper .navbar .right ul li a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.wrapper .navbar .left ul li,
+.wrapper .navbar .right img {
+  margin: 0 10px;
+}
+
+.wrapper .navbar .right a {
+  text-align: right;
+}
+
+.wrapper .navbar .right a span {
+  font-size: 10px;
+}
+
+.wrapper .navbar .right ul li {
+  position: relative;
+
+  img {
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.wrapper .navbar .right ul li .dropdown {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  display: none;
+}
+
+.wrapper .navbar .right ul li .dropdown:before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.wrapper .navbar .right ul li.active .dropdown {
+  display: block;
+}

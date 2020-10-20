@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+/* Component Imports */
 import CustomButton from 'components/custom-button/custom-button.component';
 import Spinner from 'components/spinner/spinner.component';
 
+/* Styles */
 import './stock.styles.scss';
 
-const Stock = ({jwt}) => {
+const Stock = ({ jwt }) => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
 
   const [products, setProducts] = useState([]);

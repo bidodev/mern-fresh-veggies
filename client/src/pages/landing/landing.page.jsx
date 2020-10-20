@@ -1,13 +1,11 @@
 import React from 'react';
 
-/**
- * components that compose landing page
- */
+/* Component Imports */
 import Hero from 'components/hero/hero.component';
 import Story from 'components/story/story.component';
 import Footer from 'components/footer/footer.component';
 
-/* styles */
+/* Styles */
 import './landing.styles.scss';
 
 const Landing = () => {

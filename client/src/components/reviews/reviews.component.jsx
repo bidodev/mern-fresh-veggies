@@ -1,5 +1,6 @@
 import React from 'react';
 
+/* Styles */
 import './reviews.styles.scss';
 
 const Reviews = () => {

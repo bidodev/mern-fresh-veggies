@@ -1,24 +1,25 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 
 import Reviews from 'components/reviews/reviews.component';
 
 import './profile.styles.scss';
 
 const Profile = ({ farmerData }) => {
-  
-  const { name } = farmerData;
-  const dispatch = useDispatch();
+  /**
+   * farmerData: obj
+   * avaiable props: {name, photo, email, role}
+   */
+  const { name, photo } = farmerData;
 
   return (
     <section className="profile">
       <div className="profile__profile-container">
         <h2 className="profile__profile-container--header">YOUR PROFILE</h2>
-        <button onClick={()=> dispatch({ type: 'LOGOUT_USER'})}>LOGOUT</button>
         <div className="profile__profile-container__information">
           <div className="profile__profile-container__information--avatar">
             <img
-              src="/images/owen.jpg"
+              src={`/images/${photo}`}
               alt="avatar"
               className="avatar-img"
             />
@@ -68,3 +69,4 @@ const Profile = ({ farmerData }) => {
 };
 
 export default Profile;
+

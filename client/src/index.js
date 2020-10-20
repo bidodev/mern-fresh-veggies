@@ -10,10 +10,10 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 
-//import fontawesome
+/* Fontawesome Import */
 import './lib/icons';
 
-/* Import Root APP */
+/* Root APP Imports */
 import App from './App';
 import './scss/index.scss';
 

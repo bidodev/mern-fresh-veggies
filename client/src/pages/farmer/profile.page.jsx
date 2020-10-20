@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-/* Spinner */
+/* Component Imports */
 import Spinner from 'components/spinner/spinner.component';
-import './profile.page.styles.scss'
+
+/* Styles */
+import './profile.page.styles.scss';
 
 function ProfilePage() {
   let { farmerId } = useParams();
@@ -23,36 +24,35 @@ function ProfilePage() {
 
   return (
     <div className="farmer-profile">
-          <h3>Hello {farmer.name}</h3>
-          <section>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
-          </section>
-          <section>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
-          </section>
+      <h3>Hello {farmer.name}</h3>
+      <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
+      </section>
+      <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
+      </section>
 
       {isLoading ? (
         <Spinner />
       ) : (
-                  <div className="farmer-products">
-                      <h2>List of Products</h2>
+        <div className="farmer-products">
+          <h2>List of Products</h2>
           {farmer.products.map((product) => (
-              <div>
-              
+            <div>
               <h3>{product.name}</h3>
               <h3>{product.type}</h3>
               <p>{product.description}</p>
             </div>
           ))}
         </div>
-              )}
-          
-          <section>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
-          </section>
-          <section>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
-          </section>
+      )}
+
+      <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
+      </section>
+      <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
+      </section>
     </div>
 
     // query the specific farm and show his profile
