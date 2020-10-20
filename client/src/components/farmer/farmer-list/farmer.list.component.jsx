@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Link, useParams } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 import axios from 'axios';
 
 /* Component Imports */
