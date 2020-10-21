@@ -26,18 +26,23 @@ const userSchema = new mongoose.Schema({
   },
   photo: {
     type: String,
-    default: 'default.jpg'
+    default: 'default.jpg',
   },
+  farmerPhotos: [
+    {
+      type: String,
+    },
+  ],
   description: {
     type: String,
-    default: ''
+    default: '',
   },
   products: [
     {
       type: mongoose.Schema.ObjectId,
-      ref: 'Product'
-    }
-  ]
+      ref: 'Product',
+    },
+  ],
 });
 
 //this Middleware will run before save the documment
@@ -52,10 +57,10 @@ userSchema.pre('save', async function (next) {
 
 //query Middleware
 //pupolate products when use find
-userSchema.pre(/^find/, function(next) {
+userSchema.pre(/^find/, function (next) {
   this.populate({
     path: 'products',
-    select: '-__v'
+    select: '-__v',
   });
 
   next();
