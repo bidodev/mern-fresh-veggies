@@ -2,12 +2,18 @@ import React, { useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+/* Component Imports */
 import CustomButton from 'components/custom-button/custom-button.component';
 import Spinner from 'components/spinner/spinner.component';
 import AddForm from 'components/forms/add-product.component';
+
+/* Styles */
 import './stock.styles.scss';
 
+
 ReactModal.setAppElement('#root');
+
 const Stock = ({ jwt }) => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
 
