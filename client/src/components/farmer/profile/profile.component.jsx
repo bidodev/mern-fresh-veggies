@@ -1,14 +1,16 @@
 import React from 'react';
 //import { useDispatch } from 'react-redux';
 
+/* Component Imports */
 import Reviews from 'components/reviews/reviews.component';
 
+/* Styles */
 import './profile.styles.scss';
 
 const Profile = ({ farmerData }) => {
   /**
    * farmerData: obj
-   * avaiable props: {name, photo, email, role}
+   * available props: {name, photo, email, role}
    */
   const { name, photo } = farmerData;
 
@@ -18,11 +20,7 @@ const Profile = ({ farmerData }) => {
         <h2 className="profile__profile-container--header">YOUR PROFILE</h2>
         <div className="profile__profile-container__information">
           <div className="profile__profile-container__information--avatar">
-            <img
-              src={`/images/${photo}`}
-              alt="avatar"
-              className="avatar-img"
-            />
+            <img src={`/images/${photo}`} alt="avatar" className="avatar-img" />
           </div>
           <div className="profile__profile-container__information--biography">
             Welcome to your profile {name} <br />
@@ -40,25 +38,13 @@ const Profile = ({ farmerData }) => {
         </div>
         <div className="profile__profile-container__gallery">
           <div className="profile__profile-container__gallery--img">
-            <img
-              src="/images/farm-1.jpg"
-              alt="img"
-              className="gallery-img"
-            />
+            <img src="/images/farm-1.jpg" alt="img" className="gallery-img" />
           </div>
           <div className="profile__profile-container__gallery--img">
-            <img
-              src="/images/donkey.jpg"
-              alt="img"
-              className="gallery-img"
-            />
+            <img src="/images/donkey.jpg" alt="img" className="gallery-img" />
           </div>
           <div className="profile__profile-container__gallery--img">
-            <img
-              src="/images/farm-3.jpg"
-              alt="img"
-              className="gallery-img"
-            />
+            <img src="/images/farm-3.jpg" alt="img" className="gallery-img" />
           </div>
         </div>
       </div>
@@ -69,4 +55,3 @@ const Profile = ({ farmerData }) => {
 };
 
 export default Profile;
-

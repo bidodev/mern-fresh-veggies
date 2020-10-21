@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 /* Component Imports */
@@ -28,9 +28,9 @@ const FarmerList = ({ match }) => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="farmer-list__list">
+        <div className="farmer-list__list-container">
           {farmers.map((farmer) => (
-            <li>
+            <li className="farmer-list__list-container--item">
               <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
             </li>
           ))}

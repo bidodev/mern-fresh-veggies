@@ -3,13 +3,14 @@ import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
-import './navbar.component.styles.scss';
+/* Styles */
+import './navbar.styles.scss';
 
 function Navbar({ data }) {
   const { name, photo } = data;
-
   const dispatch = useDispatch();
   const [active, setActive] = useState(false);
+
   return (
     <div className="wrapper">
       <div className="navbar">
@@ -39,7 +40,7 @@ function Navbar({ data }) {
               onClick={() => setActive(!active)}
             >
               <Link to="#">
-                <img src={`/images/${photo}`} alt={`${name}`}/>
+                <img src={`/images/${photo}`} alt={`${name}`} />
                 <i className="fas fa-angle-down"></i>
               </Link>
 

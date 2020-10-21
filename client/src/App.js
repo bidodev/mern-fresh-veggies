@@ -1,12 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-//import axios from 'axios';
 
 /* Page Imports */
 import Landing from 'pages/landing/landing.page';
 import Authentication from 'pages/authentication/authentication.page';
 import Shop from 'pages/shop/shop.page';
+
+/* Page Imports */
 import FarmerAdmin from 'pages/farmer/farmer.admin.page';
 
 const App = () => {
