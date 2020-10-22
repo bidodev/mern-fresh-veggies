@@ -1,22 +1,54 @@
 @import '../../scss/variables';
 
 .farmer-list {
-  height: 30vh;
+  height: 100%;
   margin-bottom: 5vh;
+  list-style: none;
   background: #888;
 
-  h2 {
+  &--header {
     text-align: center;
   }
 
-  &__list {
+  &__list-container {
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    &__item {
+      width: 22vw;
+      min-width: 17rem;
+      height: 30vh;
+      margin: 2vh;
+      background: #eee;
+      border: 1px solid black;
+
+      &--header {
+        margin: 1vh;
+        text-align: center;
+        text-transform: uppercase;
+        color: black;
+      }
+
+      &__img-container {
+        width: 12vh;
+        height: 12vh;
+        margin: 1vh auto;
+        overflow: hidden;
+
+        &--img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
 .ideas {
   height: 40vh;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightblue;
 }
