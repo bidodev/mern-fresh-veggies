@@ -7,12 +7,11 @@ import Reviews from 'components/reviews/reviews.component';
 /* Styles */
 import './profile.styles.scss';
 
-const Profile = ({ farmerData }) => {
+const Profile = ({ name, photo }) => {
   /**
    * farmerData: obj
    * available props: {name, photo, email, role}
    */
-  const { name, photo } = farmerData;
 
   return (
     <section className="profile">
