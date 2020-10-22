@@ -4,6 +4,9 @@ import axios from 'axios';
 
 /* Component Imports */
 import Spinner from 'components/spinner/spinner.component';
+import Navbar from 'components/navbar/navbar.component';
+import Profile from 'components/profile/profile.component';
+import Footer from 'components/footer/footer.component';
 
 /* Styles */
 import './profile.page.styles.scss';
@@ -23,39 +26,45 @@ function ProfilePage() {
   }, [farmerId]);
 
   return (
-    <div className="farmer-profile">
-      <h3>Hello {farmer.name}</h3>
-      <section>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
-      </section>
-      <section>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
+    <React.Fragment>
+      <Navbar />
+      <Profile />
+
+      <section className="profile-page">
+        <h2 className="profile-page--header">
+          {farmer.name}'s available products
+        </h2>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <div className="profile-page__farmer-products">
+            {farmer.products.map((product) => (
+              <div className="profile-page__farmer-products__card">
+                <h3 className="profile-page__farmer-products__card--name">
+                  {product.name}
+                </h3>
+                <div className="profile-page__farmer-products__card__img-container">
+                  <img
+                    src="/images/tomato.png"
+                    alt="img"
+                    className="profile-page__farmer-products__card__img-container--img"
+                  />
+                </div>
+                <span className="profile-page__farmer-products__card--type">
+                  Type: {product.type}
+                </span>
+                <p className="profile-page__farmer-products__card--description">
+                  Information: {product.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+        {/* query the specific farmer and show the profile */}
       </section>
 
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        <div className="farmer-products">
-          <h2>List of Products</h2>
-          {farmer.products.map((product) => (
-            <div>
-              <h3>{product.name}</h3>
-              <h3>{product.type}</h3>
-              <p>{product.description}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <section>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
-      </section>
-      <section>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, non!
-      </section>
-    </div>
-
-    // query the specific farm and show his profile
+      <Footer />
+    </React.Fragment>
   );
 }
 
