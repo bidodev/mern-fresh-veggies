@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Reviews from 'components/reviews/reviews.component';
+/* Component Imports */
+import CustomButton from 'components/custom-button/custom-button.component';
 
 /* Styles */
 import './profile.styles.scss';
@@ -12,21 +13,22 @@ const Profile = () => {
         <h2 className="profile__profile-container--header"> PROFILE</h2>
         <div className="profile__profile-container__information">
           <div className="profile__profile-container__information--avatar">
-            <img src="" alt="avatar" className="avatar-img" />
+            <img src="/images/users/default.jpg" alt="avatar" className="avatar-img" />
           </div>
           <div className="profile__profile-container__information--biography">
             Farmer name <br />
             🐰🥕🧑‍🌾🚜 <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit omnis aliquid, nam quisquam hic vitae commodi!
-            Assumenda vel reiciendis et, est delectus, sit eos tempora, amet
-            ipsa nulla dicta iusto libero? Aliquid officiis tempora aliquam.{' '}
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-            dicta ex quos eaque dolores, alias odio cupiditate? Accusantium quae
-            harum fuga praesentium distinctio dolore maxime, repellendus qui
-            facilis laborum expedita.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit omnis aliquid, nam quisquam hic vitae
+            commodi! Assumenda vel reiciendis et, est delectus, sit eos tempora, amet ipsa nulla dicta iusto libero?
+            Aliquid officiis tempora aliquam. <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dicta ex quos eaque dolores, alias odio
+            cupiditate? Accusantium quae harum fuga praesentium distinctio dolore maxime, repellendus qui facilis
+            laborum expedita.
           </div>
+        </div>
+        <div className="profile__rate">
+          <div className="profile__rate--stars"> Rate: ⭐⭐⭐⭐⭐ (number of rates)</div>
+          <CustomButton>RATE</CustomButton>
         </div>
         <div className="profile__profile-container__gallery">
           <div className="profile__profile-container__gallery--img">
@@ -40,8 +42,6 @@ const Profile = () => {
           </div>
         </div>
       </div>
-
-      <Reviews />
     </section>
   );
 };

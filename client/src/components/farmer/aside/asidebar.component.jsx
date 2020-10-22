@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from 'react-router-dom';
 
+/* Styles */
 import './asidebar.component.styles.scss';
 
 const AsideBar = () => {

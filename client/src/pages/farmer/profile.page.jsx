@@ -6,6 +6,7 @@ import axios from 'axios';
 import Spinner from 'components/spinner/spinner.component';
 import Navbar from 'components/navbar/navbar.component';
 import Profile from 'components/profile/profile.component';
+import Recipes from 'components/recipes/recipes.component';
 import Footer from 'components/footer/footer.component';
 
 /* Styles */
@@ -29,20 +30,17 @@ function ProfilePage() {
     <React.Fragment>
       <Navbar />
       <Profile />
+      <Recipes />
 
       <section className="profile-page">
-        <h2 className="profile-page--header">
-          {farmer.name}'s available products
-        </h2>
+        <h2 className="profile-page--header">{farmer.name}'s available products</h2>
         {isLoading ? (
           <Spinner />
         ) : (
           <div className="profile-page__farmer-products">
             {farmer.products.map((product) => (
               <div className="profile-page__farmer-products__card">
-                <h3 className="profile-page__farmer-products__card--name">
-                  {product.name}
-                </h3>
+                <h3 className="profile-page__farmer-products__card--name">{product.name}</h3>
                 <div className="profile-page__farmer-products__card__img-container">
                   <img
                     src="/images/tomato.png"
@@ -50,12 +48,8 @@ function ProfilePage() {
                     className="profile-page__farmer-products__card__img-container--img"
                   />
                 </div>
-                <span className="profile-page__farmer-products__card--type">
-                  Type: {product.type}
-                </span>
-                <p className="profile-page__farmer-products__card--description">
-                  Information: {product.description}
-                </p>
+                <span className="profile-page__farmer-products__card--type">Type: {product.type}</span>
+                <p className="profile-page__farmer-products__card--description">Information: {product.description}</p>
               </div>
             ))}
           </div>
