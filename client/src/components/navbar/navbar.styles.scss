@@ -1,8 +1,36 @@
+@import '../../scss/variables';
+
 .navbar {
   height: 8vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: #f1f1f1;
   background: #222;
+  &__logo {
+    margin-left: 5vw;
+  }
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__account {
+    list-style: none;
+    width: 12rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 5vw;
+    .fa-shopping-cart,
+    .fa-user-circle {
+      font-size: 1.3rem;
+      color: $color__tertiary;
+    }
+    &__login {
+      color: $color__tertiary;
+    }
+    @media only screen and (max-width: 500px) {
+      width: 7rem;
+    }
+  }
 }
