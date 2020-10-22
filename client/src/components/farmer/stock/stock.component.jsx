@@ -14,7 +14,7 @@ import './stock.styles.scss';
 
 ReactModal.setAppElement('#root');
 
-const Stock = ({ jwt }) => {
+const Stock = ({jwt}) => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
 
   /// style for the modal:
@@ -48,7 +48,7 @@ const Stock = ({ jwt }) => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [modalIsOpen]);
 
   return (
     <section className="stock">
