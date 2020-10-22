@@ -4,8 +4,9 @@
   "description": "## About:",
   "main": "app.js",
   "scripts": {
-    "start:development": "NODE_ENV=development nodemon ./bin/www",
-    "start:production": "NODE_ENV=production node ./bin/www"
+    "start:api": "NODE_ENV=development nodemon ./bin/www",
+    "start:react": "npm start --prefix ../client",
+    "dev": "concurrently \"npm run start:api\" \"npm run start:react\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/bidodev/mern-veggy-website#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
