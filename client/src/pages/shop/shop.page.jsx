@@ -31,18 +31,32 @@ const FarmerList = ({ match }) => {
   return (
     <div>
       <Navbar />
+      <div className="ideas">
+        <h2>FREE SECTION FOR IDEAS</h2>
+      </div>
       <Feed />
 
       <section className="farmer-list">
-        {/* First we load a grid with 4 farmers, then we have an option to load more */}
-        <h2>FARMER LIST</h2>
+        {/* Load first 4 farmers, an option can display more */}
+        <h2 className="farmer-list--header">FARMER LIST</h2>
         {isLoading ? (
           <Spinner />
         ) : (
           <div className="farmer-list__list-container">
             {farmers.map((farmer) => (
-              <li className="farmer-list__list-container--item">
-                <Link to={`${match.url}/${farmer._id}`}>{farmer.name}</Link>
+              <li className="farmer-list__list-container__item">
+                <Link to={`${match.url}/${farmer._id}`}>
+                  <h3 className="farmer-list__list-container__item--header">
+                    {farmer.name}
+                  </h3>
+                  <div className="farmer-list__list-container__item__img-container">
+                    <img
+                      src="/images/zoe.jpg"
+                      alt="img"
+                      className="farmer-list__list-container__item__img-container--img"
+                    />
+                  </div>
+                </Link>
               </li>
             ))}
           </div>
