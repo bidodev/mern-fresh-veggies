@@ -5,7 +5,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 /* Component Imports */
 import Navbar from 'components/farmer/navbar/navbar.component';
-import Profile from 'components/farmer/profile/profile.component';
+import ProfileAdmin from 'components/farmer/profile/profile.component';
 import Stock from 'components/farmer/stock/stock.component';
 import Aside from 'components/farmer/aside/asidebar.component';
 
@@ -26,10 +26,11 @@ const FarmerAdmin = React.memo(({ match, user }) => {
       <Navbar {...data} />
       <section className="farmer-admin">
         <Aside />
-        <Route exact path={`${match.path}`} render={() => <Profile {...data} />} />
+        <Route exact path={`${match.path}`} render={() => <ProfileAdmin {...data} />} />
         <Route path={`${match.path}/stock`} render={() => <Stock {...data} />} />
       </section>
     </>
+
   );
 });
 
