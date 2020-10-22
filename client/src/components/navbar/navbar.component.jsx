@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 /* Styles */
 import './navbar.styles.scss';
@@ -9,10 +10,19 @@ const Navbar = () => {
   const isLoggedIn = false;
   return (
     <nav className="navbar">
-      <div className="navbar__logo">Logo</div>
+      <Link to="/">
+        <div className="navbar__logo">Veggies</div>
+      </Link>
       <div className="navbar__links">
         {/* <div>About Us</div> */}
-        <div>How it works</div>
+        <HashLink
+          to="#how-we-work"
+          scroll={(el) =>
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        >
+          <div>How it works</div>
+        </HashLink>
       </div>
       <ul className="navbar__account">
         <li>
