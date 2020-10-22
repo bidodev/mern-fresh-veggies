@@ -1,22 +1,15 @@
 .profile {
   width: 100%;
-  height: 92vh;
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 1050px) {
-    flex-direction: column;
-    height: 100%;
+  &__rate {
+    margin: 2vh 0 5vh 5vh;
   }
 
   &__profile-container {
-    width: 63vw;
+    width: 100%;
     background: #eee;
-
-    @media (max-width: 1050px) {
-      height: 100%;
-      width: 100%;
-    }
 
     &--header {
       text-align: center;
