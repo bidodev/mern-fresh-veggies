@@ -8,7 +8,7 @@ import ProfilePage from 'pages/farmer/profile.page';
 
 /* Component Imports */
 import Spinner from 'components/spinner/spinner.component';
-import Navbar from 'components/navbar/navbar.component';
+import Navbar from 'components/navbar/customer-navbar.component';
 import Feed from 'components/feed/feed.component';
 import Footer from 'components/footer/footer.component';
 import ScrollTopArrow from 'components/UI/scroll.component';

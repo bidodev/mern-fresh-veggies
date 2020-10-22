@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 /* Styles */
-import './navbar.styles.scss';
+import './customer-navbar.styles.scss';
 
-const Navbar = () => {
+const NavigationCustomer = () => {
   const [isDisplayed, setIsDisplayed] = useState(false);
   const isLoggedIn = false;
   return (
-    <nav className="navbar">
+    <nav className="customer-navbar">
       <Link to="/">
-        <div className="navbar__logo">Veggies</div>
+        <div className="customer-navbar__logo">Veggies</div>
       </Link>
-      <div className="navbar__links">
+      <div className="customer-navbar__links">
         {/* <div>About Us</div> */}
         <HashLink
           to="#how-we-work"
@@ -25,7 +25,7 @@ const Navbar = () => {
           <div>How it works</div>
         </HashLink>
       </div>
-      <ul className="navbar__account">
+      <ul className="customer-navbar__account">
         <li>
           <Link to="#">
             <FontAwesomeIcon
@@ -47,7 +47,7 @@ const Navbar = () => {
         ) : (
           <li>
             <Link to="#">
-              <div className="navbar__account__login"> SIGNUP</div>
+              <div className="customer-navbar__account__login"> SIGNUP</div>
             </Link>
           </li>
         )}
@@ -56,4 +56,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavigationCustomer;
