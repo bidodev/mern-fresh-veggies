@@ -1,5 +1,21 @@
 @import '../../scss/variables';
 
+.farmer-list {
+  height: 30vh;
+  margin-bottom: 5vh;
+  background: #888;
+
+  h2 {
+    text-align: center;
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
 .ideas {
   height: 40vh;
   text-align: center;
