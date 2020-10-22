@@ -20,7 +20,7 @@ const Profile = ({ farmerData }) => {
         <h2 className="profile__profile-container--header">YOUR PROFILE</h2>
         <div className="profile__profile-container__information">
           <div className="profile__profile-container__information--avatar">
-            <img src={`/images/${photo}`} alt="avatar" className="avatar-img" />
+            <img src={`/images/users/${photo}`} alt="avatar" className="avatar-img" />
           </div>
           <div className="profile__profile-container__information--biography">
             Welcome to your profile {name} <br />

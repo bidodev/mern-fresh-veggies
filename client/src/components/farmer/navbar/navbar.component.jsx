@@ -40,7 +40,7 @@ function Navbar({ data }) {
               onClick={() => setActive(!active)}
             >
               <Link to="#">
-                <img src={`/images/${photo}`} alt={`${name}`} />
+                <img src={`/images/users/${photo}`} alt={`${name}`} />
                 <i className="fas fa-angle-down"></i>
               </Link>
 
