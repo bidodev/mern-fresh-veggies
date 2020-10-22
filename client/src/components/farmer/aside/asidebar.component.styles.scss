@@ -1,0 +1,39 @@
+/*
+  Aside bar rules
+*/
+
+/*
+ - Aside main container
+ - We don't need flex on the main container, because it's already a column by default.
+*/
+.main-page__sidebar {
+    //border: 1px solid red;
+    width: 4rem;
+    min-height: 92vh;
+    background-color:  #e7e5e5;
+    color: #f75d37;
+  
+    /*
+   - Here we define all the properties for the Items.
+   - You can find more properties for this itens on the fontawesome.scss
+  */
+    &-item {
+      //border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 1.5rem 0;
+      transition: all 0.3s;
+      
+  
+      &:hover {
+        background-color: #fbfbfb;
+      }
+    }
+  }
+  
+  .white {
+    background-color: #fff;
+  }

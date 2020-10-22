@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 /* Styles */
 import './navbar.styles.scss';
 
-function Navbar({ data }) {
-  const { name, photo } = data;
+function Navbar({ name, photo }) {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [active, setActive] = useState(false);
+
+  const logoutUser = () => {
+    //1. Remove the user data
+    dispatch({ type: 'LOGOUT_USER' });
+
+    //2. Set the user to the landingPage
+    history.push('/');
+  };
 
   return (
     <div className="wrapper">
       <div className="navbar">
         <div className="left">
           <ul>
-            <li>
-              <Link to="#">
-                <FontAwesomeIcon icon={['fas', 'home']} className="icon" />
-              </Link>
-            </li>
             <li>
               <Link to="#">
                 <FontAwesomeIcon icon={['fas', 'envelope']} className="icon" />
@@ -35,12 +38,9 @@ function Navbar({ data }) {
         </div>
         <div className="right">
           <ul>
-            <li
-              className={active ? 'active' : ''}
-              onClick={() => setActive(!active)}
-            >
+            <li className={active ? 'active' : ''} onClick={() => setActive(!active)}>
               <Link to="#">
-                <img src={`/images/${photo}`} alt={`${name}`} />
+                <img src={`/images/users/${photo}`} alt={`${name}`} />
                 <i className="fas fa-angle-down"></i>
               </Link>
 
@@ -48,31 +48,20 @@ function Navbar({ data }) {
                 <ul>
                   <li>
                     <Link to="#">
-                      <FontAwesomeIcon
-                        icon={['fas', 'user']}
-                        className="icon"
-                      />
+                      <FontAwesomeIcon icon={['fas', 'user']} className="icon" />
                       Profile
                     </Link>
                   </li>
                   <li>
                     <Link to="#">
-                      <FontAwesomeIcon
-                        icon={['fas', 'sliders-h']}
-                        className="icon"
-                      />
+                      <FontAwesomeIcon icon={['fas', 'sliders-h']} className="icon" />
                       Settings
                     </Link>
                   </li>
                   <li>
                     <Link to="#">
-                      <FontAwesomeIcon
-                        icon={['fas', 'sign-out-alt']}
-                        className="icon"
-                      />
-                      <button onClick={() => dispatch({ type: 'LOGOUT_USER' })}>
-                        Logout
-                      </button>
+                      <FontAwesomeIcon icon={['fas', 'sign-out-alt']} className="icon" />
+                      <button onClick={logoutUser}>Logout</button>
                     </Link>
                   </li>
                 </ul>
