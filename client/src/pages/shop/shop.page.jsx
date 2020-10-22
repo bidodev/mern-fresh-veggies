@@ -11,6 +11,7 @@ import Spinner from 'components/spinner/spinner.component';
 import Navbar from 'components/navbar/navbar.component';
 import Feed from 'components/feed/feed.component';
 import Footer from 'components/footer/footer.component';
+import ScrollTopArrow from 'components/UI/scroll.component';
 
 /* Styles */
 import './shop.styles.scss';
@@ -31,9 +32,6 @@ const FarmerList = ({ match }) => {
   return (
     <div>
       <Navbar />
-      <div className="ideas">
-        <h2>FREE SECTION FOR IDEAS</h2>
-      </div>
       <Feed />
 
       <section className="farmer-list">
@@ -62,6 +60,10 @@ const FarmerList = ({ match }) => {
           </div>
         )}
       </section>
+      <ScrollTopArrow />
+      <div className="ideas" id="how-we-work">
+        <h2>Here is how it works</h2>
+      </div>
 
       <Footer />
     </div>
