@@ -1,9 +1,13 @@
 import React from 'react';
 
+/* React Router Dom */
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
+
 /* Component Imports */
 import Navbar from 'components/farmer/navbar/navbar.component';
 import ProfileAdmin from 'components/farmer/profile/profile.component';
 import Stock from 'components/farmer/stock/stock.component';
+import Aside from 'components/farmer/aside/asidebar.component';
 
 /* Styles */
 import './farmer.admin.page.styles.scss';
@@ -14,13 +18,19 @@ import './farmer.admin.page.styles.scss';
  * Using React.memo
  * We don't need to reload the parent every time the children update
  */
-const FarmerAdmin = React.memo(({ user }) => {
+const FarmerAdmin = React.memo(({ match, user }) => {
+  const { data, jwt, status } = user;
+
   return (
-    <section className="farmer-admin">
-      <Navbar {...user} />
-      <ProfileAdmin farmerData={user.data} />
-      <Stock jwt={user.jwt} />
-    </section>
+    <>
+      <Navbar {...data} />
+      <section className="farmer-admin">
+        <Aside />
+        <Route exact path={`${match.path}`} render={() => <ProfileAdmin {...data} />} />
+        <Route path={`${match.path}/stock`} render={() => <Stock {...data} />} />
+      </section>
+    </>
+
   );
 });
 

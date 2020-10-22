@@ -7,12 +7,12 @@ import ReviewsAdmin from 'components/farmer/reviews/reviews.component';
 /* Styles */
 import './profile.styles.scss';
 
-const ProfileAdmin = ({ farmerData }) => {
+const ProfileAdmin = ({ name, photo }) => {
+
   /**
    * farmerData: obj
    * available props: {name, photo, email, role}
    */
-  const { name, photo } = farmerData;
 
   return (
     <section className="profile-admin">

@@ -13,18 +13,21 @@ import FarmerAdmin from 'pages/farmer/farmer.admin.page';
 const App = () => {
   /* Pull out the userFarmer from the LocalStorage */
   const farmerUser = useSelector(({ login }) => login.farmerUser);
+  console.log(farmerUser);
 
   return (
-    <div className="App">
+    <div>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/shop" component={Shop} />
         <Route
-          exact
           path="/farmer/admin"
-          render={() =>
-            /* <FarmerAdmin/> is displayed once farmer is logged */
-            farmerUser ? <FarmerAdmin user={farmerUser} /> : <Authentication />
+          render={({ match }) =>
+            /* 
+            <FarmerAdmin/> is displayed only when the farmer is logged
+            While using the render Method, you can pass other props besides math, suck as location
+            */
+            farmerUser ? <FarmerAdmin user={farmerUser} match={match} /> : <Authentication />
           }
         />
       </Switch>
