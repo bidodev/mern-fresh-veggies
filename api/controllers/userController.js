@@ -18,11 +18,13 @@ const multerStorage = multer.diskStorage({
 });
 
 const multerFilter = (req, file, callback) => {
+  console.log(file)
   if (file.mimetype.startsWith('image')) {
     callback(null, true);
   } else {
+    
     callback(
-      new AppError('Invalid format. Please upload only images', 400, 'fail'),
+      new AppError('Invalid format. Please upload only images', 403, 'fail'),
       false
     );
   }
@@ -35,6 +37,7 @@ const upload = multer({
 exports.uploadUserPhoto = upload.single('photo');
 
 exports.updateProfile = asyncWrapper(async (req, res, next) => {
+
   //1. Update user photo
   const user = await User.findByIdAndUpdate(
     req.user.id,
