@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
@@ -7,6 +7,7 @@ import { HashLink } from 'react-router-hash-link';
 import './navbar.styles.scss';
 
 const Navbar = () => {
+  const [isDisplayed, setIsDisplayed] = useState(false);
   const isLoggedIn = false;
   return (
     <nav className="navbar">
@@ -30,6 +31,7 @@ const Navbar = () => {
             <FontAwesomeIcon
               icon={['fas', 'shopping-cart']}
               className="fa-shopping-cart"
+              onClick={() => setIsDisplayed(!isDisplayed)}
             />
           </Link>
         </li>

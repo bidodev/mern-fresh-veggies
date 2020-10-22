@@ -12,6 +12,7 @@ import Navbar from 'components/navbar/navbar.component';
 import Feed from 'components/feed/feed.component';
 import Footer from 'components/footer/footer.component';
 import ScrollTopArrow from 'components/UI/scroll.component';
+import SideDrawer from 'components/side-drawer/side-drawer.component';
 
 /* Styles */
 import './shop.styles.scss';
@@ -32,6 +33,7 @@ const FarmerList = ({ match }) => {
   return (
     <div>
       <Navbar />
+      <SideDrawer />
       <Feed />
 
       <section className="farmer-list">
