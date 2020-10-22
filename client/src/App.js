@@ -13,7 +13,6 @@ import FarmerAdmin from 'pages/farmer/farmer.admin.page';
 const App = () => {
   /* Pull out the userFarmer from the LocalStorage */
   const farmerUser = useSelector(({ login }) => login.farmerUser);
-  console.log(farmerUser);
 
   return (
     <div>
