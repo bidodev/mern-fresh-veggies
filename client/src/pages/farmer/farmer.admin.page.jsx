@@ -19,7 +19,7 @@ import './farmer.admin.page.styles.scss';
  * We don't need to reload the parent every time the children update
  */
 const FarmerAdmin = React.memo(({ match, user }) => {
-  const { data, jwt, status } = user;
+  const { data, jwt } = user;
 
   return (
     <>
@@ -27,7 +27,7 @@ const FarmerAdmin = React.memo(({ match, user }) => {
       <section className="farmer-admin">
         <Aside />
         <Route exact path={`${match.path}`} render={() => <ProfileAdmin {...data} />} />
-        <Route path={`${match.path}/stock`} render={() => <Stock {...data} />} />
+        <Route path={`${match.path}/stock`} render={() => <Stock jwt={jwt} />} />
       </section>
     </>
 
