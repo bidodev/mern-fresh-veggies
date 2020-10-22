@@ -10,7 +10,7 @@ const Profile = () => {
   return (
     <section className="profile">
       <div className="profile__profile-container">
-        <h2 className="profile__profile-container--header"> PROFILE</h2>
+        <h2 className="profile__profile-container--header">PROFILE</h2>
         <div className="profile__profile-container__information">
           <div className="profile__profile-container__information--avatar">
             <img src="/images/users/default.jpg" alt="avatar" className="avatar-img" />
