@@ -1,35 +1,21 @@
 import React from 'react';
-//import { useDispatch } from 'react-redux';
 
-/* Component Imports */
-import Reviews from 'components/farmer/reviews/reviews.component';
+import Reviews from 'components/reviews/reviews.component';
 
 /* Styles */
 import './profile.styles.scss';
 
-const ProfileAdmin = ({ farmerData }) => {
-  /**
-   * farmerData: obj
-   * available props: {name, photo, email, role}
-   */
-  const { name, photo } = farmerData;
-
+const Profile = () => {
   return (
-    <section className="profile-admin">
-      <div className="profile-admin__profile-container">
-        <h2 className="profile-admin__profile-container--header">
-          YOUR PROFILE
-        </h2>
-        <div className="profile-admin__profile-container__information">
-          <div className="profile-admin__profile-container__information--avatar">
-            <img
-              src={`/images/users/${photo}`}
-              alt="avatar"
-              className="avatar-img"
-            />
+    <section className="profile">
+      <div className="profile__profile-container">
+        <h2 className="profile__profile-container--header"> PROFILE</h2>
+        <div className="profile__profile-container__information">
+          <div className="profile__profile-container__information--avatar">
+            <img src="" alt="avatar" className="avatar-img" />
           </div>
-          <div className="profile-admin__profile-container__information--biography">
-            Welcome to your profile {name} <br />
+          <div className="profile__profile-container__information--biography">
+            Farmer name <br />
             🐰🥕🧑‍🌾🚜 <br />
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Reprehenderit omnis aliquid, nam quisquam hic vitae commodi!
@@ -42,14 +28,14 @@ const ProfileAdmin = ({ farmerData }) => {
             facilis laborum expedita.
           </div>
         </div>
-        <div className="profile-admin__profile-container__gallery">
+        <div className="profile__profile-container__gallery">
           <div className="profile__profile-container__gallery--img">
             <img src="/images/farm-1.jpg" alt="img" className="gallery-img" />
           </div>
-          <div className="profile-admin__profile-container__gallery--img">
+          <div className="profile__profile-container__gallery--img">
             <img src="/images/donkey.jpg" alt="img" className="gallery-img" />
           </div>
-          <div className="profile-admin__profile-container__gallery--img">
+          <div className="profile__profile-container__gallery--img">
             <img src="/images/farm-3.jpg" alt="img" className="gallery-img" />
           </div>
         </div>
@@ -60,4 +46,4 @@ const ProfileAdmin = ({ farmerData }) => {
   );
 };
 
-export default ProfileAdmin;
+export default Profile;
