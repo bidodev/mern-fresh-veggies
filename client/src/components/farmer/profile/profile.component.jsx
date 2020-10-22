@@ -2,7 +2,7 @@ import React from 'react';
 //import { useDispatch } from 'react-redux';
 
 /* Component Imports */
-import Reviews from 'components/farmer/reviews/reviews.component';
+import ReviewsAdmin from 'components/farmer/reviews/reviews.component';
 
 /* Styles */
 import './profile.styles.scss';
@@ -55,7 +55,7 @@ const ProfileAdmin = ({ farmerData }) => {
         </div>
       </div>
 
-      <Reviews />
+      <ReviewsAdmin />
     </section>
   );
 };
