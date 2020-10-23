@@ -40,9 +40,15 @@ function Product({ _id, name, cover, type, description }) {
       </div>
       <Modal modalStatus={modalStatus} closeModal={closeModal} styles={customStyles}>
         {/*Loading the content inside of the modal, passing the data  */}
+        <button onClick={closeModal}>Close</button>
         <h3>Id: {_id}</h3>
         <h3>Product: {name}</h3>
-        <button onClick={closeModal}>Close</button>
+        <p>{description}</p>
+        <img
+          src={`/images/products/${cover}`}
+          alt="img"
+          className="profile-page__farmer-products__card__img-container--img"
+        />
       </Modal>
     </>
   );

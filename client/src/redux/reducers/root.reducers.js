@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 
 /* Reducer Imports */
 import loginReducer from './login.reducer';
+import statusReducer from './status.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -14,6 +15,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   login: loginReducer,
+  status: statusReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

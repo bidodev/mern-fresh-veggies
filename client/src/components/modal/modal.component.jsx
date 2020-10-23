@@ -10,6 +10,6 @@ const ShowModal = ({ modalStatus, closeModal, children, styles }) => {
       {children}
     </Modal>
   );
-};
+}
 
 export default ShowModal;
