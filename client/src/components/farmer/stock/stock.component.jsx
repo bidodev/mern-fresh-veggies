@@ -73,7 +73,7 @@ const Stock = () => {
          {/* Load a Modal with the children inside <Modal> </Modal> */}
         <Modal modalStatus={modalStatus} closeModal={closeModal} styles={customStyles}>
           <AddForm />
-          <FontAwesomeIcon icon="times" className="fa-times" onClick={() => closeModal(false)} />
+          <FontAwesomeIcon icon="times" className="fa-times" onClick={closeModal} />
         </Modal>
       </div>
     </section>
