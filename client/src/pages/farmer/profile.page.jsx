@@ -4,7 +4,7 @@ import axios from 'axios';
 
 /* Component Imports */
 import Spinner from 'components/spinner/spinner.component';
-import Navbar from 'components/navbar/navbar.component';
+import Navbar from 'components/navbar/customer-navbar.component'
 import Profile from 'components/profile/profile.component';
 import Recipes from 'components/recipes/recipes.component';
 import Footer from 'components/footer/footer.component';
