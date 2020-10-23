@@ -23,6 +23,11 @@
       background: white;
       border: 1px solid black;
 
+      &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
       &__img-container {
         width: 10vw;
         min-width: 8rem;
