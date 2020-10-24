@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
 import Modal from 'components/modal/modal.component';
+import axios from 'axios';
 
-function Product({ _id, name, cover, type, description }) {
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+
+function Product({ _id, name, photo, type, description }) {
+
+  /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
 
-  const openModal = () => {
-    setIsOpen(true);
+  const toogleModal = () => {
+    setIsOpen(!modalStatus);
   };
 
-  const closeModal = () => {
-    setIsOpen(false);
-    console.log('Hello');
+  const removeProduct = async (id) => {
+    const url = `/farmers/products/${id}`;
+
+    axios
+      .delete(url)
+      .then(() => {
+        toogleModal()
+      })
+      .catch((error) => console.log('Error deleting product', error.response.data));
   };
 
   const customStyles = {
@@ -26,11 +37,11 @@ function Product({ _id, name, cover, type, description }) {
 
   return (
     <>
-      <div className="profile-page__farmer-products__card" onClick={openModal}>
+      <div className="profile-page__farmer-products__card" onClick={toogleModal}>
         <h3 className="profile-page__farmer-products__card--name">{name}</h3>
         <div className="profile-page__farmer-products__card__img-container">
           <img
-            src={`/images/products/${cover}`}
+            src={`/images/users/${photo}`}
             alt="img"
             className="profile-page__farmer-products__card__img-container--img"
           />
@@ -38,14 +49,17 @@ function Product({ _id, name, cover, type, description }) {
         <span className="profile-page__farmer-products__card--type">Type: {type}</span>
         <p className="profile-page__farmer-products__card--description">Information: {description}</p>
       </div>
-      <Modal modalStatus={modalStatus} closeModal={closeModal} styles={customStyles}>
-        {/*Loading the content inside of the modal, passing the data  */}
-        <button onClick={closeModal}>Close</button>
+
+      {/*Loading the content inside of the modal, passing the data  */}
+      <Modal modalStatus={modalStatus} closeModal={toogleModal} styles={customStyles}>
+        <Icon icon="times" className="fa-times" onClick={toogleModal} />
         <h3>Id: {_id}</h3>
         <h3>Product: {name}</h3>
         <p>{description}</p>
+        <p>Delete Item: </p>
+        <Icon icon="trash" onClick={() => removeProduct(_id)} />
         <img
-          src={`/images/products/${cover}`}
+          src={`/images/users/${photo}`}
           alt="img"
           className="profile-page__farmer-products__card__img-container--img"
         />

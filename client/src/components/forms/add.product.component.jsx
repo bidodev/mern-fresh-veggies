@@ -5,82 +5,49 @@ import FormInput from 'components/forms/input.component';
 import './add.product.component.style.scss';
 
 const AddForm = () => {
-  const [name, setProductName] = useState('');
-  const [type, setProductType] = useState('');
-  const [description, setProductDescription] = useState('');
   const [file, setSelectedFile] = useState(null);
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [type, setType] = useState('');
 
-  const handleAddProduct = async (event) => {
+  const handleFileInput = (event) => {
+    setSelectedFile(event.target.files[0])
+  }
+
+  const submitForm = (event) => {
     event.preventDefault();
 
-    const photo = new FormData();
-    photo.append('photo', file);
+    const data = new FormData();
+    data.append('photo', file);
+    data.append('name', name);
+    data.append('description', description);
+    data.append('type', type);
 
-    const data = {
-      name,
-      type,
-      description,
-      photo
-    };
-
-    console.log(data)
     axios
-      .post('/farmers/products', data)
-      .then(({ data }) => {
-        console.log(data);
+      .post(
+        '/farmers/products',
+        data
+      )
+      .then((res) => {
+        console.log(res.response)
       })
-      .catch((error) => console.log('Error creating user', error.message));
-
-    //Reset-ing the form after submit
-    Array.from(document.querySelectorAll('input')).forEach(
-      (input) => (input.value = '')
-    );
+      .catch((err) => console.log(err.response.data.message));
   };
 
-  //update localState
-  const handleInputValue = (event) => {
-    const { value, name } = event.target;
-
-    switch (name) {
-      case 'name':
-        return setProductName(value);
-      case 'type':
-        return setProductType(value);
-      case 'description':
-        return setProductDescription(value);
-      case 'file':
-        return setSelectedFile(event.target.files[0])
-      default:
-    }
-  };
   return (
-    <form className="add-product-form" onSubmit={handleAddProduct}>
-      <FormInput
-        name="name"
-        type="name"
-        value={name}
-        required
-        label="name"
-        handleInputValue={handleInputValue}
-      />
-      <FormInput
-        name="type"
-        type="type"
-        value={type}
-        required
-        label="type"
-        handleInputValue={handleInputValue}
-      />
+    <form className="add-product-form" onSubmit={submitForm}>
+      <h3>Upload a Photo</h3>
+      <FormInput name="name" value={name} required label="name" onChange={(event) => setName(event.target.value)} />
+      <FormInput name="type" value={type} required label="type" onChange={(event) => setType(event.target.value)} />
       <FormInput
         name="description"
-        type="description"
         value={description}
         required
         label="description"
-        handleInputValue={handleInputValue}
+        onChange={(event) => setDescription(event.target.value)} 
       />
-      <h3>Upload a Photo</h3>
-      <input name="file" type="file" onChange={handleInputValue} />
+
+      <input name="file" type="file" onChange={handleFileInput} />
       <div className="buttons">
         <CustomButton type="submit" style={{ width: '15rem' }}>
           Add Product

@@ -30,18 +30,17 @@ const Stock = () => {
 
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
-  const openModal = () => {
-    setIsOpen(true);
+
+  const toogleModal = () => {
+    setIsOpen(!modalStatus);
   };
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
 
   const getProducts = async () => {
     try {
       const { data } = await axios.get(`/farmers/products`);
       const [products] = data.products;
+      console.log(products)
       setProducts(products.products);
       setFetchError(false);
     } catch (err) {
@@ -57,22 +56,22 @@ const Stock = () => {
     <section className="stock">
       <div className="stock__overview">
         <h2 className="stock__overview--header">STOCK OVERVIEW</h2>
-        <CustomButton type="button" onClick={openModal}>
+                <CustomButton type="button" onClick={toogleModal}>
           Add
         </CustomButton>
         {isLoading ? (
           <Spinner />
         ) : (
           <div className="stock__products">
-            {products.map((product) => (
+            {products.length > 0 ? products.map((product) => (
               <Product key={product._id}{...product} />
-            ))}
+            )) : <h2>You don't have any products</h2>}
           </div>
         )}
          {/* Load a Modal with the children inside <Modal> </Modal> */}
-        <Modal modalStatus={modalStatus} closeModal={closeModal} styles={customStyles}>
+        <Modal modalStatus={modalStatus} closeModal={toogleModal} styles={customStyles}>
           <AddForm />
-          <FontAwesomeIcon icon="times" className="fa-times" onClick={closeModal} />
+          <FontAwesomeIcon icon="times" className="fa-times" onClick={toogleModal} />
         </Modal>
       </div>
     </section>
