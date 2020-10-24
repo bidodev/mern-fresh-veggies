@@ -30,7 +30,6 @@ const FarmerAdmin = React.memo(({ match, user }) => {
         <Route path={`${match.path}/stock`} render={() => <Stock jwt={jwt} />} />
       </section>
     </>
-
   );
 });
 
