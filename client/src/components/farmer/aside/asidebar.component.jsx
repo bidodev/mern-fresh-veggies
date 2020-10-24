@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 /* Styles */
@@ -8,7 +8,6 @@ import './asidebar.component.styles.scss';
 import ListItem from './items/listitem.component';
 
 const AsideBar = ({ _id }) => {
-  const history = useHistory();
 
   const sideBarItens = [
     { name: 'home', icon: ['fas', 'home'] },
