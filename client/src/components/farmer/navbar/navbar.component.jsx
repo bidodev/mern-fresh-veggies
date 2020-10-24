@@ -20,7 +20,7 @@ function Navbar({ name, photo }) {
   };
 
   return (
-    <div className="wrapper">
+    <section className="wrapper">
       <div className="navbar">
         <div className="left">
           <ul>
@@ -49,19 +49,21 @@ function Navbar({ name, photo }) {
                   <li>
                     <Link to="#">
                       <FontAwesomeIcon icon={['fas', 'user']} className="icon" />
-                      Profile
+                      <span className="dropdown__link">Profile</span>
                     </Link>
                   </li>
                   <li>
                     <Link to="#">
-                      <FontAwesomeIcon icon={['fas', 'sliders-h']} className="icon" />
-                      Settings
+                      <FontAwesomeIcon icon={['fas', 'sliders-h']} className="icon " />
+                      <span className="dropdown__link">Settings</span>
                     </Link>
                   </li>
                   <li>
                     <Link to="#">
                       <FontAwesomeIcon icon={['fas', 'sign-out-alt']} className="icon" />
-                      <button onClick={logoutUser}>Logout</button>
+                      <button className="logout-btn" onClick={logoutUser}>
+                        Logout
+                      </button>
                     </Link>
                   </li>
                 </ul>
@@ -70,7 +72,7 @@ function Navbar({ name, photo }) {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+/* Component Imports */
 import Modal from 'components/modal/modal.component';
 import axios from 'axios';
 
@@ -26,7 +28,7 @@ function Product({ _id, name, photo, type, description }) {
 
   const customStyles = {
     content: {
-      width: '50rem',
+      width: '70vw',
       top: '50%',
       left: '50%',
       right: 'auto',
@@ -43,11 +45,11 @@ function Product({ _id, name, photo, type, description }) {
           <img
             src={`/images/users/${photo}`}
             alt="img"
-            className="profile-page__farmer-products__card__img-container--img"
+            className="product-item__farmer-products__card__img-container--img"
           />
         </div>
-        <span className="profile-page__farmer-products__card--type">Type: {type}</span>
-        <p className="profile-page__farmer-products__card--description">Information: {description}</p>
+        <span className="product-item__farmer-products__card--type">Type: {type}</span>
+        <p className="product-item__farmer-products__card--description">Information: {description}</p>
       </div>
 
       {/*Loading the content inside of the modal, passing the data  */}
@@ -63,6 +65,9 @@ function Product({ _id, name, photo, type, description }) {
           alt="img"
           className="profile-page__farmer-products__card__img-container--img"
         />
+        <h5>Id: {_id}</h5>
+        <h3>Product: {name}</h3>
+        <p>Description: {description}</p>
       </Modal>
     </>
   );

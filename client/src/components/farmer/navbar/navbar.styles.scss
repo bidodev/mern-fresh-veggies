@@ -1,76 +1,80 @@
 .wrapper {
-  height: 6vh;    background-color:  #e7e5e5;
-}
+  // I don't understand why, but width of navbar fucked up around 500px (don't take the whole screen)
+  height: 6vh;
+  width: 100%;
+  background-color: #222;
 
-.wrapper .navbar {
-  background-color: inherit;
-  height: 100%;
-  width: 10vw;
-  display: flex;
-  justify-content: space-around;
-  margin-left: auto;
-}
+  .navbar {
+    height: 100%;
+    width: 15rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: auto;
 
-.wrapper .navbar ul {
-  list-style: none;
-}
+    ul {
+      list-style: none;
 
-.wrapper .navbar ul li a {
-  color: #f75d37;
-  font-size: 1.6rem;
-}
+      li a {
+        color: #f75d37;
+        font-size: 1.6rem;
+      }
+    }
 
-.wrapper .navbar .left ul,
-.wrapper .navbar .right ul li a {
-  display: flex;
-  align-items: center;
-  height: 40px;
-}
+    .left ul,
+    .right ul li a {
+      display: flex;
+      align-items: center;
+      height: 3rem;
+    }
 
-.wrapper .navbar .left ul li,
-.wrapper .navbar .right img {
-  margin: 0 10px;
-}
+    .left ul li,
+    .right img {
+      margin: 0 1vh;
+    }
 
-.wrapper .navbar .right a {
-  text-align: right;
-}
+    .right ul li {
+      position: relative;
 
-.wrapper .navbar .right a span {
-  font-size: 10px;
-}
+      img {
+        height: 3.5vh;
+        width: 3.5vh;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
 
-.wrapper .navbar .right ul li {
-  position: relative;
+    .right ul li .dropdown {
+      position: absolute;
+      top: 4rem;
+      right: 0;
+      background: rgba(255, 255, 255, 0.842);
+      padding: 1vh 2vh;
+      border-radius: 5px;
+      display: none;
+    }
 
-  img {
-    height: 36px;
-    width: 36px;
-    object-fit: cover;
-    border-radius: 50%;
+    .right ul li .dropdown:before {
+      content: '';
+      position: absolute;
+      top: -1.4rem;
+      left: 80%;
+      transform: translateX(-50%);
+      border: 0.8rem solid;
+      border-color: transparent transparent #fff transparent;
+    }
+
+    .right ul li.active .dropdown {
+      display: block;
+    }
   }
 }
 
-.wrapper .navbar .right ul li .dropdown {
-  position: absolute;
-  top: 65px;
-  right: 0;
-  background: #fff;
-  padding: 10px 25px;
-  border-radius: 5px;
-  display: none;
+.dropdown__link {
+  padding-left: 1vh;
 }
 
-.wrapper .navbar .right ul li .dropdown:before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 10px solid;
-  border-color: transparent transparent #fff transparent;
-}
-
-.wrapper .navbar .right ul li.active .dropdown {
-  display: block;
+.logout-btn {
+  padding: 0.5vh 1.5vh;
+  margin-left: 1vh;
 }

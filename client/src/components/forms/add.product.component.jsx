@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
+/* Component Imports */
 import CustomButton from 'components/custom-button/custom-button.component';
 import FormInput from 'components/forms/input.component';
+
+/* Styles */
 import './add.product.component.style.scss';
 
 const AddForm = () => {
@@ -49,8 +53,8 @@ const AddForm = () => {
 
       <input name="file" type="file" onChange={handleFileInput} />
       <div className="buttons">
-        <CustomButton type="submit" style={{ width: '15rem' }}>
-          Add Product
+        <CustomButton type="submit" style={{ width: '10rem' }}>
+          Add
         </CustomButton>
       </div>
     </form>
