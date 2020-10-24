@@ -28,8 +28,7 @@ const ProfileAdmin = ({ photo, name, jwt }) => {
 
     const data = new FormData();
     data.append('photo', selectedFile);
-
-    console.log(data.get('photo'));
+    
     axios
       .patch('/users/profile', data)
       .then((res) => {
