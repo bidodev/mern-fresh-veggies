@@ -6,34 +6,46 @@
  - Aside main container
  - We don't need flex on the main container, because it's already a column by default.
 */
-.main-page__sidebar {
-    //border: 1px solid red;
-    width: 4rem;
+.admin-panel__sidebar {
+    width: 5vw;
     min-height: 92vh;
+    max-height: auto;
     background-color:  #e7e5e5;
-    color: #f75d37;
-  
+    display: flex;
+    flex-direction: column;
+
+    // div:last-of-type {
+    //   background: #ff0000;
+    // }
+    
     /*
    - Here we define all the properties for the Items.
    - You can find more properties for this itens on the fontawesome.scss
   */
     &-item {
-      //border: 1px solid red;
       display: flex;
       flex-direction: column;
       align-items: center;
       cursor: pointer;
-      font-size: 1.1rem;
-      padding: 1.5rem 0;
-      transition: all 0.3s;
+      padding: 1.2rem 0;
+      transition: all 0.5s;
+      color: #333;
+      border-bottom: 1px solid #fcfcfc;
+
+
       
-  
+      &__icon {
+        color: #f75d37;
+        font-size: 1.6rem;
+      }
+      
       &:hover {
         background-color: #fbfbfb;
       }
+
+      p {
+        margin-top: 1rem;
+        text-transform: capitalize;
+      }
     }
-  }
-  
-  .white {
-    background-color: #fff;
   }
