@@ -1,17 +1,17 @@
 .custom-button {
-  font-family: inherit;
+  width: 10rem;
   min-width: 9rem;
+  height: 3.1rem;
+  margin: 1vh;
+  padding: 0 2rem 0 2rem;
   border-radius: 0.3rem;
-  width: 1rem;
-  height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
   font-size: 15px;
-  background-color: #f75d37;
-  color: white;
   text-transform: uppercase;
   font-weight: 100;
+  background-color: #f75d37;
+  color: white;
   border: none;
   cursor: pointer;
 

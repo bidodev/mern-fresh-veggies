@@ -21,21 +21,18 @@ const ProfileAdmin = ({ photo, jwt }) => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileInput = (event) => {
-    setSelectedFile(event.target.files[0])
-  }
+    setSelectedFile(event.target.files[0]);
+  };
 
   const submitForm = (event) => {
     event.preventDefault();
 
     const data = new FormData();
     data.append('photo', selectedFile);
-    
-    console.log(data.get("photo"));
+
+    console.log(data.get('photo'));
     axios
-      .patch(
-        '/users/profile',
-        data
-      )
+      .patch('/users/profile', data)
       .then((res) => {
         alert('File Upload success');
       })
