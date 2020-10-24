@@ -25,7 +25,7 @@ const FarmerAdmin = React.memo(({ match, user }) => {
     <>
       <Navbar {...data} />
       <section className="farmer-admin">
-        <Aside />
+        <Aside {...data}/>
         <Route exact path={`${match.path}`} render={() => <ProfileAdmin {...data} jwt={jwt} />} />
         <Route path={`${match.path}/stock`} render={() => <Stock jwt={jwt} />} />
       </section>

@@ -1,26 +1,30 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 /* Styles */
 import './asidebar.component.styles.scss';
 
-const AsideBar = () => {
-  const history = useHistory();
+import ListItem from './items/listitem.component';
+
+const AsideBar = ({ _id }) => {
+
+  const sideBarItens = [
+    { name: 'home', icon: ['fas', 'home'] },
+    { name: 'stock', icon: ['fas', 'store-alt'] },
+    { name: 'orders', icon: ['fas', 'truck'] },
+  ];
 
   return (
-    <aside className="main-page__sidebar">
+    <aside className="admin-panel__sidebar">
       {/* <!-- aside items --> */}
-      <div className="main-page__sidebar-item" onClick={() => history.push('/farmer/admin')}>
-        <FontAwesomeIcon icon={['fas', 'home']} className="icon" />
-        <br />
-        Home
-      </div>
-      <div className="main-page__sidebar-item" onClick={() => history.push('/farmer/admin/stock')}>
-        <FontAwesomeIcon icon={['fas', 'store-alt']} className="icon" />
-        <br />
-        Stock
-      </div>
+      {sideBarItens.map((item) => (
+        <ListItem farmerId={_id} {...item} />
+      ))}
+      <Link className="admin-panel__sidebar-item" target="_blank" to={`/shop/${_id}`}>
+        <Icon icon={['fas', 'external-link-alt']} className="admin-panel__sidebar-item__icon" />
+        <p>Profile</p>
+      </Link>
     </aside>
   );
 };
