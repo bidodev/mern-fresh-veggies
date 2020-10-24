@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Route } from 'react-router-dom';
 
 /* Page Imports */
-import ProfilePage from 'pages/farmer/profile.page';
+import ProfilePage from 'pages/farmer/profile/profile.page';
 
 /* Component Imports */
 import Spinner from 'components/spinner/spinner.component';

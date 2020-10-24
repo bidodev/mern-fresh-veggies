@@ -17,7 +17,7 @@ const Stock = () => {
   /// tyle for the modal:
   const customStyles = {
     content: {
-      width: '50rem',
+      width: '70vw',
       top: '50%',
       left: '50%',
       right: 'auto',
@@ -40,7 +40,6 @@ const Stock = () => {
     try {
       const { data } = await axios.get(`/farmers/products`);
       const [products] = data.products;
-      console.log(products)
       setProducts(products.products);
       setFetchError(false);
     } catch (err) {

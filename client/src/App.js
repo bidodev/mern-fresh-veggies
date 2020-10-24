@@ -8,7 +8,7 @@ import Authentication from 'pages/authentication/authentication.page';
 import Shop from 'pages/shop/shop.page';
 
 /* Page Imports */
-import FarmerAdmin from 'pages/farmer/farmer.admin.page';
+import FarmerAdmin from 'pages/farmer/admin.painel/farmer.admin.page';
 
 const App = () => {
   /* Pull out the userFarmer from the LocalStorage */
