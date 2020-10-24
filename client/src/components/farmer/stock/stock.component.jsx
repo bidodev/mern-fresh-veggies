@@ -7,7 +7,6 @@ import CustomButton from 'components/custom-button/custom-button.component';
 import Spinner from 'components/spinner/spinner.component';
 import Product from './product/product.item';
 import AddForm from 'components/forms/add.product.component';
-
 import Modal from 'components/modal/modal.component';
 
 /* Styles */
@@ -62,7 +61,7 @@ const Stock = () => {
         ) : (
           <div className="profile-page__farmer-products">
             {products.map((product) => (
-              <Product key={product._id}{...product} />
+              <Product key={product._id} {...product} />
             ))}
           </div>
         )}
@@ -70,7 +69,7 @@ const Stock = () => {
         <CustomButton type="button" onClick={openModal}>
           Add
         </CustomButton>
-         {/* Load a Modal with the children inside <Modal> </Modal> */}
+        {/* Load a Modal with the children inside <Modal> </Modal> */}
         <Modal modalStatus={modalStatus} closeModal={closeModal} styles={customStyles}>
           <AddForm />
           <FontAwesomeIcon icon="times" className="fa-times" onClick={closeModal} />
