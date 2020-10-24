@@ -19,7 +19,7 @@ const AsideBar = ({ _id }) => {
     <aside className="admin-panel__sidebar">
       {/* <!-- aside items --> */}
       {sideBarItens.map((item) => (
-        <ListItem farmerId={_id} {...item} />
+        <ListItem {...item} />
       ))}
       <Link className="admin-panel__sidebar-item" target="_blank" to={`/shop/${_id}`}>
         <Icon icon={['fas', 'external-link-alt']} className="admin-panel__sidebar-item__icon" />
