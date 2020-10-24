@@ -22,7 +22,9 @@
 
     &--header {
       text-align: center;
-      margin: 1vh;
+      letter-spacing: 0.6px;
+      margin: 1.6rem;
+      color: #181818;
     }
 
     &__information {
@@ -87,7 +89,15 @@
 
       &--biography {
         width: 70%;
-        background: #777;
+        background: #f1f0f0;
+        margin-right: 2rem;
+        padding: 1rem;
+        border-radius: 2px;
+
+        p {
+          margin-top: 1rem;
+          line-height: 1.4;
+        }
 
         @media (max-width: 1050px) {
         }
@@ -96,8 +106,9 @@
 
     &__gallery {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
+      margin: 2rem;
 
       @media (max-width: 1050px) {
         flex-direction: column;

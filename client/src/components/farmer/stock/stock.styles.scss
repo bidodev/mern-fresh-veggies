@@ -14,7 +14,7 @@
   min-height: 94vh;
   display: flex;
   align-items: center;
-  background: #777;
+  background: #f9f9f9;
 
   &__overview {
     width: 100%;
@@ -23,8 +23,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    color: white;
-    background-color: #666;
+    color: #666;
+    background-color: #f5f5f5;
 
     @media (max-width: 800px) {
       width: 100%;
@@ -40,7 +40,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #444;
+
     }
   }
 }
