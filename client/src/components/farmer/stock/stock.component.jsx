@@ -5,19 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 /* Component Imports */
 import CustomButton from 'components/custom-button/custom-button.component';
 import Spinner from 'components/spinner/spinner.component';
-import Product from './product/product.item';
+import Product from './product-item/product.item.component';
 import AddForm from 'components/forms/add.product.component';
-
 import Modal from 'components/modal/modal.component';
 
 /* Styles */
 import './stock.styles.scss';
 
 const Stock = () => {
-  /// tyle for the modal:
+  /* Modal Styles */
   const customStyles = {
     content: {
-      width: '50rem',
+      width: '70vw', // not beautiful but responsive for now - best would be to use media query with rem
       top: '50%',
       left: '50%',
       right: 'auto',
@@ -65,11 +64,19 @@ const Stock = () => {
         ) : (
           <div className="stock__products">
             {products.map((product) => (
-              <Product key={product._id}{...product} />
+              <Product key={product._id} {...product} />
             ))}
           </div>
         )}
+<<<<<<< HEAD
          {/* Load a Modal with the children inside <Modal> </Modal> */}
+=======
+
+        <CustomButton type="button" onClick={openModal}>
+          Add
+        </CustomButton>
+        {/* Load a Modal with the children inside <Modal> </Modal> */}
+>>>>>>> master
         <Modal modalStatus={modalStatus} closeModal={closeModal} styles={customStyles}>
           <AddForm />
           <FontAwesomeIcon icon="times" className="fa-times" onClick={closeModal} />
