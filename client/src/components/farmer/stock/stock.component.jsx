@@ -5,18 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 /* Component Imports */
 import CustomButton from 'components/custom-button/custom-button.component';
 import Spinner from 'components/spinner/spinner.component';
-import Product from './product-item/product.item.component';
+import Product from './product/product.item.component';
 import AddForm from 'components/forms/add.product.component';
+
 import Modal from 'components/modal/modal.component';
 
 /* Styles */
 import './stock.styles.scss';
 
 const Stock = () => {
-  /* Modal Styles */
+  /// tyle for the modal:
   const customStyles = {
     content: {
-      width: '70vw', // not beautiful but responsive for now - best would be to use media query with rem
+      width: '50rem',
       top: '50%',
       left: '50%',
       right: 'auto',
@@ -29,18 +30,17 @@ const Stock = () => {
 
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
-  const openModal = () => {
-    setIsOpen(true);
+
+  const toogleModal = () => {
+    setIsOpen(!modalStatus);
   };
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
 
   const getProducts = async () => {
     try {
       const { data } = await axios.get(`/farmers/products`);
       const [products] = data.products;
+      console.log(products)
       setProducts(products.products);
       setFetchError(false);
     } catch (err) {
@@ -56,30 +56,22 @@ const Stock = () => {
     <section className="stock">
       <div className="stock__overview">
         <h2 className="stock__overview--header">STOCK OVERVIEW</h2>
-        <CustomButton type="button" onClick={openModal}>
+                <CustomButton type="button" onClick={toogleModal}>
           Add
         </CustomButton>
         {isLoading ? (
           <Spinner />
         ) : (
           <div className="stock__products">
-            {products.map((product) => (
-              <Product key={product._id} {...product} />
-            ))}
+            {products.length > 0 ? products.map((product) => (
+              <Product key={product._id}{...product} />
+            )) : <h2>You don't have any products</h2>}
           </div>
         )}
-<<<<<<< HEAD
          {/* Load a Modal with the children inside <Modal> </Modal> */}
-=======
-
-        <CustomButton type="button" onClick={openModal}>
-          Add
-        </CustomButton>
-        {/* Load a Modal with the children inside <Modal> </Modal> */}
->>>>>>> master
-        <Modal modalStatus={modalStatus} closeModal={closeModal} styles={customStyles}>
+        <Modal modalStatus={modalStatus} closeModal={toogleModal} styles={customStyles}>
           <AddForm />
-          <FontAwesomeIcon icon="times" className="fa-times" onClick={closeModal} />
+          <FontAwesomeIcon icon="times" className="fa-times" onClick={toogleModal} />
         </Modal>
       </div>
     </section>
