@@ -56,20 +56,27 @@ const Stock = () => {
     <section className="stock">
       <div className="stock__overview">
         <h2 className="stock__overview--header">STOCK OVERVIEW</h2>
+        <CustomButton type="button" onClick={openModal}>
+          Add
+        </CustomButton>
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="profile-page__farmer-products">
+          <div className="stock__products">
             {products.map((product) => (
               <Product key={product._id} {...product} />
             ))}
           </div>
         )}
+<<<<<<< HEAD
+         {/* Load a Modal with the children inside <Modal> </Modal> */}
+=======
 
         <CustomButton type="button" onClick={openModal}>
           Add
         </CustomButton>
         {/* Load a Modal with the children inside <Modal> </Modal> */}
+>>>>>>> master
         <Modal modalStatus={modalStatus} closeModal={closeModal} styles={customStyles}>
           <AddForm />
           <FontAwesomeIcon icon="times" className="fa-times" onClick={closeModal} />

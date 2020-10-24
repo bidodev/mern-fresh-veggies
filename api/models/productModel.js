@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
   description: {
     type: String,
   },
-  cover: {
+  photo: {
     type: String,
     default: 'default.jpg',
   },

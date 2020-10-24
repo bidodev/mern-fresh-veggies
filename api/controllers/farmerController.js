@@ -66,13 +66,13 @@ exports.retrieveFarmerProducts = asyncWrapper(async (req, res, next) => {
 });
 
 exports.createProduct = asyncWrapper(async (req, res, next) => {
- 
   //1. Grab our user
   const user = req.user;
 
   //2. Create a new product
   const product = await Product.create({
     owner: req.user._id,
+    photo: req.file.filename,
     ...req.body
   });
 

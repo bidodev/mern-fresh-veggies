@@ -6,6 +6,10 @@ const router = express.Router();
  * if the router is restricted to a specific role add restrictedAccess('role')
  */
 
+const {
+  uploadUserPhoto,
+} = require('../controllers/userController');
+
 
 const {
   protected,
@@ -23,6 +27,7 @@ router.route('/farmer/:id').get(getFarmerPage)
 const authMiddlewares = [
   protected,
   restrictedAccess('farmer', 'admin'),
+  uploadUserPhoto,
 ];
 
 /* all the routes from this point have are restricted to 'farmer' and 'admin' */

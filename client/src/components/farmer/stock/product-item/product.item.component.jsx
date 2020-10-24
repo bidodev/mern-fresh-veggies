@@ -45,11 +45,23 @@ function Product({ _id, name, cover, type, description }) {
       </div>
       <Modal modalStatus={modalStatus} closeModal={closeModal} styles={customStyles}>
         {/*Loading the content inside of the modal, passing the data  */}
+<<<<<<< HEAD:client/src/components/farmer/stock/product/product.item.jsx
+        <button onClick={closeModal}>Close</button>
+        <h3>Id: {_id}</h3>
+        <h3>Product: {name}</h3>
+        <p>{description}</p>
+        <img
+          src={`/images/products/${cover}`}
+          alt="img"
+          className="profile-page__farmer-products__card__img-container--img"
+        />
+=======
         <h5>Id: {_id}</h5>
         <h3>Product: {name}</h3>
         <p>Description: {description}</p>
         {/* Can display a "x" svg like Simona did */}
         <button onClick={closeModal}>Close</button>
+>>>>>>> master:client/src/components/farmer/stock/product-item/product.item.component.jsx
       </Modal>
     </>
   );
