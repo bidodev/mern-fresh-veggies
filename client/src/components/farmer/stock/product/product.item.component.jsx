@@ -28,7 +28,7 @@ function Product({ _id, name, photo, type, description }) {
 
   const customStyles = {
     content: {
-      width: '50rem',
+      width: '70vw',
       top: '50%',
       left: '50%',
       right: 'auto',
