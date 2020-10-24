@@ -24,6 +24,11 @@ function Navbar({ name, photo }) {
       <div className="navbar">
         <div className="left">
           <ul>
+          <li>
+              <Link to="#">
+                <FontAwesomeIcon icon={['fas', 'plus']} className="icon" />
+              </Link>
+            </li>
             <li>
               <Link to="#">
                 <FontAwesomeIcon icon={['fas', 'envelope']} className="icon" />
@@ -47,13 +52,13 @@ function Navbar({ name, photo }) {
               <div className="dropdown">
                 <ul>
                   <li>
-                    <Link to="#">
+                    <Link to="/farmer/admin">
                       <FontAwesomeIcon icon={['fas', 'user']} className="icon" />
                       <span className="dropdown__link">Profile</span>
                     </Link>
                   </li>
                   <li>
-                    <Link to="#">
+                    <Link to="/farmer/admin/settings">
                       <FontAwesomeIcon icon={['fas', 'sliders-h']} className="icon " />
                       <span className="dropdown__link">Settings</span>
                     </Link>
