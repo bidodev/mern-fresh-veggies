@@ -48,6 +48,7 @@ exports.getFarmerPage = asyncWrapper(async (req, res, next) => {
     data: {
       name: user.name,
       products: user.products,
+      photo: user.photo,
     },
   });
 });
