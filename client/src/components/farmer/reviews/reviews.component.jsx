@@ -1,12 +1,13 @@
 import React from 'react';
 
+/* Styles */
 import './reviews.styles.scss';
 
-const Reviews = () => {
+const ReviewsAdmin = () => {
   return (
-    <section className="reviews">
-      <h2 className="reviews__header">YOUR REVIEWS</h2>
-      <div className="reviews__container">
+    <section className="reviews-admin">
+      <h2 className="reviews-admin__header">YOUR REVIEWS</h2>
+      <div className="reviews-admin__container">
         {/* TO DO: Display a POPUP when a review is clicked */}
         Farmer's reviews are displayed HERE <br />
         🚀 Add POPUP on click
@@ -15,4 +16,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default ReviewsAdmin;

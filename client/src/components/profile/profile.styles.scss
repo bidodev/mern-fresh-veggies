@@ -1,0 +1,79 @@
+.profile {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__rate {
+    margin: 2vh 0 5vh 5vh;
+
+    &--stars {
+      margin: 1vh 0;
+    }
+  }
+
+  &__profile-container {
+    width: 100%;
+    background: #eee;
+
+    &--header {
+      text-align: center;
+      margin: 1vh;
+    }
+
+    &__information {
+      display: flex;
+
+      @media (max-width: 1050px) {
+        flex-direction: column;
+      }
+
+      &--avatar {
+        margin: 3vh;
+
+        @media (max-width: 1050px) {
+          margin: 0 auto;
+        }
+      }
+
+      &--biography {
+        margin: 1vh;
+        padding: 2vh;
+        background: #777;
+
+        @media (max-width: 1050px) {
+          margin: 2vh auto;
+          width: 80vw;
+        }
+      }
+    }
+
+    &__gallery {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      @media (max-width: 1050px) {
+        flex-direction: column;
+      }
+
+      &--img {
+        width: 20vw;
+
+        @media (max-width: 1050px) {
+          width: 40vw;
+        }
+      }
+    }
+  }
+
+  .avatar-img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .gallery-img {
+    width: 100%;
+  }
+}

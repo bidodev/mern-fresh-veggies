@@ -1,6 +1,5 @@
 .sign-in {
   font-size: 1.6rem;
-  //border: 1px solid red;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -13,6 +12,7 @@
   .title {
     margin: 20px 0;
   }
+
   @media only screen and (max-width: 1000px) {
     span {
       text-align: center;

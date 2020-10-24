@@ -2,6 +2,7 @@ import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 
+/* Styles */
 import './hero.styles.scss';
 
 const Hero = () => {
@@ -15,6 +16,14 @@ const Hero = () => {
           }
         >
           <p className="hero-component__button">Our Story</p>
+        </HashLink>
+        <HashLink
+          to="#footer"
+          scroll={(el) =>
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        >
+          <p className="hero-component__button">Contact Us</p>
         </HashLink>
       </header>
       <div className="hero-component__main">

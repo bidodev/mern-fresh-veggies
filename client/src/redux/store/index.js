@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import { persistStore } from "redux-persist";
 
 import rootReducer from "redux/reducers/root.reducers";
-import logger from "redux-logger";
+//import logger from "redux-logger";
 
 const middlewares = [];
 const enhancers = [];

@@ -1,4 +1,6 @@
 import React from 'react';
+
+/* Styles */
 import './story.styles.scss';
 
 const Story = () => {
@@ -14,12 +16,10 @@ const Story = () => {
               alt="img"
             />
           </div>
-
           <div className="first-row__description-container">
             <div className="first-row__description-container--header">
               Lorem ipsum consectetur
             </div>
-
             <div className="first-row__description-container--text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Assumenda incidunt porro nihil, temporibus accusantium ut esse
@@ -38,7 +38,6 @@ const Story = () => {
             <div className="second-row__description-container--header">
               Lorem ipsum sit amet
             </div>
-
             <div className="second-row__description-container--text">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Laboriosam assumenda consequatur, asperiores magnam ullam expedita
@@ -51,7 +50,6 @@ const Story = () => {
               ipsam, deleniti quia. Laborum consequuntur non sed?
             </div>
           </div>
-
           <div className="second-row__img-container">
             <img
               className="second-row__img-container--img"
@@ -64,20 +62,17 @@ const Story = () => {
         {/* ---- Third Row ---- */}
         <div className="third-row">
           <div className="third-row__header">You're in good compagny</div>
-
           <div className="third-row__img-container">
             <img
               src="./images/debora.png"
               alt="img"
               className="third-row__img-container--img-1"
             />
-
             <img
               src="./images/don.png"
               alt="img"
               className="third-row__img-container--img-2"
             />
-
             <img
               src="./images/grace.png"
               alt="img"

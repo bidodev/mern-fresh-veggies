@@ -1,0 +1,17 @@
+.add-product-form {
+  margin:  0 auto;
+  width: 60%;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+}
+
+.fa-times {
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}

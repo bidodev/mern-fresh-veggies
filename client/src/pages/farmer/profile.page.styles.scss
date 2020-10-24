@@ -1,15 +1,55 @@
-// section {
-//     height: 20vh;
-//     border: 1px solid red;
-// }
+.profile-page {
+  background: #eee;
 
-// .farmer-profile {
-//     border: 1px solid red;
-// }
+  &--header {
+    text-align: center;
+  }
 
-// .farmer-products{
-//     border: 1px solid red;
-//     display: flex;
-//     justify-content: center;
-//     height: 50vh;
-// }
+  &__farmer-products {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background: #999;
+
+    &__card {
+      width: 15vw;
+      min-width: 15rem;
+      height: 40vh;
+      margin: 2vh 1vh;
+      padding: 1vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      border: 1px solid black;
+
+      &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
+      &__img-container {
+        width: 10vw;
+        min-width: 8rem;
+
+        &--img {
+          width: 100%;
+        }
+      }
+
+      &--name {
+        margin: 1vh;
+        text-align: center;
+      }
+
+      &--type {
+        margin: 1vh;
+        font-style: italic;
+      }
+
+      &--description {
+        margin: 1vh;
+      }
+    }
+  }
+}

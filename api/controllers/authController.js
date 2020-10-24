@@ -33,7 +33,7 @@ const createSendToken = (user, status, req, res) => {
   });
 
   //destructuring only what we need
-  const { email, name, role } = user;
+  const { email, name, role, photo } = user;
 
   res.status(status).json({
     status: 'success',
@@ -42,6 +42,7 @@ const createSendToken = (user, status, req, res) => {
       name,
       email,
       role,
+      photo,
     },
   });
 };
@@ -102,18 +103,18 @@ exports.login = asyncWrapper(async (req, res, next) => {
 
 /* protected route */
 exports.protected = asyncWrapper(async (req, res, next) => {
-  const { authorization } = req.headers;
+  const { cookie } = req.headers;
 
   let token;
   //1. check if the token is sent along with headers.
 
-  if (!authorization) {
+  if (!cookie) {
     return next(new AppError(`Authorization Header is missing`, 400, 'fail'));
   }
 
   //2.1 If there is header and start with Bearer ,we use substring to take the rest and save in the token var
-  if (authorization.startsWith('Bearer')) {
-    token = authorization.substring('Bearer '.length);
+  if (cookie.startsWith('jwt')) {
+    token = cookie.substring('jwt='.length);
   }
 
   //2.2. If no token, return.

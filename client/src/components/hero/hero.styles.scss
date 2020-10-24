@@ -1,16 +1,23 @@
 @import '../../scss/variables';
 
 .hero-component {
-  width: 100vw; // can use 100% to remove bottom scroll bar but create error - Simona knows
+  width: 100%; // may cause an error for Simona
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 1fr);
 
   header {
-    grid-column: 4 / span 2;
-    justify-self: right;
-    align-self: center;
+    grid-column: 4 / span 3;
+    // justify-self: right;
+    // align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .hero-component__button {
+      margin-right: 3vw;
+    }
   }
 
   &__main {

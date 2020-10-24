@@ -9,6 +9,15 @@ const productSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  cover: {
+    type: String,
+    default: 'default.jpg',
+  },
+  photos: [
+    {
+      type: String,
+    },
+  ],
 });
 
 const Product = mongoose.model('Product', productSchema);
