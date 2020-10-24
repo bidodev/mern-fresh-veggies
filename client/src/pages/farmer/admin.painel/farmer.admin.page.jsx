@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* React Router Dom */
-import { Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 /* Component Imports */
 import Navbar from 'components/farmer/navbar/navbar.component';
