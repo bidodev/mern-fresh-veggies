@@ -1,13 +1,3 @@
-// .stock {
-//   border: 1px solid green;
-// }
-// .stock__products {
-//   border: 1px solid red;
-//   height: 90vh;
-//   width: 100%;
-//   display: flex;
-//   flex-wrap: wrap;
-// }
 .stock {
   width: 100%;
   height: 100%;
@@ -18,6 +8,16 @@
   flex-direction: column;
   align-items: center;
   background: #f9f9f9;
+
+  &__farmer-products {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    text-transform: uppercase;
+  }
 
 
   &__overview {

@@ -41,7 +41,6 @@ function Product({ _id, name, photo, type, description }) {
   return (
     <>
       <div className="product-item__farmer-products__card" onClick={toggleModal}>
-        <h3 className="product-item__farmer-products__card--name">{name}</h3>
         <div className="product-item__farmer-products__card__img-container">
           <img
             src={`/images/users/${photo}`}
@@ -49,8 +48,10 @@ function Product({ _id, name, photo, type, description }) {
             className="product-item__farmer-products__card__img-container--img"
           />
         </div>
+        <h3 className="product-item__farmer-products__card--name">{name}</h3>
         <span className="product-item__farmer-products__card--type">Type: {type}</span>
-        <p className="product-item__farmer-products__card--description">Information: {description}</p>
+        <span className="">Stock: 10</span>
+        <span className="">Price: EUR 1.5</span>
       </div>
 
       {/*Loading the content inside of the modal, passing the data  */}
