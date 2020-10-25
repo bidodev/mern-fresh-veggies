@@ -37,6 +37,24 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  config: {
+    recipes: {
+      type: Boolean,
+      default: 'true',
+    },
+    gallery: {
+      type: Boolean,
+      default: 'true',
+    },
+    products: {
+      type: Boolean,
+      default: 'true',
+    },
+    open: {
+      type: Boolean,
+      default: 'true',
+    },
+  },
   products: [
     {
       type: mongoose.Schema.ObjectId,
