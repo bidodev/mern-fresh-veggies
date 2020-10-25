@@ -51,12 +51,12 @@ const Stock = () => {
 
   return (
     <section className="stock">
-              <h2 className="stock__overview--header">STOCK OVERVIEW</h2>
+      <h2 className="stock__overview--header">Stock Overview</h2>
       <div className="stock__overview">
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="profile-page__farmer-products">
+          <div className="stock__farmer-products">
             {products.length > 0 ? (
               products.map((product) => <Product key={product._id} {...product} />)
             ) : (
