@@ -74,16 +74,17 @@ function ProfilePage() {
   }, [farmerId]);
 
   const ProfileCompouse = () => {
-    const { config } = farmer;
+    const { open, recipes, gallery, products } = farmer.config;
+    console.log(farmer.config)
 
     return (
       <>
-        {config.open ? (
+        {open ? (
           <>
             <Profile {...farmer} />
-            {config.recipes ? <Recipes /> : null}
-            {config.gallery ? <PhotosGallery /> : null}
-            {config.products ? <FarmerProducts farmer={farmer} /> : null}
+            {recipes ? <Recipes /> : null}
+            {gallery ? <PhotosGallery /> : null}
+            {products ? <FarmerProducts farmer={farmer} /> : null}
           </>
         ) : (
           <h3 style={{ paddingTop: '50vh' }}>This store is closed at the moment</h3>

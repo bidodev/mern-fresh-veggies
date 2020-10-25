@@ -9,39 +9,44 @@ import Modal from 'components/modal/modal.component';
 /* Styles */
 import './profile.styles.scss';
 
-const customStyles = {
-  /* Modal Styles */
-  content: {
-    width: '40vw',
-    height: '70vh',
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-  },
-};
-
 const ProfileAdmin = ({ photo, name, jwt }) => {
+  console.log("render")
+  /* Modal State */
   const [modalStatus, setIsOpen] = useState(false);
 
+  /* Toggle Modal function */
   const toggleModal = () => {
     setIsOpen(!modalStatus);
   };
 
+  /* Modal Styles */
+  const customStyles = {
+    content: {
+      width: '40vw',
+      height: '70vh',
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+  /* Is hovering profile photo State */
   const [isHovering, setHoverStatus] = useState(false);
 
   const handleMouseHover = () => {
     setHoverStatus(!isHovering);
   };
 
-  /* Upload user photo */
+  /* Is file loaded state */
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileInput = (event) => {
     setSelectedFile(event.target.files[0]);
   };
 
+  /* Upload new photo */
   const submitForm = (event) => {
     event.preventDefault();
 
@@ -51,7 +56,7 @@ const ProfileAdmin = ({ photo, name, jwt }) => {
     axios
       .patch('/users/profile', data)
       .then((res) => {
-        alert('File Upload success');
+        console.log(res.response);
       })
       .catch((err) => console.log(err.response.data.message));
   };
@@ -79,12 +84,15 @@ const ProfileAdmin = ({ photo, name, jwt }) => {
           <div className="profile-admin__profile-container__information--biography">
             Welcome to your profile {name} <br />
             🐰🥕🧑‍🌾🚜 <br />
-              <p>            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit omnis aliquid, nam quisquam hic vitae
-            commodi! Assumenda vel reiciendis et, est delectus, sit eos tempora, amet ipsa nulla dicta iusto libero?
-            Aliquid officiis tempora aliquam. <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dicta ex quos eaque dolores, alias odio
-            cupiditate? Accusantium quae harum fuga praesentium distinctio dolore maxime, repellendus qui facilis
-            laborum expedita.</p>
+            <p>
+              {' '}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit omnis aliquid, nam quisquam hic
+              vitae commodi! Assumenda vel reiciendis et, est delectus, sit eos tempora, amet ipsa nulla dicta iusto
+              libero? Aliquid officiis tempora aliquam. <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dicta ex quos eaque dolores, alias odio
+              cupiditate? Accusantium quae harum fuga praesentium distinctio dolore maxime, repellendus qui facilis
+              laborum expedita.
+            </p>
           </div>
         </div>
         <div className="profile-admin__profile-container__gallery">
@@ -98,8 +106,8 @@ const ProfileAdmin = ({ photo, name, jwt }) => {
             <img src="/images/farm-3.jpg" alt="img" className="gallery-img" />
           </div>
         </div>
-        <p style={{ "fontSize": "1rem", "padding": "2rem", "lineHeight": "1.4" }}>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam at cupiditate numquam hic repellendus aperiam
+        <p style={{ fontSize: '1rem', padding: '2rem', lineHeight: '1.4' }}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam at cupiditate numquam hic repellendus aperiam
           ipsum accusamus officiis exercitationem facere culpa debitis distinctio quia animi amet, esse, dicta ducimus
           libero. Ipsum est asperiores, perspiciatis qui reiciendis vel non recusandae, molestias facere consequatur
           quod illum laboriosam dignissimos reprehenderit beatae nisi eaque consectetur esse molestiae doloremque iusto
@@ -140,6 +148,7 @@ const ProfileAdmin = ({ photo, name, jwt }) => {
       </div>
 
       <ReviewsAdmin />
+
       <Modal modalStatus={modalStatus} closeModal={toggleModal} styles={customStyles}>
         <div className="upload__photo">
           <div className="upload__photo__header">
@@ -148,12 +157,12 @@ const ProfileAdmin = ({ photo, name, jwt }) => {
           </div>
 
           <hr />
-          <form>
-            <label htmlFor="file-upload" class="custom-file-upload">
+          <form onSubmit={submitForm}>
+            <label htmlFor="file-upload" className="custom-file-upload">
               Select Photo
             </label>
             <input id="file-upload" type="file" onChange={handleFileInput} />
-            <button onClick={submitForm}>Upload</button>
+            <input type="submit"/>
           </form>
         </div>
       </Modal>
