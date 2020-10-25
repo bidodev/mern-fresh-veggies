@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
+
 /* React Router Dom */
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -16,6 +17,9 @@ import './lib/icons';
 /* Root APP Imports */
 import App from './App';
 import './scss/index.scss';
+
+/* Import fonts */
+require('typeface-nunito-sans');
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 /* Styles */
@@ -21,10 +21,10 @@ const AsideBar = ({ _id }) => {
       {sideBarItens.map((item) => (
         <ListItem {...item} />
       ))}
-      <Link className="admin-panel__sidebar-item" target="_blank" to={`/shop/${_id}`}>
+      <NavLink activeClassName="admin-panel__sidebar-item--active" className="admin-panel__sidebar-item" target="_blank" to={`/shop/${_id}`}>
         <Icon icon={['fas', 'external-link-alt']} className="admin-panel__sidebar-item__icon" />
         <p>Profile</p>
-      </Link>
+      </NavLink>
     </aside>
   );
 };

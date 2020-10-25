@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 /* Styles */
 import './settings.component.styles.scss';
@@ -19,17 +19,36 @@ const AdvancedSettings = () => {
 const UserSettings = ({ match }) => {
   return (
     <div className="admin__settings">
-      <div className="admin__settings_nav">
+      <div className="admin__settings__nav">
         <ul>
           <h2>Settings</h2>
-          <li className="admin__settings_nav--active">
-            <Link to="/farmer/admin/settings">Account</Link>
+          <li>
+            <NavLink
+              className="admin__settings__nav-item"
+              exact
+              to="/farmer/admin/settings"
+              activeClassName="admin__settings__nav--active"
+            >
+              Account
+            </NavLink>
           </li>
           <li>
-            <Link to="/farmer/admin/settings/public">Public Profile</Link>
+            <NavLink
+              className="admin__settings__nav-item"
+              to="/farmer/admin/settings/public"
+              activeClassName="admin__settings__nav--active"
+            >
+              Public Profile
+            </NavLink>
           </li>
           <li>
-            <Link to="/farmer/admin/settings/advanced">Advanced Settings</Link>
+            <NavLink
+              className="admin__settings__nav-item"
+              to="/farmer/admin/settings/advanced"
+              activeClassName="admin__settings__nav--active"
+            >
+              Advanced Settings
+            </NavLink>
           </li>
         </ul>
       </div>
