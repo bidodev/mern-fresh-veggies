@@ -5,4 +5,43 @@
   min-height: 94vh;
   height: auto;
   background-color: #f9f9f9;
+  display: flex;
+
+  &_nav{
+    //border: 1px solid red;
+    min-height: 94vh;
+    background-color: #f1f1f1;
+    width: 14vw;
+
+    &--active {
+      background-color: #b5b5b5;
+    }
+
+    ul {
+      h2 {
+        padding: 1rem 1.6rem;
+        text-transform: uppercase;
+        color: #606060;
+      }
+      li  {
+        padding: 1.2rem 0.8rem;
+        transition: background-color 0.3s ease;
+
+        a {
+          color: #181818;
+          padding: 1rem 0.8rem;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        &:hover {
+          background-color: #e5e5e5;
+        }
+
+
+
+      }
+    }
+  }
 }

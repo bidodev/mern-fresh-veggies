@@ -54,6 +54,17 @@
       padding: 1vh 2vh;
       border-radius: 5px;
       display: none;
+
+    }
+
+    .right {
+      ul {
+        div {
+          li:hover {
+            background-color: #f9f9f9;
+          }
+        }
+      }
     }
 
     .right ul li .dropdown:before {

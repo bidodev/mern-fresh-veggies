@@ -98,7 +98,7 @@ const ProfileAdmin = ({ photo, name, jwt }) => {
             <img src="/images/farm-3.jpg" alt="img" className="gallery-img" />
           </div>
         </div>
-        <p style={{ "fontSize": "2rem", "margin": "2rem" }}>
+        <p style={{ "fontSize": "1rem", "padding": "2rem", "lineHeight": "1.4" }}>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam at cupiditate numquam hic repellendus aperiam
           ipsum accusamus officiis exercitationem facere culpa debitis distinctio quia animi amet, esse, dicta ducimus
           libero. Ipsum est asperiores, perspiciatis qui reiciendis vel non recusandae, molestias facere consequatur
