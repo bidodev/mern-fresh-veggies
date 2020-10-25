@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './profile.settings.component.styles.scss';
+import axios from 'axios';
 
-function PublicProfileSettings({name}) {
+function PublicProfileSettings({ name }) {
+  const [storeStatus, setStoreStatus] = useState(true);
+  const [storePhotos, setStorePhotos] = useState(true);
+  const [storeRecipes, setStoreRecipes] = useState(true);
+  const [storeProducts, setStoreProducts] = useState(true);
+
+  useEffect(() => {
+
+    const data = {
+      open: storeStatus,
+      gallery: storePhotos,
+      recipes: storeRecipes,
+      products: storeProducts,
+    };
+
+    axios
+      .patch('/users/settings', data)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err.response.data.message));
+  }, [storeStatus, storePhotos, storeRecipes, storeProducts]);
+
   return (
     <div className="settings__page__item__wrapper">
       <h4>Public Profile</h4>
@@ -15,7 +38,7 @@ function PublicProfileSettings({name}) {
       <hr />
       <h3>Store Configuration</h3>
       <div className="settings__page__item__wrapper__item--settings">
-        <div className="toggle-switch" onChange={() => console.log('Hello')}>
+        <div className="toggle-switch" onChange={() => setStoreStatus(!storeStatus)}>
           <input type="checkbox" id="store" name="store" />
           <label htmlFor="store">
             <span className="toggle-track"></span>
@@ -32,7 +55,7 @@ function PublicProfileSettings({name}) {
       <h3>Sections Configuration</h3>
 
       <div className="settings__page__item__wrapper__item--settings">
-        <div className="toggle-switch" onChange={() => console.log('Hello')}>
+        <div className="toggle-switch" onChange={() => setStorePhotos(!storePhotos)}>
           <input type="checkbox" id="photos" name="photos" />
           <label htmlFor="photos">
             <span className="toggle-track"></span>
@@ -47,7 +70,7 @@ function PublicProfileSettings({name}) {
 
       {/* recipes */}
       <div className="settings__page__item__wrapper__item--settings">
-        <div className="toggle-switch" onChange={() => console.log('Hello')}>
+        <div className="toggle-switch" onChange={() => setStoreRecipes(!storeRecipes)}>
           <input type="checkbox" id="recipes" name="recipes" />
           <label htmlFor="recipes">
             <span className="toggle-track"></span>
@@ -62,7 +85,7 @@ function PublicProfileSettings({name}) {
 
       {/* products */}
       <div className="settings__page__item__wrapper__item--settings">
-        <div className="toggle-switch" onChange={() => console.log('Hello')}>
+        <div className="toggle-switch" onChange={() => setStoreProducts(!storeProducts)}>
           <input type="checkbox" id="products" name="products" />
           <label htmlFor="products">
             <span className="toggle-track"></span>

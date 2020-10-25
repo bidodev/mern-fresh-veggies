@@ -145,3 +145,4 @@ exports.updateProduct = asyncWrapper(async (req, res, next) => {
     }
   });
 });
+
