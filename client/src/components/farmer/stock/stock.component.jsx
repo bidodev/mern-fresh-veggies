@@ -51,8 +51,8 @@ const Stock = () => {
 
   return (
     <section className="stock">
+              <h2 className="stock__overview--header">STOCK OVERVIEW</h2>
       <div className="stock__overview">
-        <h2 className="stock__overview--header">STOCK OVERVIEW</h2>
         {isLoading ? (
           <Spinner />
         ) : (

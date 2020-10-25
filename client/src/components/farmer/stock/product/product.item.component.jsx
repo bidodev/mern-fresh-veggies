@@ -7,6 +7,7 @@ import axios from 'axios';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 function Product({ _id, name, photo, type, description }) {
+  console.log(_id);
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
 
@@ -27,7 +28,8 @@ function Product({ _id, name, photo, type, description }) {
   const customStyles = {
     /* Modal Styles */
     content: {
-      width: '70vw',
+      width: '50vw',
+      height: '70vh',
       top: '50%',
       left: '50%',
       right: 'auto',
@@ -54,16 +56,13 @@ function Product({ _id, name, photo, type, description }) {
       {/*Loading the content inside of the modal, passing the data  */}
       <Modal modalStatus={modalStatus} closeModal={toggleModal} styles={customStyles}>
         <Icon icon="times" className="fa-times" onClick={toggleModal} />
-        <h3>Id: {_id}</h3>
         <h3>Product: {name}</h3>
         <p>{description}</p>
         <p>Delete Item: </p>
         <Icon icon="trash" onClick={() => removeProduct(_id)} />
-        <img
-          src={`/images/users/${photo}`}
-          alt="img"
-          className="profile-page__farmer-products__card__img-container--img"
-        />
+        <div className="display__product__img__wrapper">
+          <img src={`/images/users/${photo}`} alt="img" />
+        </div>
       </Modal>
     </>
   );

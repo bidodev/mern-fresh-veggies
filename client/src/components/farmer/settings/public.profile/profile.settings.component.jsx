@@ -15,8 +15,8 @@ function PublicProfileSettings() {
 
       <div className="settings__page__item__wrapper__item--settings">
         <div className="toggle-switch" onChange={() => console.log('Hello')}>
-          <input type="checkbox" id="chkTest" name="chkTest" />
-          <label htmlFor="chkTest">
+          <input type="checkbox" id="photos" name="photos" />
+          <label htmlFor="photos">
             <span className="toggle-track"></span>
           </label>
         </div>
@@ -30,8 +30,8 @@ function PublicProfileSettings() {
       {/* recipes */}
       <div className="settings__page__item__wrapper__item--settings">
         <div className="toggle-switch" onChange={() => console.log('Hello')}>
-          <input type="checkbox" id="chkTest" name="chkTest" />
-          <label htmlFor="chkTest">
+          <input type="checkbox" id="recipes" name="recipes" />
+          <label htmlFor="recipes">
             <span className="toggle-track"></span>
           </label>
         </div>
