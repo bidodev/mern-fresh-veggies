@@ -1,8 +1,40 @@
-.admin__settings{
+.admin__settings {
   width: 96vw;
   margin-left: 4vw;
   margin-top: 6vh;
   min-height: 94vh;
   height: auto;
   background-color: #f9f9f9;
+  display: flex;
+
+  &__nav {
+    //border: 1px solid red;
+    min-height: 94vh;
+    background-color: #f1f1f1;
+    width: 14vw;
+
+    h2 {
+      padding: 1.2rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 1.2rem;
+      transition: background-color 0.3s ease;
+      color: #333;
+      font-size: 1rem;
+
+      &:hover {
+        background-color: #e5e5e5;
+      }
+
+    }
+
+    &--active {
+      background-color: #e5e5e5;
+      width: 14vw;
+    }
+  }
 }

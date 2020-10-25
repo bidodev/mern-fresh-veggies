@@ -4,6 +4,7 @@
   width: 100%;
   background-color: #fff;
   position: fixed;
+  z-index: 9999;
 
   .navbar {
     height: 100%;
@@ -54,6 +55,17 @@
       padding: 1vh 2vh;
       border-radius: 5px;
       display: none;
+
+    }
+
+    .right {
+      ul {
+        div {
+          li:hover {
+            background-color: #f9f9f9;
+          }
+        }
+      }
     }
 
     .right ul li .dropdown:before {

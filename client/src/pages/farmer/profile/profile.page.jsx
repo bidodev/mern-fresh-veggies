@@ -41,7 +41,7 @@ function ProfilePage() {
                   <h3 className="profile-page__farmer-products__card--name">{product.name}</h3>
                   <div className="profile-page__farmer-products__card__img-container">
                     <img
-                      src={`/images/products/${farmer.photo}`}
+                      src={`/images/users/${product.photo}`}
                       alt="img"
                       className="profile-page__farmer-products__card__img-container--img"
                     />
