@@ -15,8 +15,8 @@ const AdvancedSettings = () => {
   return <div>Advanced Settings</div>;
 };
 
-const UserSettings = ({ match, name }) => {
-  console.log(name)
+const UserSettings = ({ match, user }) => {
+
   return (
     <div className="admin__settings">
       <div className="admin__settings__nav">
@@ -54,7 +54,7 @@ const UserSettings = ({ match, name }) => {
       </div>
       <>
         <Route exact path={`${match.path}`} render={() => <AccountSetting />} />
-        <Route path={`${match.path}/public`} render={() => <PublicProfileSettings name={name} />} />
+        <Route path={`${match.path}/public`} render={() => <PublicProfileSettings user={user}/>} />
         <Route path={`${match.path}/advanced`} render={() => <AdvancedSettings />} />
       </>
     </div>
