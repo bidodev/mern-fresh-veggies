@@ -4,12 +4,11 @@ import { Route, NavLink } from 'react-router-dom';
 /* Styles */
 import './settings.component.styles.scss';
 
+/* Compouse */
+import PublicProfileSettings from './public.profile/profile.settings.component';
+
 const AccountSetting = () => {
   return <div>Main Painel</div>;
-};
-
-const PublicProfileSettings = () => {
-  return <div>Public Painel</div>;
 };
 
 const AdvancedSettings = () => {
