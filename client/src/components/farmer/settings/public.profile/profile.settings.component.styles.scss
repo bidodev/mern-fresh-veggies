@@ -1,14 +1,4 @@
-.settings__page__item__header {
-  margin: 2rem 0;
-  line-height: 1.6;
-  p {
-    color: #666;
-  }
-}
-
 .settings__page__item__wrapper {
-  margin: 0 auto;
-  width: 60%;
 
   p {
     color: #666;
@@ -46,6 +36,10 @@
 
     .text {
       margin-left: 1rem;
+
+      p {
+        margin: 0;
+      }
 
       p:last-of-type {
         color: #666;

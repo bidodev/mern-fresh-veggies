@@ -1,0 +1,30 @@
+.settings__page__item__wrapper {
+  &__account {
+    margin-top: 4rem;
+
+    h4 {
+      font-size: 1rem;
+    }
+  }
+}
+
+.settings__accounts__email {
+  display: flex;
+  flex-direction: column;
+
+
+  input[type='email'] {
+    width: 20rem;
+    padding: 0.8rem 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+      width: 34%;
+      font-size: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      color: #666;
+  }
+}
