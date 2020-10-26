@@ -37,9 +37,15 @@ const FarmerList = ({ match }) => {
 
   return (
     <div>
-      <Navbar />
-      <Modal modalStatus={modalStatus} closeModal={toggleModal} className="Modal" overlayClassName="Overlay">
-        This is modal
+      <Navbar toggle={toggleModal} />
+      <Modal
+        modalStatus={modalStatus}
+        closeModal={toggleModal}
+        className="Modal"
+        overlayClassName="Overlay"
+        isOpen={modalStatus}
+      >
+        This is what you added to cart
       </Modal>
       <Feed />
 
