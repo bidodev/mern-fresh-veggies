@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, NavLink } from 'react-router-dom';
+
+import axios from 'axios';
 
 /* Styles */
 import './settings.component.styles.scss';
@@ -15,7 +17,7 @@ const AdvancedSettings = () => {
   return <div>Advanced Settings</div>;
 };
 
-const UserSettings = ({ match, user }) => {
+const UserSettings = ({ match }) => {
 
   return (
     <div className="admin__settings">
@@ -54,7 +56,7 @@ const UserSettings = ({ match, user }) => {
       </div>
       <>
         <Route exact path={`${match.path}`} render={() => <AccountSetting />} />
-        <Route path={`${match.path}/public`} render={() => <PublicProfileSettings user={user}/>} />
+        <Route path={`${match.path}/public`} render={() => <PublicProfileSettings />} />
         <Route path={`${match.path}/advanced`} render={() => <AdvancedSettings />} />
       </>
     </div>
