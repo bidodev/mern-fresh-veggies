@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './account.component.styles.scss';
+import axios from 'axios';
 
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -9,26 +10,40 @@ const AccountSetting = ({ user }) => {
   /* Modal State */
   const [modalStatus, setIsOpen] = useState(false);
 
+  /* Toggle Modal function */
+  const toggleModal = () => {
+    setIsOpen(!modalStatus);
+  };
+
   const password = useRef(null);
   const newPassword = useRef(null);
   const repeatNewPassword = useRef(null);
 
   const handlePassword = (event) => {
     event.preventDefault();
-    if (newPassword.current.value !== repeatNewPassword.current.value) return console.log("Passwords does not match");
+    if (newPassword.current.value !== repeatNewPassword.current.value) return console.log('Passwords does not match');
 
     const data = {
-      current: password.current.value,
-      newPassword: newPassword.current.value,
-      repeatNewPassword: newPassword.current.value,
+      currentPassword: password.current.value,
+      password: newPassword.current.value,
+      repeatPassword: newPassword.current.value,
     };
 
-    console.log(data)
-  };
+    axios
+      .patch('/account/password', data)
+      .then((res) => {
+        console.log(res);
 
-  /* Toggle Modal function */
-  const toggleModal = () => {
-    setIsOpen(!modalStatus);
+        // if the password was changed with sucess clear the fields
+        password.current.value = '';
+        newPassword.current.value = '';
+        repeatNewPassword.current.value = '';
+        alert('Password changed');
+      })
+      .catch((err) => {
+        console.log(err.response.data.message);
+        alert('etwas ist schief gelaufen');
+      });
   };
 
   return (
