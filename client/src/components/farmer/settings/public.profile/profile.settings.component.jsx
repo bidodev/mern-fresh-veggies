@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './profile.settings.component.styles.scss';
 import axios from 'axios';
 
-function PublicProfileSettings({ name }) {
-  const [storeStatus, setStoreStatus] = useState(true);
-  const [storePhotos, setStorePhotos] = useState(true);
-  const [storeRecipes, setStoreRecipes] = useState(true);
-  const [storeProducts, setStoreProducts] = useState(true);
+function PublicProfileSettings({ user }) {
+  const { open, gallery, products, recipes } = user.data.config;
+  
+  const [storeStatus, setStoreStatus] = useState(open);
+  const [storePhotos, setStorePhotos] = useState(gallery);
+  const [storeRecipes, setStoreRecipes] = useState(products);
+  const [storeProducts, setStoreProducts] = useState(recipes);
 
   useEffect(() => {
-
     const data = {
       open: storeStatus,
       gallery: storePhotos,
@@ -28,7 +29,7 @@ function PublicProfileSettings({ name }) {
   return (
     <div className="settings__page__item__wrapper">
       <h4>Public Profile</h4>
-      <p>Hello {name}</p>
+      <p>Hello {user.data.name}</p>
 
       <div className="settings__page__item__header">
         <h2>Select how your profile should Lorem ipsum dolor sit amet.</h2>
@@ -38,8 +39,14 @@ function PublicProfileSettings({ name }) {
       <hr />
       <h3>Store Configuration</h3>
       <div className="settings__page__item__wrapper__item--settings">
-        <div className="toggle-switch" onChange={() => setStoreStatus(!storeStatus)}>
-          <input type="checkbox" id="store" name="store" />
+        <div className="toggle-switch">
+          <input
+            type="checkbox"
+            id="store"
+            name="store"
+            checked={storeStatus}
+            onChange={() => setStoreStatus(!storeStatus)}
+          />
           <label htmlFor="store">
             <span className="toggle-track"></span>
           </label>
@@ -55,8 +62,14 @@ function PublicProfileSettings({ name }) {
       <h3>Sections Configuration</h3>
 
       <div className="settings__page__item__wrapper__item--settings">
-        <div className="toggle-switch" onChange={() => setStorePhotos(!storePhotos)}>
-          <input type="checkbox" id="photos" name="photos" />
+        <div className="toggle-switch">
+          <input
+            type="checkbox"
+            id="photos"
+            name="photos"
+            checked={storePhotos}
+            onChange={() => setStorePhotos(!storePhotos)}
+          />
           <label htmlFor="photos">
             <span className="toggle-track"></span>
           </label>
@@ -70,8 +83,14 @@ function PublicProfileSettings({ name }) {
 
       {/* recipes */}
       <div className="settings__page__item__wrapper__item--settings">
-        <div className="toggle-switch" onChange={() => setStoreRecipes(!storeRecipes)}>
-          <input type="checkbox" id="recipes" name="recipes" />
+        <div className="toggle-switch">
+          <input
+            type="checkbox"
+            id="recipes"
+            name="recipes"
+            checked={storeRecipes}
+            onChange={() => setStoreRecipes(!storeRecipes)}
+          />
           <label htmlFor="recipes">
             <span className="toggle-track"></span>
           </label>
@@ -85,8 +104,14 @@ function PublicProfileSettings({ name }) {
 
       {/* products */}
       <div className="settings__page__item__wrapper__item--settings">
-        <div className="toggle-switch" onChange={() => setStoreProducts(!storeProducts)}>
-          <input type="checkbox" id="products" name="products" />
+        <div className="toggle-switch">
+          <input
+            type="checkbox"
+            id="products"
+            name="products"
+            checked={storeProducts}
+            onChange={() => setStoreProducts(!storeProducts)}
+          />
           <label htmlFor="products">
             <span className="toggle-track"></span>
           </label>

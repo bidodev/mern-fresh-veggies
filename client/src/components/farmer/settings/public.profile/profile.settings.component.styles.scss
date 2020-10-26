@@ -10,7 +10,7 @@
   margin: 0 auto;
   width: 60%;
 
-    p {
+  p {
     color: #666;
   }
 
@@ -25,15 +25,14 @@
   h2 {
     font-weight: 600;
   }
-  h2, h3, h4 {
-    color: rgba(15,15,15,1);
-
-    
+  h2,
+  h3,
+  h4 {
+    color: rgba(15, 15, 15, 1);
   }
   h3 {
     margin-bottom: 2rem;
     font-size: 1rem;
-
   }
   h4 {
     margin-top: 4rem;
@@ -82,15 +81,15 @@
   display: inline-block;
   height: 20px;
   width: 20px;
-  background: #065fd4;
+  background: #7e7e7e;
   border-radius: 20px;
   position: absolute;
   top: -4px;
-  right: 0;
+  right: 20px;
   transition: right 0.2s ease-in;
 }
 
 .toggle-switch input[type='checkbox']:checked + label .toggle-track:before {
-  background: #7e7e7e;
-  right: 20px;
+  background: #065fd4;
+  right: 0px;
 }

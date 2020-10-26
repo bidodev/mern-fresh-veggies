@@ -29,7 +29,7 @@ const FarmerAdmin = React.memo(({ match, user }) => {
         <Aside {...data} />
         <Route exact path={`${match.path}`} render={() => <ProfileAdmin {...data} jwt={jwt} />} />
         <Route path={`${match.path}/stock`} render={() => <Stock jwt={jwt} />} />
-        <Route path={`${match.path}/settings`} render={({ match }) => <FarmerSettings match={match} jwt={jwt} {...data} />} />
+        <Route path={`${match.path}/settings`} render={({ match }) => <FarmerSettings match={match} user={user} />} />
       </section>
     </>
   );
