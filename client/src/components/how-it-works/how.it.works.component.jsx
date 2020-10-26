@@ -43,24 +43,39 @@ const HowItWorks = () => {
           <div className="how-it-works__info-section__left-container__text-container">
             <h2 className="how-it-works__info-section__left-container__text-container--header">This is HEADER</h2>
             <div className="how-it-works__info-section__left-container__text-container--text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ullam. Alias voluptatibus aliquam itaque!
-              Impedit deleniti nihil dolorum esse ratione possimus eligendi cum ipsam itaque, aut ea quia?
+              Farms can access a wide range of ingredients that are in season, giving you plenty of new and fresh
+              choices. Follow your favorite farmers, choose your seasonal food and get delivered in the week.
             </div>
           </div>
           <div className="how-it-works__info-section__left-container__img-container">
-            <img src="" alt="img" className="how-it-works__info-section__left-container__img-container--img" />
+            <img
+              src="/images/farm-1.jpg"
+              alt="img"
+              className="how-it-works__info-section__left-container__img-container--img"
+            />
           </div>
         </div>
 
         <div className="how-it-works__info-section__right-container">
           <div className="how-it-works__info-section__right-container__img-container-1">
-            <img src="" alt="img" className="how-it-works__info-section__right-container__img-container-1--img" />
+            <img
+              src="/images/farm-1.jpg"
+              alt="img"
+              className="how-it-works__info-section__right-container__img-container-1--img"
+            />
           </div>
           <div className="how-it-works__info-section__right-container__img-container-2">
-            <img src="" alt="img" className="how-it-works__info-section__right-container__img-container-2--img" />
+            <img
+              src="/images/farm-1.jpg"
+              alt="img"
+              className="how-it-works__info-section__right-container__img-container-2--img"
+            />
           </div>
         </div>
       </div>
+
+      {/* ======== Icons Section === */}
+      <div className="how-it-works__icons-section">Here is Icon section</div>
     </section>
   );
 };
