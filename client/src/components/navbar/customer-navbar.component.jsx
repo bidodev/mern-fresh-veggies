@@ -7,6 +7,7 @@ import { HashLink } from 'react-router-hash-link';
 import './customer-navbar.styles.scss';
 
 const NavigationCustomer = ({ toggle }) => {
+  //here logged in still to be changed
   const isLoggedIn = false;
   return (
     <nav className="customer-navbar">
@@ -34,7 +35,7 @@ const NavigationCustomer = ({ toggle }) => {
         ) : (
           <li>
             <Link to="#">
-              <div className="customer-navbar__account__login"> SIGNUP</div>
+              <div className="customer-navbar__account__login"> SIGN IN</div>
             </Link>
           </li>
         )}
