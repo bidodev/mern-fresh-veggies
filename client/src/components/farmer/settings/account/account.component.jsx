@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './account.component.styles.scss';
 
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import Modal from 'components/modal/modal.component';
 
 const AccountSetting = ({ user }) => {
+  /* Modal State */
+  const [modalStatus, setIsOpen] = useState(false);
+
+  const password = useRef(null);
+  const newPassword = useRef(null);
+  const repeatNewPassword = useRef(null);
+
+  const handlePassword = (event) => {
+    event.preventDefault();
+    if (newPassword.current.value !== repeatNewPassword.current.value) return console.log("Passwords does not match");
+
+    const data = {
+      current: password.current.value,
+      newPassword: newPassword.current.value,
+      repeatNewPassword: newPassword.current.value,
+    };
+
+    console.log(data)
+  };
+
+  /* Toggle Modal function */
+  const toggleModal = () => {
+    setIsOpen(!modalStatus);
+  };
+
   return (
     <div className="settings__page__item__wrapper">
       <div className="settings__page__item__wrapper__account">
@@ -16,30 +42,53 @@ const AccountSetting = ({ user }) => {
           <h5>Email:</h5>
 
           <div className="settings__accounts__email__input">
-            <input
-              type="email"
-              id="name"
-              name="name"
-              placeholder={`Your email address is ${user.data.email}`}
-              required
-            />
-            <Icon icon={['far', 'edit']} />
+            <div>{`Your email address is ${user.data.email}`}</div>
+            <Icon icon={['far', 'edit']} onClick={toggleModal} />
           </div>
         </div>
         <hr />
         <h5>Password:</h5>
 
         <div className="settings__accounts__email">
-          <input type="email" id="name" name="name" placeholder={`Enter Current Password`} required />
-          <input type="email" id="name" name="name" placeholder={`Enter New Password`} required />
-          <input type="email" id="name" name="name" placeholder={`Repeat New Password`} required />
-        </div>
+          <form onSubmit={handlePassword}>
+            <input
+              type="password"
+              ref={password}
+              id="currentPassword"
+              name="currentPassword"
+              placeholder={`Enter Current Password`}
+              required
+            />
+            <input
+              type="password"
+              ref={newPassword}
+              id="newPassword"
+              name="newPassword"
+              placeholder={`Enter New Password`}
+              required
+            />
+            <input
+              type="password"
+              ref={repeatNewPassword}
+              id="rnewPassword"
+              name="rnewPassword"
+              placeholder={`Repeat New Password`}
+              required
+            />
 
-        <hr />
-        <CustomButton type="submit" style={{ width: '15rem' }}>
-          Save Password
-        </CustomButton>
+            <hr />
+            <div className="settings__accounts__button">
+              <CustomButton type="submit" style={{ width: '15rem' }}>
+                Save Password
+              </CustomButton>
+            </div>
+          </form>
+        </div>
       </div>
+
+      <Modal modalStatus={modalStatus} closeModal={toggleModal}>
+        <h3>Hello Modal</h3>
+      </Modal>
     </div>
   );
 };

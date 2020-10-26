@@ -26,6 +26,8 @@ const UserSettings = ({ match, user }) => {
             <img src={`/images/users/${user.data.photo}`} alt="avatar" />
           </div>
           <h2>{user.data.name}</h2>
+          <hr />
+          <h3>Settings</h3>
 
           <li>
             <NavLink

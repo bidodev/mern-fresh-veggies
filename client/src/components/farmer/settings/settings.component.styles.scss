@@ -20,6 +20,22 @@
     background-color: #f1f1f1;
     width: 14vw;
 
+  
+      hr {
+        margin: 1rem auto;
+        width: 85%;
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      h3 {
+        padding: 1.2rem;
+        color: #333;
+      }
+  
+
     .avatar__container {
       margin: 1rem auto;
       width: 10rem;
