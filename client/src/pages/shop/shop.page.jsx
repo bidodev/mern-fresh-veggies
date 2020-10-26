@@ -12,7 +12,7 @@ import Navbar from 'components/navbar/customer-navbar.component';
 import Feed from 'components/feed/feed.component';
 import Footer from 'components/footer/footer.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
-import SideDrawer from 'components/side-drawer/side-drawer.component';
+import Modal from 'components/modal/modal.component';
 
 /* Styles */
 import './shop.styles.scss';
@@ -20,6 +20,11 @@ import './shop.styles.scss';
 const FarmerList = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
+  const [modalStatus, setIsOpen] = useState(false);
+  // modal toggle
+  const toggleModal = () => {
+    setIsOpen(!modalStatus);
+  };
 
   useEffect(() => {
     axios(`/farmers`)
@@ -32,8 +37,16 @@ const FarmerList = ({ match }) => {
 
   return (
     <div>
-      <Navbar />
-      <SideDrawer />
+      <Navbar toggle={toggleModal} />
+      <Modal
+        modalStatus={modalStatus}
+        closeModal={toggleModal}
+        className="Modal"
+        overlayClassName="Overlay"
+        isOpen={modalStatus}
+      >
+        This is what you added to cart
+      </Modal>
       <Feed />
 
       <section className="farmer-list">

@@ -29,11 +29,11 @@ function Product({ _id, name, photo, type, description }) {
     /* Modal Styles */
     content: {
       width: '50vw',
-      height: '70vh',
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
+      height: '90vh',
+      top: '0',
+      left: '60vw',
+      right: '0',
+      bottom: '0',
       transform: 'translate(-50%, -50%)',
     },
   };
