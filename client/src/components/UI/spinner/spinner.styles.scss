@@ -4,10 +4,12 @@
 */
 
 .loading {
-    grid-column: 1 / -1;
-    justify-self: center;
-    align-self: center;
+    height: 100%;
+    width: 100%;
     font-size: 3rem;
-    color:#358b20;
+    color:#869482;
+    display: flex;
+    align-items: center;
+    justify-content:center;
     background-color: inherit;
   }

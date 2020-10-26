@@ -1,0 +1,62 @@
+.settings__page__item__wrapper {
+    
+  &__account {
+    margin-top: 4rem;
+
+    h4 {
+      font-size: 1rem;
+    }
+
+    h5 {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.settings__accounts {
+    &__button{
+        width: 80%;
+    }
+}
+
+
+.settings__accounts__email {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type='password'] {
+    width: 30rem;
+    padding: 0.8rem 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+
+
+  &__input {
+    width: 30rem;
+    display: flex;
+    border: 1px solid rgb(195, 195, 195);
+    border-radius: 2px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #666;
+    margin-bottom: 1rem;
+
+    div {
+      padding: 0.8rem 0.5rem;
+    }
+
+    svg {
+      color: #666;
+      font-size: 2rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
