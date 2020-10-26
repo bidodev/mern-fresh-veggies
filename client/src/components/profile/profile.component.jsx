@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* Component Imports */
-import CustomButton from 'components/custom-button/custom-button.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
 import './profile.styles.scss';

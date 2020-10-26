@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 /* Component Imports */
-import Spinner from 'components/spinner/spinner.component';
+import Spinner from 'components/UI/spinner/spinner.component';
 import Navbar from 'components/navbar/customer-navbar.component';
 import Profile from 'components/profile/profile.component';
 import Recipes from 'components/recipes/recipes.component';
@@ -75,7 +75,7 @@ function ProfilePage() {
 
   const ProfileCompouse = () => {
     const { open, recipes, gallery, products } = farmer.config;
-    console.log(farmer.config)
+    console.log(farmer.config);
 
     return (
       <>

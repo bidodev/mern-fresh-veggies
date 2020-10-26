@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 /* Component Imports */
-import FormInput from 'components/forms/input.component';
-import CustomButton from 'components/custom-button/custom-button.component';
+import FormInput from 'components/forms/input/input.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
 import './signup.styles.scss';
@@ -84,13 +84,7 @@ const SignUp = () => {
           label="name"
           handleInputValue={handleInputValue}
         />
-        <FormInput
-          type="email"
-          name="email"
-          value={userEmail}
-          label="email"
-          handleInputValue={handleInputValue}
-        />
+        <FormInput type="email" name="email" value={userEmail} label="email" handleInputValue={handleInputValue} />
         <FormInput
           type="password"
           name="password"
