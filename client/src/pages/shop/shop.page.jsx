@@ -20,8 +20,8 @@ import './shop.styles.scss';
 const FarmerList = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
-  const [modalStatus, setIsOpen] = useState(true);
-
+  const [modalStatus, setIsOpen] = useState(false);
+  // modal toggle
   const toggleModal = () => {
     setIsOpen(!modalStatus);
   };

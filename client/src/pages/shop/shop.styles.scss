@@ -65,4 +65,9 @@
   border-radius: 4px;
   outline: none;
   padding: 20px;
+  //for ipad width of the modal should be at least 50% of the view port
+  @media (max-width: 800px) {
+    width: 70vw;
+  }
+  //here the mobile v. must also be added
 }
