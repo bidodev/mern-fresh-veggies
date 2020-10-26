@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* Styles */
-import './input.component.styles.scss';
+import './input.styles.scss';
 
 const FormInput = ({ handleInputValue, label, ...restProps }) => {
   return (

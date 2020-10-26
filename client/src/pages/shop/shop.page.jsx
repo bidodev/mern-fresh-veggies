@@ -7,11 +7,11 @@ import { Route } from 'react-router-dom';
 import ProfilePage from 'pages/farmer/profile/profile.page';
 
 /* Component Imports */
-import Spinner from 'components/spinner/spinner.component';
+import Spinner from 'components/UI/spinner/spinner.component';
 import Navbar from 'components/navbar/customer-navbar.component';
 import Feed from 'components/feed/feed.component';
 import Footer from 'components/footer/footer.component';
-import ScrollTopArrow from 'components/UI/scroll.component';
+import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import SideDrawer from 'components/side-drawer/side-drawer.component';
 
 /* Styles */
@@ -46,9 +46,7 @@ const FarmerList = ({ match }) => {
             {farmers.map((farmer) => (
               <li className="farmer-list__list-container__item">
                 <Link to={`${match.url}/${farmer._id}`}>
-                  <h3 className="farmer-list__list-container__item--header">
-                    {farmer.name}
-                  </h3>
+                  <h3 className="farmer-list__list-container__item--header">{farmer.name}</h3>
                   <div className="farmer-list__list-container__item__img-container">
                     <img
                       src="/images/zoe.jpg"

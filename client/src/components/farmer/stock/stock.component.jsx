@@ -3,10 +3,10 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /* Component Imports */
-import CustomButton from 'components/custom-button/custom-button.component';
-import Spinner from 'components/spinner/spinner.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
+import Spinner from 'components/UI/spinner/spinner.component';
 import Product from './product/product.item.component';
-import AddForm from 'components/forms/add.product.component';
+import AddForm from 'components/forms/add-product/add.product.component';
 import Modal from 'components/modal/modal.component';
 
 /* Styles */

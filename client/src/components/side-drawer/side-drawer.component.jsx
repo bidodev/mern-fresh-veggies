@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './side-drawer.component.style.scss';
+import './side-drawer.styles.scss';
 
 const SideDrawer = () => {
   return <section className="side-drawer">this is SideDrawer</section>;

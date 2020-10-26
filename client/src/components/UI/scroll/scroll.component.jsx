@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import './scroll.component.style.scss';
+/* Styles */
+import './scroll.styles.scss';
 
 const ScrollTopArrow = () => {
   const [showScroll, setShowScroll] = useState(false);

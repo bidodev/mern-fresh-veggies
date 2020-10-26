@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 /* Component Imports */
-import FormInput from 'components/forms/input.component';
-import CustomButton from 'components/custom-button/custom-button.component';
+import FormInput from 'components/forms/input/input.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
-import './login.component.styles.scss';
+import './login.styles.scss';
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState('');

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 /* Component Imports */
-import CustomButton from 'components/custom-button/custom-button.component';
-import FormInput from 'components/forms/input.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
+import FormInput from 'components/forms/input/input.component';
 
 /* Styles */
-import './add.product.component.style.scss';
+import './add.product.styles.scss';
 
 const AddForm = () => {
   const [file, setSelectedFile] = useState(null);
@@ -15,8 +15,8 @@ const AddForm = () => {
   const [type, setType] = useState('');
 
   const handleFileInput = (event) => {
-    setSelectedFile(event.target.files[0])
-  }
+    setSelectedFile(event.target.files[0]);
+  };
 
   const submitForm = (event) => {
     event.preventDefault();
@@ -28,12 +28,9 @@ const AddForm = () => {
     data.append('type', type);
 
     axios
-      .post(
-        '/farmers/products',
-        data
-      )
+      .post('/farmers/products', data)
       .then((res) => {
-        console.log(res.response)
+        console.log(res.response);
       })
       .catch((err) => console.log(err.response.data.message));
   };
@@ -48,7 +45,7 @@ const AddForm = () => {
         value={description}
         required
         label="description"
-        onChange={(event) => setDescription(event.target.value)} 
+        onChange={(event) => setDescription(event.target.value)}
       />
 
       <input name="file" type="file" onChange={handleFileInput} />

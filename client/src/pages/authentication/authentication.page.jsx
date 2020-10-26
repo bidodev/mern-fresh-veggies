@@ -1,8 +1,8 @@
 import React from 'react';
 
 /* Component Imports */
-import SignIn from 'components/login/login.component';
-import SignUp from 'components/signup/signup.component';
+import SignIn from 'components/authentication/login/login.component';
+import SignUp from 'components/authentication/signup/signup.component';
 
 /* Styles */
 import './authentication.styles.scss';
