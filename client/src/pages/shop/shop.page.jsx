@@ -11,6 +11,7 @@ import Spinner from 'components/UI/spinner/spinner.component';
 import Navbar from 'components/navbar/customer-navbar.component';
 import Feed from 'components/feed/feed.component';
 import Footer from 'components/footer/footer.component';
+import HowItWorks from 'components/how-it-works/how.it.works.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import Modal from 'components/modal/modal.component';
 
@@ -73,11 +74,9 @@ const FarmerList = ({ match }) => {
           </div>
         )}
       </section>
-      <ScrollTopArrow />
-      <div className="ideas" id="how-we-work">
-        <h2>Here is how it works</h2>
-      </div>
 
+      <HowItWorks />
+      <ScrollTopArrow />
       <Footer />
     </div>
   );
