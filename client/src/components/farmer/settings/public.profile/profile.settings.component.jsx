@@ -2,15 +2,21 @@ import React, { useState, useEffect } from 'react';
 import './profile.settings.component.styles.scss';
 import axios from 'axios';
 
-function PublicProfileSettings() {
+import Spinner from 'components/UI/spinner/spinner.component';
+
+import Alerts from 'components/UI/alerts';
+
+function PublicProfileSettings({ user }) {
   /* Load actual status of the configs */
   const [configs, setConfigs] = useState(null);
+  const [alert, setAlert] = useState(null);
 
   useEffect(() => {
     axios
       .get('/users/settings')
       .then(({ data }) => {
         setConfigs(data.data.config);
+        
       })
       .catch((err) => console.log(err.response.data.message));
   }, []);
@@ -20,7 +26,7 @@ function PublicProfileSettings() {
     axios
       .patch('/users/settings', configs)
       .then((res) => {
-        console.log(res.data);
+        setAlert(res.data.status);
       })
       .catch((err) => console.log(err.response.data.message));
   }, [configs]);
@@ -29,8 +35,17 @@ function PublicProfileSettings() {
     <>
       {configs ? (
         <div className="settings__page__item__wrapper">
+          {/* {alert ? (
+            <div className="messages error">
+              <h2 className="element-invisible">Statusbericht</h2>
+              <h3>{alert}</h3>
+            </div>
+          ) : (
+            ''
+          )} */}
+
           <h4>Public Profile</h4>
-          <p>Hello</p>
+          <p>Hello {user.data.name}</p>
 
           <div className="settings__page__item__header">
             <h2>Select how your profile should Lorem ipsum dolor sit amet.</h2>
@@ -129,7 +144,9 @@ function PublicProfileSettings() {
           </div>
         </div>
       ) : (
-        <h1>Some loader here.... becaude it's an api call</h1>
+        <div className="settings__page__item__wrapper">
+          <Spinner />
+        </div>
       )}
     </>
   );
