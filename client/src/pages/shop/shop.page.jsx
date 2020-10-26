@@ -12,7 +12,7 @@ import Navbar from 'components/navbar/customer-navbar.component';
 import Feed from 'components/feed/feed.component';
 import Footer from 'components/footer/footer.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
-import SideDrawer from 'components/side-drawer/side-drawer.component';
+import Modal from 'components/modal/modal.component';
 
 /* Styles */
 import './shop.styles.scss';
@@ -20,6 +20,11 @@ import './shop.styles.scss';
 const FarmerList = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
+  const [modalStatus, setIsOpen] = useState(true);
+
+  const toggleModal = () => {
+    setIsOpen(!modalStatus);
+  };
 
   useEffect(() => {
     axios(`/farmers`)
@@ -33,7 +38,9 @@ const FarmerList = ({ match }) => {
   return (
     <div>
       <Navbar />
-      <SideDrawer />
+      <Modal modalStatus={modalStatus} closeModal={toggleModal} className="Modal" overlayClassName="Overlay">
+        This is modal
+      </Modal>
       <Feed />
 
       <section className="farmer-list">
