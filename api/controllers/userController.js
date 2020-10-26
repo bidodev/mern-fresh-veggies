@@ -26,7 +26,6 @@ exports.updateProfile = asyncWrapper(async (req, res, next) => {
  * METHOD: PATCH
  */
 exports.updateSettings = asyncWrapper(async (req, res, next) => {
-
   const user = await User.findByIdAndUpdate(
     req.user.id,
     { config: req.body },
@@ -38,6 +37,15 @@ exports.updateSettings = asyncWrapper(async (req, res, next) => {
   //console.log(req.user)
   res.status(200).json({
     status: 'success',
+  });
+});
+
+exports.userConfig = asyncWrapper(async (req, res, next) => {
+  res.status(200).json({
+    status: 'success',
+    data: {
+      config: req.user.config
+    }
   });
 });
 
