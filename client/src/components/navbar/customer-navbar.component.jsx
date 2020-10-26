@@ -16,12 +16,7 @@ const NavigationCustomer = () => {
       </Link>
       <div className="customer-navbar__links">
         {/* <div>About Us</div> */}
-        <HashLink
-          to="#how-we-work"
-          scroll={(el) =>
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-        >
+        <HashLink to="#how-we-work" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
           <div>How it works</div>
         </HashLink>
       </div>
@@ -38,10 +33,7 @@ const NavigationCustomer = () => {
         {isLoggedIn ? (
           <li>
             <Link to="#">
-              <FontAwesomeIcon
-                icon={['far', 'user-circle']}
-                className="fa-user-circle"
-              />
+              <FontAwesomeIcon icon={['far', 'user-circle']} className="fa-user-circle" />
             </Link>
           </li>
         ) : (
