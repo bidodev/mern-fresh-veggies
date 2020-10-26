@@ -6,6 +6,7 @@ import './how.it.works.styles.scss';
 const HowItWorks = () => {
   return (
     <section className="how-it-works" id="how-we-work">
+      {/* ======== Hero Section === */}
       <div className="how-it-works__hero-section">
         <h2 className="how-it-works__hero-section--header">How it works</h2>
         <div className="how-it-works__hero-section__img-container">
@@ -14,33 +15,30 @@ const HowItWorks = () => {
 
         <div className="how-it-works__hero-section__banner">
           <div className="how-it-works__hero-section__banner__text-container">
-            <h2 className="how-it-works__hero-section__banner__text-container--header">
-              Lorem ipsum dolor sit adipisicing.
-            </h2>
+            <h2 className="how-it-works__hero-section__banner__text-container--header">Choose a Local Farmer</h2>
             <div className="how-it-works__hero-section__banner__text-container--text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Encourage local farms to adopt and continue responsible farming practices.
             </div>
           </div>
 
           <div className="how-it-works__hero-section__banner__text-container">
-            <h2 className="how-it-works__hero-section__banner__text-container--header">
-              Lorem ipsum dolor sit adipisicing.
-            </h2>
+            <h2 className="how-it-works__hero-section__banner__text-container--header">Fresh and Local Food</h2>
             <div className="how-it-works__hero-section__banner__text-container--text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              You’ll have the peace of mind knowing that you're eating quality, natural foods.
             </div>
           </div>
 
           <div className="how-it-works__hero-section__banner__text-container">
-            <h2 className="how-it-works__hero-section__banner__text-container--header">
-              Lorem ipsum dolor sit adipisicing.
-            </h2>
+            <h2 className="how-it-works__hero-section__banner__text-container--header">Convenient Deliveries</h2>
             <div className="how-it-works__hero-section__banner__text-container--text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Carbon-neutral shipping, 100% recyclable packaging, zero-waste warehouses.
             </div>
           </div>
         </div>
       </div>
+
+      {/* ======== Information Section === */}
+      <div className="how-it-works__info-section"></div>
     </section>
   );
 };

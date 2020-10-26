@@ -13,7 +13,6 @@
     &__img-container {
       width: 55vw;
       transform: translateX(40%);
-
       @media (max-width: 1050px) {
         transform: translate(0);
         width: 100vw;
@@ -25,14 +24,12 @@
     }
 
     &__banner {
-      padding: 4vh 2vw;
+      padding: 1vh;
       width: 55vw;
       display: flex;
-      align-items: center;
       justify-content: space-evenly;
       transform: translate(50%, -50%);
       background: #eee;
-
       @media (max-width: 1050px) {
         width: 91vw;
         transform: translate(5%, -20%);
@@ -44,13 +41,16 @@
 
       &__text-container {
         margin: 1vh;
+        padding: 2vh;
+        width: 33%;
+        @media (max-width: 640px) {
+          width: 95%;
+        }
 
         &:not(:last-child) {
-          padding-right: 1vh;
+          padding-right: 2vh;
           border-right: 1px solid black;
-
           @media (max-width: 640px) {
-            width: 95%;
             padding-right: 0;
             border-right: none;
             padding-bottom: 2vh;
@@ -59,7 +59,10 @@
         }
 
         &--header {
-          margin: 1vh 0;
+          margin-bottom: 1vh;
+          @media (max-width: 1150px) {
+            font-size: 1.4rem;
+          }
           @media (max-width: 460px) {
             font-size: 1.2rem;
           }
