@@ -28,12 +28,11 @@ function Product({ _id, name, photo, type, description }) {
   const customStyles = {
     /* Modal Styles */
     content: {
-      width: '50vw',
-      height: '90vh',
-      top: '0',
-      left: '60vw',
-      right: '0',
-      bottom: '0',
+      width: '70vw',
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
       transform: 'translate(-50%, -50%)',
     },
   };
@@ -49,20 +48,22 @@ function Product({ _id, name, photo, type, description }) {
           />
         </div>
         <h3 className="product-item__farmer-products__card--name">{name}</h3>
-        <span className="product-item__farmer-products__card--type">Type: {type}</span>
-        <span className="">Stock: 10</span>
-        <span className="">Price: EUR 1.5</span>
+        <span className="product-item__farmer-products__card--inventory">Stock: 10</span>
+        <span className="product-item__farmer-products__card--price">Price: EUR 1.5</span>
       </div>
 
       {/*Loading the content inside of the modal, passing the data  */}
       <Modal modalStatus={modalStatus} closeModal={toggleModal} styles={customStyles}>
         <Icon icon="times" className="fa-times" onClick={toggleModal} />
-        <h3>Product: {name}</h3>
-        <p>{description}</p>
-        <p>Delete Item: </p>
-        <Icon icon="trash" onClick={() => removeProduct(_id)} />
-        <div className="display__product__img__wrapper">
-          <img src={`/images/users/${photo}`} alt="img" />
+        <h2 className="display-product__name">{name}</h2>
+        <div className="display-product__img-container">
+          <img src={`/images/users/${photo}`} alt="img" className="display-product__img-container--img" />
+        </div>
+        <div className="display-product__type">{type}</div>
+        <div className="display-product__description">{description}</div>
+        <div className="display-product__delete-container">
+          <span className="display-product__delete-container--text">Delete Item: </span>
+          <Icon icon="trash" onClick={() => removeProduct(_id)} className="display-product__delete-container--icon" />
         </div>
       </Modal>
     </>
