@@ -25,7 +25,8 @@ const FarmerList = ({ match }) => {
 
   // redux state for the cart modal
   const modalStatus = useSelector((state) => state.status.modal);
-  console.log(modalStatus);
+  const signInModalStatus = useSelector((state) => state.clientSignIn.modal);
+  console.log(signInModalStatus);
   const dispatch = useDispatch();
   // Getting all farmers profile
   useEffect(() => {
@@ -43,10 +44,19 @@ const FarmerList = ({ match }) => {
       <Modal
         modalStatus={modalStatus}
         closeModal={() => dispatch({ type: 'TOGGLE_MODAL' })}
-        className="Modal"
-        overlayClassName="Overlay"
+        className="cart-modal"
+        overlayClassName="cart-overlay"
       >
         This is what you added to cart
+      </Modal>
+      <Modal
+        modalStatus={signInModalStatus}
+        closeModal={() => dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' })}
+        className="sign-in-modal"
+        overlayClassName="sign-in-overlay"
+        shouldCloseOnOverlayClick={false}
+      >
+        This is sign in modal
       </Modal>
       <Feed />
 
