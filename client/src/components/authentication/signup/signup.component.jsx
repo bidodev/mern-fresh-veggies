@@ -46,7 +46,7 @@ const SignUp = ({ url }) => {
       passwordConfirmation: confirmPassword,
     };
     axios
-      .post(`/account/register/${url}`, data)
+      .post(`/account/register/farmer`, data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
         history.push('/farmer/admin');

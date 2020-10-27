@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import Editable from 'react-text-content-editable'
+import Editable from 'react-text-content-editable';
 import ImageItem from './image-item.component';
 
 /* Component Imports */
@@ -11,13 +11,14 @@ import Modal from 'components/modal/modal.component';
 /* Styles */
 import './profile.styles.scss';
 
-const ProfileAdmin = ({ photo, name}) => {
-
-  const [text, setText] = useState('Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi!')
+const ProfileAdmin = ({ photo, name }) => {
+  const [text, setText] = useState(
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi!'
+  );
 
   const onChange = (value) => {
-    setText(value)
-  }
+    setText(value);
+  };
 
   /* Modal State */
   const [modalStatus, setIsOpen] = useState(false);
@@ -39,6 +40,12 @@ const ProfileAdmin = ({ photo, name}) => {
       transform: 'translate(-50%, -50%)',
     },
   };
+
+  const profileImages = [
+    { id: 1, name: 'a', url: 'default.jpg' },
+    { id: 2, name: 'b', url: 'default.jpg' },
+    { id: 3, name: 'c', url: 'default.jpg' },
+  ];
 
   /* Is hovering profile photo State */
   const [isHovering, setHoverStatus] = useState(false);
@@ -74,7 +81,6 @@ const ProfileAdmin = ({ photo, name}) => {
       <div className="profile-admin__profile-container">
         <h2 className="profile-admin__profile-container--header">YOUR PROFILE</h2>
         <div className="profile-admin__profile-container__information">
-
           <div
             className="profile-admin__profile-container__information__avatar"
             onMouseEnter={handleMouseHover}
@@ -90,22 +96,15 @@ const ProfileAdmin = ({ photo, name}) => {
               </div>
             )}
           </div>
+          
           <div className="profile-admin__profile-container__information--biography">
             Welcome to your profile {name}
-        <Editable 
-            tag='p'
-            type='text'
-            maxLength='200'
-            onChange={onChange}
-            value={text}
-            readOnly={false}
-         />
+            <Editable tag="p" type="text" maxLength="200" onChange={onChange} value={text} readOnly={false} />
           </div>
         </div>
+        <hr/>
         <div className="profile-admin__profile-container__gallery">
-          <ImageItem />
-          <ImageItem />
-          <ImageItem />
+          {profileImages.map((img) => <ImageItem key={img.id} img={img}/ >)}
         </div>
       </div>
 
@@ -124,7 +123,7 @@ const ProfileAdmin = ({ photo, name}) => {
               Select Photo
             </label>
             <input id="file-upload" type="file" onChange={handleFileInput} />
-            <input type="submit"/>
+            <input type="submit" />
           </form>
         </div>
       </Modal>

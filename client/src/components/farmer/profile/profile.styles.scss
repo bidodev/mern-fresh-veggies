@@ -16,6 +16,15 @@
     width: 70%;
     background: #f9f9f9;
 
+    hr {
+      margin: 1rem auto;
+      width: 85%;
+      border: 0;
+      height: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
 
     @media (max-width: 1050px) {
       height: 100%;
@@ -97,6 +106,7 @@
         margin-right: 2rem;
         padding: 1rem;
         border-radius: 2px;
+        margin-bottom: 5rem;
 
         p {
           margin-top: 1rem;

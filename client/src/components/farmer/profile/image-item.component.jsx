@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import './image.item.styles.scss';
 import {FontAwesomeIcon as Icon} from '@fortawesome/react-fontawesome';
 
-function ImageItem() {
+function ImageItem({img}) {
+
+  const { name, url } = img;
+
   const [isHovering, setHoverStatus] = useState(false);
 
   const handleMouseHover = () => {
@@ -16,7 +19,7 @@ function ImageItem() {
       onMouseEnter={handleMouseHover}
       onMouseLeave={handleMouseHover}
     >
-      <img src="/images/default.jpg" alt="img" className="gallery-img" />
+      <img src={`/images/${url}`} alt="img" className="gallery-img" />
       {isHovering && (
         <div>
           <li>
