@@ -23,7 +23,7 @@ const NavigationCustomer = ({ toggle }) => {
       <ul className="customer-navbar__account">
         <li>
           <Link to="#">
-            <FontAwesomeIcon icon={['fas', 'shopping-cart']} className="fa-shopping-cart" onClick={() => toggle()} />
+            <FontAwesomeIcon icon={['fas', 'shopping-cart']} className="fa-shopping-cart" onClick={toggle} />
           </Link>
         </li>
         {isLoggedIn ? (

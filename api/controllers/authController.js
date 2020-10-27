@@ -159,18 +159,34 @@ exports.restrictedAccess = (...roles) => {
 };
 
 exports.changePassword = asyncWrapper(async (req, res, next) => {
-    // TODO: Get the user (remember we have access to the user, because of the protected middleware)
-    const user = await User.findById(req.user.id);
+  // TODO: Get the user (remember we have access to the user, because of the protected middleware)
+  const user = await User.findById(req.user.id);
 
-    // 2) Check if POSTed current password is correct
-    if (!(await user.comparePasswords(req.body.currentPassword))) {
-      return next(new AppError('Your current password is wrong.', 401));
-    }
-    // 3) If so, update password
-    user.password = req.body.password;
-    await user.save();
-    // User.findByIdAndUpdate will NOT work as intended!
-  
-    // 4) Log user in, send JWT
-    createSendToken(user, 200, req, res);
-})
+  // 2) Check if POSTed current password is correct
+  if (!(await user.comparePasswords(req.body.currentPassword))) {
+    return next(new AppError('Your current password is wrong.', 401));
+  }
+  // 3) If so, update password
+  user.password = req.body.password;
+  await user.save();
+  // User.findByIdAndUpdate will NOT work as intended!
+
+  // 4) Log user in, send JWT
+  createSendToken(user, 200, req, res);
+});
+
+exports.changeEmail = asyncWrapper(async (req, res, next) => {
+  // TODO: Get the user (remember we have access to the user, because of the protected middleware)
+  const user = await User.findById(req.user.id);
+
+  // 2) Check if POSTed current password is correct
+  if (!(await user.comparePasswords(req.body.currentPassword))) {
+    return next(new AppError('Your current password is wrong.', 401));
+  }
+
+  //if everything is okay, update email
+  user.email = req.body.email;
+  await user.save();
+
+  createSendToken(user, 200, req, res);
+});

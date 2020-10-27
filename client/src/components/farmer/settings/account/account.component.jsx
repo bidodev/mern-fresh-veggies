@@ -15,9 +15,32 @@ const AccountSetting = ({ user }) => {
     setIsOpen(!modalStatus);
   };
 
+  const email = useRef(null);
   const password = useRef(null);
   const newPassword = useRef(null);
   const repeatNewPassword = useRef(null);
+
+  const handleEmail = (event) => {
+    event.preventDefault();
+
+    const data = {
+      email: email.current.value,
+      currentPassword: password.current.value,
+    }
+
+    axios
+      .patch('/account/email', data)
+      .then((res) => {
+        console.log(res);
+        // if the password was changed with sucess clear the fields
+        toggleModal();
+      })
+      .catch((err) => {
+        console.log(err.response.data.message);
+        alert('etwas ist schief gelaufen');
+      });
+    
+  };
 
   const handlePassword = (event) => {
     event.preventDefault();
@@ -101,8 +124,36 @@ const AccountSetting = ({ user }) => {
         </div>
       </div>
 
-      <Modal modalStatus={modalStatus} closeModal={toggleModal}>
-        <h3>Hello Modal</h3>
+      <Modal
+        handleEmail={handleEmail}
+        modalStatus={modalStatus}
+        closeModal={toggleModal}
+        className={'modal__email'}
+        overlayClassName={'overlay__email'}
+      >
+        <div className="a">
+          <h3>Change Your Email</h3>
+          <Icon icon={'times'} className="fa-times" onClick={toggleModal} />
+        </div>
+        <hr />
+        <div className="b">
+          <form onSubmit={handleEmail}>
+            <input type="email" ref={email} id="email" name="email" placeholder={`${user.data.email}`} required />
+            <input
+              type="password"
+              ref={password}
+              id="rnewPassword"
+              name="rnewPassword"
+              placeholder={`Password`}
+              required
+            />
+            <div className="c">
+            <CustomButton type="submit" style={{ width: 'auto' }}>
+              Save
+            </CustomButton>
+            </div>
+          </form>
+        </div>
       </Modal>
     </div>
   );
