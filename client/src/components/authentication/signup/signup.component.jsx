@@ -10,7 +10,7 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 /* Styles */
 import './signup.styles.scss';
 
-const SignUp = () => {
+const SignUp = ({ url }) => {
   const [displayName, setDisplayName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
@@ -46,7 +46,7 @@ const SignUp = () => {
       passwordConfirmation: confirmPassword,
     };
     axios
-      .post('/account/register/farmer', data)
+      .post(`/account/register/farmer`, data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
         history.push('/farmer/admin');
