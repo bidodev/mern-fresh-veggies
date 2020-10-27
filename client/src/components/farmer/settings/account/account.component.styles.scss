@@ -1,5 +1,4 @@
 .settings__page__item__wrapper {
-    
   &__account {
     margin-top: 4rem;
 
@@ -14,11 +13,10 @@
 }
 
 .settings__accounts {
-    &__button{
-        width: 80%;
-    }
+  &__button {
+    width: 80%;
+  }
 }
-
 
 .settings__accounts__email {
   form {
@@ -32,8 +30,6 @@
     font-size: 1rem;
     margin-bottom: 1rem;
   }
-
-
 
   &__input {
     width: 30rem;
@@ -59,4 +55,70 @@
       }
     }
   }
+}
+
+.modal__email {
+  width: 33vw;
+  height: 45vh;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -20%);
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  //for ipad width of the modal should be at least 50% of the view port
+  @media (max-width: 800px) {
+    width: 70vw;
+  }
+  //here the mobile v. must also be added
+}
+
+.overlay__email {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(249, 249, 249, 0.7);
+  z-index: 9999;
+}
+
+.a {
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  svg {
+    font-size: 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.b {
+  margin-top: 2rem;
+  height: 45%;
+  input[type='password'],
+  input[type='email'] {
+    width: 30rem;
+    padding: 0.8rem 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.c {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
