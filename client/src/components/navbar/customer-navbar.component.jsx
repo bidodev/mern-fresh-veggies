@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 /* Styles */
 import './customer-navbar.styles.scss';
 
-const NavigationCustomer = ({ toggle }) => {
+const NavigationCustomer = () => {
   //here logged in still to be changed
   const isLoggedIn = false;
   const dispatch = useDispatch();
@@ -40,7 +40,12 @@ const NavigationCustomer = ({ toggle }) => {
         ) : (
           <li>
             <Link to="#">
-              <div className="customer-navbar__account__login"> SIGN IN</div>
+              <div
+                className="customer-navbar__account__login"
+                onClick={() => dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' })}
+              >
+                SIGN IN
+              </div>
             </Link>
           </li>
         )}
