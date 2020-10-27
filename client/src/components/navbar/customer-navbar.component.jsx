@@ -2,13 +2,14 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-
+import { useDispatch } from 'react-redux';
 /* Styles */
 import './customer-navbar.styles.scss';
 
 const NavigationCustomer = ({ toggle }) => {
   //here logged in still to be changed
   const isLoggedIn = false;
+  const dispatch = useDispatch();
   return (
     <nav className="customer-navbar">
       <Link to="/">
@@ -23,7 +24,11 @@ const NavigationCustomer = ({ toggle }) => {
       <ul className="customer-navbar__account">
         <li>
           <Link to="#">
-            <FontAwesomeIcon icon={['fas', 'shopping-cart']} className="fa-shopping-cart" onClick={toggle} />
+            <FontAwesomeIcon
+              icon={['fas', 'shopping-cart']}
+              className="fa-shopping-cart"
+              onClick={() => dispatch({ type: 'TOGGLE_MODAL' })}
+            />
           </Link>
         </li>
         {isLoggedIn ? (
