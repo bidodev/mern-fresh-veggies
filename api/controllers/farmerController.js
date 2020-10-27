@@ -49,6 +49,8 @@ exports.getFarmerPage = asyncWrapper(async (req, res, next) => {
       name: user.name,
       products: user.products,
       photo: user.photo,
+      description: user.description,
+      config: user.config,
     },
   });
 });
@@ -143,3 +145,4 @@ exports.updateProduct = asyncWrapper(async (req, res, next) => {
     }
   });
 });
+

@@ -7,12 +7,13 @@ import { Route } from 'react-router-dom';
 import ProfilePage from 'pages/farmer/profile/profile.page';
 
 /* Component Imports */
-import Spinner from 'components/spinner/spinner.component';
+import Spinner from 'components/UI/spinner/spinner.component';
 import Navbar from 'components/navbar/customer-navbar.component';
 import Feed from 'components/feed/feed.component';
 import Footer from 'components/footer/footer.component';
-import ScrollTopArrow from 'components/UI/scroll.component';
-import SideDrawer from 'components/side-drawer/side-drawer.component';
+import HowItWorks from 'components/how-it-works/how.it.works.component';
+import ScrollTopArrow from 'components/UI/scroll/scroll.component';
+import Modal from 'components/modal/modal.component';
 
 /* Styles */
 import './shop.styles.scss';
@@ -20,6 +21,11 @@ import './shop.styles.scss';
 const FarmerList = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
+  const [modalStatus, setIsOpen] = useState(false);
+  // modal toggle
+  const toggleModal = () => {
+    setIsOpen(!modalStatus);
+  };
 
   useEffect(() => {
     axios(`/farmers`)
@@ -32,8 +38,16 @@ const FarmerList = ({ match }) => {
 
   return (
     <div>
-      <Navbar />
-      <SideDrawer />
+      <Navbar toggle={toggleModal} />
+      <Modal
+        modalStatus={modalStatus}
+        closeModal={toggleModal}
+        className="Modal"
+        overlayClassName="Overlay"
+        isOpen={modalStatus}
+      >
+        This is what you added to cart
+      </Modal>
       <Feed />
 
       <section className="farmer-list">
@@ -46,9 +60,7 @@ const FarmerList = ({ match }) => {
             {farmers.map((farmer) => (
               <li className="farmer-list__list-container__item">
                 <Link to={`${match.url}/${farmer._id}`}>
-                  <h3 className="farmer-list__list-container__item--header">
-                    {farmer.name}
-                  </h3>
+                  <h3 className="farmer-list__list-container__item--header">{farmer.name}</h3>
                   <div className="farmer-list__list-container__item__img-container">
                     <img
                       src="/images/zoe.jpg"
@@ -62,11 +74,9 @@ const FarmerList = ({ match }) => {
           </div>
         )}
       </section>
-      <ScrollTopArrow />
-      <div className="ideas" id="how-we-work">
-        <h2>Here is how it works</h2>
-      </div>
 
+      <HowItWorks />
+      <ScrollTopArrow />
       <Footer />
     </div>
   );

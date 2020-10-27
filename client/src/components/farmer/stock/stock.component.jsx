@@ -3,10 +3,10 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /* Component Imports */
-import CustomButton from 'components/custom-button/custom-button.component';
-import Spinner from 'components/spinner/spinner.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
+import Spinner from 'components/UI/spinner/spinner.component';
 import Product from './product/product.item.component';
-import AddForm from 'components/forms/add.product.component';
+import AddForm from 'components/forms/add-product/add.product.component';
 import Modal from 'components/modal/modal.component';
 
 /* Styles */
@@ -51,12 +51,12 @@ const Stock = () => {
 
   return (
     <section className="stock">
+      <h2 className="stock__overview--header">Stock Overview</h2>
       <div className="stock__overview">
-        <h2 className="stock__overview--header">STOCK OVERVIEW</h2>
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="profile-page__farmer-products">
+          <div className="stock__farmer-products">
             {products.length > 0 ? (
               products.map((product) => <Product key={product._id} {...product} />)
             ) : (

@@ -2,15 +2,18 @@
   // I don't understand why, but width of navbar fucked up around 500px (don't take the whole screen)
   height: 6vh;
   width: 100%;
-  background-color: #222;
+  background-color: #fff;
+  position: fixed;
+  z-index: 9999;
 
   .navbar {
     height: 100%;
-    width: 15rem;
+    width: 15vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin-left: auto;
+
 
     ul {
       list-style: none;
@@ -52,6 +55,17 @@
       padding: 1vh 2vh;
       border-radius: 5px;
       display: none;
+
+    }
+
+    .right {
+      ul {
+        div {
+          li:hover {
+            background-color: #f9f9f9;
+          }
+        }
+      }
     }
 
     .right ul li .dropdown:before {

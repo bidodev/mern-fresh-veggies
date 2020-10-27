@@ -1,0 +1,57 @@
+/*
+  Aside bar rules
+*/
+
+/*
+ - Aside main container
+ - We don't need flex on the main container, because it's already a column by default.
+*/
+.admin-panel__sidebar {
+  width: 4vw;
+  min-height: 94vh;
+  max-height: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin-top: 6vh;
+
+  // div:last-of-type {
+  //   background: #ff0000;
+  // }
+
+  /*
+   - Here we define all the properties for the Items.
+   - You can find more properties for this itens on the fontawesome.scss
+  */
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 1.2rem 0;
+    transition: background-color 0.3s ease;
+    color: #606060;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.1);
+
+    &--active {
+      background-color: #e5e5e5;
+      width: 4vw;
+    }
+
+    &__icon {
+      color: #f75d37;
+      font-size: 1.6rem;
+    }
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
+
+    p {
+      margin-top: 1rem;
+      text-transform: capitalize;
+    }
+  }
+}
