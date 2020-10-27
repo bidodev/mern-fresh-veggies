@@ -28,9 +28,6 @@ const Story = () => {
         {/* ---- Second Row ---- */}
         <div className="second-row">
           <div className="second-row__left-container">
-            <div className="second-row__left-container--icon">
-              <FontAwesomeIcon icon={['fas', 'adjust']} />
-            </div>
             <h3 className="second-row__left-container--header">Ipsum dolor sit amet consectetur adipisicing</h3>
             <div className="second-row__left-container--text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellat rerum accusantium nesciunt
@@ -40,12 +37,25 @@ const Story = () => {
           </div>
 
           <div className="second-row__right-container">
-            <div className="second-row__right-container__img-container">
-              <img src="/images/farm-1.jpg" alt="img" className="second-row__right-container__img-container--img" />
+            <div className="second-row__right-container__img-container-top">
+              <img src="/images/farm-1.jpg" alt="img" className="second-row__right-container__img-container-top--img" />
             </div>
 
-            <div className="second-row__right-container__img-container">
-              <img src="/images/farm-1.jpg" alt="img" className="second-row__right-container__img-container--img" />
+            <div className="second-row__right-container__bottom-container">
+              <div className="second-row__right-container__bottom-container__img-container">
+                <img
+                  src="/images/farm-1.jpg"
+                  alt="img"
+                  className="second-row__right-container__bottom-container__img-container--img"
+                />
+              </div>
+              <div className="second-row__right-container__bottom-container__img-container">
+                <img
+                  src="/images/farm-1.jpg"
+                  alt="img"
+                  className="second-row__right-container__bottom-container__img-container--img"
+                />
+              </div>
             </div>
           </div>
         </div>
