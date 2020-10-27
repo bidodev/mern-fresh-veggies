@@ -51,7 +51,7 @@ const FarmerList = ({ match }) => {
         This is what you added to cart
       </Modal>
       <Modal
-        modalStatus={true}
+        modalStatus={signInModalStatus}
         closeModal={() => dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' })}
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
