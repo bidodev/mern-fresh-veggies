@@ -159,7 +159,7 @@ exports.restrictedAccess = (...roles) => {
 };
 
 exports.changePassword = asyncWrapper(async (req, res, next) => {
-    // 1) Get user from collection
+    // TODO: Get the user (remember we have access to the user, because of the protected middleware)
     const user = await User.findById(req.user.id);
 
     // 2) Check if POSTed current password is correct
