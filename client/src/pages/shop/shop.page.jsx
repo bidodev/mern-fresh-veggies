@@ -15,7 +15,8 @@ import Footer from 'components/footer/footer.component';
 import HowItWorks from 'components/how-it-works/how.it.works.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import Modal from 'components/modal/modal.component';
-
+import SignIn from 'components/authentication/login/login.component';
+import SignUp from 'components/authentication/signup/signup.component';
 /* Styles */
 import './shop.styles.scss';
 
@@ -25,7 +26,8 @@ const FarmerList = ({ match }) => {
 
   // redux state for the cart modal
   const modalStatus = useSelector((state) => state.status.modal);
-  console.log(modalStatus);
+  const signInModalStatus = useSelector((state) => state.clientSignIn.modal);
+  console.log(signInModalStatus);
   const dispatch = useDispatch();
   // Getting all farmers profile
   useEffect(() => {
@@ -43,10 +45,20 @@ const FarmerList = ({ match }) => {
       <Modal
         modalStatus={modalStatus}
         closeModal={() => dispatch({ type: 'TOGGLE_MODAL' })}
-        className="Modal"
-        overlayClassName="Overlay"
+        className="cart-modal"
+        overlayClassName="cart-overlay"
       >
         This is what you added to cart
+      </Modal>
+      <Modal
+        modalStatus={signInModalStatus}
+        closeModal={() => dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' })}
+        className="sign-in-modal"
+        overlayClassName="sign-in-overlay"
+      >
+        <SignIn />
+        {/* <SignUp url={'user'} /> */}
+        <div>You are not registered yet?</div>
       </Modal>
       <Feed />
 
