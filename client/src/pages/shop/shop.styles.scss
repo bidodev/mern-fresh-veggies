@@ -45,7 +45,7 @@
   }
 }
 
-.Modal {
+.cart-modal {
   width: 25vw;
   height: 92vh;
   position: fixed;
@@ -63,11 +63,30 @@
   }
   //here the mobile v. must also be added
 }
-.Overlay {
+.cart-overlay {
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
   background-color: transparent;
+}
+
+.sign-in-modal {
+  position: fixed;
+  top: 20vh;
+  left: 10vw;
+  right: 10vw;
+  bottom: 20vh;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.sign-in-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(7, 6, 6, 0.925);
+  border: none;
 }

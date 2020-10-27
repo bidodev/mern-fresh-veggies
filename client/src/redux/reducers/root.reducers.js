@@ -6,7 +6,7 @@ import storage from 'redux-persist/lib/storage';
 /* Reducer Imports */
 import loginReducer from './login.reducer';
 import statusReducer from './status.reducer';
-
+import signInReducer from './signIn.reducer';
 const persistConfig = {
   key: 'root',
   storage,
@@ -16,6 +16,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   login: loginReducer,
   status: statusReducer,
+  clientSignIn: signInReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
