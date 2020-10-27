@@ -9210,6 +9210,11 @@ react-scripts@3.4.3:
   optionalDependencies:
     fsevents "2.1.2"
 
+react-text-content-editable@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-text-content-editable/-/react-text-content-editable-3.0.2.tgz#7bc55c1088ce6cc783faa348e8eac81b9de70de7"
+  integrity sha512-ESNKdkV+johZeLWNmmRTdTlXpFBCgD0DkqzVXpK2pbpg9XiNchtyecRXJMw6Bo78pw0GF6IHkOMfEXhpbo+iRg==
+
 react@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
