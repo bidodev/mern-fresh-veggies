@@ -15,7 +15,8 @@ import Footer from 'components/footer/footer.component';
 import HowItWorks from 'components/how-it-works/how.it.works.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import Modal from 'components/modal/modal.component';
-
+import SignIn from 'components/authentication/login/login.component';
+import SignUp from 'components/authentication/signup/signup.component';
 /* Styles */
 import './shop.styles.scss';
 
@@ -50,13 +51,14 @@ const FarmerList = ({ match }) => {
         This is what you added to cart
       </Modal>
       <Modal
-        modalStatus={signInModalStatus}
+        modalStatus={true}
         closeModal={() => dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' })}
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
-        shouldCloseOnOverlayClick={false}
       >
-        This is sign in modal
+        <SignIn />
+        {/* <SignUp url={'user'} /> */}
+        <div>You are not registered yet?</div>
       </Modal>
       <Feed />
 
