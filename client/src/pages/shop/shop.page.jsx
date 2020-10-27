@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Route } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 /* Page Imports */
 import ProfilePage from 'pages/farmer/profile/profile.page';
@@ -21,12 +22,12 @@ import './shop.styles.scss';
 const FarmerList = ({ match }) => {
   const [farmers, setFarmers] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
-  const [modalStatus, setIsOpen] = useState(false);
-  // modal toggle
-  const toggleModal = () => {
-    setIsOpen(!modalStatus);
-  };
 
+  // redux state for the cart modal
+  const modalStatus = useSelector((state) => state.status.modal);
+  console.log(modalStatus);
+  const dispatch = useDispatch();
+  // Getting all farmers profile
   useEffect(() => {
     axios(`/farmers`)
       .then(({ data }) => {
@@ -38,13 +39,12 @@ const FarmerList = ({ match }) => {
 
   return (
     <div>
-      <Navbar toggle={toggleModal} />
+      <Navbar />
       <Modal
         modalStatus={modalStatus}
-        closeModal={toggleModal}
+        closeModal={() => dispatch({ type: 'TOGGLE_MODAL' })}
         className="Modal"
         overlayClassName="Overlay"
-        isOpen={modalStatus}
       >
         This is what you added to cart
       </Modal>
