@@ -45,10 +45,22 @@
   }
 }
 
-.ideas {
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: lightblue;
+.Modal {
+  width: 25vw;
+  height: 92vh;
+  position: fixed;
+  top: 8vh;
+  right: 0;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  //for ipad width of the modal should be at least 50% of the view port
+  @media (max-width: 800px) {
+    width: 70vw;
+  }
+  //here the mobile v. must also be added
 }
+
