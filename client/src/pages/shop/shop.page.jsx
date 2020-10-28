@@ -13,17 +13,17 @@ import FindYourFarmer from 'pages/shop/overview/findafarmer/FindYourFarmer';
 import Feed from 'pages/shop/overview/feed/feed.component';
 import HowItWorks from 'pages/shop/overview/howitworks/how.it.works.component';
 
-// those two components are used in more pages, thefore they stay on the components folder
+/* those two components are used in more pages, thefore they stay on the components folder */
 import Footer from 'components/footer/footer.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 
 /* Components that will rendered only at /shop */
-const ShopOverView = ({ match}) => {
+const ShopOverView = ({ match }) => {
   return (
     <div className="shop__internal__content">
-       <Feed />
+      <Feed />
       <HowItWorks />
-      <FindYourFarmer match={match}/>
+      <FindYourFarmer match={match} />
     </div>
   );
 };
@@ -45,7 +45,7 @@ const Shop = ({ match }) => {
 
       {/*
        * Both components will be avabiable in /shop and /shop/:farmerId
-       * You don't neet to import there again
+       * You don't neet to import it there again
        */}
       <Footer />
       <ScrollTopArrow />
