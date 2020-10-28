@@ -1,0 +1,129 @@
+.profile-page {
+  background: #eee;
+
+  &--header {
+    text-align: center;
+  }
+
+  &__farmer-products {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background: #999;
+
+    &__card {
+      width: 15vw;
+      min-width: 18rem;
+      height: 40vh;
+      margin: 2vh 1vh;
+      padding: 1vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      border: 1px solid black;
+
+      &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
+      &__img-container {
+        width: 8vw;
+        min-width: 8rem;
+
+        &--img {
+          width: 100%;
+        }
+      }
+
+      &--name {
+        margin: 1vh;
+        text-align: center;
+      }
+
+      &--type {
+        margin: 1vh;
+        font-style: italic;
+      }
+
+      &--description {
+        margin: 1vh;
+      }
+    }
+  }
+}
+
+
+///////////////////////////////////
+.public__farmer__profile {
+  display: flex;
+  margin-top: 8vh;
+  height: 92vh;
+  justify-content: space-between;
+
+  &__aside {
+    position: fixed;
+    height: 92vh;
+    border-right: 1px solid black;
+  }
+  &__rate {
+    margin: 2vh 0 5vh 5vh;
+
+    &--stars {
+      margin: 1vh 0;
+    }
+  }
+
+  &__public {
+    border: 1px solid red;
+    margin-top: 8vh;
+    width: 100%;
+    background: #eee;
+
+    &--header {
+      text-align: center;
+      margin: 1vh;
+    }
+
+    &__information {
+      border: 1px solid red;
+      display: flex;
+
+      @media (max-width: 1050px) {
+        flex-direction: column;
+      }
+
+      &--avatar {
+        margin: 3vh;
+
+        @media (max-width: 1050px) {
+          margin: 0 auto;
+        }
+      }
+
+      &--biography {
+        margin: 1vh;
+        padding: 2vh;
+        width: 70vw;
+        background: #f9f9f9;
+
+        @media (max-width: 1050px) {
+          margin: 2vh auto;
+          width: 80vw;
+        }
+      }
+    }
+  }
+
+  .avatar-img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .gallery-img {
+    width: 100%;
+  }
+}

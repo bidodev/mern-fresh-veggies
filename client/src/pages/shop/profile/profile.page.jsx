@@ -5,17 +5,16 @@ import axios from 'axios';
 
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
-import Navbar from 'components/navbar/customer-navbar.component';
-import Profile from 'components/profile/profile.component';
 import Recipes from 'components/recipes/recipes.component';
 import Footer from 'components/footer/footer.component';
 import Modal from 'components/modal/modal.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
 import './profile.page.styles.scss';
 
 /* Component Photos Gallery */
-import PhotosGallery from 'pages/farmer/profile/photos.gallery';
+import PhotosGallery from 'pages/shop/profile/photos.gallery';
 
 /* Component Farmer Products */
 const FarmerProducts = ({ farmer }) => {
@@ -64,6 +63,15 @@ const FarmerProducts = ({ farmer }) => {
   );
 };
 
+/* Sidebar profile */
+const Profile = ({ photo, name, description }) => {
+  return (
+    <section className="public__farmer__profile">
+
+    </section>
+  );
+};
+
 function ProfilePage() {
   const { farmerId } = useParams();
 
@@ -96,17 +104,11 @@ function ProfilePage() {
         ) : (
           <h3 style={{ paddingTop: '50vh' }}>This store is closed at the moment</h3>
         )}
-        <Footer />
       </>
     );
   };
 
-  return (
-    <>
-      <Navbar />
-      {isLoading ? <Spinner /> : <ProfileCompouse />}
-    </>
-  );
+  return <>{isLoading ? <Spinner /> : <ProfileCompouse />}</>;
 }
 
 export default ProfilePage;

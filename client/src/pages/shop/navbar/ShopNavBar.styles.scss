@@ -1,0 +1,83 @@
+// SHOPNAVBAR COMPONENT SCSS
+.shop__navbar {
+  background-color: #282828;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f1f1f1;
+  width: 100%;
+  z-index: 100;
+  &__logo {
+    margin-left: 5vw;
+  }
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__account {
+    list-style: none;
+    width: 12rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 5vw;
+    .fa-shopping-cart,
+    .fa-user-circle {
+      font-size: 1.3rem;
+      color: #f8f8f8;
+    }
+    &__login {
+      color: #f8f8f8;
+    }
+    @media only screen and (max-width: 500px) {
+      width: 7rem;
+    }
+  }
+}
+
+.cart-modal {
+    width: 25vw;
+    height: 92vh;
+    position: fixed;
+    top: 8vh;
+    right: 0;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    //for ipad width of the modal should be at least 50% of the view port
+    @media (max-width: 800px) {
+      width: 70vw;
+    }
+    //here the mobile v. must also be added
+  }
+  .cart-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: transparent;
+  }
+  
+  .sign-in-modal {
+    position: fixed;
+    top: 20vh;
+    left: 10vw;
+    right: 10vw;
+    bottom: 20vh;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+  .sign-in-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(7, 6, 6, 0.925);
+    border: none;
+  }

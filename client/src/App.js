@@ -2,13 +2,13 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-/* Page Imports */
+/* Pages (Main worflows)*/
 import Landing from 'pages/landing/landing.page';
-import Authentication from 'pages/authentication/authentication.page';
 import Shop from 'pages/shop/shop.page';
+import FarmerAdmin from 'pages/farmeradmin/admin.page';
 
-/* Page Imports */
-import FarmerAdmin from 'pages/farmer/admin.painel/farmer.admin.page';
+/* Extra Imports */
+import Authentication from 'components/authentication/authentication.page';
 
 const App = () => {
   /* Pull out the userFarmer from the LocalStorage */
