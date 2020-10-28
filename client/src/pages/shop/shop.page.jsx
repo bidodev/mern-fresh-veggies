@@ -15,8 +15,8 @@ import Footer from 'components/footer/footer.component';
 import HowItWorks from 'components/how-it-works/how.it.works.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import Modal from 'components/modal/modal.component';
-import SignIn from 'components/authentication/login/login.component';
-import SignUp from 'components/authentication/signup/signup.component';
+import ClientSignIn from 'components/client-authentication/client-login/client-login.component';
+import ClientSignUp from 'components/client-authentication/client-signup/client-signup.component';
 /* Styles */
 import './shop.styles.scss';
 
@@ -27,6 +27,7 @@ const FarmerList = ({ match }) => {
   // redux state for the cart modal
   const modalStatus = useSelector((state) => state.status.modal);
   const signInModalStatus = useSelector((state) => state.clientSignIn.modal);
+  const switchLogInSignIn = useSelector((state) => state.switch.show);
   const dispatch = useDispatch();
   // Getting all farmers profile
   useEffect(() => {
@@ -55,9 +56,7 @@ const FarmerList = ({ match }) => {
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
       >
-        <SignIn />
-        {/* <SignUp url={'user'} /> */}
-        <div>You are not registered yet?</div>
+        {switchLogInSignIn ? <ClientSignUp /> : <ClientSignIn />}
       </Modal>
       <Feed />
 

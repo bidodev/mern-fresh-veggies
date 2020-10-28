@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 /* Component Imports */
@@ -8,9 +8,9 @@ import FormInput from 'components/forms/input/input.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
-import './signup.styles.scss';
+import './client-signup.styles.scss';
 
-const SignUp = () => {
+const ClientSignUp = () => {
   const [displayName, setDisplayName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
@@ -33,10 +33,14 @@ const SignUp = () => {
       passwordConfirmation: confirmPassword,
     };
     axios
-      .post(`/account/register/farmer`, data)
+      .post(`/account/register/user`, data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
-        history.push('/farmer/admin');
+        history.push('/shop');
+        // if it is successful, close the modal
+        if (data.status === 'success') {
+          dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' });
+        }
       })
       .catch((error) => console.log('Error creating user', error.message));
   };
@@ -86,6 +90,9 @@ const SignUp = () => {
           label="repeat password"
           handleInputValue={handleInputValue}
         />
+        <Link to="#">
+          <div onClick={() => dispatch({ type: 'SWITCH_SIGN-IN_LOG-IN' })}>You already have an account?</div>
+        </Link>
         <div className="buttons">
           <CustomButton type="submit">Sign Up</CustomButton>
         </div>
@@ -94,4 +101,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default ClientSignUp;
