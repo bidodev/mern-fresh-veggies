@@ -2,9 +2,9 @@
 
 .farmer-list {
   height: 100%;
-  margin-bottom: 5vh;
+  padding: 5vh;
   list-style: none;
-  background: #888;
+  background: rgba(255, 192, 203, 0.596);
 
   &--header {
     text-align: center;
@@ -17,29 +17,64 @@
     flex-wrap: wrap;
 
     &__item {
-      width: 22vw;
-      min-width: 17rem;
-      height: 30vh;
+      width: 19vw;
+      min-width: 20rem;
+      height: 50vh;
       margin: 2vh;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       background: #eee;
-      border: 1px solid black;
+      border-radius: 5px;
+      position: relative;
 
-      &--header {
-        margin: 1vh;
-        text-align: center;
-        text-transform: uppercase;
-        color: black;
+      &__bg-image-container {
+        width: 100%;
+
+        &--img {
+          width: 100%;
+          border-top-right-radius: 5px;
+          border-top-left-radius: 5px;
+        }
       }
 
-      &__img-container {
-        width: 12vh;
-        height: 12vh;
-        margin: 1vh auto;
+      &__avatar-container {
+        width: 7vh;
+        height: 7vh;
+        border-radius: 50%;
+        position: absolute;
+        top: 21vh;
+        left: 3vh;
+        border: 1px solid white;
         overflow: hidden;
 
         &--img {
           width: 100%;
         }
+      }
+
+      &--name {
+        margin: 4vh 0 0 2vh;
+        font-size: 1.3rem;
+        color: black;
+      }
+
+      &__location {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--city {
+          padding-left: 2vh;
+          text-transform: uppercase;
+        }
+
+        &--country {
+          padding-right: 2vh;
+        }
+      }
+
+      &--description {
+        padding: 0 2vh;
+        font-size: 0.9rem;
       }
     }
   }

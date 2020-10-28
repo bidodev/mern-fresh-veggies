@@ -70,13 +70,29 @@ const FarmerList = ({ match }) => {
             {farmers.map((farmer) => (
               <li className="farmer-list__list-container__item">
                 <Link to={`${match.url}/${farmer._id}`}>
-                  <h3 className="farmer-list__list-container__item--header">{farmer.name}</h3>
-                  <div className="farmer-list__list-container__item__img-container">
+                  <div className="farmer-list__list-container__item__bg-image-container">
+                    <img
+                      src="/images/farm-1.jpg"
+                      alt="background-image"
+                      className="farmer-list__list-container__item__bg-image-container--img"
+                    />
+                  </div>
+                  <div className="farmer-list__list-container__item__avatar-container">
                     <img
                       src="/images/zoe.jpg"
-                      alt="img"
-                      className="farmer-list__list-container__item__img-container--img"
+                      alt="farmer-avatar"
+                      className="farmer-list__list-container__item__avatar-container--img"
                     />
+                  </div>
+                  <h3 className="farmer-list__list-container__item--name">{farmer.name}</h3>
+                  <div className="farmer-list__list-container__item__location">
+                    <div className="farmer-list__list-container__item__location--city">Berlin</div>
+                    <div className="farmer-list__list-container__item__location--country">Germany</div>
+                  </div>
+                  <div className="farmer-list__list-container__item--description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, ab ipsum optio quo recusandae
+                    illum? Quidem hic corporis, voluptas cum ducimus dolores accusantium alias odio, quos in sed
+                    distinctio illum.
                   </div>
                 </Link>
               </li>
