@@ -11,7 +11,7 @@ import Aside from 'components/farmer/aside/asidebar.component';
 import FarmerSettings from 'components/farmer/settings/settings.component';
 
 /* Styles */
-import './farmer.admin.page.styles.scss';
+import './admin.page.styles.scss';
 
 // farmer's configuration is available here
 
