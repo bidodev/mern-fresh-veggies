@@ -24,19 +24,6 @@ const SignUp = ({ url }) => {
       alert("Passwords don't match...");
       return;
     }
-    /* *****  
-       const { user } = await auth.createUserWithEmailAndPassword(
-        userEmail,
-        userPassword
-      );
-      if (await createUserProfileDocument(user, { displayName })) {
-        setDisplayName("");
-        setUserEmail("");
-        setUserPassword("");
-        setConfirmPassword("");
-        alert("Account Created with Sucess");
-      } 
-      *** */
 
     // Connecting CLIENT with the API
     const data = {
