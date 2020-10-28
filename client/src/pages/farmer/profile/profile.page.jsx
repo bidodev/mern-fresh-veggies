@@ -34,18 +34,24 @@ const PhotosGallery = () => {
 /* Component Farmer Products */
 const FarmerProducts = ({ farmer }) => {
   const modalStatus = useSelector((state) => state.status.modal);
-  console.log(modalStatus);
+  const signInModalStatus = useSelector((state) => state.clientSignIn.modal);
   const dispatch = useDispatch();
   return (
     <React.Fragment>
       <Modal
         modalStatus={modalStatus}
         closeModal={() => dispatch({ type: 'TOGGLE_MODAL' })}
-        className="Modal"
-        overlayClassName="Overlay"
+        className="cart-modal"
+        overlayClassName="cart-overlay"
       >
         This is what you added to cart
       </Modal>
+      <Modal
+        modalStatus={signInModalStatus}
+        closeModal={() => dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' })}
+        className="sign-in-modal"
+        overlayClassName="sign-in-overlay"
+      ></Modal>
       <section className="profile-page">
         <h2 className="profile-page--header">{farmer.name}'s available products</h2>
         {
