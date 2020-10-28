@@ -27,6 +27,7 @@ const FarmerList = ({ match }) => {
   // redux state for the cart modal
   const modalStatus = useSelector((state) => state.status.modal);
   const signInModalStatus = useSelector((state) => state.clientSignIn.modal);
+  const switchLogInSignIn = useSelector((state) => state.switch.show);
   const dispatch = useDispatch();
   // Getting all farmers profile
   useEffect(() => {
@@ -55,8 +56,7 @@ const FarmerList = ({ match }) => {
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
       >
-        <ClientSignIn />
-        {/* <SignUp url={'user'} /> */}
+        {switchLogInSignIn ? <ClientSignUp /> : <ClientSignIn />}
       </Modal>
       <Feed />
 
