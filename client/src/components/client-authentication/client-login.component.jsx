@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
@@ -46,6 +47,7 @@ const ClientLogin = () => {
       default:
     }
   };
+
   //in case we implement sign in with google
   //   const signInWithGoogle = () => {
   //     console.log('Not implemented yet');
@@ -72,7 +74,9 @@ const ClientLogin = () => {
           label="password"
           handleInputValue={handleInputValue}
         />
-        <div>You are not registered yet?</div>
+        <Link to="#">
+          <div onClick={() => dispatch({ type: 'SWITCH_SIGN-IN_LOG-IN' })}>You are not registered yet?</div>
+        </Link>
         <div className="buttons">
           <CustomButton type="submit">Sign In</CustomButton>
           {/* <CustomButton type="button" onClick={signInWithGoogle} isGoogleSingIn>

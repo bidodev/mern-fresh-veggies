@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 /* Component Imports */
@@ -90,6 +90,9 @@ const ClientSignUp = () => {
           label="repeat password"
           handleInputValue={handleInputValue}
         />
+        <Link to="#">
+          <div onClick={() => dispatch({ type: 'SWITCH_SIGN-IN_LOG-IN' })}>You already have an account?</div>
+        </Link>
         <div className="buttons">
           <CustomButton type="submit">Sign Up</CustomButton>
         </div>
