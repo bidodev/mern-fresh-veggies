@@ -37,6 +37,14 @@
       justify-content: center;
       align-items: center;
 
+      &--link-shop {
+        padding: 13px 18px;
+      }
+
+      &--link-farmer {
+        padding: 13px 28px;
+      }
+
       & > * {
         justify-self: center;
       }

@@ -9,20 +9,10 @@ const Hero = () => {
   return (
     <div className="hero-component">
       <header>
-        <HashLink
-          to="#story"
-          scroll={(el) =>
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-        >
+        <HashLink to="#story" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
           <p className="hero-component__button">Our Story</p>
         </HashLink>
-        <HashLink
-          to="#footer"
-          scroll={(el) =>
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-        >
+        <HashLink to="#footer" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
           <p className="hero-component__button">Contact Us</p>
         </HashLink>
       </header>
@@ -33,10 +23,14 @@ const Hero = () => {
           </p>
           {/* <div className="hero-component__main__text-component__button-box"> */}
           <button>
-            <Link to="/farmer/admin">I am a Farmer</Link>
+            <Link to="/farmer/admin" className="hero-component__main__text-component--link-farmer">
+              I am a Farmer
+            </Link>
           </button>
           <button>
-            <Link to="/shop">I am here to shop</Link>
+            <Link to="/shop" className="hero-component__main__text-component--link-shop">
+              I am here to shop
+            </Link>
           </button>
           {/* </div> */}
         </div>
