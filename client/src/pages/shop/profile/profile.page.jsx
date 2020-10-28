@@ -6,9 +6,7 @@ import axios from 'axios';
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
 import Recipes from 'components/recipes/recipes.component';
-import Footer from 'components/footer/footer.component';
 import Modal from 'components/modal/modal.component';
-import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
 import './profile.page.styles.scss';

@@ -21,9 +21,9 @@ import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 const ShopOverView = ({ match}) => {
   return (
     <div className="shop__internal__content">
+       <Feed />
       <HowItWorks />
       <FindYourFarmer match={match}/>
-      <Feed />
     </div>
   );
 };

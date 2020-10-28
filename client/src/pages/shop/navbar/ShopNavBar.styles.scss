@@ -1,5 +1,6 @@
 // SHOPNAVBAR COMPONENT SCSS
 .shop__navbar {
+    //border: 1px solid red;
   background-color: #282828;
   height: 8vh;
   display: flex;
@@ -8,6 +9,7 @@
   color: #f1f1f1;
   width: 100%;
   z-index: 100;
+  position: fixed;
   &__logo {
     margin-left: 5vw;
   }
