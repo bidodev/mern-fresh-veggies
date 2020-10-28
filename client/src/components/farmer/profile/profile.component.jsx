@@ -27,9 +27,9 @@ const ProfileAdmin = ({ photo, name }) => {
   };
 
   const profileImages = [
-    { id: 1, name: 'a', url: 'default.jpg' },
-    { id: 2, name: 'b', url: 'default.jpg' },
-    { id: 3, name: 'c', url: 'default.jpg' },
+    { id: 1, name: 'a', path: 'default.jpg' },
+    { id: 2, name: 'b', path: 'default.jpg' },
+    { id: 3, name: 'c', path: 'default.jpg' },
   ];
 
   /* Is hovering profile photo State */
@@ -38,6 +38,9 @@ const ProfileAdmin = ({ photo, name }) => {
   const handleMouseHover = () => {
     setHoverStatus(!isHovering);
   };
+
+  // URL to patch the profile photo
+  const url = '/users/profile';
 
   return (
     <section className="profile-admin">
@@ -74,7 +77,7 @@ const ProfileAdmin = ({ photo, name }) => {
       </div>
 
       <ReviewsAdmin />
-      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} />
+      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} url={url} />
     </section>
   );
 };

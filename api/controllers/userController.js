@@ -3,7 +3,6 @@ const AppError = require('../utils/AppError');
 const asyncWrapper = require('../utils/asyncWrapper');
 
 exports.updateProfile = asyncWrapper(async (req, res, next) => {
-
   //1. Update user photo
   const user = await User.findByIdAndUpdate(
     req.user.id,

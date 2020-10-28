@@ -12,7 +12,7 @@ function ImageItem({ img }) {
     setIsOpen(!modalStatus);
   };
 
-  const { name, url } = img;
+  const { name, path } = img;
 
   const [isHovering, setHoverStatus] = useState(false);
 
@@ -20,10 +20,18 @@ function ImageItem({ img }) {
     setHoverStatus(!isHovering);
   };
 
+  // URL to patch the profile photo
+  const url = '/users/images';
+
   return (
     <>
-      <div className="admin__painel__gallery" onClick={toggleModal} onMouseEnter={handleMouseHover} onMouseLeave={handleMouseHover}>
-        <img src={`/images/${url}`} alt={name} className="gallery-img" />
+      <div
+        className="admin__painel__gallery"
+        onClick={toggleModal}
+        onMouseEnter={handleMouseHover}
+        onMouseLeave={handleMouseHover}
+      >
+        <img src={`/images/${path}`} alt={name} className="gallery-img" />
         {isHovering && (
           <div>
             <li>
@@ -32,7 +40,7 @@ function ImageItem({ img }) {
           </div>
         )}
       </div>
-      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} />
+      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} url={url} />
     </>
   );
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Modal from 'components/modal/modal.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
-const FileUploader = ({ toggleModal, modalStatus }) => {
+const FileUploader = ({ toggleModal, modalStatus, url }) => {
     /* Is file loaded state */
     const [selectedFile, setSelectedFile] = useState(null);
   
