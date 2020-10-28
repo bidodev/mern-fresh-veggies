@@ -10,7 +10,7 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 /* Styles */
 import './signup.styles.scss';
 
-const SignUp = ({ url }) => {
+const SignUp = () => {
   const [displayName, setDisplayName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
