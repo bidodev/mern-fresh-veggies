@@ -27,7 +27,6 @@ const FarmerList = ({ match }) => {
   // redux state for the cart modal
   const modalStatus = useSelector((state) => state.status.modal);
   const signInModalStatus = useSelector((state) => state.clientSignIn.modal);
-  console.log(signInModalStatus);
   const dispatch = useDispatch();
   // Getting all farmers profile
   useEffect(() => {
