@@ -1,15 +1,18 @@
 // SHOPNAVBAR COMPONENT SCSS
 .shop__navbar {
     //border: 1px solid red;
-  background-color: #282828;
+  background-color: #f9f9f9;
   height: 8vh;
   display: flex;
   justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
   align-items: center;
-  color: #f1f1f1;
   width: 100%;
   z-index: 100;
   position: fixed;
+   a{
+    color: #181818;
+   }
   &__logo {
     margin-left: 5vw;
   }
@@ -27,10 +30,10 @@
     .fa-shopping-cart,
     .fa-user-circle {
       font-size: 1.3rem;
-      color: #f8f8f8;
+      color: #181818;
     }
     &__login {
-      color: #f8f8f8;
+      color: #181818;
     }
     @media only screen and (max-width: 500px) {
       width: 7rem;
