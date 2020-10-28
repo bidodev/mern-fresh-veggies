@@ -15,7 +15,7 @@
       margin: 3vh 0;
       width: 42vw;
       @media (max-width: 900px) {
-        width: 80vw;
+        width: 66vw;
       }
 
       &--img {
@@ -29,6 +29,9 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      @media (max-width: 900px) {
+        width: 70vw;
+      }
 
       &--header {
         font-size: $font-size__header__medium;
@@ -113,7 +116,7 @@
         width: 20vw;
         min-width: 13rem;
         @media (max-width: 900px) {
-          width: 80vw;
+          width: 66vw;
         }
 
         &--img {
@@ -132,7 +135,7 @@
           min-width: 13rem;
           margin: 1vh;
           @media (max-width: 900px) {
-            width: 80vw;
+            width: 66vw;
           }
 
           &--img {
