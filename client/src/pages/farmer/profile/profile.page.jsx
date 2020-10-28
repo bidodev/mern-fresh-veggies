@@ -15,21 +15,7 @@ import Modal from 'components/modal/modal.component';
 import './profile.page.styles.scss';
 
 /* Component Photos Gallery */
-const PhotosGallery = () => {
-  return (
-    <div className="profile__profile-container__gallery">
-      <div className="profile__profile-container__gallery--img">
-        <img src="" alt="img" className="gallery-img" />
-      </div>
-      <div className="profile__profile-container__gallery--img">
-        <img src="" alt="img" className="gallery-img" />
-      </div>
-      <div className="profile__profile-container__gallery--img">
-        <img src="" alt="img" className="gallery-img" />
-      </div>
-    </div>
-  );
-};
+import PhotosGallery from 'pages/farmer/profile/photos.gallery';
 
 /* Component Farmer Products */
 const FarmerProducts = ({ farmer }) => {
@@ -96,16 +82,16 @@ function ProfilePage() {
 
   const ProfileCompouse = () => {
     const { open, recipes, gallery, products } = farmer.config;
-    console.log(farmer.config);
+    //console.log(farmer.config);
 
     return (
       <>
         {open ? (
           <>
             <Profile {...farmer} />
-            {recipes ? <Recipes /> : null}
             {gallery ? <PhotosGallery /> : null}
             {products ? <FarmerProducts farmer={farmer} /> : null}
+            {recipes ? <Recipes /> : null}
           </>
         ) : (
           <h3 style={{ paddingTop: '50vh' }}>This store is closed at the moment</h3>
