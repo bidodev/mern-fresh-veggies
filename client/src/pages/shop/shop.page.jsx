@@ -15,8 +15,8 @@ import Footer from 'components/footer/footer.component';
 import HowItWorks from 'components/how-it-works/how.it.works.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import Modal from 'components/modal/modal.component';
-import ClientSignIn from 'components/client-authentication/client-login.component';
-import ClientSignUp from 'components/client-authentication/client-signup.component';
+import ClientSignIn from 'components/client-authentication/client-login/client-login.component';
+import ClientSignUp from 'components/client-authentication/client-signup/client-signup.component';
 /* Styles */
 import './shop.styles.scss';
 

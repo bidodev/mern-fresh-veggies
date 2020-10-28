@@ -26,7 +26,7 @@ const AccountSetting = ({ user }) => {
     const data = {
       email: email.current.value,
       currentPassword: password.current.value,
-    }
+    };
 
     axios
       .patch('/account/email', data)
@@ -39,7 +39,6 @@ const AccountSetting = ({ user }) => {
         console.log(err.response.data.message);
         alert('etwas ist schief gelaufen');
       });
-    
   };
 
   const handlePassword = (event) => {
@@ -148,9 +147,9 @@ const AccountSetting = ({ user }) => {
               required
             />
             <div className="c">
-            <CustomButton type="submit" style={{ width: 'auto' }}>
-              Save
-            </CustomButton>
+              <CustomButton type="submit" style={{ width: 'auto' }}>
+                Save
+              </CustomButton>
             </div>
           </form>
         </div>
