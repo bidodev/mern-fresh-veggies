@@ -1,10 +1,11 @@
 .profile-admin {
-  width: 95vw;
+  margin-top: 8vh;
+  width: 96vw;
   height: auto;
   display: flex;
   margin-left: 4vw;
   justify-content: space-between;
-  margin-top: 6vh;
+  //border: 1px solid red;
 
   @media (max-width: 1050px) {
     flex-direction: column;
