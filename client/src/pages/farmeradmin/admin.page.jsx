@@ -4,10 +4,10 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 /* Component Imports */
-import ProfileAdmin from 'components/farmer/profile/profile.component';
-import Stock from 'components/farmer/stock/stock.component';
-import Aside from 'components/farmer/aside/asidebar.component';
-import FarmerSettings from 'components/farmer/settings/settings.component';
+import ProfileAdmin from 'pages/farmeradmin/profile/profile.component';
+import Stock from 'pages/farmeradmin/stock/stock.component';
+import Aside from 'pages/farmeradmin/aside/asidebar.component';
+import FarmerSettings from 'pages/farmeradmin/settings/settings.component';
 
 /* Styles */
 import './admin.page.styles.scss';

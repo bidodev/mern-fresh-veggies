@@ -4,7 +4,7 @@ import ImageItem from './image-item.component';
 import FileUploader from 'utils/fileUploader';
 
 /* Component Imports */
-import ReviewsAdmin from 'components/farmer/reviews/reviews.component';
+import ReviewsAdmin from 'pages/farmeradmin/reviews/reviews.component';
 
 /* Styles */
 import './profile.styles.scss';
