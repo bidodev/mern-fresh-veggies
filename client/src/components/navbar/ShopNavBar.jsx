@@ -13,6 +13,7 @@ import ClientSignUp from 'components/client-authentication/client-signup/client-
 const ShopNavBar = () => {
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.farmerUser);
+
   const dispatch = useDispatch();
 
   // redux state for the cart modal

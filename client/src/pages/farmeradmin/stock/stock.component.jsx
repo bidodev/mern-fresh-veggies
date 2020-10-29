@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 /* Component Imports */
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 import Spinner from 'components/UI/spinner/spinner.component';
-import Product from './product/product.item.component';
+import Product from 'pages/farmeradmin/product/product.item.component';
 import AddForm from 'components/forms/add-product/add.product.component';
 import Modal from 'components/modal/modal.component';
 

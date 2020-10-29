@@ -8,9 +8,7 @@ import './shop.styles.scss';
 import ProfilePage from 'pages/shop/profile/profile.page';
 
 /* Compouse Components */
-import ShopNavBar from 'pages/shop/navbar/ShopNavBar';
 import FindYourFarmer from 'pages/shop/overview/findafarmer/FindYourFarmer';
-import Feed from 'pages/shop/overview/feed/feed.component';
 import HowItWorks from 'pages/shop/overview/howitworks/how.it.works.component';
 
 /* those two components are used in more pages, thefore they stay on the components folder */
@@ -21,7 +19,6 @@ import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 const ShopOverView = ({ match }) => {
   return (
     <div className="shop__internal__content">
-      <Feed />
       <HowItWorks />
       <FindYourFarmer match={match} />
     </div>
@@ -36,9 +33,6 @@ const Shop = ({ match }) => {
    */
   return (
     <>
-      {/* The navbar will be avaiable either for ShopOverView or ProfilePage */}
-      <ShopNavBar />
-
       {/* Those Component will switch, only one of them will active at sameTime */}
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />

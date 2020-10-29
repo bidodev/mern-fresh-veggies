@@ -6,7 +6,7 @@ import './settings.component.styles.scss';
 
 /* Compouse */
 /* This component allows the farmer to change his email and password */
-import AccountSetting from 'components/farmer/settings/account/account.component';
+import AccountSetting from 'pages/farmeradmin/settings/account/account.component';
 
 /* This component allows the farmer to configure his store */
 import PublicProfileSettings from './public.profile/profile.settings.component';

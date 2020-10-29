@@ -8,10 +8,12 @@ import './asidebar.styles.scss';
 import ListItem from './items/listitem.component';
 
 const AsideBar = ({ _id }) => {
+  
   const sideBarItens = [
     { name: 'home', icon: ['fas', 'home'] },
     { name: 'stock', icon: ['fas', 'store-alt'] },
     { name: 'orders', icon: ['fas', 'truck'] },
+    { name: 'settings', icon: ['fas', 'users-cog'] },
   ];
 
   return (
