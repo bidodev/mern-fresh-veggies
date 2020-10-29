@@ -1,8 +1,8 @@
 import React from 'react';
 
 /* Component Imports */
-import Hero from 'components/hero/hero.component';
-import Story from 'components/story/story.component';
+import Hero from 'pages/landing/hero/hero.component';
+import Story from 'pages/landing/story/story.component';
 import Footer from 'components/footer/footer.component';
 import Feed from 'pages/shop/overview/feed/feed.component';
 
