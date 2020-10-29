@@ -9,7 +9,7 @@ import FarmerAdmin from 'pages/farmeradmin/admin.page';
 
 /* Extra Imports */
 import Authentication from 'components/authentication/authentication.page';
-import ShopNavBar from 'components/navbar/ShopNavBar';
+
 
 const App = () => {
   /* Pull out the userFarmer from the LocalStorage */
@@ -17,8 +17,6 @@ const App = () => {
 
   return (
     <div>
-      {/* The navbar will be avaiable for all the components */}
-      <ShopNavBar />
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/shop" component={Shop} />
