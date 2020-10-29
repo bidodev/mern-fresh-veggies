@@ -4,9 +4,8 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 /* Reducer Imports */
+import cartReducer from './cart.reducer';
 import loginReducer from './login.reducer';
-import statusReducer from './status.reducer';
-import signInReducer from './signIn.reducer';
 import switchReducer from './login-signup-switch.reducer';
 
 const persistConfig = {
@@ -16,9 +15,8 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
+  cart: cartReducer,
   login: loginReducer,
-  status: statusReducer,
-  clientSignIn: signInReducer,
   switch: switchReducer,
 });
 
