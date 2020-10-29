@@ -13,6 +13,7 @@ import ClientSignUp from 'components/client-authentication/client-signup/client-
 const ShopNavBar = () => {
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.farmerUser);
+  const cartItems = useSelector(({cart}) => cart.cartItems);
 
   const dispatch = useDispatch();
   const switchLogInSignIn = useSelector((state) => state.switch.show);
@@ -89,7 +90,13 @@ const ShopNavBar = () => {
         className="cart-modal"
         overlayClassName="cart-overlay"
       >
-        This is what you added to cart
+        {cartItems.length ? (
+        cartItems.map(cartItem => (
+          <h2>Item: {cartItem.name}, Quantity: {cartItem.quantity}</h2>
+        ))
+      ) : (
+        <h2>Your cart is empty</h2>
+      )}
       </Modal>
       <Modal
         modalStatus={signInModalStatus}

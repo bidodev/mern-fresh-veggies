@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './FarmerProducts.styles.scss';
+import {useDispatch} from 'react-redux';
 
 import Modal from 'components/modal/modal.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -9,6 +10,8 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
+
+  const dispatch = useDispatch();
 
   const toggleModal = () => {
     setIsOpen(!modalStatus);
@@ -66,7 +69,7 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
             <h5>Type: {type}</h5>
             <p>{description}</p>
             <div className="product__description__add">
-              <div className="button">
+              <div className="button" onClick={() => dispatch({type: 'ADD_ITEM', payload: {_id, name, quantity}})}>
                 <Icon icon="plus" />
                 Add to Card
               </div>

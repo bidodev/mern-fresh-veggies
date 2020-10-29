@@ -1,21 +1,36 @@
+import { addItemToCart, removeItemFromCart } from './cart.utils';
+
 const INITIAL_STATE = {
+    cartItems: []
   };
   
   const cartReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-      case 'LOGIN_USER':
+      case 'ADD_ITEM':
         return {
           ...state,
-          farmerUser: action.payload,
+          cartItems: addItemToCart(state.cartItems, action.payload)
         };
-      case 'LOGOUT_USER':
+      case 'REMOVE_ITEM':
         return {
           ...state,
-          farmerUser: null,
+          cartItems: removeItemFromCart(state.cartItems, action.payload)
+        };
+      case 'CLEAR_ITEM_FROM_CART':
+        return {
+          ...state,
+          cartItems: state.cartItems.filter(
+            cartItem => cartItem.id !== action.payload.id
+          )
+        };
+        case 'CLEAR_CART':
+        return {
+          ...state,
+          cartItems: []
         };
       default:
         return state;
     }
   };
-  export default cartReducer;
   
+  export default cartReducer;
