@@ -10,7 +10,7 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 /* Styles */
 import './client-signup.styles.scss';
 
-const ClientSignUp = () => {
+const ClientSignUp = ({toogleModal}) => {
   const [displayName, setDisplayName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
@@ -39,7 +39,7 @@ const ClientSignUp = () => {
         history.push('/shop');
         // if it is successful, close the modal
         if (data.status === 'success') {
-          dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' });
+          toogleModal('SIGN_IN');
         }
       })
       .catch((error) => console.log('Error creating user', error.message));

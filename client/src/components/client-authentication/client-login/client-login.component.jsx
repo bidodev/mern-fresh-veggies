@@ -10,7 +10,7 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 /* Styles */
 import './client-login.styles.scss';
 
-const ClientLogin = () => {
+const ClientLogin = ({toogleModal}) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const ClientLogin = () => {
         dispatch({ type: 'LOGIN_USER', payload: data });
         // if it is successful, close the modal
         if (data.status === 'success') {
-          dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' });
+          toogleModal('SIGN_IN');
         }
       })
       .catch((error) => console.log('Error in the login', error.message));

@@ -11,7 +11,7 @@ import switchReducer from './login-signup-switch.reducer';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['login'],
+  whitelist: ['login', 'cart'],
 };
 
 const rootReducer = combineReducers({

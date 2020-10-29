@@ -104,7 +104,7 @@ const ShopNavBar = () => {
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
       >
-        {switchLogInSignIn ? <ClientSignUp /> : <ClientSignIn />}
+        {switchLogInSignIn ? <ClientSignUp toogleModal={toogleModal}/> : <ClientSignIn toogleModal={toogleModal}/>}
       </Modal>
     </>
   );
