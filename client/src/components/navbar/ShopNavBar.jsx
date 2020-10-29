@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,11 +15,22 @@ const ShopNavBar = () => {
   const isLoggedIn = useSelector((state) => state.login.farmerUser);
 
   const dispatch = useDispatch();
-
-  // redux state for the cart modal
-  const modalStatus = useSelector((state) => state.status.modal);
-  const signInModalStatus = useSelector((state) => state.clientSignIn.modal);
   const switchLogInSignIn = useSelector((state) => state.switch.show);
+
+  const [signInModalStatus, toogleSignInModal] = useState(false);
+  const [cartModalStatus, toogleCartModal] = useState(false);
+
+  const toogleModal = (modal) => {
+    switch (modal) {
+      case 'SIGN_IN': {
+        return toogleSignInModal(!signInModalStatus)
+      }
+      case 'SHOP_CART': {
+        return toogleCartModal(!cartModalStatus)
+      }
+      default:
+    }
+  }
 
   return (
     <>
@@ -39,7 +50,7 @@ const ShopNavBar = () => {
               <FontAwesomeIcon
                 icon={['fas', 'shopping-cart']}
                 className="fa-shopping-cart"
-                onClick={() => dispatch({ type: 'TOGGLE_MODAL' })}
+                onClick={()=>toogleModal('SHOP_CART')}
               />
             </Link>
           </li>
@@ -63,7 +74,7 @@ const ShopNavBar = () => {
               <Link to="#">
                 <div
                   className="shop__navbar__account__login"
-                  onClick={() => dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' })}
+                  onClick={()=>toogleModal('SIGN_IN')}
                 >
                   SIGN IN
                 </div>
@@ -73,8 +84,8 @@ const ShopNavBar = () => {
         </ul>
       </nav>
       <Modal
-        modalStatus={modalStatus}
-        closeModal={() => dispatch({ type: 'TOGGLE_MODAL' })}
+        modalStatus={cartModalStatus}
+        closeModal={()=>toogleModal('SHOP_CART')}
         className="cart-modal"
         overlayClassName="cart-overlay"
       >
@@ -82,7 +93,7 @@ const ShopNavBar = () => {
       </Modal>
       <Modal
         modalStatus={signInModalStatus}
-        closeModal={() => dispatch({ type: 'TOGGLE_SIGN-IN_MODAL' })}
+        closeModal={() => toogleModal('SIGN_IN')}
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
       >

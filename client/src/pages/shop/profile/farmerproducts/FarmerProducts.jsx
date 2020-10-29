@@ -8,6 +8,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   const toggleModal = () => {
     setIsOpen(!modalStatus);
@@ -18,6 +19,7 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
     //TODO: load the product of the farmer
     //1. Load the modal and load the data
     setIsOpen(!modalStatus);
+    setQuantity(1)
   };
   return (
     <>
@@ -46,7 +48,17 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
               <img src={`/images/users/${photo}`} alt="img" />
             </div>
             <div className="product__photo__quantity">
-              <Icon icon={'minus'} />1<Icon icon={'plus'} />
+              <Icon
+                icon={'minus'}
+                onClick={() => {
+                  return quantity > 1 ? setQuantity(quantity - 1) : quantity;
+                }}
+              />
+              {quantity}
+              <Icon
+                icon={'plus'}
+                onClick={() => setQuantity(quantity + 1)}
+              />
             </div>
           </div>
           <div className="product__description">
@@ -58,9 +70,7 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
                 <Icon icon="plus" />
                 Add to Card
               </div>
-              <div>
-                EUR 2.4
-              </div>
+              <div>EUR 2.4</div>
             </div>
           </div>
         </div>
