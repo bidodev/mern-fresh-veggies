@@ -24,6 +24,11 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
     setIsOpen(!modalStatus);
     setQuantity(1)
   };
+
+  const handleAddtoCart = (id) => {
+    const farmer = 'holder';
+    dispatch({type: 'ADD_ITEM', payload: {id, name, quantity, farmer}})
+  }
   return (
     <>
       <div className="profile-page__farmer-products__card" onClick={handleProductClick}>
@@ -69,7 +74,7 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
             <h5>Type: {type}</h5>
             <p>{description}</p>
             <div className="product__description__add">
-              <div className="button" onClick={() => dispatch({type: 'ADD_ITEM', payload: {_id, name, quantity}})}>
+              <div className="button" onClick={() => handleAddtoCart(_id)}>
                 <Icon icon="plus" />
                 Add to Card
               </div>

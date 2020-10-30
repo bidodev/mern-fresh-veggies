@@ -15,8 +15,6 @@ import HowItWorks from 'pages/shop/overview/howitworks/how.it.works.component';
 import Footer from 'components/footer/footer.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 
-import ShopNavBar from 'components/navbar/ShopNavBar';
-
 /* Components that will rendered only at /shop */
 const ShopOverView = ({ match }) => {
   return (
@@ -35,8 +33,6 @@ const Shop = ({ match }) => {
    */
   return (
     <>
-          {/* The navbar will be avaiable for all the components */}
-          <ShopNavBar />
       {/* Those Component will switch, only one of them will active at sameTime */}
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
