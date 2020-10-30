@@ -4,7 +4,7 @@ const INITIAL_STATE = {
     cartItems: []
   };
   
-  const cartReducer = (state = INITIAL_STATE, action) => {
+const cartReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
       case 'ADD_ITEM':
         return {
