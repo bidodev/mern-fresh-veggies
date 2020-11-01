@@ -1,18 +1,18 @@
 // SHOPNAVBAR COMPONENT SCSS
 .shop__navbar {
-    //border: 1px solid red;
+  //border: 1px solid red;
   background-color: #f9f9f9;
   height: 8vh;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   align-items: center;
   width: 100%;
   z-index: 100;
   position: fixed;
-   a{
+  a {
     color: #181818;
-   }
+  }
   &__logo {
     margin-left: 5vw;
   }
@@ -42,129 +42,127 @@
 }
 
 .cart-modal {
-    width: 25vw;
-    height: 92vh;
-    position: fixed;
-    top: 8vh;
-    right: 0;
-    border: 1px solid rgb(204, 204, 204);
-    background: rgb(255, 255, 255);
-    overflow: auto;
-    border-radius: 4px;
-    outline: none;
-    padding: 20px;
-    //for ipad width of the modal should be at least 50% of the view port
-    @media (max-width: 800px) {
-      width: 70vw;
-    }
-    //here the mobile v. must also be added
+  width: 25vw;
+  height: 92vh;
+  position: fixed;
+  top: 8vh;
+  right: 0;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  //for ipad width of the modal should be at least 50% of the view port
+  @media (max-width: 800px) {
+    width: 70vw;
   }
-  .cart-overlay {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: transparent;
-    z-index: 9999;
-  }
-  
-  .sign-in-modal {
-    position: fixed;
-    top: 20vh;
-    left: 10vw;
-    right: 10vw;
-    bottom: 20vh;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.75);
-  
-  }
-  .sign-in-overlay {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: rgba(7, 6, 6, 0.925);
-    border: none;
-    z-index: 9999;
-  }
+  //here the mobile v. must also be added
+}
+.cart-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: transparent;
+  z-index: 9999;
+}
 
-  .add__product_wrapper {
+.sign-in-modal {
+  position: fixed;
+  top: 20vh;
+  left: 10vw;
+  right: 10vw;
+  bottom: 20vh;
+  border: none;
+  background-color: #e0b835;
+  display: flex;
+}
+.sign-in-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(7, 6, 6, 0.925);
+  border: none;
+  z-index: 9999;
+}
+
+.add__product_wrapper {
+  height: 100%;
+  display: flex;
+
+  .product__photo {
+    //background-color: #f9f9f9;
+    width: 35%;
     height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    //border: 1px solid red;
 
-    .product__photo {
-      //background-color: #f9f9f9;
-      width: 35%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
+    &__quantity {
       //border: 1px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      &__quantity {
-        //border: 1px solid red;
-        display: flex;
-        align-items: center;
-        justify-content:center;
+      svg {
+        font-size: 2rem;
+        margin: 1rem;
+        color: #9c9c9c;
 
-        svg {
-          font-size: 2rem;
-          margin: 1rem;
-          color: #9c9c9c;
-
-          &:hover {
-            opacity: 0.8;
-            cursor: pointer;
-          }
-          //background-color: rgba(12, 12, 12, .1);
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
         }
-      }
-
-      &--img{
-        width: 100%;
-        height: 60%;
-        display: flex;
-
-        justify-content: center;
-
-        img {
-          
-          width: 80%;
-          height: 100%;
-          border-radius: 20px;
-          object-fit: cover;
-        }
+        //background-color: rgba(12, 12, 12, .1);
       }
     }
 
-    .product__description {
-      //border: 1px solid red;
-      height: 100%;
-      width: 60%;
+    &--img {
+      width: 100%;
+      height: 60%;
       display: flex;
-      flex-direction: column;
-      justify-content:space-around;
 
-      &__add{
-        .button{
-          background-color: #e0e0e0;
-          border-radius: 5px;
-          padding: 0.5rem;
+      justify-content: center;
 
-          &:hover {
-            opacity: 0.8;
-            cursor: pointer;
-          }
-          svg{
-            margin-right: 0.5rem;
-          }
-        }
-        display: flex;
-        justify-content: space-between;
-        width: 60%;
+      img {
+        width: 80%;
+        height: 100%;
+        border-radius: 20px;
+        object-fit: cover;
       }
     }
-
   }
+
+  .product__description {
+    //border: 1px solid red;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__add {
+      .button {
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        padding: 0.5rem;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+        svg {
+          margin-right: 0.5rem;
+        }
+      }
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+    }
+  }
+}
