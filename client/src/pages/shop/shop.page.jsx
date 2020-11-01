@@ -2,7 +2,6 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import ShopNavBar from 'components/navbar/ShopNavBar';
 
-
 /* Styles */
 import './shop.styles.scss';
 
@@ -10,6 +9,7 @@ import './shop.styles.scss';
 import ProfilePage from 'pages/shop/profile/profile.page';
 
 /* Compouse Components */
+import HowItWorks from 'pages/shop/overview/howitworks/how.it.works.component';
 import FindYourFarmer from 'pages/shop/overview/findafarmer/FindYourFarmer';
 import Feed from 'pages/shop/overview/feed/feed.component';
 
@@ -21,8 +21,9 @@ import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 const ShopOverView = ({ match }) => {
   return (
     <div className="shop__internal__content">
-      <FindYourFarmer match={match} />
       <Feed />
+      <HowItWorks />
+      <FindYourFarmer match={match} />
     </div>
   );
 };
@@ -39,7 +40,7 @@ const Shop = ({ match }) => {
       {/* Those Component will switch, only one of them will active at sameTime */}
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
-
+      
       {/*
        * Both components will be avabiable in /shop and /shop/:farmerId
        * You don't neet to import it there again
