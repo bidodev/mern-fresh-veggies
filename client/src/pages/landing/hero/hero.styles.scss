@@ -42,7 +42,11 @@
       }
 
       &--link-farmer {
-        padding: 13px 28px;
+        cursor: pointer;
+        
+        &:hover{
+          opacity: 0.5
+        }
       }
 
       & > * {
