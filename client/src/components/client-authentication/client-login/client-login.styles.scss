@@ -1,0 +1,16 @@
+.sign-in__animation {
+  width: 55%;
+  background-color: green;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  background-image: url(/images/pattern1.jpg);
+}
+.sign-in__form-container {
+  width: 45%;
+  background-color: #e0b835;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-input {
+    background-color: #e0b835;
+  }
+}

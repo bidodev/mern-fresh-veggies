@@ -11,19 +11,17 @@ import ClientSignIn from 'components/client-authentication/client-login/client-l
 import ClientSignUp from 'components/client-authentication/client-signup/client-signup.component';
 
 const AdminNavBar = () => {
-  return (<div>Hello Admin</div>)
-}
+  return <div>Hello Admin</div>;
+};
 
 const TestBar = () => {
-  return (<div>Hello Test</div>)
-}
+  return <div>Hello Test</div>;
+};
 
 const ShopNavBar = ({ match }) => {
-
-
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.farmerUser);
-  const cartItems = useSelector(({cart}) => cart.cartItems);
+  const cartItems = useSelector(({ cart }) => cart.cartItems);
 
   const dispatch = useDispatch();
   const switchLogInSignIn = useSelector((state) => state.switch.show);
@@ -34,14 +32,14 @@ const ShopNavBar = ({ match }) => {
   const toogleModal = (modal) => {
     switch (modal) {
       case 'SIGN_IN': {
-        return toogleSignInModal(!signInModalStatus)
+        return toogleSignInModal(!signInModalStatus);
       }
       case 'SHOP_CART': {
-        return toogleCartModal(!cartModalStatus)
+        return toogleCartModal(!cartModalStatus);
       }
       default:
     }
-  }
+  };
 
   return (
     <>
@@ -61,7 +59,7 @@ const ShopNavBar = ({ match }) => {
               <FontAwesomeIcon
                 icon={['fas', 'shopping-cart']}
                 className="fa-shopping-cart"
-                onClick={()=>toogleModal('SHOP_CART')}
+                onClick={() => toogleModal('SHOP_CART')}
               />
             </Link>
           </li>
@@ -83,10 +81,7 @@ const ShopNavBar = ({ match }) => {
           ) : (
             <li>
               <Link to="#">
-                <div
-                  className="shop__navbar__account__login"
-                  onClick={()=>toogleModal('SIGN_IN')}
-                >
+                <div className="shop__navbar__account__login" onClick={() => toogleModal('SIGN_IN')}>
                   SIGN IN
                 </div>
               </Link>
@@ -96,25 +91,27 @@ const ShopNavBar = ({ match }) => {
       </nav>
       <Modal
         modalStatus={cartModalStatus}
-        closeModal={()=>toogleModal('SHOP_CART')}
+        closeModal={() => toogleModal('SHOP_CART')}
         className="cart-modal"
         overlayClassName="cart-overlay"
       >
         {cartItems.length ? (
-        cartItems.map(cartItem => (
-          <h2>Item: {cartItem.name}, Quantity: {cartItem.quantity}</h2>
-        ))
-      ) : (
-        <h2>Your cart is empty</h2>
-      )}
+          cartItems.map((cartItem) => (
+            <h2>
+              Item: {cartItem.name}, Quantity: {cartItem.quantity}
+            </h2>
+          ))
+        ) : (
+          <h2>Your cart is empty</h2>
+        )}
       </Modal>
       <Modal
-        modalStatus={signInModalStatus}
+        modalStatus={true}
         closeModal={() => toogleModal('SIGN_IN')}
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
       >
-        {switchLogInSignIn ? <ClientSignUp toogleModal={toogleModal}/> : <ClientSignIn toogleModal={toogleModal}/>}
+        {switchLogInSignIn ? <ClientSignUp toogleModal={toogleModal} /> : <ClientSignIn toogleModal={toogleModal} />}
       </Modal>
     </>
   );
