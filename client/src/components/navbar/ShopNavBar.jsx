@@ -10,7 +10,17 @@ import Modal from 'components/modal/modal.component';
 import ClientSignIn from 'components/client-authentication/client-login/client-login.component';
 import ClientSignUp from 'components/client-authentication/client-signup/client-signup.component';
 
-const ShopNavBar = () => {
+const AdminNavBar = () => {
+  return (<div>Hello Admin</div>)
+}
+
+const TestBar = () => {
+  return (<div>Hello Test</div>)
+}
+
+const ShopNavBar = ({ match }) => {
+
+
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.farmerUser);
   const cartItems = useSelector(({cart}) => cart.cartItems);

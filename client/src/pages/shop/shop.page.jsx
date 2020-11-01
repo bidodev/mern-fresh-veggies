@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import ShopNavBar from 'components/navbar/ShopNavBar';
+
 
 /* Styles */
 import './shop.styles.scss';
@@ -9,7 +11,7 @@ import ProfilePage from 'pages/shop/profile/profile.page';
 
 /* Compouse Components */
 import FindYourFarmer from 'pages/shop/overview/findafarmer/FindYourFarmer';
-import HowItWorks from 'pages/shop/overview/howitworks/how.it.works.component';
+import Feed from 'pages/shop/overview/feed/feed.component';
 
 /* those two components are used in more pages, thefore they stay on the components folder */
 import Footer from 'components/footer/footer.component';
@@ -19,8 +21,8 @@ import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 const ShopOverView = ({ match }) => {
   return (
     <div className="shop__internal__content">
-      <HowItWorks />
       <FindYourFarmer match={match} />
+      <Feed />
     </div>
   );
 };
@@ -33,6 +35,7 @@ const Shop = ({ match }) => {
    */
   return (
     <>
+      <ShopNavBar />
       {/* Those Component will switch, only one of them will active at sameTime */}
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
