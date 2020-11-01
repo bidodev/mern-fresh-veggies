@@ -18,7 +18,6 @@ const App = () => {
   return (
     <div>
       {/* The navbar will be avaiable for all the components */}
-      <ShopNavBar />
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/shop" component={Shop} />

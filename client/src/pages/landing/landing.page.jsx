@@ -4,7 +4,8 @@ import React from 'react';
 import Hero from 'pages/landing/hero/hero.component';
 import Story from 'pages/landing/story/story.component';
 import Footer from 'components/footer/footer.component';
-import Feed from 'pages/shop/overview/feed/feed.component';
+
+import HowItWorks from 'pages/shop/overview/howitworks/how.it.works.component';
 
 /* Styles */
 import './landing.styles.scss';
@@ -13,7 +14,8 @@ const Landing = () => {
   return (
     <React.Fragment>
       <Hero />
-      <Feed />
+      
+      <HowItWorks />
       <Story />
       <Footer />
     </React.Fragment>

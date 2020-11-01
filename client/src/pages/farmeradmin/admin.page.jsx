@@ -8,6 +8,7 @@ import ProfileAdmin from 'pages/farmeradmin/profile/profile.component';
 import Stock from 'pages/farmeradmin/stock/stock.component';
 import Aside from 'pages/farmeradmin/aside/asidebar.component';
 import FarmerSettings from 'pages/farmeradmin/settings/settings.component';
+import ShopNavBar from 'components/navbar/ShopNavBar';
 
 /* Styles */
 import './admin.page.styles.scss';
@@ -25,6 +26,7 @@ const FarmerAdmin = React.memo(({ match, user }) => {
     <>
       {/* <Navbar {...data} /> */}
       <section className="farmer-admin">
+        <ShopNavBar match={match}/>
         <Aside {...data} />
         <Route exact path={`${match.path}`} render={() => <ProfileAdmin {...data} jwt={jwt} />} />
         <Route path={`${match.path}/stock`} component={Stock} />
