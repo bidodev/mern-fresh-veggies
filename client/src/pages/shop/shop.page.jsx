@@ -1,6 +1,9 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React, { useState} from 'react';
+import { Route, Link } from 'react-router-dom';
 import ShopNavBar from 'components/navbar/ShopNavBar';
+import { useSelector, useDispatch } from 'react-redux';
+
+import Modal from 'components/modal/modal.component'
 
 /* Styles */
 import './shop.styles.scss';
@@ -18,6 +21,8 @@ import Cart from 'pages/shop/cart/cart.component';
 import Footer from 'components/footer/footer.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+
 /* Components that will rendered only at /shop */
 const ShopOverView = ({ match }) => {
   return (
@@ -30,14 +35,55 @@ const ShopOverView = ({ match }) => {
 };
 
 const Shop = ({ match }) => {
+  const cartItems = useSelector(({ cart }) => cart.cartItems);
   /**
    * Shop overview
    * if the path is exact /shop we render <Navbar /> <FarmerList /> <Footer /> and <ScrollTopAroow />
    * if the path is /shop/:farmerId we render <Navbar /> <ProfilePage /> <Footer /> and <ScrollTopAroow />
    */
+
+  const [cartModalStatus, toogleCartModal] = useState(false);
+
+  const toogleModal = (modal) => {
+    switch (modal) {
+      case 'SHOP_CART': {
+        return toogleCartModal(!cartModalStatus);
+      }
+      default:
+    }
+  };
   return (
     <>
-      <ShopNavBar />
+      <ShopNavBar match={match}>
+        {/* children */}
+        <li>
+          <Link to="#">
+            <Icon
+              icon={['fas', 'shopping-cart']}
+              className="fa-shopping-cart"
+              onClick={() => toogleModal('SHOP_CART')}
+            />
+          </Link>
+        </li>
+        <Modal
+          modalStatus={cartModalStatus}
+          closeModal={() => toogleModal('SHOP_CART')}
+          className="cart-modal"
+          overlayClassName="cart-overlay"
+        >
+          {cartItems.length ? (
+            cartItems.map((cartItem) => (
+              <h2>
+                Item: {cartItem.name}, Quantity: {cartItem.quantity}
+              </h2>
+            ))
+          ) : (
+            <h2>Your cart is empty</h2>
+          )}
+        </Modal>
+      </ShopNavBar>
+
+      
       {/* Those Component will switch, only one of them will active at sameTime */}
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />

@@ -1,42 +1,33 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { HashLink } from 'react-router-hash-link';
 
+//import { HashLink } from 'react-router-hash-link';
 import './ShopNavBar.styles.scss';
 
 import Modal from 'components/modal/modal.component';
-import ClientSignIn from 'components/client-authentication/client-login/client-login.component';
+
+<!-- import ClientSignIn from 'components/client-authentication/client-login/client-login.component';
 import ClientSignUp from 'components/client-authentication/client-signup/client-signup.component';
-import CustomButton from 'components/UI/custom-button/custom-button.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component'; -->
 
-const AdminNavBar = () => {
-  return <div>Hello Admin</div>;
-};
+import SignIn from 'components/authentication/login/login.component';
+import SignUp from 'components/authentication/signup/signup.component';
 
-const TestBar = () => {
-  return <div>Hello Test</div>;
-};
 
-const ShopNavBar = ({ match }) => {
+
+const ShopNavBar = ({ match, children }) => {
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
-  const isLoggedIn = useSelector((state) => state.login.farmerUser);
-  const cartItems = useSelector(({ cart }) => cart.cartItems);
-
+  const isLoggedIn = useSelector((state) => state.login.user);
   const dispatch = useDispatch();
+
   const switchLogInSignIn = useSelector((state) => state.switch.show);
-
   const [signInModalStatus, toogleSignInModal] = useState(false);
-  const [cartModalStatus, toogleCartModal] = useState(false);
-
   const toogleModal = (modal) => {
     switch (modal) {
       case 'SIGN_IN': {
         return toogleSignInModal(!signInModalStatus);
-      }
-      case 'SHOP_CART': {
-        return toogleCartModal(!cartModalStatus);
       }
       default:
     }
@@ -48,30 +39,23 @@ const ShopNavBar = ({ match }) => {
 
     //2.REDIRECT USER TO PAGE.
     //useHistory.push('/')
+
+
   };
 
   return (
     <>
       <nav className="shop__navbar">
+         {/* Our Logo will be avaiable in the whole application, so it stays here */}
         <Link to="/">
           <div className="shop__navbar__logo">Veggies</div>
         </Link>
-        <div className="shop__navbar__links">
-          {/* <div>About Us</div> */}
-          <HashLink to="#how-we-work" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
-            <div>How it works</div>
-          </HashLink>
-        </div>
         <ul className="shop__navbar__account">
-          <li>
-            <Link to="#">
-              <FontAwesomeIcon
-                icon={['fas', 'shopping-cart']}
-                className="fa-shopping-cart"
-                onClick={() => toogleModal('SHOP_CART')}
-              />
-            </Link>
-          </li>
+
+          {/* The childrens can be different upon to the parent, they are sent by the parent */}
+          {children}
+
+          {/* SignIN will be avaiable in the whole application, so it stays here */}
           {isLoggedIn ? (
             <React.Fragment>
               <li>
@@ -91,13 +75,14 @@ const ShopNavBar = ({ match }) => {
             <li>
               <Link to="#">
                 <div className="shop__navbar__account__login" onClick={() => toogleModal('SIGN_IN')}>
-                  SIGN IN
+                  LOGIN
                 </div>
               </Link>
             </li>
           )}
         </ul>
       </nav>
+
       <Modal
         modalStatus={cartModalStatus}
         closeModal={() => toogleModal('SHOP_CART')}
@@ -119,13 +104,17 @@ const ShopNavBar = ({ match }) => {
           </CustomButton>
         </Link>
       </Modal>
+
+      {/* SIGN IN MODAL */}
+
+
       <Modal
         modalStatus={signInModalStatus}
         closeModal={() => toogleModal('SIGN_IN')}
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
       >
-        {switchLogInSignIn ? <ClientSignUp toogleModal={toogleModal} /> : <ClientSignIn toogleModal={toogleModal} />}
+        {switchLogInSignIn ? <SignUp match={match} toogleModal={toogleModal} /> : <SignIn toogleModal={toogleModal} />}
       </Modal>
     </>
   );

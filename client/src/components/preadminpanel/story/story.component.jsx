@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 /* Styles */
 import './story.styles.scss';
 
@@ -19,6 +19,7 @@ const Story = () => {
               perferendis sed magnam doloremque esse animi! Illo, minima quibusdam.
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde inventore vel facere cum! Quibusdam voluptatum est maiores molestias facilis fuga?
             </div>
+            <CustomButton style={{"width": "11rem", "marginLeft": "6rem", "marginTop": "3rem"}}>Get Started</CustomButton>
           </div>
 
           <div className="second-row__right-container">
