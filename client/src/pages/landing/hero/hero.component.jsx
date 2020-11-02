@@ -38,11 +38,13 @@ const Hero = () => {
             </p>
             {/* <div className="hero-component__main__text-component__button-box"> */}
             <p>This can be a paragraph explaining the idea</p>
-            <button
+            <button>
+            <Link
               className="hero-component__main__text-component--link-farmer"
-              onClick={() => toogleModal('SIGN_IN')}
+              to='/farmer/admin'
             >
-              I am a Farmer
+                I am a Farmer
+            </Link>
             </button>
             <button>
               <Link to="/shop" className="hero-component__main__text-component--link-shop">

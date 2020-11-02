@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HashLink } from 'react-router-hash-link';
@@ -41,6 +41,14 @@ const ShopNavBar = ({ match }) => {
     }
   };
 
+  const logOutUser = (user) => {
+   //1. LOGOUT THE USERS
+    dispatch({ type: 'LOGOUT_USER' })
+    
+    //2.REDIRECT USER TO PAGE.
+    //useHistory.push('/')
+  }
+
   return (
     <>
       <nav className="shop__navbar">
@@ -72,7 +80,7 @@ const ShopNavBar = ({ match }) => {
               </li>
               <li>
                 <Link to="#">
-                  <div className="shop__navbar__account__logout" onClick={() => dispatch({ type: 'LOGOUT_USER' })}>
+                  <div className="shop__navbar__account__logout" onClick={logOutUser}>
                     LOG OUT
                   </div>
                 </Link>
