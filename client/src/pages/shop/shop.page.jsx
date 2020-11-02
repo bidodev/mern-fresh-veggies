@@ -42,7 +42,7 @@ const Shop = ({ match }) => {
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
 
-      <Route path={`${match.path}/checkout`} component={Cart} />
+      <Route path={`${match.path}/cart`} component={Cart} />
       {/*
        * Both components will be available in /shop and /shop/:farmerId
        * You don't need to import it there again
