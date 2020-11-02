@@ -1,6 +1,5 @@
 const INITIAL_STATE = {
-  farmerUser: null,
-  customerUser: null,
+  user: null,
 };
 
 const loginReducer = (state = INITIAL_STATE, action) => {
@@ -8,12 +7,12 @@ const loginReducer = (state = INITIAL_STATE, action) => {
     case 'LOGIN_USER':
       return {
         ...state,
-        farmerUser: action.payload,
+        user: action.payload,
       };
     case 'LOGOUT_USER':
       return {
         ...state,
-        farmerUser: null,
+        user: null,
       };
     default:
       return state;
