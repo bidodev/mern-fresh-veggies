@@ -12,7 +12,7 @@ import ProfilePage from 'pages/shop/profile/profile.page';
 import HowItWorks from 'pages/shop/overview/howitworks/how.it.works.component';
 import FindYourFarmer from 'pages/shop/overview/findafarmer/FindYourFarmer';
 import Feed from 'pages/shop/overview/feed/feed.component';
-import Checkout from 'pages/shop/checkout/checkout.component';
+import Cart from 'pages/shop/cart/cart.component';
 
 /* those two components are used in more pages, therefore they stay on the components folder */
 import Footer from 'components/footer/footer.component';
@@ -42,7 +42,7 @@ const Shop = ({ match }) => {
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
 
-      <Route path={`${match.path}/checkout`} component={Checkout} />
+      <Route path={`${match.path}/checkout`} component={Cart} />
       {/*
        * Both components will be available in /shop and /shop/:farmerId
        * You don't need to import it there again

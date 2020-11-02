@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
-import './checkout.styles.scss';
+import './cart.styles.scss';
 const Checkout = () => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   return (
