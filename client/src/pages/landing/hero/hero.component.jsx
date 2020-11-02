@@ -6,7 +6,6 @@ import Modal from 'components/modal/modal.component';
 import ClientSignIn from 'components/client-authentication/client-login/client-login.component';
 import ClientSignUp from 'components/client-authentication/client-signup/client-signup.component';
 
-
 /* Styles */
 import './hero.styles.scss';
 
@@ -38,6 +37,7 @@ const Hero = () => {
               Happiest bio <span>veggies</span>
             </p>
             {/* <div className="hero-component__main__text-component__button-box"> */}
+            <p>This can be a paragraph explaining the idea</p>
             <button
               className="hero-component__main__text-component--link-farmer"
               onClick={() => toogleModal('SIGN_IN')}
@@ -59,7 +59,7 @@ const Hero = () => {
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
       >
-                {switchLogInSignIn ? <ClientSignUp toogleModal={toogleModal}/> : <ClientSignIn toogleModal={toogleModal}/>}
+        {switchLogInSignIn ? <ClientSignUp toogleModal={toogleModal} /> : <ClientSignIn toogleModal={toogleModal} />}
       </Modal>
     </>
   );

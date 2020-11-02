@@ -22,8 +22,8 @@ const ShopOverView = ({ match }) => {
   return (
     <div className="shop__internal__content">
       <Feed />
-      <HowItWorks />
       <FindYourFarmer match={match} />
+      <HowItWorks />
     </div>
   );
 };
@@ -40,7 +40,7 @@ const Shop = ({ match }) => {
       {/* Those Component will switch, only one of them will active at sameTime */}
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
-      
+
       {/*
        * Both components will be avabiable in /shop and /shop/:farmerId
        * You don't neet to import it there again
