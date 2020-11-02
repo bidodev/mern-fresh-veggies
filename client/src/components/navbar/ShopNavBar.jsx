@@ -113,7 +113,9 @@ const ShopNavBar = ({ match }) => {
         ) : (
           <h2>Your cart is empty</h2>
         )}
-        <CustomButton type="submit">Proceed to checkout</CustomButton>
+        <Link to="shop/checkout">
+          <CustomButton type="submit">Proceed to checkout</CustomButton>
+        </Link>
       </Modal>
       <Modal
         modalStatus={signInModalStatus}
