@@ -10,7 +10,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .form-input {
-    background-color: #e0b835;
+  a {
+    text-align: center;
+    div {
+      margin-bottom: 2rem;
+    }
   }
 }
