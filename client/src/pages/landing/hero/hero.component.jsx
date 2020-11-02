@@ -1,25 +1,11 @@
-import React, { useState } from 'react';
-import { HashLink } from 'react-router-hash-link';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Modal from 'components/modal/modal.component';
-import ClientSignIn from 'components/client-authentication/client-login/client-login.component';
-import ClientSignUp from 'components/client-authentication/client-signup/client-signup.component';
+import { HashLink } from 'react-router-hash-link';
 
 /* Styles */
 import './hero.styles.scss';
 
 const Hero = () => {
-  const [signInModalStatus, toogleSignInModal] = useState(false);
-  const switchLogInSignIn = useSelector((state) => state.switch.show);
-  const toogleModal = (modal) => {
-    switch (modal) {
-      case 'SIGN_IN': {
-        return toogleSignInModal(!signInModalStatus);
-      }
-      default:
-    }
-  };
   return (
     <>
       <div className="hero-component">
@@ -39,12 +25,9 @@ const Hero = () => {
             {/* <div className="hero-component__main__text-component__button-box"> */}
             <p>This can be a paragraph explaining the idea</p>
             <button>
-            <Link
-              className="hero-component__main__text-component--link-farmer"
-              to='/farmer/admin'
-            >
+              <Link className="hero-component__main__text-component--link-farmer" to="/farmer/admin">
                 I am a Farmer
-            </Link>
+              </Link>
             </button>
             <button>
               <Link to="/shop" className="hero-component__main__text-component--link-shop">
@@ -55,14 +38,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <Modal
-        modalStatus={signInModalStatus}
-        closeModal={() => toogleModal('SIGN_IN')}
-        className="sign-in-modal"
-        overlayClassName="sign-in-overlay"
-      >
-        {switchLogInSignIn ? <ClientSignUp toogleModal={toogleModal} /> : <ClientSignIn toogleModal={toogleModal} />}
-      </Modal>
     </>
   );
 };

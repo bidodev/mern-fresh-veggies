@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
@@ -7,14 +8,13 @@ import FormInput from 'components/forms/input/input.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
-import './login.styles.scss';
+import './client-login.styles.scss';
 
-const Login = () => {
+const ClientLogin = ({ toogleModal }) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const dispatch = useDispatch();
-
-  // update redux
+  // grabbing the form data and send it to the database
   const handleLoginData = async (event) => {
     event.preventDefault();
 
@@ -27,6 +27,10 @@ const Login = () => {
       .post('/account/login', data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
+        // if it is successful, close the modal
+        if (data.status === 'success') {
+          toogleModal('SIGN_IN');
+        }
       })
       .catch((error) => console.log('Error in the login', error.message));
   };
@@ -44,40 +48,49 @@ const Login = () => {
     }
   };
 
-  const signInWithGoogle = () => {
-    console.log('Not implemented yet');
-  };
+  //in case we implement sign in with google
+  //   const signInWithGoogle = () => {
+  //     console.log('Not implemented yet');
+  //   };
 
   return (
-    <div className="sign-in">
-      <h2 className="title">I already have an account</h2>
-      <span>Sign in with your email and password</span>
-      <form onSubmit={handleLoginData}>
-        <FormInput
-          name="email"
-          type="email"
-          value={userEmail}
-          required
-          label="email"
-          handleInputValue={handleInputValue}
-        />
-        <FormInput
-          name="password"
-          type="password"
-          value={userPassword}
-          required
-          label="password"
-          handleInputValue={handleInputValue}
-        />
-        <div className="buttons">
-          <CustomButton type="submit">Sign In</CustomButton>
-          <CustomButton type="button" onClick={signInWithGoogle} isGoogleSingIn>
+    <React.Fragment>
+      <div className="sign-in__animation"></div>
+      <div className="sign-in__form-container">
+        <div className="sign-in__form">
+          <h2 className="title">I already have an account</h2>
+          <span>Sign in with your email and password</span>
+          <form onSubmit={handleLoginData}>
+            <FormInput
+              name="email"
+              type="email"
+              value={userEmail}
+              required
+              label="email"
+              handleInputValue={handleInputValue}
+            />
+            <FormInput
+              name="password"
+              type="password"
+              value={userPassword}
+              required
+              label="password"
+              handleInputValue={handleInputValue}
+            />
+            <Link to="#">
+              <div onClick={() => dispatch({ type: 'SWITCH_SIGN-IN_LOG-IN' })}>You are not registered yet?</div>
+            </Link>
+            <div className="buttons">
+              <CustomButton type="submit">Sign In</CustomButton>
+              {/* <CustomButton type="button" onClick={signInWithGoogle} isGoogleSingIn>
             Sign in with Google
-          </CustomButton>
+          </CustomButton> */}
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
+      </div>
+    </React.Fragment>
   );
 };
 
-export default Login;
+export default ClientLogin;
