@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import CustomButton from 'components/UI/custom-button/custom-button.component';
+import Checkout from 'pages/checkout/checkout.page';
 
 import './cart.styles.scss';
-const Checkout = () => {
+const Cart = () => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   return (
     <div className="cart-edit">
@@ -24,8 +25,14 @@ const Checkout = () => {
           <li>Your cart is empty</li>
         )}
       </ul>
+
+      {/* <Link to="/checkout"> */}
+
+      <CustomButton>Proceed to checkout</CustomButton>
+
+      {/* </Link> */}
     </div>
   );
 };
 
-export default Checkout;
+export default Cart;
