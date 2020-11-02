@@ -106,7 +106,7 @@ const ShopNavBar = ({ match }) => {
         )}
       </Modal>
       <Modal
-        modalStatus={true}
+        modalStatus={signInModalStatus}
         closeModal={() => toogleModal('SIGN_IN')}
         className="sign-in-modal"
         overlayClassName="sign-in-overlay"
