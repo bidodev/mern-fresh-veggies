@@ -9,6 +9,7 @@ import './ShopNavBar.styles.scss';
 import Modal from 'components/modal/modal.component';
 import ClientSignIn from 'components/client-authentication/client-login/client-login.component';
 import ClientSignUp from 'components/client-authentication/client-signup/client-signup.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 const AdminNavBar = () => {
   return <div>Hello Admin</div>;
@@ -42,12 +43,12 @@ const ShopNavBar = ({ match }) => {
   };
 
   const logOutUser = (user) => {
-   //1. LOGOUT THE USERS
-    dispatch({ type: 'LOGOUT_USER' })
-    
+    //1. LOGOUT THE USERS
+    dispatch({ type: 'LOGOUT_USER' });
+
     //2.REDIRECT USER TO PAGE.
     //useHistory.push('/')
-  }
+  };
 
   return (
     <>
@@ -112,6 +113,7 @@ const ShopNavBar = ({ match }) => {
         ) : (
           <h2>Your cart is empty</h2>
         )}
+        <CustomButton type="submit">Proceed to checkout</CustomButton>
       </Modal>
       <Modal
         modalStatus={signInModalStatus}
