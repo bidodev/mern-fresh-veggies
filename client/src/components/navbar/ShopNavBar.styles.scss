@@ -86,6 +86,15 @@
     right: 10vw;
     bottom: 20vh;
   }
+  @media only screen and (max-width: 500px) {
+    width: 90vw;
+    height: 90vh;
+    top: 5vh;
+    left: 5vw;
+    right: 10vw;
+    bottom: 5vh;
+    flex-direction: column;
+  }
 }
 .sign-in-overlay {
   position: fixed;
