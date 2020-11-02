@@ -1,17 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
+
+import './checkout.styles.scss';
 const Checkout = () => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
-  return <h1>this is checkout</h1>;
-  //   cartItems.length ? (
-  //     cartItems.map((cartItem) => (
-  //       <h2>
-  //         Item: {cartItem.name}, Quantity: {cartItem.quantity}
-  //       </h2>
-  //     ))
-  //   ) : (
-  //     <h2>Your cart is empty</h2>
-  //   );
+  return (
+    <div className="cart-edit">
+      <Link to="/shop">
+        <CustomButton>Back to shopping</CustomButton>
+      </Link>
+      <h1>this is edit your cart</h1>
+      <ul>
+        {cartItems.length ? (
+          cartItems.map((cartItem) => (
+            <li>
+              Item: {cartItem.name}, Quantity: {cartItem.quantity}
+            </li>
+          ))
+        ) : (
+          <li>Your cart is empty</li>
+        )}
+      </ul>
+    </div>
+  );
 };
 
 export default Checkout;
