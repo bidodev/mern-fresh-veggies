@@ -1,9 +1,9 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { Route, Link } from 'react-router-dom';
 import ShopNavBar from 'components/navbar/ShopNavBar';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Modal from 'components/modal/modal.component'
+import Modal from 'components/modal/modal.component';
 
 /* Styles */
 import './shop.styles.scss';
@@ -20,6 +20,7 @@ import Cart from 'pages/shop/cart/cart.component';
 /* those two components are used in more pages, therefore they stay on the components folder */
 import Footer from 'components/footer/footer.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
@@ -80,14 +81,17 @@ const Shop = ({ match }) => {
           ) : (
             <h2>Your cart is empty</h2>
           )}
+          <Link to="shop/cart">
+            <CustomButton type="submit" onClick={() => toogleModal('SHOP_CART')}>
+              Edit shopping cart
+            </CustomButton>
+          </Link>
         </Modal>
       </ShopNavBar>
 
-      
       {/* Those Component will switch, only one of them will active at sameTime */}
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
-
       <Route path={`${match.path}/cart`} component={Cart} />
       {/*
        * Both components will be available in /shop and /shop/:farmerId

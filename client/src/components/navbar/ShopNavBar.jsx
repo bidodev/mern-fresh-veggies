@@ -8,10 +8,6 @@ import './ShopNavBar.styles.scss';
 
 import Modal from 'components/modal/modal.component';
 
-<!-- import ClientSignIn from 'components/client-authentication/client-login/client-login.component';
-import ClientSignUp from 'components/client-authentication/client-signup/client-signup.component';
-import CustomButton from 'components/UI/custom-button/custom-button.component'; -->
-
 import SignIn from 'components/authentication/login/login.component';
 import SignUp from 'components/authentication/signup/signup.component';
 
@@ -82,29 +78,6 @@ const ShopNavBar = ({ match, children }) => {
           )}
         </ul>
       </nav>
-
-      <Modal
-        modalStatus={cartModalStatus}
-        closeModal={() => toogleModal('SHOP_CART')}
-        className="cart-modal"
-        overlayClassName="cart-overlay"
-      >
-        {cartItems.length ? (
-          cartItems.map((cartItem) => (
-            <h2>
-              Item: {cartItem.name}, Quantity: {cartItem.quantity}
-            </h2>
-          ))
-        ) : (
-          <h2>Your cart is empty</h2>
-        )}
-        <Link to="shop/cart">
-          <CustomButton type="submit" onClick={() => toogleModal('SHOP_CART')}>
-            Edit shopping cart
-          </CustomButton>
-        </Link>
-      </Modal>
-
       {/* SIGN IN MODAL */}
 
 
