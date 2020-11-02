@@ -53,6 +53,10 @@
   border-radius: 4px;
   outline: none;
   padding: 20px;
+  //this is the custom button
+  [type='submit'] {
+    width: 20rem;
+  }
   //for ipad width of the modal should be at least 50% of the view port
   @media (max-width: 800px) {
     width: 70vw;
