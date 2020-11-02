@@ -113,7 +113,7 @@ const ShopNavBar = ({ match }) => {
         ) : (
           <h2>Your cart is empty</h2>
         )}
-        <Link to="shop/checkout">
+        <Link to="shop/cart">
           <CustomButton type="submit" onClick={() => toogleModal('SHOP_CART')}>
             Edit shopping cart
           </CustomButton>
