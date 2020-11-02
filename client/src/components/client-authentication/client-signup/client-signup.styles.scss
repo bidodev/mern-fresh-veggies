@@ -1,0 +1,25 @@
+.sign-up__animation {
+  width: 55%;
+  background-color: green;
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%);
+  background-image: url(/images/pattern1.jpg);
+}
+.sign-up__form-container {
+  width: 45%;
+  background-color: #e0b835;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sign-up__form {
+    .group {
+      margin: 2.5rem 0;
+    }
+
+    a {
+      text-align: center;
+      div {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
