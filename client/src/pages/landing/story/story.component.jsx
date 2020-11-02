@@ -7,37 +7,73 @@ import './story.styles.scss';
 const Story = () => {
   return (
     <React.Fragment>
-            {/* ======== Hero Section === */}
-            <div className="how-it-works__hero-section">
-        <h2 className="how-it-works__hero-section--header">How it works</h2>
-        <div className="how-it-works__hero-section__img-container">
-          <img src="/images/farm-1.jpg" alt="img" className="how-it-works__hero-section__img-container--img" />
-        </div>
-
-        <div className="how-it-works__hero-section__banner">
-          <div className="how-it-works__hero-section__banner__text-container">
-            <h2 className="how-it-works__hero-section__banner__text-container--header">Choose a Local Farmer</h2>
-            <div className="how-it-works__hero-section__banner__text-container--text">
-              Encourage local farms to adopt and continue responsible farming practices.
-            </div>
-          </div>
-
-          <div className="how-it-works__hero-section__banner__text-container">
-            <h2 className="how-it-works__hero-section__banner__text-container--header">Fresh and Local Food</h2>
-            <div className="how-it-works__hero-section__banner__text-container--text">
-              You’ll have the peace of mind knowing that you're eating quality, natural foods.
-            </div>
-          </div>
-
-          <div className="how-it-works__hero-section__banner__text-container">
-            <h2 className="how-it-works__hero-section__banner__text-container--header">Convenient Deliveries</h2>
-            <div className="how-it-works__hero-section__banner__text-container--text">
-              Carbon-neutral shipping, 100% recyclable packaging, zero-waste warehouses.
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* ======== Hero Section === */}
       <section className="story" id="story">
+        <div className="how-it-works__hero-section">
+          <h2 className="how-it-works__hero-section--header">Our story</h2>
+          <div className="how-it-works__hero-section__img-container">
+            <img src="/images/farm-1.jpg" alt="img" className="how-it-works__hero-section__img-container--img" />
+          </div>
+
+          <div className="how-it-works__hero-section__banner">
+            <div className="how-it-works__hero-section__banner__text-container">
+              <h2 className="how-it-works__hero-section__banner__text-container--header">Choose a Local Farmer</h2>
+              <div className="how-it-works__hero-section__banner__text-container--text">
+                Encourage local farms to adopt and continue responsible farming practices.
+              </div>
+            </div>
+
+            <div className="how-it-works__hero-section__banner__text-container">
+              <h2 className="how-it-works__hero-section__banner__text-container--header">Fresh and Local Food</h2>
+              <div className="how-it-works__hero-section__banner__text-container--text">
+                You’ll have the peace of mind knowing that you're eating quality, natural foods.
+              </div>
+            </div>
+
+            <div className="how-it-works__hero-section__banner__text-container">
+              <h2 className="how-it-works__hero-section__banner__text-container--header">Convenient Deliveries</h2>
+              <div className="how-it-works__hero-section__banner__text-container--text">
+                Carbon-neutral shipping, 100% recyclable packaging, zero-waste warehouses.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="how-it-works__info-section">
+          <div className="how-it-works__info-section__left-container">
+            <div className="how-it-works__info-section__left-container__text-container">
+              <h2 className="how-it-works__info-section__left-container__text-container--header">This is HEADER</h2>
+              <div className="how-it-works__info-section__left-container__text-container--text">
+                Farms can access a wide range of ingredients that are in season, giving you plenty of new and fresh
+                choices. Follow your favorite farmers, choose your seasonal food and get delivered in the week.
+              </div>
+            </div>
+            <div className="how-it-works__info-section__left-container__img-container">
+              <img
+                src="/images/farm-1.jpg"
+                alt="img"
+                className="how-it-works__info-section__left-container__img-container--img"
+              />
+            </div>
+          </div>
+
+          <div className="how-it-works__info-section__right-container">
+            <div className="how-it-works__info-section__right-container__img-container-1">
+              <img
+                src="/images/farm-1.jpg"
+                alt="img"
+                className="how-it-works__info-section__right-container__img-container-1--img"
+              />
+            </div>
+            <div className="how-it-works__info-section__right-container__img-container-2">
+              <img
+                src="/images/farm-1.jpg"
+                alt="img"
+                className="how-it-works__info-section__right-container__img-container-2--img"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* ---- First Row ---- */}
         <div className="first-row">
           <div className="first-row__img-container">

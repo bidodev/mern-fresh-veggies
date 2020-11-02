@@ -8,7 +8,7 @@ const HowItWorks = () => {
   return (
     <section className="how-it-works" id="how-we-work">
       {/* ======== Information Section === */}
-      <div className="how-it-works__info-section">
+      {/* <div className="how-it-works__info-section">
         <div className="how-it-works__info-section__left-container">
           <div className="how-it-works__info-section__left-container__text-container">
             <h2 className="how-it-works__info-section__left-container__text-container--header">This is HEADER</h2>
@@ -42,11 +42,11 @@ const HowItWorks = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ======== Icons Section === */}
       <div className="how-it-works__icons-section">
-        <h2 className="how-it-works__icons-section--header">This is Header</h2>
+        <h2 className="how-it-works__icons-section--header">This is how it works</h2>
         <div className="how-it-works__icons-section__box-container">
           <div className="how-it-works__icons-section__box-container__card">
             <div className="how-it-works__icons-section__box-container__card--icon">
