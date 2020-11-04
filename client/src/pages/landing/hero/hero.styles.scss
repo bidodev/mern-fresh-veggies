@@ -47,7 +47,7 @@
         font-size: $font-size__header__large;
         grid-column: 1/-1;
         @media (max-width: 420px) {
-          font-size: 2.3rem;
+          font-size: 2.1rem;
         }
         span {
           display: block;
@@ -66,21 +66,18 @@
         grid-column: 1/-1;
         @media (max-width: 600px) {
           width: 20rem;
+        }
+        @media (max-width: 420px) {
           font-size: 1rem;
         }
       }
 
-      // That BUTTON should be in CENTER! Help !! :)
-      button {
-        width: 9rem;
-        height: 2.5rem;
-        border-radius: 10px;
-        background-color: transparent;
-        margin: 0 1vw;
-        cursor: pointer;
-        &:hover {
-          opacity: 0.5;
-        }
+      &--button {
+        width: 99vw;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
