@@ -17,7 +17,7 @@ const ProfileAdmin = ({ photo, name }) => {
   const toggleModal = () => {
     setIsOpen(!modalStatus);
   };
-  
+
   const [text, setText] = useState(
     'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi!'
   );
@@ -43,41 +43,27 @@ const ProfileAdmin = ({ photo, name }) => {
   const url = '/users/profile';
 
   return (
-    <section className="profile-admin">
-      <div className="profile-admin__profile-container">
-        <h2 className="profile-admin__profile-container--header">YOUR PROFILE</h2>
-        <div className="profile-admin__profile-container__information">
-          <div
-            className="profile-admin__profile-container__information__avatar"
-            onMouseEnter={handleMouseHover}
-            onMouseLeave={handleMouseHover}
-            onClick={toggleModal}
-          >
-            <img src={`/images/users/${photo}`} alt="avatar" />
-            {isHovering && (
-              <div>
-                <li>
-                  <h2>Choose new photo</h2>
-                </li>
-              </div>
-            )}
-          </div>
-
-          <div className="profile-admin__profile-container__information--biography">
-            Welcome to your profile {name}
-            <Editable tag="p" type="text" maxLength="200" onChange={onChange} value={text} readOnly={false} />
-          </div>
+    <section className="panel__profile">
+      <header className="header__profile">
+        <img src={`/images/default-cover.jpg`} alt="cover-photo" />
+        <div className="header__profile__avatar-container">
+          <img src={`/images/users/${photo}`} alt="farmer-avatar" />
         </div>
-        <hr />
-        <div className="profile-admin__profile-container__gallery">
-          {profileImages.map((img) => (
-            <ImageItem key={img.id} img={img} />
-          ))}
+      </header>
+
+      <div className="panel__profile__biography">
+        <div className="panel__profile__biography__info">Welcome {name}</div>
+        <div className="panel__profile__biography__text">
+          <Editable tag="p" type="text" maxLength="200" onChange={onChange} value={text} readOnly={false} />
         </div>
       </div>
 
-      <ReviewsAdmin />
-      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} url={url} />
+      <hr />
+      <div className="panel__profile__gallery">
+        {profileImages.map((img) => (
+          <ImageItem key={img.id} img={img} />
+        ))}
+      </div>
     </section>
   );
 };
