@@ -39,7 +39,7 @@ const Story = () => {
           </div>
           <div className="story__hero-section__button">
             <Link to="/shop">
-              <CustomButton style={{ width: '11rem', margin: '2rem' }}>Get Started</CustomButton>
+              <CustomButton style={{ width: '11rem', margin: '2rem' }}>Go to Shop</CustomButton>
             </Link>
           </div>
         </div>
@@ -47,10 +47,10 @@ const Story = () => {
         <div className="story__info-section">
           <div className="story__info-section__left-container">
             <div className="story__info-section__left-container__text-container">
-              <h2 className="story__info-section__left-container__text-container--header">You Are a Farmer</h2>
+              <h2 className="story__info-section__left-container__text-container--header">You are a farmer</h2>
               <div className="story__info-section__left-container__text-container--text">
-                Farms can access a wide range of ingredients that are in season, giving you plenty of new and fresh
-                choices. Follow your favorite farmers, choose your seasonal food and get delivered in the week.
+                We host your website and connect you directly to clients! Join our platform, personalize your own
+                profile and manage your store.
               </div>
               <div className="story__info-section__left-container__text-container--button">
                 <Link to="/farmer/admin">
@@ -60,7 +60,7 @@ const Story = () => {
             </div>
             <div className="story__info-section__left-container__img-container">
               <img
-                src="/images/farm-1.jpg"
+                src="/images/farmer-3.jpg"
                 alt="img"
                 className="story__info-section__left-container__img-container--img"
               />
@@ -69,14 +69,14 @@ const Story = () => {
           <div className="story__info-section__right-container">
             <div className="story__info-section__right-container__img-container-1">
               <img
-                src="/images/farm-1.jpg"
+                src="/images/farmer-1.jpg"
                 alt="img"
                 className="story__info-section__right-container__img-container-1--img"
               />
             </div>
             <div className="story__info-section__right-container__img-container-2">
               <img
-                src="/images/farm-1.jpg"
+                src="/images/farmer-4.jpg"
                 alt="img"
                 className="story__info-section__right-container__img-container-2--img"
               />
