@@ -13,13 +13,35 @@ const Story = () => {
       <section className="story" id="story">
         <div className="story__how-it-works">
           <div className="story__how-it-works__left-container">
-            <h3 className="story__how-it-works__left-container--header">How It Works</h3>
-            <div className="story__how-it-works__left-container--text">
-              1- Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
-              2- Pariatur repellat rerum accusantium nesciunt inventore, sunt eius reiciendis itaque ducimus recusandae
-              velit laborum ea facilis similique, molestiae perferendis sed magnam doloremque esse animi! <br />
-              3- Illo, minima quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde inventore vel
-              facere cum! Quibusdam voluptatum est maiores molestias facilis fuga?
+            <h3 className="story__how-it-works__left-container__header">How It Works</h3>
+            <div className="story__how-it-works__left-container__text-container">
+              <div className="story__how-it-works__left-container__text-container__list-item">
+                <div className="story__how-it-works__left-container__text-container__list-item--icon">
+                  <FontAwesomeIcon icon={['fas', 'sign-in-alt']} />
+                </div>
+                <div className="story__how-it-works__left-container__text-container__list-item--text">
+                  You need first to register in our platform in order to create an account.
+                </div>
+              </div>
+
+              <div className="story__how-it-works__left-container__text-container__list-item">
+                <div className="story__how-it-works__left-container__text-container__list-item--icon">
+                  <FontAwesomeIcon icon={['fas', 'palette']} />
+                </div>
+                <div className="story__how-it-works__left-container__text-container__list-item--text">
+                  Give your store the look you want. It's simple and fast: upload an image of your avatar and your farm
+                  and add a description about your activity.
+                </div>
+              </div>
+
+              <div className="story__how-it-works__left-container__text-container__list-item">
+                <div className="story__how-it-works__left-container__text-container__list-item--icon">
+                  <FontAwesomeIcon icon={['fas', 'store']} />
+                </div>
+                <div className="story__how-it-works__left-container__text-container__list-item--text">
+                  Manage your online store. Access your stock of products and track your orders from your profile page.
+                </div>
+              </div>
             </div>
           </div>
           <div className="story__how-it-works__right-container">

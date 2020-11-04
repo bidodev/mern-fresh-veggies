@@ -91,7 +91,7 @@
     padding: 4vh 0;
     display: flex;
     background: #eee;
-    @media (max-width: 950px) {
+    @media (max-width: 1050px) {
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
@@ -103,7 +103,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-end;
-      @media (max-width: 950px) {
+      @media (max-width: 1050px) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -113,7 +113,7 @@
         width: 20vw;
         margin: 1vh;
         padding: 1vh;
-        @media (max-width: 950px) {
+        @media (max-width: 1050px) {
           width: 60vw;
           margin: 0 0 2vh 0;
         }
@@ -124,7 +124,7 @@
           @media (max-width: 1050px) {
             font-size: 1.2rem;
           }
-          @media (max-width: 950px) {
+          @media (max-width: 1050px) {
             text-align: center;
           }
         }
@@ -133,20 +133,23 @@
           @media (max-width: 1050px) {
             font-size: 0.9rem;
           }
-          @media (max-width: 950px) {
+          @media (max-width: 1050px) {
             text-align: center;
           }
         }
 
         &--button {
           margin-top: 1vh;
+          @media (max-width: 1050px) {
+            text-align: center;
+          }
         }
       }
 
       &__img-container {
         width: 20vw;
         margin: 0 3vh 3vh 0;
-        @media (max-width: 950px) {
+        @media (max-width: 1050px) {
           width: 60vw;
           margin: 0;
         }
@@ -158,7 +161,7 @@
 
     &__right-container {
       width: 50%;
-      @media (max-width: 950px) {
+      @media (max-width: 1050px) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -167,7 +170,7 @@
       &__img-container-1 {
         width: 33vw;
         margin-bottom: 3vh;
-        @media (max-width: 950px) {
+        @media (max-width: 1050px) {
           width: 60vw;
           margin-bottom: 0;
         }
@@ -178,7 +181,7 @@
 
       &__img-container-2 {
         width: 24vw;
-        @media (max-width: 950px) {
+        @media (max-width: 1050px) {
           width: 60vw;
         }
         &--img {

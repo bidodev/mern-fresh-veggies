@@ -30,13 +30,14 @@ const Hero = () => {
             </p>
             {/* <div className="hero-component__main__text-component__button-box"> */}
             <div className="hero-component__main__text-component--sub-heading">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis alias quibusdam, veniam pariatur
-              perspiciatis numquam rem repellendus sit.
+              Locally sourced food is fresh and delicious! We encourage reasoned consumption with seasonal and organic
+              food.
             </div>
-            <HashLink to="#story" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
-              <button className="hero-component__main__text-component--button">Get Started</button>
-            </HashLink>
-            {/* </div> */}
+            <div className="hero-component__main__text-component--button">
+              <HashLink to="#story" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+                <CustomButton style={{ width: '11rem' }}>Get Started</CustomButton>
+              </HashLink>
+            </div>
           </div>
         </div>
       </div>
