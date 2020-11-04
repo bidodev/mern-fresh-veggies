@@ -19,7 +19,7 @@ const ProfileAdmin = ({ photo, name }) => {
   };
 
   const [text, setText] = useState(
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi!'
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, fugiat esse sit natus suscipit excepturi!'
   );
 
   const onChange = (value) => {
@@ -44,26 +44,45 @@ const ProfileAdmin = ({ photo, name }) => {
 
   return (
     <section className="panel__profile">
-      <header className="header__profile">
-        <img src={`/images/default-cover.jpg`} alt="cover-photo" />
-        <div className="header__profile__avatar-container">
-          <img src={`/images/users/${photo}`} alt="farmer-avatar" />
-        </div>
-      </header>
+      <div className="panel__profile__wrapper">
+        <header className="header__profile">
+          <img src={`/images/default-cover.jpg`} alt="cover-photo" />
+          <div
+            className="header__profile__avatar"
+            onMouseEnter={handleMouseHover}
+            onMouseLeave={handleMouseHover}
+            onClick={toggleModal}
+          >
+            <img src={`/images/users/${photo}`} alt="farmer-avatar" />
+            {isHovering && (
+              <div>
+                <li>
+                  <h2>Choose new photo</h2>
+                </li>
+              </div>
+            )}
+          </div>
+        </header>
 
-      <div className="panel__profile__biography">
-        <div className="panel__profile__biography__info">Welcome {name}</div>
-        <div className="panel__profile__biography__text">
-          <Editable tag="p" type="text" maxLength="200" onChange={onChange} value={text} readOnly={false} />
+        <div className="panel__profile__biography">
+          <div className="panel__profile__biography__info">Welcome {name}</div>
+          <div className="panel__profile__biography__text">
+            {text}
+            {/* <Editable tag="p" type="text" maxLength="200" onChange={onChange} value={text} readOnly={false} /> */}
+          </div>
         </div>
-      </div>
 
-      <hr />
-      <div className="panel__profile__gallery">
-        {profileImages.map((img) => (
-          <ImageItem key={img.id} img={img} />
-        ))}
+        <hr />
+
+        <div className="panel__profile__gallery">
+          {profileImages.map((img) => (
+            <ImageItem key={img.id} img={img} />
+          ))}
+        </div>
+
+        <hr />
       </div>
+      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} url={url} />
     </section>
   );
 };

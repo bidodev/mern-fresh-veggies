@@ -1,0 +1,26 @@
+.upload__photo {
+  &__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  hr {
+    background-color: rgba(102, 102, 102, 0.2);
+  }
+
+  input[type='file'] {
+    display: none;
+  }
+  .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+}
