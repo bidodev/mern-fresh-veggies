@@ -26,11 +26,9 @@ const Cart = () => {
         )}
       </ul>
 
-      {/* <Link to="/checkout"> */}
-
-      <CustomButton>Proceed to checkout</CustomButton>
-
-      {/* </Link> */}
+      <Link to="/checkout">
+        <CustomButton>Proceed to checkout</CustomButton>
+      </Link>
     </div>
   );
 };
