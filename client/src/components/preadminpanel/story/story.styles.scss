@@ -1,8 +1,7 @@
 @import '../../../scss/variables';
 
 .story {
-  // ====== First Row ===
-  .first-row {
+  &__create-your-profile {
     display: flex;
     justify-content: space-evenly;
     background: #eee;
@@ -57,8 +56,7 @@
     }
   }
 
-  // ========= Second Row ===
-  .second-row {
+  &__how-it-works {
     display: flex;
     justify-content: space-evenly;
     padding: 10vh 0 5vh 0;
@@ -142,33 +140,6 @@
             width: 100%;
           }
         }
-      }
-    }
-  }
-
-  // ========= Third Row ===
-  .third-row {
-    &__header {
-      text-align: center;
-      margin: 2vh 0;
-      font-size: $font-size__header__large;
-      font-weight: $font-weight__bold;
-      @media (max-width: 800px) {
-        font-size: $font-size__header__small;
-      }
-    }
-
-    &__img-container {
-      width: 58vw;
-      margin: 0 auto;
-      padding: 1vh;
-      display: flex;
-      justify-content: center;
-
-      &--img {
-        margin: 0.5vh;
-        width: 18vw;
-        min-width: 6rem;
       }
     }
   }
