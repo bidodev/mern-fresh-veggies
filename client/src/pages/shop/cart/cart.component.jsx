@@ -10,7 +10,9 @@ import './cart.styles.scss';
 const Cart = () => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   const dispatch = useDispatch();
-  const removeItemHandler = (cartItemToRemove) => {};
+  const removeItemHandler = (cartItemToRemove) => {
+    dispatch({ type: 'REMOVE_ITEM', payload: cartItemToRemove });
+  };
   return (
     <div className="cart-edit">
       <Link to="/shop">
