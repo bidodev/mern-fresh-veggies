@@ -9,6 +9,10 @@ import Checkout from 'pages/checkout/checkout.page';
 import './cart.styles.scss';
 const Cart = () => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
+  const removeItemHandler = (e) => {
+    e.preventDefault();
+    console.log(e);
+  };
   return (
     <div className="cart-edit">
       <Link to="/shop">
@@ -19,17 +23,24 @@ const Cart = () => {
       </Link>
       <h1>this is edit your cart</h1>
       <ul className="cart-list">
-        <li>
+        {/* <li>
           <span>Item: </span>
           <span>Quantity: </span>
           <span>Price </span>
-        </li>
+        </li> */}
         {cartItems.length ? (
           cartItems.map((cartItem) => (
             <li>
               <span>{cartItem.name}</span>
-              <span>{cartItem.quantity}</span>
+              <span>{cartItem.quantity}x</span>
               <span>Price </span>
+              <FontAwesomeIcon
+                icon={['fas', 'times']}
+                className="fa-times"
+                onClick={(e) => {
+                  removeItemHandler(e);
+                }}
+              />
             </li>
           ))
         ) : (
@@ -38,7 +49,7 @@ const Cart = () => {
       </ul>
 
       <Link to="/checkout">
-        <CustomButton>Proceed to checkout</CustomButton>
+        <CustomButton disabled={cartItems.length === 0}>Proceed to checkout</CustomButton>
       </Link>
       <Route exact path={'/checkout'} component={Checkout}></Route>
     </div>
