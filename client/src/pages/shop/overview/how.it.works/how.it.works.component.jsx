@@ -8,7 +8,7 @@ const HowItWorks = () => {
   return (
     <section className="how-it-works" id="how-we-work">
       <div className="how-it-works__icons-section">
-        <h2 className="how-it-works__icons-section--header">This is how it works</h2>
+        <h2 className="how-it-works__icons-section--header">How it works</h2>
         <div className="how-it-works__icons-section__box-container">
           <div className="how-it-works__icons-section__box-container__card">
             <div className="how-it-works__icons-section__box-container__card--icon">

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './profile.settings.component.styles.scss';
 import axios from 'axios';
 
-import Spinner from 'components/UI/spinner/spinner.component';
+/* Styles */
+import './profile.settings.component.styles.scss';
 
+/* Component Imports */
+import Spinner from 'components/UI/spinner/spinner.component';
 import Alerts from 'components/UI/alerts';
 
 function PublicProfileSettings({ user }) {
@@ -16,12 +18,11 @@ function PublicProfileSettings({ user }) {
       .get('/users/settings')
       .then(({ data }) => {
         setConfigs(data.data.config);
-        
       })
       .catch((err) => console.log(err.response.data.message));
   }, []);
 
-  /* Update the configs on every toogle */
+  /* Update the configs on every toggle */
   useEffect(() => {
     axios
       .patch('/users/settings', configs)
