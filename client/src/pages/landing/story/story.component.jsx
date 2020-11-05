@@ -13,13 +13,13 @@ const Story = () => {
     <React.Fragment>
       <section className="story" id="story">
         <div className="story__hero-section">
-          <h2 className="story__hero-section--header">Our Story</h2>
+          <h2 className="story__hero-section--header">Veggies</h2>
           <div className="story__hero-section__img-container">
             <img src="/images/farm-1.jpg" alt="img" className="story__hero-section__img-container--img" />
           </div>
           <div className="story__hero-section__banner">
             <div className="story__hero-section__banner__text-container">
-              <h2 className="story__hero-section__banner__text-container--header">Choose a Local Farmer</h2>
+              <h2 className="story__hero-section__banner__text-container--header">Choose your Farmer</h2>
               <div className="story__hero-section__banner__text-container--text">
                 Encourage local farms to adopt and continue responsible farming practices.
               </div>
@@ -27,7 +27,7 @@ const Story = () => {
             <div className="story__hero-section__banner__text-container">
               <h2 className="story__hero-section__banner__text-container--header">Fresh and Local Food</h2>
               <div className="story__hero-section__banner__text-container--text">
-                You’ll have the peace of mind knowing that you're eating quality, natural foods.
+                You’ll have the peace of mind knowing that you're eating quality and natural foods.
               </div>
             </div>
             <div className="story__hero-section__banner__text-container">
