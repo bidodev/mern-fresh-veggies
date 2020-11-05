@@ -1,7 +1,3 @@
-.shop__internal__content__find-a-farmer{
-  //border: 1px solid red;
-}
-
 .find-farmer {
   height: 100%;
   padding: 5vh;
@@ -21,9 +17,9 @@
     list-style: none;
 
     &__item {
-      width: 19vw;
+      width: 24vw;
       min-width: 20rem;
-      height: 50vh;
+      height: 53vh;
       margin: 2vh;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       background: #eee;
@@ -32,7 +28,6 @@
 
       &__bg-image-container {
         width: 100%;
-        
 
         img {
           width: 100%;
@@ -48,7 +43,7 @@
         height: 7vh;
         border-radius: 50%;
         position: absolute;
-        top: 21vh;
+        top: 27vh;
         left: 3vh;
         border: 1px solid white;
         overflow: hidden;

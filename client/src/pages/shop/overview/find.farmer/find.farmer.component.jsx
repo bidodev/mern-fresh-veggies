@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import './FindYourFarmer.styles.scss';
+/* Styles */
+import './find.farmer.styles.scss';
 
+/* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
 
 const FindYourFarmer = ({ match }) => {
@@ -33,16 +35,10 @@ const FindYourFarmer = ({ match }) => {
             <li className="find-farmer__container__item">
               <Link to={`${match.url}/${farmer._id}`}>
                 <div className="find-farmer__container__item__bg-image-container">
-                  <img
-                    src="/images/farm-1.jpg"
-                    alt="background"
-                  />
+                  <img src="/images/farm-1.jpg" alt="background" />
                 </div>
                 <div className="find-farmer__container__item__avatar-container">
-                  <img
-                    src={`/images/users/${farmer.photo}`}
-                    alt="farmer-avatar"
-                  />
+                  <img src={`/images/users/${farmer.photo}`} alt="farmer-avatar" />
                 </div>
                 <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
                 <div className="find-farmer__container__item__location">
