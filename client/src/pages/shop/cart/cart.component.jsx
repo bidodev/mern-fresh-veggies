@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import CustomButton from 'components/UI/custom-button/custom-button.component';
@@ -25,17 +25,11 @@ const Cart = () => {
           <li>Your cart is empty</li>
         )}
       </ul>
-      <Router>
-        {/* <Link to="/checkout"> */}
-        <Route path="/checkout" component={Checkout}>
-          <CustomButton>
-            {/* <Link to="/checkout"> */}
-            Proceed to checkout
-            {/* </Link> */}
-          </CustomButton>
-        </Route>
-      </Router>
-      {/* </Link> */}
+
+      <Link to="/checkout">
+        <CustomButton>Proceed to checkout</CustomButton>
+      </Link>
+      <Route exact path={'/checkout'} component={Checkout}></Route>
     </div>
   );
 };
