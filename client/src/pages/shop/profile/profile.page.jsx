@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-/* Component Imports */
-import Spinner from 'components/UI/spinner/spinner.component';
-import Recipes from 'components/recipes/recipes.component';
-
 /* Styles */
 import './profile.page.styles.scss';
 
-/* Component Photos Gallery */
+/* Component Imports */
+import Spinner from 'components/UI/spinner/spinner.component';
+import Recipes from 'components/recipes/recipes.component';
 import PhotosGallery from 'pages/shop/profile/photo.gallery/photos.gallery.component';
 import FarmerProducts from 'pages/shop/profile/farmer.products/farmer.products.component';
 
