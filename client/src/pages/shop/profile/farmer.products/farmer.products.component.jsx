@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import './FarmerProducts.styles.scss';
-import {useDispatch} from 'react-redux';
-
-import Modal from 'components/modal/modal.component';
+import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+
+/* Styles */
+import './farmer.products.styles.scss';
+
+/* Component Imports */
+import Modal from 'components/modal/modal.component';
 
 /* Component Farmer Products Item */
 const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
@@ -22,13 +25,13 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
     //TODO: load the product of the farmer
     //1. Load the modal and load the data
     setIsOpen(!modalStatus);
-    setQuantity(1)
+    setQuantity(1);
   };
 
   const handleAddtoCart = (id) => {
     const farmer = 'holder';
-    dispatch({type: 'ADD_ITEM', payload: {id, name, quantity, farmer}})
-  }
+    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmer } });
+  };
   return (
     <>
       <div className="profile-page__farmer-products__card" onClick={handleProductClick}>
@@ -63,10 +66,7 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
                 }}
               />
               {quantity}
-              <Icon
-                icon={'plus'}
-                onClick={() => setQuantity(quantity + 1)}
-              />
+              <Icon icon={'plus'} onClick={() => setQuantity(quantity + 1)} />
             </div>
           </div>
           <div className="product__description">

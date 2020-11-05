@@ -10,16 +10,12 @@ import Recipes from 'components/recipes/recipes.component';
 import './profile.page.styles.scss';
 
 /* Component Photos Gallery */
-import PhotosGallery from 'pages/shop/profile/photos.gallery';
-import FarmerProducts from 'pages/shop/profile/farmerproducts/FarmerProducts';
+import PhotosGallery from 'pages/shop/profile/photo.gallery/photos.gallery.component';
+import FarmerProducts from 'pages/shop/profile/farmer.products/farmer.products.component';
 
 /* Sidebar profile */
 const Profile = ({ photo, name, description }) => {
-  return (
-    <section className="public__farmer__profile">
-
-    </section>
-  );
+  return <section className="public__farmer__profile"></section>;
 };
 
 function ProfilePage() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './photos.gallery.scss';
+import './photos.gallery.styles.scss';
 //import CarouselItem from '../carousel-item/carousel.item.component.jsx'
 
 const PhotosGallery = () => {
