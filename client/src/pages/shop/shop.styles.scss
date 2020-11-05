@@ -1,6 +1,5 @@
 @import '../../scss/variables';
 
-
 .shop__internal__content {
   border: 1px solid transparent;
   height: auto;
@@ -9,4 +8,21 @@
 .public__farmer__profile {
   border: 1px solid red;
   height: 80vh;
+}
+.cart-modal {
+  height: 100vh;
+  top: 0;
+  [type='submit'] {
+    background-color: white;
+    border: 1px solid #f75d37;
+    color: #f75d37;
+    &:hover {
+      background-color: #f75d37;
+      color: white;
+      border: 1px solid white;
+    }
+  }
+}
+.cart-overlay {
+  background-color: rgba(0, 0, 0, 0.637);
 }

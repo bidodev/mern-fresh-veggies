@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 import Checkout from 'pages/checkout/checkout.page';
@@ -11,14 +12,24 @@ const Cart = () => {
   return (
     <div className="cart-edit">
       <Link to="/shop">
-        <CustomButton>Back to shopping</CustomButton>
+        <CustomButton>
+          <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
+          Back to shopping
+        </CustomButton>
       </Link>
       <h1>this is edit your cart</h1>
-      <ul>
+      <ul className="cart-list">
+        <li>
+          <span>Item: </span>
+          <span>Quantity: </span>
+          <span>Price </span>
+        </li>
         {cartItems.length ? (
           cartItems.map((cartItem) => (
             <li>
-              Item: {cartItem.name}, Quantity: {cartItem.quantity}
+              <span>{cartItem.name}</span>
+              <span>{cartItem.quantity}</span>
+              <span>Price </span>
             </li>
           ))
         ) : (

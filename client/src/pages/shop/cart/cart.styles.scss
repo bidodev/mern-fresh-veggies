@@ -1,6 +1,19 @@
 .cart-edit {
   margin-top: 10rem;
 }
+
 .custom-button {
   width: 20rem;
+}
+
+//this is the  back icon
+.fa-angle-left {
+  margin-right: 4rem;
+}
+.cart-list {
+  li {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+  }
 }

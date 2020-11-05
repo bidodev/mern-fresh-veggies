@@ -67,12 +67,13 @@ const Shop = ({ match }) => {
           </Link>
         </li>
         <Modal
-          modalStatus={cartModalStatus}
+          modalStatus={true}
           closeModal={() => toogleModal('SHOP_CART')}
           className="cart-modal"
           overlayClassName="cart-overlay"
         >
-          {cartItems.length ? (
+          {/* The Cart Modal is the same as the edit your cart  */}
+          {/* {cartItems.length ? (
             cartItems.map((cartItem) => (
               <h2>
                 Item: {cartItem.name}, Quantity: {cartItem.quantity}
@@ -80,7 +81,8 @@ const Shop = ({ match }) => {
             ))
           ) : (
             <h2>Your cart is empty</h2>
-          )}
+          )} */}
+          <Cart />
           <Link to="shop/cart">
             <CustomButton type="submit" onClick={() => toogleModal('SHOP_CART')}>
               Edit shopping cart
