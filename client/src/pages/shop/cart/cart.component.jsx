@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,10 +9,8 @@ import Checkout from 'pages/checkout/checkout.page';
 import './cart.styles.scss';
 const Cart = () => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
-  const removeItemHandler = (e) => {
-    e.preventDefault();
-    console.log(e);
-  };
+  const dispatch = useDispatch();
+  const removeItemHandler = (cartItemToRemove) => {};
   return (
     <div className="cart-edit">
       <Link to="/shop">
@@ -37,8 +35,8 @@ const Cart = () => {
               <FontAwesomeIcon
                 icon={['fas', 'times']}
                 className="fa-times"
-                onClick={(e) => {
-                  removeItemHandler(e);
+                onClick={() => {
+                  removeItemHandler(cartItem);
                 }}
               />
             </li>
