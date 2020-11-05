@@ -1,6 +1,7 @@
 @import '../../../scss/variables';
 
 .story {
+  // ======== HERO (GO TO SHOP) ===
   &__hero-section {
     margin-top: 10vh;
 
@@ -86,9 +87,10 @@
     }
   }
 
+  // ======== INFO (GO TO FARMER) ===
   &__info-section {
-    margin-bottom: 5vh;
-    padding: 4vh 0;
+    margin: 5vh 0;
+    padding: 5vh 0;
     display: flex;
     background: #eee;
     @media (max-width: 1050px) {
@@ -110,20 +112,23 @@
       }
 
       &__text-container {
-        width: 20vw;
+        width: 24vw;
         margin: 1vh;
-        padding: 1vh;
+        padding: 1vh 8vh 1vh 1vh;
+        @media (max-width: 1250px) {
+          padding: 1vh 2vh 1vh 1vh;
+        }
         @media (max-width: 1050px) {
           width: 60vw;
           margin: 0 0 2vh 0;
         }
+        @media (max-width: 900px) {
+          padding: 0;
+        }
 
         &--header {
-          font-size: 1.4rem;
+          font-size: 1.8rem;
           margin-bottom: 1vh;
-          @media (max-width: 1050px) {
-            font-size: 1.2rem;
-          }
           @media (max-width: 1050px) {
             text-align: center;
           }
@@ -131,27 +136,25 @@
 
         &--text {
           @media (max-width: 1050px) {
-            font-size: 0.9rem;
-          }
-          @media (max-width: 1050px) {
             text-align: center;
           }
         }
 
         &--button {
-          margin-top: 1vh;
+          margin: 1vh 0 0 -1vh;
           @media (max-width: 1050px) {
             text-align: center;
+            margin: 1vh 0;
           }
         }
       }
 
       &__img-container {
-        width: 20vw;
+        width: 22vw;
         margin: 0 3vh 3vh 0;
         @media (max-width: 1050px) {
           width: 60vw;
-          margin: 0;
+          margin: 0 0 3vh 0;
         }
         &--img {
           width: 100%;
@@ -167,20 +170,21 @@
         align-items: center;
       }
 
+      // --- image top ---
       &__img-container-1 {
-        width: 33vw;
+        width: 38vw;
         margin-bottom: 3vh;
         @media (max-width: 1050px) {
           width: 60vw;
-          margin-bottom: 0;
         }
         &--img {
           width: 100%;
         }
       }
 
+      // --- images bottom ---
       &__img-container-2 {
-        width: 24vw;
+        width: 28vw;
         @media (max-width: 1050px) {
           width: 60vw;
         }
