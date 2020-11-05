@@ -40,7 +40,7 @@ function ImageItem({ img }) {
           </div>
         )}
       </div>
-      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} url={url} />
+      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} url={url} img={img}/>
     </>
   );
 }

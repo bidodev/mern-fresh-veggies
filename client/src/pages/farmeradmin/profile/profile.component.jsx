@@ -46,7 +46,7 @@ const ProfileAdmin = ({ photo, name }) => {
     <section className="panel__profile">
       <div className="panel__profile__wrapper">
         <header className="header__profile">
-          <img src={`/images/default-cover.jpg`} alt="cover-photo" />
+          <img src={`/images/default-cover.jpg`} alt="cover" />
           <div
             className="header__profile__avatar"
             onMouseEnter={handleMouseHover}
@@ -82,7 +82,7 @@ const ProfileAdmin = ({ photo, name }) => {
 
         <hr />
       </div>
-      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} url={url} />
+      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} url={url} photo={photo} heading={'Profile Photo'}/>
     </section>
   );
 };
