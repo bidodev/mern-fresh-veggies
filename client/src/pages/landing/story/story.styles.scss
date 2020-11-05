@@ -1,6 +1,7 @@
 @import '../../../scss/variables';
 
 .story {
+  // ======== HERO (GO TO SHOP) ===
   &__hero-section {
     margin-top: 10vh;
 
@@ -86,6 +87,7 @@
     }
   }
 
+  // ======== INFO (GO TO FARMER) ===
   &__info-section {
     margin: 5vh 0;
     padding: 5vh 0;
@@ -110,11 +112,11 @@
       }
 
       &__text-container {
-        width: 27vw;
+        width: 24vw;
         margin: 1vh;
-        padding: 1vh 13vh 1vh 1vh;
+        padding: 1vh 8vh 1vh 1vh;
         @media (max-width: 1250px) {
-          padding: 1vh 5vh 1vh 1vh;
+          padding: 1vh 2vh 1vh 1vh;
         }
         @media (max-width: 1050px) {
           width: 60vw;
@@ -148,7 +150,7 @@
       }
 
       &__img-container {
-        width: 25vw;
+        width: 22vw;
         margin: 0 3vh 3vh 0;
         @media (max-width: 1050px) {
           width: 60vw;
@@ -168,8 +170,9 @@
         align-items: center;
       }
 
+      // --- image top ---
       &__img-container-1 {
-        width: 43vw;
+        width: 38vw;
         margin-bottom: 3vh;
         @media (max-width: 1050px) {
           width: 60vw;
@@ -179,8 +182,9 @@
         }
       }
 
+      // --- images bottom ---
       &__img-container-2 {
-        width: 30vw;
+        width: 28vw;
         @media (max-width: 1050px) {
           width: 60vw;
         }
