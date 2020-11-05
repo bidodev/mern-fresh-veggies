@@ -23,7 +23,6 @@ const Story = () => {
                   Create an account.
                 </div>
               </div>
-
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
                   <FontAwesomeIcon icon={['fas', 'palette']} />
@@ -33,7 +32,6 @@ const Story = () => {
                   about your activity.
                 </div>
               </div>
-
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
                   <FontAwesomeIcon icon={['fas', 'store']} />
