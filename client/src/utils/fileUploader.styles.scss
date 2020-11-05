@@ -28,18 +28,36 @@
   }
 
   .display__preview {
-
     height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f8f8;    
-    
-    img {
-      height: 80%;
-      width: 80%;
-      object-fit: cover;
+    position: relative;
+
+
+    .crop-container {
+      position: absolute;
+      top: 80px;
+      left: 5px;
+      right: 5px;
+      bottom: 80px;
     }
+    
+    .controls {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 50%;
+      transform: translateX(-50%);
+      height: 80px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .slider {
+      padding: 22px 0px;
+    }
+    
+
+
+
   }
 
   input[type='file']{
@@ -69,3 +87,5 @@
     justify-content: space-around;
   }
 }
+
+

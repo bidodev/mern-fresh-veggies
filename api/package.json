@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/bidodev/mern-veggy-website#readme",
   "dependencies": {
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "bcryptjs": "^2.4.3",
     "concurrently": "^5.3.0",
     "cors": "^2.8.5",
