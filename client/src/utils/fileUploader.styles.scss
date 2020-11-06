@@ -7,12 +7,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
+    height: 10%;
+    padding: 0 1rem;
+
+    h3 {
+      color: #333;
+    }
+
     svg {
       font-size: 2rem;
+      transition: all 0.2s ease;
 
       &:hover {
+        transform: scale(1.2);
         opacity: 0.7;
+        color: red;
         cursor: pointer;
       }
     }
@@ -24,7 +33,11 @@
     text-align: center;
   }
   hr {
-    background-color: rgba(102, 102, 102, 0.2);
+    width: 100%;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .display__preview {
@@ -33,11 +46,12 @@
 
 
     .crop-container {
+      background: #333;
       position: absolute;
-      top: 80px;
-      left: 5px;
-      right: 5px;
-      bottom: 80px;
+      top: 60px;
+      left: 0px;
+      right: 0px;
+      bottom: 60px;
     }
     
     .controls {
@@ -46,7 +60,7 @@
       left: 50%;
       width: 50%;
       transform: translateX(-50%);
-      height: 80px;
+      height: 60px;
       display: flex;
       align-items: center;
     }
@@ -63,6 +77,7 @@
   input[type='file']{
     //display: none;
   }
+
   .custom-file-upload {
     //border: 1px solid #ccc;
     display: inline-block;
@@ -82,10 +97,39 @@
 
   div {
     //border: 1px solid red;
-    width: 15%;
+    width: 20%;
     display: flex;
     justify-content: space-around;
   }
 }
 
+.modal__file-uploader {
+  width: 50vw;
+  height: 75vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  //for ipad width of the modal should be at least 50% of the view port
+  @media (max-width: 800px) {
+    width: 70vw;
+  }
+  //here the mobile v. must also be added
+}
 
+.overlay__file-uploader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(73, 73, 73, 0.8);
+  z-index: 9999;
+}

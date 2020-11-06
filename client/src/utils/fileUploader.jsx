@@ -2,71 +2,86 @@ import React, { useState, useCallback } from 'react';
 import axios from 'axios';
 import Modal from 'components/modal/modal.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-
-//import Slider from '@material-ui/lab'
+import getCroppedImg from './cropImage';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 import Cropper from 'react-easy-crop';
 import Slider from '@material-ui/core/Slider';
-//import {Slider} from '@material-ui/lab';
+import { styles } from './styles';
 
 import './fileUploader.styles.scss';
 
-const FileUploader = ({ toggleModal, modalStatus, photo, heading }) => {
-  const url = `/images/users/${photo}`;
+const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes }) => {
 
+  /** Load the userProfile image */
+  const userImg = `/images/users/${photo}`;
+  const [imagePreview, setImagePreview] = useState(userImg);
+
+  /* The loaded file */
   const [file, setFile] = useState('');
-  const [imagePreviewUrl, setImagePreviewUrl] = useState(url);
-
-  const handleImageChange = (e) => {
-    e.preventDefault();
-
-    let reader = new FileReader();
-    let file = e.target.files[0];
-
-    reader.onloadend = () => {
-      setFile(file);
-      setImagePreviewUrl(reader.result);
-    };
-
-    reader.readAsDataURL(file);
-  };
-
-  /* Upload new photo */
-  const handleSubmitForm = (event) => {
-    event.preventDefault();
-
-    const data = new FormData();
-    data.append('photo', file);
-
-    axios
-      .patch('/users/profile', data)
-      .then((res) => {
-        console.log(res.response);
-      })
-      .catch((err) => console.log(err.response.data.message));
-  };
-
-  /* Modal Styles */
-  const customStyles = {
-    content: {
-      width: '40vw',
-      padding: '0',
-      height: '70vh',
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
 
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
+  const [rotation, setRotation] = useState(0);
+  
+    /**
+   * CroppedImag
+   */
+  const [croppedImage, setCroppedImage] = useState(null);
+
+  /* 
+    * Function to load an image and save the file
+  */
+  const onSelectFile = (event) => {
+    event.preventDefault();
+
+    let reader = new FileReader();
+    let [file] = event.target.files;
+    
+    reader.onloadend = () => {
+      setFile(file);
+      setImagePreview(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
   const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
-    console.log(croppedArea, croppedAreaPixels);
+    setCroppedAreaPixels(croppedAreaPixels);
   }, []);
 
+  
+  const saveCropedImage = useCallback(async () => {
+    try {
+      const croppedImage = await getCroppedImg(imagePreview, croppedAreaPixels, rotation);
+      setCroppedImage(croppedImage);
+    } catch (e) {
+      console.error(e);
+    }
+  }, [croppedAreaPixels, rotation]);
+
+  const onClose = useCallback(() => {
+    setCroppedImage(null);
+  }, []);
+
+    /* After crop send the photo to Multer */
+    const handleSubmitForm = (event) => {
+      event.preventDefault();
+      console.log(croppedImage)
+  
+      const data = new FormData();
+      data.append('photo', file);
+      console.log(file);
+      axios
+        .patch('/users/profile', data)
+        .then((res) => {
+          console.log(res.response);
+        })
+        .catch((err) => console.log(err.response.data.message));
+    };
+
   return (
-    <Modal modalStatus={modalStatus} closeModal={toggleModal} styles={customStyles}>
+    <Modal modalStatus={modalStatus} closeModal={toggleModal}  className={'modal__file-uploader'} overlayClassName={'overlay__file-uploader'}>
       <div className="upload__photo">
         <div className="upload__photo__header">
           <h3>{heading}</h3>
@@ -77,7 +92,7 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading }) => {
         <div className="display__preview">
           <div className="crop-container">
             <Cropper
-              image={imagePreviewUrl}
+              image={imagePreview}
               crop={crop}
               zoom={zoom}
               aspect={4 / 3}
@@ -94,20 +109,29 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading }) => {
               step={0.1}
               aria-labelledby="Zoom"
               onChange={(e, zoom) => setZoom(zoom)}
-              classes={{ container: 'slider' }}
+              classes={{ root: 'slider' }}
             />
           </div>
         </div>
         <hr />
         <form onSubmit={(e) => handleSubmitForm(e)} className="file__uploader">
-          <input className="fileInput" type="file" onChange={(e) => handleImageChange(e)} />
+          <input className="fileInput" type="file" onChange={(event) => onSelectFile(event)} />
           <div>
-            <button className="submitButton" type="reset" onClick={() => setImagePreviewUrl(null)}>
-              Clear
-            </button>
-            <button className="submitButton" type="submit" onSubmit={(e) => handleSubmitForm(e)}>
+          <Button
+              variant="contained"
+              color="primary"
+              classes={{ root: classes.cropButton }}
+            >
+              Reset
+            </Button>
+            <Button
+              onClick={saveCropedImage}
+              variant="contained"
+              color="primary"
+              classes={{ root: classes.cropButton }}
+            >
               Save
-            </button>
+            </Button>
           </div>
         </form>
       </div>
@@ -115,4 +139,4 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading }) => {
   );
 };
 
-export default FileUploader;
+export default withStyles(styles)(FileUploader);
