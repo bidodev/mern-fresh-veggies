@@ -1,4 +1,4 @@
-.upload__photo {
+.upload-photo {
   //border: 1px solid green;
   height: 100%;
   overflow: hidden;
@@ -95,16 +95,16 @@
   background-color: #f9f9f9;
   padding: 0.5rem 1rem;
 
-  div {
+  div:last-of-type {
     //border: 1px solid red;
-    width: 20%;
+    width: 25%;
     display: flex;
     justify-content: space-around;
   }
 }
 
-.modal__file-uploader {
-  width: 50vw;
+.file-uploader__modal {
+  width: 45vw;
   height: 75vh;
   position: fixed;
   top: 50%;
@@ -124,7 +124,7 @@
   //here the mobile v. must also be added
 }
 
-.overlay__file-uploader {
+.file-uploader__overlay {
   position: fixed;
   top: 0;
   left: 0;
