@@ -67,7 +67,7 @@ const Shop = ({ match }) => {
           </Link>
         </li>
         <Modal
-          modalStatus={true}
+          modalStatus={cartModalStatus}
           closeModal={() => toogleModal('SHOP_CART')}
           className="cart-modal"
           overlayClassName="cart-overlay"
