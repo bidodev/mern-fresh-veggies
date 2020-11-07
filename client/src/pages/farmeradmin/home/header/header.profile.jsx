@@ -24,7 +24,7 @@ const HeaderFarmerProfile = ({ farmerPhoto }) => {
   return (
     <>
       <header className="header-profile">
-        <img src={`/images/default-cover.jpg`} alt="cover" />
+        <img className="header-profile__cover" src={`/images/default-cover.jpg`} alt="cover" />
         <div
           className="header-profile__avatar"
           onMouseEnter={handleMouseHover}

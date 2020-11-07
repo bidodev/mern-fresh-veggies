@@ -6,16 +6,15 @@ import { useSelector } from 'react-redux';
 import Landing from 'pages/landing/landing.page';
 import Shop from 'pages/shop/shop.page';
 import FarmerAdmin from 'pages/farmeradmin/wrapper/admin.page';
-
-/* Component Imports */
 import PreAdminPanel from 'components/preadminpanel/authentication.page';
 
 const App = () => {
+  
   /* Pull out the userFarmer from the redux state */
   const currentUser = useSelector(({ login }) => login.user);
 
   return (
-    <div>
+    <>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/shop" render={({ match }) => <Shop match={match} />} />
@@ -34,7 +33,7 @@ const App = () => {
           }
         />
       </Switch>
-    </div>
+    </>
   );
 };
 

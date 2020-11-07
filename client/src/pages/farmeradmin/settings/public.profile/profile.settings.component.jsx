@@ -6,12 +6,12 @@ import './profile.settings.component.styles.scss';
 
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
-import Alerts from 'components/UI/alerts';
+//import Alerts from 'components/UI/alerts';
 
 function PublicProfileSettings({ user }) {
   /* Load actual status of the configs */
   const [configs, setConfigs] = useState(null);
-  const [alert, setAlert] = useState(null);
+  //const [alert, setAlert] = useState(null);
 
   useEffect(() => {
     axios
@@ -27,7 +27,7 @@ function PublicProfileSettings({ user }) {
     axios
       .patch('/users/settings', configs)
       .then((res) => {
-        setAlert(res.data.status);
+        //setAlert(res.data.status);
       })
       .catch((err) => console.log(err.response.data.message));
   }, [configs]);

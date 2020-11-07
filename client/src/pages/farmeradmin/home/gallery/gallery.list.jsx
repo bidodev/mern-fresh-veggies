@@ -1,19 +1,19 @@
 import React from 'react';
 import './gallery.list.styles.scss';
 
-import ImageItem from '../image-item.component';
+import { useSelector } from 'react-redux';
+
+/* Components */
+import ImageItem from './gallery.item';
 
 const GalleryList = () => {
-  const galleryImages = [
-    { id: 1, name: 'a', path: 'default.jpg' },
-    { id: 2, name: 'b', path: 'default.jpg' },
-    { id: 3, name: 'c', path: 'default.jpg' },
-  ];
+  /* pullOut farmerPhotos from the state */
+  const farmerPhotos = useSelector(({ login }) => login.user.data.farmerPhotos);
 
   return (
     <div className="panel-profile__gallery">
-      {galleryImages.map((img) => (
-        <ImageItem key={img.id} img={img} />
+      {farmerPhotos.map(({...img}, index) => (
+        <ImageItem key={index} {...img} />
       ))}
     </div>
   );

@@ -17,30 +17,37 @@
   &__wrapper {
     margin: 2vh 0;
     width: 75%;
+    height: 100%;
     background-color: #f9f9f9;
+    //border: 1px solid red;
+
+    
   }
 
   &__biography {
-    padding: 15vh 0;
     background-color: #f9f9f9;
     display: flex;
+    height: 35vh;
 
     &__info {
       display: flex;
       justify-content: center;
-      width: 250px;
-      margin-left: 2.5vh;
-      //border: 1px solid red;
+      align-items: center;
+      width: 300px;
+      //border: 1px solid green;
+      
     }
 
     &__text {
-      margin: 0 2rem;
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
       flex: 1;
+      padding: 2rem;
+      //border: 1px solid red;
     }
   }
 
   hr {
-    margin: 1rem auto;
+    margin: 0 auto;
     width: 95%;
     border: 0;
     height: 0;

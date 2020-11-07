@@ -1,34 +1,21 @@
-.header-profile {
-  height: 40vh;
-  position: relative;
-  //border: 1px solid red;
-
-  &__cover {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &__avatar {
-    position: absolute;
-    left: 2.5vh;
-    top: 25vh;
-    //border: 1px solid red;
-
+.panel-profile__gallery {
+  padding: 2vh 0;
+  &__image {
+    position: relative;
+    border-radius: 5px;
     cursor: pointer;
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
     font-weight: normal;
-    width: 250px;
-    height: 250px;
+    width: 30%;
+    height: 15rem;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: filter 0.5s ease;
-      border-radius: 50%;
 
       &:hover {
         filter: brightness(50%);
@@ -41,9 +28,9 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 0.5rem;
-      color: #fff;
-      z-index: 1;
+      font-size: 1.8rem;
+      color: rgb(240, 234, 234);
+      z-index: 5;
       width: 65%;
       display: flex;
       align-items: center;
@@ -54,14 +41,11 @@
         width: auto;
         display: flex;
         align-items: center;
-        h2 {
-          margin-left: 0.6rem;
+
+        svg {
+          font-size: 4rem;
         }
       }
-    }
-
-    @media (max-width: 1050px) {
-      margin: 0 auto;
     }
   }
 }
