@@ -10,17 +10,17 @@ import ListItem from './items/listitem.component';
 const AsideBar = ({ _id }) => {
   
   const sideBarItens = [
-    { name: 'home', icon: ['fas', 'home'] },
-    { name: 'stock', icon: ['fas', 'store-alt'] },
-    { name: 'orders', icon: ['fas', 'truck'] },
-    { name: 'settings', icon: ['fas', 'users-cog'] },
+    { id: 1, name: 'home', icon: ['fas', 'home'] },
+    { id: 2, name: 'settings', icon: ['fas', 'users-cog'] },
+    { id: 3, name: 'stock', icon: ['fas', 'store-alt'] },
+    { id: 4, name: 'orders', icon: ['fas', 'truck'] },
   ];
 
   return (
     <aside className="admin-panel__sidebar">
       {/* <!-- aside items --> */}
       {sideBarItens.map((item) => (
-        <ListItem {...item} />
+        <ListItem key={item.id}{...item} />
       ))}
       <NavLink
         activeClassName="admin-panel__sidebar-item--active"

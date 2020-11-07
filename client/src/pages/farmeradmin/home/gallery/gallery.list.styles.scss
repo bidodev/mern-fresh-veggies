@@ -1,0 +1,20 @@
+.panel-profile {
+  &__gallery {
+    display: flex;
+    padding-bottom: 2rem;
+    justify-content: space-around;
+    align-items: center;
+
+    @media (max-width: 1050px) {
+      flex-direction: column;
+    }
+
+    &--img {
+      width: 20vw;
+
+      @media (max-width: 1050px) {
+        width: 40vw;
+      }
+    }
+  }
+}
