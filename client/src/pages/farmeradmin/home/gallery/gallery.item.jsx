@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import './image.item.styles.scss';
+import './gallery.item.styles.scss';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+
+
+/* Utils */
 import FileUploader from 'utils/fileUploader';
 
-function ImageItem({ img }) {
+const ImageItem = ({ name, path }) => {
   /* Modal State */
   const [modalStatus, setIsOpen] = useState(false);
 
@@ -12,26 +15,21 @@ function ImageItem({ img }) {
     setIsOpen(!modalStatus);
   };
 
-  const { name, path } = img;
-
   const [isHovering, setHoverStatus] = useState(false);
 
   const handleMouseHover = () => {
     setHoverStatus(!isHovering);
   };
 
-  // URL to patch the profile photo
-  const url = '/users/images';
-
   return (
     <>
       <div
-        className="admin__painel__gallery"
+        className="panel-profile__gallery__image"
         onClick={toggleModal}
         onMouseEnter={handleMouseHover}
         onMouseLeave={handleMouseHover}
       >
-        <img src={`/images/${path}`} alt={name} className="gallery-img" />
+        <img src={`/images/farmers/gallery/${path}`} alt={name} />
         {isHovering && (
           <div>
             <li>
@@ -40,7 +38,7 @@ function ImageItem({ img }) {
           </div>
         )}
       </div>
-      <FileUploader toggleModal={toggleModal} heading={'Update Gallery'} modalStatus={modalStatus} url={url} photo={path}/>
+      <FileUploader toggleModal={toggleModal} heading={'Update Gallery'} modalStatus={modalStatus} photo={path}/>
     </>
   );
 }
