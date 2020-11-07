@@ -46,11 +46,13 @@
     }
 
     &--text {
-      width: 30rem;
+      width: 38rem;
       font-size: 1.1rem;
       margin: 2vh 0 8vh;
+      text-align: center;
       @media (max-width: 1050px) {
         font-size: 1rem;
+        width: 30rem;
       }
       @media (max-width: 550px) {
         width: 20rem;
