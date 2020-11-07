@@ -23,9 +23,9 @@ const UserSettings = ({ match, user }) => {
       <div className="admin__settings__nav">
         <ul>
           <div className="avatar__container">
-            <img src={`/images/users/${user.data.photo}`} alt="avatar" />
+            <img src={`/images/users/${user.photo}`} alt="avatar" />
           </div>
-          <h2>{user.data.name}</h2>
+          <h2>{user.name}</h2>
           <hr />
           <h3>Settings</h3>
 

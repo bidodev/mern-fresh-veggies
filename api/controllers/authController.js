@@ -33,11 +33,10 @@ const createSendToken = (user, status, req, res) => {
   });
 
   //destructuring only what we need
-  const { _id, email, name, role, photo, config } = user;
+  const { _id, email, name, role, photo, config, farmerPhotos } = user;
 
   res.status(status).json({
     status: 'success',
-    jwt,
     data: {
       _id,
       name,
@@ -45,6 +44,7 @@ const createSendToken = (user, status, req, res) => {
       role,
       photo,
       config,
+      farmerPhotos,
     },
   });
 };
