@@ -13,7 +13,6 @@ const Cart = () => {
   const removeItemHandler = (cartItemToRemove) => {
     dispatch({ type: 'REMOVE_ITEM', payload: cartItemToRemove });
   };
-  const required = cartItems.length <= 0 ? undefined : 'Required';
   return (
     <div className="cart-edit">
       <Link to="/shop">
@@ -50,7 +49,7 @@ const Cart = () => {
       </ul>
 
       <Link to="/checkout">
-        <CustomButton validate={[required]}>Proceed to checkout</CustomButton>
+        <button disabled={cartItems.length <= 0 && true}>Proceed to checkout</button>
       </Link>
       <Route exact path={'/checkout'} component={Checkout}></Route>
     </div>

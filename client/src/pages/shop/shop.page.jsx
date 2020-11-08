@@ -84,9 +84,13 @@ const Shop = ({ match }) => {
           )} */}
           <Cart />
           <Link to="shop/cart">
-            <CustomButton type="submit" onClick={() => toogleModal('SHOP_CART')}>
+            <button
+              // disabled={cartItems.length <= 0 ? true : false}
+              type="submit"
+              onClick={() => toogleModal('SHOP_CART')}
+            >
               Edit shopping cart
-            </CustomButton>
+            </button>
           </Link>
         </Modal>
       </ShopNavBar>
