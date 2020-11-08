@@ -30,7 +30,11 @@ const userSchema = new mongoose.Schema({
   },
   farmerPhotos: [
     {
-      type: String,
+      name: String,
+      path: {
+        type: String,
+        default: 'default.jpg',
+      },
     },
   ],
   description: {

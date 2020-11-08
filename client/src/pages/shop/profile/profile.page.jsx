@@ -2,24 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-/* Component Imports */
-import Spinner from 'components/UI/spinner/spinner.component';
-import Recipes from 'components/recipes/recipes.component';
-
 /* Styles */
 import './profile.page.styles.scss';
 
-/* Component Photos Gallery */
-import PhotosGallery from 'pages/shop/profile/photos.gallery';
-import FarmerProducts from 'pages/shop/profile/farmerproducts/FarmerProducts';
+/* Component Imports */
+import Spinner from 'components/UI/spinner/spinner.component';
+import Recipes from 'components/recipes/recipes.component';
+import PhotosGallery from 'pages/shop/profile/photo.gallery/photos.gallery.component';
+import FarmerProducts from 'pages/shop/profile/farmer.products/farmer.products.component';
 
 /* Sidebar profile */
 const Profile = ({ photo, name, description }) => {
-  return (
-    <section className="public__farmer__profile">
-
-    </section>
-  );
+  return <section className="public__farmer__profile"></section>;
 };
 
 function ProfilePage() {

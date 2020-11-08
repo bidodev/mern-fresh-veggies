@@ -20,20 +20,18 @@ const Story = () => {
                   <FontAwesomeIcon icon={['fas', 'sign-in-alt']} />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
-                  You need first to register in our platform in order to create an account.
+                  Create an account.
                 </div>
               </div>
-
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
                   <FontAwesomeIcon icon={['fas', 'palette']} />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
-                  Give your store the look you want. It's simple and fast: upload an image of your avatar and your farm
-                  and add a description about your activity.
+                  Give your store the look you want. Upload an image of your avatar and your farm and add a description
+                  about your activity.
                 </div>
               </div>
-
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
                   <FontAwesomeIcon icon={['fas', 'store']} />
@@ -76,13 +74,10 @@ const Story = () => {
             <img className="story__create-your-profile__img-container--img" src="/images/farm-1.jpg" alt="img" />
           </div>
           <div className="story__create-your-profile__description-container">
-            <div className="story__create-your-profile__description-container--header">Create Your Profile Now</div>
+            <div className="story__create-your-profile__description-container--header">Create Your Profile</div>
             <div className="story__create-your-profile__description-container--text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda incidunt porro nihil, temporibus
-              accusantium ut esse quam rerum eos magni aliquam voluptatum ipsa distinctio rem enim similique officia
-              illo obcaecati cum aliquid reiciendis quo tempora iste voluptatibus! Debitis aperiam praesentium eos
-              recusandae accusamus delectus, at rem fuga minima enim, blanditiis rerum ullam incidunt aut eveniet vel
-              laborum omnis.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda incidunt porro nihil, temporibus quam
+              rerum eos magni aliquam voluptatum ipsa distinctio officia cum.
             </div>
             <div className="story__create-your-profile__description-container--button">
               <CustomButton style={{ width: '11rem' }}>Start Now</CustomButton>
