@@ -21,6 +21,13 @@
       color: white;
       border: 1px solid white;
     }
+    &:disabled {
+      appearance: button;
+      background: #eeeeee;
+      border: none;
+      color: rgba(19, 1, 1, 0.3);
+      cursor: not-allowed;
+    }
   }
 }
 .cart-overlay {

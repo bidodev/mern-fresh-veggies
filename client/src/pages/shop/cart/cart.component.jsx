@@ -49,7 +49,9 @@ const Cart = () => {
       </ul>
 
       <Link to="/checkout">
-        <button disabled={cartItems.length <= 0 && true}>Proceed to checkout</button>
+        <CustomButton type="button" disabled={cartItems.length <= 0 && true}>
+          Proceed to checkout
+        </CustomButton>
       </Link>
       <Route exact path={'/checkout'} component={Checkout}></Route>
     </div>
