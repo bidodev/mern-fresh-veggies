@@ -21,26 +21,29 @@ const Cart = () => {
           Back to shopping
         </CustomButton>
       </Link>
-      <h1>this is edit your cart</h1>
-      <ul className="cart-list">
-        {/* <li>
+      <p className="cart-title">You have added the following articles:</p>
+      <ul className="cart-list modal-list">
+        <li>
           <span>Item: </span>
           <span>Quantity: </span>
           <span>Price </span>
-        </li> */}
+          <span>{} </span>
+        </li>
         {cartItems.length ? (
           cartItems.map((cartItem) => (
             <li>
               <span>{cartItem.name}</span>
               <span>{cartItem.quantity}x</span>
               <span>Price </span>
-              <FontAwesomeIcon
-                icon={['fas', 'times']}
-                className="fa-times"
-                onClick={() => {
-                  removeItemHandler(cartItem);
-                }}
-              />
+              <span>
+                <FontAwesomeIcon
+                  icon={['fas', 'times']}
+                  className="fa-times"
+                  onClick={() => {
+                    removeItemHandler(cartItem);
+                  }}
+                />
+              </span>
             </li>
           ))
         ) : (
