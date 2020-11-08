@@ -35,7 +35,13 @@
     color: #f75d37;
     border: 1px solid #f75d37;
   }
-
+  &:disabled {
+    appearance: button;
+    background: #eeeeee;
+    border: none;
+    color: rgba(19, 1, 1, 0.3);
+    cursor: not-allowed;
+  }
   &.google-sign-in {
     background-color: #606060;
     color: white;
