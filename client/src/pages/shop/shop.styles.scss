@@ -1,12 +1,9 @@
 @import '../../scss/variables';
 
-
 .shop__internal__content {
   border: 1px solid transparent;
   height: auto;
 }
-
-
 
 .public__farmer__profile {
   border: 1px solid red;
@@ -15,11 +12,21 @@
 
 .cart-modal {
   height: 100vh;
-  top: 0;
-  // .modal-list {
-  //   display: flex;
-  //   flex-direction: column;
-  // }
+  // top: 0;
+  width: 25vw;
+  //height: 92vh;
+  position: fixed;
+  right: 0;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  @media (max-width: 800px) {
+    width: 70vw;
+  }
+  //here the mobile v. must also be added
   .cart-list {
     margin: 2vh 2vw;
 
@@ -70,7 +77,11 @@
   }
 }
 .cart-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   background-color: rgba(0, 0, 0, 0.637);
+  z-index: 9999;
 }
-
-

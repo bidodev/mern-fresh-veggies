@@ -22,7 +22,7 @@ const Cart = () => {
         </CustomButton>
       </Link>
       <p className="cart-title">You have added the following articles:</p>
-      <ul className="cart-list modal-list">
+      <ul className="cart-list">
         <li>
           <span>Item: </span>
           <span>Quantity: </span>
