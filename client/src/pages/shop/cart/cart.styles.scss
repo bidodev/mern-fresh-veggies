@@ -1,5 +1,21 @@
 .cart-edit {
-  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 8rem;
+  height: 80vh;
+  // &:first-child {
+  //   order: 1;
+  // }
+  // &:nth-child(1) {
+  //   order: 3;
+  // }
+  // &:nth-child(2) {
+  //   order: 4;
+  // }
+  &:last-child {
+    order: 2;
+  }
 }
 
 .custom-button {
@@ -13,6 +29,7 @@
   margin-right: 4rem;
 }
 .cart-list {
+  height: 50vh;
   margin: 3vh 10vw;
   li {
     list-style: none;
