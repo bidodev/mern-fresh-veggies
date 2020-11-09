@@ -62,7 +62,8 @@ const Shop = ({ match }) => {
           className="cart-modal"
           overlayClassName="cart-overlay"
         >
-          {cartItems.length ? (
+          {/* The Cart Modal is the same as the edit your cart  */}
+          {/* {cartItems.length ? (
             cartItems.map((cartItem) => (
               <h2>
                 Item: {cartItem.name}, Quantity: {cartItem.quantity}
@@ -70,9 +71,15 @@ const Shop = ({ match }) => {
             ))
           ) : (
             <h2>Your cart is empty</h2>
-          )}
+          )} */}
+          <Cart />
           <Link to="shop/cart">
-            <CustomButton type="submit" onClick={() => toggleModal('SHOP_CART')}>
+            <CustomButton
+              type="button"
+              disabled={cartItems.length <= 0 ? true : false}
+              type="submit"
+              onClick={() => toggleModal('SHOP_CART')}
+            >
               Edit shopping cart
             </CustomButton>
           </Link>
