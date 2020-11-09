@@ -38,7 +38,7 @@ const FindYourFarmer = ({ match }) => {
                   <img src="/images/farm-1.jpg" alt="background" />
                 </div>
                 <div className="find-farmer__container__item__avatar-container">
-                  <img src={`/images/users/${farmer.photo}`} alt="farmer-avatar" />
+                  <img src={`/uploads/${farmer.name.toLowerCase()}/images/profile/${farmer.images.profile}`} alt="farmer-avatar" />
                 </div>
                 <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
                 <div className="find-farmer__container__item__location">
@@ -46,9 +46,7 @@ const FindYourFarmer = ({ match }) => {
                   <div className="find-farmer__container__item__location--country">Germany</div>
                 </div>
                 <div className="find-farmer__container__item--description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, ab ipsum optio quo recusandae
-                  illum? Quidem hic corporis, voluptas cum ducimus dolores accusantium alias odio, quos in sed
-                  distinctio illum.
+                 {farmer.description}
                 </div>
               </Link>
             </li>

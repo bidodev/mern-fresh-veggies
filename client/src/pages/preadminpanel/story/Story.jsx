@@ -58,14 +58,14 @@ const Story = () => {
             <div className="story__how-it-works__right-container__bottom-container">
               <div className="story__how-it-works__right-container__bottom-container__img-container">
                 <img
-                  src="/images/farm-1.jpg"
+                  src="/images/farm-2.jpg"
                   alt="img"
                   className="story__how-it-works__right-container__bottom-container__img-container--img"
                 />
               </div>
               <div className="story__how-it-works__right-container__bottom-container__img-container">
                 <img
-                  src="/images/farm-1.jpg"
+                  src="/images/farm-3.jpg"
                   alt="img"
                   className="story__how-it-works__right-container__bottom-container__img-container--img"
                 />

@@ -6,7 +6,7 @@ import Story from 'pages/preadminpanel/story/Story';
 import Footer from 'components/footer/Footer'
 
 /* Styles */
-import './authentication.styles.scss';
+import './wrapper.styles.scss';
 
 const PreAdminPanel = ({ match }) => {
   console.log("PreAdminPanel rendered")
