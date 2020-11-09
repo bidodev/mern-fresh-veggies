@@ -19,6 +19,7 @@ import Footer from 'components/footer/footer.component';
 import Modal from 'components/modal/modal.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
+import Checkout from 'pages/checkout/checkout.page';
 
 // ===== Overview Component ===
 const ShopOverView = ({ match }) => {
@@ -33,8 +34,10 @@ const ShopOverView = ({ match }) => {
 
 // ===== Shop Page ===
 const Shop = ({ match }) => {
+  console.log(match);
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   const [cartModalStatus, toggleCartModal] = useState(false);
+  console.log(cartModalStatus);
   const toggleModal = (modal) => {
     switch (modal) {
       case 'SHOP_CART': {
@@ -63,8 +66,8 @@ const Shop = ({ match }) => {
           overlayClassName="cart-overlay"
         >
           {/* The Cart Modal is the same as the edit your cart  */}
+          <Cart toggleModal={toggleModal} match={match} />
 
-          <Cart />
           <Link to="shop/cart">
             <CustomButton
               type="button"
@@ -83,7 +86,7 @@ const Shop = ({ match }) => {
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
       <Route path={`${match.path}/cart`} component={Cart} />
-
+      {/* <Route exact path={`${match.path}/checkout`} component={Checkout} /> */}
       <Footer />
       <ScrollTopArrow />
     </>

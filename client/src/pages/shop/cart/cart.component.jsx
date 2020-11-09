@@ -7,16 +7,18 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 import Checkout from 'pages/checkout/checkout.page';
 
 import './cart.styles.scss';
-const Cart = () => {
+const Cart = ({ toggleModal, match }) => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   const dispatch = useDispatch();
   const removeItemHandler = (cartItemToRemove) => {
     dispatch({ type: 'REMOVE_ITEM', payload: cartItemToRemove });
   };
+  // const [cartModalStatus, setToggleCartModal] = useState(true);
+
   return (
     <div className="cart-edit">
       <Link to="/shop">
-        <CustomButton>
+        <CustomButton type="button" onClick={() => toggleModal('SHOP_CART')}>
           <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
           Back to shopping
         </CustomButton>
@@ -51,12 +53,11 @@ const Cart = () => {
         )}
       </ul>
 
-      <Link to="/checkout">
+      <Link to={`/checkout`}>
         <CustomButton type="button" disabled={cartItems.length <= 0 && true}>
           Proceed to checkout
         </CustomButton>
       </Link>
-      <Route exact path={'/checkout'} component={Checkout}></Route>
     </div>
   );
 };
