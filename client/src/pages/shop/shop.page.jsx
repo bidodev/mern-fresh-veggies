@@ -74,16 +74,12 @@ const Shop = ({ match }) => {
           )} */}
           <Cart />
           <Link to="shop/cart">
-
             <CustomButton
               type="button"
               disabled={cartItems.length <= 0 ? true : false}
               type="submit"
-              onClick={() => toogleModal('SHOP_CART')}
+              onClick={() => toggleModal('SHOP_CART')}
             >
-
-           
-
               Edit shopping cart
             </CustomButton>
           </Link>
