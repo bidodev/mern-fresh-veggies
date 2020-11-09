@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './product.item.styles.scss';
 /* Component Imports */
-import Modal from 'pages/farmeradmin/wrapper/stock/node_modules/components/modal/modal.component';
+import Modal from 'components/modal/modal.component';
 import axios from 'axios';
 
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';

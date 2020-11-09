@@ -6,7 +6,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import './farmer.products.styles.scss';
 
 /* Component Imports */
-import Modal from 'pages/farmeradmin/wrapper/stock/node_modules/components/modal/modal.component';
+import Modal from 'components/modal/modal.component';
 
 /* Component Farmer Products Item */
 const FarmerProductsItem = ({ _id, name, photo, type, description }) => {

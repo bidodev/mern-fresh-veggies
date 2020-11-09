@@ -12,6 +12,8 @@ import Shop from 'pages/shop/shop.page';
 import PreAdminPanel from 'pages/preadminpanel/wrapper';
 import FarmerAdmin from 'pages/farmeradmin/wrapper'
 import Checkout from 'pages/checkout/checkout.page';
+
+/* App wrapper */
 const App = () => {
   /* Pull out the userFarmer from the redux state */
   const currentUser = useSelector(({ login }) => login.user);
