@@ -2,7 +2,13 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /* Component Imports */
-import CustomButton from 'components/UI/custom-button/custom-button.component';
+import CustomButton from 'pages/farmeradmin/wrapper/stock/node_modules/components/UI/custom-button/custom-button.component';
+
+/* Ion-Icons Imports */
+/* Can use: shake={true} / rotate={true} / beat={true} / color="43853d" */
+import IosCreateOutline from 'react-ionicons/lib/IosCreateOutline';
+import IosColorPaletteOutline from 'react-ionicons/lib/IosColorPaletteOutline';
+import IosSettingsOutline from 'react-ionicons/lib/IosSettingsOutline';
 
 /* Styles */
 import './story.styles.scss';
@@ -17,27 +23,27 @@ const Story = () => {
             <div className="story__how-it-works__left-container__text-container">
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
-                  <FontAwesomeIcon icon={['fas', 'sign-in-alt']} />
+                  <IosCreateOutline fontSize="30px" />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
-                  Create an account.
+                  Create an account with your Email address.
                 </div>
               </div>
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
-                  <FontAwesomeIcon icon={['fas', 'palette']} />
+                  <IosColorPaletteOutline fontSize="30px" />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
-                  Give your store the look you want. Upload an image of your avatar and your farm and add a description
-                  about your activity.
+                  Personalize your store: describe your activity in a biography, upload images of your farm and products
+                  and more.
                 </div>
               </div>
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
-                  <FontAwesomeIcon icon={['fas', 'store']} />
+                  <IosSettingsOutline fontSize="30px" />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
-                  Manage your online store. Access your stock of products and track your orders from your profile page.
+                  Manage your online store: add your available products to your stock and track your orders.
                 </div>
               </div>
             </div>

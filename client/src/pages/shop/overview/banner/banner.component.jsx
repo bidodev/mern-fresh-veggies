@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <section className="shop-overview">
       <div className="shop-overview__banner-container">
-        <img src="/images/banner2.jpg" alt="banner-img" className="shop-overview__banner-container--img" />
+        <img src="/images/banner2-compressed.jpg" alt="banner-img" className="shop-overview__banner-container--img" />
         <h2 className="shop-overview__banner-container--header">FRESH FROM THE SOURCE</h2>
       </div>
       <div className="shop-overview__text-container">

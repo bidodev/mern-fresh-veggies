@@ -11,9 +11,8 @@ import Landing from 'pages/landing/landing.page';
 import Shop from 'pages/shop/shop.page';
 import PreAdminPanel from 'pages/preadminpanel/wrapper';
 import FarmerAdmin from 'pages/farmeradmin/wrapper'
-
+import Checkout from 'pages/checkout/checkout.page';
 const App = () => {
-  
   /* Pull out the userFarmer from the redux state */
   const currentUser = useSelector(({ login }) => login.user);
 
@@ -22,6 +21,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/shop" render={({ match }) => <Shop match={match} />} />
+        <Route path="/checkout" render={({ match }) => <Checkout match={match} />} />
         <Route
           path="/farmer/admin"
           render={({ match }) =>

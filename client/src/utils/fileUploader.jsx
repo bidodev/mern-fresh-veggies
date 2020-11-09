@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import axios from 'axios';
-import Modal from 'components/modal/modal.component';
+import Modal from 'pages/farmeradmin/wrapper/stock/node_modules/components/modal/modal.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import getCroppedImg from './cropImage';
 import Button from '@material-ui/core/Button';
