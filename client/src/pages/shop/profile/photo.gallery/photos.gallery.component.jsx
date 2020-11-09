@@ -13,7 +13,7 @@ const PhotosGallery = () => {
     <div className="farmer__profile__gallery">
       {gallery.map(({ path }) => {
         const src =
-          path === 'default.jpg' ? '/uploads/default.jpg' : `/uploads/${name.toLowerCase()}/images/gallery/${path}`;
+          path === '' ? '/uploads/default.jpg' : `/uploads/${name.toLowerCase()}/images/gallery/${path}`;
 
         return (
           <div className="farmer__profile__gallery--img">

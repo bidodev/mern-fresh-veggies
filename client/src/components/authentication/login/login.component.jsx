@@ -13,7 +13,10 @@ import './client-login.styles.scss';
 const ClientLogin = ({ toogleModal }) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
+  const [registerStatus, setRegisterStatus] = useState('');
   const dispatch = useDispatch();
+
+
   // grabbing the form data and send it to the database
   const handleLoginData = async (event) => {
     event.preventDefault();
@@ -27,10 +30,6 @@ const ClientLogin = ({ toogleModal }) => {
       .post('/account/login', data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
-        // if it is successful, close the modal
-        if (data.status === 'success') {
-          toogleModal('SIGN_IN');
-        }
       })
       .catch((error) => console.log('Error in the login', error.message));
   };
@@ -48,10 +47,6 @@ const ClientLogin = ({ toogleModal }) => {
     }
   };
 
-  //in case we implement sign in with google
-  //   const signInWithGoogle = () => {
-  //     console.log('Not implemented yet');
-  //   };
 
   return (
     <React.Fragment>
@@ -77,14 +72,10 @@ const ClientLogin = ({ toogleModal }) => {
               label="password"
               handleInputValue={handleInputValue}
             />
-            <Link to="#">
-              <div onClick={() => dispatch({ type: 'SWITCH_SIGN-IN_LOG-IN' })}>You are not registered yet?</div>
-            </Link>
+
+            <div onClick={() => dispatch({ type: 'SWITCH_SIGN-IN_LOG-IN' })}>You are not registered yet?</div>
             <div className="buttons">
               <CustomButton type="submit">Sign In</CustomButton>
-              {/* <CustomButton type="button" onClick={signInWithGoogle} isGoogleSingIn>
-            Sign in with Google
-          </CustomButton> */}
             </div>
           </form>
         </div>

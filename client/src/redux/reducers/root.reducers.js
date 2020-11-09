@@ -7,6 +7,7 @@ import storage from 'redux-persist/lib/storage';
 import cartReducer from './cart.reducer';
 import loginReducer from './login.reducer';
 import switchReducer from './login-signup-switch.reducer';
+import modalReducer from './modal.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   login: loginReducer,
   switch: switchReducer,
+  modal: modalReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

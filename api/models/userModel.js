@@ -28,18 +28,18 @@ const userSchema = new mongoose.Schema({
     gallery: {
       type: Array,
       default: [
-        { name: 'garten', path: 'default.jpg' },
-        { name: 'animals', path: 'default.jpg' },
-        { name: 'products', path: 'default.jpg' },
+        { name: 'garten', path: '' },
+        { name: 'animals', path: '' },
+        { name: 'products', path: '' },
       ],
     },
     profile: {
       type: String,
-      default: 'default.jpg',
+      default: '',
     },
     cover: {
       type: String,
-      default: 'default.jpg',
+      default: '',
     },
   },
   description: {

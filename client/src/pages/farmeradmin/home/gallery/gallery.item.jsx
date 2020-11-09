@@ -6,7 +6,8 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import FileUploader from 'utils/fileUploader';
 
 const ImageItem = ({ name, path, farmerName }) => {
-  const src = path === 'default.jpg' ? '/uploads/default.jpg' : `/uploads/${farmerName.toLowerCase()}/images/gallery/${path}`;
+
+  const src = path ? `/uploads/${farmerName.toLowerCase()}/images/gallery/${path}` : '/uploads/default.jpg';
 
   /* Modal State */
   const [modalStatus, setIsOpen] = useState(false);

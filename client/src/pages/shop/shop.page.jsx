@@ -15,7 +15,7 @@ import Cart from 'pages/shop/cart/cart.component';
 import Banner from 'pages/shop/overview/banner/banner.component';
 import FindYourFarmer from 'pages/shop/overview/find.farmer/find.farmer.component';
 import HowItWorks from 'pages/shop/overview/how.it.works/how.it.works.component';
-import Footer from 'components/footer/footer.component';
+import Footer from 'components/footer/Footer';
 import Modal from 'components/modal/modal.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';

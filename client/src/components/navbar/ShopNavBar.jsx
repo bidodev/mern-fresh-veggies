@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
+
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-//import { HashLink } from 'react-router-hash-link';
 import './ShopNavBar.styles.scss';
 
 import Modal from 'components/modal/modal.component';
@@ -12,7 +13,7 @@ import SignIn from 'components/authentication/login/login.component';
 import SignUp from 'components/authentication/signup/signup.component';
 
 const ShopNavBar = ({ match, children }) => {
-  console.log('render');
+  console.log('ShopNavBar rendered');
 
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.user);
@@ -20,6 +21,7 @@ const ShopNavBar = ({ match, children }) => {
 
   const switchLogInSignIn = useSelector((state) => state.switch.show);
   const [signInModalStatus, toogleSignInModal] = useState(false);
+
   const toogleModal = (modal) => {
     switch (modal) {
       case 'SIGN_IN': {
@@ -36,13 +38,13 @@ const ShopNavBar = ({ match, children }) => {
     //2.REDIRECT USER TO PAGE.
     //useHistory.push('/')
   };
-  const navFixed = React.createRef();
+  //const navFixed = React.createRef();
   /*On component mount add eventListener */
 
 
   return (
     <>
-      <nav className="shop__navbar" ref={navFixed}>
+      <nav className="shop__navbar">
         {/* Our Logo will be avaiable in the whole application, so it stays here */}
         <Link to="/">
           <div className="shop__navbar__logo">Veggies</div>
