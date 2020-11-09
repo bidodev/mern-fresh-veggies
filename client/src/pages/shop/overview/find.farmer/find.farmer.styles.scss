@@ -1,34 +1,36 @@
 .find-farmer {
-  height: 100%;
   padding: 5vh;
   list-style: none;
-  background: rgba(255, 192, 203, 0.596);
+  @media (max-width: 650px) {
+    padding: 0;
+  }
 
   &__header {
     text-align: center;
     padding: 2rem;
+    font-size: 2rem;
   }
 
   &__container {
-    height: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    list-style: none;
 
     &__item {
-      width: 24vw;
-      min-width: 20rem;
-      height: 53vh;
+      width: 28rem;
+      height: 32rem;
       margin: 2vh;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       background: #eee;
       border-radius: 5px;
       position: relative;
+      @media (max-width: 650px) {
+        width: 20rem;
+        height: 28rem;
+      }
 
       &__bg-image-container {
         width: 100%;
-
         img {
           width: 100%;
           height: 100%;
@@ -39,15 +41,20 @@
       }
 
       &__avatar-container {
-        width: 7vh;
-        height: 7vh;
+        width: 5rem;
+        height: 5rem;
         border-radius: 50%;
         position: absolute;
-        top: 27vh;
-        left: 3vh;
-        border: 1px solid white;
+        top: 16rem;
+        left: 2rem;
+        border: 1px solid #eee;
         overflow: hidden;
-
+        @media (max-width: 650px) {
+          width: 4.5rem;
+          height: 4.5rem;
+          top: 11rem;
+          left: 1rem;
+        }
         img {
           width: 100%;
           height: 100%;
