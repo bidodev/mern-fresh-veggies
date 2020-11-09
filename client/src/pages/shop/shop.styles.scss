@@ -12,9 +12,7 @@
 
 .cart-modal {
   height: 100vh;
-  // top: 0;
   width: 25vw;
-  //height: 92vh;
   position: fixed;
   right: 0;
   border: 1px solid rgb(204, 204, 204);
@@ -23,13 +21,22 @@
   border-radius: 4px;
   outline: none;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (max-width: 800px) {
     width: 70vw;
+  }
+  .cart-edit {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   //here the mobile v. must also be added
   .cart-list {
     margin: 2vh 2vw;
-
+    height: 60vh;
     li {
       display: flex;
       flex-wrap: wrap;

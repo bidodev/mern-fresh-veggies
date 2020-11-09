@@ -4,21 +4,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CustomButton from 'components/UI/custom-button/custom-button.component';
-import Checkout from 'pages/checkout/checkout.page';
 
 import './cart.styles.scss';
-const Cart = ({ toggleModal, match }) => {
+const Cart = ({ toggleModal }) => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   const dispatch = useDispatch();
   const removeItemHandler = (cartItemToRemove) => {
     dispatch({ type: 'REMOVE_ITEM', payload: cartItemToRemove });
   };
-  // const [cartModalStatus, setToggleCartModal] = useState(true);
 
   return (
     <div className="cart-edit">
       <Link to="/shop">
-        <CustomButton type="button" onClick={() => toggleModal('SHOP_CART')}>
+        <CustomButton onClick={() => toggleModal('SHOP_CART')}>
           <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
           Back to shopping
         </CustomButton>
