@@ -17,7 +17,7 @@ const ClientSignUp = ({ toogleModal, match }) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const history = useHistory();
+  //const history = useHistory();
   const dispatch = useDispatch();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,11 +38,11 @@ const ClientSignUp = ({ toogleModal, match }) => {
       .post(`/account/register/${url}`, data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
-        history.push('/shop');
+        //history.push('/shop');
         // if it is successful, close the modal
-        if (data.status === 'success') {
-          toogleModal('SIGN_IN');
-        }
+        // if (data.status === 'success') {
+        //   toogleModal('SIGN_IN');
+        // }
       })
       .catch((error) => console.log('Error creating user', error.message));
   };

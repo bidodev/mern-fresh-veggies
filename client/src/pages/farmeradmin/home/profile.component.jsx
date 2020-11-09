@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 /* Components */
 import HeaderFarmerProfile from 'pages/farmeradmin/home/header/header.profile';
@@ -7,10 +7,10 @@ import GalleryList from 'pages/farmeradmin/home/gallery/gallery.list';
 /* Styles */
 import './profile.styles.scss';
 
-const FarmerBioGraphy = ({ name }) => {
+const FarmerBioGraphy = () => {
   return (
     <div className="panel-profile__biography">
-      <div className="panel-profile__biography__info">Welcome {name}</div>
+      <div className="panel-profile__biography__info">Welcome</div>
       <div className="panel-profile__biography__text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nostrum totam a deleniti labore quis nihil, quidem
         amet laboriosam ea asperiores velit accusamus. Iste numquam pariatur nesciunt sapiente quidem perspiciatis neque
@@ -31,14 +31,21 @@ const FarmerBioGraphy = ({ name }) => {
   );
 };
 
-const ProfileAdmin = ({ photo, name }) => {
+const ProfileAdmin = () => {
+  
+  /* Retrieve Farmer Panel */
+  useEffect(() => {
+    
+  }, []);
+
+  
   return (
     <section className="panel-profile">
       <div className="panel-profile__wrapper">
-        <HeaderFarmerProfile farmerPhoto={photo} />
-        <FarmerBioGraphy name={name} />
+        {/* <HeaderFarmerProfile name={name} farmerPhoto={profile} /> */}
+        <FarmerBioGraphy />
         <hr />
-        <GalleryList />
+        {/* <GalleryList name={name}/> */}
         <hr />
       </div>
     </section>

@@ -1,12 +1,16 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+
+/* Redux */
 import { useSelector } from 'react-redux';
+
+/* React Router Dom */
+import { Route, Switch } from 'react-router-dom';
 
 /* Page Imports */
 import Landing from 'pages/landing/landing.page';
 import Shop from 'pages/shop/shop.page';
-import FarmerAdmin from 'pages/farmeradmin/wrapper/admin.page';
-import PreAdminPanel from 'components/preadminpanel/authentication.page';
+import PreAdminPanel from 'pages/preadminpanel/wrapper';
+import FarmerAdmin from 'pages/farmeradmin/wrapper'
 import Checkout from 'pages/checkout/checkout.page';
 const App = () => {
   /* Pull out the userFarmer from the redux state */

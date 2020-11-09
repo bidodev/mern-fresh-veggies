@@ -4,8 +4,9 @@ import './header.profile.styles.scss';
 /* Utils */
 import FileUploader from 'utils/fileUploader';
 
-const HeaderFarmerProfile = ({ farmerPhoto }) => {
-    
+const HeaderFarmerProfile = ({ name, farmerPhoto }) => {
+  const src = farmerPhoto ? `/uploads/${name.toLowerCase()}/images/profile/${farmerPhoto}` : '/uploads/default.jpg';
+
   /* Is hovering profile photo State */
   const [isHovering, setHoverStatus] = useState(false);
 
@@ -31,7 +32,7 @@ const HeaderFarmerProfile = ({ farmerPhoto }) => {
           onMouseLeave={handleMouseHover}
           onClick={toggleModal}
         >
-          <img src={`/images/users/${farmerPhoto}`} alt="farmer-avatar" />
+          <img src={`${src}`} alt="farmer-avatar" />
           {isHovering && (
             <div>
               <li>
@@ -41,7 +42,7 @@ const HeaderFarmerProfile = ({ farmerPhoto }) => {
           )}
         </div>
       </header>
-      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} photo={farmerPhoto} heading={'Profile Photo'} />
+      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} photo={src} heading={'Profile'} />
     </>
   );
 };

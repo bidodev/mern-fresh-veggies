@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import axios from 'axios';
-import Modal from 'components/modal/modal.component';
+import Modal from 'pages/farmeradmin/wrapper/stock/node_modules/components/modal/modal.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import getCroppedImg from './cropImage';
 import Button from '@material-ui/core/Button';
@@ -12,10 +12,10 @@ import UploadButton from './UploadButton';
 
 import './fileUploader.styles.scss';
 
-const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes }) => {
+const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes, photoName }) => {
+
   /** Load the userProfile image */
-  const userImg = `/images/users/${photo}`;
-  const [imagePreview, setImagePreview] = useState(userImg);
+  const [imagePreview, setImagePreview] = useState(photo);
 
   /* The loaded file */
   const [file, setFile] = useState('');
@@ -75,7 +75,8 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes }) => 
     let URL = '/users/profile'
     
     let data = new FormData()
-    //data.append('name', 'image')
+    data.append('name', photoName);
+    data.append('update', heading.toLowerCase());
     data.append('photo', file)
     //data.append('photo', croppedImage)
     //TODO: the blob is not beeing handled by Mutler

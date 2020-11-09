@@ -5,7 +5,7 @@ import axios from 'axios';
 import './profile.settings.component.styles.scss';
 
 /* Component Imports */
-import Spinner from 'components/UI/spinner/spinner.component';
+import Spinner from 'pages/farmeradmin/wrapper/stock/node_modules/components/UI/spinner/spinner.component';
 //import Alerts from 'components/UI/alerts';
 
 function PublicProfileSettings({ user }) {

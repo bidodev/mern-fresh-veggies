@@ -2,9 +2,9 @@ import React, { useState, useRef } from 'react';
 import './account.component.styles.scss';
 import axios from 'axios';
 
-import CustomButton from 'components/UI/custom-button/custom-button.component';
+import CustomButton from 'pages/farmeradmin/wrapper/stock/node_modules/components/UI/custom-button/custom-button.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import Modal from 'components/modal/modal.component';
+import Modal from 'pages/farmeradmin/wrapper/stock/node_modules/components/modal/modal.component';
 
 const AccountSetting = ({ user }) => {
   /* Modal State */

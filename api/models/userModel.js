@@ -24,19 +24,24 @@ const userSchema = new mongoose.Schema({
     enum: ['user', 'farmer', 'admin'],
     default: 'user',
   },
-  photo: {
-    type: String,
-    default: 'default.jpg',
-  },
-  farmerPhotos: [
-    {
-      name: String,
-      path: {
-        type: String,
-        default: 'default.jpg',
-      },
+  images: {
+    gallery: {
+      type: Array,
+      default: [
+        { name: 'garten', path: '' },
+        { name: 'animals', path: '' },
+        { name: 'products', path: '' },
+      ],
     },
-  ],
+    profile: {
+      type: String,
+      default: '',
+    },
+    cover: {
+      type: String,
+      default: '',
+    },
+  },
   description: {
     type: String,
     default: '',
