@@ -51,13 +51,12 @@
 
         &__list-item {
           display: flex;
+          align-items: center;
           margin: 1vh 0;
-
           &--icon {
             font-size: 1.2rem;
             margin-right: 2vh;
           }
-
           &--text {
             text-align: left;
           }
