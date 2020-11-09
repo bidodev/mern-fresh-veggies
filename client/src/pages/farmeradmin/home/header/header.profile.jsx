@@ -4,8 +4,8 @@ import './header.profile.styles.scss';
 /* Utils */
 import FileUploader from 'utils/fileUploader';
 
-const HeaderFarmerProfile = ({ name, farmerPhoto }) => {
-  const src = farmerPhoto ? `/uploads/${name.toLowerCase()}/images/profile/${farmerPhoto}` : '/uploads/default.jpg';
+const HeaderFarmerProfile = ({ name, images }) => {
+  const src = images.profile ? `/uploads/${name.toLowerCase()}/images/profile/${images.profile}` : '/uploads/default.jpg';
 
   /* Is hovering profile photo State */
   const [isHovering, setHoverStatus] = useState(false);

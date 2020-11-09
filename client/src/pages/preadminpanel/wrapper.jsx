@@ -1,8 +1,8 @@
 import React from 'react';
 
 /* Component Imports */
-import Story from 'pages/preadminpanel/story/story.component';
 import ShopNavBar from 'components/navbar/ShopNavBar';
+import Story from 'pages/preadminpanel/story/Story';
 import Footer from 'components/footer/Footer'
 
 /* Styles */

@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /* Component Imports */
 import CustomButton from 'components/UI/custom-button/custom-button.component';

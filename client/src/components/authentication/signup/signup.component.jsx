@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 /* Component Imports */
@@ -38,11 +38,7 @@ const ClientSignUp = ({ toogleModal, match }) => {
       .post(`/account/register/${url}`, data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
-        //history.push('/shop');
-        // if it is successful, close the modal
-        // if (data.status === 'success') {
-        //   toogleModal('SIGN_IN');
-        // }
+        toogleModal('SIGN_IN');
       })
       .catch((error) => console.log('Error creating user', error.message));
   };
