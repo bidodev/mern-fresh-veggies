@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import './gallery.item.styles.scss';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
-
 /* Utils */
 import FileUploader from 'utils/fileUploader';
 
-const ImageItem = ({ name, path }) => {
+const ImageItem = ({ name, path, farmerName }) => {
+  const src = path === 'default.jpg' ? '/uploads/default.jpg' : `/uploads/${farmerName.toLowerCase()}/images/gallery/${path}`;
+
   /* Modal State */
   const [modalStatus, setIsOpen] = useState(false);
 
@@ -29,7 +30,7 @@ const ImageItem = ({ name, path }) => {
         onMouseEnter={handleMouseHover}
         onMouseLeave={handleMouseHover}
       >
-        <img src={`/images/farmers/gallery/${path}`} alt={name} />
+        <img src={`${src}`} alt={name} />
         {isHovering && (
           <div>
             <li>
@@ -38,9 +39,9 @@ const ImageItem = ({ name, path }) => {
           </div>
         )}
       </div>
-      <FileUploader toggleModal={toggleModal} heading={'Update Gallery'} modalStatus={modalStatus} photo={path}/>
+      <FileUploader toggleModal={toggleModal} heading={'Gallery'} modalStatus={modalStatus} photo={src} photoName={name} />
     </>
   );
-}
+};
 
 export default ImageItem;

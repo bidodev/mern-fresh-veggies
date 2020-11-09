@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 
 /* Components */
 import HeaderFarmerProfile from 'pages/farmeradmin/home/header/header.profile';
@@ -31,14 +32,16 @@ const FarmerBioGraphy = ({ name }) => {
   );
 };
 
-const ProfileAdmin = ({ photo, name }) => {
+const ProfileAdmin = ({name }) => {
+  const { profile } = useSelector(({ login }) => login.user.data.images);
+  
   return (
     <section className="panel-profile">
       <div className="panel-profile__wrapper">
-        <HeaderFarmerProfile farmerPhoto={photo} />
+        <HeaderFarmerProfile name={name} farmerPhoto={profile} />
         <FarmerBioGraphy name={name} />
         <hr />
-        <GalleryList />
+        <GalleryList name={name}/>
         <hr />
       </div>
     </section>
