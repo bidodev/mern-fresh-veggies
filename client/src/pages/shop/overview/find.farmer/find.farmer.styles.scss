@@ -18,7 +18,7 @@
 
     &__item {
       width: 28rem;
-      height: 32rem;
+      height: 33rem;
       margin: 2vh;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       background: #eee;
@@ -63,29 +63,47 @@
       }
 
       &--name {
-        margin: 4vh 0 0 2vh;
-        font-size: 1.3rem;
+        margin: 2rem 0 0.5rem;
+        padding-left: 2rem;
+        font-size: 1.5rem;
         color: black;
+        @media (max-width: 650px) {
+          font-size: 1.4rem;
+          padding-left: 1rem;
+        }
       }
 
       &__location {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        &--city {
-          padding-left: 2vh;
-          text-transform: uppercase;
+        @media (max-width: 650px) {
+          font-size: 0.9rem;
         }
-
+        &--city {
+          padding-left: 2rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          @media (max-width: 650px) {
+            padding-left: 1rem;
+          }
+        }
         &--country {
-          padding-right: 2vh;
+          padding-right: 3rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          @media (max-width: 650px) {
+            padding-right: 2rem;
+          }
         }
       }
 
       &--description {
-        padding: 0 2vh;
-        font-size: 0.9rem;
+        padding: 0 2rem;
+        @media (max-width: 650px) {
+          font-size: 0.9rem;
+          padding: 0 1rem;
+        }
       }
     }
   }
