@@ -1,6 +1,28 @@
 .cart-edit {
   margin-top: 10rem;
 }
+
 .custom-button {
   width: 20rem;
+}
+.cart-title {
+  margin: 2vh 4vw;
+}
+//this is the  back icon
+.fa-angle-left {
+  margin-right: 4rem;
+}
+.cart-list {
+  margin: 3vh 10vw;
+  li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    & > * {
+      // margin: 1vh 5vw;
+      width: 7vw;
+      height: 5vh;
+      text-align: center;
+    }
+  }
 }

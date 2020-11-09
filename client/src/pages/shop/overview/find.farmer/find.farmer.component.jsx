@@ -26,7 +26,7 @@ const FindYourFarmer = ({ match }) => {
   return (
     <section className="shop__internal__content__find-a-farmer">
       {/* Load first 4 farmers, an option can display more */}
-      <h2 className="find-farmer__header">FARMER LIST</h2>
+      <h2 className="find-farmer__header">MEET OUR VENDORS</h2>
       {isLoading ? (
         <Spinner />
       ) : (

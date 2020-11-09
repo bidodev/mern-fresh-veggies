@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './account.component.styles.scss';
 import axios from 'axios';
 
@@ -79,7 +79,7 @@ const AccountSetting = ({ user }) => {
           <h5>Email:</h5>
 
           <div className="settings__accounts__email__input">
-            <div>{`Your email address is ${user.data.email}`}</div>
+            <div>{`Your email address is ${user.email}`}</div>
             <Icon icon={['far', 'edit']} onClick={toggleModal} />
           </div>
         </div>
@@ -137,7 +137,7 @@ const AccountSetting = ({ user }) => {
         <hr />
         <div className="b">
           <form onSubmit={handleEmail}>
-            <input type="email" ref={email} id="email" name="email" placeholder={`${user.data.email}`} required />
+            <input type="email" ref={email} id="email" name="email" placeholder={`${user.email}`} required />
             <input
               type="password"
               ref={password}

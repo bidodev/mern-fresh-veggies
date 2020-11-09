@@ -1,6 +1,76 @@
 @import '../../scss/variables';
 
+
+.shop__internal__content {
+  border: 1px solid transparent;
+  height: auto;
+}
+
+
+
 .public__farmer__profile {
   border: 1px solid red;
   height: 80vh;
 }
+
+.cart-modal {
+  height: 100vh;
+  top: 0;
+  // .modal-list {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+  .cart-list {
+    margin: 2vh 2vw;
+
+    li {
+      display: flex;
+      flex-wrap: wrap;
+      &:first-child {
+        display: none;
+      }
+      & > * {
+        &:first-child {
+          order: 1;
+          // flex: 1 0 100%;
+          flex-grow: 2;
+        }
+        &:nth-child(2) {
+          order: 3;
+        }
+        &:nth-child(3) {
+          order: 4;
+          flex-grow: 2;
+        }
+        &:last-child {
+          order: 2;
+        }
+      }
+    }
+  }
+  [type='submit'] {
+    background-color: white;
+    border: 1px solid #f75d37;
+    color: #f75d37;
+    &:hover {
+      background-color: #f75d37;
+      color: white;
+      border: 1px solid white;
+    }
+    &:disabled {
+      appearance: button;
+      background: #eeeeee;
+      border: none;
+      color: rgba(19, 1, 1, 0.3);
+      cursor: not-allowed;
+    }
+  }
+  .cart-title {
+    display: none;
+  }
+}
+.cart-overlay {
+  background-color: rgba(0, 0, 0, 0.637);
+}
+
+

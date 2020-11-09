@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -11,9 +11,9 @@ import Modal from 'components/modal/modal.component';
 import SignIn from 'components/authentication/login/login.component';
 import SignUp from 'components/authentication/signup/signup.component';
 
-
-
 const ShopNavBar = ({ match, children }) => {
+  console.log('render');
+
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.user);
   const dispatch = useDispatch();
@@ -35,19 +35,19 @@ const ShopNavBar = ({ match, children }) => {
 
     //2.REDIRECT USER TO PAGE.
     //useHistory.push('/')
-
-
   };
+  const navFixed = React.createRef();
+  /*On component mount add eventListener */
+
 
   return (
     <>
-      <nav className="shop__navbar">
-         {/* Our Logo will be avaiable in the whole application, so it stays here */}
+      <nav className="shop__navbar" ref={navFixed}>
+        {/* Our Logo will be avaiable in the whole application, so it stays here */}
         <Link to="/">
           <div className="shop__navbar__logo">Veggies</div>
         </Link>
         <ul className="shop__navbar__account">
-
           {/* The childrens can be different upon to the parent, they are sent by the parent */}
           {children}
 
@@ -79,7 +79,6 @@ const ShopNavBar = ({ match, children }) => {
         </ul>
       </nav>
       {/* SIGN IN MODAL */}
-
 
       <Modal
         modalStatus={signInModalStatus}
