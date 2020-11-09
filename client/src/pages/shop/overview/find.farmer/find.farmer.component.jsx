@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import './find.farmer.styles.scss';
 
 /* Component Imports */
-import Spinner from 'pages/farmeradmin/wrapper/stock/node_modules/components/UI/spinner/spinner.component';
+import Spinner from 'components/UI/spinner/spinner.component';
 
 const FindYourFarmer = ({ match }) => {
   const [isLoading, setStatusLoading] = useState(true);

@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /* Component Imports */
-import CustomButton from 'pages/farmeradmin/wrapper/stock/node_modules/components/UI/custom-button/custom-button.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Ion-Icons Imports */
 /* Can use: shake={true} / rotate={true} / beat={true} / color="43853d" */

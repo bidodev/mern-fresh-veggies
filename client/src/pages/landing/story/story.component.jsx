@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 /* Component Imports */
-import CustomButton from 'pages/farmeradmin/wrapper/stock/node_modules/components/UI/custom-button/custom-button.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
 import './story.styles.scss';

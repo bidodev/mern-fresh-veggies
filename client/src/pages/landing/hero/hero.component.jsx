@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 /* Component Imports */
-import CustomButton from 'pages/farmeradmin/wrapper/stock/node_modules/components/UI/custom-button/custom-button.component';
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
 import './hero.styles.scss';
