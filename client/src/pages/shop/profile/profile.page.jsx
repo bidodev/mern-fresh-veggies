@@ -8,7 +8,7 @@ import './profile.page.styles.scss';
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
 import Recipes from 'components/recipes/recipes.component';
-import PhotosGallery from 'pages/shop/profile/photo.gallery/photos.gallery.component';
+import PhotosGallery from 'pages/shop/profile/photo.gallery/PhotosGallery';
 import FarmerProducts from 'pages/shop/profile/farmer.products/farmer.products.component';
 
 /* Sidebar profile */
