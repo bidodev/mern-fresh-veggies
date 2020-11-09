@@ -14,7 +14,7 @@
       align-items: center;
       flex-wrap: wrap;
       background: #eee;
-      @media (max-width: 600px) {
+      @media (max-width: 650px) {
         width: 100%;
       }
 
@@ -30,15 +30,8 @@
           }
         }
 
-        &--icon {
-          font-size: 2.5rem;
-          @media (max-width: 920px) {
-            font-size: 2rem;
-          }
-        }
-
         &--header {
-          margin: 1vh 0;
+          margin: 0.5rem 0;
         }
 
         &--text {
