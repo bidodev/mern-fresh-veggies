@@ -66,8 +66,8 @@ const Shop = ({ match }) => {
           overlayClassName="cart-overlay"
         >
           {/* The Cart Modal is the same as the edit your cart  */}
-
           <Cart toggleModal={toggleModal} match={match} />
+
           <Link to="shop/cart">
             <CustomButton
               type="button"
