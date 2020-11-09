@@ -13,9 +13,7 @@ import './client-login.styles.scss';
 const ClientLogin = ({ toogleModal }) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-  const [registerStatus, setRegisterStatus] = useState('');
   const dispatch = useDispatch();
-
 
   // grabbing the form data and send it to the database
   const handleLoginData = async (event) => {
@@ -30,6 +28,7 @@ const ClientLogin = ({ toogleModal }) => {
       .post('/account/login', data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
+        toogleModal('SIGN_IN');
       })
       .catch((error) => console.log('Error in the login', error.message));
   };

@@ -6,7 +6,7 @@ const router = express.Router();
  * if the router is restricted to a specific role add restrictedAccess('role')
  */
 
- /*Middleware to manage the image upload */
+/*Middleware to manage the image upload */
 const { uploadPhoto } = require('../controllers/uploadController');
 
 const {
@@ -23,6 +23,7 @@ const {
   createProduct,
   updateProduct,
   deleteProduct,
+  getFarmerAdminPanel,
 } = require('../controllers/farmerController');
 
 /* select the farmer page based on the id */
@@ -47,5 +48,7 @@ router
   .get(retrieveProduct)
   .delete(deleteProduct)
   .patch(updateProduct);
+
+router.route('/admin/panel').get(getFarmerAdminPanel);
 
 module.exports = router;

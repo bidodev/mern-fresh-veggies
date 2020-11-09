@@ -51,6 +51,7 @@ exports.getFarmerPage = asyncWrapper(async (req, res, next) => {
       photo: user.photo,
       description: user.description,
       config: user.config,
+      images: user.images,
     },
   });
 });
@@ -146,3 +147,27 @@ exports.updateProduct = asyncWrapper(async (req, res, next) => {
   });
 });
 
+/**
+ * get a farmer page
+ */
+exports.getFarmerAdminPanel = asyncWrapper(async (req, res, next) => {
+
+  //find the user
+  const user = await User.findById(req.user.id);
+  
+  if (!user || user.role !== 'farmer') {
+    return next(new AppError('You could not find a farmer page with the given id', 404, 'fail'));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      name: user.name,
+      products: user.products,
+      photo: user.photo,
+      description: user.description,
+      config: user.config,
+      images: user.images,
+    },
+  });
+});

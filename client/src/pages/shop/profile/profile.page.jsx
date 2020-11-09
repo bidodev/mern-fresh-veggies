@@ -12,7 +12,7 @@ import PhotosGallery from 'pages/shop/profile/photo.gallery/photos.gallery.compo
 import FarmerProducts from 'pages/shop/profile/farmer.products/farmer.products.component';
 
 /* Sidebar profile */
-const Profile = ({ photo, name, description }) => {
+const Profile = () => {
   return <section className="public__farmer__profile"></section>;
 };
 
@@ -34,14 +34,13 @@ function ProfilePage() {
 
   const ProfileCompouse = () => {
     const { open, recipes, gallery, products } = farmer.config;
-    //console.log(farmer.config);
 
     return (
       <>
         {open ? (
           <>
             <Profile {...farmer} />
-            {gallery ? <PhotosGallery /> : null}
+            {gallery ? <PhotosGallery {...farmer}/> : null}
             {products ? <FarmerProducts farmer={farmer} /> : null}
             {recipes ? <Recipes /> : null}
           </>
