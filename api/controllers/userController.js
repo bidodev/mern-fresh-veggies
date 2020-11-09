@@ -14,18 +14,16 @@ exports.updateProfile = asyncWrapper(async (req, res, next) => {
     await user.save();
   }
 
-  if (req.body.update === 'profile') {
-
-    user.images = { ...user.images, profile: req.file.filename };
+  switch (req.body.update) {
+    case 'profile': {
+      user.images = { ...user.images, profile: req.file.filename };
+    }
+    case 'cover': {
+      user.images = { ...user.images, cover: req.file.filename };
+    }
     await user.save();
   }
-
-  if (req.body.update === 'cover') {
-
-    user.images = { ...user.images, cover: req.file.filename };
-    await user.save();
-  }
-
+  
   res.status(200).json({
     status: 'success',
   });

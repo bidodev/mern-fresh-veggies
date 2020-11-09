@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1rem;
+  height: 40vh;
 
   @media (max-width: 1050px) {
     flex-direction: column;
@@ -10,14 +10,21 @@
 
 
   &--img {
-    width: 30vw;
+    width: 25vw;
     height: 30vh;
 
-    img {
-      //border: 1px solid red;
-      height: 100%;
+     img {
       width: 100%;
-      object-fit: cover;
+      height: 100%;
+      transform: scale(1.1);
+      transition: all 0.3s;
+      opacity: 0.8;
+      cursor: zoom-in;
+    
+      &:hover {
+        transform: scale(1.03);
+        opacity: 1;
+      }
     }
 
     @media (max-width: 1050px) {

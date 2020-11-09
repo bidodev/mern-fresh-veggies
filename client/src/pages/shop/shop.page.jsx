@@ -19,7 +19,7 @@ import Footer from 'components/footer/Footer';
 import Modal from 'components/modal/modal.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
-import Checkout from 'pages/checkout/checkout.page';
+//import Checkout from 'pages/checkout/checkout.page';
 
 // ===== Overview Component ===
 const ShopOverView = ({ match }) => {
@@ -34,10 +34,9 @@ const ShopOverView = ({ match }) => {
 
 // ===== Shop Page ===
 const Shop = ({ match }) => {
-  console.log(match);
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   const [cartModalStatus, toggleCartModal] = useState(false);
-  console.log(cartModalStatus);
+
   const toggleModal = (modal) => {
     switch (modal) {
       case 'SHOP_CART': {
@@ -51,13 +50,11 @@ const Shop = ({ match }) => {
     <>
       <ShopNavBar match={match}>
         <li>
-          <Link to="#">
             <Icon
               icon={['fas', 'shopping-cart']}
               className="fa-shopping-cart"
               onClick={() => toggleModal('SHOP_CART')}
             />
-          </Link>
         </li>
         <Modal
           modalStatus={cartModalStatus}

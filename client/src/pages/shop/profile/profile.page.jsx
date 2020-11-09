@@ -13,7 +13,9 @@ import FarmerProducts from 'pages/shop/profile/farmer.products/farmer.products.c
 
 /* Sidebar profile */
 const Profile = () => {
-  return <section className="public__farmer__profile"></section>;
+  return <section className="public__farmer__profile">
+    
+  </section>;
 };
 
 function ProfilePage() {

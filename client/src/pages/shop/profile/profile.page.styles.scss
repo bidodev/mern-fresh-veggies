@@ -1,7 +1,7 @@
 ///////////////////////////////////
 .public__farmer__profile {
   display: flex;
-  height: 40vh;
+  height: 60vh;
   justify-content: space-between;
 
   &__aside {
@@ -18,7 +18,6 @@
   }
 
   &__public {
-    border: 1px solid red;
     margin-top: 8vh;
     width: 100%;
     background: #eee;
