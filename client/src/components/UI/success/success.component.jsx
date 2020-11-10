@@ -5,7 +5,8 @@ const SuccessAnimation = () => {
   const history = useHistory();
   window.setTimeout(() => {
     history.push('/');
-  }, 2500);
+  }, 3000);
+
   return (
     <div className="success-animation">
       <svg
@@ -39,6 +40,7 @@ const SuccessAnimation = () => {
           fill="transparent"
         />
       </svg>
+      <div className="text-animation">Payment completed</div>
     </div>
   );
 };

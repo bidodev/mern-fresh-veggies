@@ -1,15 +1,12 @@
 $circle-length: 151px;
 $check-length: 36px;
 
-html,
-body {
-  height: 100%;
-}
-
-body {
-  align-items: center;
-  //   background-color: #35297b;
+.success-animation {
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -89,4 +86,9 @@ body {
   #successAnimationResult {
     animation: 0.3s linear 0.9s both fadeIn;
   }
+}
+
+.text-animation {
+  animation: 1s linear 1s both fadeIn;
+  font-size: 1.5rem;
 }
