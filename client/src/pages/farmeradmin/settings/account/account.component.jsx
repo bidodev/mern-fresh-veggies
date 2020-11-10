@@ -7,6 +7,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import Modal from 'components/modal/modal.component';
 
 const AccountSetting = ({ user }) => {
+  console.log(user)
   /* Modal State */
   const [modalStatus, setIsOpen] = useState(false);
 

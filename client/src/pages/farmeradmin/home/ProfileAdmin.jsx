@@ -1,33 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {useDispatch, useSelector} from 'react-redux';
 
 /* Components */
 import HeaderFarmerProfile from 'pages/farmeradmin/home/header/header.profile';
 import GalleryList from 'pages/farmeradmin/home/gallery/gallery.list';
+import FarmerBioGraphy from 'pages/farmeradmin/home/biography/FarmerBiography'
 import Spinner from 'components/UI/spinner/spinner.component';
 
 /* Styles */
 import './profile.styles.scss';
 
-const FarmerBioGraphy = ({ name, description }) => {
-  return (
-    <div className="panel-profile__biography">
-      <div className="panel-profile__biography__info">Welcome {name}</div>
-      <div className="panel-profile__biography__text">{description}</div>
-    </div>
-  );
-};
 
 const ProfileAdmin = () => {
-  const [farmerData, setFarmerData] = useState(null);
-  const [isLoading, setIstLoading] = useState(true);
 
+  const dispatch = useDispatch();
+  const farmerData = useSelector((state) => state.login.adminPanelData);
+
+  const [isLoading, setIstLoading] = useState(true);
   /* Retrieve Farmer Panel */
   useEffect(() => {
     axios
       .get('/farmers/admin/panel')
       .then(({ data }) => {
-        setFarmerData(data.data);
+        dispatch({ type: 'SET_FARMER', payload: data.data})
         setIstLoading(false);
       })
       .catch((err) => {
