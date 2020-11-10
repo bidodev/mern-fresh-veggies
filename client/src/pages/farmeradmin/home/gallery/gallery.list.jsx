@@ -1,7 +1,6 @@
 import React from 'react';
 import './gallery.list.styles.scss';
 
-
 /* Components */
 import ImageItem from './gallery.item';
 

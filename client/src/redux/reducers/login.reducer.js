@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   user: null,
+  adminPanelData: null,
 };
 
 const loginReducer = (state = INITIAL_STATE, action) => {
@@ -13,6 +14,11 @@ const loginReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         user: null,
+      };
+    case 'SET_FARMER':
+      return {
+        ...state,
+        adminPanelData: action.payload,
       };
     default:
       return state;

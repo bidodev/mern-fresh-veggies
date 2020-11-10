@@ -9,6 +9,7 @@ import Spinner from 'components/UI/spinner/spinner.component';
 //import Alerts from 'components/UI/alerts';
 
 function PublicProfileSettings({ user }) {
+  console.log(user)
   /* Load actual status of the configs */
   const [configs, setConfigs] = useState(null);
   //const [alert, setAlert] = useState(null);
@@ -46,7 +47,7 @@ function PublicProfileSettings({ user }) {
           )} */}
 
           <h4>Public Profile</h4>
-          <p>Hello {user.data.name}</p>
+          <p>Hello {user.name}</p>
 
           <div className="settings__page__item__header">
             <h2>Select how your profile should Lorem ipsum dolor sit amet.</h2>

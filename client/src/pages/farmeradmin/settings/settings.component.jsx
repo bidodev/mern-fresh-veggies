@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 /* Styles */
 import './settings.component.styles.scss';
@@ -16,14 +17,19 @@ const AdvancedSettings = () => {
   return <div>Advanced Settings</div>;
 };
 
-const UserSettings = ({ match, user }) => {
+const UserSettings = ({ match }) => {
+
+  const data = useSelector(({login}) => login.adminPanelData);
+  const user = useSelector(({login}) => login.user.data);
+
+  const src = data.images.profile ? `/uploads/${user.name.toLowerCase()}/images/profile/${data.images.profile}` : '/uploads/default.jpg';
 
   return (
     <div className="admin__settings">
       <div className="admin__settings__nav">
         <ul>
           <div className="avatar__container">
-            <img src={`/images/users/${user.photo}`} alt="avatar" />
+            <img src={src} alt="avatar" />
           </div>
           <h2>{user.name}</h2>
           <hr />
