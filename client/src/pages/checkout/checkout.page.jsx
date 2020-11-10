@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Cards from 'react-credit-cards';
 import { useHistory } from 'react-router-dom';
 import 'react-credit-cards/lib/styles.scss';
+import './checkout.page.style.scss';
 
 import Spinner from 'components/UI/spinner/spinner.component';
 
@@ -53,7 +54,7 @@ const Checkout = () => {
   //   }
   // };
   return (
-    <div className="PaymentForm">
+    <div id="PaymentForm">
       {loading ? (
         <Spinner />
       ) : (
