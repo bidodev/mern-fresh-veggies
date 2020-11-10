@@ -5,7 +5,7 @@
   &__how-it-works {
     display: flex;
     justify-content: space-evenly;
-    padding: 10vh 0 2vh 0;
+    padding: 18vh 0 2vh 0;
     @media (max-width: 900px) {
       flex-direction: column-reverse;
       align-items: center;
@@ -119,6 +119,8 @@
       }
       &--img {
         width: 100%;
+        height: auto;
+        object-fit: cover;
       }
     }
 
@@ -155,7 +157,8 @@
       }
 
       &--button {
-        margin-left: -1vh;
+        //TODO: This minus margin is terrible, too bad!!
+        margin-left: -4vw;
         @media (max-width: 900px) {
           text-align: center;
         }

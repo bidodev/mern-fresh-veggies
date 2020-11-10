@@ -13,7 +13,7 @@ const PreAdminPanel = ({ match }) => {
   return (
     <>
       <ShopNavBar match={match} />
-      <Authentication />
+      <Authentication match={match}/>
       <Story />
       <Footer />
     </>

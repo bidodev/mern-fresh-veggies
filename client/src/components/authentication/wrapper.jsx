@@ -8,7 +8,8 @@ import SignUp from 'components/authentication/signup/Signup';
 
 import DisplayModal from 'components/modal/modal.component';
 
-const AuthenticationWrapper = () => {
+const AuthenticationWrapper = ({match}) => {
+  console.log(match)
   /* Pull out if the authentication is showing and which component is showing */
   const isAuthenticationModalShowing = useSelector(({ authentication }) => authentication.show);
   const isAuthenticationStatusSwitched = useSelector(({ authentication }) => authentication.switch);
