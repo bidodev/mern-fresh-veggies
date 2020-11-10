@@ -22,10 +22,12 @@ const Cart = () => {
 
   return (
     <div className="cart-edit">
-      <CustomButton onClick={toggleModal}>
-        <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
-        Back to shopping
-      </CustomButton>
+      <Link to={`/shop`}>
+        <CustomButton onClick={toggleModal}>
+          <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
+          Back to shopping
+        </CustomButton>
+      </Link>
       <p className="cart-title">You have added the following articles:</p>
       <ul className="cart-list">
         <li>
