@@ -22,10 +22,10 @@ const Cart = () => {
 
   return (
     <div className="cart-edit">
-        <CustomButton onClick={toggleModal}>
-          <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
-          Back to shopping
-        </CustomButton>
+      <CustomButton onClick={toggleModal}>
+        <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
+        Back to shopping
+      </CustomButton>
       <p className="cart-title">You have added the following articles:</p>
       <ul className="cart-list">
         <li>
@@ -56,7 +56,7 @@ const Cart = () => {
         )}
       </ul>
 
-      <Link to={`/shop/checkout`}>
+      <Link to={`/checkout`}>
         <CustomButton type="button" disabled={cartItems.length <= 0 && true}>
           Proceed to checkout
         </CustomButton>
