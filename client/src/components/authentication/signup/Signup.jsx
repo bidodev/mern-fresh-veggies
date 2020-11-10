@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useRouteMatch } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -10,21 +11,23 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 /* Styles */
 import './Signup.styles.scss';
 
-const ClientSignUp = ({ match }) => {
+const ClientSignUp = () => {
+
+  const match = useRouteMatch();
+  const url = match.path === '/shop' ? 'user' : 'farmer'
+ 
   /* show or hidden the authentication modal  */
   const toggleAuthenticationModal = () => dispatch({ type: 'SHOW_AUTH' });
 
   /* toggle which component is active (signIn or SignUp) */
   const toggleAuthenticationState = () => dispatch({ type: 'SWITCH_AUTH' });
 
-  //let url = match.path === '/shop' ? 'user' : 'farmer'
-  const url = 'farmer';
 
   const [displayName, setDisplayName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  //const history = useHistory();
+
   const dispatch = useDispatch();
   const handleSubmit = async (event) => {
     event.preventDefault();

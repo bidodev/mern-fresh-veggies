@@ -19,6 +19,7 @@ import Footer from 'components/footer/Footer';
 import Modal from 'components/modal/modal.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
+import Authentication from 'components/authentication/wrapper'
 
 // ===== Overview Component ===
 const ShopOverView = ({ match }) => {
@@ -43,6 +44,7 @@ const Shop = ({ match }) => {
 
   return (
     <>
+      <Authentication match={match}/>
       <ShopNavBar>
         <li>
           <Icon icon={['fas', 'shopping-cart']} className="fa-shopping-cart" onClick={toggleModal} />

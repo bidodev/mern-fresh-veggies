@@ -1,12 +1,10 @@
 .authentication-modal {
   width: 60vw;
-  height: 60vh;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  transform: translate(-50%, -50%);
+  top: 20vh;
+  left: 25vw;
+  right: 10vw;
+  bottom: 20vh;
   border: none;
   background-color: #e0b835;
   display: flex;
