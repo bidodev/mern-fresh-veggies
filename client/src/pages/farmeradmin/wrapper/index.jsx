@@ -7,7 +7,7 @@ import { Route } from 'react-router-dom';
 import ShopNavBar from 'components/navbar/ShopNavBar';
 import Aside from 'pages/farmeradmin/aside/asidebar.component';
 import ProfileAdmin from 'pages/farmeradmin/home/ProfileAdmin';
-import Stock from 'pages/farmeradmin/wrapper/stock/stock.component';
+import Stock from 'pages/farmeradmin/stock/stock.component';
 import FarmerSettings from 'pages/farmeradmin/settings/settings.component';
 
 /* Styles */

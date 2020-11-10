@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    modal: false
+    show: false
   };
   
 const ModalReducer = (state = INITIAL_STATE, action) => {
@@ -7,7 +7,7 @@ const ModalReducer = (state = INITIAL_STATE, action) => {
       case 'TOGGLE_MODAL':
         return {
           ...state,
-          modal: !state.modal
+          show: !state.show
         };
       default:
         return state;

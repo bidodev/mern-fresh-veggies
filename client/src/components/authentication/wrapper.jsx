@@ -1,15 +1,16 @@
 import React from 'react';
 import './wrapper.styles.scss';
 
+/* Redux */
 import { useSelector, useDispatch } from 'react-redux';
 
+/* Components */
 import SignIn from 'components/authentication/login/Login';
 import SignUp from 'components/authentication/signup/Signup';
-
 import DisplayModal from 'components/modal/modal.component';
 
-const AuthenticationWrapper = ({match}) => {
-  console.log(match)
+const AuthenticationWrapper = ({ match }) => {
+  
   /* Pull out if the authentication is showing and which component is showing */
   const isAuthenticationModalShowing = useSelector(({ authentication }) => authentication.show);
   const isAuthenticationStatusSwitched = useSelector(({ authentication }) => authentication.switch);
