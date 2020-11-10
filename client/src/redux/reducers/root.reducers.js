@@ -4,7 +4,7 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 /* Reducer Imports */
-import cartReducer from './cart.reducer';
+import cartReducer from './cart/cart.reducer';
 import loginReducer from './login.reducer';
 import switchReducer from './login-signup-switch.reducer';
 import modalReducer from './modal.reducer';

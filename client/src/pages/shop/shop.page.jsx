@@ -19,7 +19,6 @@ import Footer from 'components/footer/Footer';
 import Modal from 'components/modal/modal.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
-//import Checkout from 'pages/checkout/checkout.page';
 
 // ===== Overview Component ===
 const ShopOverView = ({ match }) => {
@@ -35,42 +34,33 @@ const ShopOverView = ({ match }) => {
 // ===== Shop Page ===
 const Shop = ({ match }) => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
-  const [cartModalStatus, toggleCartModal] = useState(false);
+  const cartModalStatus = useSelector(({cart}) => cart.show)
 
-  const toggleModal = (modal) => {
-    switch (modal) {
-      case 'SHOP_CART': {
-        return toggleCartModal(!cartModalStatus);
-      }
-      default:
-    }
-  };
+  const dispatch = useDispatch();
+
+  /* Hidde or show cart */
+  const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN'});
 
   return (
     <>
-      <ShopNavBar match={match}>
+      <ShopNavBar>
         <li>
-            <Icon
-              icon={['fas', 'shopping-cart']}
-              className="fa-shopping-cart"
-              onClick={() => toggleModal('SHOP_CART')}
-            />
+          <Icon icon={['fas', 'shopping-cart']} className="fa-shopping-cart" onClick={toggleModal} />
         </li>
         <Modal
           modalStatus={cartModalStatus}
-          closeModal={() => toggleModal('SHOP_CART')}
+          closeModal={toggleModal}
           className="cart-modal"
           overlayClassName="cart-overlay"
         >
           {/* The Cart Modal is the same as the edit your cart  */}
-
-          <Cart toggleModal={toggleModal} match={match} />
-          <Link to="shop/cart">
+          <Cart toggleCartModal={toggleModal} match={match} />
+          <Link to="/shop/cart">
             <CustomButton
               type="button"
               disabled={cartItems.length <= 0 ? true : false}
               type="submit"
-              onClick={() => toggleModal('SHOP_CART')}
+              onClick={toggleModal}
             >
               Edit shopping cart
             </CustomButton>
@@ -80,9 +70,9 @@ const Shop = ({ match }) => {
 
       {/* Those components will switch, only one of them will be available at sameTime */}
       <Route exact path={`${match.path}`} component={ShopOverView} />
-      <Route path={`${match.path}/:farmerId`} component={ProfilePage} />
+      <Route path={`${match.path}/farmer/:farmerId`} component={ProfilePage} />
       <Route path={`${match.path}/cart`} component={Cart} />
-      {/* <Route exact path={`${match.path}/checkout`} component={Checkout} /> */}
+
       <Footer />
       <ScrollTopArrow />
     </>
