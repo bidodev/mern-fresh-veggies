@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import { loginUser } from 'redux/actions/authentication';
 
 /* Component Imports */
 import FormInput from 'components/forms/input/input.component';
@@ -32,13 +33,11 @@ const ClientLogin = () => {
     axios
       .post('/account/login', data)
       .then(({ data }) => {
-        dispatch({ type: 'LOGIN_USER', payload: data });
+        dispatch(loginUser(data));
         toggleAuthenticationModal();
       })
       .catch((error) => console.log('Error in the login', error.message));
   };
-
-
 
   // update localState
   const handleInputValue = (event) => {

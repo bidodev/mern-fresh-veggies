@@ -5,12 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './ShopNavBar.styles.scss';
 const ShopNavBar = ({ match, children }) => {
-  console.log('ShopNavBar rendered');
 
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.user);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
   const logOutUser = () => dispatch({ type: 'LOGOUT_USER' });
   const toggleAuthentication = () => dispatch({ type: 'SHOW_AUTH' });
 
@@ -27,20 +26,16 @@ const ShopNavBar = ({ match, children }) => {
 
           {/* SignIN will be avaiable in the whole application, so it stays here */}
           {isLoggedIn ? (
-            <React.Fragment>
+            <>
               <li>
-                <Link to="#">
-                  <FontAwesomeIcon icon={['far', 'user-circle']} className="fa-user-circle" />
-                </Link>
+                <FontAwesomeIcon icon={['far', 'user-circle']} className="fa-user-circle" />
               </li>
               <li>
-                <Link to="#">
-                  <div className="shop__navbar__account__logout" onClick={logOutUser}>
-                    LOG OUT
-                  </div>
-                </Link>
+                <div className="shop__navbar__account__logout" onClick={logOutUser}>
+                  LOG OUT
+                </div>
               </li>
-            </React.Fragment>
+            </>
           ) : (
             <li>
               <Link to="#">

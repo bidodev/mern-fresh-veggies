@@ -71,7 +71,7 @@ const ClientSignUp = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <div className="sign-up__form-container">
         <div className="sign-up__form">
           <h2 className="title">I do not have an account</h2>
@@ -109,7 +109,7 @@ const ClientSignUp = () => {
         </div>
       </div>
       <div className="sign-up__animation"></div>
-    </React.Fragment>
+    </>
   );
 };
 
