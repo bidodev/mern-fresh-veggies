@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+
 import axios from 'axios';
 
 /* Component Imports */
@@ -8,11 +8,18 @@ import FormInput from 'components/forms/input/input.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
-import './client-signup.styles.scss';
+import './Signup.styles.scss';
 
-const ClientSignUp = ({ toogleModal, match }) => {
-  let url = match.path === '/shop' ? 'user' : 'farmer'
-  
+const ClientSignUp = ({ match }) => {
+  /* show or hidden the authentication modal  */
+  const toggleAuthenticationModal = () => dispatch({ type: 'SHOW_AUTH' });
+
+  /* toggle which component is active (signIn or SignUp) */
+  const toggleAuthenticationState = () => dispatch({ type: 'SWITCH_AUTH' });
+
+  //let url = match.path === '/shop' ? 'user' : 'farmer'
+  const url = 'farmer';
+
   const [displayName, setDisplayName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
@@ -38,7 +45,7 @@ const ClientSignUp = ({ toogleModal, match }) => {
       .post(`/account/register/${url}`, data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
-        toogleModal('SIGN_IN');
+        toggleAuthenticationModal();
       })
       .catch((error) => console.log('Error creating user', error.message));
   };
@@ -90,9 +97,8 @@ const ClientSignUp = ({ toogleModal, match }) => {
               label="repeat password"
               handleInputValue={handleInputValue}
             />
-            <Link to="#">
-              <div onClick={() => dispatch({ type: 'SWITCH_SIGN-IN_LOG-IN' })}>You already have an account?</div>
-            </Link>
+            <div onClick={toggleAuthenticationState}>You already have an account?</div>
+
             <div className="buttons">
               <CustomButton type="submit">Sign Up</CustomButton>
             </div>

@@ -1,0 +1,41 @@
+.authentication-modal {
+  width: 60vw;
+  height: 60vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: #e0b835;
+  display: flex;
+  @media only screen and (max-width: 900px) {
+    width: 90vw;
+    top: 20vh;
+    left: 5vw;
+    right: 10vw;
+    bottom: 20vh;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 90vw;
+    height: 90vh;
+    top: 5vh;
+    left: 5vw;
+    right: 10vw;
+    bottom: 5vh;
+    flex-direction: column;
+  }
+  outline: none;
+
+  &--overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(7, 6, 6, 0.925);
+    border: none;
+    z-index: 9999;
+  }
+}

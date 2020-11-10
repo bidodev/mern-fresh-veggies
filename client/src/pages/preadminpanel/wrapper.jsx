@@ -4,15 +4,16 @@ import React from 'react';
 import ShopNavBar from 'components/navbar/ShopNavBar';
 import Story from 'pages/preadminpanel/story/Story';
 import Footer from 'components/footer/Footer'
+import Authentication from 'components/authentication/wrapper'
 
 /* Styles */
 import './wrapper.styles.scss';
 
 const PreAdminPanel = ({ match }) => {
-  console.log("PreAdminPanel rendered")
   return (
     <>
-      <ShopNavBar match={match}/>
+      <ShopNavBar match={match} />
+      <Authentication />
       <Story />
       <Footer />
     </>

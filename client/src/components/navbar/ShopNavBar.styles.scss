@@ -45,44 +45,7 @@
   opacity: 0.7;
 }
 
-.sign-in-modal {
-  width: 50vw;
-  position: fixed;
-  top: 20vh;
-  left: 25vw;
-  right: 10vw;
-  bottom: 20vh;
-  border: none;
-  background-color: #e0b835;
-  display: flex;
-  @media only screen and (max-width: 900px) {
-    width: 90vw;
-    top: 20vh;
-    left: 5vw;
-    right: 10vw;
-    bottom: 20vh;
-  }
-  @media only screen and (max-width: 500px) {
-    width: 90vw;
-    height: 90vh;
-    top: 5vh;
-    left: 5vw;
-    right: 10vw;
-    bottom: 5vh;
-    flex-direction: column;
-  }
-  outline: none;
-}
-.sign-in-overlay {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(7, 6, 6, 0.925);
-  border: none;
-  z-index: 9999;
-}
+
 
 .add__product_wrapper {
   height: 100%;

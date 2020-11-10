@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
@@ -8,12 +7,18 @@ import FormInput from 'components/forms/input/input.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Styles */
-import './client-login.styles.scss';
+import './Login.styles.scss';
 
-const ClientLogin = ({ toogleModal }) => {
+const ClientLogin = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const dispatch = useDispatch();
+
+  /* show or hidden the authentication modal  */
+  const toggleAuthenticationModal = () => dispatch({ type: 'SHOW_AUTH' });
+
+  /* toggle which component is active (signIn or SignUp) */
+  const toggleAuthenticationState = () => dispatch({ type: 'SWITCH_AUTH' });
 
   // grabbing the form data and send it to the database
   const handleLoginData = async (event) => {
@@ -28,10 +33,12 @@ const ClientLogin = ({ toogleModal }) => {
       .post('/account/login', data)
       .then(({ data }) => {
         dispatch({ type: 'LOGIN_USER', payload: data });
-        toogleModal('SIGN_IN');
+        toggleAuthenticationModal();
       })
       .catch((error) => console.log('Error in the login', error.message));
   };
+
+
 
   // update localState
   const handleInputValue = (event) => {
@@ -45,7 +52,6 @@ const ClientLogin = ({ toogleModal }) => {
       default:
     }
   };
-
 
   return (
     <React.Fragment>
@@ -72,7 +78,7 @@ const ClientLogin = ({ toogleModal }) => {
               handleInputValue={handleInputValue}
             />
 
-            <div onClick={() => dispatch({ type: 'SWITCH_SIGN-IN_LOG-IN' })}>You are not registered yet?</div>
+            <div onClick={toggleAuthenticationState}>You are not registered yet?</div>
             <div className="buttons">
               <CustomButton type="submit">Sign In</CustomButton>
             </div>
