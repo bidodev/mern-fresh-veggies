@@ -21,19 +21,27 @@
     justify-content: space-evenly;
     align-items: center;
     height: 30rem;
-    width: 25rem;
+    width: fit-content;
+
     .form-group {
       height: 10vh;
+      width: fit-content;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       input {
         height: 4vh;
+        width: 20vw;
+      }
+      small {
+        margin-left: 0.3vw;
+        font-size: 1rem;
       }
     }
 
     input {
       height: 4vh;
+      width: 20vw;
     }
 
     .form-actions {
