@@ -7,6 +7,7 @@ import './checkout.page.style.scss';
 
 import Spinner from 'components/UI/spinner/spinner.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
+import SuccessAnimation from 'components/UI/success/success.component';
 
 const Checkout = () => {
   const [number, setNumber] = useState('');
@@ -21,7 +22,7 @@ const Checkout = () => {
     setLoading(true);
     window.setTimeout(() => {
       setLoading(false);
-      history.push('/');
+      history.push('/success');
     }, 2000);
   };
   const handleInputFocus = (e) => {
