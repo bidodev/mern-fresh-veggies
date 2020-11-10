@@ -16,11 +16,13 @@ html {
   font-size: 100%; //define the 1rem value = 10px
 }
 
-
 body {
-  font-family: "Nunito Sans", sans-serif;
-  //overflow: hidden;
-  //user-select: none;
+  font-family: 'Nunito Sans', sans-serif;
+  overflow-x: hidden;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 a {
