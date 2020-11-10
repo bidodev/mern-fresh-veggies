@@ -10,8 +10,9 @@ import { Route, Switch } from 'react-router-dom';
 import Landing from 'pages/landing/landing.page';
 import Shop from 'pages/shop/shop.page';
 import PreAdminPanel from 'pages/preadminpanel/wrapper';
-import FarmerAdmin from 'pages/farmeradmin/wrapper'
+import FarmerAdmin from 'pages/farmeradmin/wrapper';
 import Checkout from 'pages/checkout/checkout.page';
+import SuccessAnimation from 'components/UI/success/success.component';
 
 /* App wrapper */
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route exact path="/" component={Landing} />
         <Route path="/shop" render={({ match }) => <Shop match={match} />} />
         <Route path="/checkout" render={({ match }) => <Checkout match={match} />} />
+        <Route path="/success" render={({ match }) => <SuccessAnimation match={match} />} />
         <Route
           path="/farmer/admin"
           render={({ match }) =>
