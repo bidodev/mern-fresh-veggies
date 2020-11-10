@@ -4,22 +4,11 @@
   justify-content: space-between;
   margin-top: 8rem;
   height: 80vh;
-  // &:first-child {
-  //   order: 1;
-  // }
-  // &:nth-child(1) {
-  //   order: 3;
-  // }
-  // &:nth-child(2) {
-  //   order: 4;
-  // }
-  &:last-child {
-    order: 2;
-  }
 }
 
 .custom-button {
   width: 20rem;
+  margin: 0 5rem 2rem 5rem;
 }
 .cart-title {
   margin: 2vh 4vw;
@@ -36,9 +25,8 @@
     display: flex;
     justify-content: space-between;
     & > * {
-      // margin: 1vh 5vw;
       width: 7vw;
-      height: 5vh;
+      height: 7vh;
       text-align: center;
     }
   }

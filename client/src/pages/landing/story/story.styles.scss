@@ -6,9 +6,12 @@
     margin-top: 10vh;
 
     &--header {
-      margin: 2vh;
+      margin: 5vh;
       font-size: 2rem;
       text-align: center;
+      line-height: 4;
+      height: 5vh;
+      // margin-top: 10vh;
     }
 
     &__img-container {
