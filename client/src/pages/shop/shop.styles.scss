@@ -65,6 +65,13 @@
       }
     }
   }
+  .custom-button {
+    &:nth-child(4) {
+      // align-self: center;
+      margin-left: 10rem;
+      margin-top: 5vh;
+    }
+  }
   [type='submit'] {
     background-color: white;
     border: 1px solid #f75d37;
