@@ -11,9 +11,8 @@ import './farmer.products.styles.scss';
 import Modal from 'components/modal/modal.component';
 
 /* Component Farmer Products Item */
-const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
+const FarmerProductsItem = ({ _id, name, photo, type, description, farmerName }) => {
 
-  const user = useSelector(({ login }) => login.user.data);
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
@@ -42,7 +41,7 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
         <h3 className="profile-page__farmer-products__card--name">{name}</h3>
         <div className="profile-page__farmer-products__card__img-container">
           <img
-            src={`/uploads/${user.name.toLowerCase()}/images/products/${photo}`}
+            src={`/uploads/${farmerName.toLowerCase()}/images/products/${photo}`}
             alt="img"
             className="profile-page__farmer-products__card__img-container--img"
           />
@@ -60,7 +59,7 @@ const FarmerProductsItem = ({ _id, name, photo, type, description }) => {
         <div className="add__product_wrapper">
           <div className="product__photo">
             <div className="product__photo--img">
-              <img src={`/uploads/${user.name.toLowerCase()}/images/products/${photo}`} alt="img" />
+              <img src={`/uploads/${farmerName.toLowerCase()}/images/products/${photo}`} alt="img" />
             </div>
             <div className="product__photo__quantity">
               <Icon
@@ -100,7 +99,7 @@ const FarmerProducts = ({ farmer }) => {
         {
           <div className="profile-page__farmer-products">
             {farmer.products.map((product) => (
-              <FarmerProductsItem key={product._id} {...product} />
+              <FarmerProductsItem key={product._id} {...product} farmerName={farmer.name}/>
             ))}
           </div>
         }

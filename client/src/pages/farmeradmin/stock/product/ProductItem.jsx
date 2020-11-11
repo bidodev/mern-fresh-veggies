@@ -52,7 +52,7 @@ function Product({ _id, name, photo, type, description }) {
         <Icon icon="times" className="fa-times" onClick={toggleModal} />
         <h2 className="display-product__name">{name}</h2>
         <div className="display-product__img-container">
-          <img src={`/uploads/francisco/images/products/${photo}`} alt="img" className="display-product__img-container--img" />
+          <img src={`/uploads/${user.name.toLowerCase()}/images/products/${photo}`} alt="img" className="display-product__img-container--img" />
         </div>
         <div className="display-product__type">{type}</div>
         <div className="display-product__description">{description}</div>
