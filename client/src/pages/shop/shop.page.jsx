@@ -59,7 +59,6 @@ const Shop = ({ match }) => {
           <Cart toggleCartModal={toggleModal} match={match} />
           <Link to="/shop/cart">
             <CustomButton
-              type="button"
               disabled={cartItems.length <= 0 ? true : false}
               type="submit"
               onClick={toggleModal}

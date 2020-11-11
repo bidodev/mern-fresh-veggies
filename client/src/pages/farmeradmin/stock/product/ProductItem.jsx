@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import './product.item.styles.scss';
+import { removeProduct } from 'utils/services';
+
+import {useSelector} from 'react-redux';
+
+import './ProductItem.styles.scss';
 /* Component Imports */
 import Modal from 'components/modal/modal.component';
-import axios from 'axios';
 
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 function Product({ _id, name, photo, type, description }) {
-  console.log(_id);
+
+  const user = useSelector(({ login }) => login.user.data);
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
 
@@ -15,15 +19,6 @@ function Product({ _id, name, photo, type, description }) {
     setIsOpen(!modalStatus);
   };
 
-  const removeProduct = async (id) => {
-    const url = `/farmers/products/${id}`;
-    axios
-      .delete(url)
-      .then(() => {
-        toggleModal();
-      })
-      .catch((error) => console.log('Error deleting product', error.response.data));
-  };
 
   const customStyles = {
     /* Modal Styles */
@@ -42,7 +37,7 @@ function Product({ _id, name, photo, type, description }) {
       <div className="product-item__farmer-products__card" onClick={toggleModal}>
         <div className="product-item__farmer-products__card__img-container">
           <img
-            src={`/images/users/${photo}`}
+            src={`/uploads/${user.name.toLowerCase()}/images/products/${photo}`}
             alt="img"
             className="product-item__farmer-products__card__img-container--img"
           />
@@ -57,7 +52,7 @@ function Product({ _id, name, photo, type, description }) {
         <Icon icon="times" className="fa-times" onClick={toggleModal} />
         <h2 className="display-product__name">{name}</h2>
         <div className="display-product__img-container">
-          <img src={`/images/users/${photo}`} alt="img" className="display-product__img-container--img" />
+          <img src={`/uploads/francisco/images/products/${photo}`} alt="img" className="display-product__img-container--img" />
         </div>
         <div className="display-product__type">{type}</div>
         <div className="display-product__description">{description}</div>
@@ -69,5 +64,6 @@ function Product({ _id, name, photo, type, description }) {
     </>
   );
 }
+
 
 export default Product;
