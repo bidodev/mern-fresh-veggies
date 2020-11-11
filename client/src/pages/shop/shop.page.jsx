@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -19,7 +19,7 @@ import Footer from 'components/footer/Footer';
 import Modal from 'components/modal/modal.component';
 import ScrollTopArrow from 'components/UI/scroll/scroll.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
-import Authentication from 'components/authentication/wrapper'
+import Authentication from 'components/authentication/wrapper';
 
 // ===== Overview Component ===
 const ShopOverView = ({ match }) => {
@@ -35,16 +35,17 @@ const ShopOverView = ({ match }) => {
 // ===== Shop Page ===
 const Shop = ({ match }) => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
-  const cartModalStatus = useSelector(({cart}) => cart.show)
-
+  const cartModalStatus = useSelector(({ cart }) => cart.show);
+  const cartNum = useSelector(({ cart }) => cart.cartQuantity);
   const dispatch = useDispatch();
 
   /* Hidde or show cart */
-  const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN'});
+  const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN' });
 
+  console.log(`cart items are: ${cartNum}`);
   return (
     <>
-      <Authentication match={match}/>
+      <Authentication match={match} />
       <ShopNavBar>
         <li>
           <Icon icon={['fas', 'shopping-cart']} className="fa-shopping-cart" onClick={toggleModal} />
@@ -59,7 +60,6 @@ const Shop = ({ match }) => {
           <Cart toggleCartModal={toggleModal} match={match} />
           <Link to="/shop/cart">
             <CustomButton
-              type="button"
               disabled={cartItems.length <= 0 ? true : false}
               type="submit"
               onClick={toggleModal}

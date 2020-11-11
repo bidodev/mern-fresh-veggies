@@ -1,13 +1,15 @@
 .product-item {
+
   &__farmer-products {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    border: 1px solid red;
 
     &__card {
       width: 13vw;
       min-width: 10rem;
-      height: 30vh;
+      height: 35vh;
       margin: 2vh 1vh;
       padding: 1vh;
       display: flex;
@@ -16,6 +18,7 @@
       color: black;
       background: white;
       border: 1px solid rgba(102, 102, 102, 0.2);
+      //border: 1px solid red;
 
       &:hover {
         opacity: 0.7;
@@ -23,11 +26,15 @@
       }
 
       &__img-container {
-        width: 8vw;
-        min-width: 8rem;
+        width: 100%;
+        height: 30vh;
+        //border: 1px solid red;
 
         &--img {
+          
           width: 100%;
+          height: auto;
+          object-fit: fill;
         }
       }
 
