@@ -70,6 +70,7 @@ exports.retrieveFarmerProducts = asyncWrapper(async (req, res, next) => {
 });
 
 exports.createProduct = asyncWrapper(async (req, res, next) => {
+ 
   //1. Grab our user
   const user = req.user;
 
