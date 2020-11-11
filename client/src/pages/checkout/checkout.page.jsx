@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards';
 import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import 'react-credit-cards/lib/styles.scss';
 import './checkout.page.style.scss';
@@ -16,11 +17,16 @@ const Checkout = () => {
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
     window.setTimeout(() => {
       setLoading(false);
+      // clear cart
+      dispatch({ type: 'CLEAR_CART' });
+      //redirect to the animation
       history.push('/success');
     }, 2000);
   };

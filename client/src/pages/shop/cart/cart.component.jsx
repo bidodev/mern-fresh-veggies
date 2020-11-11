@@ -16,6 +16,9 @@ const Cart = () => {
   const removeItemHandler = (cartItemToRemove) => {
     dispatch({ type: 'REMOVE_ITEM', payload: cartItemToRemove });
   };
+  const resetCart = (cartItemToRemove) => {
+    dispatch({ type: 'CLEAR_CART', payload: cartItemToRemove });
+  };
 
   /* Hidde or show cart */
   const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN' });
@@ -57,7 +60,9 @@ const Cart = () => {
           <li>Your cart is empty</li>
         )}
       </ul>
-
+      <CustomButton type="button" disabled={cartItems.length <= 0 && true} onClick={resetCart}>
+        Reset
+      </CustomButton>
       <Link to={`/checkout`}>
         <CustomButton type="button" disabled={cartItems.length <= 0 && true}>
           Proceed to checkout
