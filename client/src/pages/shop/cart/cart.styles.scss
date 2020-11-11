@@ -21,14 +21,27 @@
   .cart-list {
     height: 50vh;
     margin: 3vh 10vw;
+
     li {
       list-style: none;
       display: flex;
       justify-content: space-between;
+      // border: 0px transparent solid;
+      &:not(:first-child) {
+        border-radius: 10px;
+        box-shadow: 0 10px 6px -6px rgba(119, 119, 119, 0.486);
+        -webkit-box-shadow: 0 10px 6px -6px rgba(119, 119, 119, 0.486);
+        -moz-box-shadow: 0 10px 6px -6px rgba(119, 119, 119, 0.486);
+      }
+
       & > * {
         width: 7vw;
         height: 7vh;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // text-align: center;
+        // vertical-align: bottom;
       }
     }
   }
