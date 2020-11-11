@@ -35,7 +35,7 @@
   .cart-list {
     margin: 2vh 2vw;
     height: 60vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     li {
       display: flex;
       flex-wrap: wrap;
