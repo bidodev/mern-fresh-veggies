@@ -22,6 +22,7 @@
     "react-credit-cards": "^0.8.3",
     "react-dom": "^16.13.1",
     "react-easy-crop": "^3.3.0",
+    "react-infinite-scroll-component": "^5.1.0",
     "react-ionicons": "^3.1.4",
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.1",
