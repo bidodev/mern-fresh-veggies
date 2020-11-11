@@ -4,9 +4,10 @@
   border: 1px solid transparent;
   height: auto;
 }
-
-
-
+.shop__navbar {
+  position: fixed;
+  top: 0;
+}
 .cart-modal {
   height: 100vh;
   width: 25vw;

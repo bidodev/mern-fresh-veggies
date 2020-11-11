@@ -4,10 +4,10 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 /* Reducer Imports */
-import cartReducer from './cart.reducer';
-import loginReducer from './login.reducer';
-import switchReducer from './login-signup-switch.reducer';
-import modalReducer from './modal.reducer';
+import cartReducer from 'redux/reducers/cart/cart.reducer';
+import loginReducer from 'redux/reducers/login.reducer';
+import authenticationReducer from 'redux/reducers/authentication.reducer';
+import modalReducer from 'redux/reducers/modal.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -18,7 +18,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   cart: cartReducer,
   login: loginReducer,
-  switch: switchReducer,
+  authentication: authenticationReducer,
   modal: modalReducer,
 });
 

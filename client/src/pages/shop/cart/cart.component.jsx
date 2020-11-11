@@ -6,17 +6,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 import './cart.styles.scss';
-const Cart = ({ toggleModal }) => {
-  const cartItems = useSelector(({ cart }) => cart.cartItems);
+const Cart = () => {
   const dispatch = useDispatch();
+
+  /* Pull out the cart items*/
+  const cartItems = useSelector(({ cart }) => cart.cartItems);
+
+  /* RemoteItem from the cart */
   const removeItemHandler = (cartItemToRemove) => {
     dispatch({ type: 'REMOVE_ITEM', payload: cartItemToRemove });
   };
 
+  /* Hidde or show cart */
+  const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN' });
+
   return (
     <div className="cart-edit">
-      <Link to="/shop">
-        <CustomButton onClick={() => toggleModal('SHOP_CART')}>
+      <Link to={`/shop`}>
+        <CustomButton onClick={toggleModal}>
           <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
           Back to shopping
         </CustomButton>

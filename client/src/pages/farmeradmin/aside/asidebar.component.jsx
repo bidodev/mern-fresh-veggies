@@ -29,7 +29,7 @@ const AsideBar = () => {
         activeClassName="admin-panel__sidebar-item--active"
         className="admin-panel__sidebar-item"
         target="_blank"
-        to={`/shop/${user._id}`}
+        to={`/shop/farmer/${user._id}`}
       >
         <Icon icon={['fas', 'external-link-alt']} className="admin-panel__sidebar-item__icon" />
         <p>Profile</p>

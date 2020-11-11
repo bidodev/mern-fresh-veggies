@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 /* Component Imports */
 import CustomButton from 'components/UI/custom-button/custom-button.component';
@@ -13,6 +14,13 @@ import IosSettingsOutline from 'react-ionicons/lib/IosSettingsOutline';
 import './story.styles.scss';
 
 const Story = () => {
+  const dispatch = useDispatch();
+  
+  const signUpAsFarmer = () => {
+    dispatch({ type: 'SHOW_AUTH' })
+    dispatch({ type: 'SWITCH_AUTH' })
+  };
+
   return (
     <React.Fragment>
       <section className="story" id="story">
@@ -85,7 +93,7 @@ const Story = () => {
               rerum eos magni aliquam voluptatum ipsa distinctio officia cum.
             </div>
             <div className="story__create-your-profile__description-container--button">
-              <CustomButton style={{ width: '11rem' }}>Start Now</CustomButton>
+              <CustomButton onClick={signUpAsFarmer} style={{ width: '11rem' }}>Start Now</CustomButton>
             </div>
           </div>
         </div>

@@ -33,7 +33,7 @@ const FindYourFarmer = ({ match }) => {
         <div className="find-farmer__container">
           {farmers.map((farmer) => (
             <li className="find-farmer__container__item">
-              <Link to={`${match.url}/${farmer._id}`}>
+              <Link to={`${match.url}/farmer/${farmer._id}`}>
                 <div className="find-farmer__container__item__bg-image-container">
                   <img src="/images/farm-1.jpg" alt="background" />
                 </div>
