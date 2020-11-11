@@ -2,32 +2,39 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 4vw;
   margin-top: 8rem;
   height: 80vh;
+
+  /// this is to prevent redirecting on a click outside the button
+  a {
+    width: fit-content;
+    .custom-button {
+      width: 20rem;
+
+      // margin: 0 5rem 2rem 5rem;
+    }
+  }
+  .cart-title {
+    margin: 2vh 4vw;
+  }
+  .cart-list {
+    height: 50vh;
+    margin: 3vh 10vw;
+    li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      & > * {
+        width: 7vw;
+        height: 7vh;
+        text-align: center;
+      }
+    }
+  }
 }
 
-.custom-button {
-  width: 20rem;
-  margin: 0 5rem 2rem 5rem;
-}
-.cart-title {
-  margin: 2vh 4vw;
-}
 //this is the  back icon
 .fa-angle-left {
   margin-right: 4rem;
-}
-.cart-list {
-  height: 50vh;
-  margin: 3vh 10vw;
-  li {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    & > * {
-      width: 7vw;
-      height: 7vh;
-      text-align: center;
-    }
-  }
 }
