@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,15 +6,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 import './cart.styles.scss';
-const Cart = () => {
+const Cart = ({ id, name, photo, type, description }) => {
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
   /* Pull out the cart items*/
   const cartItems = useSelector(({ cart }) => cart.cartItems);
+  //INCREASE
+  const increaseItemHandler = (id, name, quantity, farmer) => {
+    console.log(id);
+    setQuantity(quantity + 1);
+    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity: 1, farmer } });
+  };
 
+  /* DECREASE Item from the cart */
+  const decreaseItemHandler = (cartItemToDecrease) => {
+    dispatch({ type: 'REMOVE_ITEM', payload: cartItemToDecrease });
+  };
   /* RemoveItem from the cart */
   const removeItemHandler = (cartItemToRemove) => {
-    dispatch({ type: 'REMOVE_ITEM', payload: cartItemToRemove });
+    dispatch({ type: 'CLEAR_ITEM_FROM_CART', payload: cartItemToRemove });
   };
   const resetCart = (cartItemToRemove) => {
     dispatch({ type: 'CLEAR_CART', payload: cartItemToRemove });
@@ -43,7 +54,11 @@ const Cart = () => {
           cartItems.map((cartItem) => (
             <li>
               <span>{cartItem.name}</span>
-              <span>{cartItem.quantity}x</span>
+              <span>
+                <button onClick={() => decreaseItemHandler(cartItem)}>-</button>
+                {cartItem.quantity}
+                <button onClick={() => increaseItemHandler(id)}>+</button>
+              </span>
               <span>Price </span>
               <span>
                 <FontAwesomeIcon
@@ -57,7 +72,7 @@ const Cart = () => {
             </li>
           ))
         ) : (
-          <li>Your cart is empty</li>
+          <li className="empty-cart">Your cart is empty</li>
         )}
       </ul>
       <CustomButton type="button" disabled={cartItems.length <= 0 && true} onClick={resetCart}>
