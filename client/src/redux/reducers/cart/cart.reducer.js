@@ -3,12 +3,9 @@ import { addItemToCart, removeItemFromCart } from './cart.utils';
 const INITIAL_STATE = {
   cartItems: [],
   show: false,
-  cartQuantity: 0,
 };
-const cartReducer = (state = INITIAL_STATE, action) => {
-  const quantity = state.cartItems.map((cartItem) => cartItem.quantity);
-  console.log(`This is the ${quantity}`);
 
+const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'TOGGLE_CART_HIDDEN':
       return {
@@ -19,13 +16,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cartItems: addItemToCart(state.cartItems, action.payload),
-        cartQuantity: state.cartQuantity + state.cartItems.quantity,
       };
     case 'REMOVE_ITEM':
       return {
         ...state,
         cartItems: removeItemFromCart(state.cartItems, action.payload),
-        // quantity: cartQuantity > 0 ? cartQuantity - 1 : null,
       };
     case 'CLEAR_ITEM_FROM_CART':
       return {

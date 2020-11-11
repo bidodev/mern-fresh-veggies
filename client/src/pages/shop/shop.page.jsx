@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -36,13 +36,13 @@ const ShopOverView = ({ match }) => {
 const Shop = ({ match }) => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   const cartModalStatus = useSelector(({ cart }) => cart.show);
-
+  const cartNum = useSelector(({ cart }) => cart.cartQuantity);
   const dispatch = useDispatch();
 
   /* Hidde or show cart */
   const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN' });
 
-  console.log(cartItems.quantity);
+  console.log(`cart items are: ${cartNum}`);
   return (
     <>
       <Authentication match={match} />
