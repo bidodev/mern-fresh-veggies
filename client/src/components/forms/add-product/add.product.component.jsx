@@ -22,10 +22,11 @@ const AddForm = () => {
     event.preventDefault();
 
     const data = new FormData();
-    data.append('photo', file);
     data.append('name', name);
     data.append('description', description);
+    data.append('update', 'products');
     data.append('type', type);
+    data.append('photo', file)
 
     axios
       .post('/farmers/products', data)

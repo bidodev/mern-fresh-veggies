@@ -1,42 +1,55 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import { getStockProducts } from 'utils/services';
 
 /* Component Imports */
-import CustomButton from 'components/UI/custom-button/custom-button.component';
 import Spinner from 'components/UI/spinner/spinner.component';
 import AddForm from 'components/forms/add-product/add.product.component';
 import DisplayModal from 'components/modal/modal.component';
-
 import ProductList from 'pages/farmeradmin/stock/productlist/ProductList';
 
 /* Styles */
 import './stock.styles.scss';
 
+const SearchBar = ({ onSearch }) => {
+  const handleChange = (event) => {
+    onSearch(event.target.value);
+  };
+
+  return (
+    <div className="stock-search-wrapper">
+      <div className="search">
+        <input type="search" className="searchTerm" placeholder="What are you looking for?" onChange={handleChange} />
+        <button type="submit" className="searchButton">
+          <Icon icon={['fas', 'search']} />
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const Stock = () => {
+  const [isFetchingData, setFetchError] = useState(true);
   const [products, setProducts] = useState([]);
-  const [isLoading, setFetchError] = useState(true);
+
+  /* Filter products */
+  const [searchProductField, setFilterProduct] = useState('');
+  const filterProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchProductField.toLowerCase())
+  );
 
   /* Modal */
   const modalStatus = useSelector(({ modal }) => modal.show);
   const dispatch = useDispatch();
   const toggleModal = () => dispatch({ type: 'TOGGLE_MODAL' });
 
-  const getProducts = async () => {
-    try {
-      const { data } = await axios.get(`/farmers/products`);
-      const [products] = data.products;
-      setProducts(products.products);
-      setFetchError(false);
-    } catch (err) {
-      setFetchError(err.message);
-    }
-  };
-
   useEffect(() => {
-    getProducts();
-  }, [modalStatus]);
+    getStockProducts().then((data) => {
+      setProducts(data);
+      setFetchError(false);
+    });
+  }, []);
 
   const modalConfig = {
     modalStatus: modalStatus,
@@ -46,18 +59,18 @@ const Stock = () => {
   };
 
   return (
-    <section className="stock">
-      <h2 className="stock__overview--header">Stock Overview</h2>
-      <div className="stock__overview">
-        {isLoading ? <Spinner /> : <ProductList products={products} />}
-        <CustomButton type="button" onClick={toggleModal}>
-          Add
-        </CustomButton>
-        {/* Load a Modal with the children inside <Modal> </Modal> */}
+    <section className="stock" id="#stock">
+      <div className="stock-overview__header">
+        <h2>Stock Overview</h2>
+        <SearchBar onSearch={setFilterProduct} />
       </div>
+      <div className="stock-overview">{isFetchingData ? <Spinner /> : <ProductList products={filterProducts} />}</div>
+      <Icon icon={['fas', 'plus']} onClick={toggleModal} className="stock-overview__plus" />
+
       <DisplayModal {...modalConfig}>
+        {/* Modal Children */}
         <AddForm />
-        <FontAwesomeIcon icon="times" className="fa-times" onClick={toggleModal} />
+        <Icon icon="times" className="fa-times" onClick={toggleModal} />
       </DisplayModal>
     </section>
   );
