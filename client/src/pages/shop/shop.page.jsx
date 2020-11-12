@@ -42,7 +42,6 @@ const Shop = ({ match }) => {
   /* Hidde or show cart */
   const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN' });
 
-  console.log(`cart items are: ${cartNum}`);
   return (
     <>
       <Authentication match={match} />

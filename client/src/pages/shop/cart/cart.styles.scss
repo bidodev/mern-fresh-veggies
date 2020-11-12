@@ -21,6 +21,7 @@
   .cart-list {
     height: 50vh;
     margin: 3vh 10vw;
+    overflow-y: scroll;
 
     li {
       list-style: none;
@@ -43,6 +44,13 @@
         // text-align: center;
         // vertical-align: bottom;
       }
+    }
+    .empty-cart {
+      height: 7vh;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
