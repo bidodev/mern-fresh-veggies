@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,17 +6,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 import './cart.styles.scss';
-const Cart = ({ id, name, photo, type, description }) => {
-  const [quantity, setQuantity] = useState(1);
+const Cart = () => {
   const dispatch = useDispatch();
 
   /* Pull out the cart items*/
   const cartItems = useSelector(({ cart }) => cart.cartItems);
-  //INCREASE
-  const increaseItemHandler = (id, name, quantity, farmer) => {
-    console.log(id);
-    setQuantity(quantity + 1);
-    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity: 1, farmer } });
+
+  // INCREASE from the cart
+  const increaseItemHandler = (cartItem) => {
+    const { id, name, quantity, farmer } = cartItem;
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: { id, name, quantity: 1, farmer },
+    });
   };
 
   /* DECREASE Item from the cart */
@@ -57,7 +59,7 @@ const Cart = ({ id, name, photo, type, description }) => {
               <span>
                 <button onClick={() => decreaseItemHandler(cartItem)}>-</button>
                 {cartItem.quantity}
-                <button onClick={() => increaseItemHandler(id)}>+</button>
+                <button onClick={() => increaseItemHandler(cartItem)}>+</button>
               </span>
               <span>Price </span>
               <span>
