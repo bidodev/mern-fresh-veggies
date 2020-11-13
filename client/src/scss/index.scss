@@ -25,6 +25,16 @@ body {
   user-select: none;
   //considering using this color for background, less white
   // background-color: #fafbfd;
+  scroll-behavior: smooth;
+  ///this will hide the scroll bar
+  &::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  /* Optional: show position indicator in orange in case width is > 0 */
+  &::-webkit-scrollbar-thumb {
+    background: #f75d37;
+  }
 }
 
 a {
