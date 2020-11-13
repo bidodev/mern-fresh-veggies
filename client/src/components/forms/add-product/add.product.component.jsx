@@ -13,6 +13,7 @@ const AddForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [type, setType] = useState('');
+  const [price, setPrice] = useState('');
 
   const handleFileInput = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -38,9 +39,10 @@ const AddForm = () => {
 
   return (
     <form className="add-product-form" onSubmit={submitForm}>
-      <h3>Upload a Photo</h3>
+      <h3>Add Product</h3>
       <FormInput name="name" value={name} required label="name" onChange={(event) => setName(event.target.value)} />
       <FormInput name="type" value={type} required label="type" onChange={(event) => setType(event.target.value)} />
+      <FormInput name="type" value={price} required label="price" onChange={(event) => setPrice(event.target.value)} />
       <FormInput
         name="description"
         value={description}

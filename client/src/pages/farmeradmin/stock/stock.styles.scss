@@ -121,3 +121,46 @@
 
   }
 }
+
+
+.add-product__modal {
+  width: 30vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: #f0f0f0;
+  display: flex;
+  padding: 20px;
+  @media only screen and (max-width: 900px) {
+    width: 90vw;
+    top: 20vh;
+    left: 5vw;
+    right: 10vw;
+    bottom: 20vh;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 90vw;
+    height: 90vh;
+    top: 5vh;
+    left: 5vw;
+    right: 10vw;
+    bottom: 5vh;
+    flex-direction: column;
+  }
+  outline: none;
+
+  &--overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(7, 6, 6, 0.925);
+    border: none;
+    z-index: 9999;
+  }
+}

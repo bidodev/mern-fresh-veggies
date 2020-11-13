@@ -1,14 +1,51 @@
-///////////////////////////////////
-.public__farmer__profile {
-  display: flex;
-  height: 60vh;
-  justify-content: space-between;
 
+.public-farmer {
+  display: flex;
+  height: 80vh;
+  justify-content: space-between;
+  //border: 10px solid green;
   &__aside {
-    position: fixed;
-    height: 92vh;
-    border-right: 1px solid black;
+    height: 100%;
+    width: 70vw;
+    //border: 10px solid green;
+    display: flex;
+    
+    &__main{
+      border: 1px solid blue;
+      height: 100%;
+      width: 100%;
+    }
+
+    &__infos {
+      width: 15.7vw;
+      height: 100%;
+      border-right: 1px solid red;
+
+      &__avatar {
+        border-bottom: 1px solid green;
+        height: 40%;
+      }
+
+      &__data {
+        height: 60%;
+      }
+    }
+
   }
+
+  &__main {
+    &__featured {
+      border: 1px solid red;
+      height: 100%;
+      width: 30vw;
+      //background-color: red;
+    }
+
+    &__reviews {
+      border: 1px solid red;
+    }
+  }
+
   &__rate {
     margin: 2vh 0 5vh 5vh;
 
