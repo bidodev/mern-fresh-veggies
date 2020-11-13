@@ -1,33 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { getStockProducts } from 'utils/services';
+
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
-import AddForm from 'components/forms/add-product/add.product.component';
+import AddProduct from 'components/forms/add-product/add.product.component';
 import DisplayModal from 'components/modal/modal.component';
 import ProductList from 'pages/farmeradmin/stock/productlist/ProductList';
+
+import SearchBar from 'pages/farmeradmin/stock/search/SearchBar';
 
 /* Styles */
 import './stock.styles.scss';
 
-const SearchBar = ({ onSearch }) => {
-  const handleChange = (event) => {
-    onSearch(event.target.value);
-  };
 
-  return (
-    <div className="stock-search-wrapper">
-      <div className="search">
-        <input type="search" className="searchTerm" placeholder="What are you looking for?" onChange={handleChange} />
-        <button type="submit" className="searchButton">
-          <Icon icon={['fas', 'search']} />
-        </button>
-      </div>
-    </div>
-  );
-};
 
 const Stock = () => {
   const [isFetchingData, setFetchError] = useState(true);
@@ -35,6 +23,7 @@ const Stock = () => {
 
   /* Filter products */
   const [searchProductField, setFilterProduct] = useState('');
+
   const filterProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchProductField.toLowerCase())
   );
@@ -54,8 +43,8 @@ const Stock = () => {
   const modalConfig = {
     modalStatus: modalStatus,
     closeModal: toggleModal,
-    className: 'authentication-modal',
-    overlayClassName: 'authentication-modal--overlay',
+    className: 'add-product__modal',
+    overlayClassName: 'add-product__modal--overlay',
   };
 
   return (
@@ -69,7 +58,7 @@ const Stock = () => {
 
       <DisplayModal {...modalConfig}>
         {/* Modal Children */}
-        <AddForm />
+        <AddProduct />
         <Icon icon="times" className="fa-times" onClick={toggleModal} />
       </DisplayModal>
     </section>
