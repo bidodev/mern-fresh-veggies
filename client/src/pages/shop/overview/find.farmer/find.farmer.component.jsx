@@ -40,7 +40,7 @@ class FindYourFarmer extends Component {
     setTimeout(() => {
       const newItems = data.slice(slicedItems.length, slicedItems.length + 3);
       this.setState({ slicedItems: slicedItems.concat(newItems) });
-    }, 1000);
+    }, 600);
   };
 
   render() {
