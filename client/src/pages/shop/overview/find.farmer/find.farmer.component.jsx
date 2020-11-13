@@ -58,7 +58,7 @@ class FindYourFarmer extends Component {
                 next={this.fetchMoreData}
                 hasMore={this.state.hasMore}
                 loader={<Spinner />}
-                height="35.8rem"
+                height="35.8rem" // Can be removed to have same layout as instagram
                 className="find-farmer__container__infinite-scroll-bar"
               >
                 {this.state.slicedItems.map((farmer) => (
