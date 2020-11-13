@@ -1,6 +1,9 @@
 .find-farmer {
-  padding: 5vh;
+  height: 100vh;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   @media (max-width: 650px) {
     padding: 0;
   }
