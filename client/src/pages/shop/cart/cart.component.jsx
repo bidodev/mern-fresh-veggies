@@ -57,11 +57,15 @@ const Cart = () => {
             <li>
               <span>{cartItem.name}</span>
               <span>
-                <button onClick={() => decreaseItemHandler(cartItem)}>-</button>
+                <button className="decrease-button" onClick={() => decreaseItemHandler(cartItem)}>
+                  -
+                </button>
                 {cartItem.quantity}
-                <button onClick={() => increaseItemHandler(cartItem)}>+</button>
+                <button className="increase-button" onClick={() => increaseItemHandler(cartItem)}>
+                  +
+                </button>
               </span>
-              <span>Price </span>
+              <span> $ </span>
               <span>
                 <FontAwesomeIcon
                   icon={['fas', 'times']}
