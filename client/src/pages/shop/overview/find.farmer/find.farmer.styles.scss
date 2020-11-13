@@ -1,6 +1,9 @@
 .find-farmer {
-  padding: 5vh;
+  height: 100vh;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   @media (max-width: 650px) {
     padding: 0;
   }
@@ -23,6 +26,17 @@
       justify-content: space-evenly;
       align-items: center;
       flex-wrap: wrap;
+      &:hover {
+        overflow-y: scroll;
+      }
+      &::-webkit-scrollbar {
+        width: 4px; /* Remove scrollbar space */
+        background: transparent; /* Optional: just make scrollbar invisible */
+      }
+      /* Optional: show position indicator in black in case width is > 0 */
+      &::-webkit-scrollbar-thumb {
+        background: #00000093;
+      }
     }
 
     &__item {
@@ -119,7 +133,9 @@
 }
 
 .scrollbar-fix {
-  display: flex;
-  justify-content: space-evenly;
-  overflow: hidden;
+  &:hover {
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
 }

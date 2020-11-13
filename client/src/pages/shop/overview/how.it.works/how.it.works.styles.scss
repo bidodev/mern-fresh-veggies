@@ -1,9 +1,13 @@
 .how-it-works {
+  height: fit-content;
   &__icons-section {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     &--header {
       text-align: center;
       font-size: 2rem;
-      margin: 2vh 0;
     }
 
     &__box-container {
