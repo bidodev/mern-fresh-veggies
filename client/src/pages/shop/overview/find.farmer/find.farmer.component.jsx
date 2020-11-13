@@ -52,36 +52,38 @@ class FindYourFarmer extends Component {
           <Spinner />
         ) : (
           <div className="find-farmer__container">
-            <InfiniteScroll
-              dataLength={this.state.slicedItems.length}
-              next={this.fetchMoreData}
-              hasMore={this.state.hasMore}
-              loader={<Spinner />}
-              height="35.8rem"
-              className="find-farmer__container__infinite-scroll-bar"
-            >
-              {this.state.slicedItems.map((farmer) => (
-                <Link key={farmer._id} to={`${this.props.match.url}/farmer/${farmer._id}`}>
-                  <li className="find-farmer__container__item">
-                    <div className="find-farmer__container__item__bg-image-container">
-                      <img src="/images/farm-1.jpg" alt="background" />
-                    </div>
-                    <div className="find-farmer__container__item__avatar-container">
-                      <img
-                        src={`/uploads/${farmer.name.toLowerCase()}/images/profile/${farmer.images.profile}`}
-                        alt="farmer-avatar"
-                      />
-                    </div>
-                    <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
-                    <div className="find-farmer__container__item__location">
-                      <div className="find-farmer__container__item__location--city">Berlin</div>
-                      <div className="find-farmer__container__item__location--country">Germany</div>
-                    </div>
-                    <div className="find-farmer__container__item--description">{farmer.description}</div>
-                  </li>
-                </Link>
-              ))}
-            </InfiniteScroll>
+            <div className="scrollbar-fix">
+              <InfiniteScroll
+                dataLength={this.state.slicedItems.length}
+                next={this.fetchMoreData}
+                hasMore={this.state.hasMore}
+                loader={<Spinner />}
+                height="35.8rem"
+                className="find-farmer__container__infinite-scroll-bar"
+              >
+                {this.state.slicedItems.map((farmer) => (
+                  <Link key={farmer._id} to={`${this.props.match.url}/farmer/${farmer._id}`}>
+                    <li className="find-farmer__container__item">
+                      <div className="find-farmer__container__item__bg-image-container">
+                        <img src="/images/farm-1.jpg" alt="background" />
+                      </div>
+                      <div className="find-farmer__container__item__avatar-container">
+                        <img
+                          src={`/uploads/${farmer.name.toLowerCase()}/images/profile/${farmer.images.profile}`}
+                          alt="farmer-avatar"
+                        />
+                      </div>
+                      <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
+                      <div className="find-farmer__container__item__location">
+                        <div className="find-farmer__container__item__location--city">Berlin</div>
+                        <div className="find-farmer__container__item__location--country">Germany</div>
+                      </div>
+                      <div className="find-farmer__container__item--description">{farmer.description}</div>
+                    </li>
+                  </Link>
+                ))}
+              </InfiniteScroll>
+            </div>
           </div>
         )}
       </section>
