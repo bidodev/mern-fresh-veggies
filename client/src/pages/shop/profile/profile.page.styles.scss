@@ -1,14 +1,78 @@
-///////////////////////////////////
-.public__farmer__profile {
-  display: flex;
-  height: 60vh;
-  justify-content: space-between;
+.super-test{
+  //border: 10px solid blue;
+  margin-top: 8vh;
+  padding: 1rem 5rem;
+  background-color: #f9f9f9;
+}
 
+.public-farmer {
+  display: flex;
+  height: 80vh;
+  justify-content: space-between;
+  //border: 10px solid green;
+  background-color: #fff;
   &__aside {
-    position: fixed;
-    height: 92vh;
-    border-right: 1px solid black;
+    height: 100%;
+    width: 70vw;
+    //border: 10px solid green;
+    display: flex;
+    
+    &__main{
+      //border: 1px solid blue;
+      height: 100%;
+      width: 100%;
+    }
+    
+    &__infos {
+      width: 20vw;
+      height: 100%;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 8rem 0;
+
+      &__avatar {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        height: 40%;
+        padding: 0 2rem;
+        h2 {
+          color: #3c6142;
+          font-weight: 300;
+        }
+      }
+
+      &__data {
+        height: 60%;
+        padding: 2rem;
+
+          h2 {
+            color: #3c6142;
+            font-weight: 300;
+          }
+      }
+    }
+
   }
+
+  &__main {
+    
+    &__featured {
+
+      height: 60%;
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      //background-color: red;
+      
+    }
+
+    &__reviews {
+      //height: 60%;
+      width: 100%;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      height: 40%;
+
+    }
+  }
+
   &__rate {
     margin: 2vh 0 5vh 5vh;
 
@@ -67,4 +131,39 @@
   .gallery-img {
     width: 100%;
   }
+}
+
+.public-farmer__main__right {
+  //border: 1px solid red;
+  width: 20vw;
+  overflow-y: scroll;
+
+    h2 {
+      color: #3c6142;
+      font-weight: 300;
+      padding-top: 2rem;
+    }
+
+    hr {
+      margin: 0 auto;
+      width: 100%;
+      border: 0;
+      height: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .new-product{
+      //border: 1px solid red;
+      margin: 0 auto;
+      height: 15rem;
+      width: 15rem;
+      margin-bottom: 5rem;
+
+      img {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
 }

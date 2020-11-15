@@ -21,7 +21,19 @@
   .cart-list {
     height: 50vh;
     margin: 3vh 10vw;
-    overflow-y: scroll;
+    overflow-y: hidden;
+    &:hover {
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
+    &::-webkit-scrollbar {
+      width: 4px; /* Remove scrollbar space */
+      background: transparent; /* Optional: just make scrollbar invisible */
+    }
+    /* Optional: show position indicator in black in case width is > 0 */
+    &::-webkit-scrollbar-thumb {
+      background: #00000093;
+    }
 
     li {
       list-style: none;
@@ -43,6 +55,17 @@
         align-items: center;
         // text-align: center;
         // vertical-align: bottom;
+      }
+      .decrease-button,
+      .increase-button {
+        font-size: 1.5rem;
+        border: none;
+        background-color: transparent;
+        margin: 0 2rem;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
       }
     }
     .empty-cart {

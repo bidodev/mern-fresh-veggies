@@ -1,17 +1,17 @@
 .shop-overview {
   width: 100%;
+  height: 100vh;
   padding-top: 8vh;
 
   &__banner-container {
-    width: 100%;
-    height: 55vh;
     position: relative;
-    &--img {
-      width: 100%;
-      height: 55vh;
-      opacity: 0.9;
-      object-fit: cover;
-    }
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    background-attachment: fixed;
+    background-image: linear-gradient(rgba(#000, 0.1), rgba(#000, 0.2)), url('banner-small.jpg');
+    background-size: cover;
+    background-position: center;
 
     &--header {
       text-align: center;
@@ -30,6 +30,7 @@
   }
 
   &__text-container {
+    margin-top: 5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
