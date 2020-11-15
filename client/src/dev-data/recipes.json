@@ -257,7 +257,7 @@
     "_id": "5",
     "recipeName": "tomato soup",
     "coverImage": "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/The-Best-Ever-Tomato-Soup_EXPS_THSO18_222724_D03_06_5b.jpg",
-    "portion": "4",
+    "portion": "4 servings",
     "ingredients": [
       {
         "name": "onion",
@@ -341,7 +341,7 @@
     "_id": "7",
     "recipeName": "vegetable palets",
     "coverImage": "https://www.ptitchef.com/imgupl/recipe/palets-de-legumes-faciles-et-rapides--md-456174p709293.jpg",
-    "portion": "4",
+    "portion": "4 servings",
     "ingredients": [
       {
         "name": "zucchini",
@@ -393,7 +393,7 @@
     "_id": "8",
     "recipeName": "grilled vegetable salad",
     "coverImage": "https://img.mesrecettesfaciles.fr/wp-content/uploads/2015/07/shutterstock_205394386-1000x500.jpg",
-    "portion": "6",
+    "portion": "6 servings",
     "ingredients": [
       {
         "name": "eggplant",
