@@ -7,53 +7,48 @@ import './profile.page.styles.scss';
 
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
-import Recipes from 'components/recipes/recipes.component';
+import Recipes from 'pages/shop/profile/recipes/recipes.component';
 import PhotosGallery from 'pages/shop/profile/photo.gallery/PhotosGallery';
 import FarmerProducts from 'pages/shop/profile/farmer.products/farmer.products.component';
 
-const Profile = ({name}) => {
+const Profile = ({ name }) => {
   return (
     <>
       <header className="public-farmer">
         <aside className="public-farmer__aside">
           <div className="public-farmer__aside__infos">
             <div className="public-farmer__aside__infos__avatar">
-
-            <h2>{name}</h2>
+              <h2>{name}</h2>
             </div>
             <div className="public-farmer__aside__infos__data">
               <h2>About Me</h2>
               <p className="public-farmer__aside__infos__paragraph">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis neque aspernatur in qui temporibus veritatis unde, culpa porro? Nemo, magnam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, fugiat? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Omnis neque aspernatur in qui temporibus veritatis unde, culpa porro?
+                Nemo, magnam.
               </p>
-
             </div>
           </div>
           <div className="public-farmer__aside__main">
-            <div className="public-farmer__main__featured">
-              Hello Gallery
-            </div>
+            <div className="public-farmer__main__featured">Hello Gallery</div>
 
-            <div className="public-farmer__main__reviews">
-              Hello Testimonials
-            </div>
+            <div className="public-farmer__main__reviews">Hello Testimonials</div>
           </div>
         </aside>
 
         <main className="public-farmer__main__right">
           <h2>New Products</h2>
-          <hr/>
+          <hr />
 
           <div className="new-product">
-            <img src="/images/c.png" alt=""/>
+            <img src="/images/c.png" alt="" />
           </div>
           <div className="new-product">
-            <img src="/images/b.png" alt=""/>
+            <img src="/images/b.png" alt="" />
           </div>
           <div className="new-product">
-            <img src="/images/a.png" alt=""/>
+            <img src="/images/a.png" alt="" />
           </div>
-
         </main>
       </header>
     </>

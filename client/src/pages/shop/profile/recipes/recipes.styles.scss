@@ -1,0 +1,50 @@
+.recipes-section {
+  &__main-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #eee;
+  }
+}
+
+.recipes__list {
+  list-style: none;
+
+  &__card {
+    width: 40rem;
+    margin: 1vh;
+    padding: 2vh;
+    border: 1px solid black;
+
+    &__name {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &__img-container {
+      width: 15rem;
+      height: 10rem;
+      &--img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__portion {
+      font-style: italic;
+    }
+
+    &__ingredients {
+      border: 1px solid red;
+      &__list {
+        list-style: none;
+      }
+    }
+
+    &__preparation {
+      border: 1px solid blue;
+    }
+  }
+}
