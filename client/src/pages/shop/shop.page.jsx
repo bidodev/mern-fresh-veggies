@@ -39,13 +39,13 @@ const Shop = ({ match }) => {
   const cartNum = useSelector(({ cart }) => cart.cartQuantity);
   const dispatch = useDispatch();
 
-  /* Hidde or show cart */
+  /* Hide or show cart */
   const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN' });
 
   return (
     <>
       <Authentication match={match} />
-      <ShopNavBar>
+      <ShopNavBar match={match}>
         <li>
           <Icon icon={['fas', 'shopping-cart']} className="fa-shopping-cart" onClick={toggleModal} />
         </li>

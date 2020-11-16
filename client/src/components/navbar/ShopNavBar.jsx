@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from 'components/modal/modal.component';
 
 import './ShopNavBar.styles.scss';
-const ShopNavBar = ({ children }) => {
+const ShopNavBar = ({ match, children }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.user);
   const isAccountModalStatus = useSelector((state) => state.modal.show);
-  const dispatch = useDispatch();
   const logOutUser = () => {
     dispatch({ type: 'LOGOUT_USER' });
     dispatch({ type: 'TOGGLE_MODAL' });
+    //if we logout from the '/farmer/admin' we send directly tot the landing page '/'
+    match.path === '/farmer/admin' && history.push('/');
   };
   const toggleAuthentication = () => dispatch({ type: 'SHOW_AUTH' });
   const toggleModal = () => dispatch({ type: 'TOGGLE_MODAL' });
@@ -47,7 +51,7 @@ const ShopNavBar = ({ children }) => {
                 overlayClassName="account-overlay"
               >
                 <li>
-                  <div className="shop__navbar__account__email">E-mail</div>
+                  <div className="shop__navbar__account__email">{isLoggedIn.data.email}</div>
                 </li>
                 <li>
                   <div className="shop__navbar__account__logout" onClick={logOutUser}>
