@@ -9,7 +9,7 @@ import './profile.page.styles.scss';
 import Spinner from 'components/UI/spinner/spinner.component';
 import Recipes from 'pages/shop/profile/recipes/recipes.component';
 import PhotosGallery from 'pages/shop/profile/photo.gallery/PhotosGallery';
-import FarmerProducts from 'pages/shop/profile/farmer.products/farmer.products.component';
+import FarmerProducts from 'pages/shop/profile/farmer.products/FarmerProducts';
 
 const Profile = ({ name, products }) => {
   console.log(products);
