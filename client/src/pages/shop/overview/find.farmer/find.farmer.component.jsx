@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 /* Styles */
 import './find.farmer.styles.scss';
@@ -22,9 +24,39 @@ const FindYourFarmer = ({ match }) => {
   }, []);
   console.log(farmers);
 
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   return (
     <section className="find-farmer">
       <h2 className="find-farmer__header">MEET OUR VENDORS</h2>
+      <Carousel responsive={responsive}>
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+        <div>Item 7</div>
+        <div>Item 8</div>
+      </Carousel>
       {isLoading ? (
         <Spinner />
       ) : (
