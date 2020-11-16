@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 import './cart.styles.scss';
-const Cart = () => {
+const Cart = ({ match }) => {
+  console.log(match.path);
   const dispatch = useDispatch();
 
   /* Pull out the cart items*/
@@ -33,13 +34,14 @@ const Cart = () => {
     dispatch({ type: 'CLEAR_CART', payload: cartItemToRemove });
   };
 
-  /* Hidde or show cart */
+  /* Hide or show cart */
   const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN' });
-
+  // here we need to reverse the logic with the modal
+  const closeModal = () => (match.path === '/shop/cart' ? false : dispatch({ type: 'TOGGLE_CART_HIDDEN' }));
   return (
     <div className="cart-edit">
       <Link to={`/shop`}>
-        <CustomButton onClick={toggleModal}>
+        <CustomButton onClick={closeModal}>
           <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
           Back to shopping
         </CustomButton>

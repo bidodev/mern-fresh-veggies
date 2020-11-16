@@ -58,11 +58,7 @@ const Shop = ({ match }) => {
           {/* The Cart Modal is the same as the edit your cart  */}
           <Cart toggleCartModal={toggleModal} match={match} />
           <Link to="/shop/cart">
-            <CustomButton
-              disabled={cartItems.length <= 0 ? true : false}
-              type="submit"
-              onClick={toggleModal}
-            >
+            <CustomButton disabled={cartItems.length <= 0 ? true : false} type="submit" onClick={toggleModal}>
               Edit shopping cart
             </CustomButton>
           </Link>
