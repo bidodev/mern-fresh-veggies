@@ -14,6 +14,9 @@ const AddForm = () => {
   const [description, setDescription] = useState('');
   const [type, setType] = useState('');
   const [price, setPrice] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [unity, setUnity] = useState('');
+
 
   const handleFileInput = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -27,7 +30,10 @@ const AddForm = () => {
     data.append('description', description);
     data.append('update', 'products');
     data.append('type', type);
-    data.append('photo', file)
+    data.append('price', price);
+    data.append('quantity', quantity);
+    data.append('unity', unity);
+    data.append('photo', file);
 
     axios
       .post('/farmers/products', data)
@@ -41,7 +47,11 @@ const AddForm = () => {
     <form className="add-product-form" onSubmit={submitForm}>
       <h3>Add Product</h3>
       <FormInput name="name" value={name} required label="name" onChange={(event) => setName(event.target.value)} />
-      <FormInput name="type" value={type} required label="type" onChange={(event) => setType(event.target.value)} />
+      <select className="form-control" onChange={(event) => setType(event.target.value)}>
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="others">Others</option>
+      </select>
       <FormInput name="type" value={price} required label="price" onChange={(event) => setPrice(event.target.value)} />
       <FormInput
         name="description"
@@ -50,7 +60,17 @@ const AddForm = () => {
         label="description"
         onChange={(event) => setDescription(event.target.value)}
       />
-
+      <FormInput
+        name="quantity"
+        value={quantity}
+        required
+        label="quantity"
+        onChange={(event) => setQuantity(event.target.value)}
+      />
+      <select className="form-control" onChange={(event) => setUnity(event.target.value)}>
+        <option value="fruits">Kg</option>
+        <option value="vegetables">Unity</option>
+      </select>
       <input name="file" type="file" onChange={handleFileInput} />
       <div className="buttons">
         <CustomButton type="submit" style={{ width: '10rem' }}>
