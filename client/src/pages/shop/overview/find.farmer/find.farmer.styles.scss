@@ -13,12 +13,11 @@
 *** */
 
 .carousel-container {
-  border: 2px solid red;
+  border: 1px solid transparent; // WTF: Don't work without border
   &__item {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px dashed blue;
   }
 }
 
