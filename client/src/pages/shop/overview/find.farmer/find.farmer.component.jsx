@@ -10,6 +10,10 @@ import './find.farmer.styles.scss';
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
 
+/* Ion Icons Imports */
+import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
+import IosArrowBack from 'react-ionicons/lib/IosArrowBack';
+
 const FindYourFarmer = ({ match }) => {
   const [isLoading, setStatusLoading] = useState(true);
   const [farmers, setFarmers] = useState([]);
@@ -25,29 +29,45 @@ const FindYourFarmer = ({ match }) => {
   console.log(farmers);
 
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 3, // items displayed.
+      slidesToSlide: 1, // new items on next slide.
+      partialVisibilityGutter: 40,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 2,
+      slidesToSlide: 1,
+      partialVisibilityGutter: 30,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
+      slidesToSlide: 1,
+      partialVisibilityGutter: 30,
     },
   };
 
   return (
     <section className="find-farmer">
       <h2 className="find-farmer__header">MEET OUR VENDORS</h2>
-      <Carousel responsive={responsive}>
+      <Carousel
+        swipeable // optional
+        draggable // optional
+        minimumTouchDrag={80} // min distance to swipe and drag.
+        showDots={false} // show or hide dots on bottom.
+        responsive={responsive}
+        containerClass="container"
+        className="carousel-container"
+        itemClass="carousel-container__item"
+        ssr={false} // means to render carousel on server-side.
+        infinite={true} // connect last and first items.
+        keyBoardControl // can slide with keyboard arrows.
+        // arrows
+        // customLeftArrow={<IosArrowBack />}
+        // customRightArrow={<IosArrowForward />}
+      >
         <div>Item 1</div>
         <div>Item 2</div>
         <div>Item 3</div>

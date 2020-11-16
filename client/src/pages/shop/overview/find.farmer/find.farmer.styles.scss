@@ -125,3 +125,12 @@
     }
   }
 }
+
+// for test
+.carousel-container {
+  border: 1px solid red;
+  &__item {
+    height: 8vh;
+    border: 1px solid blue;
+  }
+}
