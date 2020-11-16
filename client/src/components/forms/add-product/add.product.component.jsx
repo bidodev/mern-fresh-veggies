@@ -15,7 +15,7 @@ const AddForm = () => {
   const [type, setType] = useState('');
   const [price, setPrice] = useState('');
   const [quantity, setQuantity] = useState('');
-  const [unity, setUnity] = useState('');
+  const [unity, setUnity] = useState('kilogram');
 
 
   const handleFileInput = (event) => {
@@ -34,6 +34,8 @@ const AddForm = () => {
     data.append('quantity', quantity);
     data.append('unity', unity);
     data.append('photo', file);
+
+    console.log(data)
 
     axios
       .post('/farmers/products', data)
@@ -68,8 +70,8 @@ const AddForm = () => {
         onChange={(event) => setQuantity(event.target.value)}
       />
       <select className="form-control" onChange={(event) => setUnity(event.target.value)}>
-        <option value="fruits">Kg</option>
-        <option value="vegetables">Unity</option>
+        <option value="kg">Kilogram</option>
+        <option value="unity">Unity</option>
       </select>
       <input name="file" type="file" onChange={handleFileInput} />
       <div className="buttons">
