@@ -1,5 +1,18 @@
+/* ******** SCROLL BAR STYLE ***
+:hover {
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 4px; // Remove scroll bar space 
+  background: transparent; // Optional: just make scroll bar invisible 
+}
+// Optional: show position indicator in black in case width is > 0 
+::-webkit-scrollbar-thumb {
+  background: #00000093;
+}
+*** */
+
 .find-farmer {
-  height: 100vh;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -10,6 +23,7 @@
 
   &__header {
     text-align: center;
+    margin: 5rem 0 2rem;
     padding: 2rem;
     font-size: 2rem;
   }
@@ -18,26 +32,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-
-    &__infinite-scroll-bar {
-      width: 80vw;
-      padding: 1vh;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      // flex-wrap: wrap;
-      &:hover {
-        overflow-y: scroll;
-      }
-      &::-webkit-scrollbar {
-        width: 4px; /* Remove scrollbar space */
-        background: transparent; /* Optional: just make scrollbar invisible */
-      }
-      /* Optional: show position indicator in black in case width is > 0 */
-      &::-webkit-scrollbar-thumb {
-        background: #00000093;
-      }
-    }
 
     &__item {
       width: 28rem;
