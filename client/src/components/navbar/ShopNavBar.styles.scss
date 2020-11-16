@@ -47,7 +47,7 @@
 
 .account-modal {
   height: 10vh;
-  width: 7vw;
+  width: 1-vw;
   position: fixed;
   top: 5vh;
   right: 3.5vw;
@@ -58,6 +58,10 @@
   outline: none;
   padding: 20px;
   z-index: 20000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   animation: drop-down 1s normal both;
   li {
     list-style: none;
@@ -83,7 +87,13 @@
   }
 }
 .account-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   background-color: transparent;
+  z-index: 9999;
 }
 
 .add__product_wrapper {
