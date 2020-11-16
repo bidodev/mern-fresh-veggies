@@ -45,7 +45,46 @@
   opacity: 0.7;
 }
 
-
+.account-modal {
+  height: 10vh;
+  width: 7vw;
+  position: fixed;
+  top: 5vh;
+  right: 3.5vw;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  z-index: 20000;
+  animation: drop-down 1s normal both;
+  li {
+    list-style: none;
+    height: 3rem;
+  }
+  // transform: translateY(0);
+  // transition: all 0.2s ease;
+  /* Drop-down animation */
+  @keyframes drop-down {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      top: 7vh;
+      opacity: 1;
+    }
+  }
+  @media (max-width: 800px) {
+    width: 70vw;
+  }
+}
+.account-overlay {
+  background-color: transparent;
+}
 
 .add__product_wrapper {
   height: 100%;

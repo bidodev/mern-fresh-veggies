@@ -3,19 +3,24 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Modal from 'components/modal/modal.component';
 
 import './ShopNavBar.styles.scss';
 const ShopNavBar = ({ children }) => {
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.user);
+  const isAccountModalStatus = useSelector((state) => state.modal.show);
   const dispatch = useDispatch();
-  const logOutUser = () => dispatch({ type: 'LOGOUT_USER' });
+  const logOutUser = () => {
+    dispatch({ type: 'LOGOUT_USER' });
+    dispatch({ type: 'TOGGLE_MODAL' });
+  };
   const toggleAuthentication = () => dispatch({ type: 'SHOW_AUTH' });
-
+  const toggleModal = () => dispatch({ type: 'TOGGLE_MODAL' });
   return (
     <>
       <nav className="shop__navbar">
-        {/* Our Logo will be avaiable in the whole application, so it stays here */}
+        {/* Our Logo will be available in the whole application, so it stays here */}
         <Link to="/">
           <div className="shop__navbar__logo">Veggies</div>
         </Link>
@@ -26,28 +31,36 @@ const ShopNavBar = ({ children }) => {
           </HashLink>
         ) : null}
         <ul className="shop__navbar__account">
-          {/* The childrens can be different upon to the parent, they are sent by the parent */}
+          {/* The children can be different upon to the parent, they are sent by the parent */}
           {children}
-          {/* {match.path === '/shop' ? 'How does it work?' : null} */}
-          {/* SignIN will be avaiable in the whole application, so it stays here */}
+          {/* SignIN will be available in the whole application, so it stays here */}
+          {/* If it is loggenIn, then the account icon appears with on click --> Logout */}
           {isLoggedIn ? (
             <>
               <li>
-                <FontAwesomeIcon icon={['far', 'user-circle']} className="fa-user-circle" />
+                <FontAwesomeIcon icon={['far', 'user-circle']} className="fa-user-circle" onClick={toggleModal} />
               </li>
-              <li>
-                <div className="shop__navbar__account__logout" onClick={logOutUser}>
-                  LOG OUT
-                </div>
-              </li>
+              <Modal
+                modalStatus={isAccountModalStatus}
+                closeModal={toggleModal}
+                className="account-modal"
+                overlayClassName="account-overlay"
+              >
+                <li>
+                  <div className="shop__navbar__account__email">E-mail</div>
+                </li>
+                <li>
+                  <div className="shop__navbar__account__logout" onClick={logOutUser}>
+                    LOG OUT
+                  </div>
+                </li>
+              </Modal>
             </>
           ) : (
             <li>
-              <Link to="#">
-                <div className="shop__navbar__account__login" onClick={toggleAuthentication}>
-                  LOGIN
-                </div>
-              </Link>
+              <div className="shop__navbar__account__login" onClick={toggleAuthentication}>
+                LOGIN
+              </div>
             </li>
           )}
         </ul>
