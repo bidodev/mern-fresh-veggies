@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './ShopNavBar.styles.scss';
-const ShopNavBar = ({ match, children }) => {
-
+const ShopNavBar = ({ children }) => {
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.user);
-
   const dispatch = useDispatch();
   const logOutUser = () => dispatch({ type: 'LOGOUT_USER' });
   const toggleAuthentication = () => dispatch({ type: 'SHOW_AUTH' });
@@ -20,10 +19,16 @@ const ShopNavBar = ({ match, children }) => {
         <Link to="/">
           <div className="shop__navbar__logo">Veggies</div>
         </Link>
+        {/* here it did not work with match.path because '/shop' is common with '/shop/cart */}
+        {window.location.pathname === '/shop' ? (
+          <HashLink to="#how-we-work" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+            <p className="shop__navbar__link">How we work</p>
+          </HashLink>
+        ) : null}
         <ul className="shop__navbar__account">
           {/* The childrens can be different upon to the parent, they are sent by the parent */}
           {children}
-
+          {/* {match.path === '/shop' ? 'How does it work?' : null} */}
           {/* SignIN will be avaiable in the whole application, so it stays here */}
           {isLoggedIn ? (
             <>

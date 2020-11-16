@@ -7,7 +7,6 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 import './cart.styles.scss';
 const Cart = ({ match }) => {
-  console.log(match.path);
   const dispatch = useDispatch();
 
   /* Pull out the cart items*/
