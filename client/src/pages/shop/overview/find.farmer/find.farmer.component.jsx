@@ -30,15 +30,15 @@ const FindYourFarmer = ({ match }) => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1450 },
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1450, min: 920 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 920, min: 0 },
       items: 1,
     },
   };
@@ -66,7 +66,6 @@ const FindYourFarmer = ({ match }) => {
             minimumTouchDrag={80} // min distance to swipe and drag.
             showDots={false} // show or hide dots on bottom.
             responsive={responsive} // responsive breakpoints
-            containerClass="container"
             className="carousel-container"
             itemClass="carousel-container__item"
             ssr={false} // means to render carousel on server-side.
