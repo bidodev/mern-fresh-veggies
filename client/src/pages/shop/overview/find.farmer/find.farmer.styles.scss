@@ -128,9 +128,8 @@
 
 // for test
 .carousel-container {
-  border: 1px solid red;
+  border: 2px solid red;
   &__item {
-    height: 8vh;
-    border: 1px solid blue;
+    border: 2px dashed blue;
   }
 }
