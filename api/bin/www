@@ -74,9 +74,9 @@ let urlMongoDB = process.env.DATABASE_ATLAS.replace(
 );
 
 /* In development use local connection to mongoDB */
-if (process.env.NODE_ENV === 'development') {
-  urlMongoDB = process.env.DATABASE_LOCALHOST;
-}
+// if (process.env.NODE_ENV === 'development') {
+//   urlMongoDB = process.env.DATABASE_LOCALHOST;
+// }
 
 mongoose
   .connect(urlMongoDB, {
@@ -87,7 +87,7 @@ mongoose
   })
   .then(() => {
     console.log(
-      process.env.NODE_ENV === 'development'
+      urlMongoDB.includes('localhost')
         ? '🚀 Connected to mongodb://localhost:27017'
         : '🚀 Connected to Atlas MongoDB'
     );
