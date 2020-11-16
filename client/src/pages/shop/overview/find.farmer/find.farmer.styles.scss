@@ -12,6 +12,16 @@
 }
 *** */
 
+.carousel-container {
+  border: 2px solid red;
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed blue;
+  }
+}
+
 .find-farmer {
   list-style: none;
   display: flex;
@@ -123,13 +133,5 @@
         }
       }
     }
-  }
-}
-
-// for test
-.carousel-container {
-  border: 2px solid red;
-  &__item {
-    border: 2px dashed blue;
   }
 }
