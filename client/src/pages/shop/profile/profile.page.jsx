@@ -11,7 +11,8 @@ import Recipes from 'pages/shop/profile/recipes/recipes.component';
 import PhotosGallery from 'pages/shop/profile/photo.gallery/PhotosGallery';
 import FarmerProducts from 'pages/shop/profile/farmer.products/farmer.products.component';
 
-const Profile = ({ name }) => {
+const Profile = ({ name, products }) => {
+  console.log(products);
   return (
     <>
       <header className="public-farmer">
@@ -19,6 +20,8 @@ const Profile = ({ name }) => {
           <div className="public-farmer__aside__infos">
             <div className="public-farmer__aside__infos__avatar">
               <h2>{name}</h2>
+              <h3>Location</h3>
+              <p>Berlin - Germany</p>
             </div>
             <div className="public-farmer__aside__infos__data">
               <h2>About Me</h2>
@@ -39,16 +42,16 @@ const Profile = ({ name }) => {
         <main className="public-farmer__main__right">
           <h2>New Products</h2>
           <hr />
-
-          <div className="new-product">
-            <img src="/images/c.png" alt="" />
-          </div>
-          <div className="new-product">
-            <img src="/images/b.png" alt="" />
-          </div>
-          <div className="new-product">
-            <img src="/images/a.png" alt="" />
-          </div>
+          {/* should be filtered by data add and limit to 5 */}
+          {products
+            .filter((product, index) => index < 5)
+            .map((product) => (
+              <div className="new-product">
+                <p>{product.name}</p>
+                <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="" />
+                <p>EUR: {product.price} - {product.unity}</p>
+              </div>
+            ))}
         </main>
       </header>
     </>
@@ -63,7 +66,7 @@ const HeaderFarmerProfile = ({ name, images }) => {
       <header className="header-profile">
         <img className="header-profile__cover" src={`/images/farm-1.jpg`} alt="cover" />
         <div className="header-profile__avatar">
-          <img src={`${'/images/farm-3.jpg'}`} alt="farmer-avatar" />
+          <img src={`/uploads/${name.toLowerCase()}/images/profile/${images.profile}`} alt="farmer-avatar" />
         </div>
       </header>
     </>
@@ -93,7 +96,7 @@ function ProfilePage() {
       <>
         {open ? (
           <div className="super-test">
-            <HeaderFarmerProfile />
+            <HeaderFarmerProfile {...farmer} />
             <Profile {...farmer} />
             {gallery ? <PhotosGallery {...farmer} /> : null}
             {products ? <FarmerProducts farmer={farmer} /> : null}

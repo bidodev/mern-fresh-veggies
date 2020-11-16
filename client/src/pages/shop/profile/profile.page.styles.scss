@@ -31,15 +31,24 @@
 
       &__avatar {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        height: 40%;
+        height: 30%;
         padding: 0 2rem;
+
         h2 {
+          font-size: 2.2rem;
+          color: #405c45;
+          font-weight: 500;
+        }
+        h3 {
+          margin-top: 3rem;
           color: #3c6142;
           font-weight: 300;
+          text-transform: uppercase;
         }
       }
 
       &__data {
+        
         height: 60%;
         padding: 2rem;
 
@@ -53,9 +62,9 @@
   }
 
   &__main {
+
     
     &__featured {
-
       height: 60%;
       width: 100%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -134,14 +143,16 @@
 }
 
 .public-farmer__main__right {
-  //border: 1px solid red;
-  width: 20vw;
+  width: 25%;
   overflow-y: scroll;
+
+
 
     h2 {
       color: #3c6142;
       font-weight: 300;
       padding-top: 2rem;
+      //position: fixed;
     }
 
     hr {
@@ -166,4 +177,15 @@
         object-fit: cover;
       }
     }
+}
+
+.public-farmer__main__right {
+  &::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  /* Optional: show position indicator in black in case width is > 0 */
+  &::-webkit-scrollbar-thumb {
+    background: #9b9b9b93;
+  }
 }
