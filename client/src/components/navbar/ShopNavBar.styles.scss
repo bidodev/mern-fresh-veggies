@@ -22,9 +22,9 @@
   }
   &__account {
     list-style: none;
-    width: 12rem;
+    width: 6rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-right: 5vw;
     .fa-shopping-cart,
@@ -45,7 +45,56 @@
   opacity: 0.7;
 }
 
-
+.account-modal {
+  height: 10vh;
+  width: 1-vw;
+  position: fixed;
+  top: 5vh;
+  right: 3.5vw;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  z-index: 20000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  animation: drop-down 1s normal both;
+  li {
+    list-style: none;
+    height: 3rem;
+  }
+  // transform: translateY(0);
+  // transition: all 0.2s ease;
+  /* Drop-down animation */
+  @keyframes drop-down {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      top: 7vh;
+      opacity: 1;
+    }
+  }
+  @media (max-width: 800px) {
+    width: 70vw;
+  }
+}
+.account-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: transparent;
+  z-index: 9999;
+}
 
 .add__product_wrapper {
   height: 100%;
