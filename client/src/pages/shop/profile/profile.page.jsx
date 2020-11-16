@@ -95,9 +95,9 @@ function ProfilePage() {
           <div className="super-test">
             <HeaderFarmerProfile />
             <Profile {...farmer} />
+            {gallery ? <PhotosGallery {...farmer} /> : null}
             {products ? <FarmerProducts farmer={farmer} /> : null}
             {recipes ? <Recipes /> : null}
-            {gallery ? <PhotosGallery {...farmer} /> : null}
           </div>
         ) : (
           <h3 style={{ paddingTop: '50vh' }}>This store is closed at the moment</h3>

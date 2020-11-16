@@ -50,15 +50,7 @@
         "quantity": "2 spoons"
       }
     ],
-    "preparation": [
-      "Preheat the oven for 190˚C.",
-      "Slice the eggplant, tomatoes, squash, and zucchini into approximately ¹⁄₁₆-inch (1-mm) rounds, then set aside.",
-      "Make the sauce: Heat the olive oil in a 12-inch (30-cm) oven-safe pan over medium-high heat. Sauté the onion, garlic, and bell peppers until soft, about 10 minutes. Season with salt and pepper, then add the crushed tomatoes. Stir until the ingredients are fully incorporated. Remove from heat, then add the basil. Stir once more, then smooth the surface of the sauce with a spatula.",
-      "Arrange the sliced veggies in alternating patterns, on top of the sauce from the outer edge to the middle of the pan. Season with salt and pepper.",
-      "Make the herb seasoning: In a small bowl, mix together the basil, garlic, parsley, thyme, salt, pepper, and olive oil. Spoon the herb seasoning over the vegetables.",
-      "Cover the pan with foil and bake for 40 minutes. Uncover, then bake for another 20 minutes, until the vegetables are softened.",
-      "Serve while hot as a main dish or side. The ratatouille is also excellent the next day--cover with foil and reheat in a 180˚C oven for 15 minutes, or simply microwave to desired temperature."
-    ]
+    "preparation": "Preheat the oven for 190˚C. Slice the eggplant, tomatoes, squash, and zucchini into approximately ¹⁄₁₆-inch (1-mm) rounds, then set aside. Make the sauce: Heat the olive oil in a 12-inch (30-cm) oven-safe pan over medium-high heat. Sauté the onion, garlic, and bell peppers until soft, about 10 minutes. Season with salt and pepper, then add the crushed tomatoes. Stir until the ingredients are fully incorporated. Remove from heat, then add the basil. Stir once more, then smooth the surface of the sauce with a spatula. Arrange the sliced veggies in alternating patterns, on top of the sauce from the outer edge to the middle of the pan. Season with salt and pepper. Make the herb seasoning: In a small bowl, mix together the basil, garlic, parsley, thyme, salt, pepper, and olive oil. Spoon the herb seasoning over the vegetables. Cover the pan with foil and bake for 40 minutes. Uncover, then bake for another 20 minutes, until the vegetables are softened. Serve while hot as a main dish or side. The ratatouille is also excellent the next day--cover with foil and reheat in a 180˚C oven for 15 minutes, or simply microwave to desired temperature."
   },
   {
     "_id": "1",
@@ -111,11 +103,7 @@
         "quantity": "to garnish"
       }
     ],
-    "preparation": [
-      "Boil the potatoes in their skins in lightly salted water until tender. Allow the potatoes to cool until you can handle them. Peel the potatoes and slice them into 1/4 inch slices. Put the sliced potatoes in a large mixing bowl and set aside.",
-      "Add onions, salt, pepper, sugar, and mustard in a medium saucepan and bring to a boil. As soon as it boils, remove from heat and pour the mixture over the potatoes. Cover the bowl of potatoes and let sit for at least one hour.",
-      "After at least one hour, gently stir in the oil and season with salt and pepper to taste. If too much liquid remains, use a slotted spoon to serve. Serve garnished with fresh chopped chives. Serve at room temperature. Note: This potato salad is best the next day (remove from fridge at least 30 minutes before serving)."
-    ]
+    "preparation": "Boil the potatoes in their skins in lightly salted water until tender. Allow the potatoes to cool until you can handle them. Peel the potatoes and slice them into 1/4 inch slices. Put the sliced potatoes in a large mixing bowl and set aside. Add onions, salt, pepper, sugar, and mustard in a medium saucepan and bring to a boil. As soon as it boils, remove from heat and pour the mixture over the potatoes. Cover the bowl of potatoes and let sit for at least one hour. After at least one hour, gently stir in the oil and season with salt and pepper to taste. If too much liquid remains, use a slotted spoon to serve. Serve garnished with fresh chopped chives. Serve at room temperature. Note: This potato salad is best the next day (remove from fridge at least 30 minutes before serving)."
   },
   {
     "_id": "2",
@@ -156,12 +144,7 @@
         "quantity": "to taste"
       }
     ],
-    "preparation": [
-      "Wash the spinach, remove the ribs and wring them out.",
-      "Melt the butter and add the spinach for 8 minutes. Let them cool in a colander and chop them roughly.",
-      "Beat the eggs and the cream in a bowl. Add the spinach. Season with salt and pepper and then stir in the nutmeg.",
-      "Pour the filling over the dough and bake for about 30 minutes. Let cool a little before serving."
-    ]
+    "preparation": "Wash the spinach, remove the ribs and wring them out. Melt the butter and add the spinach for 8 minutes. Let them cool in a colander and chop them roughly. Beat the eggs and the cream in a bowl. Add the spinach. Season with salt and pepper and then stir in the nutmeg. Pour the filling over the dough and bake for about 30 minutes. Let cool a little before serving."
   },
   {
     "_id": "3",
@@ -190,11 +173,7 @@
         "quantity": "to taste"
       }
     ],
-    "preparation": [
-      "Cut the tomatoes into small cubes, put them in a small bowl with a good olive oil and salt.",
-      "Toast the slices of bread, then rub them with garlic.",
-      "Spread the tomato / olive oil mixture generously on the toast, to enjoy immediately (warm)."
-    ]
+    "preparation": "Cut the tomatoes into small cubes, put them in a small bowl with a good olive oil and salt. Toast the slices of bread, then rub them with garlic. Spread the tomato / olive oil mixture generously on the toast, to enjoy immediately (warm)."
   },
   {
     "_id": "4",
@@ -237,21 +216,9 @@
       {
         "name": "creme fraiche",
         "quantity": "2 spoons"
-      },
-      {
-        "name": "butter spoon",
-        "quantity": "1"
       }
     ],
-    "preparation": [
-      "Peel, wash and cut the vegetables into small pieces.",
-      "Brown the leek in the butter for about 10 minutes.",
-      "In another pot, put the other vegetables and cover them with water. Add half of the stock cube and cook for 30 minutes or 10 minutes in the pressure cooker.",
-      "Cover the leek with water and add the rest of the stock cube. Cook for about 20 minutes.",
-      "When the vegetables (carrots, turnip, tomatoes ... but not the leek!) Are cooked, mix them and season to taste.",
-      "Add the cream and the unmixed leek.",
-      "Mix everything and enjoy. Enjoy your meal."
-    ]
+    "preparation": "Peel, wash and cut the vegetables into small pieces. Brown the leek in the butter for about 10 minutes. In another pot, put the other vegetables and cover them with water. Add half of the stock cube and cook for 30 minutes or 10 minutes in the pressure cooker. Cover the leek with water and add the rest of the stock cube. Cook for about 20 minutes. When the vegetables (carrots, turnip, tomatoes ... but not the leek!) Are cooked, mix them and season to taste. Add the cream and the unmixed leek. Mix everything and enjoy. Enjoy your meal."
   },
   {
     "_id": "5",
@@ -292,11 +259,7 @@
         "quantity": "to taste"
       }
     ],
-    "preparation": [
-      "Pour olive oil into a saucepan, heat, chop all the vegetables and pour them into the hot oil. Stir for a few minutes, cover with water, close the casserole dish and cook for 10 minutes.",
-      "Then open the casserole, mix everything (with a mixer arm for example).",
-      "Check the seasoning and let boil for 3 minutes. It's ready !"
-    ]
+    "preparation": "Pour olive oil into a saucepan, heat, chop all the vegetables and pour them into the hot oil. Stir for a few minutes, cover with water, close the casserole dish and cook for 10 minutes. Then open the casserole, mix everything (with a mixer arm for example). Check the seasoning and let boil for 3 minutes. It's ready !"
   },
   {
     "_id": "6",
@@ -329,13 +292,7 @@
         "quantity": "to taste"
       }
     ],
-    "preparation": [
-      "Cut the zucchini and peeled potatoes into cubes. Roughly chop the onions. With zucchini and curry",
-      "In a casserole dish, heat 2 tablespoons of oil. When it is hot, pour in the onions and garlic and sprinkle with curry.",
-      "Stir constantly, while the onions soak up the curry. Pour 1 liter of water (including the broth).",
-      "Add the potatoes and 5 to 10 minutes later, the diced courgettes. Leave to cook for 20 minutes. The soup should not be boiling. Add salt and pepper.",
-      "Mix (preferably as much as possible, this soup is better smooth). It's ready!"
-    ]
+    "preparation": "Cut the zucchini and peeled potatoes into cubes. Roughly chop the onions. With zucchini and curry. In a casserole dish, heat 2 tablespoons of oil. When it is hot, pour in the onions and garlic and sprinkle with curry. Stir constantly, while the onions soak up the curry. Pour 1 liter of water (including the broth). Add the potatoes and 5 to 10 minutes later, the diced courgettes. Leave to cook for 20 minutes. The soup should not be boiling. Add salt and pepper. Mix (preferably as much as possible, this soup is better smooth). It's ready!"
   },
   {
     "_id": "7",
@@ -380,14 +337,7 @@
         "quantity": "to taste"
       }
     ],
-    "preparation": [
-      "Peel the potatoes and cut them into cubes. Cook for about 15 minutes in boiling water, drain and mash them into a puree.",
-      "Season with salt and pepper, add the nutmeg and whole egg, and mix well.",
-      "Grate the unpeeled zucchini and the peeled carrots, and brown them in a little olive oil for about 5 minutes.",
-      "Add the returned vegetables to your mash, mix well. Add the flour, and incorporate it well.",
-      "Place piles of this mixture on a baking sheet covered with parchment paper. If you have circles, make pretty pucks.",
-      "Bake for 20 minutes at 220 ° C. Your vegetable pallets are ready!"
-    ]
+    "preparation": "Peel the potatoes and cut them into cubes. Cook for about 15 minutes in boiling water, drain and mash them into a puree. Season with salt and pepper, add the nutmeg and whole egg, and mix well. Grate the unpeeled zucchini and the peeled carrots, and brown them in a little olive oil for about 5 minutes. Add the returned vegetables to your mash, mix well. Add the flour, and incorporate it well. Place piles of this mixture on a baking sheet covered with parchment paper. If you have circles, make pretty pucks. Bake for 20 minutes at 220 ° C. Your vegetable pallets are ready!"
   },
   {
     "_id": "8",
@@ -412,7 +362,7 @@
         "quantity": "4 spoons"
       },
       {
-        "name": "red bell pepper",
+        "name": "bell pepper",
         "quantity": "1"
       },
       {
@@ -420,70 +370,6 @@
         "quantity": "3 spoons"
       }
     ],
-    "preparation": [
-      "Pass the garlic cloves through a garlic press, or mash them into a puree. Add them to olive oil in a bowl.",
-      "Add the balsamic vinegar, and set aside. Cut the eggplants, the zucchinis and the peppers into thin slices (2 to 3 mm).",
-      "Place the peppers in the oven so that the skin can be removed. Once peeled, cut them into thin strips and set aside.",
-      "In a frying pan without fat, grill each slice of eggplant and zucchini, on one side.",
-      "As the eggplants and zucchini are grilled: arrange them in successive layers in the serving dish, alternating them with a few strips of pepper, and a few dashes of the oil / garlic / vinegar mixture.",
-      "Finish by pouring in the rest of the oil / garlic / vinegar mixture. It is better if the vegetables are not drowned! Serve immediately, with toast."
-    ]
-  },
-  {
-    "_id": "",
-    "recipeName": "",
-    "coverImage": "",
-    "portion": "",
-    "ingredients": [
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      },
-      {
-        "name": "",
-        "quantity": ""
-      }
-    ],
-    "preparation": ["", "", "", ""]
+    "preparation": "Pass the garlic cloves through a garlic press, or mash them into a puree. Add them to olive oil in a bowl. Add the balsamic vinegar, and set aside. Cut the eggplants, the zucchinis and the peppers into thin slices (2 to 3 mm). Place the peppers in the oven so that the skin can be removed. Once peeled, cut them into thin strips and set aside. In a frying pan without fat, grill each slice of eggplant and zucchini, on one side. As the eggplants and zucchini are grilled: arrange them in successive layers in the serving dish, alternating them with a few strips of pepper, and a few dashes of the oil / garlic / vinegar mixture. Finish by pouring in the rest of the oil / garlic / vinegar mixture. It is better if the vegetables are not drowned! Serve immediately, with toast."
   }
 ]

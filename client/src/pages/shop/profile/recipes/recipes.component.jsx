@@ -9,29 +9,31 @@ const Recipes = () => {
     const { _id, recipeName, coverImage, portion, ingredients, preparation } = recipe;
 
     return (
-      <ul className="recipes__list" key={_id}>
-        <li className="recipes__list__card">
-          <h2 className="recipes__list__card__name">{recipeName}</h2>
-          <div className="recipes__list__card__img-container">
-            <img className="recipes__list__card__img-container--img" src={coverImage} alt="recipe-image" />
+      <section className="recipes">
+        <div className="recipes__card" key={_id}>
+          <div className="recipes__card__img-container">
+            <img className="recipes__card__img-container--img" src={coverImage} alt="recipe-image" />
           </div>
-          <span className="recipes__list__card__portion">Portion: {portion}</span>
-          <div className="recipes__list__card__ingredients">
-            Ingredients:
-            {ingredients.map((item) => {
-              return (
-                <ul className="recipes__list__card__ingredients__list">
-                  <li>
-                    <span>{item.name}: </span>
-                    <span>{item.quantity}</span>
-                  </li>
-                </ul>
-              );
-            })}
+          <div className="recipes__card__info-container">
+            <h2 className="recipes__card__info-container__name">{recipeName}</h2>
+            <span className="recipes__card__info-container__portion">Portion: {portion}</span>
+            <h3>Ingredients</h3>
+            <div className="recipes__card__info-container__ingredients">
+              {ingredients.map((item) => {
+                return (
+                  <div className="recipes__card__info-container__ingredients__list">
+                    {item.name}: {item.quantity}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="recipes__card__info-container__preparation">
+              <h3>Preparation</h3>
+              {preparation}
+            </div>
           </div>
-          <div className="recipes__list__card__preparation">Preparation: {preparation}</div>
-        </li>
-      </ul>
+        </div>
+      </section>
     );
   });
 
