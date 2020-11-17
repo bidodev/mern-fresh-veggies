@@ -10,7 +10,7 @@ const Cart = ({ match }) => {
   const dispatch = useDispatch();
   /* Pull out the cart items*/
   const cartItems = useSelector(({ cart }) => cart.cartItems);
-
+  console.log(cartItems);
   //total sum for the cart
   let totalSumArray = cartItems.map((cartItem) => cartItem.quantity * cartItem.price);
   let totalSum = totalSumArray.reduce((acc, cur) => acc + cur, 0).toFixed(2);
@@ -70,7 +70,7 @@ const Cart = ({ match }) => {
                   +
                 </button>
               </span>
-              <span> {cartItem.price} </span>
+              <span> {cartItem.price} € </span>
               <span>
                 <FontAwesomeIcon
                   icon={['fas', 'times']}
@@ -86,7 +86,7 @@ const Cart = ({ match }) => {
           <li className="empty-cart">Your cart is empty</li>
         )}
       </ul>
-      <div className="total-price">Total price: {totalSum}</div>
+      <div className="total-price">Total price: {totalSum} €</div>
       <CustomButton type="button" disabled={cartItems.length <= 0 && true} onClick={resetCart}>
         Reset
       </CustomButton>
