@@ -8,12 +8,16 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 import './cart.styles.scss';
 const Cart = ({ match }) => {
   const dispatch = useDispatch();
-
   /* Pull out the cart items*/
   const cartItems = useSelector(({ cart }) => cart.cartItems);
+  console.log(cartItems);
+  //total sum for the cart
+  let totalSumArray = cartItems.map((cartItem) => cartItem.quantity * cartItem.price);
+  let totalSum = totalSumArray.reduce((acc, cur) => acc + cur, 0).toFixed(2);
 
   // INCREASE from the cart
   const increaseItemHandler = (cartItem) => {
+    console.log(cartItem);
     const { id, name, quantity, farmer } = cartItem;
     dispatch({
       type: 'ADD_ITEM',
@@ -55,18 +59,18 @@ const Cart = ({ match }) => {
         </li>
         {cartItems.length ? (
           cartItems.map((cartItem) => (
-            <li>
+            <li className="modal-li">
               <span>{cartItem.name}</span>
               <span>
                 <button className="decrease-button" onClick={() => decreaseItemHandler(cartItem)}>
                   -
                 </button>
-                {cartItem.quantity}
+                {`${cartItem.quantity}  ${cartItem.unit}`}
                 <button className="increase-button" onClick={() => increaseItemHandler(cartItem)}>
                   +
                 </button>
               </span>
-              <span> $ </span>
+              <span> {cartItem.price} € </span>
               <span>
                 <FontAwesomeIcon
                   icon={['fas', 'times']}
@@ -82,6 +86,7 @@ const Cart = ({ match }) => {
           <li className="empty-cart">Your cart is empty</li>
         )}
       </ul>
+      <div className="total-price">Total price: {totalSum} €</div>
       <CustomButton type="button" disabled={cartItems.length <= 0 && true} onClick={resetCart}>
         Reset
       </CustomButton>
