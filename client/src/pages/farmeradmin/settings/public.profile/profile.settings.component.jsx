@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 /* Styles */
-import './profile.settings.component.styles.scss';
+import './profile.settings.styles.scss';
 
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
 //import Alerts from 'components/UI/alerts';
 
 function PublicProfileSettings({ user }) {
-  console.log(user)
+  console.log(user);
   /* Load actual status of the configs */
   const [configs, setConfigs] = useState(null);
   //const [alert, setAlert] = useState(null);

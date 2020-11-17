@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 /* Components */
-import HeaderFarmerProfile from 'pages/farmeradmin/home/header/header.profile';
-import GalleryList from 'pages/farmeradmin/home/gallery/gallery.list';
-import FarmerBioGraphy from 'pages/farmeradmin/home/biography/FarmerBiography'
+import Avatar from 'pages/farmeradmin/home/avatar/avatar.component';
+import GalleryList from 'pages/farmeradmin/home/gallery/gallery.list.component';
+import FarmerBiography from 'pages/farmeradmin/home/biography/farmerbiography.component';
 import Spinner from 'components/UI/spinner/spinner.component';
 
 /* Styles */
 import './profile.styles.scss';
 
-
 const ProfileAdmin = () => {
-
   const dispatch = useDispatch();
   const farmerData = useSelector((state) => state.login.adminPanelData);
-
   const [isLoading, setIstLoading] = useState(true);
+
   /* Retrieve Farmer Panel */
   useEffect(() => {
     axios
       .get('/farmers/admin/panel')
       .then(({ data }) => {
-        dispatch({ type: 'SET_FARMER', payload: data.data})
+        dispatch({ type: 'SET_FARMER', payload: data.data });
         setIstLoading(false);
       })
       .catch((err) => {
@@ -39,8 +37,8 @@ const ProfileAdmin = () => {
       ) : (
         <section className="panel-profile">
           <div className="panel-profile__wrapper">
-            <HeaderFarmerProfile {...farmerData} />
-            <FarmerBioGraphy {...farmerData} />
+            <Avatar {...farmerData} />
+            <FarmerBiography {...farmerData} />
             <hr />
             <GalleryList {...farmerData} />
             <hr />

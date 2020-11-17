@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import './header.profile.styles.scss';
+
+/* Styles */
+import './avatar.styles.scss';
 
 /* Utils */
 import FileUploader from 'utils/fileUploader';
 
 const HeaderFarmerProfile = ({ name, images }) => {
-  const src = images.profile ? `/uploads/${name.toLowerCase()}/images/profile/${images.profile}` : '/uploads/default.jpg';
+  const src = images.profile
+    ? `/uploads/${name.toLowerCase()}/images/profile/${images.profile}`
+    : '/uploads/default.jpg';
 
   /* Is hovering profile photo State */
   const [isHovering, setHoverStatus] = useState(false);

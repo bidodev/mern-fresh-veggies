@@ -1,11 +1,8 @@
 .settings__page__item__wrapper {
+  margin: 0 auto;
+
   &__account {
     margin-top: 4rem;
-
-    h4 {
-      font-size: 1rem;
-    }
-
     h5 {
       margin-bottom: 0.5rem;
     }
@@ -33,14 +30,14 @@
 
   &__input {
     width: 30rem;
+    margin-bottom: 1rem;
     display: flex;
-    border: 1px solid rgb(195, 195, 195);
-    border-radius: 2px;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid rgb(195, 195, 195);
+    border-radius: 2px;
     background-color: #fff;
     color: #666;
-    margin-bottom: 1rem;
 
     div {
       padding: 0.8rem 0.5rem;
@@ -72,11 +69,9 @@
   border-radius: 4px;
   outline: none;
   padding: 20px;
-  //for ipad width of the modal should be at least 50% of the view port
   @media (max-width: 800px) {
     width: 70vw;
   }
-  //here the mobile v. must also be added
 }
 
 .overlay__email {
