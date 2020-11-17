@@ -11,7 +11,7 @@ const LoadProductInsideModal = ({ modalStatus, toggleModal, product, farmerName 
 
   const handleAddtoCart = (id) => {
     const farmerId = 1;
-    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId, price } });
+    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId, price, unity } });
   };
 
   const [quantity, setQuantity] = useState(1);
