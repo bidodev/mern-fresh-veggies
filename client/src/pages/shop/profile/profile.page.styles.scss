@@ -1,31 +1,37 @@
-.super-test {
-  //border: 10px solid blue;
+.public-profile__wrapper {
+  //border: 1px solid red;
   margin-top: 8vh;
-  padding: 2rem 10rem;
-  background-color: #ebebeb;
+  background-color: #f9f9f9;
+
+  &__intern {
+    //border: 10px solid blue;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 2rem 0;
+  
+  }
 }
 
 .public-farmer {
   display: flex;
   height: 80vh;
+  width: 100%;
   justify-content: space-between;
-  //border: 5px solid green;
   background-color: #fff;
+  position: relative;
 
   &__aside {
     height: 100%;
-    width: 70vw;
-    //border: 10px solid gray;
+    width: 80%;
     display: flex;
 
     &__main {
-      //border: 1px solid blue;
       height: 100%;
-      width: 100%;
+      width: 70%;
     }
 
     &__infos {
-      width: 20vw;
+      width: 30%;
       height: 100%;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
       padding: 8rem 0;
@@ -96,7 +102,7 @@
     }
 
     &__information {
-      border: 1px solid red;
+      //border: 1px solid red;
       display: flex;
 
       @media (max-width: 1050px) {
@@ -138,24 +144,25 @@
 }
 
 .public-farmer__main__right {
-  width: 25rem;
+  width: 20%;
   overflow-y: scroll;
   //border: 1px solid red;
+
 
   .shiiit {
     //border: 2px solid black;
     position: absolute;
-    width: 22.95rem;
-    background-color: #fdfdfd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    width: 20%;
+    background-color: #fefefe;
+    //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
     
   }
 
   h2 {
     color: #3c6142;
-    font-weight: 300;
+    font-weight: 400;
     padding: 1.2rem;
-    //position: fixed;
+    text-align: center;
   }
 
   hr {
@@ -172,18 +179,32 @@
     margin-top: 5rem;
   }
   .new-product {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     //border: 1px solid red;
     margin: 0 auto;
-    height: 14rem;
-    width: 14rem;
     margin-bottom: 5rem;
+
+    &__img{
+      //border: 1px solid green;
+      margin: 1rem 0;
+      width: 10rem;
+      height: 10rem;
+    }
 
     img {
       height: auto;
       width: 100%;
       object-fit: cover;
+
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
     }
   }
+
 }
 
 .public-farmer__main__right {
@@ -196,3 +217,4 @@
     background: #9b9b9b93;
   }
 }
+
