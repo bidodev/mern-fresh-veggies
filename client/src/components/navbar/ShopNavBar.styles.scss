@@ -36,14 +36,11 @@
       color: red;
       position: relative;
       bottom: 1.5vh;
-      right: 1.5vw;
+      right: 2vw;
       font-weight: bold;
     }
     &__login {
       color: #181818;
-    }
-    @media only screen and (max-width: 500px) {
-      width: 7rem;
     }
   }
 }

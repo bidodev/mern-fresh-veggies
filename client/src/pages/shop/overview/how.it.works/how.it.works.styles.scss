@@ -1,9 +1,26 @@
 .how-it-works {
   height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: 700px) {
+    width: 100%;
+    height: 100vh;
+  }
+  @media (max-width: 750px) {
+    // height: fit-content;
+    margin-bottom: 10vh;
+  }
+
   &__icons-section {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    @media (max-width: 750px) {
+      height: fit-content;
+    }
+
     &--header {
       text-align: center;
       font-size: 2rem;
@@ -17,24 +34,39 @@
       align-items: center;
       flex-wrap: wrap;
       background: #eee;
-      @media (max-width: 650px) {
+      @media (max-width: 1060px) {
         width: 100%;
+      }
+      @media (max-width: 750px) {
+        width: 85%;
       }
 
       &__card {
-        width: 23vw;
-        min-width: 20rem;
+        width: 23rem;
         height: 22vh;
         padding: 2vh;
-        @media (max-width: 920px) {
-          min-width: 23rem;
+
+        @media (max-width: 750px) {
           &:not(:last-child) {
             border-bottom: 1px solid black;
           }
+          width: fit-content;
+          height: fit-content;
+          // this is the icon
+          &--icon {
+            height: 5vh;
+            width: 10vw;
+            svg {
+              font-size: 80px;
+              height: 3rem;
+              width: 3rem;
+            }
+          }
         }
-
         &--header {
           margin: 0.5rem 0;
+          @media (max-width: 750px) {
+          }
         }
 
         &--text {
