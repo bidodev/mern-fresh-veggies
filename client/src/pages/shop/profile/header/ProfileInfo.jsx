@@ -25,7 +25,14 @@ const ProfileInfo = ({ name, products }) => {
             </div>
           </div>
           <div className="public-farmer__aside__main">
-            <div className="public-farmer__main__featured">Hello Gallery</div>
+            <div className="public-farmer__main__featured">
+            <h2>About Me</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, velit?</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi nulla asperiores illum, possimus autem
+                necessitatibus harum at placeat dolore? Ipsum?
+              </p>
+            </div>
             <div className="public-farmer__main__reviews">Hello Testimonials</div>
           </div>
         </aside>
@@ -37,7 +44,7 @@ const ProfileInfo = ({ name, products }) => {
           {/* should be filtered by data add and limit to 5 */}
           <div className="shit2">
             {products
-              .filter((product, index) => index < 5)
+              .filter((product, index) => index < 3)
               .map((product) => (
                 <NewItem product={product} name={name} />
               ))}
