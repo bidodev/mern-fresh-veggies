@@ -6,10 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from 'components/modal/modal.component';
 
 import './ShopNavBar.styles.scss';
-const ShopNavBar = ({ match, children }) => {
+const ShopNavBar = ({ match, children, totalQuantity }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.user);
   const isAccountModalStatus = useSelector((state) => state.modal.show);
@@ -37,6 +36,7 @@ const ShopNavBar = ({ match, children }) => {
         <ul className="shop__navbar__account">
           {/* The children can be different upon to the parent, they are sent by the parent */}
           {children}
+          <div className="total-quantity">{totalQuantity}</div>
           {/* SignIN will be available in the whole application, so it stays here */}
           {/* If it is loggenIn, then the account icon appears with on click --> Logout */}
           {isLoggedIn ? (

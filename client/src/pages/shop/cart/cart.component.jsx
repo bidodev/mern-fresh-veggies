@@ -6,11 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 import './cart.styles.scss';
-const Cart = ({ match }) => {
+const Cart = ({ match, totalQuantity }) => {
+  // console.log(totalQuantity);
   const dispatch = useDispatch();
-
   /* Pull out the cart items*/
   const cartItems = useSelector(({ cart }) => cart.cartItems);
+
+  //total quantity for the cart
+  // const totalQuantityArray = cartItems.map((cartItem) => cartItem.quantity);
+  // let totalQuantity = totalQuantityArray.reduce((acc, cur) => acc + cur);
+  // console.log(totalQuantity);
 
   // INCREASE from the cart
   const increaseItemHandler = (cartItem) => {
@@ -82,6 +87,7 @@ const Cart = ({ match }) => {
           <li className="empty-cart">Your cart is empty</li>
         )}
       </ul>
+      <div className="total">{totalQuantity}</div>
       <CustomButton type="button" disabled={cartItems.length <= 0 && true} onClick={resetCart}>
         Reset
       </CustomButton>

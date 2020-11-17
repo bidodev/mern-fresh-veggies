@@ -32,6 +32,13 @@
       font-size: 1.3rem;
       color: #181818;
     }
+    .total-quantity {
+      color: red;
+      position: relative;
+      bottom: 1.5vh;
+      right: 1.5vw;
+      font-weight: bold;
+    }
     &__login {
       color: #181818;
     }

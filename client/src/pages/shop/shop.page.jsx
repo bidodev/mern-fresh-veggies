@@ -37,6 +37,11 @@ const Shop = ({ match }) => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   const cartModalStatus = useSelector(({ cart }) => cart.show);
   const cartNum = useSelector(({ cart }) => cart.cartQuantity);
+  //total quantity for the cart
+  const totalQuantityArray = cartItems.map((cartItem) => cartItem.quantity);
+  let totalQuantity = totalQuantityArray.reduce((acc, cur) => acc + cur);
+  console.log(totalQuantity);
+
   const dispatch = useDispatch();
 
   /* Hide or show cart */
@@ -45,7 +50,7 @@ const Shop = ({ match }) => {
   return (
     <>
       <Authentication match={match} />
-      <ShopNavBar match={match}>
+      <ShopNavBar match={match} totalQuantity={totalQuantity}>
         <li>
           <Icon icon={['fas', 'shopping-cart']} className="fa-shopping-cart" onClick={toggleModal} />
         </li>
@@ -56,7 +61,11 @@ const Shop = ({ match }) => {
           overlayClassName="cart-overlay"
         >
           {/* The Cart Modal is the same as the edit your cart  */}
-          <Cart toggleCartModal={toggleModal} match={match} />
+          <Cart
+            toggleCartModal={toggleModal}
+            match={match}
+            // totalQuantity={'1'}
+          />
           <Link to="/shop/cart">
             <CustomButton disabled={cartItems.length <= 0 ? true : false} type="submit" onClick={toggleModal}>
               Edit shopping cart
