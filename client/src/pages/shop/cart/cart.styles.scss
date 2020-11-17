@@ -21,7 +21,7 @@
   .cart-list {
     height: 50vh;
     margin: 3vh 10vw;
-    overflow-y: hidden;
+    overflow: hidden;
     &:hover {
       overflow-y: scroll;
       scroll-behavior: smooth;
@@ -36,6 +36,7 @@
     }
 
     li {
+      width: 75vw;
       list-style: none;
       display: flex;
       justify-content: space-between;
@@ -48,7 +49,7 @@
       }
 
       & > * {
-        width: 7vw;
+        width: 10vw;
         height: 7vh;
         display: flex;
         justify-content: center;
@@ -68,6 +69,7 @@
         }
       }
     }
+
     .empty-cart {
       height: 7vh;
       border-radius: 10px;
@@ -75,6 +77,12 @@
       align-items: center;
       justify-content: center;
     }
+  }
+  .total-price {
+    text-align: right;
+    margin-right: 10vw;
+    font-weight: bold;
+    font-size: 1.1rem;
   }
 }
 
