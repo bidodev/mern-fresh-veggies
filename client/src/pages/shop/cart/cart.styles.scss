@@ -27,7 +27,7 @@
       scroll-behavior: smooth;
     }
     &::-webkit-scrollbar {
-      width: 4px; /* Remove scrollbar space */
+      width: 3px; /* Remove scrollbar space */
       background: transparent; /* Optional: just make scrollbar invisible */
     }
     /* Optional: show position indicator in black in case width is > 0 */
@@ -68,6 +68,7 @@
         }
       }
     }
+
     .empty-cart {
       height: 7vh;
       border-radius: 10px;
@@ -75,6 +76,12 @@
       align-items: center;
       justify-content: center;
     }
+  }
+  .total-price {
+    text-align: right;
+    margin-right: 10vw;
+    font-weight: bold;
+    font-size: 1.1rem;
   }
 }
 

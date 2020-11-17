@@ -39,8 +39,7 @@ const Shop = ({ match }) => {
   const cartNum = useSelector(({ cart }) => cart.cartQuantity);
   //total quantity for the cart
   const totalQuantityArray = cartItems.map((cartItem) => cartItem.quantity);
-  let totalQuantity = totalQuantityArray.reduce((acc, cur) => acc + cur);
-  console.log(totalQuantity);
+  let totalQuantity = totalQuantityArray.reduce((acc, cur) => acc + cur, 0);
 
   const dispatch = useDispatch();
 
@@ -61,11 +60,7 @@ const Shop = ({ match }) => {
           overlayClassName="cart-overlay"
         >
           {/* The Cart Modal is the same as the edit your cart  */}
-          <Cart
-            toggleCartModal={toggleModal}
-            match={match}
-            // totalQuantity={'1'}
-          />
+          <Cart toggleCartModal={toggleModal} match={match} />
           <Link to="/shop/cart">
             <CustomButton disabled={cartItems.length <= 0 ? true : false} type="submit" onClick={toggleModal}>
               Edit shopping cart

@@ -6,19 +6,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 import './cart.styles.scss';
-const Cart = ({ match, totalQuantity }) => {
-  // console.log(totalQuantity);
+const Cart = ({ match }) => {
   const dispatch = useDispatch();
   /* Pull out the cart items*/
   const cartItems = useSelector(({ cart }) => cart.cartItems);
 
-  //total quantity for the cart
-  // const totalQuantityArray = cartItems.map((cartItem) => cartItem.quantity);
-  // let totalQuantity = totalQuantityArray.reduce((acc, cur) => acc + cur);
-  // console.log(totalQuantity);
+  //total sum for the cart
+  let totalSumArray = cartItems.map((cartItem) => cartItem.quantity * cartItem.price);
+  let totalSum = totalSumArray.reduce((acc, cur) => acc + cur, 0).toFixed(2);
 
   // INCREASE from the cart
   const increaseItemHandler = (cartItem) => {
+    console.log(cartItem);
     const { id, name, quantity, farmer } = cartItem;
     dispatch({
       type: 'ADD_ITEM',
@@ -71,7 +70,7 @@ const Cart = ({ match, totalQuantity }) => {
                   +
                 </button>
               </span>
-              <span> $ </span>
+              <span> {cartItem.price} </span>
               <span>
                 <FontAwesomeIcon
                   icon={['fas', 'times']}
@@ -87,7 +86,7 @@ const Cart = ({ match, totalQuantity }) => {
           <li className="empty-cart">Your cart is empty</li>
         )}
       </ul>
-      <div className="total">{totalQuantity}</div>
+      <div className="total-price">Total price: {totalSum}</div>
       <CustomButton type="button" disabled={cartItems.length <= 0 && true} onClick={resetCart}>
         Reset
       </CustomButton>
