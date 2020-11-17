@@ -1,25 +1,21 @@
 .stock {
-  //border: 1px solid red;
-  margin-top: 8vh;
-  width: 96vw;
-  height: 100%;
-  min-height: 94vh;
-  margin-left: 4vw;
+  padding-top: 8vh;
+  min-height: 100vh;
+  margin-left: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #f9f9f9;
+
+  h2 {
+    text-transform: uppercase;
+  }
 
   &__farmer-products {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
-
-  h2 {
-    text-transform: uppercase;
-  }
-
 
   &-overview {
     width: 100%;
@@ -32,7 +28,7 @@
     margin-top: 10rem;
     position: relative;
 
-    &__header{
+    &__header {
       height: 10rem;
       width: 100%;
       display: flex;
@@ -42,12 +38,11 @@
       background-color: #f0f0f0;
       position: fixed;
       z-index: 1000;
-      
     }
-  
+
     &__plus {
       margin: 1rem;
-      font-size:2rem;
+      font-size: 2rem;
       transition: all 0.5s ease;
 
       &:hover {
@@ -55,7 +50,6 @@
         cursor: pointer;
       }
     }
-
 
     @media (max-width: 800px) {
       width: 100%;
@@ -71,20 +65,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
     }
   }
 }
 
-
-
-
-
-
-
-
 /*Resize the wrap to see the search bar change!*/
-.stock-search-wrapper{
+.stock-search-wrapper {
   width: 30%;
 
   .search {
@@ -101,11 +87,10 @@
     padding: 7px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
-    
+    color: #9dbfaf;
   }
 
-  .searchTerm:focus{
+  .searchTerm:focus {
     color: #999;
   }
 
@@ -118,10 +103,8 @@
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 15px;
-
   }
 }
-
 
 .add-product__modal {
   width: 30vw;

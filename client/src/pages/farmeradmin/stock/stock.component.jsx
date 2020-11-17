@@ -15,8 +15,6 @@ import SearchBar from 'pages/farmeradmin/stock/search/SearchBar';
 /* Styles */
 import './stock.styles.scss';
 
-
-
 const Stock = () => {
   const [isFetchingData, setFetchError] = useState(true);
   const [products, setProducts] = useState([]);
