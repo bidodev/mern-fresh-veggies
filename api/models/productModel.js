@@ -5,25 +5,25 @@ const productSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'The product name is required'],
-    },
+  },
   type: String,
   description: {
     type: String,
-    default: 'Please edit the product description'
+    default: 'Please edit the product description',
   },
   price: {
     type: Number,
-    required: [true, 'The price is required']
+    required: [true, 'The price is required'],
   },
   quantity: {
     type: Number,
     required: [true, 'The amount is required'],
-    default: 1
+    default: 1,
   },
-  unity: {
+  unit: {
     type: String,
     required: [true, 'The amount is required'],
-    default: 'unity'
+    default: 'unit',
   },
   createdAt: {
     type: Date,

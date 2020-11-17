@@ -9,7 +9,7 @@ const NewItem = ({ product, name }) => {
         <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="" />
       </div>
       <p>
-        EUR: {product.price} - {product.unity}
+        EUR: {product.price} - {product.unit}
       </p>
     </div>
   );
