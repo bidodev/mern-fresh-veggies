@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewItem({product, name}) {
+function NewItem({ product, name }) {
   return (
     <div className="new-product">
       <p>{product.name}</p>
@@ -8,7 +8,7 @@ function NewItem({product, name}) {
         <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="" />
       </div>
       <p>
-        EUR: {product.price} - {product.unity}
+        EUR: {product.price} - {product.unit}
       </p>
     </div>
   );
