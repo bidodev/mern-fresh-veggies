@@ -12,7 +12,6 @@ import PhotosGallery from 'pages/shop/profile/photo.gallery/PhotosGallery';
 import FarmerProducts from 'pages/shop/profile/farmer.products/FarmerProducts';
 
 const Profile = ({ name, products }) => {
-  console.log(products);
   return (
     <>
       <header className="public-farmer">
@@ -40,9 +39,12 @@ const Profile = ({ name, products }) => {
         </aside>
 
         <main className="public-farmer__main__right">
+          <div className="shiiit">
           <h2>New Products</h2>
+          </div>
           <hr />
           {/* should be filtered by data add and limit to 5 */}
+          <div className="shit2">
           {products
             .filter((product, index) => index < 5)
             .map((product) => (
@@ -52,6 +54,7 @@ const Profile = ({ name, products }) => {
                 <p>EUR: {product.price} - {product.unity}</p>
               </div>
             ))}
+        </div>
         </main>
       </header>
     </>

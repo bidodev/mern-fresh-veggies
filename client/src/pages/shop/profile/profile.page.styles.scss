@@ -1,28 +1,29 @@
-.super-test{
+.super-test {
   //border: 10px solid blue;
   margin-top: 8vh;
-  padding: 1rem 5rem;
-  background-color: #f9f9f9;
+  padding: 2rem 10rem;
+  background-color: #ebebeb;
 }
 
 .public-farmer {
   display: flex;
   height: 80vh;
   justify-content: space-between;
-  //border: 10px solid green;
+  //border: 5px solid green;
   background-color: #fff;
+
   &__aside {
     height: 100%;
     width: 70vw;
-    //border: 10px solid green;
+    //border: 10px solid gray;
     display: flex;
-    
-    &__main{
+
+    &__main {
       //border: 1px solid blue;
       height: 100%;
       width: 100%;
     }
-    
+
     &__infos {
       width: 20vw;
       height: 100%;
@@ -48,29 +49,24 @@
       }
 
       &__data {
-        
         height: 60%;
         padding: 2rem;
 
-          h2 {
-            color: #3c6142;
-            font-weight: 300;
-          }
+        h2 {
+          color: #3c6142;
+          font-weight: 300;
+        }
       }
     }
-
   }
 
   &__main {
-
-    
     &__featured {
       height: 60%;
       width: 100%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       border-right: 1px solid rgba(0, 0, 0, 0.1);
       //background-color: red;
-      
     }
 
     &__reviews {
@@ -78,7 +74,6 @@
       width: 100%;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
       height: 40%;
-
     }
   }
 
@@ -143,40 +138,52 @@
 }
 
 .public-farmer__main__right {
-  width: 25%;
+  width: 25rem;
   overflow-y: scroll;
+  //border: 1px solid red;
 
+  .shiiit {
+    //border: 2px solid black;
+    position: absolute;
+    width: 22.95rem;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    
+  }
 
+  h2 {
+    color: #3c6142;
+    font-weight: 300;
+    padding: 1.2rem;
+    //position: fixed;
+  }
 
-    h2 {
-      color: #3c6142;
-      font-weight: 300;
-      padding-top: 2rem;
-      //position: fixed;
-    }
+  hr {
+    margin: 0 auto;
+    width: 100%;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
 
-    hr {
-      margin: 0 auto;
+  .shit2 {
+    //border: 1px solid green;
+    margin-top: 5rem;
+  }
+  .new-product {
+    //border: 1px solid red;
+    margin: 0 auto;
+    height: 14rem;
+    width: 14rem;
+    margin-bottom: 5rem;
+
+    img {
+      height: auto;
       width: 100%;
-      border: 0;
-      height: 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      object-fit: cover;
     }
-
-    .new-product{
-      //border: 1px solid red;
-      margin: 0 auto;
-      height: 15rem;
-      width: 15rem;
-      margin-bottom: 5rem;
-
-      img {
-        height: auto;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
+  }
 }
 
 .public-farmer__main__right {
