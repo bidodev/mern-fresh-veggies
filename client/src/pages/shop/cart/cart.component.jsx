@@ -65,7 +65,7 @@ const Cart = ({ match }) => {
                 <button className="decrease-button" onClick={() => decreaseItemHandler(cartItem)}>
                   -
                 </button>
-                {cartItem.quantity}
+                {`${cartItem.quantity}  ${cartItem.unit}`}
                 <button className="increase-button" onClick={() => increaseItemHandler(cartItem)}>
                   +
                 </button>

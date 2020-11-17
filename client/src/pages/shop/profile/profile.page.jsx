@@ -15,6 +15,7 @@ import PhotosGallery from 'pages/shop/profile/photo.gallery/PhotosGallery';
 import FarmerProducts from 'pages/shop/profile/farmer.products/FarmerProducts';
 import Recipes from 'pages/shop/profile/recipes/recipes.component';
 
+
 const ProfilePage = () => {
   const { farmerId } = useParams();
 
