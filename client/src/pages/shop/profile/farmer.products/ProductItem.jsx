@@ -11,7 +11,7 @@ const LoadProductInsideModal = ({ modalStatus, toggleModal, product, farmerName 
 
   const handleAddtoCart = (id) => {
     const farmerId = 1;
-    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId } });
+    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId, price } });
   };
 
   const [quantity, setQuantity] = useState(1);
@@ -93,7 +93,14 @@ const ProductItem = ({ product, farmerName }) => {
         <span className="profile-page__farmer-products__card--type">Type: {type}</span>
         <p className="profile-page__farmer-products__card--description">{limitResults(description, 120)}</p>
       </div>
-      {modalStatus && <LoadProductInsideModal modalStatus={modalStatus} toggleModal={toggleModal} product={product} farmerName={farmerName}/>}
+      {modalStatus && (
+        <LoadProductInsideModal
+          modalStatus={modalStatus}
+          toggleModal={toggleModal}
+          product={product}
+          farmerName={farmerName}
+        />
+      )}
     </>
   );
 };
