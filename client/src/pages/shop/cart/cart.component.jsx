@@ -59,7 +59,7 @@ const Cart = ({ match }) => {
         </li>
         {cartItems.length ? (
           cartItems.map((cartItem) => (
-            <li>
+            <li className="modal-li">
               <span>{cartItem.name}</span>
               <span>
                 <button className="decrease-button" onClick={() => decreaseItemHandler(cartItem)}>

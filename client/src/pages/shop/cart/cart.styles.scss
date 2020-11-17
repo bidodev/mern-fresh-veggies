@@ -21,13 +21,13 @@
   .cart-list {
     height: 50vh;
     margin: 3vh 10vw;
-    overflow-y: hidden;
+    overflow: hidden;
     &:hover {
       overflow-y: scroll;
       scroll-behavior: smooth;
     }
     &::-webkit-scrollbar {
-      width: 3px; /* Remove scrollbar space */
+      width: 4px; /* Remove scrollbar space */
       background: transparent; /* Optional: just make scrollbar invisible */
     }
     /* Optional: show position indicator in black in case width is > 0 */
@@ -36,6 +36,8 @@
     }
 
     li {
+      width: 75vw;
+
       list-style: none;
       display: flex;
       justify-content: space-between;
@@ -48,7 +50,7 @@
       }
 
       & > * {
-        width: 7vw;
+        width: 10vw;
         height: 7vh;
         display: flex;
         justify-content: center;

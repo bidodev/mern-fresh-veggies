@@ -33,6 +33,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    width: 25vw;
   }
   //here the mobile v. must also be added
   .cart-list {
@@ -42,12 +43,14 @@
     width: 20vw;
 
     li {
+      width: 20vw;
       display: flex;
       flex-wrap: wrap;
       &:first-child {
         display: none;
       }
       & > * {
+        width: fit-content;
         &:first-child {
           order: 1;
           flex-grow: 3;
@@ -68,6 +71,17 @@
         display: none;
       }
     }
+    .modal-li,
+    .empty-cart {
+      width: 20vw;
+    }
+  }
+  .total-price {
+    width: 28vw;
+    text-align: right;
+    margin-right: 1vw;
+    font-weight: bold;
+    font-size: 1.1rem;
   }
   .custom-button {
     &:nth-child(4) {
