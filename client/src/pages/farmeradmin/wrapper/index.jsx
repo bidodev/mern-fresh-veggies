@@ -18,11 +18,10 @@ import './admin.page.styles.scss';
  * We don't need to reload the parent every time the children update
  */
 const FarmerAdmin = React.memo(({ match }) => {
-
   return (
     <>
       <section className="farmer-admin">
-        <ShopNavBar match={match}/>
+        <ShopNavBar match={match} />
         <Aside />
         <Route exact path={`${match.path}`} component={ProfileAdmin} />
         <Route path={`${match.path}/stock`} component={Stock} />

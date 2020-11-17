@@ -1,11 +1,11 @@
 .panel-profile {
-  margin-top: 8vh;
+  padding-top: 8vh; // THE FUCKING BUG IS HEEERE!!
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f1f1f1;
   @media (max-width: 1050px) {
-    margin-top: 6vh;
+    padding-top: 6vh;
   }
 
   &__wrapper {
