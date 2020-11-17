@@ -27,6 +27,9 @@
     justify-content: space-between;
     align-items: center;
     margin-right: 5vw;
+    @media (max-width: 950px) {
+      width: 4rem;
+    }
     .fa-shopping-cart,
     .fa-user-circle {
       font-size: 1.3rem;
@@ -34,10 +37,17 @@
     }
     .total-quantity {
       color: red;
+      // width: 1.7rem;
       position: relative;
-      bottom: 1.5vh;
-      right: 2vw;
+      bottom: 0.8rem;
+      right: 1.5rem;
+      // border: red 1px solid;
+      // border-radius: 50px;
+      // text-align: center;
       font-weight: bold;
+      @media (max-width: 950px) {
+        right: 0.7rem;
+      }
     }
     &__login {
       color: #181818;
@@ -51,7 +61,7 @@
 
 .account-modal {
   height: 10vh;
-  width: 1-vw;
+  width: fit-content;
   position: fixed;
   top: 5vh;
   right: 3.5vw;
@@ -67,6 +77,9 @@
   align-items: center;
   justify-content: space-evenly;
   animation: drop-down 1s normal both;
+  @media (max-width: 800px) {
+    width: 30vw;
+  }
   li {
     list-style: none;
     height: 3rem;
@@ -86,8 +99,8 @@
       opacity: 1;
     }
   }
-  @media (max-width: 800px) {
-    width: 70vw;
+  @media (max-width: 550px) {
+    width: fit-content;
   }
 }
 .account-overlay {
