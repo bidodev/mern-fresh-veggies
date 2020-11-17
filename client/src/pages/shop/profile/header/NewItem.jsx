@@ -1,6 +1,7 @@
 import React from 'react';
 
-function NewItem({product, name}) {
+const NewItem = ({ product, name }) => {
+  
   return (
     <div className="new-product">
       <p>{product.name}</p>
