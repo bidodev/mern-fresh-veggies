@@ -2,16 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import LoadProductInsideModal from './farmer.products/LoadProductInsideModal';
+
 /* Styles */
 import './profile.page.styles.scss';
 
 /* Component Imports */
+import HeaderFarmerProfile from 'pages/shop/profile/header/HeaderFarmerProfile.jsx';
 import Spinner from 'components/UI/spinner/spinner.component';
 import Recipes from 'pages/shop/profile/recipes/recipes.component';
 import PhotosGallery from 'pages/shop/profile/photo.gallery/PhotosGallery';
 import FarmerProducts from 'pages/shop/profile/farmer.products/FarmerProducts';
 
 const Profile = ({ name, products }) => {
+  /* Modal */
+  const [modalStatus, setIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpen(!modalStatus);
+  };
+
+  /* Handle Product Click */
+  const handleProductClick = () => {
+    //TODO: load the product of the farmer
+    //1. Load the modal and load the data
+    setIsOpen(!modalStatus);
+    //setQuantity(1);
+  };
+
   return (
     <>
       <header className="public-farmer">
@@ -33,48 +51,36 @@ const Profile = ({ name, products }) => {
           </div>
           <div className="public-farmer__aside__main">
             <div className="public-farmer__main__featured">Hello Gallery</div>
-
             <div className="public-farmer__main__reviews">Hello Testimonials</div>
           </div>
         </aside>
-
         <main className="public-farmer__main__right">
           <div className="shiiit">
-          <h2>New Products</h2>
+            <h2>New Products</h2>
           </div>
           <hr />
           {/* should be filtered by data add and limit to 5 */}
           <div className="shit2">
-          {products
-            .filter((product, index) => index < 5)
-            .map((product) => (
-              <div className="new-product">
-                <p>{product.name}</p>
-                <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="" />
-                <p>EUR: {product.price} - {product.unity}</p>
-              </div>
-            ))}
-        </div>
+            {products
+              .filter((product, index) => index < 5)
+              .map((product) => (
+                <div className="new-product">
+                  <p>{product.name}</p>
+                  <div className="new-product__img" onClick={handleProductClick}>
+                    <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="" />
+                  </div>
+                  <p>
+                    EUR: {product.price} - {product.unity}
+                  </p>
+                </div>
+              ))}
+          </div>
         </main>
       </header>
     </>
   );
 };
 
-const HeaderFarmerProfile = ({ name, images }) => {
-  //const src = images.profile ? `/uploads/${name.toLowerCase()}/images/profile/${images.profile}` : '/uploads/default.jpg';
-
-  return (
-    <>
-      <header className="header-profile">
-        <img className="header-profile__cover" src={`/images/farm-1.jpg`} alt="cover" />
-        <div className="header-profile__avatar">
-          <img src={`/uploads/${name.toLowerCase()}/images/profile/${images.profile}`} alt="farmer-avatar" />
-        </div>
-      </header>
-    </>
-  );
-};
 
 function ProfilePage() {
   const { farmerId } = useParams();
@@ -96,9 +102,9 @@ function ProfilePage() {
     const { open, recipes, gallery, products } = farmer.config;
 
     return (
-      <>
+      <div className="public-profile__wrapper">
         {open ? (
-          <div className="super-test">
+          <div className="public-profile__wrapper__intern">
             <HeaderFarmerProfile {...farmer} />
             <Profile {...farmer} />
             {gallery ? <PhotosGallery {...farmer} /> : null}
@@ -108,7 +114,7 @@ function ProfilePage() {
         ) : (
           <h3 style={{ paddingTop: '50vh' }}>This store is closed at the moment</h3>
         )}
-      </>
+      </div>
     );
   };
 
