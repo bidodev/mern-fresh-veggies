@@ -1,14 +1,9 @@
-.panel-profile {
-
-  &__gallery {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 95%;
-    margin: 0 auto;
-
-    @media (max-width: 1050px) {
-      flex-direction: column;
-    }
+.panel-profile__gallery {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @media (max-width: 1050px) {
+    flex-direction: column;
   }
 }

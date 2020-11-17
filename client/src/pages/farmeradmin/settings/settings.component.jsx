@@ -12,17 +12,17 @@ import AccountSetting from 'pages/farmeradmin/settings/account/account.component
 /* This component allows the farmer to configure his store */
 import PublicProfileSettings from './public.profile/profile.settings.component';
 
-
 const AdvancedSettings = () => {
   return <div>Advanced Settings</div>;
 };
 
 const UserSettings = ({ match }) => {
+  const data = useSelector(({ login }) => login.adminPanelData);
+  const user = useSelector(({ login }) => login.user.data);
 
-  const data = useSelector(({login}) => login.adminPanelData);
-  const user = useSelector(({login}) => login.user.data);
-
-  const src = data.images.profile ? `/uploads/${user.name.toLowerCase()}/images/profile/${data.images.profile}` : '/uploads/default.jpg';
+  const src = data.images.profile
+    ? `/uploads/${user.name.toLowerCase()}/images/profile/${data.images.profile}`
+    : '/uploads/default.jpg';
 
   return (
     <div className="admin__settings">
@@ -34,7 +34,6 @@ const UserSettings = ({ match }) => {
           <h2>{user.name}</h2>
           <hr />
           <h3>Settings</h3>
-
           <li>
             <NavLink
               className="admin__settings__nav-item"
@@ -67,7 +66,7 @@ const UserSettings = ({ match }) => {
       </div>
       <>
         <Route exact path={`${match.path}`} render={() => <AccountSetting user={user} />} />
-        <Route path={`${match.path}/public`} render={() => <PublicProfileSettings user={user}/>} />
+        <Route path={`${match.path}/public`} render={() => <PublicProfileSettings user={user} />} />
         <Route path={`${match.path}/advanced`} render={() => <AdvancedSettings />} />
       </>
     </div>

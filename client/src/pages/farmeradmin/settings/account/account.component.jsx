@@ -1,13 +1,16 @@
 import React, { useState, useRef } from 'react';
-import './account.component.styles.scss';
 import axios from 'axios';
-
-import CustomButton from 'components/UI/custom-button/custom-button.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+
+/* Styles */
+import './account.component.styles.scss';
+
+/* Component Imports */
+import CustomButton from 'components/UI/custom-button/custom-button.component';
 import Modal from 'components/modal/modal.component';
 
 const AccountSetting = ({ user }) => {
-  console.log(user)
+  console.log(user);
   /* Modal State */
   const [modalStatus, setIsOpen] = useState(false);
 

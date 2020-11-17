@@ -1,18 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 /* Styles */
 import './asidebar.styles.scss';
 
+/* Component Imports */
 import ListItem from './items/listitem.component';
 
 const AsideBar = () => {
   const user = useSelector(({ login }) => login.user.data);
-  
-  const sideBarItens = [
+
+  const sideBarItems = [
     { id: 1, name: 'home', icon: ['fas', 'home'] },
     { id: 2, name: 'settings', icon: ['fas', 'users-cog'] },
     { id: 3, name: 'stock', icon: ['fas', 'store-alt'] },
@@ -22,8 +22,8 @@ const AsideBar = () => {
   return (
     <aside className="admin-panel__sidebar">
       {/* <!-- aside items --> */}
-      {sideBarItens.map((item) => (
-        <ListItem key={item.id}{...item} />
+      {sideBarItems.map((item) => (
+        <ListItem key={item.id} {...item} />
       ))}
       <NavLink
         activeClassName="admin-panel__sidebar-item--active"
