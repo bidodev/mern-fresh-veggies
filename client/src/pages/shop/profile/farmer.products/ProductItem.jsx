@@ -7,11 +7,11 @@ import { limitResults } from 'utils/limiteDesc';
 import DisplayModal from 'components/modal/modal.component';
 
 const LoadProductInsideModal = ({ modalStatus, toggleModal, product, farmerName }) => {
-  const { _id, name, photo, type, description, price, unity } = product;
-
+  const { _id, name, photo, type, description, price, unit } = product;
+  console.log(unit);
   const handleAddtoCart = (id) => {
     const farmerId = 1;
-    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId, price, unity } });
+    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId, price, unit } });
   };
 
   const [quantity, setQuantity] = useState(1);
@@ -51,7 +51,7 @@ const LoadProductInsideModal = ({ modalStatus, toggleModal, product, farmerName 
               Add to Card
             </div>
             <div>
-              EUR: {price} {unity}
+              EUR: {price} {unit}
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ const LoadProductInsideModal = ({ modalStatus, toggleModal, product, farmerName 
 
 /* Component Farmer Products Item */
 const ProductItem = ({ product, farmerName }) => {
-  const { _id, name, photo, type, description, price, unity } = product;
+  const { _id, name, photo, type, description, price, unit } = product;
 
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);

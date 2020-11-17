@@ -40,21 +40,23 @@ const Profile = ({ name, products }) => {
 
         <main className="public-farmer__main__right">
           <div className="shiiit">
-          <h2>New Products</h2>
+            <h2>New Products</h2>
           </div>
           <hr />
           {/* should be filtered by data add and limit to 5 */}
           <div className="shit2">
-          {products
-            .filter((product, index) => index < 5)
-            .map((product) => (
-              <div className="new-product">
-                <p>{product.name}</p>
-                <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="" />
-                <p>EUR: {product.price} - {product.unity}</p>
-              </div>
-            ))}
-        </div>
+            {products
+              .filter((product, index) => index < 5)
+              .map((product) => (
+                <div className="new-product">
+                  <p>{product.name}</p>
+                  <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="" />
+                  <p>
+                    EUR: {product.price} - {product.unit}
+                  </p>
+                </div>
+              ))}
+          </div>
         </main>
       </header>
     </>
