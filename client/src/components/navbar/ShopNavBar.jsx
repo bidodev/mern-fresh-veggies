@@ -36,7 +36,8 @@ const ShopNavBar = ({ match, children, totalQuantity }) => {
         <ul className="shop__navbar__account">
           {/* The children can be different upon to the parent, they are sent by the parent */}
           {children}
-          <div className="total-quantity">{totalQuantity}</div>
+          {totalQuantity > 0 && <div className="total-quantity">{totalQuantity}</div>}
+
           {/* SignIN will be available in the whole application, so it stays here */}
           {/* If it is loggenIn, then the account icon appears with on click --> Logout */}
           {isLoggedIn ? (
