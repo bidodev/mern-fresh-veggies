@@ -22,6 +22,8 @@ const ProfilePage = () => {
   const [farmer, setFarmer] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
 
+  console.log(farmer)
+
   useEffect(() => {
     axios(`/farmers/farmer/${farmerId}`)
       .then(({ data }) => {

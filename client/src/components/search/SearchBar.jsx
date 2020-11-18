@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import './SearchBar.styles.scss'
 
 const SearchBar = ({ onSearch }) => {
 

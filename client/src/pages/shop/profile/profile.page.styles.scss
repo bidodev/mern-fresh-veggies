@@ -1,17 +1,19 @@
-.public-profile {
+/**
+ *Main containers styles rules
+**/
 
+.public-profile {
   &__wrapper {
     margin-top: 8vh;
-    background-color: #362417;
-  
+    background-color: #4d3525;
+
     &__store-open {
       width: 80vw;
       margin: 0 auto;
-      padding-top: 3rem;
-    
+      padding-top: 2.5vh;
     }
 
-    &__store-closed{
+    &__store-closed {
       height: 68vh;
       background-color: #fff;
       display: flex;
@@ -19,13 +21,9 @@
       justify-content: center;
 
       h3 {
-        color: #363636;
+        color: #4d3525;
         font-size: 2rem;
       }
-  
     }
   }
 }
-
-
-
