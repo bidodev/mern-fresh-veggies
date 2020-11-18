@@ -39,16 +39,12 @@
       width: 30rem;
     }
   }
-  //here the mobile v. must also be added
+
   .cart-list {
     margin: 2vh 2vw;
     height: 60vh;
     overflow-y: auto;
     width: 20rem;
-    // @media (min-width: 300px) and(max-width: 1300px) {
-    //   width: 25rem;
-    //   background-color: blue;
-    // }
     li {
       width: 20rem;
       display: flex;
@@ -93,9 +89,6 @@
       @media (min-width: 350px) and(max-width: 1600px) {
         width: 20rem;
       }
-      // @media (min-width: 350px) and(max-width: 1070px) {
-      //   width: 20rem;
-      // }
     }
   }
   .total-price {
@@ -107,7 +100,6 @@
   }
   .custom-button {
     &:nth-child(4) {
-      // align-self: center;
       margin-left: 10rem;
       margin-top: 5vh;
     }
