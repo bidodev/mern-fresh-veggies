@@ -1,11 +1,23 @@
 .new-product {
+
+  p:first-of-type {
+    text-transform: uppercase;
+    color: #3c6142;
+    font-weight: 500;
+  }
     display: flex;
     align-items: center;
     flex-direction: column;
-    //border: 1px solid red;
-    margin: 0 auto;
-    background-color: rgba(252, 252, 252, .8);
+    background-color: rgba(252, 252, 252, .7);
     padding: 1.5rem 0;
+    transition: all .3s ease-in-out;
+    //border: 1px solid red;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+      background-color: #F0F0F0;
+    }
 
     &__img {
       //border: 1px solid green;

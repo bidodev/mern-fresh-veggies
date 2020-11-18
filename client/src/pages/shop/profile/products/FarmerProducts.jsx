@@ -29,6 +29,8 @@ const FarmerProducts = ({ farmer }) => {
     <React.Fragment>
       <section className="profile-page">
         <h2 className="profile-page__header">{name}'s available products</h2>
+
+        {/* TODO: Don't display filters while store has no products added. */}
         <div className="profile-page__header__filters">
           <SearchBar onSearch={setFilterProduct} />
           <FiltersItem />
