@@ -1,12 +1,31 @@
-.public-profile__wrapper {
-  //border: 1px solid red;
-  margin-top: 8vh;
-  background-color: #362417;
+.public-profile {
 
-  &__intern {
-    width: 80vw;
-    margin: 0 auto;
-    padding-top: 3rem;
+  &__wrapper {
+    margin-top: 8vh;
+    background-color: #362417;
   
+    &__store-open {
+      width: 80vw;
+      margin: 0 auto;
+      padding-top: 3rem;
+    
+    }
+
+    &__store-closed{
+      height: 68vh;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      h3 {
+        color: #363636;
+        font-size: 2rem;
+      }
+  
+    }
   }
 }
+
+
+

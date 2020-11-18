@@ -44,9 +44,9 @@ const ProfileInfo = ({ name, products }) => {
           {/* should be filtered by data add and limit to 5 */}
           <div className="shit2">
             {products
-              .filter((product, index) => index < 4)
-              .map((product) => (
-                <NewItem product={product} name={name} />
+              .filter((product, index) => index < 6)
+              .map((product, index) => (
+                <NewItem key={index} product={product} name={name} />
               ))}
           </div>
         </main>
