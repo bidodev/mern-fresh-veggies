@@ -21,18 +21,21 @@
   .cart-list {
     height: 50vh;
     margin: 3vh 10vw;
-    overflow: hidden;
-    &:hover {
-      overflow-y: scroll;
-      scroll-behavior: smooth;
-    }
-    &::-webkit-scrollbar {
-      width: 4px; /* Remove scrollbar space */
-      background: transparent; /* Optional: just make scrollbar invisible */
-    }
-    /* Optional: show position indicator in black in case width is > 0 */
-    &::-webkit-scrollbar-thumb {
-      background: #00000093;
+    overflow-y: scroll;
+    @media (min-width: 800px) and(max-width: 1600px) {
+      overflow: hidden;
+      &:hover {
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+      }
+      &::-webkit-scrollbar {
+        width: 4px; /* Remove scrollbar space */
+        background: transparent; /* Optional: just make scrollbar invisible */
+      }
+      /* Optional: show position indicator in black in case width is > 0 */
+      &::-webkit-scrollbar-thumb {
+        background: #00000093;
+      }
     }
 
     li {
@@ -49,13 +52,17 @@
       }
 
       & > * {
-        width: 10vw;
+        width: 20vw;
         height: 7vh;
         display: flex;
         justify-content: center;
         align-items: center;
         // text-align: center;
         // vertical-align: bottom;
+        &:nth-child(2) {
+          display: flex;
+          justify-content: space-between;
+        }
       }
       .decrease-button,
       .increase-button {

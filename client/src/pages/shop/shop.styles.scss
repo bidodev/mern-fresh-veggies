@@ -45,45 +45,30 @@
     height: 60vh;
     overflow-y: auto;
     width: 20rem;
+
     li {
-      width: 20rem;
-      display: flex;
-      flex-wrap: wrap;
       &:first-child {
         display: none;
       }
+    }
+    .modal-li {
+      width: 20vw;
       & > * {
-        width: fit-content;
-        &:first-child {
-          order: 1;
-          flex-grow: 3;
-        }
         &:nth-child(2) {
-          order: 3;
-          @media (min-width: 800px) and(max-width: 1068px) {
-            order: 2;
-          }
-        }
-        &:nth-child(3) {
-          order: 4;
-          flex-grow: 2;
-        }
-        &:last-child {
-          order: 2;
-          @media (min-width: 800px) and(max-width: 1068px) {
-            order: 3;
-          }
-          @media (min-width: 350px) and(max-width: 799px) {
-            order: 4;
-          }
+          display: flex;
+          justify-content: center;
         }
       }
+      @media (min-width: 350px) and(max-width: 1600px) {
+        width: 20rem;
+      }
+
       .decrease-button,
       .increase-button {
         display: none;
       }
     }
-    .modal-li,
+
     .empty-cart {
       width: 20vw;
       @media (min-width: 350px) and(max-width: 1600px) {
