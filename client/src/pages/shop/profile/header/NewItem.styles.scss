@@ -1,0 +1,32 @@
+.new-product {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    //border: 1px solid red;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    background-color: rgb(252, 252, 252);
+    padding: 1rem;
+
+    &__img {
+      //border: 1px solid green;
+      margin: 1rem 0;
+      width: 6rem;
+      height: 6rem;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+      transform: scale(1.1);
+      transition: all 0.5s ease-in-out;
+      opacity: 0.95;
+
+      &:hover {
+        transform: scale(0.9);
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+  }

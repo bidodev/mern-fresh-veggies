@@ -2,10 +2,8 @@
   display: flex;
   height: 80vh;
   width: 100%;
-  justify-content: space-between;
   background-color: #fff;
   position: relative;
-  //border: 1px solid red;
 
   &__main__right {
     width: 20%;
@@ -40,32 +38,6 @@
       //border: 1px solid green;
       margin-top: 5rem;
     }
-    .new-product {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      //border: 1px solid red;
-      margin: 0 auto;
-      margin-bottom: 5rem;
-
-      &__img {
-        //border: 1px solid green;
-        margin: 1rem 0;
-        width: 10rem;
-        height: 10rem;
-      }
-
-      img {
-        height: auto;
-        width: 100%;
-        object-fit: cover;
-
-        &:hover {
-          opacity: 0.8;
-          cursor: pointer;
-        }
-      }
-    }
   }
   &__aside {
     height: 100%;
@@ -84,7 +56,7 @@
       height: 100%;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
       padding: 8rem 0;
-      //border: 1px solid red;
+
 
       &__avatar {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);

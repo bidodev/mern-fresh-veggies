@@ -39,6 +39,7 @@ const Recipes = () => {
 
   return (
     <section className="recipes-section">
+      <h2>Recipes' Suggestions</h2>
       <div className="recipes-section__main-container">{recipes}</div>
     </section>
   );
