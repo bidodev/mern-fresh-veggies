@@ -10,8 +10,8 @@
   top: 0;
 }
 .cart-modal {
-  height: 100vh;
-  width: 25vw;
+  height: 100rem;
+  width: 25rem;
   position: fixed;
   right: 0;
   border: 1px solid rgb(204, 204, 204);
@@ -24,8 +24,8 @@
   flex-direction: column;
   align-items: center;
   margin-left: 2vw;
-  @media (max-width: 800px) {
-    width: 70vw;
+  @media (min-width: 450px) and(max-width: 800px) {
+    width: 30rem;
   }
   .cart-edit {
     margin-top: 2rem;
@@ -35,16 +35,22 @@
     align-items: center;
     justify-content: space-between;
     width: 25vw;
+    @media (min-width: 300px) and(max-width: 1300px) {
+      width: 30rem;
+    }
   }
   //here the mobile v. must also be added
   .cart-list {
     margin: 2vh 2vw;
     height: 60vh;
     overflow-y: auto;
-    width: 20vw;
-
+    width: 20rem;
+    // @media (min-width: 300px) and(max-width: 1300px) {
+    //   width: 25rem;
+    //   background-color: blue;
+    // }
     li {
-      width: 20vw;
+      width: 20rem;
       display: flex;
       flex-wrap: wrap;
       &:first-child {
@@ -58,6 +64,9 @@
         }
         &:nth-child(2) {
           order: 3;
+          @media (min-width: 800px) and(max-width: 1068px) {
+            order: 2;
+          }
         }
         &:nth-child(3) {
           order: 4;
@@ -65,6 +74,12 @@
         }
         &:last-child {
           order: 2;
+          @media (min-width: 800px) and(max-width: 1068px) {
+            order: 3;
+          }
+          @media (min-width: 350px) and(max-width: 799px) {
+            order: 4;
+          }
         }
       }
       .decrease-button,
@@ -75,6 +90,12 @@
     .modal-li,
     .empty-cart {
       width: 20vw;
+      @media (min-width: 350px) and(max-width: 1600px) {
+        width: 20rem;
+      }
+      // @media (min-width: 350px) and(max-width: 1070px) {
+      //   width: 20rem;
+      // }
     }
   }
   .total-price {
