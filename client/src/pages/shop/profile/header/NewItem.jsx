@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
+import './NewItem.styles.scss';
 
-import LoadProductInsideModal from '../farmer.products/LoadProductInsideModal';
+import LoadProductInsideModal from '../products/LoadProductInsideModal';
 
 const NewItem = ({ product, name }) => {
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
 
+  /* Handle product click */
   const toggleModal = () => {
     setIsOpen(!modalStatus);
   };
 
-  /* Handle Product Click */
-  const handleProductClick = () => {
-    //TODO: load the product of the farmer
-    //1. Load the modal and load the data
-    setIsOpen(!modalStatus);
-    //setQuantity(1);
-  };
-
   return (
     <>
-      <div className="new-product" onClick={handleProductClick}>
+      <div className="new-product" onClick={toggleModal}>
         <p>{product.name}</p>
         <div className="new-product__img">
           <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="" />

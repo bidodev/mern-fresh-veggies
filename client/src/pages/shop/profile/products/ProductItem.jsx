@@ -14,27 +14,19 @@ const ProductItem = ({ product, farmerName }) => {
     setIsOpen(!modalStatus);
   };
 
-  /* Handle Product Click */
-  const handleProductClick = () => {
-    //TODO: load the product of the farmer
-    //1. Load the modal and load the data
-    setIsOpen(!modalStatus);
-    //setQuantity(1);
-  };
-
   return (
     <>
-      <div className="profile-page__farmer-products__card" onClick={handleProductClick}>
-        <h3 className="profile-page__farmer-products__card--name">{name}</h3>
-        <div className="profile-page__farmer-products__card__img-container">
+      <div className="profile-page-farmer__products__card" onClick={toggleModal}>
+        <h3 className="profile-page-farmer__products__card--name">{name}</h3>
+        <div className="profile-page-farmer__products__card__img-container">
           <img
             src={`/uploads/${farmerName.toLowerCase()}/images/products/${photo}`}
             alt="img"
-            className="profile-page__farmer-products__card__img-container--img"
+            className="profile-page-farmer__products__card__img-container--img"
           />
         </div>
-        <span className="profile-page__farmer-products__card--type">Type: {type}</span>
-        <p className="profile-page__farmer-products__card--description">{limitResults(description, 120)}</p>
+        <span className="profile-page-farmer__products__card--type">Type: {type}</span>
+        <p className="profile-page-farmer__products__card--description">{limitResults(description, 120)}</p>
       </div>
       {modalStatus && (
         <LoadProductInsideModal

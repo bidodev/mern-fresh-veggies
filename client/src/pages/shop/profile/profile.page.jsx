@@ -11,8 +11,8 @@ import Spinner from 'components/UI/spinner/spinner.component';
 /* Component Imports */
 import HeaderFarmerProfile from 'pages/shop/profile/header/HeaderFarmerProfile.jsx';
 import ProfileInfo from 'pages/shop/profile/header/ProfileInfo';
-import PhotosGallery from 'pages/shop/profile/photo.gallery/PhotosGallery';
-import FarmerProducts from 'pages/shop/profile/farmer.products/FarmerProducts';
+import PhotosGallery from 'pages/shop/profile/gallery/PhotosGallery';
+import FarmerProducts from 'pages/shop/profile/products/FarmerProducts';
 import Recipes from 'pages/shop/profile/recipes/recipes.component';
 
 const ProfilePage = () => {
