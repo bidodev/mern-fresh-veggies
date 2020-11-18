@@ -22,6 +22,8 @@ const ProfilePage = () => {
   const [farmer, setFarmer] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
 
+  console.log(farmer)
+
   useEffect(() => {
     axios(`/farmers/farmer/${farmerId}`)
       .then(({ data }) => {
@@ -37,7 +39,7 @@ const ProfilePage = () => {
     return (
       <div className="public-profile__wrapper">
         {open ? (
-          <div className="public-profile__wrapper__intern">
+          <div className="public-profile__wrapper__store-open">
             <HeaderFarmerProfile {...farmer} />
             <ProfileInfo {...farmer} />
             {gallery && <PhotosGallery {...farmer} />}
@@ -45,8 +47,8 @@ const ProfilePage = () => {
             {recipes && <Recipes />}
           </div>
         ) : (
-          <div>
-              <h3 style={{ paddingTop: '50vh' }}>This store is closed at the moment</h3>
+          <div className="public-profile__wrapper__store-closed">
+              <h3>This store is closed at the moment</h3>
           </div>
         )}
       </div>

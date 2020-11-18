@@ -8,6 +8,15 @@
     font-size: 2rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &__filters{
+      display: flex;
+      align-items: center;
+      justify-content:space-evenly;
+      height: 15vh;
+      background-color: #fff;
+      flex-direction: column;
+    }
   }
 
   &-farmer {
