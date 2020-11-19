@@ -6,11 +6,12 @@
   *Define colors for the farmer public profile
 */
 :root {
-  --primary: #405C45;
   --primary-green: #405C45;
   --primary-red: #A6382E;
-  --secondary: #F0F0F0;
-  --shadow-white: #fff;
+  --primary-rose: #504024;
+  --secondary-gray: #F0F0F0;
+
+
   --shadow-gray: #f0f0f0;
 
   /* borders */
@@ -23,12 +24,18 @@
 
 //layout themes
 .green-mode {
-  --backGroundColor: var(--primary-green);
+  --header: var(--primary-green);
+  --text-header: var(--secondary-gray);
 }
 
 .red-mode {
-  --backGroundColor: var(--primary-red);
+  --header: var(--primary-red);
+  --text-header: var(--secondary-gray);
+}
 
+.rose-mode {
+  --header: var(--primary-rose);
+  --text-header: var(--secondary-gray);
 }
 
 .public-profile {

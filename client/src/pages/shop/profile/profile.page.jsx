@@ -22,8 +22,6 @@ const ProfilePage = () => {
   const [farmer, setFarmer] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
 
-  console.log(farmer)
-
   useEffect(() => {
     axios(`/farmers/farmer/${farmerId}`)
       .then(({ data }) => {
@@ -37,14 +35,14 @@ const ProfilePage = () => {
     const { open, recipes, gallery, products } = farmer.config;
 
     return (
-      <div className="public-profile__wrapper">
+      <div className="public-profile__wrapper green-mode">
         {open ? (
           <div className="public-profile__wrapper__store-open">
             <HeaderFarmerProfile {...farmer} />
             <ProfileInfo {...farmer} />
             {gallery && <PhotosGallery {...farmer} />}
             {products && <FarmerProducts farmer={farmer} />}
-            {recipes && <Recipes />}
+            {recipes && <Recipes farmer={farmer}/>}
           </div>
         ) : (
           <div className="public-profile__wrapper__store-closed">

@@ -1,10 +1,10 @@
+/* Farmer data, about me, testimonails and new products */
+
 .public-farmer {
   display: flex;
   height: 80vh;
   width: 100%;
-  background-color: #fff;
   position: relative;
-  //border: 1px solid red;
 
   /* New Products Menu*/
   &__main__right {
@@ -15,29 +15,20 @@
       position: absolute;
       width: 20%;
       z-index: 2;
-      background-color: var(--primary);
+      background-color: var(--header);
     }
 
     h2 {
-      color: var(--secondary);
-      font-weight: 300;
+      color: var(--text-header);
+      font-weight: 500;
       padding: 1rem;
       text-align: center;
       text-transform: uppercase;
     }
 
-    hr {
-      margin: 0 auto;
-      width: 100%;
-      border: 0;
-      height: 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .shit2 {
-      border-left: 1px solid rgba(0, 0, 0, 0.1);
-      padding-top: 3.9rem;
+    &__container {
+      border-left: 1px solid var(--border-color);
+      padding-top: 4rem;
     }
   }
 
@@ -45,7 +36,6 @@
     height: 100%;
     width: 80%;
     display: flex;
-    //border: 1px solid red;
 
     &__main {
       height: 100%;
@@ -55,39 +45,31 @@
     &__infos {
       width: 25%;
       height: 100%;
-      
 
       &__avatar {
-        //border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         height: 30%;
-        
-        
-        
-        &__a{
-          background-color:var(--primary);
+
+        &__a {
+          background-color: var(--header);
           height: 50%;
-          
-          
-          
         }
 
-        &__b{
+        &__b {
           //background-color: red;
           padding: 1rem 2rem;
-          border-right: 1px solid rgba(0, 0, 0, 0.1);
+          border-right: 1px solid var(--border-color);
           height: 50%;
-          
         }
 
         h2 {
           font-size: 2.2rem;
-          color: var(--primary);
-          font-weight: 300;
+          color: var(--header);
+          font-weight: 500;
         }
         h3 {
           margin-top: 2rem;
-          color: var(--primary);
-          font-weight: 300;
+          color: var(--header);
+          font-weight: 500;
           text-transform: uppercase;
         }
       }
@@ -95,23 +77,22 @@
       &__data {
         height: auto;
         padding: 4rem 2rem 1rem 2rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        border-right: 1px solid rgba(0, 0, 0, 0.1);
-        
+        border-bottom: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
 
         h2 {
-          color: var(--secondary);
-          font-weight: 300;
+          color: var(--text-header);
+          font-weight: 500;
         }
       }
       &__expertise {
         padding: 2rem;
-        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 1px solid var(--border-color);
         height: 37%;
 
         h3 {
-          color: var(--primary);
-          font-weight: 300;
+          color: var(--header);
+          font-weight: 500;
           text-transform: uppercase;
           margin-bottom: 1rem;
         }
@@ -145,11 +126,11 @@
       height: 45%;
       width: 100%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      
+
       h2 {
-        background-color: var(--primary);
-        color: var(--secondary);
-        font-weight: 300;
+        background-color: var(--header);
+        color: var(--text-header);
+        font-weight: 500;
         padding: 1rem 2rem;
         text-transform: uppercase;
         letter-spacing: 0.1px;
@@ -159,17 +140,16 @@
         margin-top: 1rem;
         padding: 0 2rem;
       }
-      
     }
-    
+
     &__reviews {
       width: 100%;
       height: 60%;
 
       h2 {
-        background-color: var(--primary);
-        color: var(--secondary);
-        font-weight: 300;
+        //background-color: var(--header);
+        color: var(--header);
+        font-weight: 500;
         padding: 1rem 2rem;
         text-transform: uppercase;
         letter-spacing: 0.1px;
@@ -206,7 +186,7 @@
           width: 10px;
           height: 10px;
           border-radius: 50%;
-          background-color: var(--primary);
+          background-color: var(--header);
           opacity: 0.5;
           margin-right: 10px;
         }
@@ -220,57 +200,6 @@
     &--stars {
       margin: 1vh 0;
     }
-  }
-
-  &__public {
-    margin-top: 8vh;
-    width: 100%;
-    background: #eee;
-
-    &--header {
-      text-align: center;
-      margin: 1vh;
-    }
-
-    &__information {
-      //border: 1px solid red;
-      display: flex;
-
-      @media (max-width: 1050px) {
-        flex-direction: column;
-      }
-
-      &--avatar {
-        margin: 3vh;
-
-        @media (max-width: 1050px) {
-          margin: 0 auto;
-        }
-      }
-
-      &--biography {
-        margin: 1vh;
-        padding: 2vh;
-        width: 70vw;
-        background: #f9f9f9;
-
-        @media (max-width: 1050px) {
-          margin: 2vh auto;
-          width: 80vw;
-        }
-      }
-    }
-  }
-
-  .avatar-img {
-    width: 15vw;
-    height: 15vw;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  .gallery-img {
-    width: 100%;
   }
 }
 

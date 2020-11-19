@@ -1,7 +1,6 @@
 import React from 'react';
 import './ProfileInfo.styles.scss';
 
-//import LoadProductInsideModal from './farmer.products/LoadProductInsideModal';
 import NewItem from '../NewItem';
 
 const ProfileInfo = ({ name, products }) => {
@@ -83,11 +82,10 @@ const ProfileInfo = ({ name, products }) => {
           <div className="public-farmer__main__right__header">
             <h2>New Products</h2>
           </div>
-          <hr />
           {/* should be filtered by data add and limit to 5 */}
-          <div className="shit2">
-            {products
-              .filter((product, index) => index < 6)
+          <div className="public-farmer__main__right__container">
+            {/* create a shalow copy of the array and reverse to show the last added first */}
+            {[...products].reverse().filter((product, index) => index < 6)
               .map((product, index) => (
                 <NewItem key={index} product={product} name={name} />
               ))}

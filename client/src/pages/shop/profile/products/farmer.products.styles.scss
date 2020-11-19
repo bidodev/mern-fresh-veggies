@@ -4,11 +4,11 @@
   &__header {
     text-align: center;
     padding: 1.5rem;
-    color: var(--secondary);
+    color: var(--text-header);
     font-size: 2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: var(--primary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--header);
     text-transform: uppercase;
 
     &__filters{
@@ -16,7 +16,6 @@
       align-items: center;
       justify-content:space-evenly;
       height: auto;
-      background-color: #fff;
       flex-direction: column;
       border-top: 2rem;
       //border: 1px solid red;
@@ -26,7 +25,7 @@
         width: 100%;
         border: 0;
         height: 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--border-color);
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       }
 

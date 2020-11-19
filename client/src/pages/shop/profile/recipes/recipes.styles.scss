@@ -1,13 +1,20 @@
 .recipes-section {
 
+  p {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--header);
+  }
+
   h2 {
     text-align: center;
     padding: 1.5rem;
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: var(--header);
+    color: var(--text-header);
     font-size: 2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     text-transform: uppercase;
   }
 }
@@ -18,7 +25,8 @@
     padding: 2vh;
     display: flex;
     border-radius: 2px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+
     @media (max-width: 1050px) {
       flex-direction: column;
       align-items: center;
@@ -43,11 +51,12 @@
 
     &__info-container {
       width: 55vw;
-      padding: 2vh;
+      padding-left: 1vw;
+
 
       &__name {
         text-transform: uppercase;
-        background: #f9f9f9;
+        margin-bottom: 1rem;
       }
 
       &__portion {

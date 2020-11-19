@@ -4,13 +4,17 @@
     flex-direction: column;
     padding: 1.5rem 0;
     text-transform: uppercase;
-    color: var(--primary);
+    color: var(--header);
     transition: all .3s ease-in-out;
+
+    p:first-of-type {
+      font-weight: 600;
+    }
 
     &:hover {
       cursor: pointer;
-      color: #fff;
-      background-color: var(--primary);
+      color: var(--text-header);
+      background-color: var(--header);
       transform: scale(0.98);
 
     }
@@ -18,15 +22,14 @@
     &__img {
       //border: 1px solid green;
       margin: 1rem 0;
-      width: 6rem;
-      height: 6rem;
+      width: 7rem;
+      height: 7rem;
     }
 
     img {
       height: auto;
       width: 100%;
       object-fit: cover;
-      transform: scale(1.1);
       transition: all 0.5s ease-in-out;
     }
   }

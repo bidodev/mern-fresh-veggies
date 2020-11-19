@@ -84,7 +84,7 @@ class WithScrollbar extends Component {
       >
         {this.props.images.gallery.map((image, index) => (
           <div key={index} className="image-container increase-size">
-            <img
+            <img alt={image.name}
               draggable={false}
               style={{ width: '100%', height: '100%', cursor: 'pointer' }}
               src={image.path === '' ? '/uploads/default.jpg' : `/uploads/${this.props.name.toLowerCase()}/images/gallery/${image.path}`}
