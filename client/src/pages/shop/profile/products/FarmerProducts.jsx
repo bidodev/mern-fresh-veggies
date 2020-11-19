@@ -36,12 +36,17 @@ const FarmerProducts = ({ farmer }) => {
         <div className="profile-page__header__filters">
           <FiltersItem />
           <SearchBar onSearch={setFilterProduct} />
+          <hr />
         </div>
         {
           <div className="profile-page-farmer__products">
             {products.length > 0 ? <ProductList products={products} /> : (<div className='profile-page-farmer__empty-store'><h3>{name} did not add products to his store!!</h3></div>)}
           </div>
         }
+        {/* TODO: Add class loading while fetching more results */}
+        <div className="profile-page-farmer__load-more">
+           <a href="#" class="absolute-center button">Load More</a>
+        </div>
       </section>
     </React.Fragment>
   );
