@@ -13,13 +13,11 @@ import UploadButton from './UploadButton';
 import './fileUploader.styles.scss';
 
 const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes, photoName }) => {
-
-  /** Load the userProfile image */
+  /* Load the userProfile image */
   const [imagePreview, setImagePreview] = useState(photo);
 
   /* The loaded file */
   const [file, setFile] = useState('');
-
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
@@ -72,20 +70,23 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes, photo
     //lets crop the image
     saveCropedImage();
 
-    let URL = '/users/profile'
-    
-    let data = new FormData()
+    let URL = '/users/profile';
+
+    let data = new FormData();
     data.append('name', photoName);
     data.append('update', heading.toLowerCase());
-    data.append('photo', file)
+    data.append('photo', file);
     //data.append('photo', croppedImage)
     //TODO: the blob is not beeing handled by Mutler
-    
-    axios.patch(URL, data).then(response => {
-      console.log('response', response)
-    }).catch(error => {
-      console.log('error', error)
-    })
+
+    axios
+      .patch(URL, data)
+      .then((response) => {
+        console.log('response', response);
+      })
+      .catch((error) => {
+        console.log('error', error);
+      });
   };
 
   return (
@@ -128,7 +129,7 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes, photo
         </div>
         <hr />
         <form onSubmit={(e) => handleImageUpload(e)} className="file__uploader">
-          <UploadButton onSelectFile={onSelectFile}/>
+          <UploadButton onSelectFile={onSelectFile} />
           <div>
             <Button variant="contained" color="primary" classes={{ root: classes.cropButton }}>
               Reset

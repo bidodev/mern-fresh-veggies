@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { removeProduct } from 'utils/services';
+import { useSelector } from 'react-redux';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
-import {useSelector} from 'react-redux';
-
+/* Styles */
 import './ProductItem.styles.scss';
+
 /* Component Imports */
 import Modal from 'components/modal/modal.component';
 
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-
 function Product({ _id, name, photo, type, description }) {
-
   const user = useSelector(({ login }) => login.user.data);
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
@@ -18,7 +17,6 @@ function Product({ _id, name, photo, type, description }) {
   const toggleModal = () => {
     setIsOpen(!modalStatus);
   };
-
 
   const customStyles = {
     /* Modal Styles */
@@ -52,18 +50,21 @@ function Product({ _id, name, photo, type, description }) {
         <Icon icon="times" className="fa-times" onClick={toggleModal} />
         <h2 className="display-product__name">{name}</h2>
         <div className="display-product__img-container">
-          <img src={`/uploads/${user.name.toLowerCase()}/images/products/${photo}`} alt="img" className="display-product__img-container--img" />
+          <img
+            src={`/uploads/${user.name.toLowerCase()}/images/products/${photo}`}
+            alt="img"
+            className="display-product__img-container--img"
+          />
         </div>
         <div className="display-product__type">{type}</div>
         <div className="display-product__description">{description}</div>
         <div className="display-product__delete-container">
-          <span className="display-product__delete-container--text">Delete Item: </span>
+          <span className="display-product__delete-container--text">Delete: </span>
           <Icon icon="trash" onClick={() => removeProduct(_id)} className="display-product__delete-container--icon" />
         </div>
       </Modal>
     </>
   );
 }
-
 
 export default Product;

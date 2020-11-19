@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getStockProducts } from 'utils/services';
-
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 /* Component Imports */
@@ -9,7 +8,6 @@ import Spinner from 'components/UI/spinner/spinner.component';
 import AddProduct from 'components/forms/add-product/add.product.component';
 import DisplayModal from 'components/modal/modal.component';
 import ProductList from 'pages/farmeradmin/stock/productlist/ProductList';
-
 import SearchBar from 'components/search/SearchBar';
 
 /* Styles */

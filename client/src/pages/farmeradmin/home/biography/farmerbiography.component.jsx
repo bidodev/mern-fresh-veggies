@@ -16,9 +16,7 @@ const FarmerBiography = ({ name }) => {
         repellendus qui doloribus numquam rem? Itaque expedita excepturi rem doloribus saepe ipsum sapiente in sint
         accusantium, dolorem tenetur enim sed ea totam cumque repellendus dolorum cupiditate laboriosam repellat. Illum,
         rerum mollitia! Recusandae repudiandae aliquam alias distinctio, quasi neque dolorem corporis officiis quo quam
-        culpa nobis iste inventore, soluta eaque temporibus consectetur consequuntur, laborum iure explicabo asperiores
-        exercitationem rerum sapiente? Dolores aperiam molestiae consequatur. Deleniti adipisci at dolores quos dolorum,
-        voluptatum ad.
+        culpa nobis iste inventore, soluta eaque temporibus consectetur consequuntur.
       </div>
     </div>
   );

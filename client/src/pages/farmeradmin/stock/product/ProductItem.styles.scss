@@ -1,70 +1,61 @@
-.product-item {
+.product-item__farmer-products__card {
+  width: 13rem;
+  height: 20rem;
+  margin: 1rem 0.5rem;
+  padding: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(102, 102, 102, 0.2);
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
 
-  &__farmer-products {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    border: 1px solid red;
-
-    &__card {
-      width: 13vw;
-      min-width: 10rem;
-      height: 35vh;
-      margin: 2vh 1vh;
-      padding: 1vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: black;
-      background: white;
-      border: 1px solid rgba(102, 102, 102, 0.2);
-      //border: 1px solid red;
-
-      &:hover {
-        opacity: 0.7;
-        cursor: pointer;
-      }
-
-      &__img-container {
-        width: 100%;
-        height: 30vh;
-        //border: 1px solid red;
-
-        &--img {
-          
-          width: 100%;
-          height: auto;
-          object-fit: fill;
-        }
-      }
-
-      &--name {
-        margin: 1vh;
-        text-align: center;
-      }
-
-      &--type {
-        margin: 1vh;
-        font-style: italic;
-      }
-
-      &--description {
-        margin: 1vh;
-      }
+  &__img-container {
+    width: 10rem;
+    height: 12rem;
+    &--img {
+      width: 100%;
     }
+  }
+
+  &--name {
+    margin: 1vh;
+    text-align: center;
+  }
+
+  &--type {
+    margin: 1vh;
+    font-style: italic;
+  }
+
+  &--description {
+    margin: 1vh;
   }
 }
 
 .display-product {
   &__name {
+    margin: 1rem 0;
     font-size: 2rem;
+    text-transform: uppercase;
     text-align: center;
+    @media (max-width: 650px) {
+      font-size: 1.5rem;
+    }
   }
 
   &__img-container {
     margin: 0 auto;
-    width: 25vw;
-
+    width: 18rem;
+    @media (max-width: 650px) {
+      width: 10rem;
+    }
     &--img {
       width: 100%;
     }

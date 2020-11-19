@@ -83,7 +83,7 @@ const AccountSetting = ({ user }) => {
           <h5>Email:</h5>
 
           <div className="settings__accounts__email__input">
-            <div>{`Your email address is ${user.email}`}</div>
+            <div>{` ${user.email}`}</div>
             <Icon icon={['far', 'edit']} onClick={toggleModal} />
           </div>
         </div>

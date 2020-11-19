@@ -46,12 +46,11 @@ function PublicProfileSettings({ user }) {
             ''
           )} */}
 
-          <h4>Public Profile</h4>
+          <h2>Public Profile</h2>
           <p>Hello {user.name}</p>
 
           <div className="settings__page__item__header">
-            <h2>Select how your profile should Lorem ipsum dolor sit amet.</h2>
-            <p>Select this options to Lorem ipsum dolor sit amet.</p>
+            <h3>Select how your profile should appear in the store</h3>
           </div>
 
           {/* headline */}
