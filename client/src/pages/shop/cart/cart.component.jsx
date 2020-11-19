@@ -51,7 +51,7 @@ const Cart = ({ match }) => {
       </Link>
       <p className="cart-title">You have added the following articles:</p>
       <ul className="cart-list">
-        <li>
+        <li classNae="cart-list-info">
           <span>Item: </span>
           <span>Quantity: </span>
           <span>Price </span>
