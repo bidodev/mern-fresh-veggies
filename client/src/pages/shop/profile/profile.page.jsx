@@ -11,8 +11,8 @@ import Spinner from 'components/UI/spinner/spinner.component';
 /* Component Imports */
 import HeaderFarmerProfile from 'pages/shop/profile/header/HeaderFarmerProfile.jsx';
 import ProfileInfo from 'pages/shop/profile/header/ProfileInfo';
-import PhotosGallery from 'pages/shop/profile/photo.gallery/PhotosGallery';
-import FarmerProducts from 'pages/shop/profile/farmer.products/FarmerProducts';
+import PhotosGallery from 'pages/shop/profile/gallery/PhotosGallery';
+import FarmerProducts from 'pages/shop/profile/products/FarmerProducts';
 import Recipes from 'pages/shop/profile/recipes/recipes.component';
 
 const ProfilePage = () => {
@@ -21,6 +21,8 @@ const ProfilePage = () => {
   /* Farmer page object */
   const [farmer, setFarmer] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
+
+  console.log(farmer)
 
   useEffect(() => {
     axios(`/farmers/farmer/${farmerId}`)
@@ -37,7 +39,7 @@ const ProfilePage = () => {
     return (
       <div className="public-profile__wrapper">
         {open ? (
-          <div className="public-profile__wrapper__intern">
+          <div className="public-profile__wrapper__store-open">
             <HeaderFarmerProfile {...farmer} />
             <ProfileInfo {...farmer} />
             {gallery && <PhotosGallery {...farmer} />}
@@ -45,8 +47,8 @@ const ProfilePage = () => {
             {recipes && <Recipes />}
           </div>
         ) : (
-          <div>
-              <h3 style={{ paddingTop: '50vh' }}>This store is closed at the moment</h3>
+          <div className="public-profile__wrapper__store-closed">
+              <h3>This store is closed at the moment</h3>
           </div>
         )}
       </div>

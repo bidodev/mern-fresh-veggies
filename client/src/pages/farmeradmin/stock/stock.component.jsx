@@ -10,7 +10,7 @@ import AddProduct from 'components/forms/add-product/add.product.component';
 import DisplayModal from 'components/modal/modal.component';
 import ProductList from 'pages/farmeradmin/stock/productlist/ProductList';
 
-import SearchBar from 'pages/farmeradmin/stock/search/SearchBar';
+import SearchBar from 'components/search/SearchBar';
 
 /* Styles */
 import './stock.styles.scss';

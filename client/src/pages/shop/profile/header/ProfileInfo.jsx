@@ -12,16 +12,29 @@ const ProfileInfo = ({ name, products }) => {
           <div className="public-farmer__aside__infos">
             <div className="public-farmer__aside__infos__avatar">
               <h2>{name}</h2>
+              <p>⭐⭐⭐⭐⭐</p>
               <h3>Location</h3>
               <p>Berlin - Germany</p>
             </div>
             <div className="public-farmer__aside__infos__data">
-              <h2>About Me</h2>
               <p className="public-farmer__aside__infos__paragraph">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, fugiat? Lorem ipsum dolor sit amet
                 consectetur adipisicing elit. Omnis neque aspernatur in qui temporibus veritatis unde, culpa porro?
                 Nemo, magnam.
               </p>
+            </div>
+            <div className="public-farmer__aside__infos__expertise">
+            <h3>Area of Expertise</h3>
+              <ul>
+                <li>Vegetables</li>
+                <li>Meat</li>
+                <li>Fruits</li>
+                <li>Honig</li>
+                <li>Vegan</li>
+                <li>Certified</li>
+                <li>Discount</li>
+                <li>Fruits</li>
+                </ul>
             </div>
           </div>
           <div className="public-farmer__aside__main">
@@ -37,16 +50,16 @@ const ProfileInfo = ({ name, products }) => {
           </div>
         </aside>
         <main className="public-farmer__main__right">
-          <div className="shiiit">
+          <div className="public-farmer__main__right__header">
             <h2>New Products</h2>
           </div>
           <hr />
           {/* should be filtered by data add and limit to 5 */}
           <div className="shit2">
             {products
-              .filter((product, index) => index < 3)
-              .map((product) => (
-                <NewItem product={product} name={name} />
+              .filter((product, index) => index < 6)
+              .map((product, index) => (
+                <NewItem key={index} product={product} name={name} />
               ))}
           </div>
         </main>

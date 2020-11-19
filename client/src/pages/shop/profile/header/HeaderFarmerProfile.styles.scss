@@ -1,31 +1,31 @@
-.farmer-public-store {
-  height: 50vh;
-  position: relative;
+.farmer-public {
+  &__header {
+    height: 40vh;
+    position: relative;
 
-  &__cover {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    &__cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  &__avatar {
-    position: absolute;
-    left: 2.5vh;
-    top: 25vh;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    width: 250px;
-    height: 250px;
-    z-index: 1;
+    &__avatar {
+      position: absolute;
+      left: 2.5vh;
+      top: 25vh;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      width: 250px;
+      height: 250px;
+      z-index: 1;
 
-    img {
+      img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: filter 0.5s ease;
         border-radius: 50%;
       }
+    }
   }
 }
 

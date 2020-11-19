@@ -1,12 +1,29 @@
-.public-profile__wrapper {
-  //border: 1px solid red;
-  margin-top: 8vh;
-  background-color: rgba(121, 147, 8, .4);
+/**
+ *Main containers styles rules
+**/
 
-  &__intern {
-    width: 80vw;
-    margin: 0 auto;
-    padding-top: 3rem;
-  
+.public-profile {
+  &__wrapper {
+    margin-top: 8vh;
+    background-color: rgba(182, 182, 182, 0.3);
+
+    &__store-open {
+      width: 80vw;
+      margin: 0 auto;
+      padding-top: 2.5vh;
+    }
+
+    &__store-closed {
+      height: 68vh;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      h3 {
+        color: #4d3525;
+        font-size: 2rem;
+      }
+    }
   }
 }

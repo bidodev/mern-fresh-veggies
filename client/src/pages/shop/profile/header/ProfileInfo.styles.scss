@@ -2,21 +2,22 @@
   display: flex;
   height: 80vh;
   width: 100%;
-  justify-content: space-between;
   background-color: #fff;
   position: relative;
   //border: 1px solid red;
 
+  /* New Products Menu*/
   &__main__right {
     width: 20%;
     overflow-y: scroll;
-    //border: 1px solid red;
+    //background-color: #F0F0F0;
 
-    .shiiit {
+    &__header {
       position: absolute;
       width: 20%;
       z-index: 2;
       background-color: #f0f0f0;
+      //border: 1px solid red;
       //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
     }
 
@@ -25,6 +26,7 @@
       font-weight: 300;
       padding: 1rem;
       text-align: center;
+      text-transform: uppercase;
     }
 
     hr {
@@ -38,35 +40,10 @@
 
     .shit2 {
       //border: 1px solid green;
-      margin-top: 5rem;
-    }
-    .new-product {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      //border: 1px solid red;
-      margin: 0 auto;
-      margin-bottom: 5rem;
-
-      &__img {
-        //border: 1px solid green;
-        margin: 1rem 0;
-        width: 10rem;
-        height: 10rem;
-      }
-
-      img {
-        height: auto;
-        width: 100%;
-        object-fit: cover;
-
-        &:hover {
-          opacity: 0.8;
-          cursor: pointer;
-        }
-      }
+      margin-top: 3rem;
     }
   }
+
   &__aside {
     height: 100%;
     width: 80%;
@@ -75,29 +52,33 @@
 
     &__main {
       height: 100%;
-      width: 70%;
+      width: 75%;
       
     }
 
     &__infos {
-      width: 30%;
+      width: 25%;
       height: 100%;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
-      padding: 8rem 0;
+  
       //border: 1px solid red;
 
+
       &__avatar {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        //border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         height: 30%;
-        padding: 0 2rem;
+        //border: 1px solid red;
+        padding: 8rem 2rem;
+        //background-color: #f0f0f0;
 
         h2 {
           font-size: 2.2rem;
           color: #405c45;
           font-weight: 300;
+
         }
         h3 {
-          margin-top: 3rem;
+          margin-top: 2rem;
           color: #3c6142;
           font-weight: 300;
           text-transform: uppercase;
@@ -105,14 +86,45 @@
       }
 
       &__data {
-        height: 60%;
+        height: auto;
         padding: 2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
         h2 {
           color: #3c6142;
           font-weight: 300;
         }
       }
+    &__expertise{
+      padding: 2rem;
+
+      h3 {
+        color: #3c6142;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0.5rem;
+          margin: 0.5rem 0.5rem 0.5rem 0;
+          background: #F0F0F0;
+          border-radius: 5px;
+
+          &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+          }
+        }
+      }
+    }
     }
   }
 
@@ -128,12 +140,14 @@
         background-color: #f0f0f0;
         color: #3c6142;
         font-weight: 300;
-        padding: 1rem;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1px;
       }
 
       p {
         margin-top: 1rem;
-        padding: 0 1rem;
+        padding: 0 2rem;
       }
     }
 
