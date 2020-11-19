@@ -1,20 +1,6 @@
-/* ******** SCROLL BAR STYLE ***
-:hover {
-  overflow-y: scroll;
-}
-::-webkit-scrollbar {
-  width: 4px; // Remove scroll bar space 
-  background: transparent; // Optional: just make scroll bar invisible 
-}
-// Optional: show position indicator in black in case width is > 0 
-::-webkit-scrollbar-thumb {
-  background: #00000093;
-}
-*** */
-
 .carousel-container {
-  border: 1px solid transparent; // WTF: Don't work without border
   width: 100%;
+
   &__item {
     display: flex;
     justify-content: center;
@@ -136,3 +122,17 @@
     }
   }
 }
+
+/* ******** SCROLL BAR STYLE ***
+:hover {
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 4px; // Remove scroll bar space 
+  background: transparent; // Optional: just make scroll bar invisible 
+}
+// Optional: show position indicator in black in case width is > 0 
+::-webkit-scrollbar-thumb {
+  background: #00000093;
+}
+*** */

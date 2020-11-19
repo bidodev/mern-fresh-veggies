@@ -1,10 +1,18 @@
 .settings__page__item__wrapper {
-  margin: 0 auto;
-  @media (max-width: 600px) {
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  @media (max-width: 850px) {
+    position: unset;
+    margin: 0 auto;
     padding: 0 1rem;
   }
+
   &__account {
     margin-top: 4rem;
+    @media (max-width: 850px) {
+      margin-top: 1rem;
+    }
     h5 {
       margin-bottom: 0.5rem;
     }
@@ -24,7 +32,7 @@
       background-color: #fff;
       color: #666;
       @media (max-width: 600px) {
-        width: 18rem;
+        width: 80vw;
       }
       div {
         padding: 0.8rem 0.5rem;
@@ -48,7 +56,7 @@
       font-size: 1rem;
       margin-bottom: 1rem;
       @media (max-width: 600px) {
-        width: 18rem;
+        width: 80vw;
       }
     }
   }
@@ -59,20 +67,23 @@
 
 .modal__email {
   width: 30rem;
+  height: 38rem;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 40%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%);
   border: 1px solid rgb(204, 204, 204);
   background: rgb(255, 255, 255);
   overflow: auto;
   border-radius: 4px;
   outline: none;
   padding: 20px;
-  @media (max-width: 500px) {
-    width: 20rem;
+  @media (max-width: 850px) {
+    width: 90vw;
+    height: 90vh;
+    left: 5%;
+    top: 5%;
   }
 }
 
@@ -103,20 +114,20 @@
 .b {
   margin-top: 2rem;
   height: 45%;
+
   input[type='password'],
   input[type='email'] {
     width: 27rem;
     padding: 0.8rem 0.5rem;
     font-size: 1rem;
     margin-bottom: 1rem;
-    @media (max-width: 500px) {
-      width: 18rem;
+    @media (max-width: 850px) {
+      width: 100%;
     }
   }
 }
 
 .c {
   display: flex;
-  width: 100%;
-  justify-content: flex-end;
+  justify-content: center;
 }

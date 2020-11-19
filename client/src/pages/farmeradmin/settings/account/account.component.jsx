@@ -36,7 +36,7 @@ const AccountSetting = ({ user }) => {
       .patch('/account/email', data)
       .then((res) => {
         console.log(res);
-        // if the password was changed with sucess clear the fields
+        // if the password was changed with success clear the fields
         toggleModal();
       })
       .catch((err) => {
@@ -59,8 +59,7 @@ const AccountSetting = ({ user }) => {
       .patch('/account/password', data)
       .then((res) => {
         console.log(res);
-
-        // if the password was changed with sucess clear the fields
+        // if the password was changed with success clear the fields
         password.current.value = '';
         newPassword.current.value = '';
         repeatNewPassword.current.value = '';
@@ -75,21 +74,20 @@ const AccountSetting = ({ user }) => {
   return (
     <div className="settings__page__item__wrapper">
       <div className="settings__page__item__wrapper__account">
-        <h4>Account</h4>
+        <h3>Account</h3>
         <p>Edit your account settings and change your password here.</p>
         <hr />
 
         <div className="settings__accounts__email">
           <h5>Email:</h5>
-
           <div className="settings__accounts__email__input">
             <div>{` ${user.email}`}</div>
             <Icon icon={['far', 'edit']} onClick={toggleModal} />
           </div>
         </div>
         <hr />
-        <h5>Password:</h5>
 
+        <h5>Password:</h5>
         <div className="settings__accounts__email">
           <form onSubmit={handlePassword}>
             <input
@@ -116,8 +114,8 @@ const AccountSetting = ({ user }) => {
               placeholder={`Repeat New Password`}
               required
             />
-
             <hr />
+
             <div className="settings__accounts__button">
               <CustomButton type="submit" style={{ width: '15rem' }}>
                 Save Password
