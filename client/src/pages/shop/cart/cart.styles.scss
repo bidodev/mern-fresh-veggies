@@ -5,14 +5,15 @@
   margin-left: 4vw;
   margin-top: 8rem;
   height: 80vh;
-
+  @media (max-width: 800px) {
+    margin-top: 5rem;
+    height: 90vh;
+  }
   /// this is to prevent redirecting on a click outside the button
   a {
     width: fit-content;
     .custom-button {
       width: 20rem;
-
-      // margin: 0 5rem 2rem 5rem;
     }
   }
   .cart-title {
@@ -22,7 +23,12 @@
     height: 50vh;
     margin: 3vh 10vw;
     overflow-y: scroll;
-    @media (min-width: 800px) and(max-width: 1600px) {
+    @media (max-width: 800px) {
+      width: 95vw;
+      margin: 0;
+    }
+
+    @media (min-width: 800px) and(max-width: 2600px) {
       overflow: hidden;
       &:hover {
         overflow-y: scroll;
@@ -43,6 +49,12 @@
       list-style: none;
       display: flex;
       justify-content: space-between;
+      @media (max-width: 800px) {
+        width: 95vw;
+        justify-content: space-evenly;
+        height: 5rem;
+        align-items: center;
+      }
       // border: 0px transparent solid;
       &:not(:first-child) {
         border-radius: 10px;
@@ -57,11 +69,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // text-align: center;
-        // vertical-align: bottom;
         &:nth-child(2) {
           display: flex;
           justify-content: space-between;
+          @media (max-width: 800px) {
+            min-width: 10rem;
+            justify-content: center;
+          }
+        }
+        @media (max-width: 800px) {
+          &:first-child {
+            min-width: 6rem;
+          }
         }
       }
       .decrease-button,
@@ -90,6 +109,9 @@
     margin-right: 12vw;
     font-weight: bold;
     font-size: 1.1rem;
+    @media (max-width: 800px) {
+      margin-top: 4rem;
+    }
   }
 }
 
