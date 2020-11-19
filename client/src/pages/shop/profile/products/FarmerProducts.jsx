@@ -7,7 +7,9 @@ import SearchBar from 'components/search/SearchBar';
 
 const FiltersItem = () => {
   return (
-    <h1></h1>
+    <div className="profile-page__header__filters__diet">
+        <img src="/images/diet.png" alt="diet-type"/>
+    </div>
   )
 }
 
@@ -32,14 +34,19 @@ const FarmerProducts = ({ farmer }) => {
 
         {/* TODO: Don't display filters while store has no products added. */}
         <div className="profile-page__header__filters">
-          <SearchBar onSearch={setFilterProduct} />
           <FiltersItem />
+          <SearchBar onSearch={setFilterProduct} />
+          <hr />
         </div>
         {
           <div className="profile-page-farmer__products">
             {products.length > 0 ? <ProductList products={products} /> : (<div className='profile-page-farmer__empty-store'><h3>{name} did not add products to his store!!</h3></div>)}
           </div>
         }
+        {/* TODO: Add class loading while fetching more results */}
+        <div className="profile-page-farmer__load-more">
+           <a href="#" class="absolute-center button">Load More</a>
+        </div>
       </section>
     </React.Fragment>
   );

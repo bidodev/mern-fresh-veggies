@@ -131,7 +131,7 @@
   &__main {
     &__featured {
       //border: 1px solid red;
-      height: 60%;
+      height: 45%;
       width: 100%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -155,7 +155,56 @@
       //height: 60%;
       width: 100%;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
-      height: 40%;
+      height: 65%;
+
+      h2 {
+        background-color: rgba(240, 240, 240, .5);
+        color: #3c6142;
+        font-weight: 300;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1px;
+      }
+
+      div {
+        p {
+          font-size: 1.6rem;
+          padding: 2rem;
+        }
+      }
+      .abcde {
+        //border: 1px solid red;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        p {
+          font-size: 1rem;
+          span {
+            font-size: 0.9rem;
+          }
+        }
+        .carousel-dots {
+          position: absolute;
+          //left: 0;
+          right: +5%;
+          z-index: 999;
+          text-align: center;
+          //border: 1px solid red;
+      }
+      
+      .carousel-dots .carousel-dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #999;
+          opacity: 0.5;
+          margin-right: 10px;
+      }
+      }
     }
   }
 

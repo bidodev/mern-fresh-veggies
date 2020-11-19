@@ -10,8 +10,8 @@
   top: 0;
 }
 .cart-modal {
-  height: 100vh;
-  width: 25vw;
+  height: 100rem;
+  width: 30rem;
   position: fixed;
   right: 0;
   border: 1px solid rgb(204, 204, 204);
@@ -24,8 +24,11 @@
   flex-direction: column;
   align-items: center;
   margin-left: 2vw;
-  @media (max-width: 800px) {
-    width: 70vw;
+  @media (min-width: 450px) and(max-width: 1200px) {
+    width: 30rem;
+  }
+  @media (max-width: 450px) {
+    width: 100%;
   }
   .cart-edit {
     margin-top: 2rem;
@@ -34,59 +37,73 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 25vw;
+    width: 30rem;
+    @media (max-width: 800px) {
+      height: 80vh;
+    }
   }
-  //here the mobile v. must also be added
+
   .cart-list {
     margin: 2vh 2vw;
     height: 60vh;
     overflow-y: auto;
-    width: 20vw;
+    overflow-x: hidden;
+    @media (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     li {
-      width: 20vw;
-      display: flex;
-      flex-wrap: wrap;
       &:first-child {
         display: none;
       }
+    }
+    .modal-li {
+      width: 22rem;
+      @media (max-width: 800px) {
+        height: 7rem;
+        width: 25rem;
+      }
+      @media (max-width: 450px) {
+        height: 7rem;
+        width: 21rem;
+      }
       & > * {
-        width: fit-content;
         &:first-child {
-          order: 1;
-          flex-grow: 3;
+          min-width: 6rem;
         }
         &:nth-child(2) {
-          order: 3;
-        }
-        &:nth-child(3) {
-          order: 4;
-          flex-grow: 2;
-        }
-        &:last-child {
-          order: 2;
+          display: flex;
+          justify-content: center;
         }
       }
+
       .decrease-button,
       .increase-button {
         display: none;
       }
     }
-    .modal-li,
+
     .empty-cart {
       width: 20vw;
+      @media (max-width: 800px) {
+        width: 20rem;
+      }
     }
   }
   .total-price {
-    width: 28vw;
+    width: 28rem;
     text-align: right;
-    margin-right: 1vw;
+    margin-right: 1rem;
     font-weight: bold;
     font-size: 1.1rem;
+    @media (max-width: 800px) {
+      margin-right: 5vw;
+    }
   }
   .custom-button {
     &:nth-child(4) {
-      // align-self: center;
       margin-left: 10rem;
       margin-top: 5vh;
     }

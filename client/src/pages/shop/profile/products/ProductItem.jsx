@@ -22,7 +22,6 @@ const ProductItem = ({ product, farmerName }) => {
           <img
             src={`/uploads/${farmerName.toLowerCase()}/images/products/${photo}`}
             alt="img"
-            className="profile-page-farmer__products__card__img-container--img"
           />
         </div>
         <span className="profile-page-farmer__products__card--type">Type: {type}</span>
