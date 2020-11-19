@@ -1,21 +1,30 @@
 .profile-page {
   background: #eee;
+  position: relative;
 
   &__header {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     color: #405c45;
     font-size: 2rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    //border: 1px solid red;
+    text-transform: uppercase;
 
     &__filters{
       display: flex;
       align-items: center;
       justify-content:space-evenly;
-      height: 15vh;
+      height: auto;
       background-color: #fff;
       flex-direction: column;
+      border-top: 2rem;
+      //border: 1px solid red;
+
+      &__diet {
+
+      }
     }
   }
 
@@ -32,7 +41,8 @@
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      background: #f9f9f9;
+      background: #fff;
+      padding-top: 3rem;
 
       &__card {
         width: 15vw;

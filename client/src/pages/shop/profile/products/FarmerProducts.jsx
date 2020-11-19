@@ -7,7 +7,9 @@ import SearchBar from 'components/search/SearchBar';
 
 const FiltersItem = () => {
   return (
-    <h1></h1>
+    <div className="profile-page__header__filters__diet">
+        <img src="/images/diet.png" alt="" srcset=""/>
+    </div>
   )
 }
 
@@ -32,8 +34,8 @@ const FarmerProducts = ({ farmer }) => {
 
         {/* TODO: Don't display filters while store has no products added. */}
         <div className="profile-page__header__filters">
-          <SearchBar onSearch={setFilterProduct} />
           <FiltersItem />
+          <SearchBar onSearch={setFilterProduct} />
         </div>
         {
           <div className="profile-page-farmer__products">
