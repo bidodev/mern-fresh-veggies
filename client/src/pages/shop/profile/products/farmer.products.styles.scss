@@ -11,10 +11,10 @@
     background-color: var(--header);
     text-transform: uppercase;
 
-    &__filters{
+    &__filters {
       display: flex;
       align-items: center;
-      justify-content:space-evenly;
+      justify-content: space-evenly;
       height: auto;
       flex-direction: column;
       border-top: 2rem;
@@ -30,7 +30,6 @@
       }
 
       &__diet {
-
       }
     }
   }
@@ -40,15 +39,13 @@
       height: 40vh;
       display: flex;
       align-items: center;
-      justify-content:center;
-
+      justify-content: center;
     }
 
     &__products {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-
 
       &__card {
         width: 15vw;
@@ -59,7 +56,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: white;
+        background: #fff;
         border: 1px solid rgba(0, 0, 0, 0.1);
 
         &:hover {
@@ -73,7 +70,7 @@
           min-height: 10rem;
           display: flex;
           align-items: center;
-          justify-content:center;
+          justify-content: center;
           img {
             width: 100%;
           }
@@ -149,64 +146,60 @@
   z-index: 9999;
 }
 
-
 .absolute-center {
-margin: 0 auto;
+  margin: 0 auto;
 }
 
-a.button {
+button.button {
   box-sizing: border-box;
   display: inline-block;
   width: 8em;
   height: 2.25em;
-  
   padding: 0.5em 1em;
   background-color: #fff;
   border: 1px solid #ccc;
-  
   text-align: center;
-  color: #333;
+  color: var(--header);
   white-space: nowrap;
   line-height: 1.4;
   font-size: 1em;
   text-decoration: none;
-  
-  transition:
-    width 0.1s ease,
-    height 0.4s ease,
-    border-width 0.4s ease,
-    border-radius 0.4s ease,
-    border-color 0.4s ease,
+
+  transition: width 0.1s ease, height 0.4s ease, border-width 0.4s ease, border-radius 0.4s ease, border-color 0.4s ease,
     padding 0.4s ease;
-  
+
   &:focus {
     outline: none;
-    border-color: #DDD;
+    border-color: #ddd;
   }
   &:hover {
-    background: #FAFAFA;
+    background: #fafafa;
+    color: var(--text-header);
+    background-color: var(--header);
+    cursor: pointer;
   }
-  
+
   &.loading {
     height: 24px;
     width: 24px;
     padding: 0;
-    
     border-width: 2px;
     border-radius: 17px;
-    border-color:
-      #eee #eee #eee #999;
+    border-color: #eee #eee #eee #999;
     background: #fff;
-    
     font-size: 0;
     color: transparent;
     pointer-events: none;
-    
+
     animation: spin 1.2s infinite linear;
   }
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
