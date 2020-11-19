@@ -6,13 +6,15 @@
   }
 
   &__info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-weight: bold;
+    padding: 9rem 0 0 5rem;
     width: 18.7rem;
     @media (max-width: 1050px) {
       margin: 8rem 0 1rem;
-      width: 100%;
+      padding: 1rem 0 0 4rem;
+    }
+    @media (max-width: 650px) {
+      padding: 0 1.5rem 0;
     }
   }
 
@@ -21,5 +23,11 @@
     flex: 1;
     padding: 2rem;
     line-height: 1.5;
+    @media (max-width: 1050px) {
+      padding: 0 4rem 2rem;
+    }
+    @media (max-width: 650px) {
+      padding: 0 1.5rem 2rem;
+    }
   }
 }
