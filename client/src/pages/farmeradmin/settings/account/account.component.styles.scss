@@ -1,6 +1,8 @@
 .settings__page__item__wrapper {
   margin: 0 auto;
-
+  @media (max-width: 600px) {
+    padding: 0 1rem;
+  }
   &__account {
     margin-top: 4rem;
     h5 {
@@ -10,67 +12,67 @@
 }
 
 .settings__accounts {
-  &__button {
-    width: 80%;
-  }
-}
-
-.settings__accounts__email {
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  input[type='password'] {
-    width: 30rem;
-    padding: 0.8rem 0.5rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  &__input {
-    width: 30rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid rgb(195, 195, 195);
-    border-radius: 2px;
-    background-color: #fff;
-    color: #666;
-
-    div {
-      padding: 0.8rem 0.5rem;
-    }
-
-    svg {
+  &__email {
+    &__input {
+      width: 30rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid rgb(195, 195, 195);
+      border-radius: 2px;
+      background-color: #fff;
       color: #666;
-      font-size: 2rem;
-
-      &:hover {
-        cursor: pointer;
+      @media (max-width: 600px) {
+        width: 18rem;
+      }
+      div {
+        padding: 0.8rem 0.5rem;
+      }
+      svg {
+        color: #666;
+        font-size: 2rem;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input[type='password'] {
+      width: 30rem;
+      padding: 0.8rem 0.5rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      @media (max-width: 600px) {
+        width: 18rem;
+      }
+    }
+  }
+  &__button {
+    margin: 0 auto;
   }
 }
 
 .modal__email {
-  width: 28vw;
-  height: 35vh;
+  width: 30rem;
   position: fixed;
-  top: 20%;
-  left: 40%;
+  top: 50%;
+  left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-40%, -20%);
+  transform: translate(-50%, -50%);
   border: 1px solid rgb(204, 204, 204);
   background: rgb(255, 255, 255);
   overflow: auto;
   border-radius: 4px;
   outline: none;
   padding: 20px;
-  @media (max-width: 800px) {
-    width: 70vw;
+  @media (max-width: 500px) {
+    width: 20rem;
   }
 }
 
@@ -90,10 +92,8 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
-
   svg {
-    font-size: 2rem;
-
+    font-size: 1.5rem;
     &:hover {
       cursor: pointer;
     }
@@ -105,10 +105,13 @@
   height: 45%;
   input[type='password'],
   input[type='email'] {
-    width: 30rem;
+    width: 27rem;
     padding: 0.8rem 0.5rem;
     font-size: 1rem;
     margin-bottom: 1rem;
+    @media (max-width: 500px) {
+      width: 18rem;
+    }
   }
 }
 

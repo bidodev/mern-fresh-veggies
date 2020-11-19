@@ -11,6 +11,10 @@
     width: 60vw;
     margin: 1rem 0;
   }
+  @media (max-width: 650px) {
+    width: 80vw;
+    margin: 1rem 0;
+  }
   img {
     width: 100%;
     height: 100%;

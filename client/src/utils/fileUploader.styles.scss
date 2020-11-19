@@ -1,5 +1,4 @@
 .upload-photo {
-  //border: 1px solid green;
   height: 100%;
   overflow: hidden;
 
@@ -15,7 +14,7 @@
     }
 
     svg {
-      font-size: 2rem;
+      font-size: 1.2rem;
       transition: all 0.2s ease;
 
       &:hover {
@@ -44,7 +43,6 @@
     height: 80%;
     position: relative;
 
-
     .crop-container {
       background: #333;
       position: absolute;
@@ -53,7 +51,7 @@
       right: 0px;
       bottom: 60px;
     }
-    
+
     .controls {
       position: absolute;
       bottom: 0;
@@ -64,22 +62,13 @@
       display: flex;
       align-items: center;
     }
-    
+
     .slider {
       padding: 22px 0px;
     }
-    
-
-
-
-  }
-
-  input[type='file']{
-    //display: none;
   }
 
   .custom-file-upload {
-    //border: 1px solid #ccc;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
@@ -87,7 +76,6 @@
 }
 
 .file__uploader {
-  //border: 1px solid red;
   height: 10%;
   display: flex;
   align-items: center;
@@ -96,8 +84,7 @@
   padding: 0.5rem 1rem;
 
   div:last-of-type {
-    //border: 1px solid red;
-    width: 25%;
+    width: 15rem;
     display: flex;
     justify-content: space-around;
   }
@@ -117,11 +104,9 @@
   overflow: auto;
   border-radius: 4px;
   outline: none;
-  //for ipad width of the modal should be at least 50% of the view port
   @media (max-width: 800px) {
     width: 70vw;
   }
-  //here the mobile v. must also be added
 }
 
 .file-uploader__overlay {
