@@ -22,27 +22,35 @@
   ul {
     height: 50vh;
     margin: 3vh 10vw;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 4px; /* Remove scrollbar space */
+      background: transparent; /* Optional: just make scrollbar invisible */
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #00000093;
+    }
     @media (max-width: 800px) {
       width: 95vw;
       margin: 0;
     }
 
-    @media (min-width: 800px) and(max-width: 2600px) {
-      overflow: hidden;
-      &:hover {
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-      }
-      &::-webkit-scrollbar {
-        width: 4px; /* Remove scrollbar space */
-        background: transparent; /* Optional: just make scrollbar invisible */
-      }
-      /* Optional: show position indicator in black in case width is > 0 */
-      &::-webkit-scrollbar-thumb {
-        background: #00000093;
-      }
-    }
+    // @media (min-width: 800px) and(max-width: 2600px) {
+    //   overflow: hidden;
+    //   &:hover {
+    //     overflow-y: scroll;
+    //     scroll-behavior: smooth;
+    //   }
+    //   &::-webkit-scrollbar {
+    //     width: 4px; /* Remove scrollbar space */
+    //     background: transparent; /* Optional: just make scrollbar invisible */
+    //   }
+    //   /* Optional: show position indicator in black in case width is > 0 */
+    //   &::-webkit-scrollbar-thumb {
+    //     background: #00000093;
+    //   }
+    // }
 
     li {
       width: 75vw;

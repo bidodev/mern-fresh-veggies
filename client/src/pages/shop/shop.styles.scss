@@ -72,6 +72,7 @@
       & > * {
         &:first-child {
           min-width: 6rem;
+          display: flex;
         }
         &:nth-child(2) {
           display: flex;
