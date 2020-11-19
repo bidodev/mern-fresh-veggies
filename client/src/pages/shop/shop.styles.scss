@@ -11,7 +11,7 @@
 }
 .cart-modal {
   height: 100rem;
-  width: 25rem;
+  width: 30rem;
   position: fixed;
   right: 0;
   border: 1px solid rgb(204, 204, 204);
@@ -24,8 +24,11 @@
   flex-direction: column;
   align-items: center;
   margin-left: 2vw;
-  @media (min-width: 450px) and(max-width: 800px) {
+  @media (min-width: 450px) and(max-width: 1200px) {
     width: 30rem;
+  }
+  @media (max-width: 450px) {
+    width: 100%;
   }
   .cart-edit {
     margin-top: 2rem;
@@ -34,9 +37,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 25vw;
-    @media (min-width: 300px) and(max-width: 1300px) {
-      width: 30rem;
+    width: 30rem;
+    @media (max-width: 800px) {
+      height: 80vh;
     }
   }
 
@@ -44,7 +47,12 @@
     margin: 2vh 2vw;
     height: 60vh;
     overflow-y: auto;
-    width: 20rem;
+    overflow-x: hidden;
+    @media (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     li {
       &:first-child {
@@ -52,15 +60,23 @@
       }
     }
     .modal-li {
-      width: 20vw;
+      width: 22rem;
+      @media (max-width: 800px) {
+        height: 7rem;
+        width: 25rem;
+      }
+      @media (max-width: 450px) {
+        height: 7rem;
+        width: 21rem;
+      }
       & > * {
+        &:first-child {
+          min-width: 6rem;
+        }
         &:nth-child(2) {
           display: flex;
           justify-content: center;
         }
-      }
-      @media (min-width: 350px) and(max-width: 1600px) {
-        width: 20rem;
       }
 
       .decrease-button,
@@ -71,17 +87,20 @@
 
     .empty-cart {
       width: 20vw;
-      @media (min-width: 350px) and(max-width: 1600px) {
+      @media (max-width: 800px) {
         width: 20rem;
       }
     }
   }
   .total-price {
-    width: 28vw;
+    width: 28rem;
     text-align: right;
-    margin-right: 1vw;
+    margin-right: 1rem;
     font-weight: bold;
     font-size: 1.1rem;
+    @media (max-width: 800px) {
+      margin-right: 5vw;
+    }
   }
   .custom-button {
     &:nth-child(4) {
