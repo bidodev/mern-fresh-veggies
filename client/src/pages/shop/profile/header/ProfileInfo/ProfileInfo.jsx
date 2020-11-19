@@ -2,7 +2,7 @@ import React from 'react';
 import './ProfileInfo.styles.scss';
 
 //import LoadProductInsideModal from './farmer.products/LoadProductInsideModal';
-import NewItem from './NewItem';
+import NewItem from '../NewItem';
 
 const ProfileInfo = ({ name, products }) => {
   return (
@@ -11,10 +11,15 @@ const ProfileInfo = ({ name, products }) => {
         <aside className="public-farmer__aside">
           <div className="public-farmer__aside__infos">
             <div className="public-farmer__aside__infos__avatar">
-              <h2>{name}</h2>
-              <p>⭐⭐⭐⭐⭐</p>
-              <h3>Location</h3>
-              <p>Berlin - Germany</p>
+              <p className="public-farmer__aside__infos__avatar__a">
+  
+              </p>
+              <p className="public-farmer__aside__infos__avatar__b">
+                <h2>{name}</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <h3>Location</h3>
+                <p>Berlin - Germany</p>
+              </p>
             </div>
             <div className="public-farmer__aside__infos__data">
               <p className="public-farmer__aside__infos__paragraph">

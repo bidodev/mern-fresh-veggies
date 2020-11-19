@@ -1,15 +1,14 @@
 .profile-page {
-  background: #eee;
   position: relative;
 
   &__header {
     text-align: center;
     padding: 1.5rem;
-    color: #405c45;
+    color: var(--secondary);
     font-size: 2rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    //border: 1px solid red;
+    background-color: var(--primary);
     text-transform: uppercase;
 
     &__filters{
@@ -50,7 +49,6 @@
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      background: #fff;
 
 
       &__card {
