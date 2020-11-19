@@ -8,7 +8,7 @@ import SearchBar from 'components/search/SearchBar';
 const FiltersItem = () => {
   return (
     <div className="profile-page__header__filters__diet">
-        <img src="/images/diet.png" alt="" srcset=""/>
+        <img src="/images/diet.png" alt="diet-type"/>
     </div>
   )
 }

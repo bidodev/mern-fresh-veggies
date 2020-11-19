@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ProfileInfo.styles.scss';
 
 //import LoadProductInsideModal from './farmer.products/LoadProductInsideModal';
@@ -24,7 +24,7 @@ const ProfileInfo = ({ name, products }) => {
               </p>
             </div>
             <div className="public-farmer__aside__infos__expertise">
-            <h3>Area of Expertise</h3>
+              <h3>Area of Expertise</h3>
               <ul>
                 <li>Vegetables</li>
                 <li>Meat</li>
@@ -34,19 +34,44 @@ const ProfileInfo = ({ name, products }) => {
                 <li>Certified</li>
                 <li>Discount</li>
                 <li>Fruits</li>
-                </ul>
+              </ul>
             </div>
           </div>
           <div className="public-farmer__aside__main">
             <div className="public-farmer__main__featured">
-            <h2>About Me</h2>
+              <h2>About Me</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, velit?</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati perspiciatis omnis ducimus mollitia
+                inventore saepe fugit voluptatum vel, quasi recusandae sunt dolor odio quam minima, magnam facilis! Odit
+                cumque, distinctio qui magni eum adipisci voluptatibus saepe amet velit voluptatem deserunt ipsa ratione
+                atque ea voluptates at, harum non, fuga sunt.
+              </p>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi nulla asperiores illum, possimus autem
                 necessitatibus harum at placeat dolore? Ipsum?
               </p>
             </div>
-            <div className="public-farmer__main__reviews">Hello Testimonials</div>
+            <div className="public-farmer__main__reviews">
+              <h2>Testimonials</h2>
+              <div>
+                <p>
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nihil recusandae voluptates
+                  maxime voluptatem, iure architecto, dolore veniam optio ducimus odio culpa magni, nostrum debitis
+                  ratione quas minima quam explicabo!"
+                </p>
+                <div className="abcde">
+                  <p>
+                    Peter, <span>client from Brandenburg</span>
+                  </p>
+                  <div class="carousel-dots">
+                    <label htmlFor="img-1" className="carousel-dot" id="img-dot-1"></label>
+                    <label htmlFor="img-2" className="carousel-dot" id="img-dot-2"></label>
+                    <label htmlFor="img-3" className="carousel-dot" id="img-dot-3"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </aside>
         <main className="public-farmer__main__right">
