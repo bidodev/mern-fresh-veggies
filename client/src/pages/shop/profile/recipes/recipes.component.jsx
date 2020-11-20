@@ -1,70 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import recipesData from 'dev-data/recipes.json';
+
+import InfiniteScroll from 'react-infinite-scroll-component';/* Fontawesome Import */
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+
 
 /* Styles */
 import './recipes.styles.scss';
+import LoadRecipe from './LoadRecipe';
 
-const LoadRecipe = ({ recipe }) => {
-  /* destructing what we need */
-  const { coverImage, recipeName, portion, ingredients, preparation } = recipe;
-
-  return (
-    <section className="recipes">
-      <div className="recipes__card">
-        <div className="recipes__card__img-container">
-          <img className="recipes__card__img-container--img" src={coverImage} alt="recipe" />
-        </div>
-        <div className="recipes__card__info-container">
-          <h2 className="recipes__card__info-container__name">{recipeName}</h2>
-          <span className="recipes__card__info-container__portion">Portion: {portion}</span>
-          <h3>Ingredients</h3>
-          <div className="recipes__card__info-container__ingredients">
-            {ingredients.map((item, index) => {
-              return (
-                <div key={index} className="recipes__card__info-container__ingredients__list">
-                  {item.name}: {item.quantity}
-                </div>
-              );
-            })}
-          </div>
-          <div className="recipes__card__info-container__preparation">
-            <h3>Preparation</h3>
-            {preparation}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const Recipes = ({ farmer }) => {
   const { products } = farmer;
+  const farmerHasAtleastProducts = 2;
 
   /* Return an array with the products names */
   const farmerProductsList = products.map(({ name }) => name.toLowerCase());
-
   const resultRecipes = recipesData.filter((recipe) => {
     let countIngredients = 0;
 
-    const hasSome = recipe.ingredients.some((ingredient) =>
+    recipe.ingredients.forEach((ingredient) =>
       farmerProductsList.includes(ingredient.name) ? countIngredients++ : countIngredients
     );
-    if (hasSome) {
-      if (countIngredients >= 2) {
-        /* if the recipe has more than 2 ingrediets that match with farm products, he will be displayed */
-        return recipe;
-      }
-    }
+    /* if the recipe has more than 2 ingrediets that match with farm products, he will be displayed */
+    return countIngredients >= farmerHasAtleastProducts ? recipe : null;
   });
+
+
+  /* Scroll on demand */
+  const [hasMore, setHasMore] = useState(true);
+  const [recipesToShow, setRecipesToShow] = useState([]);
+
+  const fetchMoreData = () => {
+    if (recipesToShow.length >= resultRecipes.length) {
+      return setHasMore(false);
+    }
+
+    setTimeout(() => {
+      const newItems = resultRecipes.slice(recipesToShow.length, recipesToShow.length + 2);
+      setRecipesToShow(recipesToShow.concat(newItems));
+    }, 1500);
+  };
+
+  const Loader = () => {
+    return (
+      <div className="recipes-section__main-container__loader">
+          <Icon icon="spinner" className="icon" spin />
+      </div>
+    )
+  }
 
   return (
     <section className="recipes-section">
       <h2>Recipes' Suggestions</h2>
-      <p>Based on {farmer.name}'s products we found {resultRecipes.length} recipes suggestions for you! {resultRecipes.length > 0 ? '😋' : '😢'}</p>
+      <p>
+        Based on {farmer.name}'s products we found {resultRecipes.length} recipes suggestions for you!{' '}
+        {resultRecipes.length > 0 ? '😋' : '😢'}
+      </p>
       <div className="recipes-section__main-container">
-        {resultRecipes.map((recipe, index) => (
-          <LoadRecipe key={index} recipe={recipe} />
-        ))}
+        <InfiniteScroll
+          dataLength={recipesToShow.length}
+          next={fetchMoreData}
+          hasMore={hasMore}
+          loader={<Loader />}
+        >
+          {recipesToShow.map((recipe, index) => (
+            <LoadRecipe key={index} recipe={recipe} />
+          ))}
+        </InfiniteScroll>
       </div>
     </section>
   );

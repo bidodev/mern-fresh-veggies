@@ -17,6 +17,21 @@
     border-bottom: 1px solid var(--border-color);
     text-transform: uppercase;
   }
+
+  &__main-container {
+    &__loader {
+        width: 100%;
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+
+        svg{
+          font-size: 3rem;
+          color: var(--header);
+        }
+    }
+  }
 }
 
 .recipes {

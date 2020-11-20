@@ -11,13 +11,8 @@ import './profile.page.styles.scss';
 /* Utils */
 import Spinner from 'components/UI/spinner/spinner.component';
 
-/* Component Imports */
-import HeaderFarmerProfile from 'pages/shop/profile/header/HeaderFarmerProfile.jsx';
-import ProfileInfo from 'pages/shop/profile/header/ProfileInfo/ProfileInfo';
-import PhotosGallery from 'pages/shop/profile/gallery/PhotosGallery';
-import FarmerProducts from 'pages/shop/profile/products/FarmerProducts';
-import Recipes from 'pages/shop/profile/recipes/recipes.component';
-
+/* Compouse Store Components */
+import OpenStore from './OpenStore';
 import ClosedStore from './ClosedStore';
 
 const ProfilePage = () => {
@@ -36,28 +31,20 @@ const ProfilePage = () => {
       .catch((err) => console.log(err.message));
   }, []);
 
-  const ProfileCompouse = () => {
-    const { open, recipes, gallery, products, color } = farmer.config;
-    console.log(farmer.config)
-
+  const CompouseStore = () => {
+    const { open, color } = farmer.config;
     return (
       <div className={`public-profile__wrapper ${color ? THEMES[color] : THEMES['default']}`}>
-        {open ? (
-          <div className="public-profile__wrapper__store-open">
-            <HeaderFarmerProfile {...farmer} />
-            <ProfileInfo {...farmer} />
-            {gallery && <PhotosGallery {...farmer} />}
-            {products && <FarmerProducts farmer={farmer} />}
-            {recipes && <Recipes farmer={farmer} />}
-          </div>
-        ) : (
-          <ClosedStore />
-        )}
+        {open ? <OpenStore farmer={farmer}/> : <ClosedStore />}
       </div>
     );
   };
 
-  return <>{isLoading ? <Spinner /> : <ProfileCompouse />}</>;
+  return (
+    <>
+      {isLoading ? <Spinner /> : <CompouseStore />}
+    </>
+  );
 };
 
 export default ProfilePage;
