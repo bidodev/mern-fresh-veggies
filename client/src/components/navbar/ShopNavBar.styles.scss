@@ -11,13 +11,14 @@
   z-index: 100;
   position: fixed;
   a {
-    color: #181818;
+    // color: #1e5b45;
+    font-weight: 600;
   }
   &__logo {
     margin-left: 5vw;
     font-family: 'Nothing You Could Do', cursive;
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #1e5b45;
     //or
     // color: #f7b53a;
@@ -40,10 +41,10 @@
     .fa-shopping-cart,
     .fa-user-circle {
       font-size: 1.3rem;
-      color: #181818;
+      // color: #1e5b45;
     }
     .total-quantity {
-      color: red;
+      color: #f7b53a;
       // width: 1.7rem;
       position: relative;
       bottom: 0.8rem;
