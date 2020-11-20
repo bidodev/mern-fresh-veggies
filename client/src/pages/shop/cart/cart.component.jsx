@@ -43,11 +43,9 @@ const Cart = ({ match }) => {
   const closeModal = () => (match.path === '/shop/cart' ? false : dispatch({ type: 'TOGGLE_CART_HIDDEN' }));
   return (
     <div className="cart-edit">
-      <Link to={`/shop`}>
-        <CustomButton onClick={closeModal}>
-          <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
-          Back to shopping
-        </CustomButton>
+      <Link to={`/shop`} className="back-button">
+        <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" onClick={closeModal} />
+        Back to shop
       </Link>
       <p className="cart-title">You have added the following articles:</p>
       <ul className="cart-list">
@@ -87,14 +85,16 @@ const Cart = ({ match }) => {
         )}
       </ul>
       <div className="total-price">Total price: {totalSum} €</div>
-      <CustomButton type="button" disabled={cartItems.length <= 0 && true} onClick={resetCart}>
-        Reset
-      </CustomButton>
-      <Link to={`/checkout`}>
-        <CustomButton type="button" disabled={cartItems.length <= 0 && true}>
-          Proceed to checkout
+      <div className="checkout-buttons">
+        <CustomButton type="button" disabled={totalSum < 20 && true} onClick={resetCart}>
+          Reset
         </CustomButton>
-      </Link>
+        <Link to={`/checkout`}>
+          <CustomButton type="button" disabled={totalSum < 20 && true}>
+            Checkout
+          </CustomButton>
+        </Link>
+      </div>
     </div>
   );
 };
