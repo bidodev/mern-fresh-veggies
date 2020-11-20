@@ -30,15 +30,15 @@ const FindYourFarmer = ({ match }) => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1450 },
+      breakpoint: { max: 3000, min: 1470 },
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1450, min: 920 },
+      breakpoint: { max: 1470, min: 970 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 920, min: 0 },
+      breakpoint: { max: 970, min: 0 },
       items: 1,
     },
   };
@@ -78,23 +78,22 @@ const FindYourFarmer = ({ match }) => {
           >
             {farmers.map((farmer) => (
               <Link key={farmer._id} to={`${match.url}/farmer/${farmer._id}`}>
-                <li className="find-farmer__container__item">
+                <div className="find-farmer__container__item">
                   <div className="find-farmer__container__item__bg-image-container">
                     <img src="/images/farmer-bg-1.jpg" alt="background" />
                   </div>
+
+                  <div className="find-farmer__container__item--ratings">⭐⭐⭐⭐⭐</div>
+                  <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
+                  <div className="find-farmer__container__item__location">Berlin, GERMANY</div>
+
                   <div className="find-farmer__container__item__avatar-container">
                     <img
                       src={`/uploads/${farmer.name.toLowerCase()}/images/profile/${farmer.images.profile}`}
                       alt="farmer-avatar"
                     />
                   </div>
-                  <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
-                  <div className="find-farmer__container__item__location">
-                    <div className="find-farmer__container__item__location--city">Berlin</div>
-                    <div className="find-farmer__container__item__location--country">Germany</div>
-                  </div>
-                  <div className="find-farmer__container__item--description">{farmer.description}</div>
-                </li>
+                </div>
               </Link>
             ))}
           </Carousel>
