@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="hero-component__main">
           <div className="hero-component__main__text-component">
             <p>
-              Happiest bio <span>veggies</span>
+              Happiest Bio <span>veggies</span>
             </p>
             <div className="hero-component__main__text-component--sub-heading">
               Locally sourced food is fresh and delicious! We encourage reasoned consumption with seasonal and organic

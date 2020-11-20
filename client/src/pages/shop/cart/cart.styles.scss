@@ -10,10 +10,15 @@
     height: 90vh;
   }
   /// this is to prevent redirecting on a click outside the button
-  a {
-    width: fit-content;
-    .custom-button {
-      width: 20rem;
+  .back-button {
+    margin-right: 15rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #f75d37;
+    .fa-angle-left {
+      font-size: 2rem;
+      margin-right: 1rem;
     }
   }
   .cart-title {
@@ -120,6 +125,10 @@
     @media (max-width: 800px) {
       margin-top: 4rem;
     }
+  }
+  .checkout-buttons {
+    display: flex;
+    flex-direction: column;
   }
 }
 
