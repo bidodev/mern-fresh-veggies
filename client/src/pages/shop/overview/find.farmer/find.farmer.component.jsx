@@ -11,7 +11,7 @@ import './find.farmer.styles.scss';
 import Spinner from 'components/UI/spinner/spinner.component';
 
 /* Ion Icons Imports */
-import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
+// import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
 // import IosArrowBack from 'react-ionicons/lib/IosArrowBack';
 
 const FindYourFarmer = ({ match }) => {
@@ -43,6 +43,7 @@ const FindYourFarmer = ({ match }) => {
     },
   };
 
+  // ===== THIS IS AN EXAMPLE TO ADD CUSTOM ARROW ON CAROUSEL ===
   // const CustomRightArrow = ({ onClick, ...rest }) => {
   //   const {
   //     onMove,
