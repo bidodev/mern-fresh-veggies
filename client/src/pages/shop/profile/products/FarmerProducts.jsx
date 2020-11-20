@@ -2,13 +2,22 @@ import React, { useState, useEffect } from 'react';
 
 /* Styles */
 import './farmer.products.styles.scss';
-import ProductItem from './ProductItem';
+
 import SearchBar from 'components/search/SearchBar';
+import ProductsToShow from './ProductsToShow';
 
 const FilterProductsDietBased = () => {
   return (
-    <div className="profile-page__header__filters__diet">
+    <div className="farmer-profile__section-products-farmer__has-products__filters__diet">
       <img src="/images/diet.png" alt="diet-type" />
+    </div>
+  );
+};
+
+const EmptyStore = ({ name }) => {
+  return (
+    <div className="farmer-profile__section-products-farmer__empty-store">
+      <h3>{name} did not add products to his store!!</h3>
     </div>
   );
 };
@@ -31,7 +40,7 @@ const FarmerProducts = ({ farmer }) => {
 
   const loopWithSlice = (start, end) => {
     const slicedProducts = products.slice(start, end);
-    arrayForHoldingPosts = ([...arrayForHoldingPosts, ...slicedProducts]);
+    arrayForHoldingPosts = [...arrayForHoldingPosts, ...slicedProducts];
     setProductsToShow(arrayForHoldingPosts);
   };
 
@@ -50,38 +59,39 @@ const FarmerProducts = ({ farmer }) => {
       setIsLoadingMoreItems(false);
       loopWithSlice(next, next + productsPerPage);
       setNext(next + productsPerPage);
-    }, 1500)
+    }, 1500);
   };
-
-  
 
   return (
     <React.Fragment>
-      <section className="profile-page">
-        <h2 className="profile-page__header">{name}'s available products</h2>
+      <section className="farmer-profile__section-products">
+        <h2 className="farmer-profile__section-products__header">{name}'s available products</h2>
 
-        {/* TODO: Don't display filters while store has no products added. */}
-        <div className="profile-page__header__filters">
-          <FilterProductsDietBased />
-          <SearchBar onSearch={setFilterProduct} />
-          <hr />
-        </div>
-        {
-          <div className="profile-page-farmer__products">
-            {products.length > 0 ? (
-              productsToShow.map((product) => {
-                return <ProductItem key={product._id} product={product} farmerName={farmer.name} />;
-              })
-            ) : (
-              <div className="profile-page-farmer__empty-store">
-                <h3>{name} did not add products to his store!!</h3>
+        <div className="farmer-profile__section-products-farmer__has-products">
+          {products.length > 0 ? (
+            <>
+              <div className="farmer-profile__section-products-farmer__has-products__filters">
+                <FilterProductsDietBased />
+                <SearchBar
+                  onSearch={setFilterProduct}
+                  className={'farmer-profile__section-products-farmer__has-products__filters__search-bar'}
+                />
               </div>
-            )}
-          </div>
-        }
-        {/* TODO: Add class loading while fetching more results */}
-        <div className="profile-page-farmer__load-more">
-          <button className={`absolute-center button ${isLoadingMoreItems ? "loading" : ""}`} onClick={handleShowMoreProducts}>Load more</button>
+              <hr />
+              <ProductsToShow products={productsToShow} farmerName={name} />
+
+              <div className="farmer-profile__section-products-farmer__has-products__load-more">
+                <button
+                  className={`absolute-center button ${isLoadingMoreItems ? 'loading' : ''}`}
+                  onClick={handleShowMoreProducts}
+                >
+                  Load more
+                </button>
+              </div>
+            </>
+          ) : (
+            <EmptyStore name={name} />
+          )}
         </div>
       </section>
     </React.Fragment>
