@@ -36,7 +36,7 @@ const AccountSetting = ({ user }) => {
       .patch('/account/email', data)
       .then((res) => {
         console.log(res);
-        // if the password was changed with sucess clear the fields
+        // if the password was changed with success clear the fields
         toggleModal();
       })
       .catch((err) => {
@@ -59,8 +59,7 @@ const AccountSetting = ({ user }) => {
       .patch('/account/password', data)
       .then((res) => {
         console.log(res);
-
-        // if the password was changed with sucess clear the fields
+        // Clear the fields if password was changed with success
         password.current.value = '';
         newPassword.current.value = '';
         repeatNewPassword.current.value = '';
@@ -75,22 +74,23 @@ const AccountSetting = ({ user }) => {
   return (
     <div className="settings__page__item__wrapper">
       <div className="settings__page__item__wrapper__account">
-        <h4>Account</h4>
-        <p>Edit your account settings and change your password here.</p>
+        <h2 className="settings__page__item__wrapper__account--header">Account</h2>
+        <h3 className="settings__page__item__wrapper__account--sub">
+          Edit your account settings or change your password.
+        </h3>
         <hr />
 
         <div className="settings__accounts__email">
-          <h5>Email:</h5>
-
+          <h5 className="settings__accounts__email--header">Email:</h5>
           <div className="settings__accounts__email__input">
             <div>{` ${user.email}`}</div>
             <Icon icon={['far', 'edit']} onClick={toggleModal} />
           </div>
         </div>
         <hr />
-        <h5>Password:</h5>
 
         <div className="settings__accounts__email">
+          <h5 className="settings__accounts__email--header">Password:</h5>
           <form onSubmit={handlePassword}>
             <input
               type="password"
@@ -116,8 +116,8 @@ const AccountSetting = ({ user }) => {
               placeholder={`Repeat New Password`}
               required
             />
-
             <hr />
+
             <div className="settings__accounts__button">
               <CustomButton type="submit" style={{ width: '15rem' }}>
                 Save Password

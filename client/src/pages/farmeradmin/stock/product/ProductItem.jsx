@@ -11,9 +11,9 @@ import Modal from 'components/modal/modal.component';
 
 function Product({ _id, name, photo, type, description }) {
   const user = useSelector(({ login }) => login.user.data);
+
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
-
   const toggleModal = () => {
     setIsOpen(!modalStatus);
   };
@@ -21,7 +21,7 @@ function Product({ _id, name, photo, type, description }) {
   const customStyles = {
     /* Modal Styles */
     content: {
-      width: '70vw',
+      width: '60vw',
       top: '50%',
       left: '50%',
       right: 'auto',
@@ -45,7 +45,7 @@ function Product({ _id, name, photo, type, description }) {
         <span className="product-item__farmer-products__card--price">Price: EUR 1.5</span>
       </div>
 
-      {/*Loading the content inside of the modal, passing the data  */}
+      {/* Loading the content inside of the modal, passing the data */}
       <Modal modalStatus={modalStatus} closeModal={toggleModal} styles={customStyles}>
         <Icon icon="times" className="fa-times" onClick={toggleModal} />
         <h2 className="display-product__name">{name}</h2>
@@ -59,7 +59,7 @@ function Product({ _id, name, photo, type, description }) {
         <div className="display-product__type">{type}</div>
         <div className="display-product__description">{description}</div>
         <div className="display-product__delete-container">
-          <span className="display-product__delete-container--text">Delete: </span>
+          <span className="display-product__delete-container--text">Remove item </span>
           <Icon icon="trash" onClick={() => removeProduct(_id)} className="display-product__delete-container--icon" />
         </div>
       </Modal>

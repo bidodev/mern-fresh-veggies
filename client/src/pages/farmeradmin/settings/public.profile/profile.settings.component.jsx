@@ -45,18 +45,12 @@ function PublicProfileSettings({ user }) {
           ) : (
             ''
           )} */}
-
-          <h2>Public Profile</h2>
-          <p>Hello {user.name}</p>
-
-          <div className="settings__page__item__header">
-            <h3>Select how your profile should appear in the store</h3>
-          </div>
-
-          {/* headline */}
+          <h2 className="settings__page__item__wrapper--header">Public Profile</h2>
+          <p className="settings__page__item__wrapper--sub">Welcome {user.name}</p>
+          <h3 className="settings__page__item__wrapper__header">Select how your profile should appear in the store.</h3>
           <hr />
-          <h3>Store Configuration</h3>
 
+          <h3>Store Configuration</h3>
           <div className="settings__page__item__wrapper__item--settings">
             <div className="toggle-switch">
               <input
@@ -70,17 +64,14 @@ function PublicProfileSettings({ user }) {
                 <span className="toggle-track"></span>
               </label>
             </div>
-
             <div className="text">
               <p>Status</p>
-              <p>You can configure if your store is in the moment closed or open</p>
+              <p>Configure if your store is closed or open</p>
             </div>
           </div>
-
-          {/* headline */}
           <hr />
-          <h3>Sections Configuration</h3>
 
+          <h3>Sections Configuration</h3>
           {/* recipes */}
           <div className="settings__page__item__wrapper__item--settings">
             <div className="toggle-switch">
@@ -95,10 +86,9 @@ function PublicProfileSettings({ user }) {
                 <span className="toggle-track"></span>
               </label>
             </div>
-
             <div className="text">
               <p>Recipes</p>
-              <p>Display recipes suggestions based on your Profile</p>
+              <p>Display recipes based on your available products</p>
             </div>
           </div>
 
@@ -116,7 +106,6 @@ function PublicProfileSettings({ user }) {
                 <span className="toggle-track"></span>
               </label>
             </div>
-
             <div className="text">
               <p>Products</p>
               <p>Display products in your store</p>
@@ -137,10 +126,9 @@ function PublicProfileSettings({ user }) {
                 <span className="toggle-track"></span>
               </label>
             </div>
-
             <div className="text">
               <p>Photos</p>
-              <p>Display photos of your Farm on your public profile</p>
+              <p>Display photos on your public profile</p>
             </div>
           </div>
         </div>

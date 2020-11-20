@@ -19,7 +19,6 @@ const Stock = () => {
 
   /* Filter products */
   const [searchProductField, setFilterProduct] = useState('');
-
   const filterProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchProductField.toLowerCase())
   );
