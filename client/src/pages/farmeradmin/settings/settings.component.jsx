@@ -34,34 +34,36 @@ const UserSettings = ({ match }) => {
           <h2>{user.name}</h2>
           <hr />
           <h3>Settings</h3>
-          <li>
-            <NavLink
-              className="admin__settings__nav-item"
-              exact
-              to="/farmer/admin/settings"
-              activeClassName="admin__settings__nav--active"
-            >
-              Account
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="admin__settings__nav-item"
-              to="/farmer/admin/settings/public"
-              activeClassName="admin__settings__nav--active"
-            >
-              Public Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="admin__settings__nav-item"
-              to="/farmer/admin/settings/advanced"
-              activeClassName="admin__settings__nav--active"
-            >
-              Advanced Settings
-            </NavLink>
-          </li>
+          <div className="admin__settings__container">
+            <li>
+              <NavLink
+                className="admin__settings__nav-item"
+                exact
+                to="/farmer/admin/settings"
+                activeClassName="admin__settings__nav--active"
+              >
+                Account
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="admin__settings__nav-item"
+                to="/farmer/admin/settings/public"
+                activeClassName="admin__settings__nav--active"
+              >
+                Public Profile
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="admin__settings__nav-item"
+                to="/farmer/admin/settings/advanced"
+                activeClassName="admin__settings__nav--active"
+              >
+                Advanced Settings
+              </NavLink>
+            </li>
+          </div>
         </ul>
       </div>
       <>

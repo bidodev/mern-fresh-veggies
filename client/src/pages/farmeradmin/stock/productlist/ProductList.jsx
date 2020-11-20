@@ -9,7 +9,7 @@ function ProductList({ products }) {
       {products.length > 0 ? (
         products.map((product) => <ProductItem key={product._id} {...product} />)
       ) : (
-        <h2>You don't have any products</h2>
+        <h2>Sorry! You don't have any products in your cart</h2>
       )}
     </div>
   );

@@ -9,18 +9,23 @@
   }
 
   &__account {
-    margin-top: 4rem;
-    @media (max-width: 850px) {
-      margin-top: 1rem;
-    }
-    h5 {
+    &--header {
+      font-size: 2rem;
       margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    &--sub {
+      color: #666666;
+      font-size: 1rem;
     }
   }
 }
 
 .settings__accounts {
   &__email {
+    &--header {
+      margin-bottom: 0.5rem;
+    }
     &__input {
       width: 30rem;
       margin-bottom: 1rem;
@@ -32,7 +37,7 @@
       background-color: #fff;
       color: #666;
       @media (max-width: 600px) {
-        width: 80vw;
+        width: 90%;
       }
       div {
         padding: 0.8rem 0.5rem;
@@ -56,7 +61,7 @@
       font-size: 1rem;
       margin-bottom: 1rem;
       @media (max-width: 600px) {
-        width: 80vw;
+        width: 90%;
       }
     }
   }
@@ -67,9 +72,9 @@
 
 .modal__email {
   width: 30rem;
-  height: 38rem;
+  height: 28rem;
   position: fixed;
-  top: 20%;
+  top: 30%;
   left: 40%;
   right: auto;
   bottom: auto;
@@ -80,10 +85,10 @@
   outline: none;
   padding: 20px;
   @media (max-width: 850px) {
-    width: 90vw;
-    height: 90vh;
-    left: 5%;
-    top: 5%;
+    width: 80vw;
+    height: 28rem;
+    left: 15%;
+    top: 40%;
   }
 }
 
@@ -93,7 +98,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(249, 249, 249, 0.7);
+  // background-color: rgba(249, 249, 249, 0.7);
+  background-color: rgba(7, 6, 6, 0.925);
   z-index: 9999;
 }
 
