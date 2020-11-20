@@ -1,0 +1,15 @@
+    /* Styles rules if the store is closed*/ 
+
+    .public-profile__wrapper__store-closed {
+        height: 64vh;
+        background-color: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+  
+        h3 {
+          color: var(--header);
+          font-size: 2rem;
+        }
+      }

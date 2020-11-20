@@ -48,7 +48,7 @@ const FarmerAdmin = React.memo(({ match }) => {
 
   return (
     <>
-      <section className={`farmer-admin ${farmerData.config.color ? THEMES[farmerData.config.color] : THEMES['default']}`}>
+      <section className={`farmer-admin ${farmerData.config.color && THEMES[farmerData.config.color]}`}>
         <ShopNavBar match={match} />
         <Aside />
         <Route exact path={`${match.path}`} component={ProfileAdmin} />

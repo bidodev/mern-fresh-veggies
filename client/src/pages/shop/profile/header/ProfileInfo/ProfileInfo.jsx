@@ -13,12 +13,12 @@ const ProfileInfo = ({ name, products }) => {
               <p className="public-farmer__aside__infos__avatar__a">
   
               </p>
-              <p className="public-farmer__aside__infos__avatar__b">
+              <div className="public-farmer__aside__infos__avatar__b">
                 <h2>{name}</h2>
                 <p>⭐⭐⭐⭐⭐</p>
                 <h3>Location</h3>
                 <p>Berlin - Germany</p>
-              </p>
+              </div>
             </div>
             <div className="public-farmer__aside__infos__data">
               <p className="public-farmer__aside__infos__paragraph">
@@ -68,7 +68,7 @@ const ProfileInfo = ({ name, products }) => {
                   <p>
                     Peter, <span>client from Brandenburg</span>
                   </p>
-                  <div class="carousel-dots">
+                  <div className="carousel-dots">
                     <label htmlFor="img-1" className="carousel-dot" id="img-dot-1"></label>
                     <label htmlFor="img-2" className="carousel-dot" id="img-dot-2"></label>
                     <label htmlFor="img-3" className="carousel-dot" id="img-dot-3"></label>

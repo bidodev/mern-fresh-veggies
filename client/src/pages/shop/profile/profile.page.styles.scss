@@ -13,20 +13,5 @@
       margin: 0 auto;
       border: var(--border-wrapper);
     }
-
-    /* Styles rules if the store is closed*/ 
-    &__store-closed {
-      height: 68vh;
-      background-color: var(--white);;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-transform: uppercase;
-
-      h3 {
-        color: var(--secondary);
-        font-size: 2rem;
-      }
-    }
   }
 }
