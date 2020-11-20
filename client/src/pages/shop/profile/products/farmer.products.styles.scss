@@ -1,5 +1,4 @@
-.profile-page {
-  position: relative;
+.farmer-profile__section-products {
 
   &__header {
     text-align: center;
@@ -10,15 +9,60 @@
     border-bottom: 1px solid var(--border-color);
     background-color: var(--header);
     text-transform: uppercase;
+  }
 
-    &__filters {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      height: auto;
-      flex-direction: column;
-      border-top: 2rem;
-      //border: 1px solid red;
+  &-farmer {
+    &__has-products {
+      &__filters {
+        /* Diet filters */
+        &__diet {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &__search-bar {
+          width: 30rem;
+          margin: 0 auto;
+
+          @media (max-width: 650px) {
+            width: 15rem;
+          }
+
+          .search {
+            width: 100%;
+            position: relative;
+            display: flex;
+          }
+
+          .searchTerm {
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-right: none;
+            padding: 7px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: var(--header);
+          }
+
+          .searchTerm:focus {
+            color: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.5);
+          }
+
+          .searchButton {
+            width: 2.4rem;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background: var(--header);
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            pointer-events: none;
+            font-size: 0.9rem;
+          }
+        }
+      }
 
       hr {
         margin: 2rem auto;
@@ -29,85 +73,19 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       }
 
-      &__diet {
+      &__load-more {
+        //border: 1px solid green;
+        height: 10rem;
+        display: flex;
+        align-items: center;
       }
     }
-  }
 
-  &-farmer {
     &__empty-store {
-      height: 40vh;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    &__products {
-      display: flex;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-
-      &__card {
-        width: 15vw;
-        min-width: 18rem;
-        height: 40vh;
-        margin: 2vh 1vh;
-        padding: 1vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-
-        &:hover {
-          opacity: 0.7;
-          cursor: pointer;
-        }
-
-        &__img-container {
-          width: 10rem;
-          height: 10rem;
-          min-height: 10rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          img {
-            width: 100%;
-          }
-        }
-
-        &--name {
-          margin: 1vh;
-          //border: 1px solid red;
-          height: 20%;
-          width: 100%;
-          text-align: center;
-        }
-
-        &--type {
-          margin: 1vh;
-          font-style: italic;
-          text-transform: capitalize;
-          height: 20%;
-          width: 100%;
-          //border: 1px solid red;
-          text-align: center;
-        }
-
-        &--description {
-          margin: 1vh;
-          height: 40%;
-          //border: 1px solid red;
-        }
-      }
-    }
-
-    &__load-more {
-      //border: 1px solid green;
-      height: 10rem;
-      display: flex;
-      align-items: center;
-      background-color: #fff;
     }
   }
 }
