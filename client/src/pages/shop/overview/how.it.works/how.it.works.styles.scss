@@ -1,14 +1,8 @@
 .how-it-works {
-  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (min-width: 700px) {
-    width: 100%;
-    height: 100vh;
-  }
   @media (max-width: 750px) {
-    // height: fit-content;
     margin-bottom: 10vh;
   }
 
@@ -45,14 +39,14 @@
         width: 23rem;
         height: 22vh;
         padding: 2vh;
-
         @media (max-width: 750px) {
+          width: fit-content;
+          height: fit-content;
+          // ---- Border Bottom ---
           &:not(:last-child) {
             border-bottom: 1px solid black;
           }
-          width: fit-content;
-          height: fit-content;
-          // this is the icon
+          // ---- Icons ---
           &--icon {
             height: 5vh;
             width: 10vw;
@@ -63,12 +57,10 @@
             }
           }
         }
+
         &--header {
           margin: 0.5rem 0;
-          @media (max-width: 750px) {
-          }
         }
-
         &--text {
           @media (max-width: 600px) {
             font-size: 0.9rem;
