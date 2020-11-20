@@ -3,25 +3,12 @@ import React, { useState, useEffect } from 'react';
 /* Styles */
 import './farmer.products.styles.scss';
 
+import FilterProductsDietBased from './filters/FilterProductsDietBased';
 import SearchBar from 'components/search/SearchBar';
 import ProductsToShow from './ProductsToShow';
+import EmptyStore from './EmptyStore';
 
-const FilterProductsDietBased = () => {
-  return (
-    <div className="farmer-profile__section-products-farmer__has-products__filters__diet">
-      <img src="/images/diet.png" alt="diet-type" />
-    </div>
-  );
-};
-
-const EmptyStore = ({ name }) => {
-  return (
-    <div className="farmer-profile__section-products-farmer__empty-store">
-      <h3>{name} did not add products to his store!!</h3>
-    </div>
-  );
-};
-let arrayForHoldingPosts = [];
+let arrayForHoldingProducts = [];
 const productsPerPage = 4;
 
 /* Component Farmer Products List */
@@ -40,12 +27,13 @@ const FarmerProducts = ({ farmer }) => {
 
   const loopWithSlice = (start, end) => {
     const slicedProducts = products.slice(start, end);
-    arrayForHoldingPosts = [...arrayForHoldingPosts, ...slicedProducts];
-    setProductsToShow(arrayForHoldingPosts);
+    arrayForHoldingProducts = [...arrayForHoldingProducts, ...slicedProducts];
+    setProductsToShow(arrayForHoldingProducts);
   };
 
   /* Our first 4 products */
   useEffect(() => {
+    arrayForHoldingProducts = [];
     loopWithSlice(0, productsPerPage);
   }, []);
 
@@ -61,6 +49,9 @@ const FarmerProducts = ({ farmer }) => {
       setNext(next + productsPerPage);
     }, 1500);
   };
+
+  /* if we don't have more products to load, disable the button */
+  const hasMoreProductsToShow = arrayForHoldingProducts.length !== products.length;
 
   return (
     <React.Fragment>
@@ -81,12 +72,16 @@ const FarmerProducts = ({ farmer }) => {
               <ProductsToShow products={productsToShow} farmerName={name} />
 
               <div className="farmer-profile__section-products-farmer__has-products__load-more">
-                <button
-                  className={`absolute-center button ${isLoadingMoreItems ? 'loading' : ''}`}
-                  onClick={handleShowMoreProducts}
-                >
-                  Load more
-                </button>
+                {hasMoreProductsToShow && (
+                  <>
+                    <button
+                      className={`absolute-center button ${isLoadingMoreItems ? 'loading' : ''}`}
+                      onClick={handleShowMoreProducts}
+                    >
+                      Load more
+                    </button>
+                  </>
+                )}
               </div>
             </>
           ) : (

@@ -90,40 +90,6 @@
   }
 }
 
-//MODAL classes
-
-.modal__addproduct {
-  width: 50vw;
-  height: 50vh;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgb(204, 204, 204);
-  background: rgb(255, 255, 255);
-  overflow: auto;
-  border-radius: 4px;
-  outline: none;
-  padding: 20px;
-  //for ipad width of the modal should be at least 50% of the view port
-  @media (max-width: 800px) {
-    width: 70vw;
-  }
-  //here the mobile v. must also be added
-}
-
-.overlay__addproduct {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(249, 249, 249, 0.7);
-  z-index: 9999;
-}
-
 .absolute-center {
   margin: 0 auto;
 }
