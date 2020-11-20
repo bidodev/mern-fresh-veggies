@@ -1,0 +1,50 @@
+/* MODAL classes */
+
+.modal__addproduct {
+  width: 50vw;
+  height: 50vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  //for ipad width of the modal should be at least 50% of the view port
+  @media (max-width: 800px) {
+    width: 70vw;
+  }
+  //here the mobile v. must also be added
+  animation-name: modalFade;
+  animation-duration: 2s;
+}
+
+.overlay__addproduct {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+}
+
+@keyframes modalFade {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, 0%);
+    }
+    80% {
+    transform: translate(-50%, -60%);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  

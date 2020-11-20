@@ -1,0 +1,59 @@
+.farmer-profile__section-products-farmer__has-products__list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  &__card {
+    width: 15vw;
+    min-width: 18rem;
+    height: 40vh;
+    margin: 2vh 1vh;
+    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border: 1px solid rgba(56, 29, 29, 0.1);
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    &__img-container {
+      width: 10rem;
+      height: 10rem;
+      min-height: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+      }
+    }
+
+    &--name {
+      margin: 1vh;
+      //border: 1px solid red;
+      height: 20%;
+      width: 100%;
+      text-align: center;
+    }
+
+    &--type {
+      margin: 1vh;
+      font-style: italic;
+      text-transform: capitalize;
+      height: 20%;
+      width: 100%;
+      //border: 1px solid red;
+      text-align: center;
+    }
+
+    &--description {
+      margin: 1vh;
+      height: 40%;
+      //border: 1px solid red;
+    }
+  }
+}

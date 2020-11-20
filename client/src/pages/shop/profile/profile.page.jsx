@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
+/* Import themes */
+import THEMES from 'settings/public-profile/Themes';
+
 /* Styles */
 import './profile.page.styles.scss';
 
@@ -10,10 +13,12 @@ import Spinner from 'components/UI/spinner/spinner.component';
 
 /* Component Imports */
 import HeaderFarmerProfile from 'pages/shop/profile/header/HeaderFarmerProfile.jsx';
-import ProfileInfo from 'pages/shop/profile/header/ProfileInfo';
+import ProfileInfo from 'pages/shop/profile/header/ProfileInfo/ProfileInfo';
 import PhotosGallery from 'pages/shop/profile/gallery/PhotosGallery';
 import FarmerProducts from 'pages/shop/profile/products/FarmerProducts';
 import Recipes from 'pages/shop/profile/recipes/recipes.component';
+
+import ClosedStore from './ClosedStore';
 
 const ProfilePage = () => {
   const { farmerId } = useParams();
@@ -21,8 +26,6 @@ const ProfilePage = () => {
   /* Farmer page object */
   const [farmer, setFarmer] = useState([]);
   const [isLoading, setStatusLoading] = useState(true);
-
-  console.log(farmer)
 
   useEffect(() => {
     axios(`/farmers/farmer/${farmerId}`)
@@ -34,22 +37,21 @@ const ProfilePage = () => {
   }, []);
 
   const ProfileCompouse = () => {
-    const { open, recipes, gallery, products } = farmer.config;
+    const { open, recipes, gallery, products, color } = farmer.config;
+    console.log(farmer.config)
 
     return (
-      <div className="public-profile__wrapper">
+      <div className={`public-profile__wrapper ${color ? THEMES[color] : THEMES['default']}`}>
         {open ? (
           <div className="public-profile__wrapper__store-open">
             <HeaderFarmerProfile {...farmer} />
             <ProfileInfo {...farmer} />
             {gallery && <PhotosGallery {...farmer} />}
             {products && <FarmerProducts farmer={farmer} />}
-            {recipes && <Recipes />}
+            {recipes && <Recipes farmer={farmer} />}
           </div>
         ) : (
-          <div className="public-profile__wrapper__store-closed">
-              <h3>This store is closed at the moment</h3>
-          </div>
+          <ClosedStore />
         )}
       </div>
     );

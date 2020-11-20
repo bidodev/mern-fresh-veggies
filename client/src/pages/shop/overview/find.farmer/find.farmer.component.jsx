@@ -11,7 +11,7 @@ import './find.farmer.styles.scss';
 import Spinner from 'components/UI/spinner/spinner.component';
 
 /* Ion Icons Imports */
-import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
+// import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
 // import IosArrowBack from 'react-ionicons/lib/IosArrowBack';
 
 const FindYourFarmer = ({ match }) => {
@@ -30,19 +30,20 @@ const FindYourFarmer = ({ match }) => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1450 },
+      breakpoint: { max: 3000, min: 1470 },
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1450, min: 920 },
+      breakpoint: { max: 1470, min: 970 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 920, min: 0 },
+      breakpoint: { max: 970, min: 0 },
       items: 1,
     },
   };
 
+  // ===== THIS IS AN EXAMPLE TO ADD CUSTOM ARROW ON CAROUSEL ===
   // const CustomRightArrow = ({ onClick, ...rest }) => {
   //   const {
   //     onMove,
@@ -77,23 +78,22 @@ const FindYourFarmer = ({ match }) => {
           >
             {farmers.map((farmer) => (
               <Link key={farmer._id} to={`${match.url}/farmer/${farmer._id}`}>
-                <li className="find-farmer__container__item">
+                <div className="find-farmer__container__item">
                   <div className="find-farmer__container__item__bg-image-container">
-                    <img src="/images/farmer-bg-1.jpg" alt="background" />
+                    <img src={`/uploads/${farmer.name.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`} alt="background" />
                   </div>
+
+                  <div className="find-farmer__container__item--ratings">⭐⭐⭐⭐⭐</div>
+                  <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
+                  <div className="find-farmer__container__item__location">Berlin, GERMANY</div>
+
                   <div className="find-farmer__container__item__avatar-container">
                     <img
                       src={`/uploads/${farmer.name.toLowerCase()}/images/profile/${farmer.images.profile}`}
                       alt="farmer-avatar"
                     />
                   </div>
-                  <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
-                  <div className="find-farmer__container__item__location">
-                    <div className="find-farmer__container__item__location--city">Berlin</div>
-                    <div className="find-farmer__container__item__location--country">Germany</div>
-                  </div>
-                  <div className="find-farmer__container__item--description">{farmer.description}</div>
-                </li>
+                </div>
               </Link>
             ))}
           </Carousel>

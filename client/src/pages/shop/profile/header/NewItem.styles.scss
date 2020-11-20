@@ -1,43 +1,35 @@
 .new-product {
-
-  p:first-of-type {
-    text-transform: uppercase;
-    color: #3c6142;
-    font-weight: 500;
-  }
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(252, 252, 252, .7);
     padding: 1.5rem 0;
+    text-transform: uppercase;
+    color: var(--header);
     transition: all .3s ease-in-out;
-    //border: 1px solid red;
+
+    p:first-of-type {
+      font-weight: 600;
+    }
 
     &:hover {
-      opacity: 1;
       cursor: pointer;
-      background-color: #F0F0F0;
+      color: var(--text-header);
+      background-color: var(--header);
+      transform: scale(0.98);
+
     }
 
     &__img {
       //border: 1px solid green;
       margin: 1rem 0;
-      width: 6rem;
-      height: 6rem;
+      width: 7rem;
+      height: 7rem;
     }
 
     img {
       height: auto;
       width: 100%;
       object-fit: cover;
-      transform: scale(1.1);
       transition: all 0.5s ease-in-out;
-      opacity: 0.95;
-
-      &:hover {
-        transform: scale(0.9);
-        opacity: 1;
-        cursor: pointer;
-      }
     }
   }

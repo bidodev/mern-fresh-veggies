@@ -2,14 +2,14 @@ import React from 'react';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import './SearchBar.styles.scss'
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, className }) => {
 
   const handleChange = (event) => {
     onSearch(event.target.value);
   };
 
   return (
-    <div className="stock-search-wrapper">
+    <div className={className}>
       <div className="search">
         <input type="search" className="searchTerm" placeholder="What are you looking for?" onChange={handleChange} />
         <button type="submit" className="searchButton">

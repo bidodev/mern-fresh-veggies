@@ -4,24 +4,27 @@
 
 .public-profile {
   &__wrapper {
-    margin-top: 8vh;
-    background-color: rgba(182, 182, 182, 0.3);
-
+    margin-top: 12vh;
+    background-color: var(--white);
+    
+    /* Wrapper if the store is open */
     &__store-open {
       width: 80vw;
       margin: 0 auto;
-      padding-top: 2.5vh;
+      border: var(--border-wrapper);
     }
 
+    /* Styles rules if the store is closed*/ 
     &__store-closed {
       height: 68vh;
-      background-color: #fff;
+      background-color: var(--white);;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-transform: uppercase;
 
       h3 {
-        color: #4d3525;
+        color: var(--secondary);
         font-size: 2rem;
       }
     }

@@ -9,10 +9,11 @@ import Spinner from 'components/UI/spinner/spinner.component';
 //import Alerts from 'components/UI/alerts';
 
 function PublicProfileSettings({ user }) {
-  console.log(user);
+  //console.log(user);
   /* Load actual status of the configs */
   const [configs, setConfigs] = useState(null);
   //const [alert, setAlert] = useState(null);
+  console.log(configs);
 
   useEffect(() => {
     axios
@@ -130,6 +131,16 @@ function PublicProfileSettings({ user }) {
               <p>Photos</p>
               <p>Display photos on your public profile</p>
             </div>
+          </div>
+
+          <h3>Theme Configuration</h3>
+          {/* Colors */}
+          <div className="settings__page__item__wrapper__item--theme">
+            <ul>
+              <li className={`green ${configs.color === 'green' ? 'active' : ''}`} onClick={() => setConfigs({ ...configs, color: 'green' })}></li>
+              <li className={`red ${configs.color === 'red' ? 'active' : ''}`} onClick={() => setConfigs({ ...configs, color: 'red' })}></li>
+              <li className={`brown ${configs.color === 'brown' ? 'active' : ''}`} onClick={() => setConfigs({ ...configs, color: 'brown' })}></li>
+            </ul>
           </div>
         </div>
       ) : (

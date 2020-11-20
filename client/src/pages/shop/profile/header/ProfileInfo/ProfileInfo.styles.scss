@@ -1,0 +1,215 @@
+/* Farmer data, about me, testimonails and new products */
+
+.public-farmer {
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+
+  /* New Products Menu*/
+  &__main__right {
+    width: 20%;
+    overflow-y: scroll;
+
+    &__header {
+      position: absolute;
+      width: 20%;
+      z-index: 2;
+      background-color: var(--header);
+    }
+
+    h2 {
+      color: var(--text-header);
+      font-weight: 500;
+      padding: 1rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &__container {
+      border-left: 1px solid var(--border-color);
+      padding-top: 4rem;
+    }
+  }
+
+  &__aside {
+    height: 100%;
+    width: 80%;
+    display: flex;
+
+    &__main {
+      height: 100%;
+      width: 75%;
+    }
+
+    &__infos {
+      width: 25%;
+      height: 100%;
+
+      &__avatar {
+        height: 30%;
+
+        &__a {
+          background-color: var(--header);
+          height: 50%;
+        }
+
+        &__b {
+          //background-color: red;
+          padding: 1rem 2rem;
+          border-right: 1px solid var(--border-color);
+          height: 50%;
+        }
+
+        h2 {
+          font-size: 2.2rem;
+          color: var(--header);
+          font-weight: 500;
+        }
+        h3 {
+          margin-top: 2rem;
+          color: var(--header);
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+      }
+
+      &__data {
+        height: auto;
+        padding: 4rem 2rem 1rem 2rem;
+        border-bottom: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+
+        h2 {
+          color: var(--text-header);
+          font-weight: 500;
+        }
+      }
+      &__expertise {
+        padding: 2rem;
+        border-right: 1px solid var(--border-color);
+        height: 37%;
+
+        h3 {
+          color: var(--header);
+          font-weight: 500;
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+
+          li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.3rem 0.5rem;
+            font-size: 0.9rem;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            background: var(--shadow-gray);
+            border-radius: 5px;
+
+            &:hover {
+              opacity: 0.5;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__main {
+    &__featured {
+      height: 45%;
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+      h2 {
+        background-color: var(--header);
+        color: var(--text-header);
+        font-weight: 500;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1px;
+      }
+
+      p {
+        margin-top: 1rem;
+        padding: 0 2rem;
+      }
+    }
+
+    &__reviews {
+      width: 100%;
+      height: 60%;
+
+      h2 {
+        //background-color: var(--header);
+        color: var(--header);
+        font-weight: 500;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1px;
+      }
+
+      div {
+        p {
+          font-size: 1rem;
+          padding: 2rem;
+        }
+      }
+      .abcde {
+        //border: 1px solid red;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        p {
+          font-size: 1rem;
+          span {
+            font-size: 0.9rem;
+          }
+        }
+        .carousel-dots {
+          position: absolute;
+          right: +5%;
+          text-align: center;
+        }
+
+        .carousel-dots .carousel-dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: var(--header);
+          opacity: 0.5;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  &__rate {
+    margin: 2vh 0 5vh 5vh;
+
+    &--stars {
+      margin: 1vh 0;
+    }
+  }
+}
+
+.public-farmer__main__right {
+  &::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  /* Optional: show position indicator in black in case width is > 0 */
+  &::-webkit-scrollbar-thumb {
+    background: #9b9b9b93;
+  }
+}

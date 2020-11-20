@@ -2,10 +2,11 @@ import React, { useState }  from 'react';
 import { limitResults } from 'utils/limiteDesc';
 import LoadProductInsideModal from './LoadProductInsideModal';
 
+import './ProductItem.styles.scss'
+
 /* Component Farmer Products Item */
 const ProductItem = ({ product, farmerName }) => {
   const {name, photo, type, description } = product;
-
 
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
@@ -16,16 +17,16 @@ const ProductItem = ({ product, farmerName }) => {
 
   return (
     <>
-      <div className="profile-page-farmer__products__card" onClick={toggleModal}>
-        <h3 className="profile-page-farmer__products__card--name">{name}</h3>
-        <div className="profile-page-farmer__products__card__img-container">
+      <div className="farmer-profile__section-products-farmer__has-products__list__card" onClick={toggleModal}>
+        <h3 className="farmer-profile__section-products-farmer__has-products__list__card--name">{name}</h3>
+        <div className="farmer-profile__section-products-farmer__has-products__list__card__img-container">
           <img
             src={`/uploads/${farmerName.toLowerCase()}/images/products/${photo}`}
             alt="img"
           />
         </div>
-        <span className="profile-page-farmer__products__card--type">Type: {type}</span>
-        <p className="profile-page-farmer__products__card--description">{limitResults(description, 120)}</p>
+        <span className="farmer-profile__section-products-farmer__has-products__list__card--type">Type: {type}</span>
+        <p className="farmer-profile__section-products-farmer__has-products__list__card--description">{limitResults(description, 120)}</p>
       </div>
       {modalStatus && (
         <LoadProductInsideModal
