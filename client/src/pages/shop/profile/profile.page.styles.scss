@@ -23,17 +23,17 @@
 }
 
 //layout themes
-.green-mode {
+.green-theme{
   --header: var(--primary-green);
   --text-header: var(--secondary-gray);
 }
 
-.red-mode {
+.red-theme{
   --header: var(--primary-red);
   --text-header: var(--secondary-gray);
 }
 
-.rose-mode {
+.brown-theme{
   --header: var(--primary-rose);
   --text-header: var(--secondary-gray);
 }
