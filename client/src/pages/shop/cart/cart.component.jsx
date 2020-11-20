@@ -43,8 +43,8 @@ const Cart = ({ match }) => {
   const closeModal = () => (match.path === '/shop/cart' ? false : dispatch({ type: 'TOGGLE_CART_HIDDEN' }));
   return (
     <div className="cart-edit">
-      <Link to={`/shop`} className="back-button">
-        <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" onClick={closeModal} />
+      <Link to={`/shop`} className="back-button" onClick={closeModal}>
+        <FontAwesomeIcon icon={['fas', 'angle-left']} className="fa-angle-left" />
         Back to shop
       </Link>
       <p className="cart-title">You have added the following articles:</p>
