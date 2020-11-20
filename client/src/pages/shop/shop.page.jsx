@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
+
 /* Styles */
 import './shop.styles.scss';
 
@@ -70,6 +71,7 @@ const Shop = ({ match }) => {
       </ShopNavBar>
 
       {/* Those components will switch, only one of them will be available at sameTime */}
+
       <Route exact path={`${match.path}`} component={ShopOverView} />
       <Route path={`${match.path}/farmer/:farmerId`} component={ProfilePage} />
       <Route path={`${match.path}/cart`} component={Cart} />
