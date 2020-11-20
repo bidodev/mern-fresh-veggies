@@ -11,6 +11,7 @@ import './find.farmer.styles.scss';
 import Spinner from 'components/UI/spinner/spinner.component';
 
 /* Ion Icons Imports */
+import IosPin from 'react-ionicons/lib/IosPin';
 // import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
 // import IosArrowBack from 'react-ionicons/lib/IosArrowBack';
 
@@ -80,12 +81,18 @@ const FindYourFarmer = ({ match }) => {
               <Link key={farmer._id} to={`${match.url}/farmer/${farmer._id}`}>
                 <div className="find-farmer__container__item">
                   <div className="find-farmer__container__item__bg-image-container">
-                    <img src={`/uploads/${farmer.name.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`} alt="background" />
+                    <img
+                      src={`/uploads/${farmer.name.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`}
+                      alt="background"
+                    />
                   </div>
 
                   <div className="find-farmer__container__item--ratings">⭐⭐⭐⭐⭐</div>
                   <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
-                  <div className="find-farmer__container__item__location">Berlin, GERMANY</div>
+                  <div className="find-farmer__container__item__location">
+                    <IosPin fontSize="15px" color="white" className="find-farmer__container__item__location--icon" />
+                    Berlin, GERMANY
+                  </div>
 
                   <div className="find-farmer__container__item__avatar-container">
                     <img
