@@ -80,7 +80,7 @@ const FindYourFarmer = ({ match }) => {
               <Link key={farmer._id} to={`${match.url}/farmer/${farmer._id}`}>
                 <div className="find-farmer__container__item">
                   <div className="find-farmer__container__item__bg-image-container">
-                    <img src="/images/farmer-bg-1.jpg" alt="background" />
+                    <img src={`/uploads/${farmer.name.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`} alt="background" />
                   </div>
 
                   <div className="find-farmer__container__item--ratings">⭐⭐⭐⭐⭐</div>
