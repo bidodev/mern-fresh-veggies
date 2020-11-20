@@ -63,6 +63,9 @@ const userSchema = new mongoose.Schema({
       type: Boolean,
       default: 'true',
     },
+    color: {
+      type: String,
+    },
   },
   products: [
     {

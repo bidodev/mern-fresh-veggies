@@ -2,42 +2,6 @@
  *Main containers styles rules
 **/
 
-/**
-  *Define colors for the farmer public profile
-*/
-:root {
-  --primary-green: #405C45;
-  --primary-red: #A6382E;
-  --primary-rose: #504024;
-  --secondary-gray: #F0F0F0;
-
-
-  --shadow-gray: #f0f0f0;
-
-  /* borders */
-  --border-color: rgba(0, 0, 0, 0.1);
-  --border-wrapper: 1px solid var(--border-color);
-
-  /* Background color for sections*/
-  --section: #f9f9f9;
-}
-
-//layout themes
-.green-mode {
-  --header: var(--primary-green);
-  --text-header: var(--secondary-gray);
-}
-
-.red-mode {
-  --header: var(--primary-red);
-  --text-header: var(--secondary-gray);
-}
-
-.rose-mode {
-  --header: var(--primary-rose);
-  --text-header: var(--secondary-gray);
-}
-
 .public-profile {
   &__wrapper {
     margin-top: 12vh;

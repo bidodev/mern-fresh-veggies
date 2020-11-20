@@ -8,13 +8,11 @@
   }
 
   &--sub {
-    font-style: italic;
     margin-bottom: 0.5rem;
   }
 
   &__header {
     font-size: 1rem;
-    color: #666;
   }
 
   hr {
@@ -33,21 +31,82 @@
     }
   }
 
-  &__item--settings {
-    display: flex;
-    margin-bottom: 1rem;
-    margin-left: 4rem;
-    @media (max-width: 850px) {
-      margin-left: 1rem;
-    }
-    .text {
-      margin-left: 1rem;
-      p {
-        margin: 0;
+  &__item {
+    &--theme {
+      //border: 1px solid red;
+      height: 5rem;
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        .green {
+          background-color: var(--primary-green);
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+
+        .active{
+          opacity: 1;
+        }
+
+        .red {
+          background-color: var(--primary-red);
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+
+        .active{
+          opacity: 1;
+        }
+
+        .brown {
+          background-color: var(--primary-brown);
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+
+        .active{
+          opacity: 1;
+        }
       }
-      p:last-of-type {
-        color: #666666;
-        font-size: 0.9rem;
+    }
+    &--settings {
+      display: flex;
+      margin-bottom: 1rem;
+      margin-left: 4rem;
+      @media (max-width: 850px) {
+        margin-left: 1rem;
+      }
+      .text {
+        margin-left: 1rem;
+        p {
+          margin: 0;
+        }
+        p:last-of-type {
+          color: #666666;
+          font-size: 0.9rem;
+        }
       }
     }
   }
@@ -89,6 +148,6 @@
 }
 
 .toggle-switch input[type='checkbox']:checked + label .toggle-track:before {
-  background: #065fd4;
+  background: var(--header);
   right: 0px;
 }
