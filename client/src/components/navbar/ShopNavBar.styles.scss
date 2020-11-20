@@ -15,6 +15,11 @@
   }
   &__logo {
     margin-left: 5vw;
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #1e5b45;
+    transform: rotateZ(-9deg);
   }
   &__links {
     display: flex;
