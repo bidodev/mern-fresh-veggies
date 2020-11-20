@@ -2,10 +2,11 @@ import React, { useState }  from 'react';
 import { limitResults } from 'utils/limiteDesc';
 import LoadProductInsideModal from './LoadProductInsideModal';
 
+import './ProductItem.styles.scss'
+
 /* Component Farmer Products Item */
 const ProductItem = ({ product, farmerName }) => {
   const {name, photo, type, description } = product;
-
 
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);

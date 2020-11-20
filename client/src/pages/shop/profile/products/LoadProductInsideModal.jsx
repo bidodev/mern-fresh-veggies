@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import './LoadProductInsideModal.styles.scss'
 
 /* Component Imports */
 import DisplayModal from 'components/modal/modal.component';

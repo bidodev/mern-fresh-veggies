@@ -2,7 +2,7 @@
   {
     "_id": "0",
     "recipeName": "ratatouille",
-    "coverImage": "https://st2.depositphotos.com/3278179/9084/i/450/depositphotos_90841292-stock-photo-vegetable-ratatouille-baked-in-cast.jpg",
+    "coverImage": "/images/dishes/ratatouille-dish.png",
     "portion": "8 servings",
     "ingredients": [
       {
