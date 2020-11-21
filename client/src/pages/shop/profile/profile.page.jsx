@@ -1,48 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
-/* Import themes */
-import THEMES from 'settings/public-profile/Themes';
+/* http services */
+import { loadFarmerPublicProfileData } from 'utils/services';
 
 /* Styles */
 import './profile.page.styles.scss';
 
 /* Utils */
 import Spinner from 'components/UI/spinner/spinner.component';
+import CompouseStore from './CompouseStore';
 
-/* Compouse Store Components */
-import OpenStore from './OpenStore';
-import ClosedStore from './ClosedStore';
-
-const ProfilePage = () => {
+const ProfilePage = ({ slug, profileId }) => {
   const { farmerId } = useParams();
 
   /* Farmer page object */
-  const [farmer, setFarmer] = useState([]);
-  const [isLoading, setStatusLoading] = useState(true);
+  const [farmer, setFarmer] = useState(null);
 
   useEffect(() => {
-    axios(`/farmers/farmer/${farmerId}`)
-      .then(({ data }) => {
-        setFarmer(data.data);
-        setStatusLoading(false);
-      })
-      .catch((err) => console.log(err.message));
-  }, []);
-
-  const CompouseStore = () => {
-    const { open, color } = farmer.config;
-    return (
-      <div className={`public-profile__wrapper ${color ? THEMES[color] : THEMES['default']}`}>
-        {open ? <OpenStore farmer={farmer}/> : <ClosedStore />}
-      </div>
-    );
-  };
+    loadFarmerPublicProfileData(farmerId).then(({data, status}) => {
+      setFarmer(data);
+    });
+  }, [farmerId]);
 
   return (
     <>
-      {isLoading ? <Spinner /> : <CompouseStore />}
+      {farmer ? <CompouseStore farmer={farmer} /> : <Spinner /> }
     </>
   );
 };
