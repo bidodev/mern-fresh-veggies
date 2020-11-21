@@ -12,7 +12,7 @@ const AddForm = () => {
   const [file, setSelectedFile] = useState(null);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [type, setType] = useState('');
+  const [type, setType] = useState('fruits');
   const [price, setPrice] = useState('');
   const [quantity, setQuantity] = useState('');
   const [unit, setUnit] = useState('kg');

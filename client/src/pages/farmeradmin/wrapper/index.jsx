@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 /* Import themes */
-import THEMES from 'settings/public-profile/Themes';
+//import THEMES from 'settings/public-profile/Themes';
 
 /* React Router Dom */
 import { Route } from 'react-router-dom';
@@ -25,10 +25,7 @@ import './admin.page.styles.scss';
 
  
 const FarmerAdmin = React.memo(({ match }) => {
-
   const dispatch = useDispatch();
-  const farmerData = useSelector((state) => state.login.adminPanelData);
-  const [isLoading, setIstLoading] = useState(true);
 
   /* Retrieve Farmer Panel */
   useEffect(() => {
@@ -36,7 +33,6 @@ const FarmerAdmin = React.memo(({ match }) => {
       .get('/farmers/admin/panel')
       .then(({ data }) => {
         dispatch({ type: 'SET_FARMER', payload: data.data });
-        setIstLoading(false);
       })
       .catch((err) => {
         console.log(err.response.data.message);
