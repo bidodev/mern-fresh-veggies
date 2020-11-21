@@ -19,9 +19,9 @@ export const getAll = () => {
   return axios.get('/farmers');
 };
 
-export const loadFarmerPublicProfileData = async (id) => {
+export const loadFarmerPublicProfileData = async (slug) => {
   try {
-    const { data } = await axios.get(`/farmers/farmer/${id}`);
+    const { data } = await axios.get(`/farmers/farmer/${slug}`);
     return data;
   } catch (err) {
     return err;

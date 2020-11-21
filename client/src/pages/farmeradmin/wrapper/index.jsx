@@ -30,8 +30,6 @@ const FarmerAdmin = React.memo(({ match }) => {
   const farmerData = useSelector((state) => state.login.adminPanelData);
   const [isLoading, setIstLoading] = useState(true);
 
-  console.log()
-
   /* Retrieve Farmer Panel */
   useEffect(() => {
     axios
@@ -48,7 +46,7 @@ const FarmerAdmin = React.memo(({ match }) => {
 
   return (
     <>
-      <section className={`farmer-admin ${farmerData.config.color && THEMES[farmerData.config.color]}`}>
+      <section className={`farmer-admin green-theme`}>
         <ShopNavBar match={match} />
         <Aside />
         <Route exact path={`${match.path}`} component={ProfileAdmin} />

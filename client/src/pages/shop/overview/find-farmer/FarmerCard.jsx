@@ -9,7 +9,7 @@ import IosPin from 'react-ionicons/lib/IosPin';
 
 const FarmerCard = ({ farmer, match }) => {
   return (
-    <Link key={farmer._id} to={`${match.url}/farmer/${farmer._id}`}>
+    <Link key={farmer._id} to={`${match.url}/farmer/${farmer.slug}`}>
       <div className="find-farmer__container__item">
         <div className="find-farmer__container__item__bg-image-container">
           <img

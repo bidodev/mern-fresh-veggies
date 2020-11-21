@@ -73,7 +73,7 @@ const Shop = ({ match }) => {
       {/* Those components will switch, only one of them will be available at sameTime */}
 
       <Route exact path={`${match.path}`} component={ShopOverView} />
-      <Route path={`${match.path}/farmer/:farmerURL`} component={ProfilePage} />
+      <Route path={`${match.path}/farmer/:slug`} component={ProfilePage} />
       <Route path={`${match.path}/cart`} component={Cart} />
 
       <Footer />
