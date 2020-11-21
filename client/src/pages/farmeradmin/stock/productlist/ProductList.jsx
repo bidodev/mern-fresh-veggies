@@ -1,9 +1,7 @@
 import React from 'react';
 import ProductItem from 'pages/farmeradmin/stock/product/ProductItem';
-import { useSelector } from 'react-redux';
 
-function ProductList({ products }) {
-  const user = useSelector(({ login }) => login.user.data);
+const ProductList = ({ products }) => {
   return (
     <div className="stock__farmer-products">
       {products.length > 0 ? (
@@ -13,6 +11,6 @@ function ProductList({ products }) {
       )}
     </div>
   );
-}
+};
 
 export default ProductList;
