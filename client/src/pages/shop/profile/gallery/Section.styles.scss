@@ -1,10 +1,12 @@
 .farmer-profile__gallery__images {
-  height: 50vh;
+  height: 30rem;
   width: 100%;
+  //border: 1px solid green;
 
   .react-multi-carousel-item
   {
     //border: 1px solid blue;
+    height: 26rem;
   }
 
   .image-container {

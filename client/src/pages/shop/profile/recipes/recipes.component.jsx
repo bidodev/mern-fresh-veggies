@@ -54,8 +54,7 @@ const Recipes = ({ farmer }) => {
     <section className="recipes-section">
       <h2>Recipes' Suggestions</h2>
       <p>
-        Based on {farmer.name}'s products we found {resultRecipes.length} recipes suggestions for you!{' '}
-        {resultRecipes.length > 0 ? '😋' : '😢'}
+        {resultRecipes.length > 0 ? `Based on ${farmer.name}'s products we found ${resultRecipes.length} recipes suggestions for you!'😋'` : 'Unfortunately, we did not find any recipe suggestions for you 😢'}
       </p>
       <div className="recipes-section__main-container">
         <InfiniteScroll
