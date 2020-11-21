@@ -3,11 +3,19 @@
  */
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const slugify = require('slugify');
 
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: ['true', 'The name is required'],
+  },
+  surname: {
+    type: String,
+    //required: ['true', 'The surname is required'],
+  },
+  slug: {
+    type: String,
   },
   email: {
     type: String,
@@ -65,6 +73,7 @@ const userSchema = new mongoose.Schema({
     },
     color: {
       type: String,
+      default: 'green'
     },
   },
   products: [
@@ -85,6 +94,12 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
+// Create a slug
+userSchema.pre('save', function(next) {
+  this.slug = slugify(this.name, { lower: true });
+  next();
+});
+
 //query Middleware
 //pupolate products when use find
 userSchema.pre(/^find/, function (next) {
@@ -92,7 +107,6 @@ userSchema.pre(/^find/, function (next) {
     path: 'products',
     select: '-__v',
   });
-
   next();
 });
 

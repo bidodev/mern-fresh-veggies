@@ -27,17 +27,11 @@ exports.getAllFarmers = asyncWrapper(async (req, res, next) => {
 })
 
 /**
- * get a farmer page
+ * Retrieve a Farmer Public Profile
  */
 exports.getFarmerPage = asyncWrapper(async (req, res, next) => {
-
-  //check if its a valid ObjectId
-  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    return next(new AppError('Not valid id', 400, 'fail'));
-  }
-  
   //find the user
-  const user = await User.findById(req.params.id);
+  const user = await User.findOne({slug: req.params.slug});
   
   if (!user || user.role !== 'farmer') {
     return next(new AppError('You could not find a farmer page with the given id', 404, 'fail'));

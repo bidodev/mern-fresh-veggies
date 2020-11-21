@@ -28,7 +28,7 @@ const {
 
 /* select the farmer page based on the id */
 router.route('/').get(getAllFarmers);
-router.route('/farmer/:id').get(getFarmerPage);
+router.route('/farmer/:slug').get(getFarmerPage);
 
 const authMiddlewares = [protected, restrictedAccess('farmer', 'admin')];
 
