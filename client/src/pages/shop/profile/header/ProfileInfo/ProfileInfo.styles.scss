@@ -28,7 +28,24 @@
 
     &__container {
       border-left: 1px solid var(--border-color);
+      height: 100%;
       padding-top: 4rem;
+
+      &__empty-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        P {
+          margin-top: 2rem;
+          color: var(--text-body);
+          font-size: 1rem;
+          font-weight: 300;
+        }
+      }
     }
   }
 
@@ -59,6 +76,10 @@
           padding: 1rem 2rem;
           border-right: 1px solid var(--border-color);
           height: 50%;
+
+          P {
+            color: var(--text-body);
+          }
         }
 
         h2 {
@@ -73,7 +94,9 @@
           text-transform: uppercase;
         }
       }
-
+      &__paragraph {
+        color: var(--text-body);
+      }
       &__data {
         height: auto;
         padding: 4rem 2rem 1rem 2rem;
@@ -110,6 +133,7 @@
             margin: 0.5rem 0.5rem 0.5rem 0;
             background: var(--shadow-gray);
             border-radius: 5px;
+            color: var(--text-body);
 
             &:hover {
               opacity: 0.5;
@@ -139,6 +163,11 @@
       p {
         margin-top: 1rem;
         padding: 0 2rem;
+        color: var(--text-body);
+      }
+      p:first-of-type {
+        margin-top: 2rem;
+        padding: 0 2rem;
       }
     }
 
@@ -150,20 +179,22 @@
         //background-color: var(--header);
         color: var(--header);
         font-weight: 500;
-        padding: 1rem 2rem;
+        padding: 2rem;
         text-transform: uppercase;
         letter-spacing: 0.1px;
       }
 
       div {
+        color: var(--text-body);
+        
         p {
           font-size: 1rem;
           padding: 2rem;
         }
       }
       .abcde {
-        //border: 1px solid red;
-        height: 5vh;
+
+        height: 4vh;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -171,8 +202,9 @@
 
         p {
           font-size: 1rem;
+          color: var(--text-body);
           span {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
           }
         }
         .carousel-dots {
@@ -186,7 +218,7 @@
           width: 10px;
           height: 10px;
           border-radius: 50%;
-          background-color: var(--header);
+          background-color: var(--text-body);
           opacity: 0.5;
           margin-right: 10px;
         }

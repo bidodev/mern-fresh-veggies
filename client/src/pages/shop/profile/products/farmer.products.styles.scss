@@ -82,10 +82,13 @@
     }
 
     &__empty-store {
-      height: 100vh;
+      height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--text-body);
     }
   }
 }

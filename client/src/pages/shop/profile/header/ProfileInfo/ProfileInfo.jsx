@@ -3,16 +3,31 @@ import './ProfileInfo.styles.scss';
 
 import NewItem from '../NewItem';
 
+const NewProductsList = ({ products, name }) => {
+  return [...products]
+    .reverse()
+    .filter((product, index) => index < 6)
+    .map((product, index) => <NewItem key={index} product={product} name={name} />);
+};
+
+const EmptyProductsList = ({name}) => {
+  return (
+    <div className="public-farmer__main__right__container__empty-list">
+      <img src="/images/layout/noitems.png" alt="no-items" />
+      <p>{name} doesn't have products yet!</p>
+  </div>
+  );
+};
+
 const ProfileInfo = ({ name, products }) => {
+  console.log(products);
   return (
     <>
       <header className="public-farmer">
         <aside className="public-farmer__aside">
           <div className="public-farmer__aside__infos">
             <div className="public-farmer__aside__infos__avatar">
-              <p className="public-farmer__aside__infos__avatar__a">
-  
-              </p>
+              <p className="public-farmer__aside__infos__avatar__a"></p>
               <div className="public-farmer__aside__infos__avatar__b">
                 <h2>{name}</h2>
                 <p>⭐⭐⭐⭐⭐</p>
@@ -85,10 +100,7 @@ const ProfileInfo = ({ name, products }) => {
           {/* should be filtered by data add and limit to 5 */}
           <div className="public-farmer__main__right__container">
             {/* create a shalow copy of the array and reverse to show the last added first */}
-            {[...products].reverse().filter((product, index) => index < 6)
-              .map((product, index) => (
-                <NewItem key={index} product={product} name={name} />
-              ))}
+            {products.length > 0 ? <NewProductsList products={products} name={name}/> : <EmptyProductsList name={name}/>}
           </div>
         </main>
       </header>

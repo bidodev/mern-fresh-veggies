@@ -5,7 +5,9 @@
     --primary-green: #405C45;
     --primary-red: #A6382E;
     --primary-brown: #504024;
+
     --secondary-gray: #F0F0F0;
+    --primary-black: #252627;
   
   
     --shadow-gray: #f0f0f0;
@@ -22,14 +24,17 @@
   .green-theme{
     --header: var(--primary-green);
     --text-header: var(--secondary-gray);
+    --text-body: var(--primary-black);
   }
   
   .red-theme{
     --header: var(--primary-red);
     --text-header: var(--secondary-gray);
+    --text-body: var(--primary-black);
   }
   
   .brown-theme{
     --header: var(--primary-brown);
     --text-header: var(--secondary-gray);
+    --text-body: var(--primary-black);
   }
