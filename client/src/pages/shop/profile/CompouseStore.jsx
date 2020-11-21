@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 /* Import themes */
 import THEMES from 'settings/public-profile/Themes';
@@ -7,13 +7,14 @@ import THEMES from 'settings/public-profile/Themes';
 import OpenStore from './OpenStore';
 import ClosedStore from './ClosedStore';
 
-const CompouseStore = ({farmer}) => {
-    const { open, color } = farmer.config;
-    return (
-      <div className={`public-profile__wrapper ${color ? THEMES[color] : THEMES['default']}`}>
-        {open ? <OpenStore farmer={farmer}/> : <ClosedStore />}
-      </div>
-    );
-  };
+const CompouseStore = ({ farmer }) => {
+  const { config } = farmer;
 
-export default CompouseStore
+  return (
+    <div className={`public-profile__wrapper ${config.color ? THEMES[config.color] : THEMES['default']}`}>
+      {config.open ? <OpenStore farmer={farmer} /> : <ClosedStore />}
+    </div>
+  );
+};
+
+export default CompouseStore;

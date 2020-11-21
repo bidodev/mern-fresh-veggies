@@ -5,23 +5,24 @@ import { useParams } from 'react-router-dom';
 import { loadFarmerPublicProfileData } from 'utils/services';
 
 /* Styles */
-import './profile.page.styles.scss';
+import './PublicFarmerProfile.styles.scss';
 
 /* Utils */
 import Spinner from 'components/UI/spinner/spinner.component';
 import CompouseStore from './CompouseStore';
 
-const ProfilePage = ({ slug, profileId }) => {
-  const { farmerId } = useParams();
+const ProfilePage = ({profileId }) => {
+  const { farmerURL } = useParams();
 
-  /* Farmer page object */
+  /* Save the Farmer Page object */
   const [farmer, setFarmer] = useState(null);
 
+  /* Call the API */
   useEffect(() => {
-    loadFarmerPublicProfileData(farmerId).then(({data, status}) => {
+    loadFarmerPublicProfileData(farmerURL).then(({data, status}) => {
       setFarmer(data);
     });
-  }, [farmerId]);
+  }, [farmerURL]);
 
   return (
     <>

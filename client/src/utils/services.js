@@ -27,3 +27,13 @@ export const loadFarmerPublicProfileData = async (id) => {
     return err;
   }
 };
+
+export const loadAllFarmersProfile = async () => {
+  try {
+    const { data } = await axios.get(`/farmers`);
+    return data;
+  } catch (err) {
+    return err;
+  }
+
+}

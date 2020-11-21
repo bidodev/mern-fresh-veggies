@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+/* http services */
+import { loadAllFarmersProfile } from 'utils/services';
+
 /* Styles */
-import './find.farmer.styles.scss';
+import './FindFarmer.styles.scss';
 
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
@@ -16,18 +18,14 @@ import IosPin from 'react-ionicons/lib/IosPin';
 // import IosArrowBack from 'react-ionicons/lib/IosArrowBack';
 
 const FindYourFarmer = ({ match }) => {
-  const [isLoading, setStatusLoading] = useState(true);
-  const [farmers, setFarmers] = useState([]);
+  const [farmers, setFarmers] = useState(null);
 
+  /* Load all the farmers */
   useEffect(() => {
-    axios(`/farmers`)
-      .then(({ data }) => {
-        setFarmers(data.data.farmers);
-        setStatusLoading(false);
-      })
-      .catch((err) => console.log(err.message));
+    loadAllFarmersProfile().then(({ data }) => {
+      setFarmers(data.farmers);
+    });
   }, []);
-  console.log(farmers);
 
   const responsive = {
     desktop: {
@@ -57,9 +55,7 @@ const FindYourFarmer = ({ match }) => {
   return (
     <section className="find-farmer">
       <h2 className="find-farmer__header">MEET OUR VENDORS</h2>
-      {isLoading ? (
-        <Spinner />
-      ) : (
+      {farmers ? (
         <div className="find-farmer__container">
           <Carousel
             slidesToSlide={1} // number of new items on next slide.
@@ -105,6 +101,8 @@ const FindYourFarmer = ({ match }) => {
             ))}
           </Carousel>
         </div>
+      ) : (
+        <Spinner />
       )}
     </section>
   );

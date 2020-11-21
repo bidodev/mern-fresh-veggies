@@ -8,13 +8,13 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import './shop.styles.scss';
 
 /* Page Imports */
-import ProfilePage from 'pages/shop/profile/profile.page';
+import ProfilePage from 'pages/shop/profile/PublicFarmerProfile';
 
 /* Component Imports */
 import ShopNavBar from 'components/navbar/ShopNavBar';
 import Cart from 'pages/shop/cart/cart.component';
 import Banner from 'pages/shop/overview/banner/banner.component';
-import FindYourFarmer from 'pages/shop/overview/find.farmer/find.farmer.component';
+import FindYourFarmer from 'pages/shop/overview/find-farmer/FindFarmer';
 import HowItWorks from 'pages/shop/overview/how.it.works/how.it.works.component';
 import Footer from 'components/footer/Footer';
 import Modal from 'components/modal/modal.component';
@@ -73,7 +73,7 @@ const Shop = ({ match }) => {
       {/* Those components will switch, only one of them will be available at sameTime */}
 
       <Route exact path={`${match.path}`} component={ShopOverView} />
-      <Route path={`${match.path}/farmer/:farmerId`} component={ProfilePage} />
+      <Route path={`${match.path}/farmer/:farmerURL`} component={ProfilePage} />
       <Route path={`${match.path}/cart`} component={Cart} />
 
       <Footer />
