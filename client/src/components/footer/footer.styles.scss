@@ -3,7 +3,8 @@
 footer {
   height: 20vh;
   margin: 2vh 3vw;
-  border-top: 1px solid grey;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -15,6 +16,7 @@ footer {
 
     p {
       margin-bottom: 1vh;
+      color: var(--primary-black);
 
       &:first-of-type {
         margin-bottom: 3vh;
