@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 /* http services */
 import { loadFarmerPublicProfileData } from 'utils/services';
@@ -11,8 +11,9 @@ import './PublicFarmerProfile.styles.scss';
 import Spinner from 'components/UI/spinner/spinner.component';
 import CompouseStore from './CompouseStore';
 
-const ProfilePage = ({profileId }) => {
+const ProfilePage = () => {
   const { farmerURL } = useParams();
+  const history = useHistory();
 
   /* Save the Farmer Page object */
   const [farmer, setFarmer] = useState(null);

@@ -1,17 +1,13 @@
 import React from 'react';
 import './FarmersList.styles.scss';
 
-import { Link } from 'react-router-dom';
-
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-/* Ion Icons Imports */
-import IosPin from 'react-ionicons/lib/IosPin';
-// import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
-// import IosArrowBack from 'react-ionicons/lib/IosArrowBack';
+import FarmerCard from './FarmerCard';
 
-function FarmerList({ farmers, match }) {
+
+const FarmerList =({ farmers, match }) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1470 },
@@ -56,31 +52,8 @@ function FarmerList({ farmers, match }) {
         // customLeftArrow={<CustomLeftArrow />}
         // customRightArrow={<CustomRightArrow />}
       >
-        {farmers.map((farmer) => (
-          <Link key={farmer._id} to={`${match.url}/farmer/${farmer._id}`}>
-            <div className="find-farmer__container__item">
-              <div className="find-farmer__container__item__bg-image-container">
-                <img
-                  src={`/uploads/${farmer.name.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`}
-                  alt="background"
-                />
-              </div>
-
-              <div className="find-farmer__container__item--ratings">⭐⭐⭐⭐⭐</div>
-              <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
-              <div className="find-farmer__container__item__location">
-                <IosPin fontSize="15px" color="white" className="find-farmer__container__item__location--icon" />
-                Berlin, GERMANY
-              </div>
-
-              <div className="find-farmer__container__item__avatar-container">
-                <img
-                  src={`/uploads/${farmer.name.toLowerCase()}/images/profile/${farmer.images.profile}`}
-                  alt="farmer-avatar"
-                />
-              </div>
-            </div>
-          </Link>
+        {farmers.map((farmer, index) => (
+            <FarmerCard key={index} farmer={farmer} match={match}/>
         ))}
       </Carousel>
     </div>
