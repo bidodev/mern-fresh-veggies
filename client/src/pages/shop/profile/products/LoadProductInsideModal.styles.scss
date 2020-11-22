@@ -1,30 +1,23 @@
-/* MODAL classes */
-
-.modal__addproduct {
-  width: 50vw;
-  height: 50vh;
+.modal__add-product {
+  width: 55rem;
+  height: 32rem;
   position: fixed;
   top: 50%;
   left: 50%;
   right: auto;
   bottom: auto;
   transform: translate(-50%, -50%);
-  border: 1px solid rgb(204, 204, 204);
   background: rgb(255, 255, 255);
   overflow: auto;
   border-radius: 4px;
   outline: none;
-  padding: 20px;
-  //for ipad width of the modal should be at least 50% of the view port
-  @media (max-width: 800px) {
-    width: 70vw;
-  }
-  //here the mobile v. must also be added
+  padding: 1.2rem;
   animation-name: modalFade;
-  animation-duration: 2s;
+  animation-duration: 0.4s;
+  position: relative;
 }
 
-.overlay__addproduct {
+.overlay__add-product {
   position: fixed;
   top: 0;
   left: 0;
@@ -35,16 +28,129 @@
 }
 
 @keyframes modalFade {
-    0% {
-      opacity: 0;
-      transform: translate(-50%, 0%);
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0%);
+  }
+  80% {
+    transform: translate(-50%, -57%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.add-product-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  &__close {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.5rem;
+  }
+
+  &__left-section {
+    background: lightgreen;
+    width: 40%;
+    height: 100%;
+    border-radius: 8px;
+    position: relative;
+
+    &--logo {
+      margin: 1rem 1.5rem;
+      font-family: 'Nothing You Could Do', cursive;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #1e5b45;
     }
-    80% {
-    transform: translate(-50%, -60%);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(-50%, -50%);
+
+    &__img-container {
+      width: 18rem;
+      // ---- WE NEED TO RESIZE IMAGES HERE TO HAVE THEM CENTERED 😞 ----
+      // height: 22rem;
+      min-height: 20rem;
+      position: absolute;
+      top: 6rem;
+      left: 7rem;
+      border-radius: 20px;
+      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+      background: rgb(255, 255, 255);
+      &--img {
+        width: 100%;
+        // ---- WE NEED TO RESIZE IMAGES HERE TO HAVE THEM CENTERED 😞 ----
+        // height: 100%;
+        // object-fit: cover;
+      }
     }
   }
-  
+
+  &__right-section {
+    height: 100%;
+    width: 60%;
+    padding: 0.5rem;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &--name {
+      text-transform: uppercase;
+      color: lightgreen;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    &--type {
+      font-size: 1.1rem;
+      font-style: italic;
+      transform: translate(10px, -15px);
+      color: lightgreen;
+      text-shadow: 1px 2px 2px black;
+    }
+
+    &--description {
+      font-size: 0.9rem;
+    }
+
+    &--price {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: lightgreen;
+      text-shadow: 1px 2px 2px black;
+    }
+
+    &__quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        font-size: 1.3rem;
+        margin: 0.9rem;
+        color: #9c9c9c;
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &--icon {
+        margin-right: 0.4rem;
+        vertical-align: -3px;
+      }
+      &--btn {
+        background: lightgreen;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+      }
+    }
+  }
+}
