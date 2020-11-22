@@ -1,37 +1,50 @@
 import React, { useState } from 'react';
-
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import './LoadProductInsideModal.styles.scss'
+
+/* Styles */
+import './LoadProductInsideModal.styles.scss';
 
 /* Component Imports */
 import DisplayModal from 'components/modal/modal.component';
 
 const LoadProductInsideModal = ({ modalStatus, toggleModal, product, farmerName }) => {
   const { _id, name, photo, type, description, price, unit } = product;
-
-  const handleAddtoCart = (id) => {
+  const handleAddToCart = (id) => {
     const farmerId = 1;
     dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId, price, unit } });
   };
-
   const [quantity, setQuantity] = useState(1);
-
   const dispatch = useDispatch();
 
   return (
     <DisplayModal
       modalStatus={modalStatus}
       closeModal={toggleModal}
-      className={'modal__addproduct'}
-      overlayClassName={'overlay__addproduct'}
+      className={'modal__add-product'}
+      overlayClassName={'overlay__add-product'}
     >
-      <div className="add__product_wrapper">
-        <div className="product__photo">
-          <div className="product__photo--img">
-            <img src={`/uploads/${farmerName.toLowerCase()}/images/products/${photo}`} alt="img" />
+      <div className="add-product-wrapper">
+        <span className="add-product-wrapper__close">x</span>
+        <div className="add-product-wrapper__left-section">
+          <div className="add-product-wrapper__left-section--logo">Veggies</div>
+          <div className="add-product-wrapper__left-section__img-container">
+            <img
+              src={`/uploads/${farmerName.toLowerCase()}/images/products/${photo}`}
+              alt="product"
+              className="add-product-wrapper__left-section__img-container--img"
+            />
           </div>
-          <div className="product__photo__quantity">
+        </div>
+
+        <div className="add-product-wrapper__right-section">
+          <h2 className="add-product-wrapper__right-section--name">{name}</h2>
+          <div className="add-product-wrapper__right-section--type">{type}</div>
+          <div className="add-product-wrapper__right-section--description">{description}</div>
+          <div className="add-product-wrapper__right-section--price">
+            € {price} /{unit}
+          </div>
+          <div className="add-product-wrapper__right-section__quantity">
             <Icon
               icon={'minus'}
               onClick={() => {
@@ -41,18 +54,10 @@ const LoadProductInsideModal = ({ modalStatus, toggleModal, product, farmerName 
             {quantity}
             <Icon icon={'plus'} onClick={() => setQuantity(quantity + 1)} />
           </div>
-        </div>
-        <div className="product__description">
-          <h2>{name}</h2>
-          <h5>Type: {type}</h5>
-          <p>{description}</p>
-          <div className="product__description__add">
-            <div className="button" onClick={() => handleAddtoCart(_id)}>
-              <Icon icon="plus" />
-              Add to Card
-            </div>
-            <div>
-              EUR: {price} {unit}
+          <div className="add-product-wrapper__right-section__button">
+            <div className="add-product-wrapper__right-section__button--btn" onClick={() => handleAddToCart(_id)}>
+              <Icon icon="plus" className="add-product-wrapper__right-section__button--icon" />
+              Add to Cart
             </div>
           </div>
         </div>
