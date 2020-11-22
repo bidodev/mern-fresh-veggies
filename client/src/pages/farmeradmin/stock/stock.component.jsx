@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { getStockProducts } from 'utils/services';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
@@ -14,7 +13,7 @@ import SearchBar from 'components/search/SearchBar';
 import './stock.styles.scss';
 
 const Stock = () => {
-  const [isFetchingData, setFetchError] = useState(true);
+  const [isModalOpen, setModalStatus] = useState(false);
   const [products, setProducts] = useState([]);
 
   /* Filter products */
@@ -24,19 +23,16 @@ const Stock = () => {
   );
 
   /* Modal */
-  const modalStatus = useSelector(({ modal }) => modal.show);
-  const dispatch = useDispatch();
-  const toggleModal = () => dispatch({ type: 'TOGGLE_MODAL' });
+  const toggleModal = () => setModalStatus(!isModalOpen);
 
   useEffect(() => {
     getStockProducts().then((data) => {
       setProducts(data);
-      setFetchError(false);
     });
   }, []);
 
   const modalConfig = {
-    modalStatus: modalStatus,
+    modalStatus: isModalOpen,
     closeModal: toggleModal,
     className: 'add-product__modal',
     overlayClassName: 'add-product__modal--overlay',
@@ -46,9 +42,9 @@ const Stock = () => {
     <section className="stock" id="#stock">
       <div className="stock-overview__header">
         <h2>Stock Overview</h2>
-        <SearchBar onSearch={setFilterProduct} />
+        <SearchBar onSearch={setFilterProduct} className={'stock-search-wrapper'}/>
       </div>
-      <div className="stock-overview">{isFetchingData ? <Spinner /> : <ProductList products={filterProducts} />}</div>
+      <div className="stock-overview">{products.length > 0 ? <ProductList products={filterProducts} /> : <Spinner />}</div>
       <Icon icon={['fas', 'plus']} onClick={toggleModal} className="stock-overview__plus" />
 
       <DisplayModal {...modalConfig}>
