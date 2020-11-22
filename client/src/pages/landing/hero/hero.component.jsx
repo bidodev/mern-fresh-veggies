@@ -14,15 +14,17 @@ const Hero = () => {
       <div className="hero-class">
         <div className="hero-component">
           <header>
-            <Link to="/farmer/admin">
-              <p className="hero-component__button">Farmer</p>
-            </Link>
-            <Link to="/shop">
-              <p className="hero-component__button">Shop</p>
-            </Link>
-            <HashLink to="#footer" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
-              <p className="hero-component__button">Contact</p>
-            </HashLink>
+            <div className="hero-component__header">
+              <Link to="/farmer/admin">
+                <p className="hero-component__header__button">Farmer</p>
+              </Link>
+              <Link to="/shop">
+                <p className="hero-component__header__button">Shop</p>
+              </Link>
+              <HashLink to="#footer" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+                <p className="hero-component__header__button">Contact</p>
+              </HashLink>
+            </div>
           </header>
           <div className="hero-component__main">
             <div className="hero-component__main__text-component">
@@ -35,7 +37,7 @@ const Hero = () => {
               </div>
               <div className="hero-component__main__text-component--button">
                 <HashLink to="#story" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
-                  <CustomButton style={{ width: '11rem' }}>Get Started</CustomButton>
+                  <CustomButton style={{ width: '14rem' }}>Get Started</CustomButton>
                 </HashLink>
               </div>
             </div>
