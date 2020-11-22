@@ -197,6 +197,9 @@
             text-align: left;
             width: 20rem;
           }
+          @media (max-width: 508px) {
+            width: 15rem;
+          }
         }
 
         &--button {
