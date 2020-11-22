@@ -13,7 +13,7 @@
   outline: none;
   padding: 1.2rem;
   animation-name: modalFade;
-  animation-duration: 0.4s;
+  animation-duration: 1s;
   position: relative;
 }
 
@@ -23,7 +23,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 9999;
 }
 
@@ -53,7 +53,7 @@
   }
 
   &__left-section {
-    background: lightgreen;
+    background: #1e5b45;
     width: 40%;
     height: 100%;
     border-radius: 8px;
@@ -78,6 +78,9 @@
       border-radius: 20px;
       box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
       background: rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       &--img {
         width: 100%;
         // ---- WE NEED TO RESIZE IMAGES HERE TO HAVE THEM CENTERED 😞 ----
@@ -98,17 +101,18 @@
 
     &--name {
       text-transform: uppercase;
-      color: lightgreen;
+      color: #1e5b45;
       font-size: 2.5rem;
-      text-shadow: 1px 1px 2px black;
+      //text-shadow: 1px 1px 2px black;
     }
 
     &--type {
       font-size: 1.1rem;
       font-style: italic;
       transform: translate(10px, -15px);
-      color: lightgreen;
-      text-shadow: 1px 2px 2px black;
+      color: #1e5b45;
+      text-transform: capitalize;
+      //text-shadow: 1px 2px 2px black;
     }
 
     &--description {
@@ -119,8 +123,8 @@
       margin: 0.5rem 0;
       font-size: 1.2rem;
       font-weight: bold;
-      color: lightgreen;
-      text-shadow: 1px 2px 2px black;
+      color: #1e5b45;
+      //text-shadow: 1px 2px 2px black;
     }
 
     &__quantity {
@@ -148,9 +152,15 @@
       }
       &--btn {
         cursor: pointer;
-        background: lightgreen;
+        background: #1e5b45;
+        color: #f9f9f9;
         padding: 0.6rem 1.2rem;
         border-radius: 8px;
+        transition: opacity 0.5 ease;
+
+        &:hover{
+          opacity: 0.8
+        }
       }
     }
   }

@@ -8,12 +8,14 @@ import IosPin from 'react-ionicons/lib/IosPin';
 // import IosArrowBack from 'react-ionicons/lib/IosArrowBack';
 
 const FarmerCard = ({ farmer, match }) => {
+  const imageSrc = `/uploads/${farmer.slug.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`;
+
   return (
     <Link key={farmer._id} to={`${match.url}/farmer/${farmer.slug}`}>
       <div className="find-farmer__container__item">
         <div className="find-farmer__container__item__bg-image-container">
           <img
-            src={`/uploads/${farmer.name.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`}
+            src={`${imageSrc}`}
             alt="background"
           />
         </div>
@@ -27,7 +29,7 @@ const FarmerCard = ({ farmer, match }) => {
 
         <div className="find-farmer__container__item__avatar-container">
           <img
-            src={`/uploads/${farmer.name.toLowerCase()}/images/profile/${farmer.images.profile}`}
+            src={`/uploads/${farmer.slug.toLowerCase()}/images/profile/${farmer.images.profile}`}
             alt="farmer-avatar"
           />
         </div>
