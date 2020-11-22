@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import { limitResults } from 'utils/limiteDesc';
-import LoadProductInsideModal from './LoadProductInsideModal';
+
+import LoadProductInsideModal from './filters/product-inside-modal/LoadProductInsideModal';
 
 import './ProductItem.styles.scss'
 

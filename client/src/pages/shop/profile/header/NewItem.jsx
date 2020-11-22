@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './NewItem.styles.scss';
 
-import LoadProductInsideModal from '../products/LoadProductInsideModal';
+import LoadProductInsideModal from '../products/filters/product-inside-modal/LoadProductInsideModal';
 
 const NewItem = ({ product, name }) => {
   /* Modal */
