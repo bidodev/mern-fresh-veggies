@@ -38,6 +38,10 @@
       flex-direction: column;
       background-color: #f0f0f0;
       position: fixed;
+      
+      h2{
+        color: var(--header);
+      }
     }
 
     &__plus {

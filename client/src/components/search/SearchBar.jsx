@@ -1,6 +1,5 @@
 import React from 'react';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import './SearchBar.styles.scss'
 
 const SearchBar = ({ onSearch, className }) => {
 
@@ -9,6 +8,7 @@ const SearchBar = ({ onSearch, className }) => {
   };
 
   return (
+    // className is add by the parent!
     <div className={className}>
       <div className="search">
         <input type="search" className="searchTerm" placeholder="What are you looking for?" onChange={handleChange} />

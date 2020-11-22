@@ -1,4 +1,14 @@
 // SHOPNAVBAR COMPONENT SCSS
+
+.shop__navbar__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  svg{
+    font-size:2rem;
+  }
+}
 .shop__navbar {
   //border: 1px solid red;
   background-color: #f9f9f9;

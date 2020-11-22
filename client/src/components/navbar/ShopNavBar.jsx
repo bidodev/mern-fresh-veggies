@@ -24,9 +24,12 @@ const ShopNavBar = ({ match, children, totalQuantity }) => {
     <>
       <nav className="shop__navbar">
         {/* Our Logo will be available in the whole application, so it stays here */}
+        <div className="shop__navbar__right">
+        {/* <li onClick={()=> history.goBack()}><FontAwesomeIcon icon={['far', 'arrow-alt-circle-left']} /></li> */}
         <Link to="/">
           <div className="shop__navbar__logo">Veggies</div>
         </Link>
+        </div>
         {/* here it did not work with match.path because '/shop' is common with '/shop/cart */}
         {window.location.pathname === '/shop' ? (
           <HashLink to="#how-we-work" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
@@ -53,6 +56,7 @@ const ShopNavBar = ({ match, children, totalQuantity }) => {
               >
                 <li>
                   <div className="shop__navbar__account__email">{isLoggedIn.data.email}</div>
+                  {isLoggedIn.data.role ==="farmer" && <Link to ="/farmer/admin">Admin Panel</Link>}
                 </li>
                 <li>
                   <div className="shop__navbar__account__logout" onClick={logOutUser}>

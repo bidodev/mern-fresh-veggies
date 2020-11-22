@@ -42,10 +42,11 @@ const Stock = () => {
     <section className="stock" id="#stock">
       <div className="stock-overview__header">
         <h2>Stock Overview</h2>
-        <SearchBar onSearch={setFilterProduct} className={'stock-search-wrapper'}/>
+        <SearchBar onSearch={setFilterProduct} className={'stock-search-wrapper'} />
+        <Icon icon={['fas', 'plus']} onClick={toggleModal} className="stock-overview__plus" />
       </div>
       <div className="stock-overview">{products.length > 0 ? <ProductList products={filterProducts} /> : <Spinner />}</div>
-      <Icon icon={['fas', 'plus']} onClick={toggleModal} className="stock-overview__plus" />
+
 
       <DisplayModal {...modalConfig}>
         {/* Modal Children */}
