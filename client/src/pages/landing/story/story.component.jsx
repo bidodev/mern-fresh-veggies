@@ -12,7 +12,7 @@ const Story = () => {
     <React.Fragment>
       <section className="story" id="story">
         <div className="story__hero-section">
-          <h2 className="story__hero-section--header">Veggies</h2>
+          <h2 className="story__hero-section--header">Why choose us?</h2>
           <div className="story__hero-section__img-container">
             <img src="/images/farm-1.jpg" alt="img" className="story__hero-section__img-container--img" />
           </div>
