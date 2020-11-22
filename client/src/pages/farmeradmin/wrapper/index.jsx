@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 
 /* Import themes */
 //import THEMES from 'settings/public-profile/Themes';
@@ -25,25 +23,12 @@ import './admin.page.styles.scss';
 
  
 const FarmerAdmin = React.memo(({ match }) => {
-  const dispatch = useDispatch();
-
-  /* Retrieve Farmer Panel */
-  useEffect(() => {
-    axios
-      .get('/farmers/admin/panel')
-      .then(({ data }) => {
-        dispatch({ type: 'SET_FARMER', payload: data.data });
-      })
-      .catch((err) => {
-        console.log(err.response.data.message);
-        alert('etwas ist schief gelaufen');
-      });
-  }, []);
-
   return (
     <>
+      {/* TODO: Implement the logic to change the THEME */}
+      {/* TODO: Check weather ShopNavBar should be child or not of the farmer-admin*/}
+      <ShopNavBar match={match} />
       <section className={`farmer-admin green-theme`}>
-        <ShopNavBar match={match} />
         <Aside />
         <Route exact path={`${match.path}`} component={ProfileAdmin} />
         <Route path={`${match.path}/stock`} component={Stock} />

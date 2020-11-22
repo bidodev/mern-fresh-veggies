@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 
 /* React Router Dom */
 import { Route, Switch } from 'react-router-dom';
+
+/* Utils */
 import ScrollIntoView from 'components/UI/ScrollIntoView';
 
 /* Page Imports */
