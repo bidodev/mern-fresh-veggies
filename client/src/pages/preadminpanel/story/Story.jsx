@@ -15,10 +15,10 @@ import './story.styles.scss';
 
 const Story = () => {
   const dispatch = useDispatch();
-  
+
   const signUpAsFarmer = () => {
-    dispatch({ type: 'SHOW_AUTH' })
-    dispatch({ type: 'SWITCH_AUTH' })
+    dispatch({ type: 'SHOW_AUTH' });
+    dispatch({ type: 'SWITCH_AUTH' });
   };
 
   return (
@@ -26,7 +26,9 @@ const Story = () => {
       <section className="story" id="story">
         <div className="story__how-it-works">
           <div className="story__how-it-works__left-container">
-            <h3 className="story__how-it-works__left-container__header">How It Works</h3>
+            <h3 className="story__how-it-works__left-container__header">
+              Are you a local producer? Follow our simple steps:
+            </h3>
             <div className="story__how-it-works__left-container__text-container">
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
@@ -93,7 +95,9 @@ const Story = () => {
               rerum eos magni aliquam voluptatum ipsa distinctio officia cum.
             </div>
             <div className="story__create-your-profile__description-container--button">
-              <CustomButton onClick={signUpAsFarmer} style={{ width: '11rem' }}>Start Now</CustomButton>
+              <CustomButton onClick={signUpAsFarmer} style={{ width: '11rem' }}>
+                Start Now
+              </CustomButton>
             </div>
           </div>
         </div>
