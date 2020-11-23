@@ -5,7 +5,7 @@ import './ProductModal.styles.scss';
 
 /* Component Imports */
 import DisplayModal from 'components/modal/modal.component';
-import ProductContent from 'pages/shop/profile/products/filters/product-modal/ProductContent.component';
+import ProductContent from 'pages/shop/profile/products/product-modal/ProductContent.component';
 
 const ProductModal = ({ modalStatus, toggleModal, product, farmerName }) => {
   return (
