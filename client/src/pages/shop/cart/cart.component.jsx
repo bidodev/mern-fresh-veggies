@@ -79,7 +79,7 @@ const Cart = ({ match }) => {
             </li>
           ))
         ) : (
-          <li className="empty-cart">Your cart is empty</li>
+          <li className="empty-cart">Your cart is empty.</li>
         )}
       </ul>
       <div className="total-price">Total price: {totalSum} €</div>
