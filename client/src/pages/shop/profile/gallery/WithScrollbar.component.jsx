@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Carousel from 'react-multi-carousel';
+
+/* Styles */
 import './WithScrollbar.styles.scss';
 
 const responsive = {
@@ -18,20 +20,22 @@ const responsive = {
 };
 
 class WithScrollbar extends Component {
-  state = { additionalTransfrom: 0 };
+  state = { additionalTransform: 0 };
   render() {
     const CustomSlider = ({ carouselState }) => {
       let value = 0;
       let carouselItemWidth = 0;
       if (this.Carousel) {
         carouselItemWidth = this.Carousel.state.itemWidth;
+        // We don't over-slide
         const maxTranslateX = Math.round(
-          // so that we don't over-slide
           carouselItemWidth * (this.Carousel.state.totalItems - this.Carousel.state.slidesToShow) + 150
         );
-        value = maxTranslateX / 100; // calculate the unit of transform for the slider
+        // Calculate the unit of transform for the slider
+        value = maxTranslateX / 100;
       }
       const { transform } = carouselState;
+
       return (
         <div className="custom-slider">
           <input
@@ -40,7 +44,7 @@ class WithScrollbar extends Component {
             defaultValue={0}
             max={
               (carouselItemWidth * (carouselState.totalItems - carouselState.slidesToShow) +
-                (this.state.additionalTransfrom === 150 ? 0 : 150)) /
+                (this.state.additionalTransform === 150 ? 0 : 150)) /
               value
             }
             onChange={(e) => {
@@ -49,9 +53,9 @@ class WithScrollbar extends Component {
               }
               const nextTransform = e.target.value * value;
               const nextSlide = Math.round(nextTransform / carouselItemWidth);
-              if (e.target.value === 0 && this.state.additionalTransfrom === 150) {
+              if (e.target.value === 0 && this.state.additionalTransform === 150) {
                 this.Carousel.isAnimationAllowed = true;
-                this.setState({ additionalTransfrom: 0 });
+                this.setState({ additionalTransform: 0 });
               }
               this.Carousel.setState({
                 transform: -nextTransform, // padding 20px and 5 items.
@@ -72,22 +76,27 @@ class WithScrollbar extends Component {
         itemClass="slider-image-item"
         responsive={responsive}
         containerClass="carousel-container-with-scrollbar"
-        additionalTransfrom={-this.state.additionalTransfrom}
+        additionalTransform={-this.state.additionalTransform}
         beforeChange={(nextSlide) => {
-          if (nextSlide !== 0 && this.state.additionalTransfrom !== 150) {
-            this.setState({ additionalTransfrom: 150 });
+          if (nextSlide !== 0 && this.state.additionalTransform !== 150) {
+            this.setState({ additionalTransform: 150 });
           }
-          if (nextSlide === 0 && this.state.additionalTransfrom === 150) {
-            this.setState({ additionalTransfrom: 0 });
+          if (nextSlide === 0 && this.state.additionalTransform === 150) {
+            this.setState({ additionalTransform: 0 });
           }
         }}
       >
         {this.props.images.gallery.map((image, index) => (
           <div key={index} className="image-container increase-size">
-            <img alt={image.name}
+            <img
+              alt={image.name}
               draggable={false}
               style={{ width: '100%', height: '100%', cursor: 'pointer' }}
-              src={image.path === '' ? '/uploads/default.jpg' : `/uploads/${this.props.name.toLowerCase()}/images/gallery/${image.path}`}
+              src={
+                image.path === ''
+                  ? '/uploads/default.jpg'
+                  : `/uploads/${this.props.name.toLowerCase()}/images/gallery/${image.path}`
+              }
             />
           </div>
         ))}

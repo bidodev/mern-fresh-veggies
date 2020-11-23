@@ -1,12 +1,8 @@
-/**
- *Main containers styles rules
-**/
-
 .public-profile {
   &__wrapper {
     margin-top: 12vh;
     background-color: var(--white);
-    
+
     /* Wrapper if the store is open */
     &__store-open {
       width: 80vw;

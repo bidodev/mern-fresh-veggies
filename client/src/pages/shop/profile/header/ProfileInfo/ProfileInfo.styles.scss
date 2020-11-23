@@ -1,5 +1,3 @@
-/* Farmer data, about me, testimonails and new products */
-
 .public-farmer {
   display: flex;
   height: 80vh;
@@ -186,14 +184,13 @@
 
       div {
         color: var(--text-body);
-        
+
         p {
           font-size: 1rem;
           padding: 2rem;
         }
       }
       .abcde {
-
         height: 4vh;
         display: flex;
         align-items: center;

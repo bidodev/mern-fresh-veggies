@@ -1,4 +1,6 @@
 import React from 'react';
+
+/* Styles */
 import './ClosedStore.styles.scss';
 
 const ClosedStore = () => {
