@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
+/* Styles */
+import './ProductContent.styles.scss';
+
 const ProductContent = ({ product, farmerName, onClose }) => {
   const { _id, name, photo, type, description, price, unit } = product;
 
@@ -14,7 +17,9 @@ const ProductContent = ({ product, farmerName, onClose }) => {
 
   return (
     <div className="add-product-wrapper">
-      <span className="add-product-wrapper__close" onClick={onClose}>x</span>
+      <span className="add-product-wrapper__close" onClick={onClose}>
+        x
+      </span>
       <div className="add-product-wrapper__left-section">
         <div className="add-product-wrapper__left-section--logo">Veggies</div>
         <div className="add-product-wrapper__left-section__img-container">

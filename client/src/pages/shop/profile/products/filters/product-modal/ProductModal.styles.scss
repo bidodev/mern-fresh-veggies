@@ -1,0 +1,42 @@
+.modal__add-product {
+  width: 55rem;
+  height: 32rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 2px;
+  outline: none;
+  padding: 1.2rem;
+  animation-name: modalFade;
+  animation-duration: 1s;
+  position: relative;
+}
+
+.overlay__add-product {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--modal-overlay);
+  z-index: 9999;
+}
+
+@keyframes modalFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0%);
+  }
+  80% {
+    transform: translate(-50%, -57%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -13,13 +13,6 @@
   &-farmer {
     &__has-products {
       &__filters {
-        /* Diet filters */
-        &__diet {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
         &__search-bar {
           width: 30rem;
           margin: 0 auto;
