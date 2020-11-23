@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import './NewItem.styles.scss';
 
 /* Component Imports */
-import ProductModal from 'pages/shop/profile/products/filters/product-modal/ProductModal.component';
+import ProductModal from 'pages/shop/profile/products/product-modal/ProductModal.component';
 
 const NewItem = ({ product, name }) => {
   /* Modal */

@@ -5,7 +5,7 @@ import { limitResults } from 'utils/limiteDesc';
 import './ProductItem.styles.scss';
 
 /* Component Imports */
-import ProductModal from './filters/product-modal/ProductModal.component';
+import ProductModal from './product-modal/ProductModal.component';
 
 const ProductItem = ({ product, farmerName }) => {
   const { name, photo, description } = product;
