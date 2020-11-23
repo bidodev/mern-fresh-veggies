@@ -1,5 +1,8 @@
 import React from 'react';
 
+/* Styles */
+import './LoadRecipes.styles.scss';
+
 const LoadRecipe = ({ recipe }) => {
   /* destructing what we need */
   const { coverImage, recipeName, portion, ingredients, preparation } = recipe;

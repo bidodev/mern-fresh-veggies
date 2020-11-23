@@ -3,11 +3,11 @@ import React from 'react';
 /* Import themes */
 import THEMES from 'settings/public-profile/Themes';
 
-/* Compouse Store Components */
-import OpenStore from './OpenStore';
-import ClosedStore from './ClosedStore';
+/* Component Imports */
+import OpenStore from 'pages/shop/profile/store/OpenStore.component';
+import ClosedStore from 'pages/shop/profile/store/ClosedStore.component';
 
-const CompouseStore = ({ farmer }) => {
+const ComposeStore = ({ farmer }) => {
   const { config } = farmer;
 
   return (
@@ -17,4 +17,4 @@ const CompouseStore = ({ farmer }) => {
   );
 };
 
-export default CompouseStore;
+export default ComposeStore;

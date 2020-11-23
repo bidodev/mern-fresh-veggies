@@ -1,7 +1,10 @@
 import React from 'react';
+
+/* Styles */
 import './ProfileInfo.styles.scss';
 
-import NewItem from '../NewItem';
+/* Component Imports */
+import NewItem from './NewItem.component';
 
 const NewProductsList = ({ products, name }) => {
   return [...products]
@@ -10,12 +13,12 @@ const NewProductsList = ({ products, name }) => {
     .map((product, index) => <NewItem key={index} product={product} name={name} />);
 };
 
-const EmptyProductsList = ({name}) => {
+const EmptyProductsList = ({ name }) => {
   return (
     <div className="public-farmer__main__right__container__empty-list">
       <img src="/images/layout/noitems.png" alt="no-items" />
       <p>{name} doesn't have products yet!</p>
-  </div>
+    </div>
   );
 };
 
@@ -99,8 +102,12 @@ const ProfileInfo = ({ name, products }) => {
           </div>
           {/* should be filtered by data add and limit to 5 */}
           <div className="public-farmer__main__right__container">
-            {/* create a shalow copy of the array and reverse to show the last added first */}
-            {products.length > 0 ? <NewProductsList products={products} name={name}/> : <EmptyProductsList name={name}/>}
+            {/* create a shallow copy of the array and reverse to show the last added first */}
+            {products.length > 0 ? (
+              <NewProductsList products={products} name={name} />
+            ) : (
+              <EmptyProductsList name={name} />
+            )}
           </div>
         </main>
       </header>
