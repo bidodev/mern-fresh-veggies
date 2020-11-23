@@ -1,8 +1,8 @@
 .public-farmer {
-  display: flex;
-  height: 80vh;
+  height: 47.5rem;
   width: 100%;
   position: relative;
+  display: flex;
 
   /* New Products Menu*/
   &__main__right {
@@ -12,31 +12,37 @@
     &__header {
       position: absolute;
       width: 20%;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       z-index: 2;
       background-color: var(--header);
-    }
-
-    h2 {
-      color: var(--text-header);
-      font-weight: 500;
-      padding: 1rem;
-      text-align: center;
-      text-transform: uppercase;
+      border-bottom-right-radius: 8px;
+      @media (max-width: 1050px) {
+        border-bottom-right-radius: 0;
+      }
+      h2 {
+        padding: 1rem;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--text-header);
+        @media (max-width: 1260px) {
+          padding: 0.5rem;
+          font-size: 1.2rem;
+        }
+      }
     }
 
     &__container {
-      border-left: 1px solid var(--border-color);
-      height: 100%;
       padding-top: 4rem;
-
+      border-left: 1px solid var(--border-color);
       &__empty-list {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100%;
-        width: 100%;
-
         P {
           margin-top: 2rem;
           color: var(--text-body);
@@ -48,38 +54,34 @@
   }
 
   &__aside {
-    height: 100%;
     width: 80%;
     display: flex;
-
     &__main {
-      height: 100%;
-      width: 75%;
+      width: 80%;
     }
-
     &__infos {
-      width: 25%;
-      height: 100%;
-
+      width: 18rem;
       &__avatar {
-        height: 30%;
+        height: 14rem;
 
         &__a {
-          background-color: var(--header);
           height: 50%;
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+          background-color: var(--header);
+          @media (max-width: 1050px) {
+            border-bottom-left-radius: 0;
+          }
         }
 
         &__b {
-          //background-color: red;
+          height: 7rem;
           padding: 1rem 2rem;
           border-right: 1px solid var(--border-color);
-          height: 50%;
-
           P {
             color: var(--text-body);
           }
         }
-
         h2 {
           font-size: 2.2rem;
           color: var(--header);
@@ -92,25 +94,25 @@
           text-transform: uppercase;
         }
       }
+
       &__paragraph {
         color: var(--text-body);
       }
+
       &__data {
         height: auto;
         padding: 4rem 2rem 1rem 2rem;
         border-bottom: 1px solid var(--border-color);
         border-right: 1px solid var(--border-color);
-
         h2 {
           color: var(--text-header);
           font-weight: 500;
         }
       }
-      &__expertise {
-        padding: 2rem;
-        border-right: 1px solid var(--border-color);
-        height: 37%;
 
+      &__expertise {
+        padding: 1rem;
+        border-right: 1px solid var(--border-color);
         h3 {
           color: var(--header);
           font-weight: 500;
@@ -121,7 +123,6 @@
           display: flex;
           align-items: center;
           flex-wrap: wrap;
-
           li {
             display: flex;
             justify-content: center;
@@ -132,7 +133,6 @@
             background: var(--shadow-gray);
             border-radius: 5px;
             color: var(--text-body);
-
             &:hover {
               opacity: 0.5;
               cursor: pointer;
@@ -145,58 +145,58 @@
 
   &__main {
     &__featured {
-      height: 45%;
-      width: 100%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-      h2 {
+      &--header {
+        height: 4rem;
         background-color: var(--header);
         color: var(--text-header);
         font-weight: 500;
         padding: 1rem 2rem;
         text-transform: uppercase;
         letter-spacing: 0.1px;
+        display: flex;
+        align-items: center;
+        @media (max-width: 1260px) {
+          padding: 0.5rem;
+          font-size: 1.2rem;
+        }
       }
-
-      p {
-        margin-top: 1rem;
-        padding: 0 2rem;
-        color: var(--text-body);
-      }
-      p:first-of-type {
-        margin-top: 2rem;
-        padding: 0 2rem;
+      &__text-container {
+        p {
+          border-top-left-radius: 8px;
+          margin-top: 1rem;
+          padding: 0 2rem;
+          color: var(--text-body);
+        }
+        p:first-of-type {
+          margin-top: 2rem;
+          padding: 0 2rem;
+        }
       }
     }
 
     &__reviews {
-      width: 100%;
-      height: 60%;
-
       h2 {
-        //background-color: var(--header);
+        // background-color: var(--header);
         color: var(--header);
         font-weight: 500;
         padding: 2rem;
         text-transform: uppercase;
         letter-spacing: 0.1px;
       }
-
       div {
         color: var(--text-body);
-
         p {
           font-size: 1rem;
           padding: 2rem;
         }
       }
       .abcde {
-        height: 4vh;
+        height: 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-
         p {
           font-size: 1rem;
           color: var(--text-body);
@@ -204,6 +204,7 @@
             font-size: 0.8rem;
           }
         }
+
         .carousel-dots {
           position: absolute;
           right: +5%;

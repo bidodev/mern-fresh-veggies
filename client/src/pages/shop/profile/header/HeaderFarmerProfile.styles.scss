@@ -1,36 +1,41 @@
 .farmer-public {
   &__header {
-    height: 40vh;
+    height: 25rem;
     position: relative;
 
     &__cover {
       width: 100%;
       height: 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
       object-fit: cover;
+      @media (max-width: 1050px) {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
     }
 
     &__avatar {
+      width: 12rem;
+      height: 12rem;
       position: absolute;
-      left: 2.5vh;
-      top: 25vh;
-      backface-visibility: hidden;
-      transform: translateZ(0);
-      width: 250px;
-      height: 250px;
+      left: 2.8rem;
+      top: 18.5rem;
+      box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      overflow: hidden;
       z-index: 1;
-
+      @media (max-width: 1400px) {
+        left: 2.2rem;
+      }
+      @media (max-width: 1000px) {
+        left: 1.5rem;
+      }
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 50%;
       }
     }
-  }
-}
-
-@media (max-width: 1050px) {
-  .farmer-public-store__avatar {
-    margin: 0 auto;
   }
 }
