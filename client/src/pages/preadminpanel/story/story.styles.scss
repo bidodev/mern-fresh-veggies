@@ -3,6 +3,7 @@
 .story {
   // ======== HOW IT WORKS ===
   &__how-it-works {
+    height: 70vh;
     display: flex;
     justify-content: space-evenly;
     padding: 18vh 0 2vh 0;
@@ -16,7 +17,11 @@
       padding: 2vh 2vh 2vh 10vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      background-image: url(/images/pngegg2.png);
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 20%;
       @media (max-width: 900px) {
         padding: 2vh;
         width: 60vw;
@@ -104,8 +109,8 @@
   // ======== CREATE YOUR PROFILE ===
   &__create-your-profile {
     display: flex;
-    justify-content: space-around;
-    background: #eee;
+    justify-content: space-evenly;
+    background: #ffffff;
     @media (max-width: 900px) {
       flex-direction: column-reverse;
       align-items: center;
@@ -157,8 +162,6 @@
       }
 
       &--button {
-        //TODO: This minus margin is terrible, too bad!!
-        margin-left: -4vw;
         @media (max-width: 900px) {
           text-align: center;
         }
