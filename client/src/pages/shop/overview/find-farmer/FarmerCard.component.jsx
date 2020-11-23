@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+/* Styles */
 import './FarmerCard.styles.scss';
 
-/* Ion Icons Imports */
+/* IonIcons Imports */
 import IosPin from 'react-ionicons/lib/IosPin';
-// import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
-// import IosArrowBack from 'react-ionicons/lib/IosArrowBack';
 
 const FarmerCard = ({ farmer, match }) => {
   const imageSrc = `/uploads/${farmer.slug.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`;
@@ -14,10 +14,7 @@ const FarmerCard = ({ farmer, match }) => {
     <Link key={farmer._id} to={`${match.url}/farmer/${farmer.slug}`}>
       <div className="find-farmer__container__item">
         <div className="find-farmer__container__item__bg-image-container">
-          <img
-            src={`${imageSrc}`}
-            alt="background"
-          />
+          <img src={`${imageSrc}`} alt="background" />
         </div>
 
         <div className="find-farmer__container__item--ratings">⭐⭐⭐⭐⭐</div>

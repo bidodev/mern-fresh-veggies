@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 /* Styles */
-import './farmer.products.styles.scss';
+import './FarmerProducts.styles.scss';
 
+/* Component Imports */
 import FilterProductsDietBased from './filters/FilterProductsDietBased';
 import SearchBar from 'components/search/SearchBar';
-import ProductsToShow from './ProductsToShow';
+import ProductsToShow from './ProductsToShow.component';
 import EmptyStore from './EmptyStore';
 
 let arrayForHoldingProducts = [];

@@ -1,15 +1,13 @@
 import React from 'react';
 
 /* Styles */
-import './LoadProductInsideModal.styles.scss';
-
-import ProductContent from './ProductContent';
+import './ProductModal.styles.scss';
 
 /* Component Imports */
 import DisplayModal from 'components/modal/modal.component';
+import ProductContent from 'pages/shop/profile/products/filters/product-modal/ProductContent.component';
 
-const LoadProductInsideModal = ({ modalStatus, toggleModal, product, farmerName }) => {
-
+const ProductModal = ({ modalStatus, toggleModal, product, farmerName }) => {
   return (
     <DisplayModal
       modalStatus={modalStatus}
@@ -17,9 +15,9 @@ const LoadProductInsideModal = ({ modalStatus, toggleModal, product, farmerName 
       className={'modal__add-product'}
       overlayClassName={'overlay__add-product'}
     >
-      <ProductContent product={product} farmerName={farmerName} onClose={toggleModal}/>
+      <ProductContent product={product} farmerName={farmerName} onClose={toggleModal} />
     </DisplayModal>
   );
 };
 
-export default LoadProductInsideModal;
+export default ProductModal;

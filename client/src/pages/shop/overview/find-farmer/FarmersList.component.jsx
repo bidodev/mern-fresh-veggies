@@ -1,13 +1,16 @@
 import React from 'react';
+
+/* Styles */
 import './FarmersList.styles.scss';
 
+/* Carousel Imports */
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-import FarmerCard from './FarmerCard';
+/* Component Imports */
+import FarmerCard from './FarmerCard.component';
 
-
-const FarmerList =({ farmers, match }) => {
+const FarmerList = ({ farmers, match }) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1470 },
@@ -22,17 +25,6 @@ const FarmerList =({ farmers, match }) => {
       items: 1,
     },
   };
-    
-
-  // ===== THIS IS AN EXAMPLE TO ADD CUSTOM ARROW ON CAROUSEL ===
-  // const CustomRightArrow = ({ onClick, ...rest }) => {
-  //   const {
-  //     onMove,
-  //     carouselState: { currentSlide, deviceType },
-  //   } = rest;
-  //   // onMove means if dragging or swiping in progress.
-  //   return <IosArrowForward onClick={() => onClick()} />;
-  // };
 
   return (
     <div className="find-farmer__container">
@@ -53,11 +45,11 @@ const FarmerList =({ farmers, match }) => {
         // customRightArrow={<CustomRightArrow />}
       >
         {farmers.map((farmer, index) => (
-            <FarmerCard key={index} farmer={farmer} match={match}/>
+          <FarmerCard key={index} farmer={farmer} match={match} />
         ))}
       </Carousel>
     </div>
   );
-}
+};
 
 export default FarmerList;

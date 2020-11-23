@@ -1,7 +1,10 @@
 import React from 'react';
+
+/* Styles */
 import './ProductsToShow.styles.scss';
 
-import ProductItem from './ProductItem';
+/* Component Imports */
+import ProductItem from './ProductItem.component';
 
 const ProductsToShow = ({ products, farmerName }) => {
   return (

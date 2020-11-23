@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+
+/* Styles */
 import './NewItem.styles.scss';
 
-import LoadProductInsideModal from '../products/filters/product-inside-modal/LoadProductInsideModal';
+/* Component Imports */
+import ProductModal from 'pages/shop/profile/products/filters/product-modal/ProductModal.component';
 
 const NewItem = ({ product, name }) => {
   /* Modal */
@@ -24,12 +27,7 @@ const NewItem = ({ product, name }) => {
         </p>
       </div>
       {modalStatus && (
-        <LoadProductInsideModal
-          modalStatus={modalStatus}
-          toggleModal={toggleModal}
-          product={product}
-          farmerName={name}
-        />
+        <ProductModal modalStatus={modalStatus} toggleModal={toggleModal} product={product} farmerName={name} />
       )}
     </>
   );

@@ -8,7 +8,7 @@ import './FindFarmer.styles.scss';
 
 /* Component Imports */
 import Spinner from 'components/UI/spinner/spinner.component';
-import FarmersList from './FarmersList';
+import FarmersList from './FarmersList.component';
 
 const FindYourFarmer = ({ match }) => {
   const [farmers, setFarmers] = useState(null);
@@ -23,11 +23,7 @@ const FindYourFarmer = ({ match }) => {
   return (
     <section className="find-farmer">
       <h2 className="find-farmer__header">MEET OUR VENDORS</h2>
-      {farmers ? (
-        <FarmersList farmers={farmers} match={match}/>
-      ) : (
-        <Spinner />
-      )}
+      {farmers ? <FarmersList farmers={farmers} match={match} /> : <Spinner />}
     </section>
   );
 };
