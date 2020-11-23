@@ -58,7 +58,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 /**
  * Routes Middleware
  */
-app.use('/', indexRouter);
 app.use('/account', authRouter);
 app.use('/farmers', farmersRouter);
 app.use('/users', usersRouter);
