@@ -9,27 +9,23 @@ import './PublicFarmerProfile.styles.scss';
 
 /* Utils */
 import Spinner from 'components/UI/spinner/spinner.component';
-import CompouseStore from './CompouseStore';
+import ComposeStore from 'pages/shop/profile/store/ComposeStore.component';
 
 const ProfilePage = () => {
   const { slug } = useParams();
-  console.log(slug)
+  console.log(slug);
 
   /* Save the Farmer Page object */
   const [farmer, setFarmer] = useState(null);
 
   /* Call the API */
   useEffect(() => {
-    loadFarmerPublicProfileData(slug).then(({data, status}) => {
+    loadFarmerPublicProfileData(slug).then(({ data, status }) => {
       setFarmer(data);
     });
   }, [slug]);
 
-  return (
-    <>
-      {farmer ? <CompouseStore farmer={farmer} /> : <Spinner /> }
-    </>
-  );
+  return <>{farmer ? <ComposeStore farmer={farmer} /> : <Spinner />}</>;
 };
 
 export default ProfilePage;
