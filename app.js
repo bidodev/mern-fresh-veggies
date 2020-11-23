@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const path = require('path');
 const logger = require('morgan');
 const rateLimit = require('express-rate-limit');
-const mongoSanitize = require('express-mongo-sanitize')
+const mongoSanitize = require('express-mongo-sanitize');
 const cors = require('cors');
 
 const app = express();
@@ -61,7 +61,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/account', authRouter);
 app.use('/farmers', farmersRouter);
-app.use('/users', usersRouter)
+app.use('/users', usersRouter);
+
+//send react aplication
+app.get('/', (req, res) => {
+  const index = path.join(__dirname, 'client/build', 'index.html');
+  res.sendFile(index);
+});
+
+//handling operational errors
+app.all('*', (req, res, next) => {
+  next(
+    new AppError(`Can't find ${req.originalUrl} on this server.`, 404, 'fail')
+  );
+});
 
 /**
  * When an error is trow we catch it here and forward to errorController
