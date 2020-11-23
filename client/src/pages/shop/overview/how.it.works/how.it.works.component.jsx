@@ -20,7 +20,7 @@ const HowItWorks = () => {
         <div className="how-it-works__icons-section__box-container">
           <div className="how-it-works__icons-section__box-container__card">
             <div className="how-it-works__icons-section__box-container__card--icon">
-              <IosPinOutline fontSize="50px" />
+              <IosPinOutline fontSize="50px" color="#f7b53a" />
             </div>
             <h4 className="how-it-works__icons-section__box-container__card--header">Local Farmers</h4>
             <div className="how-it-works__icons-section__box-container__card--text">
@@ -30,7 +30,7 @@ const HowItWorks = () => {
 
           <div className="how-it-works__icons-section__box-container__card">
             <div className="how-it-works__icons-section__box-container__card--icon">
-              <IosNutritionOutline fontSize="50px" />
+              <IosNutritionOutline fontSize="50px" color="#f75d37" />
             </div>
             <h4 className="how-it-works__icons-section__box-container__card--header">Organic & Seasonal Food</h4>
             <div className="how-it-works__icons-section__box-container__card--text">
@@ -40,7 +40,7 @@ const HowItWorks = () => {
 
           <div className="how-it-works__icons-section__box-container__card">
             <div className="how-it-works__icons-section__box-container__card--icon">
-              <IosContactOutline fontSize="50px" />
+              <IosContactOutline fontSize="50px" color="#1e5b45" />
             </div>
             <h4 className="how-it-works__icons-section__box-container__card--header">Profile</h4>
             <div className="how-it-works__icons-section__box-container__card--text">
@@ -50,7 +50,7 @@ const HowItWorks = () => {
 
           <div className="how-it-works__icons-section__box-container__card">
             <div className="how-it-works__icons-section__box-container__card--icon">
-              <IosBasketOutline fontSize="50px" />
+              <IosBasketOutline fontSize="50px" color="#954c39" />
             </div>
             <h4 className="how-it-works__icons-section__box-container__card--header">Custom Boxes</h4>
             <div className="how-it-works__icons-section__box-container__card--text">
@@ -60,7 +60,7 @@ const HowItWorks = () => {
 
           <div className="how-it-works__icons-section__box-container__card">
             <div className="how-it-works__icons-section__box-container__card--icon">
-              <IosCardOutline fontSize="50px" />
+              <IosCardOutline fontSize="50px" color="#f7b53a" />
             </div>
             <h4 className="how-it-works__icons-section__box-container__card--header">Online Payment</h4>
             <div className="how-it-works__icons-section__box-container__card--text">
@@ -70,7 +70,7 @@ const HowItWorks = () => {
 
           <div className="how-it-works__icons-section__box-container__card">
             <div className="how-it-works__icons-section__box-container__card--icon">
-              <IosTimerOutline fontSize="50px" />
+              <IosTimerOutline fontSize="50px" color="#1a5d7a" />
             </div>
             <h4 className="how-it-works__icons-section__box-container__card--header">Convenient Delivery</h4>
             <div className="how-it-works__icons-section__box-container__card--text">

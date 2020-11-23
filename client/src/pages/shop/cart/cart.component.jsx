@@ -10,14 +10,12 @@ const Cart = ({ match }) => {
   const dispatch = useDispatch();
   /* Pull out the cart items*/
   const cartItems = useSelector(({ cart }) => cart.cartItems);
-  console.log(cartItems);
   //total sum for the cart
   let totalSumArray = cartItems.map((cartItem) => cartItem.quantity * cartItem.price);
   let totalSum = totalSumArray.reduce((acc, cur) => acc + cur, 0).toFixed(2);
 
   // INCREASE from the cart
   const increaseItemHandler = (cartItem) => {
-    console.log(cartItem);
     const { id, name, quantity, farmer } = cartItem;
     dispatch({
       type: 'ADD_ITEM',
@@ -49,15 +47,15 @@ const Cart = ({ match }) => {
       </Link>
       <p className="cart-title">You have added the following articles:</p>
       <ul className="cart-list">
-        <li classNae="cart-list-info">
+        <li className="cart-list-info">
           <span>Item: </span>
           <span>Quantity: </span>
           <span>Price </span>
           <span>{} </span>
         </li>
         {cartItems.length ? (
-          cartItems.map((cartItem) => (
-            <li className="modal-li">
+          cartItems.map((cartItem, i) => (
+            <li className="modal-li" key={i}>
               <span>{cartItem.name}</span>
               <span>
                 <button className="decrease-button" onClick={() => decreaseItemHandler(cartItem)}>
