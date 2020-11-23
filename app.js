@@ -64,7 +64,8 @@ app.use('/users', usersRouter);
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
-  app.use(express.static('client/build'));
+  // Serving Static Files
+  app.use(express.static(path.join(__dirname, 'client/build')));
 
   app.get('/', (req, res) => {
     const index = path.join(__dirname, 'client/build', 'index.html');
