@@ -158,6 +158,7 @@ exports.getFarmerAdminPanel = asyncWrapper(async (req, res, next) => {
     status: 'success',
     data: {
       name: user.name,
+      slug: user.slug,
       products: user.products,
       photo: user.photo,
       description: user.description,
