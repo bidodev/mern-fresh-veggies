@@ -7,8 +7,8 @@ import './gallery.item.styles.scss';
 /* Utils */
 import FileUploader from 'utils/fileUploader';
 
-const ImageItem = ({ name, path, farmerName }) => {
-  const src = path ? `/uploads/${farmerName.toLowerCase()}/images/gallery/${path}` : '/uploads/default.jpg';
+const ImageItem = ({ name, path, slug }) => {
+  const src = path ? `/uploads/${slug.toLowerCase()}/images/gallery/${path}` : '/uploads/default.jpg';
 
   /* Modal State */
   const [modalStatus, setIsOpen] = useState(false);

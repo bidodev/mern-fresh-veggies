@@ -46,6 +46,7 @@ exports.getFarmerPage = asyncWrapper(async (req, res, next) => {
       description: user.description,
       config: user.config,
       images: user.images,
+      slug: user.slug,
     },
   });
 });
@@ -158,6 +159,7 @@ exports.getFarmerAdminPanel = asyncWrapper(async (req, res, next) => {
     status: 'success',
     data: {
       name: user.name,
+      slug: user.slug,
       products: user.products,
       photo: user.photo,
       description: user.description,

@@ -6,9 +6,9 @@ import './avatar.styles.scss';
 /* Utils */
 import FileUploader from 'utils/fileUploader';
 
-const HeaderFarmerProfile = ({ name, images }) => {
+const HeaderFarmerProfile = ({ slug, images }) => {
   const src = images.profile
-    ? `/uploads/${name.toLowerCase()}/images/profile/${images.profile}`
+    ? `/uploads/${slug.toLowerCase()}/images/profile/${images.profile}`
     : '/uploads/default.jpg';
 
   /* Is hovering profile photo State */

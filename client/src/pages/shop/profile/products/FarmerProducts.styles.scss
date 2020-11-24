@@ -95,14 +95,17 @@ button.button {
   width: 8em;
   height: 2.25em;
   padding: 0.5em 1em;
-  background-color: #fff;
+  background-color: var(--header);
   border: 1px solid #ccc;
   text-align: center;
-  color: var(--header);
+  color: var(--text-header);
   white-space: nowrap;
   line-height: 1.4;
   font-size: 1em;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 
   transition: width 0.1s ease, height 0.4s ease, border-width 0.4s ease, border-radius 0.4s ease, border-color 0.4s ease,
     padding 0.4s ease;
@@ -112,10 +115,10 @@ button.button {
     border-color: #ddd;
   }
   &:hover {
-    background: #fafafa;
-    color: var(--text-header);
-    background-color: var(--header);
+    color: #1e5b45;
+    background-color: #fff;
     cursor: pointer;
+    opacity: 0.8;
   }
 
   &.loading {

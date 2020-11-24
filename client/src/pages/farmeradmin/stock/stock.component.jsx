@@ -14,11 +14,11 @@ import './stock.styles.scss';
 
 const Stock = () => {
   const [isModalOpen, setModalStatus] = useState(false);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
 
   /* Filter products */
   const [searchProductField, setFilterProduct] = useState('');
-  const filterProducts = products.filter((product) =>
+  const filterProducts = products && products.filter((product) =>
     product.name.toLowerCase().includes(searchProductField.toLowerCase())
   );
 
@@ -45,7 +45,7 @@ const Stock = () => {
         <SearchBar onSearch={setFilterProduct} className={'stock-search-wrapper'} />
         <Icon icon={['fas', 'plus']} onClick={toggleModal} className="stock-overview__plus" />
       </div>
-      <div className="stock-overview">{products.length > 0 ? <ProductList products={filterProducts} /> : <Spinner />}</div>
+      <div className="stock-overview">{products ? <ProductList products={filterProducts} /> : <Spinner />}</div>
 
 
       <DisplayModal {...modalConfig}>

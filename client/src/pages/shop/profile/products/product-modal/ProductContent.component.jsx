@@ -5,15 +5,29 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 /* Styles */
 import './ProductContent.styles.scss';
 
-const ProductContent = ({ product, farmerName, onClose }) => {
+const ProductContent = ({ product, onClose, slug }) => {
   const { _id, name, photo, type, description, price, unit } = product;
+  const farmerId = 1;
 
-  const handleAddToCart = (id) => {
-    const farmerId = 1;
-    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId, price, unit } });
-  };
-  const [quantity, setQuantity] = useState(1);
+  const [success, setSuccess] = useState(null);
+  const [isAdding, setIsadding] = useState(null);
+
   const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+
+  const handleShowMoreProducts = (id, farmerId) => {
+    setIsadding(true);
+    dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId, price, unit } });
+
+    setTimeout(() => {
+      setIsadding(false);
+      setSuccess(true);
+    }, 1000);
+
+    setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+  };
 
   return (
     <div className="add-product-wrapper">
@@ -24,7 +38,7 @@ const ProductContent = ({ product, farmerName, onClose }) => {
         <div className="add-product-wrapper__left-section--logo">Veggies</div>
         <div className="add-product-wrapper__left-section__img-container">
           <img
-            src={`/uploads/${farmerName.toLowerCase()}/images/products/${photo}`}
+            src={`/uploads/${slug.toLowerCase()}/images/products/${photo}`}
             alt="product"
             className="add-product-wrapper__left-section__img-container--img"
           />
@@ -48,12 +62,21 @@ const ProductContent = ({ product, farmerName, onClose }) => {
           {quantity}
           <Icon icon={'plus'} onClick={() => setQuantity(quantity + 1)} />
         </div>
-        <div className="add-product-wrapper__right-section__button">
-          <div className="add-product-wrapper__right-section__button--btn" onClick={() => handleAddToCart(_id)}>
-            <Icon icon="plus" className="add-product-wrapper__right-section__button--icon" />
-            Add to Cart
-          </div>
+        <div className="add-product-wrapper__right-section__adding">
+          <button
+            className={`absolute-center button ${isAdding ? 'loading' : ''}`}
+            onClick={() => handleShowMoreProducts(_id, farmerId)}
+          >
+            {success ? (
+              <>
+                <p>Sucess</p>
+              </>
+            ) : (
+              <p><Icon icon="plus" className="add-product-wrapper__right-section__button--icon" />Add to Cart</p>
+            )}
+          </button>
         </div>
+        <div className="add-product-wrapper__right-section__sucess"></div>
       </div>
     </div>
   );

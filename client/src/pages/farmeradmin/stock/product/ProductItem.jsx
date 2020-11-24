@@ -35,7 +35,7 @@ function Product({ _id, name, photo, type, description }) {
       <div className="product-item__farmer-products__card" onClick={toggleModal}>
         <div className="product-item__farmer-products__card__img-container">
           <img
-            src={`/uploads/${user.name.toLowerCase()}/images/products/${photo}`}
+            src={`/uploads/${user.slug.toLowerCase()}/images/products/${photo}`}
             alt="img"
             className="product-item__farmer-products__card__img-container--img"
           />
@@ -51,7 +51,7 @@ function Product({ _id, name, photo, type, description }) {
         <h2 className="display-product__name">{name}</h2>
         <div className="display-product__img-container">
           <img
-            src={`/uploads/${user.name.toLowerCase()}/images/products/${photo}`}
+            src={`/uploads/${user.slug.toLowerCase()}/images/products/${photo}`}
             alt="img"
             className="display-product__img-container--img"
           />

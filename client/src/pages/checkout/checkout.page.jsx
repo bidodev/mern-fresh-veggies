@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards';
 import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import 'react-credit-cards/lib/styles.scss';
 import './checkout.page.style.scss';

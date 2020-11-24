@@ -17,8 +17,6 @@ import './lib/icons';
 import App from './App';
 import './scss/index.scss';
 
-/* Import fonts */
-require('typeface-nunito-sans');
 
 ReactDOM.render(
   <Provider store={store}>

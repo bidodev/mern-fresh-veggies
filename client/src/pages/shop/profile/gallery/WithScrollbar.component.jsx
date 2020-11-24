@@ -95,7 +95,7 @@ class WithScrollbar extends Component {
               src={
                 image.path === ''
                   ? '/uploads/default.jpg'
-                  : `/uploads/${this.props.name.toLowerCase()}/images/gallery/${image.path}`
+                  : `/uploads/${this.props.slug.toLowerCase()}/images/gallery/${image.path}`
               }
             />
           </div>

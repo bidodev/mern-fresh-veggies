@@ -36,7 +36,7 @@ const ShopOverView = ({ match }) => {
 const Shop = ({ match }) => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   const cartModalStatus = useSelector(({ cart }) => cart.show);
-  const cartNum = useSelector(({ cart }) => cart.cartQuantity);
+  //const cartNum = useSelector(({ cart }) => cart.cartQuantity);
   // Total quantity for cart
   const totalQuantityArray = cartItems.map((cartItem) => cartItem.quantity);
   let totalQuantity = totalQuantityArray.reduce((acc, cur) => acc + cur, 0);

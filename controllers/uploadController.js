@@ -1,11 +1,13 @@
 const multer = require('multer');
 const AppError = require('../utils/AppError');
 const fs = require('fs');
+const slugify = require('slugify');
+
 
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     const { name } = req.user
-    const path = `./client/public/uploads/${name.toLowerCase()}/images/${req.body.update}`
+    const path = `./client/public/uploads/${slugify(name, { lower: true })}/images/${req.body.update}`
     fs.mkdirSync(path, { recursive: true })
     return cb(null, path)
   },
