@@ -69,7 +69,7 @@ const UserSettings = ({ match }) => {
       <>
         <Route exact path={`${match.path}`} render={() => <AccountSetting user={user} />} />
         <Route path={`${match.path}/public`} render={() => <PublicProfileSettings user={user} />} />
-        <Route path={`${match.path}/advanced`} render={() => <AdvancedSettings />} />
+        {/* <Route path={`${match.path}/advanced`} render={() => <AdvancedSettings />} /> */}
       </>
     </div>
   );
