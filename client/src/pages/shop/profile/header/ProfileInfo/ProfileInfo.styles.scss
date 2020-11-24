@@ -3,6 +3,8 @@
   width: 100%;
   position: relative;
   display: flex;
+  overflow: hidden;
+  // NEED NEW LAYOUT FOR 850px
 
   /* New Products Menu*/
   &__main__right {
@@ -88,7 +90,7 @@
           font-weight: 500;
         }
         h3 {
-          margin-top: 2rem;
+          margin-top: 1.5rem;
           color: var(--header);
           font-weight: 500;
           text-transform: uppercase;
@@ -124,7 +126,7 @@
           display: flex;
           align-items: center;
           flex-wrap: wrap;
-          
+
           li {
             display: flex;
             justify-content: center;
@@ -228,10 +230,10 @@
   }
 
   &__rate {
-    margin: 2vh 0 5vh 5vh;
+    margin: 1rem 0 2rem 2rem;
 
     &--stars {
-      margin: 1vh 0;
+      margin: 0.5rem 0;
     }
   }
 }
