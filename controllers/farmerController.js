@@ -46,6 +46,7 @@ exports.getFarmerPage = asyncWrapper(async (req, res, next) => {
       description: user.description,
       config: user.config,
       images: user.images,
+      slug: user.slug,
     },
   });
 });

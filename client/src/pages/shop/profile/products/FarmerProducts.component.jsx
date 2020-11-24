@@ -14,7 +14,7 @@ const productsPerPage = 4;
 
 /* Component Farmer Products List */
 const FarmerProducts = ({ farmer }) => {
-  const { name, products } = farmer;
+  const { name, products, slug } = farmer;
 
   const [searchProductField, setFilterProduct] = useState('');
 
@@ -70,7 +70,7 @@ const FarmerProducts = ({ farmer }) => {
                 />
               </div>
               <hr />
-              <ProductsToShow products={productsToShow} farmerName={name} />
+              <ProductsToShow products={productsToShow} farmerName={name} slug={slug}/>
 
               <div className="farmer-profile__section-products-farmer__has-products__load-more">
                 {hasMoreProductsToShow && (
