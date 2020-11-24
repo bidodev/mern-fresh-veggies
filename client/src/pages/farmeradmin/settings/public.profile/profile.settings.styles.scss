@@ -1,5 +1,7 @@
 .settings__page__item__wrapper {
-  padding-top: 3rem;
+  @media (max-width: 850px) {
+    padding-top: 3rem;
+  }
 
   &--header {
     font-size: 2rem;
@@ -52,7 +54,7 @@
           }
         }
 
-        .active{
+        .active {
           opacity: 1;
         }
 
@@ -69,7 +71,7 @@
           }
         }
 
-        .active{
+        .active {
           opacity: 1;
         }
 
@@ -86,7 +88,7 @@
           }
         }
 
-        .active{
+        .active {
           opacity: 1;
         }
       }

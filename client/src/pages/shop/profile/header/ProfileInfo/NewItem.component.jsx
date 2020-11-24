@@ -23,7 +23,7 @@ const NewItem = ({ product, name, slug }) => {
           <img src={`/uploads/${slug.toLowerCase()}/images/products/${product.photo}`} alt="" />
         </div>
         <p>
-          EUR: {product.price} - {product.unit}
+          € {product.price} - {product.unit}
         </p>
       </div>
       {modalStatus && (

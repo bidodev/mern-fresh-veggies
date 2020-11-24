@@ -9,7 +9,6 @@
     flex-direction: column;
   }
 
-
   &__nav {
     height: 92vh;
     //border: 1px solid red;
@@ -75,6 +74,7 @@
       width: 16rem;
       @media (max-width: 850px) {
         width: 18rem;
+        border-radius: px;
       }
     }
   }
