@@ -9,7 +9,7 @@ import NewItem from './NewItem.component';
 const NewProductsList = ({ products, name }) => {
   return [...products]
     .reverse()
-    .filter((product, index) => index < 6)
+    .slice(0, 6)
     .map((product, index) => <NewItem key={index} product={product} name={name} />);
 };
 
@@ -23,7 +23,6 @@ const EmptyProductsList = ({ name }) => {
 };
 
 const ProfileInfo = ({ name, products }) => {
-  console.log(products);
   return (
     <>
       <header className="public-farmer">

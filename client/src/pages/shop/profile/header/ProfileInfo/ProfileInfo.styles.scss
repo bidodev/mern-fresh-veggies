@@ -66,8 +66,8 @@
 
         &__a {
           height: 50%;
-          border-bottom-left-radius: 8px;
-          border-bottom-right-radius: 8px;
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
           background-color: var(--header);
           @media (max-width: 1050px) {
             border-bottom-left-radius: 0;
@@ -111,7 +111,8 @@
       }
 
       &__expertise {
-        padding: 1rem;
+        padding: 2rem;
+        height: 37%;
         border-right: 1px solid var(--border-color);
         h3 {
           color: var(--header);
@@ -123,6 +124,7 @@
           display: flex;
           align-items: center;
           flex-wrap: wrap;
+          
           li {
             display: flex;
             justify-content: center;
@@ -145,6 +147,7 @@
 
   &__main {
     &__featured {
+      padding-bottom: 2rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       &--header {
         height: 4rem;
