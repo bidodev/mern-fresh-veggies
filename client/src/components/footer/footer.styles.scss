@@ -1,26 +1,56 @@
 @import '../../scss/variables';
 
-footer {
+.footer {
   height: 20vh;
   margin: 2vh 3vw;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  .placeholder {
-    width: 13rem;
-    height: fit-content;
-    margin-right: 10vw;
-
-    p {
-      margin-bottom: 1vh;
-      color: var(--primary-black);
-
-      &:first-of-type {
-        margin-bottom: 3vh;
-        font-weight: bold;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  &__box {
+    width: 40rem;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    @media (max-width: 600px) {
+      width: 30rem;
+    }
+    &__title {
+      font-weight: bold;
+    }
+    &__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: 450px) {
+        margin-right: -8rem;
+      }
+      @media (max-width: 450px) {
+        margin-right: -12rem;
+      }
+      &__social-media {
+        width: 15rem;
+        @media (max-width: 600px) {
+          width: 10rem;
+        }
+        p {
+          display: flex;
+          align-items: center;
+          .sc-bdVaJa {
+            margin-right: 2rem;
+          }
+        }
+      }
+      &__placeholder {
+        width: 15rem;
+        @media (max-width: 600px) {
+          width: 10rem;
+        }
       }
     }
   }
