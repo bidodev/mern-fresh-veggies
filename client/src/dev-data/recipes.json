@@ -153,7 +153,7 @@
   {
     "_id": "3",
     "recipeName": "bruschetta",
-    "coverImage": "https://cdn.bbqpit.de/wp-content/uploads/2020/07/17130751/Bruschetta-Antipasti-Rezept-italienisch.jpg",
+    "coverImage": "/images/dishes/bruschetta-aus-thermomix.jpg",
     "portion": "4 servings",
     "ingredients": [
       {
@@ -301,7 +301,7 @@
   {
     "_id": "7",
     "recipeName": "vegetable palets",
-    "coverImage": "https://www.ptitchef.com/imgupl/recipe/palets-de-legumes-faciles-et-rapides--md-456174p709293.jpg",
+    "coverImage": "/images/dishes/palet-de-petits-legumes.jpeg",
     "portion": "4 servings",
     "ingredients": [
       {
@@ -346,7 +346,7 @@
   {
     "_id": "8",
     "recipeName": "grilled vegetable salad",
-    "coverImage": "https://img.mesrecettesfaciles.fr/wp-content/uploads/2015/07/shutterstock_205394386-1000x500.jpg",
+    "coverImage": "/images/dishes/spring-sal6.jpg",
     "portion": "6 servings",
     "ingredients": [
       {
