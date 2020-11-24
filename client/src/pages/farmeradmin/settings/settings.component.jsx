@@ -54,7 +54,7 @@ const UserSettings = ({ match }) => {
                 Public Profile
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 className="admin__settings__nav-item"
                 to="/farmer/admin/settings/advanced"
@@ -62,7 +62,7 @@ const UserSettings = ({ match }) => {
               >
                 Advanced Settings
               </NavLink>
-            </li>
+            </li> */}
           </div>
         </ul>
       </div>
