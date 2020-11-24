@@ -32,7 +32,7 @@ const ProfileInfo = ({ name, products, slug }) => {
               <p className="public-farmer__aside__infos__avatar__a"></p>
               <div className="public-farmer__aside__infos__avatar__b">
                 <h2>{name}</h2>
-                <p>⭐⭐⭐⭐⭐</p>
+                <span role="img">⭐⭐⭐⭐⭐</span>
                 <h3>Location</h3>
                 <p>Berlin - Germany</p>
               </div>

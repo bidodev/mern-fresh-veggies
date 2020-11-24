@@ -115,10 +115,10 @@ button.button {
     border-color: #ddd;
   }
   &:hover {
-    background: #fafafa;
-    background-color: var(--text-header);
-    color: var(--header);
+    color: #1e5b45;
+    background-color: #fff;
     cursor: pointer;
+    opacity: 0.8;
   }
 
   &.loading {
