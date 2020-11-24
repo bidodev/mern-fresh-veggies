@@ -21,7 +21,7 @@ const UserSettings = ({ match }) => {
   const user = useSelector(({ login }) => login.user.data);
 
   const src = data.images.profile
-    ? `/uploads/${user.name.toLowerCase()}/images/profile/${data.images.profile}`
+    ? `/uploads/${user.slug.toLowerCase()}/images/profile/${data.images.profile}`
     : '/uploads/default.jpg';
 
   return (
