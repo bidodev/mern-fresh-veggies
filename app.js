@@ -61,17 +61,14 @@ app.use('/account', authRouter);
 app.use('/farmers', farmersRouter);
 app.use('/users', usersRouter);
 
-// Serve static assets if in production
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  // Serving Static Files
-  app.use(express.static(path.join(__dirname, 'client/build')));
+// Serving Static Files
+app.use(express.static(path.join(__dirname, "client/build")));
 
-  app.get('*', (req, res) => {
-    const index = path.join(__dirname, 'client/build', 'index.html');
-    res.sendFile(index);
-  });
-}
+//send react aplication
+app.get("*", function (req, res) {
+  const index = path.join(__dirname, "client/build", "index.html");
+  res.sendFile(index);
+});
 
 /**
  * When an error is trow we catch it here and forward to errorController
