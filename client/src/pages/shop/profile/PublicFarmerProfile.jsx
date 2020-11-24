@@ -9,11 +9,10 @@ import './PublicFarmerProfile.styles.scss';
 
 /* Utils */
 import Spinner from 'components/UI/spinner/spinner.component';
-import ComposeStore from 'pages/shop/profile/store/ComposeStore.component';
+import CompouseStore from 'pages/shop/profile/store/CompouseStore.component';
 
 const ProfilePage = () => {
   const { slug } = useParams();
-  console.log(slug);
 
   /* Save the Farmer Page object */
   const [farmer, setFarmer] = useState(null);
@@ -25,7 +24,7 @@ const ProfilePage = () => {
     });
   }, [slug]);
 
-  return <>{farmer ? <ComposeStore farmer={farmer} /> : <Spinner />}</>;
+  return <>{farmer ? <CompouseStore farmer={farmer} /> : <Spinner />}</>;
 };
 
 export default ProfilePage;

@@ -108,6 +108,26 @@
       }
     }
 
+    &__adding{
+
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &__sucess{
+      height: 2rem;
+      text-align: center;
+
+      h2{
+        border: 1px solid #1e5b45;
+        width: auto;
+        color: #1e5b45;
+      }
+    }
+
     &__button {
       display: flex;
       align-items: center;

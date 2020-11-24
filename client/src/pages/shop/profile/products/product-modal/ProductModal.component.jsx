@@ -7,7 +7,7 @@ import './ProductModal.styles.scss';
 import DisplayModal from 'components/modal/modal.component';
 import ProductContent from 'pages/shop/profile/products/product-modal/ProductContent.component';
 
-const ProductModal = ({ modalStatus, toggleModal, product, farmerName }) => {
+const ProductModal = ({ modalStatus, toggleModal, product, farmerName, slug }) => {
   return (
     <DisplayModal
       modalStatus={modalStatus}
@@ -15,7 +15,7 @@ const ProductModal = ({ modalStatus, toggleModal, product, farmerName }) => {
       className={'modal__add-product'}
       overlayClassName={'overlay__add-product'}
     >
-      <ProductContent product={product} farmerName={farmerName} onClose={toggleModal} />
+      <ProductContent product={product} farmerName={farmerName} onClose={toggleModal} slug={slug} />
     </DisplayModal>
   );
 };

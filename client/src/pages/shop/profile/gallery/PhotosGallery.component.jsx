@@ -7,12 +7,12 @@ import './PhotosGallery.styles.scss';
 import WithScrollbar from './WithScrollbar.component';
 import Section from './Section.component';
 
-const PhotosGallery = ({ images, name, deviceType }) => {
+const PhotosGallery = ({ images, name, slug, deviceType }) => {
   return (
     <div className="farmer-profile__gallery">
       <h2>Discover my Farm</h2>
       <Section>
-        <WithScrollbar images={images} name={name} />
+        <WithScrollbar images={images} slug={slug} />
       </Section>
     </div>
   );

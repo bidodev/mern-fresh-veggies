@@ -6,11 +6,11 @@ import './ProfileInfo.styles.scss';
 /* Component Imports */
 import NewItem from './NewItem.component';
 
-const NewProductsList = ({ products, name }) => {
+const NewProductsList = ({ products, name, slug }) => {
   return [...products]
     .reverse()
     .slice(0, 6)
-    .map((product, index) => <NewItem key={index} product={product} name={name} />);
+    .map((product, index) => <NewItem key={index} product={product} slug={slug} name={name} />);
 };
 
 const EmptyProductsList = ({ name }) => {
@@ -22,7 +22,7 @@ const EmptyProductsList = ({ name }) => {
   );
 };
 
-const ProfileInfo = ({ name, products }) => {
+const ProfileInfo = ({ name, products, slug }) => {
   return (
     <>
       <header className="public-farmer">
@@ -101,7 +101,7 @@ const ProfileInfo = ({ name, products }) => {
           <div className="public-farmer__main__right__container">
             {/* create a shallow copy of the array and reverse to show the last added first */}
             {products.length > 0 ? (
-              <NewProductsList products={products} name={name} />
+              <NewProductsList products={products} name={name} slug={slug}/>
             ) : (
               <EmptyProductsList name={name} />
             )}
