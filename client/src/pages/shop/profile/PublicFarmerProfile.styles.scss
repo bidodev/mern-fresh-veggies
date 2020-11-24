@@ -10,7 +10,8 @@
     &__store-open {
       width: 90%;
       margin: 0 auto;
-      border: var(--border-wrapper);
+      box-shadow: 0 12px 16px -1px rgba(0, 0, 0, 0.3);
+      // border: var(--border-wrapper);
       @media (max-width: 1050px) {
         width: 100%;
       }
