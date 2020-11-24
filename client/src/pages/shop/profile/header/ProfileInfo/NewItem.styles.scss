@@ -12,6 +12,8 @@
   }
 
   &:hover {
+    opacity: 0.9;
+    border-radius: 4px;
     cursor: pointer;
     color: var(--text-header);
     background-color: var(--header);
@@ -19,16 +21,14 @@
   }
 
   &__img {
-    //border: 1px solid green;
     margin: 1rem 0;
     width: 7rem;
     height: 7rem;
-  }
-
-  img {
-    height: auto;
-    width: 100%;
-    object-fit: cover;
-    transition: all 0.5s ease-in-out;
+    img {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease-in-out;
+    }
   }
 }

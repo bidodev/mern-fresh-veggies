@@ -54,7 +54,7 @@ const UserSettings = ({ match }) => {
                 Public Profile
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 className="admin__settings__nav-item"
                 to="/farmer/admin/settings/advanced"
@@ -62,14 +62,14 @@ const UserSettings = ({ match }) => {
               >
                 Advanced Settings
               </NavLink>
-            </li>
+            </li> */}
           </div>
         </ul>
       </div>
       <>
         <Route exact path={`${match.path}`} render={() => <AccountSetting user={user} />} />
         <Route path={`${match.path}/public`} render={() => <PublicProfileSettings user={user} />} />
-        <Route path={`${match.path}/advanced`} render={() => <AdvancedSettings />} />
+        {/* <Route path={`${match.path}/advanced`} render={() => <AdvancedSettings />} /> */}
       </>
     </div>
   );

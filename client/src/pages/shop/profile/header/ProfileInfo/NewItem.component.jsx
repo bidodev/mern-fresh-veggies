@@ -20,10 +20,10 @@ const NewItem = ({ product, name }) => {
       <div className="new-product" onClick={toggleModal}>
         <p>{product.name}</p>
         <div className="new-product__img">
-          <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="" />
+          <img src={`/uploads/${name.toLowerCase()}/images/products/${product.photo}`} alt="veggies" />
         </div>
         <p>
-          EUR: {product.price} - {product.unit}
+          € {product.price} - {product.unit}
         </p>
       </div>
       {modalStatus && (
