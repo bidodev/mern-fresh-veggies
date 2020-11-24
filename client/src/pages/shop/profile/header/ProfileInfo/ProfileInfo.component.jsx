@@ -49,30 +49,28 @@ const ProfileInfo = ({ name, products }) => {
               <h3>Area of Expertise</h3>
               <ul>
                 <li>Vegetables</li>
-                <li>Meat</li>
                 <li>Fruits</li>
-                <li>Honig</li>
                 <li>Vegan</li>
                 <li>Certified</li>
-                <li>Discount</li>
-                <li>Fruits</li>
               </ul>
             </div>
           </div>
           <div className="public-farmer__aside__main">
             <div className="public-farmer__main__featured">
-              <h2>About Me</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, velit?</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati perspiciatis omnis ducimus mollitia
-                inventore saepe fugit voluptatum vel, quasi recusandae sunt dolor odio quam minima, magnam facilis! Odit
-                cumque, distinctio qui magni eum adipisci voluptatibus saepe amet velit voluptatem deserunt ipsa ratione
-                atque ea voluptates at, harum non, fuga sunt.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi nulla asperiores illum, possimus autem
-                necessitatibus harum at placeat dolore? Ipsum?
-              </p>
+              <h2 className="public-farmer__main__featured--header">About Me</h2>
+              <div className="public-farmer__main__featured__text-container">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, velit?</p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati perspiciatis omnis ducimus
+                  mollitia inventore saepe fugit voluptatum vel, quasi recusandae sunt dolor odio quam minima, magnam
+                  facilis! Odit cumque, distinctio qui magni eum adipisci voluptatibus saepe amet velit voluptatem
+                  deserunt ipsa ratione atque ea voluptates at, harum non, fuga sunt.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi nulla asperiores illum, possimus autem
+                  necessitatibus harum at placeat dolore? Ipsum?
+                </p>
+              </div>
             </div>
             <div className="public-farmer__main__reviews">
               <h2>Testimonials</h2>

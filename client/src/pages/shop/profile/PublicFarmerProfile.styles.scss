@@ -1,13 +1,19 @@
 .public-profile {
   &__wrapper {
-    margin-top: 12vh;
+    margin-top: 6rem;
     background-color: var(--white);
+    @media (max-width: 1050px) {
+      margin-top: 4.2rem;
+    }
 
     /* Wrapper if the store is open */
     &__store-open {
-      width: 80vw;
+      width: 90%;
       margin: 0 auto;
       border: var(--border-wrapper);
+      @media (max-width: 1050px) {
+        width: 100%;
+      }
     }
   }
 }
