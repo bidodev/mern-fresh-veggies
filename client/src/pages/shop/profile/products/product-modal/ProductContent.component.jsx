@@ -35,7 +35,6 @@ const ProductContent = ({ product, onClose, slug }) => {
         x
       </span>
       <div className="add-product-wrapper__left-section">
-        <div className="add-product-wrapper__left-section--logo">Veggies</div>
         <div className="add-product-wrapper__left-section__img-container">
           <img
             src={`/uploads/${slug.toLowerCase()}/images/products/${photo}`}
@@ -64,19 +63,22 @@ const ProductContent = ({ product, onClose, slug }) => {
         </div>
         <div className="add-product-wrapper__right-section__adding">
           <button
-            className={`absolute-center button ${isAdding ? 'loading' : ''}`}
+            className={`add-product-wrapper__right-section__adding--btn ${isAdding ? 'loading' : ''}`}
             onClick={() => handleShowMoreProducts(_id, farmerId)}
           >
             {success ? (
               <>
-                <p>Sucess</p>
+                <p>Success</p>
               </>
             ) : (
-              <p><Icon icon="plus" className="add-product-wrapper__right-section__button--icon" />Add to Cart</p>
+              <p>
+                <Icon icon="plus" className="add-product-wrapper__right-section__adding--icon" />
+                Add to Cart
+              </p>
             )}
           </button>
         </div>
-        <div className="add-product-wrapper__right-section__sucess"></div>
+        {/* <div className="add-product-wrapper__right-section__success"></div> */}
       </div>
     </div>
   );

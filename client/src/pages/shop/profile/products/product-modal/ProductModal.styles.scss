@@ -15,6 +15,14 @@
   animation-name: modalFade;
   animation-duration: 1s;
   position: relative;
+  @media (max-width: 950px) {
+    width: 34rem;
+  }
+  @media (max-width: 580px) {
+    width: 20rem;
+    height: 35rem;
+    padding: 0.5rem;
+  }
 }
 
 .overlay__add-product {
