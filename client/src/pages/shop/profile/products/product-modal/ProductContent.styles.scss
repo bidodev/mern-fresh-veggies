@@ -9,7 +9,6 @@
     right: 0.6rem;
     font-size: 2rem;
     transition: all 0.5s ease;
-
     &:hover {
       transform: scale(0.8);
       cursor: pointer;
@@ -23,13 +22,8 @@
     height: 100%;
     border-radius: 8px;
     position: relative;
-
-    &--logo {
-      margin: 1rem 1.5rem;
-      font-family: 'Nothing You Could Do', cursive;
-      font-size: 2rem;
-      font-weight: 600;
-      color: #1e5b45;
+    @media (max-width: 580px) {
+      width: 33%;
     }
 
     &__img-container {
@@ -45,8 +39,20 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      @media (max-width: 950px) {
+        width: 12rem;
+        min-height: 15rem;
+        top: 7rem;
+        left: 2rem;
+      }
+      @media (max-width: 580px) {
+        width: 6rem;
+        min-height: 12rem;
+        top: 9rem;
+        left: 0.7rem;
+      }
       &--img {
-        transition: transform 1.6s;
+        transition: transform 2s;
         width: 100%;
         &:hover {
           transform: scale(1.1);
@@ -69,7 +75,9 @@
       text-transform: uppercase;
       color: #1e5b45;
       font-size: 2.5rem;
-      //   text-shadow: 1px 1px 2px black;
+      @media (max-width: 580px) {
+        font-size: 1.5rem;
+      }
     }
 
     &--type {
@@ -78,11 +86,17 @@
       transform: translate(10px, -15px);
       color: #1e5b45;
       text-transform: capitalize;
-      //text-shadow: 1px 2px 2px black;
+      @media (max-width: 580px) {
+        font-size: 0.9rem;
+        transform: translate(0px, -15px);
+      }
     }
 
     &--description {
       font-size: 0.9rem;
+      @media (max-width: 580px) {
+        font-size: 0.8rem;
+      }
     }
 
     &--price {
@@ -90,7 +104,6 @@
       font-size: 1.2rem;
       font-weight: bold;
       color: #1e5b45;
-      //text-shadow: 1px 2px 2px black;
     }
 
     &__quantity {
@@ -100,7 +113,7 @@
       svg {
         font-size: 1.3rem;
         margin: 0.9rem;
-        color: #9c9c9c;
+        color: #1e5b45;
         &:hover {
           opacity: 0.8;
           cursor: pointer;
@@ -108,38 +121,24 @@
       }
     }
 
-    &__adding{
-
-      height: 2rem;
+    &__adding {
+      height: 2.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-    }
 
-    &__sucess{
-      height: 2rem;
-      text-align: center;
-
-      h2{
-        border: 1px solid #1e5b45;
-        width: auto;
-        color: #1e5b45;
-      }
-    }
-
-    &__button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       &--icon {
         margin-right: 0.4rem;
         vertical-align: -3px;
       }
+
       &--btn {
+        width: 12rem;
         cursor: pointer;
         background: #1e5b45;
         color: #f9f9f9;
+        border: none;
+        outline: none;
         padding: 0.6rem 1.2rem;
         border-radius: 4px;
         transition: opacity 0.5 ease;
@@ -148,5 +147,11 @@
         }
       }
     }
+
+    // &__success {
+    //   border: 1px solid blue;
+    //   height: 2rem;
+    //   text-align: center;
+    // }
   }
 }
