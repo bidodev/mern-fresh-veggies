@@ -6,15 +6,15 @@ import './WithScrollbar.styles.scss';
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1300 },
+    breakpoint: { max: 3000, min: 1350 },
     items: 3,
   },
   tablet: {
-    breakpoint: { max: 1300, min: 720 },
+    breakpoint: { max: 1350, min: 750 },
     items: 2,
   },
   mobile: {
-    breakpoint: { max: 720, min: 0 },
+    breakpoint: { max: 750, min: 0 },
     items: 1,
   },
 };
