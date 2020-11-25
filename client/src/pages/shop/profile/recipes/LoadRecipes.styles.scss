@@ -1,25 +1,31 @@
 .recipes {
   &__card {
-    margin: 1vh;
-    padding: 2vh;
+    margin: 0.5rem;
+    padding: 1rem;
     display: flex;
     border-radius: 2px;
-    border: 1px solid var(--border-color);
-
     @media (max-width: 1050px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: center;
+    }
+    &:not(:last-child) {
+      border-bottom: 2px solid var(--border-color);
     }
 
     &__img-container {
       width: 40rem;
-      height: 28rem;
-      border-radius: 2px;
+      height: 24rem;
+      border-radius: 4px;
       overflow: hidden;
       @media (max-width: 1050px) {
-        width: 60%;
-        min-width: 15rem;
+        margin-top: 1.5rem;
+        width: 75%;
         height: auto;
+        max-height: 35rem;
+      }
+      @media (max-width: 500px) {
+        margin-top: 1rem;
+        width: 95%;
       }
       &--img {
         width: 100%;
@@ -29,30 +35,66 @@
     }
 
     &__info-container {
-      width: 55vw;
-      padding-left: 1vw;
+      width: 66vw;
+      padding-left: 1rem;
+      @media (max-width: 1050px) {
+        width: 100%;
+        padding: 0;
+      }
+      @media (max-width: 370px) {
+        width: 110%;
+      }
 
       &__name {
+        margin-bottom: 0.5rem;
+        padding: 1rem;
+        background-color: var(--header);
+        color: var(--text-header);
+        font-size: 1.8rem;
+        text-align: center;
         text-transform: uppercase;
-        margin-bottom: 1rem;
+        @media (max-width: 1050px) {
+          margin-top: 1rem;
+        }
+        @media (max-width: 750px) {
+          font-size: 1.3rem;
+        }
       }
 
-      &__portion {
-        font-style: italic;
+      &__ingredients-header {
+        color: var(--header);
+        @media (max-width: 750px) {
+          text-align: center;
+        }
       }
-
       &__ingredients {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        @media (max-width: 750px) {
+          justify-content: center;
+        }
         &__list {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 1vh;
-          margin: 1vh 1vh 1vh 0;
-          background: var(--shadow-gray);
-          border-radius: 5px;
+          color: var(--header);
+          font-size: 0.9rem;
+          font-style: italic;
+          margin: 0.5rem 1.5rem 0.5rem 0;
+        }
+      }
+
+      &__preparation {
+        margin-top: 1rem;
+        @media (max-width: 750px) {
+          font-size: 0.9rem;
+          padding: 0 1rem;
+          text-align: center;
+        }
+        &--header {
+          font-size: 1.17rem;
+          color: var(--header);
         }
       }
     }

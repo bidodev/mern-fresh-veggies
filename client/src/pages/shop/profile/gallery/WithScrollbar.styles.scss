@@ -54,11 +54,11 @@ input[type='range']:focus::-webkit-slider-runnable-track {
 .slider-image-item {
   transition: all 0.3s ease-in-out;
   padding: 1rem 0.5rem;
-  @media (max-width: 720px) {
-    padding: 1rem 4rem;
+  @media (max-width: 750px) {
+    padding: 1rem 6rem;
   }
-  @media (max-width: 500px) {
-    padding: 1rem 0.5rem;
+  @media (max-width: 600px) {
+    padding: 1rem;
   }
   &:hover {
     transform: scale(0.95);

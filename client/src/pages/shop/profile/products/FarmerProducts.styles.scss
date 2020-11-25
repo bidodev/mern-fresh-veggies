@@ -4,10 +4,12 @@
     padding: 1.5rem;
     color: var(--text-header);
     font-size: 2rem;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
     background-color: var(--header);
     text-transform: uppercase;
+    @media (max-width: 550px) {
+      font-size: 1.3rem;
+      padding: 1rem;
+    }
   }
 
   &-farmer {
@@ -16,7 +18,6 @@
         &__search-bar {
           width: 30rem;
           margin: 0 auto;
-
           @media (max-width: 650px) {
             width: 15rem;
           }

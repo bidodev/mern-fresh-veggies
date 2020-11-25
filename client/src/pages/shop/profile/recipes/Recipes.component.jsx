@@ -11,18 +11,17 @@ import LoadRecipes from './LoadRecipes.component';
 
 const Recipes = ({ farmer }) => {
   const { products } = farmer;
-  const farmerHasAtleastProducts = 2;
+  const farmerHasAtLeastProducts = 2;
 
   /* Return an array with products names */
   const farmerProductsList = products.map(({ name }) => name.toLowerCase());
   const resultRecipes = recipesData.filter((recipe) => {
     let countIngredients = 0;
-
     recipe.ingredients.forEach((ingredient) =>
       farmerProductsList.includes(ingredient.name) ? countIngredients++ : countIngredients
     );
-    /* Displayed if the recipe has more than 2 ingredients that match with farm products */
-    return countIngredients >= farmerHasAtleastProducts ? recipe : null;
+    /* Displayed if the recipe has more than 2 ingredients that match with farmers products */
+    return countIngredients >= farmerHasAtLeastProducts ? recipe : null;
   });
 
   /* Scroll on demand */
@@ -33,7 +32,6 @@ const Recipes = ({ farmer }) => {
     if (recipesToShow.length >= resultRecipes.length) {
       return setHasMore(false);
     }
-
     setTimeout(() => {
       const newItems = resultRecipes.slice(recipesToShow.length, recipesToShow.length + 2);
       setRecipesToShow(recipesToShow.concat(newItems));
@@ -50,8 +48,8 @@ const Recipes = ({ farmer }) => {
 
   return (
     <section className="recipes-section">
-      <h2>Recipes' Suggestions</h2>
-      <p>
+      <h2 className="recipes-section--header">Recipes' Suggestions</h2>
+      <p className="recipes-section--sub">
         {resultRecipes.length > 0
           ? `Based on ${farmer.name}'s products we found ${resultRecipes.length} recipes suggestions for you 😋`
           : 'Unfortunately, we did not find any recipe suggestions for you 😢'}

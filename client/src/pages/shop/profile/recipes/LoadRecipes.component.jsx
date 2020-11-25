@@ -4,8 +4,7 @@ import React from 'react';
 import './LoadRecipes.styles.scss';
 
 const LoadRecipe = ({ recipe }) => {
-  /* destructing what we need */
-  const { coverImage, recipeName, portion, ingredients, preparation } = recipe;
+  const { coverImage, recipeName, ingredients, preparation } = recipe;
 
   return (
     <section className="recipes">
@@ -15,8 +14,7 @@ const LoadRecipe = ({ recipe }) => {
         </div>
         <div className="recipes__card__info-container">
           <h2 className="recipes__card__info-container__name">{recipeName}</h2>
-          <span className="recipes__card__info-container__portion">Portion: {portion}</span>
-          <h3>Ingredients</h3>
+          <h3 className="recipes__card__info-container__ingredients-header">Ingredients</h3>
           <div className="recipes__card__info-container__ingredients">
             {ingredients.map((item, index) => {
               return (
@@ -27,7 +25,7 @@ const LoadRecipe = ({ recipe }) => {
             })}
           </div>
           <div className="recipes__card__info-container__preparation">
-            <h3>Preparation</h3>
+            <h3 className="recipes__card__info-container__preparation--header">Preparation</h3>
             {preparation}
           </div>
         </div>

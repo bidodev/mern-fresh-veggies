@@ -1,13 +1,5 @@
 .recipes-section {
-  p {
-    padding: 2rem 0;
-    text-align: center;
-    font-size: 1.6rem;
-    color: var(--text-body);
-    font-weight: 300;
-  }
-
-  h2 {
+  &--header {
     text-align: center;
     padding: 1.5rem;
     background-color: var(--header);
@@ -16,6 +8,21 @@
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     text-transform: uppercase;
+    @media (max-width: 600px) {
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &--sub {
+    padding: 2rem 3rem;
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--text-body);
+    font-weight: 300;
+    @media (max-width: 600px) {
+      font-size: 1.2rem;
+    }
   }
 
   &__main-container {
