@@ -33,7 +33,7 @@ const createSendToken = (user, status, req, res) => {
   });
 
   //destructuring only what we need
-  const { _id, email, name, role, images, slug } = user;
+  const { _id, email, name, role, images, slug, config } = user;
 
   res.status(status).json({
     status: 'success',
@@ -43,7 +43,8 @@ const createSendToken = (user, status, req, res) => {
       email,
       role,
       images,
-      slug
+      slug,
+      config,
     },
   });
 };

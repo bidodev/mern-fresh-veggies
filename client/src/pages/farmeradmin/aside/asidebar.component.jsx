@@ -31,7 +31,7 @@ const AsideBar = () => {
         target="_blank"
         to={`/shop/farmer/${user.slug}`}
       >
-        <Icon icon={['fas', 'external-link-alt']} className="admin-panel__sidebar-item__icon" />
+        <Icon icon={['fas', 'external-link-alt']} />
         <p>Profile</p>
       </NavLink>
     </aside>

@@ -8,6 +8,7 @@ import cartReducer from 'redux/reducers/cart/cart.reducer';
 import loginReducer from 'redux/reducers/login.reducer';
 import authenticationReducer from 'redux/reducers/authentication.reducer';
 import modalReducer from 'redux/reducers/modal.reducer';
+import statusReducer from 'redux/reducers/status.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   login: loginReducer,
   authentication: authenticationReducer,
   modal: modalReducer,
+  status: statusReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
