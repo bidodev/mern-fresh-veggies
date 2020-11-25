@@ -5,6 +5,8 @@
   background-color: #fff;
   position: fixed;
   z-index: 1001;
+  box-shadow: 0 0 10px 0 rgba(119, 119, 119, 0.486);
+  
 
   &-item {
     width: 4rem;
@@ -17,24 +19,36 @@
     color: #606060;
     font-size: 0.9rem;
     border-bottom: 1px solid rgba(153, 153, 153, 0.1);
+    font-weight: 600;
 
-    &--active {
-      background-color: #e5e5e5;
-      width: 4rem;
-    }
-
-    &__icon {
+    svg {
       color: var(--header);
       font-size: 1.6rem;
-    }
 
-    &:hover {
-      background-color: #f2f2f2;
     }
-
     p {
       margin-top: 1rem;
       text-transform: capitalize;
+    }
+    &:hover > * {
+      color: #fff;
+    }
+
+    &:hover  {
+      background-color: var(--header)
+    }
+
+    &--active {
+      background-color: var(--header);
+      width: 4rem;
+      
+      & > * {
+        color: #fff;
+      }
+
+      svg {
+        color: #fff;
+      }
     }
   }
 }
