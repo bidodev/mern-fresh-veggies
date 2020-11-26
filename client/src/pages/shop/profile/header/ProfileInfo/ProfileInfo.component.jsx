@@ -54,45 +54,39 @@ const ProfileInfo = ({ name, products, slug }) => {
               </ul>
             </div>
           </div>
-          <div className="public-farmer__aside__main">
-            <div className="public-farmer__main__featured">
-              <h2 className="public-farmer__main__featured--header">About Me</h2>
-              <div className="public-farmer__main__featured__text-container">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, velit?</p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati perspiciatis omnis ducimus
-                  mollitia inventore saepe fugit voluptatum vel, quasi recusandae sunt dolor odio quam minima, magnam
-                  facilis! Odit cumque, distinctio qui magni eum adipisci voluptatibus saepe amet velit voluptatem
-                  deserunt ipsa ratione atque ea voluptates at, harum non, fuga sunt.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi nulla asperiores illum, possimus autem
-                  necessitatibus harum at placeat dolore? Ipsum?
-                </p>
-              </div>
+        </aside>
+
+        <div className="public-farmer__main">
+          <div className="public-farmer__main__featured">
+            <h2 className="public-farmer__main__featured__header">About Me</h2>
+            <h2 className="public-farmer__main__featured__text-container--header">Biography</h2>
+            <div className="public-farmer__main__featured__text-container">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati perspiciatis omnis ducimus mollitia
+              inventore saepe fugit voluptatum vel, quasi recusandae sunt dolor odio quam minima, magnam facilis! Odit
+              cumque, distinctio qui magni eum adipisci voluptatibus saepe amet velit voluptatem deserunt ipsa ratione
+              atque ea voluptates at, harum non, fuga sunt. <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, maxime. Mollitia modi odio distinctio sed
+              minus, impedit doloremque rerum numquam blanditiis, fuga aut reprehenderit sunt architecto repellat.
             </div>
-            <div className="public-farmer__main__reviews">
-              <h2>Testimonials</h2>
-              <div>
-                <p>
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nihil recusandae voluptates
-                  maxime voluptatem, iure architecto, dolore veniam optio ducimus odio culpa magni, nostrum debitis
-                  ratione quas minima quam explicabo!"
-                </p>
-                <div className="abcde">
-                  <p>
-                    Peter, <span>client from Brandenburg</span>
-                  </p>
-                  <div className="carousel-dots">
-                    <label htmlFor="img-1" className="carousel-dot" id="img-dot-1"></label>
-                    <label htmlFor="img-2" className="carousel-dot" id="img-dot-2"></label>
-                    <label htmlFor="img-3" className="carousel-dot" id="img-dot-3"></label>
-                  </div>
+          </div>
+          <div className="public-farmer__main__reviews">
+            <h2 className="public-farmer__main__reviews--header">Testimonials</h2>
+            <div className="public-farmer__main__reviews--text">
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nihil recusandae voluptates maxime
+              voluptatem, iure architecto, dolore veniam optio ducimus odio culpa magni, nostrum debitis ratione quas
+              minima quam explicabo!"
+              <div className="public-farmer__main__reviews--author">
+                PETER, <span>client from Brandenburg</span>
+                <div className="carousel-dots">
+                  <label htmlFor="img-1" className="carousel-dot" id="img-dot-1"></label>
+                  <label htmlFor="img-2" className="carousel-dot" id="img-dot-2"></label>
+                  <label htmlFor="img-3" className="carousel-dot" id="img-dot-3"></label>
                 </div>
               </div>
             </div>
           </div>
-        </aside>
+        </div>
+
         <main className="public-farmer__main__right">
           <div className="public-farmer__main__right__header">
             <h2>New Products</h2>
@@ -101,7 +95,7 @@ const ProfileInfo = ({ name, products, slug }) => {
           <div className="public-farmer__main__right__container">
             {/* create a shallow copy of the array and reverse to show the last added first */}
             {products.length > 0 ? (
-              <NewProductsList products={products} name={name} slug={slug}/>
+              <NewProductsList products={products} name={name} slug={slug} />
             ) : (
               <EmptyProductsList name={name} />
             )}
