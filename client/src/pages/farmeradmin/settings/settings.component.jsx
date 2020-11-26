@@ -12,9 +12,9 @@ import AccountSetting from 'pages/farmeradmin/settings/account/account.component
 /* This component allows the farmer to configure his store */
 import PublicProfileSettings from './public.profile/profile.settings.component';
 
-const AdvancedSettings = () => {
-  return <div>Advanced Settings</div>;
-};
+// const AdvancedSettings = () => {
+//   return <div>Advanced Settings</div>;
+// };
 
 const UserSettings = ({ match }) => {
   const data = useSelector(({ login }) => login.adminPanelData);

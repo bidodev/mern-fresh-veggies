@@ -1,8 +1,5 @@
 const INITIAL_STATE = {
-  avatar: {
-    path: 'bido.jpeg',
-    name: 'francisco',
-  },
+  color: 'green',
 };
 
 const ModalReducer = (state = INITIAL_STATE, action) => {
@@ -13,6 +10,11 @@ const ModalReducer = (state = INITIAL_STATE, action) => {
         ...state.avatar,
         path: action.payload,
       };
+      case 'SET_COLOR':
+        return {
+          ...state,
+          color: action.payload
+        };
     default:
       return state;
   }

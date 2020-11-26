@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 
 /* Styles */
 import './profile.settings.styles.scss';
@@ -9,11 +10,10 @@ import Spinner from 'components/UI/spinner/spinner.component';
 //import Alerts from 'components/UI/alerts';
 
 function PublicProfileSettings({ user }) {
-  //console.log(user);
+
   /* Load actual status of the configs */
   const [configs, setConfigs] = useState(null);
-  //const [alert, setAlert] = useState(null);
-  console.log(configs);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     axios
@@ -33,6 +33,11 @@ function PublicProfileSettings({ user }) {
       })
       .catch((err) => console.log(err.response.data.message));
   }, [configs]);
+
+  const configsUpdate = (color) => {
+    setConfigs({ ...configs, color: color });
+    dispatch({ type: 'SET_COLOR', payload: color });
+  };
 
   return (
     <>
@@ -137,9 +142,18 @@ function PublicProfileSettings({ user }) {
           {/* Colors */}
           <div className="settings__page__item__wrapper__item--theme">
             <ul>
-              <li className={`green ${configs.color === 'green' ? 'active' : ''}`} onClick={() => setConfigs({ ...configs, color: 'green' })}></li>
-              <li className={`red ${configs.color === 'red' ? 'active' : ''}`} onClick={() => setConfigs({ ...configs, color: 'red' })}></li>
-              <li className={`brown ${configs.color === 'brown' ? 'active' : ''}`} onClick={() => setConfigs({ ...configs, color: 'brown' })}></li>
+              <li
+                className={`green ${configs.color === 'green' ? 'active' : ''}`}
+                onClick={() => configsUpdate('green')}
+              ></li>
+              <li
+                className={`red ${configs.color === 'red' ? 'active' : ''}`}
+                onClick={() => configsUpdate('red')}
+              ></li>
+              <li
+                className={`brown ${configs.color === 'brown' ? 'active' : ''}`}
+                onClick={() => configsUpdate('brown')}
+              ></li>
             </ul>
           </div>
         </div>

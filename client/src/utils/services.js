@@ -37,3 +37,13 @@ export const loadAllFarmersProfile = async () => {
   }
 
 }
+
+export const loadAdminPanelData = async () => {
+  try {
+    const { data } = await axios.get(`/farmers/admin/panel`);
+    return data;
+  } catch (err) {
+    return err;
+  }
+
+}
