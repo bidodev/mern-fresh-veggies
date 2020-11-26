@@ -2,49 +2,59 @@
 
 .story {
   // ======== HOW IT WORKS ===
+  margin-top: 15vh;
+
+  @media (max-width: 900px) {
+    margin-top: 10vh;
+  }
+
   &__how-it-works {
-    height: 70vh;
+    height: 45vh;
     display: flex;
     justify-content: space-evenly;
-    padding: 18vh 0 2vh 0;
+    padding: 0 4vw;
+    color: #404040;
+
     @media (max-width: 900px) {
-      flex-direction: column-reverse;
+      flex-direction: column;
       align-items: center;
+      height: auto;
+      //border: 1px solid red;
     }
 
     &__left-container {
-      width: 50vw;
-      padding: 2vh 2vh 2vh 10vh;
+      //border: 1px solid red;
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      background-image: url(/images/pngegg2.png);
       background-repeat: no-repeat;
       background-position: bottom right;
       background-size: 20%;
       @media (max-width: 900px) {
         padding: 2vh;
         width: 60vw;
+        
       }
       @media (max-width: 900px) {
         width: 75vw;
       }
 
       &__header {
-        margin: 2vh 0;
-        padding: 0 3vh 0 3vh;
         font-size: $font-size__header__medium;
+        color: #1e5b45;
         @media (max-width: 1150px) {
           font-size: $font-size__header__small;
         }
         @media (max-width: 900px) {
           padding: 0;
           text-align: center;
+          font-size: 1.6rem;
         }
       }
 
       &__text-container {
-        padding: 0 3vh 0 3vh;
+        margin-top: 3rem;
         @media (max-width: 1150px) {
           font-size: $font-size__small;
         }
@@ -52,6 +62,7 @@
           padding: 0;
           text-align: center;
           margin-bottom: 4vh;
+          //border: 1px solid red;
         }
 
         &__list-item {
@@ -70,10 +81,12 @@
     }
 
     &__right-container {
+      //border: 1px solid red;
       width: 50vw;
       display: flex;
       flex-direction: column;
       align-items: center;
+      
       @media (max-width: 900px) {
         width: 100%;
       }
@@ -81,11 +94,14 @@
       &__img-container-top {
         width: 15vw;
         min-width: 13rem;
+
         @media (max-width: 600px) {
           min-width: 11rem;
         }
         &--img {
           width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
 
@@ -95,11 +111,15 @@
           width: 15vw;
           min-width: 13rem;
           margin: 1vh;
+  
           @media (max-width: 600px) {
             min-width: 11rem;
+     
           }
           &--img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
         }
       }
@@ -108,19 +128,30 @@
 
   // ======== CREATE YOUR PROFILE ===
   &__create-your-profile {
+    height: 50vh;
+    padding: 0 4vw;
+    width: 100vw;
     display: flex;
     justify-content: space-evenly;
     background: #ffffff;
     @media (max-width: 900px) {
+      //border: 1px solid red;
+      font-size: 1.6rem;
       flex-direction: column-reverse;
       align-items: center;
+      padding: 0;
+      //border: 1px solid red;
+      margin: 5rem 0;
     }
 
     &__img-container {
-      margin: 3vh 0;
-      width: 30vw;
+      //border: 1px solid red;
+      width: 50%;
+      transform: translate(0%, -35%);
       @media (max-width: 900px) {
         width: 66vw;
+        transform: translate(0%, 10%);
+        padding: 0;
       }
       &--img {
         width: 100%;
@@ -130,18 +161,25 @@
     }
 
     &__description-container {
-      margin: 3vh 0;
-      width: 40vw;
+      margin-top: 5rem;
+      margin-left:5rem;
+      width: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      color: #404040;
+      //justify-content: center;
       @media (max-width: 900px) {
         width: 70vw;
+        padding: 0;
+        margin: 0;
+        
       }
 
       &--header {
         font-size: $font-size__header__medium;
         font-weight: $font-weight__bold;
+        color: #1e5b45;
+        margin: 1rem;
         @media (max-width: 1150px) {
           font-size: $font-size__header__small;
         }
@@ -151,7 +189,7 @@
       }
 
       &--text {
-        margin: 2vh 0;
+        margin: 1rem;
         @media (max-width: 1150px) {
           margin: 1vh 0;
           font-size: $font-size__small;
