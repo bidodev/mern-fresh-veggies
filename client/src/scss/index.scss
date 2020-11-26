@@ -11,10 +11,10 @@
   margin: 0;
 }
 
-
 html {
   box-sizing: border-box;
   font-size: 100%; //define the 1rem value = 10px
+  overflow-x: hidden;
 }
 
 body {
