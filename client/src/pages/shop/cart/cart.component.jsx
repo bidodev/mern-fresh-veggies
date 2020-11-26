@@ -16,7 +16,7 @@ const Cart = ({ match }) => {
 
   // INCREASE from the cart
   const increaseItemHandler = (cartItem) => {
-    const { id, name, quantity, farmer } = cartItem;
+    const { id, name, farmer } = cartItem;
     dispatch({
       type: 'ADD_ITEM',
       payload: { id, name, quantity: 1, farmer },
@@ -35,8 +35,7 @@ const Cart = ({ match }) => {
     dispatch({ type: 'CLEAR_CART', payload: cartItemToRemove });
   };
 
-  /* Hide or show cart */
-  const toggleModal = () => dispatch({ type: 'TOGGLE_CART_HIDDEN' });
+
   // here we need to reverse the logic with the modal
   const closeModal = () => (match.path === '/shop/cart' ? false : dispatch({ type: 'TOGGLE_CART_HIDDEN' }));
   return (

@@ -6,7 +6,7 @@
   right: 10vw;
   bottom: 20vh;
   border: none;
-  background-color: #e0b835;
+  background-color: #fff;
   display: flex;
   @media only screen and (max-width: 900px) {
     width: 90vw;
@@ -32,7 +32,7 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: rgba(7, 6, 6, 0.925);
+    background-color:var(--modal-overlay);
     border: none;
     z-index: 9999;
   }
