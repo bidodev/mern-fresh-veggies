@@ -27,7 +27,7 @@ const Story = () => {
         <div className="story__how-it-works">
           <div className="story__how-it-works__left-container">
             <h3 className="story__how-it-works__left-container__header">
-              Are you a local producer? Follow our simple steps:
+              Are you a local producer? Join us in a few steps:
             </h3>
             <div className="story__how-it-works__left-container__text-container">
               <div className="story__how-it-works__left-container__text-container__list-item">
@@ -60,7 +60,7 @@ const Story = () => {
           <div className="story__how-it-works__right-container">
             <div className="story__how-it-works__right-container__img-container-top">
               <img
-                src="/images/farm-1.jpg"
+                src="/images/preadmin/farm-1.png"
                 alt="img"
                 className="story__how-it-works__right-container__img-container-top--img"
               />
@@ -68,14 +68,14 @@ const Story = () => {
             <div className="story__how-it-works__right-container__bottom-container">
               <div className="story__how-it-works__right-container__bottom-container__img-container">
                 <img
-                  src="/images/farm-2.jpg"
+                  src="/images/preadmin/farm-2.jpg"
                   alt="img"
                   className="story__how-it-works__right-container__bottom-container__img-container--img"
                 />
               </div>
               <div className="story__how-it-works__right-container__bottom-container__img-container">
                 <img
-                  src="/images/farm-3.jpg"
+                  src="/images/preadmin/farm-3.jpg"
                   alt="img"
                   className="story__how-it-works__right-container__bottom-container__img-container--img"
                 />
@@ -86,7 +86,7 @@ const Story = () => {
 
         <div className="story__create-your-profile">
           <div className="story__create-your-profile__img-container">
-            <img className="story__create-your-profile__img-container--img" src="/images/farm-1.jpg" alt="img" />
+            <img className="story__create-your-profile__img-container--img" src="/images/preadmin/farmer.png" alt="img" />
           </div>
           <div className="story__create-your-profile__description-container">
             <div className="story__create-your-profile__description-container--header">Create Your Profile</div>
