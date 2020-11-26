@@ -154,7 +154,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        width: 90%;
+        width: 95%;
         margin-right: 0;
       }
 
@@ -304,7 +304,7 @@
       &__img-container-2 {
         width: 28vw;
         @media (max-width: 1050px) {
-          width: 90%;
+          width: 95%;
         }
         @media (max-width: 640px) {
           min-width: 90%;
