@@ -1,16 +1,24 @@
 .fa-arrow-circle-up {
+  height: 10rem;
   position: fixed;
   bottom: 4vh;
   right: 4vw;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   z-index: 9999;
   cursor: pointer;
   animation: fadeIn 0.3s;
   transition: opacity 0.4s;
   opacity: 0.5;
+  color: #f7b53a;
 
   &:hover {
     opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
   }
 
   @keyframes fadeIn {
@@ -21,7 +29,12 @@
       opacity: 0.5;
     }
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 900px) {
+    height: 10rem;
+  }
+  @media only screen and (max-width: 600px) {
     left: 80%;
+    height: 5rem;
+    font-size: 2.5rem;
   }
 }

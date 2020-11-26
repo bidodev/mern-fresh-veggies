@@ -26,7 +26,7 @@ const ScrollTopArrow = () => {
       icon={['fas', 'arrow-circle-up']}
       className="fa-arrow-circle-up"
       onClick={scrollTop}
-      style={{ height: 40, display: showScroll ? 'flex' : 'none' }}
+      style={{ display: showScroll ? 'flex' : 'none' }}
     />
   );
 };
