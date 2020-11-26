@@ -9,6 +9,13 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-end;
+  @media (max-width: 1050px) {
+    align-items: center;
+  }
+  @media (max-width: 690px) {
+    min-width: 90%;
+    height: 15rem;
+  }
   &__box {
     width: 40rem;
     height: 20vh;
@@ -27,11 +34,9 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      @media (max-width: 450px) {
-        margin-right: -8rem;
-      }
-      @media (max-width: 450px) {
-        margin-right: -12rem;
+
+      @media (max-width: 500px) {
+        justify-content: space-around;
       }
       &__social-media {
         width: 15rem;

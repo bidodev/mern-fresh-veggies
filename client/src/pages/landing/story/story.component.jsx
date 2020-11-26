@@ -14,7 +14,7 @@ const Story = () => {
         <div className="story__hero-section">
           <h2 className="story__hero-section--header">Why choose us?</h2>
           <div className="story__hero-section__img-container">
-            <img src="/images/farm-1.jpg" alt="img" className="story__hero-section__img-container--img" />
+            <img src="/images/story__info-section2.jpg" alt="img" className="story__hero-section__img-container--img" />
           </div>
           <div className="story__hero-section__banner">
             <div className="story__hero-section__banner__text-container">
@@ -53,13 +53,13 @@ const Story = () => {
               </div>
               <div className="story__info-section__left-container__text-container--button">
                 <Link to="/farmer/admin">
-                  <CustomButton style={{ width: '11rem' }}>Join Us</CustomButton>
+                  <CustomButton>Join Us</CustomButton>
                 </Link>
               </div>
             </div>
             <div className="story__info-section__left-container__img-container">
               <img
-                src="/images/farmer-3.jpg"
+                src="/images/story__info-section5.jpg"
                 alt="img"
                 className="story__info-section__left-container__img-container--img"
               />
@@ -68,14 +68,14 @@ const Story = () => {
           <div className="story__info-section__right-container">
             <div className="story__info-section__right-container__img-container-1">
               <img
-                src="/images/farmer-1.jpg"
+                src="/images/story-hero-section1.jpg"
                 alt="img"
                 className="story__info-section__right-container__img-container-1--img"
               />
             </div>
             <div className="story__info-section__right-container__img-container-2">
               <img
-                src="/images/farmer-4.jpg"
+                src="/images/story__info-section1.jpg"
                 alt="img"
                 className="story__info-section__right-container__img-container-2--img"
               />
