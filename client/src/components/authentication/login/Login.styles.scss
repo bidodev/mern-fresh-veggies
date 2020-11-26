@@ -10,7 +10,7 @@
 }
 .sign-in__form-container {
   width: 45%;
-  background-color: #e0b835;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +18,23 @@
     text-align: center;
     div {
       margin-bottom: 2rem;
+    }
+  }
+
+  .alert-error{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h5 {
+      color: #D8000C;
+      background-color: #FFBABA;
+      font-weight: 300;
+      text-align: center;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      width: 100%;
     }
   }
   @media only screen and (max-width: 500px) {

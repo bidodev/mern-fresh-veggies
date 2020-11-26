@@ -94,9 +94,7 @@ exports.login = asyncWrapper(async (req, res, next) => {
   //2. Decrypt the password and check if the given password match with the password in the database
   //2.1. If no user or password does not match, return error
   if (!user || !(await user.comparePasswords(password))) {
-    return next(
-      new AppError(`Credentials don't match. Try again`, 403, 'fail')
-    );
+    return res.status(403).json({ errors: 'Invalid credentials' });
   }
 
   //3. Send the response to the client

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { loadAdminPanelData } from 'utils/services';
+//import { loadAdminPanelData } from 'utils/services';
 
 /* Import themes */
 import THEMES from 'settings/public-profile/Themes';
