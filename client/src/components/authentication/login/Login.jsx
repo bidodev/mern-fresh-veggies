@@ -13,6 +13,9 @@ import './Login.styles.scss';
 const ClientLogin = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
+  const [error, setError] = useState(null);
+  const [signin, setIsSignin] = useState(false);
+
   const dispatch = useDispatch();
 
   /* show or hidden the authentication modal  */
@@ -30,13 +33,21 @@ const ClientLogin = () => {
       password: userPassword,
     };
 
+    setIsSignin(true);
     axios
       .post('/account/login', data)
       .then(({ data }) => {
         dispatch(loginUser(data));
         toggleAuthenticationModal();
+        setIsSignin(false);
       })
-      .catch((error) => console.log('Error in the login', error.message));
+      .catch((error) => {
+        setError(error.response.data.errors);
+        setIsSignin(false);
+        setTimeout(() => {
+          setError(null);
+        }, 3000)
+      });
   };
 
   // update localState
@@ -79,7 +90,10 @@ const ClientLogin = () => {
 
             <div onClick={toggleAuthenticationState}>You are not registered yet?</div>
             <div className="buttons">
-              <CustomButton type="submit">Sign In</CustomButton>
+              <CustomButton type="submit">{signin ? 'Loging...' : 'Sign In'}</CustomButton>
+            </div>
+            <div className="alert-error">
+            {error && <h5>{(`Fail: ${error}`)}</h5>}
             </div>
           </form>
         </div>

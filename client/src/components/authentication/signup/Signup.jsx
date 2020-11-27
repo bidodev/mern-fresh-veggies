@@ -12,30 +12,24 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 import './Signup.styles.scss';
 
 const ClientSignUp = () => {
-
   const match = useRouteMatch();
-  const url = match.path === '/shop' ? 'user' : 'farmer'
- 
+  const url = match.path === '/shop' ? 'user' : 'farmer';
+
   /* show or hidden the authentication modal  */
   const toggleAuthenticationModal = () => dispatch({ type: 'SHOW_AUTH' });
 
   /* toggle which component is active (signIn or SignUp) */
   const toggleAuthenticationState = () => dispatch({ type: 'SWITCH_AUTH' });
 
-
   const [displayName, setDisplayName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState(null);
 
   const dispatch = useDispatch();
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (userPassword !== confirmPassword) {
-      alert("Passwords don't match...");
-      return;
-    }
 
     // Connecting CLIENT with the API
     const data = {
@@ -50,7 +44,12 @@ const ClientSignUp = () => {
         dispatch({ type: 'LOGIN_USER', payload: data });
         toggleAuthenticationModal();
       })
-      .catch((error) => console.log('Error creating user', error.message));
+      .catch((error) => {
+        setError(error.response.data.errors);
+        setTimeout(() => {
+          setError(null);
+        }, 3000);
+      });
   };
 
   // Update localState
@@ -83,14 +82,23 @@ const ClientSignUp = () => {
               name="displayName"
               value={displayName}
               label="name"
+              required
               handleInputValue={handleInputValue}
             />
-            <FormInput type="email" name="email" value={userEmail} label="email" handleInputValue={handleInputValue} />
+            <FormInput
+              type="email"
+              required
+              name="email"
+              value={userEmail}
+              label="email"
+              handleInputValue={handleInputValue}
+            />
             <FormInput
               type="password"
               name="password"
               value={userPassword}
               label="password"
+              required
               handleInputValue={handleInputValue}
             />
             <FormInput
@@ -98,12 +106,16 @@ const ClientSignUp = () => {
               name="confirmPassword"
               value={confirmPassword}
               label="repeat password"
+              required
               handleInputValue={handleInputValue}
             />
             <div onClick={toggleAuthenticationState}>You already have an account?</div>
 
             <div className="buttons">
               <CustomButton type="submit">Sign Up</CustomButton>
+            </div>
+            <div className="alert-error">
+            {error && error.map((error) => <h5>{`${error.param}: ${error.msg}`}</h5>)}
             </div>
           </form>
         </div>

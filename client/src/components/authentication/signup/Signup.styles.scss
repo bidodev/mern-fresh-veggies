@@ -10,11 +10,30 @@
 }
 .sign-up__form-container {
   width: 45%;
-  background-color: #e0b835;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   .sign-up__form {
+
+    .alert-error{
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45%;
+    
+      h5 {
+        color: #D8000C;
+        background-color: #FFBABA;
+        font-weight: 300;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        
+      }
+    }
+    
     .group {
       margin: 2.5rem 0;
     }
@@ -42,3 +61,4 @@
     }
   }
 }
+

@@ -25,7 +25,7 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes, photo
   /**
    * CroppedImag
    */
-  const [croppedImage, setCroppedImage] = useState(null);
+  //const [croppedImage, setCroppedImage] = useState(null);
 
   /*
    * Function to load an image and save the file
@@ -52,16 +52,16 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes, photo
 
   const saveCropedImage = useCallback(async () => {
     try {
-      const croppedImage = await getCroppedImg(imagePreview, croppedAreaPixels);
-      setCroppedImage(croppedImage);
+      //const croppedImage = await getCroppedImg(imagePreview, croppedAreaPixels);
+      //setCroppedImage(croppedImage);
     } catch (e) {
       console.error(e);
     }
   }, [croppedAreaPixels, imagePreview]);
 
-  const onClose = useCallback(() => {
-    setCroppedImage(null);
-  }, []);
+  // const onClose = useCallback(() => {
+  //   setCroppedImage(null);
+  // }, []);
 
   /* After crop send the photo to Multer */
   const handleImageUpload = (event) => {
