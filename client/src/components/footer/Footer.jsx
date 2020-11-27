@@ -26,6 +26,7 @@ const Footer = () => {
             <p>+49 01522 3044584 </p>
           </div>
         </div>
+        <p>Made with ❤️ in Berlin by Bido, Simona and Kevin.</p>
       </div>
     </footer>
   );
