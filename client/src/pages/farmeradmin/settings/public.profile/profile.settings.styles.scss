@@ -7,6 +7,7 @@
     font-size: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: var(--header);
   }
 
   &--sub {
@@ -27,7 +28,7 @@
   }
 
   h3 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     @media (max-width: 850px) {
       margin-bottom: 1rem;
     }
@@ -43,53 +44,46 @@
         justify-content: space-evenly;
         .green {
           background-color: var(--primary-green);
-          height: 5rem;
-          width: 5rem;
+          height: 3.5rem;
+          width: 3.5rem;
           border-radius: 50%;
-          opacity: 0.5;
-
+          opacity: 0.8;
+          transition: transform 0.3s;
           &:hover {
             opacity: 1;
             cursor: pointer;
           }
-        }
-
-        .active {
-          opacity: 1;
         }
 
         .red {
           background-color: var(--primary-red);
-          height: 5rem;
-          width: 5rem;
+          height: 3.5rem;
+          width: 3.5rem;
           border-radius: 50%;
-          opacity: 0.5;
-
+          opacity: 0.8;
+          transition: transform 0.3s;
           &:hover {
             opacity: 1;
             cursor: pointer;
           }
-        }
-
-        .active {
-          opacity: 1;
         }
 
         .brown {
           background-color: var(--primary-brown);
-          height: 5rem;
-          width: 5rem;
+          height: 3.5rem;
+          width: 3.5rem;
           border-radius: 50%;
-          opacity: 0.5;
-
+          opacity: 0.8;
+          transition: transform 0.3s;
           &:hover {
             opacity: 1;
             cursor: pointer;
           }
         }
-
         .active {
           opacity: 1;
+          box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.7);
+          transform: scale(1.3);
         }
       }
     }

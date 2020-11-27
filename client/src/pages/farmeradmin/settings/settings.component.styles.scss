@@ -61,18 +61,21 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
       color: #333;
+      border-radius: 4px;
       @media (max-width: 850px) {
         width: 18rem;
         padding: 0.5rem;
         margin: 0 auto;
       }
       &:hover {
-        background-color: #e5e5e5;
+        color: white;
+        background-color: var(--header);
       }
     }
 
     &--active {
-      background-color: #e5e5e5;
+      color: white;
+      background-color: var(--header);
       width: 16rem;
       @media (max-width: 850px) {
         width: 18rem;
