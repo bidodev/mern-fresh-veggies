@@ -29,19 +29,20 @@ const ProfileInfo = ({ name, products, slug }) => {
         <aside className="public-farmer__aside">
           <div className="public-farmer__aside__infos">
             <div className="public-farmer__aside__infos__avatar">
-              <p className="public-farmer__aside__infos__avatar__a"></p>
-              <div className="public-farmer__aside__infos__avatar__b">
-                <h2>{name}</h2>
-                <span role="img">⭐⭐⭐⭐⭐</span>
-                <h3>Location</h3>
-                <p>Berlin - Germany</p>
+              <p className="public-farmer__aside__infos__avatar__banner"></p>
+              <div className="public-farmer__aside__infos__avatar__description">
+                <h2 className="public-farmer__aside__infos__avatar__description--name">{name}</h2>
+                <span className="public-farmer__aside__infos__avatar__description--rate" role="img">
+                  ⭐⭐⭐⭐⭐
+                </span>
+                <h3 className="public-farmer__aside__infos__avatar__description--location-header">Location</h3>
+                <p className="public-farmer__aside__infos__avatar__description--location">Berlin - Germany</p>
               </div>
             </div>
             <div className="public-farmer__aside__infos__data">
               <p className="public-farmer__aside__infos__paragraph">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, fugiat? Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Omnis neque aspernatur in qui temporibus veritatis unde, culpa porro?
-                Nemo, magnam.
+                consectetur adipisicing elit. Omnis neque aspernatur in qui temporibus.
               </p>
             </div>
             <div className="public-farmer__aside__infos__expertise">
@@ -51,6 +52,7 @@ const ProfileInfo = ({ name, products, slug }) => {
                 <li>Fruits</li>
                 <li>Vegan</li>
                 <li>Certified</li>
+                <li>Local</li>
               </ul>
             </div>
           </div>
@@ -63,10 +65,13 @@ const ProfileInfo = ({ name, products, slug }) => {
             <div className="public-farmer__main__featured__text-container">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati perspiciatis omnis ducimus mollitia
               inventore saepe fugit voluptatum vel, quasi recusandae sunt dolor odio quam minima, magnam facilis! Odit
-              cumque, distinctio qui magni eum adipisci voluptatibus saepe amet velit voluptatem deserunt ipsa ratione
-              atque ea voluptates at, harum non, fuga sunt. <br />
+              cumque, distinctio qui magni eum adipisci voluptatibus saepe amet velit voluptatem deserunt. <br />
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, maxime. Mollitia modi odio distinctio sed
-              minus, impedit doloremque rerum numquam blanditiis, fuga aut reprehenderit sunt architecto repellat.
+              minus, impedit doloremque rerum numquam blanditiis, fuga aut reprehenderit sunt architecto repellat.{' '}
+              <br />
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo possimus nostrum at dicta ad quas optio
+              voluptates a laboriosam sapiente iusto dignissimos deleniti, nihil iste officia. Repellendus expedita cum
+              ratione quis dolores amet corrupti doloremque.
             </div>
           </div>
           <div className="public-farmer__main__reviews">

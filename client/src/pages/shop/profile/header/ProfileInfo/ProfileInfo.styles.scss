@@ -7,7 +7,18 @@
     flex-direction: column;
   }
 
-  /* New Products Menu*/
+  /* new product scroll bar */
+  .public-farmer__main__right {
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #9b9b9b93;
+    }
+  }
+
+  // ======== NEW PRODUCTS (right) ===
   &__main__right {
     min-width: 12rem;
     overflow-y: scroll;
@@ -54,10 +65,11 @@
     }
   }
 
+  // ======== ASIDE (left) ===
   &__aside {
     display: flex;
     &__infos {
-      width: 14rem;
+      width: 15rem;
       @media (max-width: 750px) {
         width: 100%;
       }
@@ -66,7 +78,7 @@
         @media (max-width: 750px) {
           height: unset;
         }
-        &__a {
+        &__banner {
           height: 50%;
           border-bottom-left-radius: 4px;
           border-bottom-right-radius: 4px;
@@ -78,40 +90,66 @@
             height: 3.5rem;
           }
         }
-        &__b {
+        &__description {
           height: 7rem;
-          padding: 1rem 2rem;
+          padding: 1rem;
           border-right: 1px solid var(--border-color);
           @media (max-width: 750px) {
-            height: 5rem;
-            padding: 0 2rem;
+            height: 0rem;
+            padding: 0 1rem;
+            position: relative;
           }
-          P {
-            color: var(--text-body);
+          &--name {
+            font-size: 2.2rem;
+            color: var(--header);
+            font-weight: 500;
+            @media (max-width: 750px) {
+              font-size: 1.8rem;
+            }
+          }
+          &--rate {
+            @media (max-width: 750px) {
+              font-size: 0.9rem;
+              position: absolute;
+              top: 0.5rem;
+              left: 4rem;
+            }
+          }
+          &--location-header {
+            margin-top: 1.5rem;
+            color: var(--header);
+            font-weight: 500;
+            text-transform: uppercase;
+            @media (max-width: 750px) {
+              margin-top: 0;
+              font-size: 0.9rem;
+              position: absolute;
+              top: 0.3rem;
+              right: 1rem;
+            }
+          }
+          &--location {
+            @media (max-width: 750px) {
+              font-size: 0.9rem;
+              position: absolute;
+              top: 1.2rem;
+              right: 1rem;
+            }
           }
         }
-        h2 {
-          font-size: 2.2rem;
-          color: var(--header);
-          font-weight: 500;
-        }
-        h3 {
-          margin-top: 1.5rem;
-          color: var(--header);
-          font-weight: 500;
-          text-transform: uppercase;
-          @media (max-width: 750px) {
-            margin-top: 0.3rem;
-          }
+      }
+      &__data {
+        padding: 4rem 1rem 1rem 1rem;
+        border-bottom: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        @media (max-width: 750px) {
+          padding: 1.4rem;
         }
       }
       &__paragraph {
-        color: var(--text-body);
-      }
-      &__data {
-        padding: 4rem 2rem 1rem 2rem;
-        border-bottom: 1px solid var(--border-color);
-        border-right: 1px solid var(--border-color);
+        @media (max-width: 750px) {
+          display: none;
+        }
       }
       &__expertise {
         padding: 2rem;
@@ -134,6 +172,7 @@
             justify-content: center;
             align-items: center;
             font-size: 0.9rem;
+            padding: 0 0.8rem;
             margin: 0.5rem 0.5rem 0.5rem 0;
             font-style: italic;
             border-radius: 5px;
@@ -144,10 +183,17 @@
     }
   }
 
+  // ======== MAIN (center) ===
   &__main {
     &__featured {
       padding-bottom: 2rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      @media (min-width: 1350px) {
+        min-height: 25rem;
+      }
+      @media (max-width: 850px) {
+        padding-bottom: 0.5rem;
+      }
       @media (max-width: 750px) {
         padding-bottom: 0;
       }
@@ -161,8 +207,15 @@
         letter-spacing: 0.1px;
         display: flex;
         align-items: center;
+        @media (max-width: 850px) {
+          padding: 0.5rem 1rem;
+          margin: 0;
+        }
         @media (max-width: 750px) {
           height: 2.6rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
       &__text-container {
@@ -170,11 +223,14 @@
         color: var(--text-body);
         font-size: 0.9rem;
         @media (min-width: 980px) {
-          height: 16rem;
           font-size: 1rem;
         }
+        @media (max-width: 850px) {
+          padding: 0.5rem 1rem;
+        }
         @media (max-width: 750px) {
-          padding: 0 2rem;
+          padding: 0 1rem;
+          text-align: center;
         }
         &--header {
           margin-top: 1rem;
@@ -183,10 +239,15 @@
           font-weight: 500;
           text-transform: uppercase;
           letter-spacing: 0.1px;
+          @media (max-width: 850px) {
+            margin-top: 0.3rem;
+            padding: 0 1rem;
+          }
           @media (max-width: 750px) {
             margin: 0.3rem 0;
             font-size: 1.1rem;
-            padding: 0 2rem;
+            padding: 0 1rem;
+            text-align: center;
           }
         }
       }
@@ -196,15 +257,21 @@
       @media (max-width: 980px) {
         font-size: 0.9rem;
       }
+      @media (max-width: 850px) {
+        padding: 0 1rem;
+      }
       &--header {
         margin: 1rem 0;
         color: var(--header);
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 0.1px;
+        @media (max-width: 850px) {
+          margin: 0.5rem 0;
+        }
         @media (max-width: 750px) {
-          margin: 0.3rem 0;
           font-size: 1.1rem;
+          text-align: center;
         }
       }
       &--author {
@@ -242,23 +309,5 @@
         }
       }
     }
-  }
-
-  &__rate {
-    margin: 1rem 0 2rem 2rem;
-    &--stars {
-      margin: 0.5rem 0;
-    }
-  }
-}
-
-.public-farmer__main__right {
-  &::-webkit-scrollbar {
-    width: 0px; /* Remove scrollbar space */
-    background: transparent; /* Optional: just make scrollbar invisible */
-  }
-  /* Optional: show position indicator in black in case width is > 0 */
-  &::-webkit-scrollbar-thumb {
-    background: #9b9b9b93;
   }
 }
