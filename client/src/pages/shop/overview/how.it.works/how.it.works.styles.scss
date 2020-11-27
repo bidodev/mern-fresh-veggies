@@ -2,8 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('390.jpg');
+  background-position: bottom left;
+  background-size: 20%;
+  background-repeat: no-repeat;
   @media (max-width: 780px) {
     margin-bottom: 10vh;
+    background-image: none;
   }
 
   &__icons-section {

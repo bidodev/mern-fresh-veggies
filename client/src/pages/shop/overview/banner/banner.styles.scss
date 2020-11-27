@@ -9,9 +9,9 @@
     height: 60vh;
     object-fit: cover;
     background-attachment: fixed;
-    background-image: linear-gradient(rgba(#000, 0.1), rgba(#000, 0.2)), url('banner-small.jpg');
+    background-image: linear-gradient(rgba(#000, 0.1), rgba(#000, 0.2)), url('banner2.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
 
     &--header {
       text-align: center;

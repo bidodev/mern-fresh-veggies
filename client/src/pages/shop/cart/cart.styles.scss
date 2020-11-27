@@ -9,6 +9,11 @@
     margin-top: 5rem;
     height: 90vh;
   }
+  background-image: url('goodie-box.jpg');
+  background-position: right bottom;
+  background-size: 25%;
+  background-repeat: no-repeat;
+
   /// this is to prevent redirecting on a click outside the button
   .back-button {
     margin-right: 15rem;
@@ -119,7 +124,9 @@
   }
   .total-price {
     text-align: right;
-    margin-right: 12vw;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10rem;
     font-weight: bold;
     font-size: 1.1rem;
     @media (max-width: 800px) {
