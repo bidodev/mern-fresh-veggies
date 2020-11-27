@@ -5,14 +5,18 @@
   margin-left: 4vw;
   margin-top: 8rem;
   height: 80vh;
-  @media (max-width: 800px) {
-    margin-top: 5rem;
-    height: 90vh;
-  }
   background-image: url('goodie-box.jpg');
   background-position: right bottom;
   background-size: 25%;
   background-repeat: no-repeat;
+  @media (max-width: 800px) {
+    margin-top: 5rem;
+    height: 90vh;
+    background-size: 65%;
+  }
+  @media (max-width: 500px) {
+    background-image: none;
+  }
 
   /// this is to prevent redirecting on a click outside the button
   .back-button {
@@ -24,6 +28,9 @@
     .fa-angle-left {
       font-size: 2rem;
       margin-right: 1rem;
+    }
+    @media (max-width: 500px) {
+      width: 8rem;
     }
   }
   .cart-title {
@@ -131,6 +138,7 @@
     font-size: 1.1rem;
     @media (max-width: 800px) {
       margin-top: 4rem;
+      margin-left: 2rem;
     }
   }
   .checkout-buttons {
