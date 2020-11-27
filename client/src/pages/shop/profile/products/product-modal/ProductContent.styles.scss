@@ -5,8 +5,8 @@
 
   &__close {
     position: absolute;
-    top: 0.2rem;
-    right: 0.6rem;
+    top: 0.1rem;
+    right: 0.8rem;
     font-size: 2rem;
     transition: all 0.5s ease;
     &:hover {
@@ -30,10 +30,10 @@
       width: 18rem;
       min-height: 20rem;
       position: absolute;
-      top: 6rem;
+      top: 5rem;
       left: 7rem;
       border-radius: 4px;
-      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+      box-shadow: 0px 4px 12px rgba(61, 42, 42, 0.6);
       background: rgb(255, 255, 255);
       display: flex;
       align-items: center;
@@ -46,16 +46,16 @@
         left: 2rem;
       }
       @media (max-width: 580px) {
-        width: 6rem;
-        min-height: 12rem;
+        width: 7rem;
+        min-height: 11rem;
         top: 9rem;
-        left: 0.7rem;
+        left: 0.5rem;
       }
       &--img {
-        transition: transform 2s;
+        transition: transform 2.5s;
         width: 100%;
         &:hover {
-          transform: scale(1.1);
+          transform: scale(0.8);
           cursor: zoom-in;
         }
       }
