@@ -104,15 +104,15 @@
             color: var(--header);
             font-weight: 500;
             @media (max-width: 750px) {
-              font-size: 1.8rem;
+              font-size: 1.5rem;
             }
           }
           &--rate {
             @media (max-width: 750px) {
-              font-size: 0.9rem;
+              font-size: 0.7rem;
               position: absolute;
-              top: 0.5rem;
-              left: 4rem;
+              top: 1.6rem;
+              left: 1rem;
             }
           }
           &--location-header {
@@ -122,7 +122,7 @@
             text-transform: uppercase;
             @media (max-width: 750px) {
               margin-top: 0;
-              font-size: 0.9rem;
+              font-size: 0.8rem;
               position: absolute;
               top: 0.3rem;
               right: 1rem;
