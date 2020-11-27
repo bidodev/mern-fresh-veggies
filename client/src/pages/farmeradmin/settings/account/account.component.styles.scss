@@ -13,6 +13,7 @@
       font-size: 2rem;
       margin-bottom: 0.5rem;
       font-weight: 600;
+      color: var(--header);
     }
     &--sub {
       color: #666666;
@@ -43,7 +44,7 @@
         padding: 0.8rem 0.5rem;
       }
       svg {
-        color: #666;
+        color: #f75d37;
         font-size: 2rem;
         &:hover {
           cursor: pointer;

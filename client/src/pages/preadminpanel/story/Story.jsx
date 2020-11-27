@@ -43,8 +43,8 @@ const Story = () => {
                   <IosColorPaletteOutline fontSize="30px" />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
-                  Personalize your store: describe your activity in a biography, upload images of your farm and products
-                  and more.
+                  Personalize your store: describe your activity in a biography, upload images of your farm and
+                  products.
                 </div>
               </div>
               <div className="story__how-it-works__left-container__text-container__list-item">
@@ -86,7 +86,11 @@ const Story = () => {
 
         <div className="story__create-your-profile">
           <div className="story__create-your-profile__img-container">
-            <img className="story__create-your-profile__img-container--img" src="/images/preadmin/farmer.png" alt="img" />
+            <img
+              className="story__create-your-profile__img-container--img"
+              src="/images/preadmin/farmer.png"
+              alt="img"
+            />
           </div>
           <div className="story__create-your-profile__description-container">
             <div className="story__create-your-profile__description-container--header">Create Your Profile</div>

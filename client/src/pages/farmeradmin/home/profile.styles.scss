@@ -1,10 +1,9 @@
 .panel-profile {
   padding-top: 8vh;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f1f1f1;
+  background-color: #fff;
   @media (max-width: 1050px) {
     padding-top: 6vh;
   }
@@ -13,7 +12,8 @@
     margin: 2vh 0;
     width: 75%;
     height: 100%;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    box-shadow: 0 12px 16px -1px rgba(0, 0, 0, 0.3);
     @media (max-width: 1050px) {
       width: 100%;
       padding-left: 4rem;

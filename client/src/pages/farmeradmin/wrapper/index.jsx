@@ -16,17 +16,13 @@ import ProfileAdmin from 'pages/farmeradmin/home/ProfileAdmin';
 import Stock from 'pages/farmeradmin/stock/stock.component';
 import FarmerSettings from 'pages/farmeradmin/settings/settings.component';
 
-/* Styles */
-import './admin.page.styles.scss';
-
 /**
  * Using React.memo
  * We don't need to reload the parent every time the children update
  */
 
-
 const FarmerAdmin = React.memo(({ match }) => {
-  const color = useSelector(({status}) => status.color);
+  const color = useSelector(({ status }) => status.color);
 
   return (
     <>

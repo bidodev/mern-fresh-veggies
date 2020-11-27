@@ -7,6 +7,7 @@ const FarmerBiography = ({ name }) => {
   return (
     <div className="panel-profile__biography">
       <div className="panel-profile__biography__info">Welcome {name}</div>
+      <div className="panel-profile__biography__rate">⭐⭐⭐⭐⭐</div>
       <div className="panel-profile__biography__text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nostrum totam a deleniti labore quis nihil, quidem
         amet laboriosam ea asperiores velit accusamus. Iste numquam pariatur nesciunt sapiente quidem perspiciatis neque

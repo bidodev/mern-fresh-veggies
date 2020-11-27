@@ -1,6 +1,7 @@
 .panel-profile__biography {
   display: flex;
-  background-color: #f9f9f9;
+  background-color: #fff;
+  position: relative;
   @media (max-width: 1050px) {
     flex-direction: column;
   }
@@ -10,11 +11,27 @@
     padding: 9rem 0 0 5rem;
     width: 18.7rem;
     @media (max-width: 1050px) {
-      margin: 8rem 0 1rem;
+      margin: 5rem 0 1rem;
       padding: 1rem 0 0 4rem;
     }
     @media (max-width: 650px) {
       padding: 0 1.5rem 0;
+      margin: 4rem 0 0 2rem;
+    }
+  }
+
+  &__rate {
+    position: absolute;
+    top: 11rem;
+    left: 5rem;
+    @media (max-width: 1050px) {
+      top: 5.9rem;
+      left: 12rem;
+    }
+    @media (max-width: 650px) {
+      font-size: 0.8rem;
+      top: 4rem;
+      left: 11rem;
     }
   }
 
