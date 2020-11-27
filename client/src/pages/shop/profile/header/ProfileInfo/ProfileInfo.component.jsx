@@ -29,12 +29,14 @@ const ProfileInfo = ({ name, products, slug }) => {
         <aside className="public-farmer__aside">
           <div className="public-farmer__aside__infos">
             <div className="public-farmer__aside__infos__avatar">
-              <p className="public-farmer__aside__infos__avatar__a"></p>
-              <div className="public-farmer__aside__infos__avatar__b">
-                <h2>{name}</h2>
-                <span role="img">⭐⭐⭐⭐⭐</span>
-                <h3>Location</h3>
-                <p>Berlin - Germany</p>
+              <p className="public-farmer__aside__infos__avatar__banner"></p>
+              <div className="public-farmer__aside__infos__avatar__description">
+                <h2 className="public-farmer__aside__infos__avatar__description--name">{name}</h2>
+                <span className="public-farmer__aside__infos__avatar__description--rate" role="img">
+                  ⭐⭐⭐⭐⭐
+                </span>
+                <h3 className="public-farmer__aside__infos__avatar__description--location-header">Location</h3>
+                <p className="public-farmer__aside__infos__avatar__description--location">Berlin - Germany</p>
               </div>
             </div>
             <div className="public-farmer__aside__infos__data">

@@ -7,7 +7,18 @@
     flex-direction: column;
   }
 
-  /* New Products Menu*/
+  /* new product scroll bar */
+  .public-farmer__main__right {
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #9b9b9b93;
+    }
+  }
+
+  // ======== NEW PRODUCTS (right) ===
   &__main__right {
     min-width: 12rem;
     overflow-y: scroll;
@@ -54,6 +65,7 @@
     }
   }
 
+  // ======== ASIDE (left) ===
   &__aside {
     display: flex;
     &__infos {
@@ -66,7 +78,7 @@
         @media (max-width: 750px) {
           height: unset;
         }
-        &__a {
+        &__banner {
           height: 50%;
           border-bottom-left-radius: 4px;
           border-bottom-right-radius: 4px;
@@ -78,40 +90,66 @@
             height: 3.5rem;
           }
         }
-        &__b {
+        &__description {
           height: 7rem;
           padding: 1rem;
           border-right: 1px solid var(--border-color);
           @media (max-width: 750px) {
-            height: 5rem;
+            height: 0rem;
             padding: 0 1rem;
+            position: relative;
           }
-          P {
-            color: var(--text-body);
+          &--name {
+            font-size: 2.2rem;
+            color: var(--header);
+            font-weight: 500;
+            @media (max-width: 750px) {
+              font-size: 1.8rem;
+            }
+          }
+          &--rate {
+            @media (max-width: 750px) {
+              font-size: 0.9rem;
+              position: absolute;
+              top: 0.5rem;
+              left: 4rem;
+            }
+          }
+          &--location-header {
+            margin-top: 1.5rem;
+            color: var(--header);
+            font-weight: 500;
+            text-transform: uppercase;
+            @media (max-width: 750px) {
+              margin-top: 0;
+              font-size: 0.9rem;
+              position: absolute;
+              top: 0.3rem;
+              right: 1rem;
+            }
+          }
+          &--location {
+            @media (max-width: 750px) {
+              font-size: 0.9rem;
+              position: absolute;
+              top: 1.2rem;
+              right: 1rem;
+            }
           }
         }
-        h2 {
-          font-size: 2.2rem;
-          color: var(--header);
-          font-weight: 500;
-        }
-        h3 {
-          margin-top: 1.5rem;
-          color: var(--header);
-          font-weight: 500;
-          text-transform: uppercase;
-          @media (max-width: 750px) {
-            margin-top: 0.3rem;
-          }
-        }
-      }
-      &__paragraph {
-        color: var(--text-body);
       }
       &__data {
         padding: 4rem 1rem 1rem 1rem;
         border-bottom: 1px solid var(--border-color);
         border-right: 1px solid var(--border-color);
+        @media (max-width: 750px) {
+          padding: 1.4rem;
+        }
+      }
+      &__paragraph {
+        @media (max-width: 750px) {
+          display: none;
+        }
       }
       &__expertise {
         padding: 2rem;
@@ -145,6 +183,7 @@
     }
   }
 
+  // ======== MAIN (center) ===
   &__main {
     &__featured {
       padding-bottom: 2rem;
@@ -174,6 +213,9 @@
         }
         @media (max-width: 750px) {
           height: 2.6rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
       &__text-container {
@@ -187,7 +229,8 @@
           padding: 0.5rem 1rem;
         }
         @media (max-width: 750px) {
-          padding: 0 2rem;
+          padding: 0 1rem;
+          text-align: center;
         }
         &--header {
           margin-top: 1rem;
@@ -203,7 +246,8 @@
           @media (max-width: 750px) {
             margin: 0.3rem 0;
             font-size: 1.1rem;
-            padding: 0 2rem;
+            padding: 0 1rem;
+            text-align: center;
           }
         }
       }
@@ -223,13 +267,13 @@
         text-transform: uppercase;
         letter-spacing: 0.1px;
         @media (max-width: 850px) {
-          margin: 0.3rem 0;
+          margin: 0.5rem 0;
         }
         @media (max-width: 750px) {
           font-size: 1.1rem;
+          text-align: center;
         }
       }
-
       &--author {
         margin: 1rem 0;
         display: flex;
@@ -265,23 +309,5 @@
         }
       }
     }
-  }
-
-  &__rate {
-    margin: 1rem 0 2rem 2rem;
-    &--stars {
-      margin: 0.5rem 0;
-    }
-  }
-}
-
-.public-farmer__main__right {
-  &::-webkit-scrollbar {
-    width: 0px; /* Remove scrollbar space */
-    background: transparent; /* Optional: just make scrollbar invisible */
-  }
-  /* Optional: show position indicator in black in case width is > 0 */
-  &::-webkit-scrollbar-thumb {
-    background: #9b9b9b93;
   }
 }
