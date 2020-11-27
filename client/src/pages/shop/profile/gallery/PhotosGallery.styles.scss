@@ -9,5 +9,8 @@
     border-bottom: 1px solid var(--border-color);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    @media (max-width: 400px) {
+      font-size: 1.5rem;
+    }
   }
 }
