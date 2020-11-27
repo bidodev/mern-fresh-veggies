@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 750px) {
+  @media (max-width: 780px) {
     margin-bottom: 10vh;
   }
 
@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    @media (max-width: 750px) {
+    @media (max-width: 780px) {
       height: fit-content;
     }
 
@@ -28,10 +28,12 @@
       align-items: center;
       flex-wrap: wrap;
       box-shadow: 0 12px 16px -8px rgba(119, 119, 119, 0.486);
-      @media (max-width: 1060px) {
+
+      padding: 2rem 2vw;
+      @media (max-width: 1116px) {
         width: 100%;
       }
-      @media (max-width: 750px) {
+      @media (max-width: 780px) {
         width: 85%;
       }
 
