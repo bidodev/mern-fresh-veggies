@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import { limitResults } from 'utils/limiteDesc';
 
 /* Styles */
 import './ProductContent.styles.scss';
@@ -47,7 +48,8 @@ const ProductContent = ({ product, onClose, slug }) => {
       <div className="add-product-wrapper__right-section">
         <h2 className="add-product-wrapper__right-section--name">{name}</h2>
         <div className="add-product-wrapper__right-section--type">{type}</div>
-        <div className="add-product-wrapper__right-section--description">{description}</div>
+        <div className="add-product-wrapper__right-section--description">{limitResults(description, 320)}</div>
+
         <div className="add-product-wrapper__right-section--price">
           € {price} /{unit}
         </div>

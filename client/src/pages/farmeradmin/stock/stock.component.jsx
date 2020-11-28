@@ -18,9 +18,8 @@ const Stock = () => {
 
   /* Filter products */
   const [searchProductField, setFilterProduct] = useState('');
-  const filterProducts = products && products.filter((product) =>
-    product.name.toLowerCase().includes(searchProductField.toLowerCase())
-  );
+  const filterProducts =
+    products && products.filter((product) => product.name.toLowerCase().includes(searchProductField.toLowerCase()));
 
   /* Modal */
   const toggleModal = () => setModalStatus(!isModalOpen);
@@ -41,12 +40,11 @@ const Stock = () => {
   return (
     <section className="stock" id="#stock">
       <div className="stock-overview__header">
-        <h2>Stock Overview</h2>
+        <h2 className="stock-overview__header--title">Stock Overview</h2>
         <SearchBar onSearch={setFilterProduct} className={'stock-search-wrapper'} />
         <Icon icon={['fas', 'plus']} onClick={toggleModal} className="stock-overview__plus" />
       </div>
       <div className="stock-overview">{products ? <ProductList products={filterProducts} /> : <Spinner />}</div>
-
 
       <DisplayModal {...modalConfig}>
         {/* Modal Children */}

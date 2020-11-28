@@ -24,11 +24,17 @@ const ProductItem = ({ product, farmerName, slug }) => {
           <img src={`/uploads/${slug.toLowerCase()}/images/products/${photo}`} alt="img" />
         </div>
         <p className="farmer-profile__section-products-farmer__has-products__list__card--description">
-          {limitResults(description, 120)}
+          {limitResults(description, 150)}
         </p>
       </div>
       {modalStatus && (
-        <ProductModal modalStatus={modalStatus} toggleModal={toggleModal} product={product} slug={slug} farmerName={farmerName} />
+        <ProductModal
+          modalStatus={modalStatus}
+          toggleModal={toggleModal}
+          product={product}
+          slug={slug}
+          farmerName={farmerName}
+        />
       )}
     </>
   );
