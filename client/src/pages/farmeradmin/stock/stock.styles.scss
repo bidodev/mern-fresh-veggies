@@ -7,7 +7,7 @@
   align-items: center;
   background: #fff;
 
-  h2 {
+  &--title {
     margin: 1rem 0;
     text-transform: uppercase;
     @media (max-width: 650px) {
@@ -40,6 +40,7 @@
       color: var(--header);
       background-color: #fff;
       position: fixed;
+      z-index: 50;
       box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.1);
     }
 
