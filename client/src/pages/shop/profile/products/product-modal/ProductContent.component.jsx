@@ -80,7 +80,6 @@ const ProductContent = ({ product, onClose, slug }) => {
             )}
           </button>
         </div>
-        {/* <div className="add-product-wrapper__right-section__success"></div> */}
       </div>
     </div>
   );

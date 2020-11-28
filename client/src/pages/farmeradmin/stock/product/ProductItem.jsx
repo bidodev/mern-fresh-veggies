@@ -18,18 +18,6 @@ function Product({ _id, name, photo, type, description }) {
     setIsOpen(!modalStatus);
   };
 
-  const customStyles = {
-    /* Modal Styles */
-    content: {
-      width: '60vw',
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
-
   return (
     <>
       <div className="product-item__farmer-products__card" onClick={toggleModal}>
@@ -45,21 +33,37 @@ function Product({ _id, name, photo, type, description }) {
       </div>
 
       {/* Loading the content inside of the modal, passing the data */}
-      <Modal modalStatus={modalStatus} closeModal={toggleModal} styles={customStyles}>
-        <Icon icon="times" className="fa-times" onClick={toggleModal} />
-        <h2 className="display-product__name">{name}</h2>
-        <div className="display-product__img-container">
-          <img
-            src={`/uploads/${user.slug.toLowerCase()}/images/products/${photo}`}
-            alt="img"
-            className="display-product__img-container--img"
-          />
-        </div>
-        <div className="display-product__type">{type}</div>
-        <div className="display-product__description">{description}</div>
-        <div className="display-product__delete-container">
-          <span className="display-product__delete-container--text">Remove item </span>
-          <Icon icon="trash" onClick={() => removeProduct(_id)} className="display-product__delete-container--icon" />
+      <Modal
+        modalStatus={modalStatus}
+        closeModal={toggleModal}
+        className={'modal__add-product'}
+        overlayClassName={'overlay__add-product'}
+      >
+        <Icon icon="times" className="display-product__close" onClick={toggleModal} />
+        <div className="display-product">
+          <div className="display-product__left-section">
+            <div className="display-product__left-section__img-container">
+              <img
+                src={`/uploads/${user.slug.toLowerCase()}/images/products/${photo}`}
+                alt="img"
+                className="display-product__left-section__img-container--img"
+              />
+            </div>
+          </div>
+
+          <div className="display-product__right-section">
+            <h2 className="display-product__right-section__name">{name}</h2>
+            <div className="display-product__right-section__type">{type}</div>
+            <div className="display-product__right-section__description">{description}</div>
+            <div className="display-product__right-section__delete-container">
+              <span className="display-product__right-section__delete-container--text">Remove </span>
+              <Icon
+                icon="trash"
+                onClick={() => removeProduct(_id)}
+                className="display-product__delete-container--icon"
+              />
+            </div>
+          </div>
         </div>
       </Modal>
     </>
