@@ -20,8 +20,9 @@
   }
 
   &--name {
-    margin: 1vh;
+    margin: 1rem;
     text-align: center;
+    color: var(--header);
   }
 
   &__img-container {
@@ -36,13 +37,10 @@
     }
   }
 
-  &--type {
-    margin: 1vh;
+  &--inventory {
+    margin: 1rem 0;
     font-style: italic;
-  }
-
-  &--description {
-    margin: 1vh;
+    font-weight: bold;
   }
 }
 
