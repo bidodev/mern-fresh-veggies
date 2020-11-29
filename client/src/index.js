@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker';
 
 /* React Router Dom */
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -17,7 +17,6 @@ import './lib/icons';
 import App from './App';
 import './scss/index.scss';
 
-
 ReactDOM.render(
   <Provider store={store}>
     <Router>
@@ -29,4 +28,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-//serviceWorker.register();
+serviceWorker.register();
