@@ -51,13 +51,11 @@ We ask farmers money to register and use our application (we can make profit and
 - Backend: Express | MongoDB | Node
 - Tools: Git | Virtual Studio Code
 
+<a href="https://ibb.co/ZKHC0yc"><img src="https://i.ibb.co/d6byRnk/Screenshot-from-2020-11-29-20-07-30.png" alt="Screenshot-from-2020-11-29-20-07-30" border="0"></a>
+
 ## Preview:
 
 <a href="https://ibb.co/zHDrk44"><img src="https://i.ibb.co/n8tbWLL/Screenshot-from-2020-11-29-20-07-05.png" alt="Screenshot-from-2020-11-29-20-07-05" border="0"></a>
-
-## Tools:
-
-<a href="https://ibb.co/ZKHC0yc"><img src="https://i.ibb.co/d6byRnk/Screenshot-from-2020-11-29-20-07-30.png" alt="Screenshot-from-2020-11-29-20-07-30" border="0"></a>
 
 Made with ❤️ in Berlin by
 
