@@ -43,10 +43,10 @@ const ClientLogin = () => {
       })
       .catch((error) => {
         setError(error.response.data.errors);
-        setIsSignin(false);
         setTimeout(() => {
+          setIsSignin(false);
           setError(null);
-        }, 3000)
+        }, 1000);
       });
   };
 
@@ -87,13 +87,13 @@ const ClientLogin = () => {
               label="password"
               handleInputValue={handleInputValue}
             />
+            <div className="alert-error">{error && <h5>{`Fail: ${error}`}</h5>}</div>
 
-            <div onClick={toggleAuthenticationState}>You are not registered yet?</div>
-            <div className="buttons">
-              <CustomButton type="submit">{signin ? 'Loging...' : 'Sign In'}</CustomButton>
-            </div>
-            <div className="alert-error">
-            {error && <h5>{(`Fail: ${error}`)}</h5>}
+            <div className="not-authenticated">
+              <div onClick={toggleAuthenticationState}>You are not registered yet?</div>
+              <div className="buttons">
+                <CustomButton type="submit">{signin ? 'Loging...' : 'Sign In'}</CustomButton>
+              </div>
             </div>
           </form>
         </div>
