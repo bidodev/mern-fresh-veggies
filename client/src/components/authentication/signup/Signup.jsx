@@ -48,7 +48,7 @@ const ClientSignUp = () => {
         setError(error.response.data.errors);
         setTimeout(() => {
           setError(null);
-        }, 3000);
+        }, 1000);
       });
   };
 

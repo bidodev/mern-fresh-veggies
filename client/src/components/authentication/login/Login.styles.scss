@@ -14,25 +14,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  a {
-    text-align: center;
-    div {
-      margin-bottom: 2rem;
-    }
+
+  
+  .not-authenticated {
+    //border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .alert-error{
-    height: 3rem;
+    height: 1rem;
+    padding-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
 
     h5 {
       color: #D8000C;
-      background-color: #FFBABA;
       font-weight: 300;
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.3rem;
       padding: 0.5rem 0;
       width: 100%;
     }
