@@ -15,7 +15,6 @@
   justify-content: center;
   align-items: center;
 
-  
   .not-authenticated {
     //border: 1px solid red;
     display: flex;
@@ -24,7 +23,7 @@
     align-items: center;
   }
 
-  .alert-error{
+  .alert-error {
     height: 1rem;
     padding-bottom: 2rem;
     display: flex;
@@ -32,7 +31,7 @@
     justify-content: center;
 
     h5 {
-      color: #D8000C;
+      color: #d8000c;
       font-weight: 300;
       text-align: center;
       font-size: 1.3rem;
