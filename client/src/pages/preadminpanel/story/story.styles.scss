@@ -139,7 +139,7 @@
       width: 50%;
       transform: translate(0%, -20%);
       @media (max-width: 900px) {
-        width: 66vw;
+        min-width: 50vw;
         transform: translate(0%, 10%);
         padding: 0;
       }
