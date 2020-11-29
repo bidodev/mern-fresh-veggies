@@ -59,16 +59,16 @@ $check-length: 36px;
 
 #successAnimationCircle {
   stroke-dasharray: $circle-length $circle-length;
-  stroke: #939393;
+  stroke: #1e5b45;
 }
 
 #successAnimationCheck {
   stroke-dasharray: $check-length $check-length;
-  stroke: #939393;
+  stroke: #1e5b45;
 }
 
 #successAnimationResult {
-  fill: #939393;
+  fill: #1e5b45;
   opacity: 0;
 }
 
@@ -91,4 +91,5 @@ $check-length: 36px;
 .text-animation {
   animation: 1s linear 1s both fadeIn;
   font-size: 1.5rem;
+  color: #1e5b45;
 }
