@@ -62,7 +62,7 @@ const Story = () => {
               <img
                 src="/images/preadmin/farm-1.png"
                 alt="img"
-                className="story__how-it-works__right-container__img-container-top--img"
+                className="story__how-it-works__right-container__bottom-container__img-container--img"
               />
             </div>
             <div className="story__how-it-works__right-container__bottom-container">
@@ -75,9 +75,9 @@ const Story = () => {
               </div>
               <div className="story__how-it-works__right-container__bottom-container__img-container">
                 <img
-                  src="/images/preadmin/farm-3.jpg"
+                  src="/images/preadmin/farm-3.png"
                   alt="img"
-                  className="story__how-it-works__right-container__bottom-container__img-container--img"
+                  className="story__how-it-works__right-container__img-container-top--img"
                 />
               </div>
             </div>
