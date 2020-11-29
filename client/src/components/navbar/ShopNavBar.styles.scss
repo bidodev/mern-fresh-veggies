@@ -20,6 +20,12 @@
   width: 100%;
   z-index: 9000;
   position: fixed;
+  @media (max-width: 700px) {
+    justify-content: space-evenly;
+  }
+  // @media (max-width: 400px) {
+  //   justify-content: space-between;
+  // }
   a {
     // color: #1e5b45;
     font-weight: 600;
@@ -33,10 +39,16 @@
     //or
     // color: #f7b53a;
     transform: rotateZ(-9deg);
+    @media (max-width: 400px) {
+      margin-left: 0;
+    }
   }
-  &__links {
+  &__link {
     display: flex;
     justify-content: space-between;
+    // @media (max-width: 350px) {
+    //   display: none;
+    // }
   }
   &__account {
     list-style: none;
@@ -47,6 +59,9 @@
     margin-right: 5vw;
     @media (max-width: 950px) {
       width: 4rem;
+    }
+    @media (max-width: 400px) {
+      margin-right: 2vw;
     }
     .fa-shopping-cart,
     .fa-user-circle {
@@ -68,7 +83,8 @@
       }
     }
     &__login {
-      color: #181818;
+      color: #1e5b45;
+      font-weight: bold;
     }
   }
 }
