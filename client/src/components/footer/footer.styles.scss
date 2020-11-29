@@ -41,6 +41,7 @@
       }
       &__social-media {
         width: 15rem;
+        font-size: small;
         @media (max-width: 600px) {
           width: 10rem;
         }
@@ -54,10 +55,14 @@
       }
       &__placeholder {
         width: 15rem;
+        font-size: small;
         @media (max-width: 600px) {
           width: 10rem;
         }
       }
     }
+  }
+  .credits {
+    font-size: small;
   }
 }
