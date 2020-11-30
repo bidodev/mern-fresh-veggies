@@ -25,6 +25,7 @@ const ClientSignUp = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState(null);
 
   const dispatch = useDispatch();
   const handleSubmit = async (event) => {
