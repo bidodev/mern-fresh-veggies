@@ -40,6 +40,7 @@
       &__header {
         font-size: $font-size__header__medium;
         color: #1e5b45;
+        text-transform: uppercase;
         @media (max-width: 1150px) {
           font-size: $font-size__header__small;
         }
@@ -167,6 +168,7 @@
         font-size: $font-size__header__medium;
         font-weight: $font-weight__bold;
         color: #1e5b45;
+        text-transform: uppercase;
         margin: 1rem;
         @media (max-width: 1150px) {
           font-size: $font-size__header__small;
