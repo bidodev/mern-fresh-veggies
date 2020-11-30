@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
   .sign-up__form {
+    width: 80%;
     .group {
       margin: 2.5rem 0;
     }
@@ -25,17 +26,18 @@
       }
     }
     .alert-error {
-      // position: relative;
-      // top: 10vh;
-      // height: 3rem;
+      height: 5rem;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      // width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
 
       h5 {
         color: #d8000c;
-        background-color: #ffbaba;
         font-weight: 300;
         text-align: center;
         font-size: 1rem;
@@ -44,17 +46,46 @@
     }
   }
   @media only screen and (max-width: 500px) {
-    width: 90vw;
-    height: 70vh;
+    width: 95%;
+    height: 80vh;
 
     .sign-up__form {
+      width: 95%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      .title,
+      span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       .group {
-        margin: 1.5rem 0;
+        margin: 2.5rem 0;
       }
       a {
         text-align: center;
         div {
           margin-top: 2rem;
+        }
+      }
+      .alert-error {
+        height: 3rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        h5 {
+          color: #d8000c;
+          font-weight: 300;
+          text-align: center;
+          font-size: 1rem;
         }
       }
     }
