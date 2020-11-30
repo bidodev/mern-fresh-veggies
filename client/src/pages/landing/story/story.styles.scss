@@ -199,6 +199,11 @@
             background-position: right;
           }
         }
+        @media (min-width: 1051px) {
+          &:after {
+            background-image: none;
+          }
+        }
         @media (max-width: 1050px) {
           width: 95%;
           margin: 0 0 2vh 0;
