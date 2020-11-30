@@ -13,7 +13,7 @@ import statusReducer from 'redux/reducers/status.reducer';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['login', 'cart'],
+  whitelist: ['login', 'cart', 'status'],
 };
 
 const rootReducer = combineReducers({

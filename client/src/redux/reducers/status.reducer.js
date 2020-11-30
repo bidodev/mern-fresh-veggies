@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   color: 'green',
 };
 
-const ModalReducer = (state = INITIAL_STATE, action) => {
+const statusReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'SET_AVATAR':
       return {
@@ -10,14 +10,14 @@ const ModalReducer = (state = INITIAL_STATE, action) => {
         ...state.avatar,
         path: action.payload,
       };
-      case 'SET_COLOR':
-        return {
-          ...state,
-          color: action.payload
-        };
+    case 'SET_COLOR':
+      return {
+        ...state,
+        color: action.payload,
+      };
     default:
       return state;
   }
 };
 
-export default ModalReducer;
+export default statusReducer;

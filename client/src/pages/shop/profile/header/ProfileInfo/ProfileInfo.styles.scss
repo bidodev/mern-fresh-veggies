@@ -20,14 +20,14 @@
 
   // ======== NEW PRODUCTS (right) ===
   &__main__right {
-    min-width: 12rem;
+    min-width: 14rem;
     overflow-y: scroll;
     @media (max-width: 750px) {
       display: none;
     }
     &__header {
       position: absolute;
-      width: 12rem;
+      width: 14rem;
       height: 4rem;
       display: flex;
       align-items: center;
