@@ -79,7 +79,7 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: rgba(7, 6, 6, 0.925);
+    background-color: var(--modal-overlay);
     border: none;
     z-index: 9999;
   }
