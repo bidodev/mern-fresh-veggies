@@ -47,8 +47,8 @@ We ask farmers money to register and use our application (we can make profit and
 
 ## Tech Stack:
 
-- Frontend: HTML | CSS | Sass | JavaScript | React
-- Backend: Express | MongoDB | Node
+- Frontend: HTML | CSS | Sass | JavaScript | React | Redux
+- Backend: Express | MongoDB | Node | JWT
 - Tools: Git | Virtual Studio Code
 
 <a href="https://ibb.co/ZKHC0yc"><img src="https://i.ibb.co/d6byRnk/Screenshot-from-2020-11-29-20-07-30.png" alt="Screenshot-from-2020-11-29-20-07-30" border="0"></a>
@@ -59,6 +59,6 @@ We ask farmers money to register and use our application (we can make profit and
 
 Made with ❤️ in Berlin by
 
-- Bido [https://github.com/bidodev]
-- Simona [https://github.com/SimonaHriscu]
-- Kevin [https://github.com/kevSchmidt]
+- [Bido](https://github.com/bidodev)
+- [Simona](https://github.com/SimonaHriscu)
+- [Kevin](https://github.com/kevSchmidt)
