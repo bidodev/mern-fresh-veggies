@@ -43,10 +43,10 @@ const ClientLogin = () => {
       })
       .catch((error) => {
         setError(error.response.data.errors);
+        setIsSignin(false);
         setTimeout(() => {
-          setIsSignin(false);
           setError(null);
-        }, 1000);
+        }, 2000);
       });
   };
 
@@ -92,7 +92,7 @@ const ClientLogin = () => {
             <div className="not-authenticated">
               <div onClick={toggleAuthenticationState}>You are not registered yet?</div>
               <div className="buttons">
-                <CustomButton type="submit">{signin ? 'Loging...' : 'Sign In'}</CustomButton>
+                <CustomButton type="submit">{signin ? 'Loading...' : 'Sign In'}</CustomButton>
               </div>
             </div>
           </form>
