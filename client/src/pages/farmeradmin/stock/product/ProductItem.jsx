@@ -29,7 +29,7 @@ function Product({ _id, name, photo, type, description }) {
             className="product-item__farmer-products__card__img-container--img"
           />
         </div>
-        <div className="product-item__farmer-products__card--inventory">8 PRODUCTS IN STOCK</div>
+        <div className="product-item__farmer-products__card--inventory">8 IN STOCK</div>
       </div>
 
       {/* Loading the content inside of the modal, passing the data */}
@@ -55,13 +55,9 @@ function Product({ _id, name, photo, type, description }) {
             <h2 className="display-product__right-section__name">{name}</h2>
             <div className="display-product__right-section__type">{type}</div>
             <div className="display-product__right-section__description">{description}</div>
-            <div className="display-product__right-section__delete-container">
+            <div className="display-product__right-section__delete-container" onClick={() => removeProduct(_id)}>
               <span className="display-product__right-section__delete-container--text">Remove </span>
-              <Icon
-                icon="trash"
-                onClick={() => removeProduct(_id)}
-                className="display-product__delete-container--icon"
-              />
+              <Icon icon="trash" className="display-product__delete-container--icon" />
             </div>
           </div>
         </div>

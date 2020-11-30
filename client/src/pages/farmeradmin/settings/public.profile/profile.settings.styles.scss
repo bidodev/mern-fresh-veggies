@@ -7,7 +7,6 @@
     font-size: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--header);
   }
 
   &--sub {
@@ -36,7 +35,6 @@
 
   &__item {
     &--theme {
-      //border: 1px solid red;
       height: 5rem;
       ul {
         list-style: none;
