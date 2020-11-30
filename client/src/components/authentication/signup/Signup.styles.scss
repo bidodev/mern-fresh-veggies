@@ -1,7 +1,7 @@
 .sign-up__animation {
   width: 55%;
   clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%);
-  background-image: url(/images/pattern1.jpg);
+  background-image: url(/images/pattern2.png);
   @media only screen and (max-width: 500px) {
     width: 90vw;
     height: 20vh;
@@ -15,25 +15,6 @@
   justify-content: center;
   align-items: center;
   .sign-up__form {
-
-    .alert-error{
-      height: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 45%;
-    
-      h5 {
-        color: #D8000C;
-        background-color: #FFBABA;
-        font-weight: 300;
-        text-align: center;
-        font-size: 1rem;
-        padding: 0.5rem 0;
-        
-      }
-    }
-    
     .group {
       margin: 2.5rem 0;
     }
@@ -41,6 +22,24 @@
       text-align: center;
       div {
         margin-bottom: 2rem;
+      }
+    }
+    .alert-error {
+      // position: relative;
+      // top: 10vh;
+      // height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // width: 45%;
+
+      h5 {
+        color: #d8000c;
+        background-color: #ffbaba;
+        font-weight: 300;
+        text-align: center;
+        font-size: 1rem;
+        // padding: 0.5rem 0;
       }
     }
   }
@@ -61,4 +60,3 @@
     }
   }
 }
-
