@@ -27,6 +27,7 @@
     }
     &__header {
       position: absolute;
+      width: 12rem;
       height: 4rem;
       display: flex;
       align-items: center;
@@ -38,7 +39,7 @@
         border-bottom-right-radius: 0;
       }
       h2 {
-        padding: 1rem;
+        // padding: 01rem;
         font-weight: 500;
         font-size: 1.4rem;
         text-align: center;
