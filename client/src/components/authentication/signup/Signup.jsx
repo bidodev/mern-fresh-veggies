@@ -26,7 +26,7 @@ const ClientSignUp = () => {
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
-
+  console.log(error);
   const dispatch = useDispatch();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -114,10 +114,8 @@ const ClientSignUp = () => {
             <div className="buttons">
               <CustomButton type="submit">Sign Up</CustomButton>
             </div>
-            <div className="alert-error">
-            {error && error.map((error) => <h5>{`${error.param}: ${error.msg}`}</h5>)}
-            </div>
           </form>
+          <div className="alert-error">{error && error.map((error) => <h5>{`${error.param}: ${error.msg}`}</h5>)}</div>
         </div>
       </div>
       <div className="sign-up__animation"></div>
