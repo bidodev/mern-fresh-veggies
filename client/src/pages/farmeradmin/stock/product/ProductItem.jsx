@@ -9,7 +9,7 @@ import './ProductItem.styles.scss';
 /* Component Imports */
 import Modal from 'components/modal/modal.component';
 
-function Product({ _id, name, photo, type, description }) {
+function Product({ _id, name, photo, type, description, quantity, price, unit }) {
   const user = useSelector(({ login }) => login.user.data);
 
   /* Modal */
@@ -29,7 +29,9 @@ function Product({ _id, name, photo, type, description }) {
             className="product-item__farmer-products__card__img-container--img"
           />
         </div>
-        <div className="product-item__farmer-products__card--inventory">8 IN STOCK</div>
+        <div className="product-item__farmer-products__card--inventory">
+          {quantity} /{unit} IN STOCK
+        </div>
       </div>
 
       {/* Loading the content inside of the modal, passing the data */}

@@ -18,7 +18,7 @@
       text-align: center;
       // height: 10vh;
       //margin-top: 5rem;
-      color: var(--primary-black);
+      color: #1e5b45;
       @media (min-width: 1480px) {
         margin-top: 10rem;
         font-size: 2.5rem;
@@ -107,6 +107,7 @@
 
         &--text {
           text-align: center;
+          color: #404040;
           @media (max-width: 460px) {
             font-size: 0.9rem;
             margin-right: 1rem;
@@ -173,6 +174,9 @@
         justify-content: flex-end;
         align-items: center;
         text-align: center;
+        &--text {
+          color: #404040;
+        }
         &:after {
           content: '';
           background-image: url(/images/farmer-svgrepo-com.svg);
