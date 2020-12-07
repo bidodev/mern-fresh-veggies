@@ -1,4 +1,4 @@
-# Project Name: Veggy Party whoop whoop
+# Project Name: Veggies Party whoop whoop
 
 ## About:
 
@@ -23,9 +23,9 @@ This application would display various farmers' profiles around a given location
 
 1. Create an account:
 
-- create a Profile: photos, biography, information about his farm etc..
-- create a Stock: add new item or remove the sold one
-- track orders: dispatch or talk with the clients
+- Create a Profile: photos, biography, information about his farm etc..
+- Create a Stock: add new item or remove the sold one
+- Track Orders: dispatch or talk with the clients
 
 #### User:
 
