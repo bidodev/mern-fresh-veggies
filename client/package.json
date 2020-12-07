@@ -34,6 +34,7 @@
     "react-scripts": "3.4.3",
     "react-text-content-editable": "^3.0.2",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "typeface-nunito-sans": "^1.1.13"
