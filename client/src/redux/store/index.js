@@ -1,20 +1,12 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore } from 'redux';
 import { persistStore } from 'redux-persist';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
-import rootReducer from 'redux/reducers/root.reducers';
-//import logger from "redux-logger";
+/* reducers */
+import reducers from 'redux/reducers/root.reducers';
 
-const middlewares = [];
-const enhancers = [];
-
-const chromeRedux = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-
-if (process.env.NODE_ENV === 'development') {
-  //middlewares.push(logger);
-  enhancers.push(chromeRedux);
-}
-
-export const store = createStore(rootReducer, compose(applyMiddleware(...middlewares), ...enhancers));
+/* store */
+export const store = createStore(reducers, devToolsEnhancer());
 
 export const persistor = persistStore(store);
 
