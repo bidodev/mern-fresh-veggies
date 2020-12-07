@@ -23,17 +23,14 @@ This application would display various farmers' profiles around a given location
 
 1. Create an account:
 
-- create a Profil: photos, biography, information about his farm etc..
+- create a Profile: photos, biography, information about his farm etc..
 - create a Stock: add new item or remove the sold one
-
-2. Login / out & keep info of stock (local storage?)
+- track orders: dispatch or talk with the clients
 
 #### User:
 
-1. Create an account: name, address, payment method...
-2. Login / out & keep info of cart (local storage?)
-3. Access a page with local farmers, display their profil and products when selected (remove and add item to cart...)
-4. Delivery?
+- Create an account: name, address, payment method...
+- Access a page with local farmers, display their profil and products when selected (remove and add item to cart...)
 
 ## Benefits:
 
