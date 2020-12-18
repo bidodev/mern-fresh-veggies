@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { requestFarmer } from 'redux/actions';
 
 /* Components */
 import Avatar from 'pages/farmeradmin/home/avatar/avatar.component';
@@ -13,34 +14,24 @@ import './profile.styles.scss';
 
 const ProfileAdmin = () => {
   const dispatch = useDispatch();
-  const farmerData = useSelector((state) => state.login.adminPanelData);
-  const [isLoading, setIstLoading] = useState(true);
+  const { isPending } = useSelector((state) => state.farmerPanel);
+  const { data } = useSelector((state) => state.farmerPanel);
 
-  /* Retrieve Farmer Panel */
   useEffect(() => {
-    axios
-      .get('/farmers/admin/panel')
-      .then(({ data }) => {
-        dispatch({ type: 'SET_FARMER', payload: data.data });
-        setIstLoading(false);
-      })
-      .catch((err) => {
-        console.log(err.response.data.message);
-        alert('etwas ist schief gelaufen');
-      });
-  }, []);
+    dispatch(requestFarmer);
+  }, [dispatch]);
 
   return (
     <>
-      {isLoading ? (
+      {isPending ? (
         <Spinner />
       ) : (
         <section className="panel-profile">
           <div className="panel-profile__wrapper">
-            <Avatar {...farmerData} />
-            <FarmerBiography {...farmerData} />
+            <Avatar {...data} />
+            <FarmerBiography {...data} />
             <hr />
-            <GalleryList {...farmerData} />
+            <GalleryList {...data} />
             <hr />
           </div>
         </section>
