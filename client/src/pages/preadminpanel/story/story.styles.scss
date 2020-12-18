@@ -2,10 +2,10 @@
 
 .story {
   // ======== HOW IT WORKS ===
-  margin-top: 15vh;
+  padding-top: 15vh;
 
   @media (max-width: 900px) {
-    margin-top: 10vh;
+    padding-top: 10vh;
   }
 
   &__how-it-works {
