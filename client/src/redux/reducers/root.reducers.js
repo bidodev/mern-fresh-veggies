@@ -9,6 +9,7 @@ import loginReducer from 'redux/reducers/login.reducer';
 import authenticationReducer from 'redux/reducers/authentication.reducer';
 import modalReducer from 'redux/reducers/modal.reducer';
 import statusReducer from 'redux/reducers/status.reducer';
+import farmerPanelReducer from 'redux/reducers/farmer/farmerPanel.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   authentication: authenticationReducer,
   modal: modalReducer,
   status: statusReducer,
+  farmerPanel: farmerPanelReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
