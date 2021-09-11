@@ -67,16 +67,13 @@ function onListening() {
 
 /**Mongoose connect and start the server */
 
+//@TODO: Connect to MongoDB
+
 /* In production use atlas database */
 let urlMongoDB = process.env.DATABASE_ATLAS.replace(
   '<PASSWORD>',
   process.env.PASSWORD
 );
-
-/* In development use local connection to mongoDB */
-// if (process.env.NODE_ENV === 'development') {
-//   urlMongoDB = process.env.DATABASE_LOCALHOST;
-// }
 
 mongoose
   .connect(urlMongoDB, {
