@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 import ScrollIntoView from 'components/UI/ScrollIntoView';
 
 /* Page Imports */
-const Landing = React.lazy(() => import('pages/landing/landing.page'));
+const Landing = React.lazy(() => import('features/landing/pages/Overview'));
 const PreAdminPanel = React.lazy(() => import('pages/preadminpanel/wrapper'));
 const Shop = React.lazy(() => import('pages/shop/shop.page'));
 
@@ -19,8 +19,8 @@ const App: React.FC = () => {
         <Suspense fallback={<>Loading...</>}>
           <Switch>
             <Route exact path="/" component={Landing} />
-            <Route path="/shop" render={({ match }) => <Shop match={match} />} />
-            <Route path="/farmer/admin" render={({ match }) => <PreAdminPanel match={match} />} />
+            {/* <Route path="/shop" render={({ match }) => <Shop match={match} />} />
+            <Route path="/farmer/admin" render={({ match }) => <PreAdminPanel match={match} />} /> */}
           </Switch>
         </Suspense>
       </ScrollIntoView>

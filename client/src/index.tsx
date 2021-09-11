@@ -7,8 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 /* Redux Imports */
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from 'redux/store';
+import { store } from 'store';
 
 /* Fontawesome Import */
 import './lib/icons';
@@ -20,9 +19,7 @@ import './scss/index.scss';
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <PersistGate persistor={persistor}>
-        <App />
-      </PersistGate>
+      <App />
     </Router>
   </Provider>,
   document.getElementById('root')
