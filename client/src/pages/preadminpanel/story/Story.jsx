@@ -6,9 +6,9 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Ion-Icons Imports */
 /* Can use: shake={true} / rotate={true} / beat={true} / color="43853d" */
-import IosCreateOutline from 'react-ionicons/lib/IosCreateOutline';
-import IosColorPaletteOutline from 'react-ionicons/lib/IosColorPaletteOutline';
-import IosSettingsOutline from 'react-ionicons/lib/IosSettingsOutline';
+// import IosCreateOutline from 'react-ionicons/lib/IosCreateOutline';
+// import IosColorPaletteOutline from 'react-ionicons/lib/IosColorPaletteOutline';
+// import IosSettingsOutline from 'react-ionicons/lib/IosSettingsOutline';
 
 /* Styles */
 import './story.styles.scss';
@@ -23,7 +23,7 @@ const Story = () => {
 
   return (
     <React.Fragment>
-      <section className="story" id="story">
+      {/* <section className="story" id="story">
         <div className="story__how-it-works">
           <div className="story__how-it-works__left-container">
             <h3 className="story__how-it-works__left-container__header">
@@ -105,7 +105,7 @@ const Story = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </React.Fragment>
   );
 };

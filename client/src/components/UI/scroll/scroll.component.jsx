@@ -19,7 +19,7 @@ const ScrollTopArrow = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  window.addEventListener('scroll', checkScrollTop);
+  document.addEventListener('scroll', checkScrollTop);
 
   return (
     <FontAwesomeIcon

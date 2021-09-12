@@ -13,6 +13,8 @@ const Landing = () => {
       <Hero />
       <Story />
       <Footer />
+
+      
       <ScrollTopArrow />
     </React.Fragment>
   );

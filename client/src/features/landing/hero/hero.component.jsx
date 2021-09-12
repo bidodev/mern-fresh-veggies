@@ -10,7 +10,6 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 import './hero.styles.scss';
 
 const Hero = () => {
-
   return (
     <>
       <StyledWrapper className="hero-class">
