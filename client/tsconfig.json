@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
     "target": "es5",
+    "baseUrl": ".",
     "lib": [
       "dom",
       "dom.iterable",
@@ -21,8 +21,9 @@
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true
   },
+  "extends": "./tsconfig.paths.json",
   "include": [
-    "src",
+    "./src",
     "types"
   ]
 }

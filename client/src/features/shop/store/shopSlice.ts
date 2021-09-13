@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, createSelector, createAsyncThunk } from '@reduxjs/toolkit';
-import { RootState, AppDispatch } from 'store';
+import { RootState, AppDispatch } from '../../../store';
 
 export interface ShopState {
     cart: {
@@ -38,10 +38,10 @@ const shopSlice = createSlice({
     },
     extraReducers: (builder) => {
         // Handling Custom Actions in our Slice
-        builder.addCase("shop/checkout/pending", (state, action) =>{
+        builder.addCase("shop/checkout/pending", (state, action) => {
             console.log(action)
         })
-        builder.addCase("shop/checkout/fulfilled", (state, action) =>{
+        builder.addCase("shop/checkout/fulfilled", (state, action) => {
             console.log("shop/checkout/fulfilled", action)
         })
 
@@ -63,9 +63,9 @@ const shopSlice = createSlice({
 export const { receivedProducts, addToCard } = shopSlice.actions;
 export default shopSlice.reducer;
 
-export function checkout(){
-    return function checkoutThunk(dispatch: AppDispatch){
-        dispatch({type: "shop/checkout/pending"})
+export function checkout() {
+    return function checkoutThunk(dispatch: AppDispatch) {
+        dispatch({ type: "shop/checkout/pending" })
     }
 }
 

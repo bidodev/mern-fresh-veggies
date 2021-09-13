@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 /* Component Imports */
-import CustomButton from 'components/UI/custom-button/custom-button.component';
+import CustomButton from '../../../components/UI/custom-button/custom-button.component';
 
 /* Styles */
 import './story.styles.scss';
@@ -42,7 +42,7 @@ const Story: React.FC = () => {
               </div>
             </div>
             <div className="story__hero-section__button">
-            <Link to="/shop">
+              <Link to="/shop">
                 <CustomButton>Go to Shop</CustomButton>
               </Link>
             </div>

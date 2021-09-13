@@ -4,12 +4,12 @@ import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 /* Utils */
-import ScrollIntoView from 'components/UI/ScrollIntoView';
+import ScrollIntoView from './components/UI/ScrollIntoView';
 
 /* Page Imports */
-const Landing = React.lazy(() => import('features/landing/pages/Overview'));
-const PreAdminPanel = React.lazy(() => import('pages/preadminpanel/wrapper'));
-const Shop = React.lazy(() => import('pages/shop/shop.page'));
+// const Landing = React.lazy(() => import('./features/landing/pages/Overview'));
+// const PreAdminPanel = React.lazy(() => import('./pages/preadminpanel/wrapper'));
+// const Shop = React.lazy(() => import('./pages/shop/shop.page'));
 
 /* App wrapper */
 const App: React.FC = () => {
@@ -18,7 +18,7 @@ const App: React.FC = () => {
       <ScrollIntoView>
         <Suspense fallback={<>Loading...</>}>
           <Switch>
-            <Route exact path="/" component={Landing} />
+            {/* <Route exact path="/" component={Landing} /> */}
             {/* <Route path="/shop" render={({ match }) => <Shop match={match} />} />
             <Route path="/farmer/admin" render={({ match }) => <PreAdminPanel match={match} />} /> */}
           </Switch>
