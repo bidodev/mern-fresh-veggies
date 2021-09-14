@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Modal from 'components/modal/modal.component';
+import { Modal } from '@components';
 
 import './ShopNavBar.styles.scss';
 const ShopNavBar = ({ match, children, totalQuantity }) => {
@@ -12,6 +11,8 @@ const ShopNavBar = ({ match, children, totalQuantity }) => {
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.user);
   const isAccountModalStatus = useSelector((state) => state.modal.show);
+
+  //Create thunk
   const logOutUser = () => {
     dispatch({ type: 'LOGOUT_USER' });
     dispatch({ type: 'TOGGLE_MODAL' });

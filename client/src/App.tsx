@@ -1,29 +1,21 @@
-import React, { Suspense } from 'react';
-
 /* React Router Dom */
 import { Route, Switch } from 'react-router-dom';
 
 /* Utils */
-import ScrollIntoView from './components/UI/ScrollIntoView';
+import { withScrollIntoView } from '@hocs';
+import { RouteWithSubRoutes } from './routes/router';
 
-/* Page Imports */
-// const Landing = React.lazy(() => import('./features/landing/pages/Overview'));
-// const PreAdminPanel = React.lazy(() => import('./pages/preadminpanel/wrapper'));
-// const Shop = React.lazy(() => import('./pages/shop/shop.page'));
+import { routes } from './routes/paths';
 
 /* App wrapper */
 const App: React.FC = () => {
   return (
     <>
-      <ScrollIntoView>
-        <Suspense fallback={<>Loading...</>}>
-          <Switch>
-            {/* <Route exact path="/" component={Landing} /> */}
-            {/* <Route path="/shop" render={({ match }) => <Shop match={match} />} />
-            <Route path="/farmer/admin" render={({ match }) => <PreAdminPanel match={match} />} /> */}
-          </Switch>
-        </Suspense>
-      </ScrollIntoView>
+      <Switch>
+        {routes.map((route, i) => (
+          <RouteWithSubRoutes key={i} {...route} />
+        ))}
+      </Switch>
     </>
   );
 };

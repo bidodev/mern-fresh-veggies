@@ -1,4 +1,4 @@
-@import '../../../scss/variables';
+@import '../../../../../scss/variables';
 
 .test__farmer-svg {
   width: 25rem;
@@ -6,6 +6,8 @@
 
 .story {
   // ======== HERO (GO TO SHOP) ===
+  margin-top: 10vh;
+
   &__hero-section {
     height: auto;
     width: 100%;
@@ -18,6 +20,7 @@
       text-align: center;
       text-transform: uppercase;
       color: #1e5b45;
+
       @media (min-width: 1480px) {
         font-size: 2.5rem;
       }
@@ -180,7 +183,6 @@
         }
         &:after {
           content: '';
-          // background-image: url(/images/farmer-svgrepo-com.svg);
           background-size: contain;
           background-repeat: no-repeat;
           background-position: right;

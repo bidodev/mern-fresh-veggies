@@ -8,8 +8,8 @@ import { loadFarmerPublicProfileData } from 'utils/services';
 import './PublicFarmerProfile.styles.scss';
 
 /* Utils */
-import Spinner from 'components/UI/spinner/spinner.component';
-import ComposeStore from 'pages/shop/profile/store/CompouseStore.component';
+import Spinner from 'src/components/UI/spinner/spinner.component';
+import ComposeStore from 'src/pages/shop/profile/store/CompouseStore.component';
 
 const ProfilePage = () => {
   const { slug } = useParams();

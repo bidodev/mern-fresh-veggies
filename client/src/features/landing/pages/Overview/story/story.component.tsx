@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 /* Component Imports */
-import CustomButton from '../../../components/UI/custom-button/custom-button.component';
+import CustomButton from 'src/components/UI/custom-button/custom-button.component';
 
 /* Styles */
 import './story.styles.scss';

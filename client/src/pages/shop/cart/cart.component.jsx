@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import CustomButton from 'components/UI/custom-button/custom-button.component';
+import CustomButton from 'src/components/UI/custom-button/custom-button.component';
 
 import './cart.styles.scss';
 const Cart = ({ match }) => {
@@ -34,7 +34,6 @@ const Cart = ({ match }) => {
   const resetCart = (cartItemToRemove) => {
     dispatch({ type: 'CLEAR_CART', payload: cartItemToRemove });
   };
-
 
   // here we need to reverse the logic with the modal
   const closeModal = () => (match.path === '/shop/cart' ? false : dispatch({ type: 'TOGGLE_CART_HIDDEN' }));
