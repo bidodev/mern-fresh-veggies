@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@components": ["./src/components"],
+      "@store": ["./src/store"],
+      "@hocs": ["./src/hocs"]
+    }
+  }
+}

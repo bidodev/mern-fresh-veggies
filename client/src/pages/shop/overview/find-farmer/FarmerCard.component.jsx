@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 import './FarmerCard.styles.scss';
 
 /* IonIcons Imports */
-import IosPin from 'react-ionicons/lib/IosPin';
+// import IosPin from 'react-ionicons/lib/IosPin';
 
 const FarmerCard = ({ farmer, match }) => {
   const imageSrc = `/uploads/${farmer.slug.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`;
 
   return (
     <Link key={farmer._id} to={`${match.url}/farmer/${farmer.slug}`}>
-      <div className="find-farmer__container__item">
+      {/* <div className="find-farmer__container__item">
         <div className="find-farmer__container__item__bg-image-container">
           <img src={`${imageSrc}`} alt="background" />
         </div>
@@ -30,7 +30,7 @@ const FarmerCard = ({ farmer, match }) => {
             alt="farmer-avatar"
           />
         </div>
-      </div>
+      </div> */}
     </Link>
   );
 };

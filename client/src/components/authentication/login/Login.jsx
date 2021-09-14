@@ -4,8 +4,8 @@ import axios from 'axios';
 import { loginUser } from 'redux/actions/authentication';
 
 /* Component Imports */
-import FormInput from 'components/forms/input/input.component';
-import CustomButton from 'components/UI/custom-button/custom-button.component';
+import FormInput from 'src/components/forms/input/input.component';
+import CustomButton from 'src/components/UI/custom-button/custom-button.component';
 
 /* Styles */
 import './Login.styles.scss';

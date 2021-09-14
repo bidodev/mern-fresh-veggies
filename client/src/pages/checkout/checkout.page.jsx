@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import 'react-credit-cards/lib/styles.scss';
 import './checkout.page.style.scss';
 
-import Spinner from 'components/UI/spinner/spinner.component';
+import Spinner from '@components/UI/spinner/spinner.component';
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 const Checkout = () => {

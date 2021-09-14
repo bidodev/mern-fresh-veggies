@@ -5,17 +5,17 @@ import './how.it.works.styles.scss';
 
 /* Ion-Icons Imports */
 /* Can use: shake={true} / rotate={true} / beat={true} / color="43853d" */
-import IosBasketOutline from 'react-ionicons/lib/IosBasketOutline';
-import IosCardOutline from 'react-ionicons/lib/IosCardOutline';
-import IosContactOutline from 'react-ionicons/lib/IosContactOutline';
-import IosNutritionOutline from 'react-ionicons/lib/IosNutritionOutline';
-import IosPinOutline from 'react-ionicons/lib/IosPinOutline';
-import IosTimerOutline from 'react-ionicons/lib/IosTimerOutline';
+// import IosBasketOutline from 'react-ionicons/lib/IosBasketOutline';
+// import IosCardOutline from 'react-ionicons/lib/IosCardOutline';
+// import IosContactOutline from 'react-ionicons/lib/IosContactOutline';
+// import IosNutritionOutline from 'react-ionicons/lib/IosNutritionOutline';
+// import IosPinOutline from 'react-ionicons/lib/IosPinOutline';
+// import IosTimerOutline from 'react-ionicons/lib/IosTimerOutline';
 
 const HowItWorks = () => {
   return (
     <section className="how-it-works" id="how-we-work">
-      <div className="how-it-works__icons-section">
+      {/* <div className="how-it-works__icons-section">
         <h2 className="how-it-works__icons-section--header">How It Works</h2>
         <div className="how-it-works__icons-section__box-container">
           <div className="how-it-works__icons-section__box-container__card">
@@ -78,7 +78,7 @@ const HowItWorks = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

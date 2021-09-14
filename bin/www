@@ -78,9 +78,7 @@ let urlMongoDB = process.env.DATABASE_ATLAS.replace(
 mongoose
   .connect(urlMongoDB, {
     useNewUrlParser: true,
-    useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
   })
   .then(() => {
     console.log(

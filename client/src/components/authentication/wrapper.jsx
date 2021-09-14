@@ -5,12 +5,11 @@ import './wrapper.styles.scss';
 import { useSelector, useDispatch } from 'react-redux';
 
 /* Components */
-import SignIn from 'components/authentication/login/Login';
-import SignUp from 'components/authentication/signup/Signup';
-import DisplayModal from 'components/modal/modal.component';
+import SignIn from 'src/components/authentication/login/Login';
+import SignUp from 'src/components/authentication/signup/Signup';
+import DisplayModal from 'src/components/modal/modal.component';
 
 const AuthenticationWrapper = ({ match }) => {
-  
   /* Pull out if the authentication is showing and which component is showing */
   const isAuthenticationModalShowing = useSelector(({ authentication }) => authentication.show);
   const isAuthenticationStatusSwitched = useSelector(({ authentication }) => authentication.switch);
@@ -27,11 +26,7 @@ const AuthenticationWrapper = ({ match }) => {
     overlayClassName: 'authentication-modal--overlay',
   };
 
-  return (
-    <DisplayModal {...modalConfig}>
-      {isAuthenticationStatusSwitched ? <SignUp /> : <SignIn />}
-    </DisplayModal>
-  );
+  return <DisplayModal {...modalConfig}>{isAuthenticationStatusSwitched ? <SignUp /> : <SignIn />}</DisplayModal>;
 };
 
 export default AuthenticationWrapper;

@@ -7,19 +7,19 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import './shop.styles.scss';
 
 /* Page Imports */
-import ProfilePage from 'pages/shop/profile/PublicFarmerProfile';
+import ProfilePage from 'src/pages/shop/profile/PublicFarmerProfile';
 
 /* Component Imports */
-import ShopNavBar from 'components/navbar/ShopNavBar';
-import Cart from 'pages/shop/cart/cart.component';
-import Banner from 'pages/shop/overview/banner/banner.component';
-import FindYourFarmer from 'pages/shop/overview/find-farmer/FindFarmer.component';
-import HowItWorks from 'pages/shop/overview/how.it.works/how.it.works.component';
-import Footer from 'components/footer/Footer';
-import Modal from 'components/modal/modal.component';
-import ScrollTopArrow from 'components/UI/scroll/scroll.component';
-import CustomButton from 'components/UI/custom-button/custom-button.component';
-import Authentication from 'components/authentication/wrapper';
+import ShopNavBar from 'src/components/navbar/ShopNavBar';
+import Cart from 'src/pages/shop/cart/cart.component';
+import Banner from 'src/pages/shop/overview/banner/banner.component';
+import FindYourFarmer from 'src/pages/shop/overview/find-farmer/FindFarmer.component';
+import HowItWorks from 'src/pages/shop/overview/how.it.works/how.it.works.component';
+import Footer from 'src/components/footer/Footer';
+import Modal from 'src/components/modal/modal.component';
+import ScrollTopArrow from 'src/components/UI/scroll/scroll.component';
+import CustomButton from 'src/components/UI/custom-button/custom-button.component';
+import Authentication from 'src/components/authentication/wrapper';
 
 // ===== Overview Component ===
 const ShopOverView = ({ match }) => {

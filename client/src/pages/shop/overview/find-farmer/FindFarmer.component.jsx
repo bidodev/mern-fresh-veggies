@@ -7,7 +7,7 @@ import { loadAllFarmersProfile } from 'utils/services';
 import './FindFarmer.styles.scss';
 
 /* Component Imports */
-import Spinner from 'components/UI/spinner/spinner.component';
+import Spinner from 'src/components/UI/spinner/spinner.component';
 import FarmersList from './FarmersList.component';
 
 const FindYourFarmer = ({ match }) => {
