@@ -69,6 +69,10 @@ exports.createProduct = asyncWrapper(async (req, res, next) => {
   //1. Grab our user
   const user = req.user;
 
+  if (!req.file) {
+    return next(new AppError('Product image is required.', 400, 'fail'));
+  }
+
   //2. Create a new product
   const product = await Product.create({
     owner: req.user._id,

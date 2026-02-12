@@ -6,23 +6,36 @@ exports.updateProfile = asyncWrapper(async (req, res, next) => {
 
   const user = await User.findById(req.user.id);
 
+  if (!req.file) {
+    return next(new AppError('Please upload an image file.', 400, 'fail'));
+  }
+
   if (req.body.update === 'gallery') {
     const filter = user.images.gallery.map((obj) =>
       obj.name === req.body.name ? { ...obj, path: req.file.filename } : obj
     );
     user.images = { ...user.images, gallery: filter };
     await user.save();
+    return res.status(200).json({
+      status: 'success',
+    });
   }
 
   switch (req.body.update) {
     case 'profile': {
       user.images = { ...user.images, profile: req.file.filename };
+      break;
     }
     case 'cover': {
       user.images = { ...user.images, cover: req.file.filename };
+      break;
     }
-    await user.save();
+    default: {
+      return next(new AppError('Invalid update type.', 400, 'fail'));
+    }
   }
+
+  await user.save();
   
   res.status(200).json({
     status: 'success',

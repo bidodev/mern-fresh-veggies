@@ -19,6 +19,7 @@ app.use(helmet());
 
 /* Error controller */
 const errorHandler = require('./controllers/errorController');
+const { getUpload } = require('./controllers/uploadController');
 
 //import routes
 const authRouter = require('./routes/auth');
@@ -51,24 +52,13 @@ app.use(mongoSanitize());
 
 app.use(express.urlencoded({ extended: false }));
 
-/* Server public files */
-app.use(express.static(path.join(__dirname, 'public')));
-
 /**
  * Routes Middleware
  */
+app.get('/uploads/:slug/images/:category/:filename', getUpload);
 app.use('/account', authRouter);
 app.use('/farmers', farmersRouter);
 app.use('/users', usersRouter);
-
-// Serving Static Files
-app.use(express.static(path.join(__dirname, "client/build")));
-
-//send react aplication
-app.get("*", function (req, res) {
-  const index = path.join(__dirname, "client/build", "index.html");
-  res.sendFile(index);
-});
 
 /**
  * When an error is trow we catch it here and forward to errorController
