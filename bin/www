@@ -2,9 +2,9 @@
 /**
  * Module dependencies.
  */
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const http = require('http');
+const { connectToDatabase, getMongoUri } = require('../utils/db');
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
@@ -67,24 +67,18 @@ function onListening() {
 
 /**Mongoose connect and start the server */
 
-//@TODO: Connect to MongoDB
+let mongoUri;
+try {
+  mongoUri = getMongoUri();
+} catch (err) {
+  console.error(err.message);
+  process.exit(1);
+}
 
-/* In production use atlas database */
-let urlMongoDB = process.env.DATABASE_ATLAS.replace(
-  '<PASSWORD>',
-  process.env.PASSWORD
-);
-
-mongoose
-  .connect(urlMongoDB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  })
+connectToDatabase()
   .then(() => {
     console.log(
-      urlMongoDB.includes('localhost')
+      mongoUri.includes('localhost')
         ? '🚀 Connected to mongodb://localhost:27017'
         : '🚀 Connected to Atlas MongoDB'
     );
@@ -94,7 +88,10 @@ mongoose
     server.on('error', onError);
     server.on('listening', onListening);
   })
-  .catch((err) => console.error(err.message));
+  .catch((err) => {
+    console.error(err.message);
+    process.exit(1);
+  });
 
 process.on('unhandledRejection', (err) => {
   console.log('UNHANDLED REJECTION! 💥 Shutting down...');

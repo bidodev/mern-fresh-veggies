@@ -2,6 +2,9 @@
   "name": "mern-veggy",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -17,7 +20,6 @@
     "@testing-library/user-event": "^7.1.2",
     "autoprefixer": "^9.8.0",
     "axios": "^0.20.0",
-    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-credit-cards": "^0.8.3",
     "react-dom": "^16.13.1",
@@ -33,6 +35,7 @@
     "react-router-hash-link": "^2.2.2",
     "react-scripts": "3.4.3",
     "react-text-content-editable": "^3.0.2",
+    "sass": "^1.77.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
@@ -41,8 +44,8 @@
     "typeface-nunito-sans": "^1.1.13"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
