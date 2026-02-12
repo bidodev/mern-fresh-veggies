@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useRouteMatch } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -12,8 +12,8 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 import './Signup.styles.scss';
 
 const ClientSignUp = () => {
-  const match = useRouteMatch();
-  const url = match.path === '/shop' ? 'user' : 'farmer';
+  const location = useLocation();
+  const url = location.pathname.startsWith('/shop') ? 'user' : 'farmer';
 
   /* show or hidden the authentication modal  */
   const toggleAuthenticationModal = () => dispatch({ type: 'SHOW_AUTH' });

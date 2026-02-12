@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 
 /* React Router Dom */
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 /* Utils */
 import ScrollIntoView from 'components/UI/ScrollIntoView';
@@ -22,14 +22,14 @@ const App = () => {
     <>
       <ScrollIntoView>
         <Suspense fallback={<>Loading...</>}>
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route path="/shop" render={({ match }) => <Shop match={match} />} />
-            <Route path="/farmer/admin" render={({ match }) => <PreAdminPanel match={match} />} />
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/shop/*" element={<Shop />} />
+            <Route path="/farmer/admin/*" element={<PreAdminPanel />} />
 
-            {/* <Route path="/checkout" render={({ match }) => <Checkout match={match} />} /> */}
-            {/* <Route path="/success" render={({ match }) => <SuccessAnimation match={match} />} /> */}
-          </Switch>
+            {/* <Route path="/checkout" element={<Checkout />} /> */}
+            {/* <Route path="/success" element={<SuccessAnimation />} /> */}
+          </Routes>
         </Suspense>
       </ScrollIntoView>
     </>

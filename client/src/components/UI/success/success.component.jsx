@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './success.style.scss';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const SuccessAnimation = () => {
-  const history = useHistory();
-  window.setTimeout(() => {
-    history.push('/');
-  }, 3000);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      navigate('/');
+    }, 3000);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [navigate]);
 
   return (
     <div className="success-animation">
       <svg
         id="successAnimation"
-        class="animated"
+        className="animated"
         xmlns="http://www.w3.org/2000/svg"
         width="70"
         height="70"
@@ -28,14 +33,14 @@ const SuccessAnimation = () => {
           cy="35"
           r="24"
           stroke="#979797"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
           fill="transparent"
         />
         <polyline
           id="successAnimationCheck"
           stroke="#979797"
-          stroke-width="2"
+          strokeWidth="2"
           points="23 34 34 43 47 27"
           fill="transparent"
         />

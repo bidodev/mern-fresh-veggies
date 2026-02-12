@@ -1,14 +1,15 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from 'components/modal/modal.component';
 
 import './ShopNavBar.styles.scss';
-const ShopNavBar = ({ match, children, totalQuantity }) => {
+const ShopNavBar = ({ children, totalQuantity }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
+  const location = useLocation();
   //we are grabbing the login state and if it is true, we change the navbar to the account icon
   const isLoggedIn = useSelector((state) => state.login.user);
   const isAccountModalStatus = useSelector((state) => state.modal.show);
@@ -16,7 +17,7 @@ const ShopNavBar = ({ match, children, totalQuantity }) => {
     dispatch({ type: 'LOGOUT_USER' });
     dispatch({ type: 'TOGGLE_MODAL' });
     //if we logout from the '/farmer/admin' we send directly tot the landing page '/'
-    match.path === '/farmer/admin' && history.push('/');
+    location.pathname.startsWith('/farmer/admin') && navigate('/');
   };
   const toggleAuthentication = () => dispatch({ type: 'SHOW_AUTH' });
   const toggleModal = () => dispatch({ type: 'TOGGLE_MODAL' });
@@ -31,7 +32,7 @@ const ShopNavBar = ({ match, children, totalQuantity }) => {
           </Link>
         </div>
         {/* here it did not work with match.path because '/shop' is common with '/shop/cart */}
-        {window.location.pathname === '/shop' ? (
+        {location.pathname === '/shop' ? (
           <HashLink to="#how-we-work" scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
             <p className="shop__navbar__link">How it works</p>
           </HashLink>

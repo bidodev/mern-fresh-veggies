@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 
-const DEFAULT_DB_OPTIONS = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-};
+const DEFAULT_DB_OPTIONS = {};
 
 const getMongoUri = () => {
   const missing = [];

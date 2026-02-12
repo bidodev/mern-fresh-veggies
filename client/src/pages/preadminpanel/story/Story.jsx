@@ -6,9 +6,9 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 /* Ion-Icons Imports */
 /* Can use: shake={true} / rotate={true} / beat={true} / color="43853d" */
-import IosCreateOutline from 'react-ionicons/lib/IosCreateOutline';
-import IosColorPaletteOutline from 'react-ionicons/lib/IosColorPaletteOutline';
-import IosSettingsOutline from 'react-ionicons/lib/IosSettingsOutline';
+import CreateOutline from 'react-ionicons/lib/CreateOutline';
+import ColorPaletteOutline from 'react-ionicons/lib/ColorPaletteOutline';
+import SettingsOutline from 'react-ionicons/lib/SettingsOutline';
 
 /* Styles */
 import './story.styles.scss';
@@ -32,7 +32,7 @@ const Story = () => {
             <div className="story__how-it-works__left-container__text-container">
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
-                  <IosCreateOutline fontSize="30px" />
+                  <CreateOutline fontSize="30px" />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
                   Create an account with your Email address.
@@ -40,7 +40,7 @@ const Story = () => {
               </div>
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
-                  <IosColorPaletteOutline fontSize="30px" />
+                  <ColorPaletteOutline fontSize="30px" />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
                   Personalize your store: describe your activity in a biography, upload images of your farm and
@@ -49,7 +49,7 @@ const Story = () => {
               </div>
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
-                  <IosSettingsOutline fontSize="30px" />
+                  <SettingsOutline fontSize="30px" />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
                   Manage your online store: add your available products to your stock and track your orders.

@@ -12,15 +12,15 @@ import './wrapper.styles.scss';
 
 const FarmerAdmin = React.lazy(() => import('pages/farmeradmin/wrapper'));
 
-const PreAdminPanel = ({ match }) => {
+const PreAdminPanel = () => {
   const currentUser = useSelector(({ login }) => login.user);
 
   return currentUser && currentUser.data.role === 'farmer' ? (
-    <FarmerAdmin match={match} />
+    <FarmerAdmin />
   ) : (
     <>
-      <ShopNavBar match={match} />
-      <Authentication match={match} />
+      <ShopNavBar />
+      <Authentication />
       <Story />
       <Footer />
     </>

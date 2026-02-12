@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import 'react-credit-cards/lib/styles.scss';
@@ -16,7 +16,7 @@ const Checkout = () => {
   const [focused, setFocused] = useState('');
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
@@ -27,7 +27,7 @@ const Checkout = () => {
       // clear cart
       dispatch({ type: 'CLEAR_CART' });
       //redirect to the animation
-      history.push('/success');
+      navigate('/success');
     }, 2000);
   };
   const handleInputFocus = (e) => {

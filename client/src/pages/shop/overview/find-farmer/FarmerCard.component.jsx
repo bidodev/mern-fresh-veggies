@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 import './FarmerCard.styles.scss';
 
 /* IonIcons Imports */
-import IosPin from 'react-ionicons/lib/IosPin';
+import Pin from 'react-ionicons/lib/Pin';
 
-const FarmerCard = ({ farmer, match }) => {
+const FarmerCard = ({ farmer }) => {
   const imageSrc = `/uploads/${farmer.slug.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`;
 
   return (
-    <Link key={farmer._id} to={`${match.url}/farmer/${farmer.slug}`}>
+    <Link key={farmer._id} to={`/shop/farmer/${farmer.slug}`}>
       <div className="find-farmer__container__item">
         <div className="find-farmer__container__item__bg-image-container">
           <img src={`${imageSrc}`} alt="background" />
@@ -20,7 +20,7 @@ const FarmerCard = ({ farmer, match }) => {
         <div className="find-farmer__container__item--ratings">⭐⭐⭐⭐⭐</div>
         <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
         <div className="find-farmer__container__item__location">
-          <IosPin fontSize="15px" color="white" className="find-farmer__container__item__location--icon" />
+          <Pin fontSize="15px" color="white" className="find-farmer__container__item__location--icon" />
           Berlin, GERMANY
         </div>
 

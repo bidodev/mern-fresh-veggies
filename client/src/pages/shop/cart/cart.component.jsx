@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CustomButton from 'components/UI/custom-button/custom-button.component';
 
 import './cart.styles.scss';
-const Cart = ({ match }) => {
+const Cart = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
   /* Pull out the cart items*/
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   //total sum for the cart
@@ -37,7 +38,8 @@ const Cart = ({ match }) => {
 
 
   // here we need to reverse the logic with the modal
-  const closeModal = () => (match.path === '/shop/cart' ? false : dispatch({ type: 'TOGGLE_CART_HIDDEN' }));
+  const closeModal = () =>
+    location.pathname === '/shop/cart' ? false : dispatch({ type: 'TOGGLE_CART_HIDDEN' });
   return (
     <div className="cart-edit">
       <Link to={`/shop`} className="back-button" onClick={closeModal}>
