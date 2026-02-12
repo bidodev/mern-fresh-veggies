@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Cards from 'react-credit-cards';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import 'react-credit-cards/lib/styles.scss';
 import './checkout.page.style.scss';
 
 import Spinner from 'components/UI/spinner/spinner.component';
@@ -52,7 +50,12 @@ const Checkout = () => {
         <Spinner />
       ) : (
         <React.Fragment>
-          <Cards cvc={displayCVC} expiry={expiryDate} focused={focused} name={name} number={number} />
+          <div className="checkout-card-preview">
+            <p>{name || 'Name'}</p>
+            <p>{number || 'Card Number'}</p>
+            <p>{expiryDate || 'MM/YY'}</p>
+            <p>{displayCVC || 'CVC'}</p>
+          </div>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <input

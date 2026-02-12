@@ -1,20 +1,18 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
 
-const useStyles = makeStyles(() => ({
-  input: {
-    display: 'none',
-  },
-}));
-
-export default function UploadButtons({onSelectFile}) {
-  const classes = useStyles();
+export default function UploadButtons({ onSelectFile }) {
 
   return (
-    <div className={classes.root}>
-      <input accept="image/*" className={classes.input} onChange={(event) => onSelectFile(event)}id="icon-button-file" type="file" />
+    <div>
+      <input
+        accept="image/*"
+        style={{ display: 'none' }}
+        onChange={(event) => onSelectFile(event)}
+        id="icon-button-file"
+        type="file"
+      />
       <label htmlFor="icon-button-file">
         <IconButton color="primary" aria-label="upload picture" component="span">
           <PhotoCamera />
