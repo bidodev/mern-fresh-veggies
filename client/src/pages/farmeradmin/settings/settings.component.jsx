@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 /* Styles */
@@ -16,7 +16,7 @@ import PublicProfileSettings from './public.profile/profile.settings.component';
 //   return <div>Advanced Settings</div>;
 // };
 
-const UserSettings = ({ match }) => {
+const UserSettings = () => {
   const data = useSelector(({ login }) => login.adminPanelData);
   const user = useSelector(({ login }) => login.user.data);
 
@@ -37,19 +37,21 @@ const UserSettings = ({ match }) => {
           <div className="admin__settings__container">
             <li>
               <NavLink
-                className="admin__settings__nav-item"
-                exact
+                className={({ isActive }) =>
+                  `admin__settings__nav-item${isActive ? ' admin__settings__nav--active' : ''}`
+                }
+                end
                 to="/farmer/admin/settings"
-                activeClassName="admin__settings__nav--active"
               >
                 Account
               </NavLink>
             </li>
             <li>
               <NavLink
-                className="admin__settings__nav-item"
+                className={({ isActive }) =>
+                  `admin__settings__nav-item${isActive ? ' admin__settings__nav--active' : ''}`
+                }
                 to="/farmer/admin/settings/public"
-                activeClassName="admin__settings__nav--active"
               >
                 Public Profile
               </NavLink>
@@ -67,9 +69,11 @@ const UserSettings = ({ match }) => {
         </ul>
       </div>
       <>
-        <Route exact path={`${match.path}`} render={() => <AccountSetting user={user} />} />
-        <Route path={`${match.path}/public`} render={() => <PublicProfileSettings user={user} />} />
-        {/* <Route path={`${match.path}/advanced`} render={() => <AdvancedSettings />} /> */}
+        <Routes>
+          <Route index element={<AccountSetting user={user} />} />
+          <Route path="public" element={<PublicProfileSettings user={user} />} />
+          {/* <Route path="advanced" element={<AdvancedSettings />} /> */}
+        </Routes>
       </>
     </div>
   );

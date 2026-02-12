@@ -7,9 +7,10 @@ const ListItem = ({ name, icon }) => {
 
   return (
     <NavLink
-      activeClassName="admin-panel__sidebar-item--active"
-      className="admin-panel__sidebar-item"
-      exact
+      className={({ isActive }) =>
+        `admin-panel__sidebar-item${isActive ? ' admin-panel__sidebar-item--active' : ''}`
+      }
+      end={name === 'home'}
       to={`${url}`}
     >
       <Icon icon={icon} className="admin-panel__sidebar-item__icon" />

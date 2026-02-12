@@ -9,7 +9,7 @@ import SignIn from 'components/authentication/login/Login';
 import SignUp from 'components/authentication/signup/Signup';
 import DisplayModal from 'components/modal/modal.component';
 
-const AuthenticationWrapper = ({ match }) => {
+const AuthenticationWrapper = () => {
   
   /* Pull out if the authentication is showing and which component is showing */
   const isAuthenticationModalShowing = useSelector(({ authentication }) => authentication.show);

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Cards from 'react-credit-cards';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import 'react-credit-cards/lib/styles.scss';
 import './checkout.page.style.scss';
 
 import Spinner from 'components/UI/spinner/spinner.component';
@@ -16,7 +14,7 @@ const Checkout = () => {
   const [focused, setFocused] = useState('');
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
@@ -27,7 +25,7 @@ const Checkout = () => {
       // clear cart
       dispatch({ type: 'CLEAR_CART' });
       //redirect to the animation
-      history.push('/success');
+      navigate('/success');
     }, 2000);
   };
   const handleInputFocus = (e) => {
@@ -52,7 +50,12 @@ const Checkout = () => {
         <Spinner />
       ) : (
         <React.Fragment>
-          <Cards cvc={displayCVC} expiry={expiryDate} focused={focused} name={name} number={number} />
+          <div className="checkout-card-preview">
+            <p>{name || 'Name'}</p>
+            <p>{number || 'Card Number'}</p>
+            <p>{expiryDate || 'MM/YY'}</p>
+            <p>{displayCVC || 'CVC'}</p>
+          </div>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <input

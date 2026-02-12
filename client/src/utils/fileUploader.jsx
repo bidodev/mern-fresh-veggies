@@ -3,16 +3,14 @@ import axios from 'axios';
 import Modal from 'components/modal/modal.component';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import getCroppedImg from './cropImage';
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
+import Button from '@mui/material/Button';
 import Cropper from 'react-easy-crop';
-import Slider from '@material-ui/core/Slider';
-import { styles } from './styles';
+import Slider from '@mui/material/Slider';
 import UploadButton from './UploadButton';
 
 import './fileUploader.styles.scss';
 
-const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes, photoName }) => {
+const FileUploader = ({ toggleModal, modalStatus, photo, heading, photoName }) => {
   /* Load the userProfile image */
   const [imagePreview, setImagePreview] = useState(photo);
 
@@ -131,14 +129,14 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes, photo
         <form onSubmit={(e) => handleImageUpload(e)} className="file__uploader">
           <UploadButton onSelectFile={onSelectFile} />
           <div>
-            <Button variant="contained" color="primary" classes={{ root: classes.cropButton }}>
+            <Button variant="contained" color="primary" sx={{ ml: 2 }}>
               Reset
             </Button>
             <Button
               onClick={handleImageUpload}
               variant="contained"
               color="primary"
-              classes={{ root: classes.cropButton }}
+              sx={{ ml: 2 }}
             >
               Save
             </Button>
@@ -149,4 +147,4 @@ const FileUploader = ({ toggleModal, modalStatus, photo, heading, classes, photo
   );
 };
 
-export default withStyles(styles)(FileUploader);
+export default FileUploader;

@@ -10,7 +10,7 @@ import './FindFarmer.styles.scss';
 import Spinner from 'components/UI/spinner/spinner.component';
 import FarmersList from './FarmersList.component';
 
-const FindYourFarmer = ({ match }) => {
+const FindYourFarmer = () => {
   const [farmers, setFarmers] = useState(null);
 
   /* Load all the farmers */
@@ -23,7 +23,7 @@ const FindYourFarmer = ({ match }) => {
   return (
     <section className="find-farmer">
       <h2 className="find-farmer__header">MEET OUR VENDORS</h2>
-      {farmers ? <FarmersList farmers={farmers} match={match} /> : <Spinner />}
+      {farmers ? <FarmersList farmers={farmers} /> : <Spinner />}
     </section>
   );
 };

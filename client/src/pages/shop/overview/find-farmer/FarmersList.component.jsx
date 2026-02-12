@@ -10,7 +10,7 @@ import 'react-multi-carousel/lib/styles.css';
 /* Component Imports */
 import FarmerCard from './FarmerCard.component';
 
-const FarmerList = ({ farmers, match }) => {
+const FarmerList = ({ farmers }) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1470 },
@@ -45,7 +45,7 @@ const FarmerList = ({ farmers, match }) => {
         // customRightArrow={<CustomRightArrow />}
       >
         {farmers.map((farmer, index) => (
-          <FarmerCard key={index} farmer={farmer} match={match} />
+          <FarmerCard key={index} farmer={farmer} />
         ))}
       </Carousel>
     </div>

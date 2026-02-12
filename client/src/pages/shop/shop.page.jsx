@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
@@ -22,18 +22,18 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 import Authentication from 'components/authentication/wrapper';
 
 // ===== Overview Component ===
-const ShopOverView = ({ match }) => {
+const ShopOverView = () => {
   return (
     <section>
       <Banner />
-      <FindYourFarmer match={match} />
+      <FindYourFarmer />
       <HowItWorks />
     </section>
   );
 };
 
 // ===== Shop Page ===
-const Shop = ({ match }) => {
+const Shop = () => {
   const cartItems = useSelector(({ cart }) => cart.cartItems);
   const cartModalStatus = useSelector(({ cart }) => cart.show);
   //const cartNum = useSelector(({ cart }) => cart.cartQuantity);
@@ -47,8 +47,8 @@ const Shop = ({ match }) => {
 
   return (
     <>
-      <Authentication match={match} />
-      <ShopNavBar match={match} totalQuantity={totalQuantity}>
+      <Authentication />
+      <ShopNavBar totalQuantity={totalQuantity}>
         <li>
           <Icon icon={['fas', 'shopping-cart']} className="fa-shopping-cart" onClick={toggleModal} />
         </li>
@@ -59,7 +59,7 @@ const Shop = ({ match }) => {
           overlayClassName="cart-overlay"
         >
           {/* The Cart Modal is the same as the edit your cart  */}
-          <Cart toggleCartModal={toggleModal} match={match} />
+          <Cart toggleCartModal={toggleModal} />
           <Link to="/shop/cart">
             <CustomButton disabled={cartItems.length <= 0 ? true : false} type="submit" onClick={toggleModal}>
               Edit shopping cart
@@ -69,9 +69,11 @@ const Shop = ({ match }) => {
       </ShopNavBar>
 
       {/* Those components will switch, only one of them will be available */}
-      <Route exact path={`${match.path}`} component={ShopOverView} />
-      <Route path={`${match.path}/farmer/:slug`} component={ProfilePage} />
-      <Route path={`${match.path}/cart`} component={Cart} />
+      <Routes>
+        <Route index element={<ShopOverView />} />
+        <Route path="farmer/:slug" element={<ProfilePage />} />
+        <Route path="cart" element={<Cart />} />
+      </Routes>
 
       <Footer />
       <ScrollTopArrow />

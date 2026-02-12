@@ -1,6 +1,6 @@
 import React from 'react';
 import LogoFacebook from 'react-ionicons/lib/LogoFacebook';
-import IosMailOutline from 'react-ionicons/lib/IosMailOutline';
+import MailOutline from 'react-ionicons/lib/MailOutline';
 
 /* Styles */
 import './footer.styles.scss';
@@ -17,7 +17,7 @@ const Footer = () => {
               Facebook
             </p>
             <p>
-              <IosMailOutline fontSize="30px" color="#1e5b45" />
+              <MailOutline fontSize="30px" color="#1e5b45" />
               Mail Us
             </p>
           </div>

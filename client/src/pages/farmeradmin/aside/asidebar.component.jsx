@@ -26,8 +26,9 @@ const AsideBar = () => {
         <ListItem key={item.id} {...item} />
       ))}
       <NavLink
-        activeClassName="admin-panel__sidebar-item--active"
-        className="admin-panel__sidebar-item"
+        className={({ isActive }) =>
+          `admin-panel__sidebar-item${isActive ? ' admin-panel__sidebar-item--active' : ''}`
+        }
         target="_blank"
         to={`/shop/farmer/${user.slug}`}
       >

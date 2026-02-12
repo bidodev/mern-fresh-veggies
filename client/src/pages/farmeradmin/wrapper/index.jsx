@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import THEMES from 'settings/public-profile/Themes';
 
 /* React Router Dom */
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 /* Component Imports */
 import ShopNavBar from 'components/navbar/ShopNavBar';
@@ -21,19 +21,21 @@ import FarmerSettings from 'pages/farmeradmin/settings/settings.component';
  * We don't need to reload the parent every time the children update
  */
 
-const FarmerAdmin = React.memo(({ match }) => {
+const FarmerAdmin = React.memo(() => {
   const color = useSelector(({ status }) => status.color);
 
   return (
     <>
       {/* TODO: Implement the logic to change the THEME */}
       {/* TODO: Check weather ShopNavBar should be child or not of the farmer-admin*/}
-      <ShopNavBar match={match} />
+      <ShopNavBar />
       <section className={`farmer-admin ${THEMES[color]}`}>
         <Aside />
-        <Route exact path={`${match.path}`} component={ProfileAdmin} />
-        <Route path={`${match.path}/stock`} component={Stock} />
-        <Route path={`${match.path}/settings`} render={({ match }) => <FarmerSettings match={match} />} />
+        <Routes>
+          <Route index element={<ProfileAdmin />} />
+          <Route path="stock" element={<Stock />} />
+          <Route path="settings/*" element={<FarmerSettings />} />
+        </Routes>
       </section>
     </>
   );
