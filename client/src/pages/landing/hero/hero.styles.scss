@@ -14,33 +14,16 @@
     &:after {
       content: '';
       background-image: url('./hero.jpg');
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: right;
-      opacity: 0.9;
+      opacity: 1;
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
       position: absolute;
       z-index: -1;
-    }
-    @media (max-width: 1800px) {
-      &:after {
-        left: 10rem;
-      }
-    }
-    @media (max-width: 1600px) {
-      &:after {
-        background-size: 80%;
-        opacity: 0.9;
-        left: 20rem;
-      }
-    }
-    @media (max-width: 1300px) {
-      &:after {
-        opacity: 0.9;
-      }
     }
     @media (max-width: 900px) {
       &:after {
