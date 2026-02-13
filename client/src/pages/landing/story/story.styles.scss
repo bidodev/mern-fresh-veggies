@@ -7,12 +7,14 @@
 .story {
   // ======== HERO (GO TO SHOP) ===
   &__hero-section {
-    height: 100vh;
+    min-height: 100dvh;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 1rem 0 3rem;
+    justify-content: flex-start;
+    gap: clamp(1rem, 3vh, 2.2rem);
+    padding: clamp(1rem, 3vh, 2rem) 0 clamp(2rem, 5vh, 3rem);
 
     &--header {
       font-size: 2.7rem;
@@ -30,11 +32,10 @@
     }
 
     &__img-container {
-      width: 50vw;
-      margin-top: 5vh;
-      transform: translateX(45%);
+      width: min(52rem, 92%);
+      margin: clamp(0.5rem, 2vh, 1.5rem) auto 0;
+      transform: none;
       @media (max-width: 1050px) {
-        transform: translate(5%);
         width: 90%;
       }
       &--img {
@@ -42,32 +43,35 @@
         border-radius: var(--radius-lg);
         box-shadow: var(--shadow-card);
         @media (max-width: 400px) {
-          width: 90%;
-          transform: translateX(6%);
+          width: 100%;
+          transform: none;
         }
       }
     }
 
     &__banner {
-      width: 55vw;
+      width: min(64rem, 92%);
       display: flex;
       justify-content: space-evenly;
-      transform: translate(50%, -50%);
+      align-items: stretch;
+      gap: clamp(0.5rem, 1vw, 1rem);
+      margin: 0 auto;
+      transform: none;
 
       @media (max-width: 1050px) {
         width: 91vw;
-        transform: translate(5%, -20%);
       }
       @media (max-width: 640px) {
-        align-items: flex-start;
+        align-items: stretch;
         flex-direction: column;
       }
 
       &__text-container {
-        height: 12rem;
+        min-height: 10.5rem;
+        height: auto;
         width: 15rem;
-        margin: 0.5vh 1vh;
-        padding: 2vh 2vh;
+        margin: 0;
+        padding: var(--space-4);
         background-color: #ffffff;
         border: var(--border-soft);
         box-shadow: var(--shadow-soft);
@@ -92,10 +96,10 @@
           width: 95%;
         }
         @media (max-width: 640px) {
-          padding-right: 0;
+          padding-right: var(--space-4);
           border-right: none;
-          padding-bottom: 2vh;
-          height: 8rem;
+          padding-bottom: var(--space-4);
+          min-height: 8rem;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -118,32 +122,28 @@
         &--text {
           text-align: center;
           color: #404040;
+          line-height: 1.5;
           @media (max-width: 460px) {
             font-size: 0.9rem;
-            margin-right: 1rem;
+            margin-right: 0;
           }
         }
       }
     }
 
     &__button {
-      margin-top: -6vh;
+      margin-top: 0;
       text-align: center;
-      @media (max-width: 1050px) {
-        margin-top: 0;
-      }
-      @media (max-width: 650px) {
-        margin-top: -8vh;
-      }
     }
   }
 
   // ======== INFO (GO TO FARMER) ===
   &__info-section {
     width: 100%;
-    height: 100vh;
-    margin: 5vh 0;
-    padding: 5vh 0;
+    min-height: 100dvh;
+    height: auto;
+    margin: clamp(2rem, 5vh, 4rem) 0;
+    padding: clamp(1.2rem, 3vh, 3rem) 0;
     display: flex;
     background: linear-gradient(180deg, transparent, rgba(30, 91, 69, 0.03), transparent);
     @media (max-width: 1050px) {
@@ -163,7 +163,7 @@
       flex-direction: column;
       justify-content: space-evenly;
       align-items: flex-end;
-      margin-right: 5vw;
+      margin-right: clamp(1rem, 4vw, 4rem);
       @media (min-width: 1051px) and (max-width: 1250px) {
         justify-content: space-around;
       }
@@ -177,15 +177,15 @@
       }
 
       &__text-container {
-        width: 24vw;
-        height: 30vh;
-        margin: 1vh;
+        width: min(24rem, 95%);
+        min-height: 18rem;
+        margin: 0 0 var(--space-4);
         padding: 1.4rem 2rem 1.4rem 1rem;
         display: block;
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         text-align: center;
         border-radius: var(--radius-md);
@@ -211,7 +211,7 @@
           z-index: -1;
         }
         @media (max-width: 1250px) {
-          padding: 1vh 2vh 1vh 1vh;
+          padding: var(--space-4);
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
@@ -225,25 +225,26 @@
         }
         @media (max-width: 1050px) {
           width: 95%;
-          margin: 0 0 2vh 0;
+          margin: 0 0 var(--space-4) 0;
         }
         @media (max-width: 800px) {
-          padding: 0;
+          padding: var(--space-4);
           &:after {
             opacity: 0.2;
           }
           @media (max-width: 640px) {
             min-width: 90%;
-            height: 25rem;
+            min-height: 15rem;
+            height: auto;
             justify-content: space-evenly;
             &:after {
               background-size: contain;
             }
-            padding-left: 1rem;
           }
           @media (max-width: 400px) {
             min-width: 18rem;
-            height: 25rem;
+            min-height: 15rem;
+            height: auto;
             justify-content: space-evenly;
             &:after {
               background-size: contain;
@@ -283,11 +284,11 @@
       }
 
       &__img-container {
-        width: 24vw;
-        margin: 0 3vh 3vh 0;
+        width: min(24rem, 95%);
+        margin: 0 0 var(--space-5) 0;
         @media (max-width: 1050px) {
           width: 95%;
-          margin: 0 0 3vh 0;
+          margin: 0 0 var(--space-5) 0;
         }
         @media (max-width: 640px) {
           min-width: 90%;
@@ -318,8 +319,8 @@
 
       // --- image top ---
       &__img-container-1 {
-        width: 38vw;
-        margin-bottom: 3vh;
+        width: min(38rem, 95%);
+        margin-bottom: var(--space-5);
         @media (max-width: 1050px) {
           width: 95%;
         }
@@ -338,7 +339,7 @@
 
       // --- images bottom ---
       &__img-container-2 {
-        width: 28vw;
+        width: min(28rem, 95%);
         @media (max-width: 1050px) {
           width: 95%;
         }

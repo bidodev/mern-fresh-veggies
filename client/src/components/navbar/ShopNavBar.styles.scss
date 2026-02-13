@@ -15,7 +15,7 @@
   background-color: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: var(--border-soft);
-  height: clamp(4.4rem, 8vh, 5rem);
+  height: var(--nav-height);
   display: flex;
   justify-content: space-between;
   box-shadow: 0 8px 18px -16px rgba(17, 24, 39, 0.85);

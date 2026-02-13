@@ -2,9 +2,9 @@
 
 .footer {
   width: 100%;
-  min-height: 18rem;
-  margin: 2vh 0 0;
-  padding: 1.5rem 1.25rem 1rem;
+  min-height: clamp(12rem, 22vh, 16rem);
+  margin: clamp(1.2rem, 3vh, 2rem) 0 0;
+  padding: clamp(1rem, 2.5vh, 1.5rem) var(--section-pad-x) var(--space-4);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.98));
@@ -19,12 +19,12 @@
 
   @media (max-width: 690px) {
     min-width: 100%;
-    min-height: 15rem;
+    min-height: auto;
   }
 
   &__box {
     width: min(44rem, 100%);
-    min-height: 14rem;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,13 +50,18 @@
       align-items: flex-start;
       gap: 1.5rem;
 
+      @media (max-width: 700px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
       @media (max-width: 500px) {
         justify-content: space-around;
         gap: 1rem;
       }
 
       &__social-media {
-        width: 16rem;
+        width: min(16rem, 100%);
         font-size: small;
 
         @media (max-width: 600px) {
@@ -77,7 +82,7 @@
       }
 
       &__placeholder {
-        width: 16rem;
+        width: min(16rem, 100%);
         font-size: small;
         line-height: 1.7;
         color: #4a4a4a;

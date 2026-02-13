@@ -1,17 +1,19 @@
 .cart-edit {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-left: 4vw;
-  margin-top: 8rem;
-  height: 80vh;
+  justify-content: flex-start;
+  gap: var(--space-4);
+  width: min(var(--content-max), calc(100% - (var(--section-pad-x) * 2)));
+  margin: calc(var(--nav-height) + var(--space-5)) auto var(--space-6);
+  min-height: 70vh;
+  padding-bottom: var(--space-5);
   background-image: url('goodie-box.jpg');
   background-position: right bottom;
   background-size: 25%;
   background-repeat: no-repeat;
   @media (max-width: 800px) {
-    margin-top: 5rem;
-    height: 90vh;
+    margin-top: calc(var(--nav-height) + var(--space-4));
+    min-height: auto;
     background-size: 65%;
   }
   @media (max-width: 500px) {
@@ -20,25 +22,26 @@
 
   /// this is to prevent redirecting on a click outside the button
   .back-button {
-    margin-right: 15rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     color: #f75d37;
+    width: fit-content;
     .fa-angle-left {
       font-size: 2rem;
-      margin-right: 1rem;
+      margin-right: 0.7rem;
     }
     @media (max-width: 500px) {
-      width: 8rem;
+      width: fit-content;
     }
   }
   .cart-title {
-    margin: 2vh 4vw;
+    margin: 0;
   }
   ul {
-    height: 50vh;
-    margin: 3vh 10vw;
+    height: min(50vh, 32rem);
+    margin: 0;
+    width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     &::-webkit-scrollbar {
@@ -49,7 +52,7 @@
       background: #00000093;
     }
     @media (max-width: 800px) {
-      width: 95vw;
+      width: 100%;
       margin: 0;
     }
 
@@ -70,14 +73,14 @@
     // }
 
     li {
-      width: 75vw;
+      width: 100%;
       list-style: none;
       display: flex;
       justify-content: space-between;
       @media (max-width: 800px) {
-        width: 95vw;
+        width: 100%;
         justify-content: space-evenly;
-        height: 5rem;
+        min-height: 5rem;
         align-items: center;
       }
       // border: 0px transparent solid;
@@ -89,8 +92,8 @@
       }
 
       & > * {
-        width: 20vw;
-        height: 7vh;
+        width: 22%;
+        min-height: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -113,7 +116,7 @@
         font-size: 1.5rem;
         border: none;
         background-color: transparent;
-        margin: 0 2rem;
+        margin: 0 0.9rem;
         &:focus {
           outline: none;
           box-shadow: none;
@@ -130,24 +133,29 @@
     }
   }
   .total-price {
-    text-align: right;
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 10rem;
+    text-align: left;
+    display: block;
+    margin-left: 0;
     font-weight: bold;
     font-size: 1.1rem;
     @media (max-width: 800px) {
-      margin-top: 4rem;
-      margin-left: 2rem;
+      margin-top: var(--space-2);
+      margin-left: 0;
     }
   }
   .checkout-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: var(--space-2);
+    width: fit-content;
+    @media (max-width: 500px) {
+      flex-wrap: wrap;
+      width: 100%;
+    }
   }
 }
 
 //this is the  back icon
 .fa-angle-left {
-  margin-right: 4rem;
+  margin-right: 0.7rem;
 }

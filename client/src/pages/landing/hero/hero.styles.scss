@@ -2,13 +2,15 @@
 // ************* FLEX BOX VERSION *****
 .hero-class {
   width: 100%;
-  height: 100vh;
+  min-height: 100dvh;
+  height: auto;
   display: flex;
   flex-direction: column;
 
   .hero-component {
     width: 100%;
-    height: 100vh;
+    min-height: 100dvh;
+    height: auto;
     display: block;
     position: relative;
 
@@ -71,7 +73,7 @@
     }
     header {
       width: 100%;
-      height: 6rem;
+      height: clamp(4.6rem, 10vh, 6rem);
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -120,40 +122,41 @@
     }
 
     &__main {
-      width: 40%;
-      height: 90%;
+      width: min(44rem, calc(100% - (var(--section-pad-x) * 2)));
+      min-height: calc(100dvh - var(--nav-height));
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin-left: 3rem;
+      margin-left: clamp(0.75rem, 3vw, 3rem);
       @media (max-width: 1200px) {
         align-items: flex-start;
-        margin-top: 5rem;
+        margin-top: clamp(1rem, 4vh, 3rem);
       }
       @media (max-width: 900px) {
-        width: 90%;
-        height: 80vh;
+        width: calc(100% - (var(--section-pad-x) * 2));
+        min-height: 68vh;
         align-items: flex-end;
       }
       @media (max-width: 600px) {
         align-items: center;
         justify-content: center;
-        margin-left: 1rem;
-        margin-top: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: var(--space-4);
       }
       @media (max-height: 700px) {
-        height: 70%;
+        min-height: 64vh;
       }
 
       &__text-component {
-        width: 50rem;
-        height: 50rem;
-        max-width: 90%;
+        width: min(50rem, 100%);
+        min-height: clamp(26rem, 62vh, 40rem);
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
-        padding: 2rem 2rem 2.6rem;
+        gap: clamp(1rem, 2.4vh, 2rem);
+        padding: clamp(1rem, 3vh, 2rem) clamp(1rem, 2.5vw, 2rem);
         border-radius: var(--radius-lg);
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.78));
         border: var(--border-soft);
@@ -161,19 +164,18 @@
         animation: hero-reveal 650ms var(--ease-standard) both;
 
         @media (max-width: 1600px) {
-          width: 40rem;
-          height: 35rem;
+          width: min(40rem, 100%);
+          min-height: clamp(25rem, 52vh, 35rem);
         }
         @media (max-width: 1200px) {
-          width: 35rem;
-          height: 35rem;
+          width: min(35rem, 100%);
+          min-height: clamp(24rem, 55vh, 35rem);
         }
         @media (max-width: 1000px) {
-          width: 40rem;
-          // height: 30rem;
+          width: min(40rem, 100%);
         }
         @media (max-width: 900px) {
-          width: 90%;
+          width: 100%;
         }
 
         p {
@@ -205,18 +207,18 @@
           }
         }
         &--sub-heading {
-          width: 33vw;
+          width: min(34rem, 86%);
           text-align: center;
           color: #404040;
           font-size: 1.2rem;
           line-height: 1.6;
 
           @media (max-width: 1300px) {
-            width: 27vw;
+            width: min(30rem, 88%);
           }
           @media (max-width: 900px) {
-            width: 60%;
-            font-size: 1.5rem;
+            width: min(28rem, 92%);
+            font-size: 1.2rem;
             color: rgb(51, 49, 49);
           }
 

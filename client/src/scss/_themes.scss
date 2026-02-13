@@ -37,6 +37,20 @@
   --radius-lg: 1.2rem;
   --radius-pill: 999px;
 
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --section-pad-x: clamp(1rem, 2vw, 2rem);
+  --section-pad-y: clamp(1.2rem, 3vh, 3rem);
+  --content-max: 78rem;
+  --nav-height: clamp(4.4rem, 8vh, 5rem);
+
   /* Motion */
   --duration-fast: 160ms;
   --duration-base: 260ms;

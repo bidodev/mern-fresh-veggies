@@ -1,5 +1,6 @@
 .public-farmer {
-  height: 47.5rem;
+  min-height: clamp(36rem, 72vh, 47.5rem);
+  height: auto;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -20,14 +21,14 @@
 
   // ======== NEW PRODUCTS (right) ===
   &__main__right {
-    min-width: 13rem;
+    min-width: clamp(11.5rem, 22vw, 13rem);
     overflow-y: scroll;
     @media (max-width: 750px) {
       display: none;
     }
     &__header {
       position: absolute;
-      width: 13rem;
+      width: clamp(11.5rem, 22vw, 13rem);
       height: 4rem;
       display: flex;
       align-items: center;
@@ -49,7 +50,7 @@
     }
 
     &__container {
-      padding-top: 4rem;
+      padding-top: var(--space-7);
       border-left: 1px solid var(--border-color);
       &__empty-list {
         display: flex;
@@ -70,12 +71,13 @@
   &__aside {
     display: flex;
     &__infos {
-      width: 15rem;
+      width: clamp(13rem, 24vw, 15rem);
       @media (max-width: 750px) {
         width: 100%;
       }
       &__avatar {
-        height: 14rem;
+        min-height: 12rem;
+        height: auto;
         @media (max-width: 750px) {
           height: unset;
         }
@@ -92,8 +94,9 @@
           }
         }
         &__description {
-          height: 7rem;
-          padding: 1rem;
+          min-height: 7rem;
+          height: auto;
+          padding: var(--space-4);
           border-right: 1px solid var(--border-color);
           @media (max-width: 750px) {
             height: 0rem;
@@ -140,7 +143,7 @@
         }
       }
       &__data {
-        padding: 4rem 1rem 1rem 1rem;
+        padding: clamp(2rem, 5vh, 4rem) var(--space-4) var(--space-4);
         border-bottom: 1px solid var(--border-color);
         border-right: 1px solid var(--border-color);
         @media (max-width: 750px) {
@@ -153,7 +156,7 @@
         }
       }
       &__expertise {
-        padding: 2rem 1rem;
+        padding: var(--space-6) var(--space-4);
         border-right: 1px solid var(--border-color);
         @media (max-width: 750px) {
           display: none;
@@ -202,7 +205,7 @@
         background-color: var(--header);
         color: var(--text-header);
         font-weight: 500;
-        padding: 1rem 2rem;
+        padding: var(--space-4) clamp(1rem, 2vw, 2rem);
         text-transform: uppercase;
         letter-spacing: 0.1px;
         display: flex;
@@ -219,7 +222,7 @@
         }
       }
       &__text-container {
-        padding: 1rem 2rem;
+        padding: var(--space-4) clamp(1rem, 2vw, 2rem);
         color: var(--text-body);
         font-size: 0.9rem;
         @media (min-width: 980px) {

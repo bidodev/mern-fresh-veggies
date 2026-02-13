@@ -1,9 +1,9 @@
 .public-profile {
   &__wrapper {
-    margin-top: 7rem;
+    margin-top: calc(var(--nav-height) + var(--space-6));
     background-color: transparent;
     @media (max-width: 1050px) {
-      margin-top: 4.2rem;
+      margin-top: calc(var(--nav-height) + var(--space-2));
     }
 
     /* Wrapper if the store is open */
