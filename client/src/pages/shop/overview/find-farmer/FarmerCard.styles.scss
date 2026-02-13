@@ -3,10 +3,19 @@
     width: 30rem;
     height: 20rem;
     margin: 2vh;
-    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-card);
     background: #eee;
-    border-radius: 5px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: var(--border-soft);
     position: relative;
+    transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
     @media (max-width: 550px) {
       width: 20rem;
       height: 15rem;
@@ -15,11 +24,20 @@
     &__bg-image-container {
       width: 100%;
       height: 20rem;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.48));
+      }
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 5px;
+        border-radius: var(--radius-lg);
       }
     }
 
@@ -31,6 +49,8 @@
       bottom: 3.5rem;
       right: 2.5rem;
       overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.86);
+      box-shadow: 0 6px 16px -10px rgba(0, 0, 0, 0.75);
       @media (max-width: 550px) {
         width: 4rem;
         height: 4rem;
@@ -49,6 +69,7 @@
       bottom: 6.9rem;
       left: 3rem;
       text-shadow: 1px 2px 2px black;
+      color: #fff5cc;
       @media (max-width: 550px) {
         bottom: 4.3rem;
         left: 1rem;
@@ -59,9 +80,9 @@
       position: absolute;
       bottom: 3.5rem;
       left: 3rem;
-      font-size: 2.5rem;
-      font-weight: 600;
-      text-shadow: 1px 2px 2px black;
+      font-size: clamp(1.7rem, 2.4vw, 2.5rem);
+      font-weight: 700;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
       color: white;
       @media (max-width: 550px) {
         bottom: 1rem;
@@ -76,7 +97,7 @@
       font-style: italic;
       font-size: 0.9rem;
       text-transform: uppercase;
-      text-shadow: 1px 1px 0px black;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.88);
       color: white;
       @media (max-width: 550px) {
         bottom: 0.4rem;

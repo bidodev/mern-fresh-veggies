@@ -12,12 +12,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding: 1rem 0 3rem;
 
     &--header {
       font-size: 2.7rem;
       text-align: center;
       text-transform: uppercase;
       color: #1e5b45;
+      letter-spacing: 0.03em;
       @media (min-width: 1480px) {
         margin-top: 10rem;
         font-size: 2.5rem;
@@ -37,7 +39,8 @@
       }
       &--img {
         width: 100%;
-        border-radius: 10px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card);
         @media (max-width: 400px) {
           width: 90%;
           transform: translateX(6%);
@@ -66,8 +69,16 @@
         margin: 0.5vh 1vh;
         padding: 2vh 2vh;
         background-color: #ffffff;
-        box-shadow: 0 12px 16px -8px rgba(119, 119, 119, 0.486);
-        border-radius: 10px;
+        border: var(--border-soft);
+        box-shadow: var(--shadow-soft);
+        border-radius: var(--radius-md);
+        transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-card-hover);
+        }
+
         & > * {
           text-align: justify;
         }
@@ -134,6 +145,7 @@
     margin: 5vh 0;
     padding: 5vh 0;
     display: flex;
+    background: linear-gradient(180deg, transparent, rgba(30, 91, 69, 0.03), transparent);
     @media (max-width: 1050px) {
       flex-direction: column;
       align-items: center;
@@ -168,7 +180,7 @@
         width: 24vw;
         height: 30vh;
         margin: 1vh;
-        padding: 1vh 8vh 1vh 1vh;
+        padding: 1.4rem 2rem 1.4rem 1rem;
         display: block;
         position: relative;
         display: flex;
@@ -176,6 +188,11 @@
         justify-content: flex-end;
         align-items: center;
         text-align: center;
+        border-radius: var(--radius-md);
+        border: var(--border-soft);
+        background-color: rgba(255, 255, 255, 0.72);
+        box-shadow: var(--shadow-soft);
+
         &--text {
           color: #404040;
         }
@@ -280,6 +297,8 @@
         }
         &--img {
           width: 100%;
+          border-radius: var(--radius-md);
+          box-shadow: var(--shadow-soft);
         }
       }
     }
@@ -312,6 +331,8 @@
         }
         &--img {
           width: 100%;
+          border-radius: var(--radius-md);
+          box-shadow: var(--shadow-soft);
         }
       }
 
@@ -329,6 +350,8 @@
         }
         &--img {
           width: 100%;
+          border-radius: var(--radius-md);
+          box-shadow: var(--shadow-soft);
         }
       }
     }

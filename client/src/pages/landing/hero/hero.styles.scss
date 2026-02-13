@@ -11,13 +11,23 @@
     height: 100vh;
     display: block;
     position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.75));
+      pointer-events: none;
+      z-index: -1;
+    }
+
     &:after {
       content: '';
       background-image: url('./hero.jpg');
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: right;
-      opacity: 0.9;
+      opacity: 0.78;
       top: 0;
       left: 0;
       bottom: 0;
@@ -65,21 +75,46 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+
       .hero-component__header {
-        width: 30%;
+        width: 30rem;
+        margin-right: 2rem;
+        padding: 0.3rem 0.6rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
+        background-color: rgba(255, 255, 255, 0.74);
+        border: var(--border-soft);
+        border-radius: var(--radius-pill);
+        box-shadow: var(--shadow-soft);
+        backdrop-filter: blur(8px);
+
         .hero-component__header__button {
           color: #1e5b45;
-          font-weight: bold;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          padding: 0.55rem 0.65rem;
+          border-radius: var(--radius-pill);
+          transition: color var(--duration-fast) var(--ease-standard),
+            background-color var(--duration-fast) var(--ease-standard);
+
           &:hover {
-            color: #52a47e;
+            color: var(--accent-orange);
+            background-color: rgba(247, 93, 55, 0.1);
           }
         }
+
         @media (max-width: 1300px) {
           width: 25rem;
+          margin-right: 1rem;
+        }
+
+        @media (max-width: 680px) {
+          width: 21rem;
+          justify-content: space-between;
+          padding: 0.3rem 0.5rem;
+          margin-right: 0.5rem;
         }
       }
     }
@@ -113,10 +148,18 @@
       &__text-component {
         width: 50rem;
         height: 50rem;
+        max-width: 90%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        padding: 2rem 2rem 2.6rem;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.78));
+        border: var(--border-soft);
+        box-shadow: var(--shadow-card);
+        animation: hero-reveal 650ms var(--ease-standard) both;
+
         @media (max-width: 1600px) {
           width: 40rem;
           height: 35rem;
@@ -134,16 +177,17 @@
         }
 
         p {
-          font-size: 6vw;
+          font-size: clamp(3.3rem, 6vw, 6rem);
           font-family: 'Nothing You Could Do', cursive;
-          font-weight: bold;
+          font-weight: 700;
           justify-content: center;
           color: #f7b53a;
+          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 
           @media (max-width: 900px) {
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.582);
             width: fit-content;
-            font-size: 5rem;
+            font-size: clamp(3.2rem, 8vw, 5rem);
           }
           @media (max-width: 700px) {
             text-align: center;
@@ -153,7 +197,7 @@
           }
           span {
             display: block;
-            font-size: 8vw;
+            font-size: clamp(3.8rem, 8vw, 7rem);
             text-align: center;
             @media (max-width: 700px) {
               font-size: 4rem;
@@ -164,7 +208,8 @@
           width: 33vw;
           text-align: center;
           color: #404040;
-          font-size: 1.3rem;
+          font-size: 1.2rem;
+          line-height: 1.6;
 
           @media (max-width: 1300px) {
             width: 27vw;
@@ -178,6 +223,7 @@
           @media (max-width: 700px) {
             width: 90%;
           }
+
           @media (max-width: 700px) {
             font-size: 1.2rem;
           }
@@ -190,5 +236,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.8rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

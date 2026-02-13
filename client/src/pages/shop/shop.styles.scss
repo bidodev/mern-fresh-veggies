@@ -10,20 +10,22 @@
   top: 0;
 }
 .cart-modal {
-  height: 100rem;
+  height: min(100dvh, 100rem);
   width: 30rem;
   position: fixed;
+  top: 0;
+  bottom: 0;
   right: 0;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid rgba(24, 24, 24, 0.14);
   background: rgb(255, 255, 255);
-  overflow: hidden;
-  border-radius: 4px;
+  overflow: auto;
+  border-radius: 0 0 0 var(--radius-md);
   outline: none;
-  padding: 20px;
+  padding: 1.1rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 2vw;
+  box-shadow: -8px 0 28px -18px rgba(0, 0, 0, 0.55);
   -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   @-webkit-keyframes slide-in-right {
@@ -56,10 +58,11 @@
   }
   @media (max-width: 450px) {
     width: 100%;
+    border-radius: 0;
   }
   .cart-edit {
     margin-top: 2rem;
-    margin-left: 2vw;
+    margin-left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,7 +128,7 @@
     }
     .total-price {
       width: 16rem;
-      margin-left: 10rem;
+      margin-left: 6rem;
       align-self: flex-start;
       font-weight: bold;
       font-size: 1.1rem;
@@ -137,18 +140,24 @@
       width: fit-content;
       display: flex;
       flex-direction: row;
+      gap: 0.2rem;
     }
   }
   [type='submit'] {
-    background-color: white;
+    background-color: #fff;
     border: 1px solid #f75d37;
     color: #f75d37;
-    margin-left: 2.5vw;
+    margin-left: 0;
+    margin-right: 0.45rem;
     width: 21rem;
+    transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
+
     &:hover {
       background-color: #f75d37;
       color: white;
       border: 1px solid white;
+      transform: translateY(-1px);
     }
     &:disabled {
       appearance: button;
@@ -161,10 +170,8 @@
 }
 .cart-overlay {
   position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.637);
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.54);
+  backdrop-filter: blur(2px);
   z-index: 9999;
 }

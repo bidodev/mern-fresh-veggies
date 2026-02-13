@@ -6,6 +6,7 @@
   background-position: bottom left;
   background-size: 20%;
   background-repeat: no-repeat;
+  padding: 1rem 0;
   @media (max-width: 780px) {
     margin-bottom: 10vh;
     background-image: none;
@@ -25,6 +26,7 @@
       font-size: 2rem;
       color: #1e5b45;
       text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     &__box-container {
@@ -34,9 +36,12 @@
       justify-content: space-evenly;
       align-items: center;
       flex-wrap: wrap;
-      box-shadow: 0 12px 16px -8px rgba(119, 119, 119, 0.486);
-
+      box-shadow: var(--shadow-card);
+      border: var(--border-soft);
+      border-radius: var(--radius-lg);
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 2rem 2vw;
+
       @media (max-width: 1116px) {
         width: 100%;
       }
@@ -47,7 +52,16 @@
       &__card {
         width: 23rem;
         height: 22vh;
-        padding: 2vh;
+        padding: 1.3rem;
+        border-radius: var(--radius-md);
+        transition: background-color var(--duration-fast) var(--ease-standard),
+          transform var(--duration-fast) var(--ease-standard);
+
+        &:hover {
+          transform: translateY(-2px);
+          background-color: var(--header-soft);
+        }
+
         @media (max-width: 750px) {
           width: fit-content;
           height: fit-content;
@@ -69,8 +83,11 @@
 
         &--header {
           margin: 0.5rem 0;
+          color: var(--header);
         }
         &--text {
+          color: #444;
+          line-height: 1.6;
           @media (max-width: 600px) {
             font-size: 0.9rem;
           }
