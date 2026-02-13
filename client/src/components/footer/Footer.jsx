@@ -1,6 +1,6 @@
 import React from 'react';
-import LogoFacebook from 'react-ionicons/lib/LogoFacebook';
-import MailOutline from 'react-ionicons/lib/MailOutline';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 /* Styles */
 import './footer.styles.scss';
@@ -13,11 +13,11 @@ const Footer = () => {
         <div className="footer__box__container">
           <div className="footer__box__container__social-media">
             <p>
-              <LogoFacebook fontSize="30px" color="#3b5998" borderRadius="10px" />
+              <Icon icon={faFacebook} className="footer__icon" style={{ color: '#3b5998' }} />
               Facebook
             </p>
             <p>
-              <MailOutline fontSize="30px" color="#1e5b45" />
+              <Icon icon={['fas', 'envelope']} className="footer__icon" style={{ color: '#1e5b45' }} />
               Mail Us
             </p>
           </div>

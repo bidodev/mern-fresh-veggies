@@ -1,14 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 /* Component Imports */
 import CustomButton from 'components/UI/custom-button/custom-button.component';
-
-/* Ion-Icons Imports */
-/* Can use: shake={true} / rotate={true} / beat={true} / color="43853d" */
-import CreateOutline from 'react-ionicons/lib/CreateOutline';
-import ColorPaletteOutline from 'react-ionicons/lib/ColorPaletteOutline';
-import SettingsOutline from 'react-ionicons/lib/SettingsOutline';
 
 /* Styles */
 import './story.styles.scss';
@@ -32,7 +27,7 @@ const Story = () => {
             <div className="story__how-it-works__left-container__text-container">
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
-                  <CreateOutline fontSize="30px" />
+                  <Icon icon={['fas', 'user-plus']} style={{ fontSize: '30px' }} />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
                   Create an account with your Email address.
@@ -40,7 +35,7 @@ const Story = () => {
               </div>
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
-                  <ColorPaletteOutline fontSize="30px" />
+                  <Icon icon={['fas', 'palette']} style={{ fontSize: '30px' }} />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
                   Personalize your store: describe your activity in a biography, upload images of your farm and
@@ -49,7 +44,7 @@ const Story = () => {
               </div>
               <div className="story__how-it-works__left-container__text-container__list-item">
                 <div className="story__how-it-works__left-container__text-container__list-item--icon">
-                  <SettingsOutline fontSize="30px" />
+                  <Icon icon={['fas', 'gear']} style={{ fontSize: '30px' }} />
                 </div>
                 <div className="story__how-it-works__left-container__text-container__list-item--text">
                   Manage your online store: add your available products to your stock and track your orders.

@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 /* Styles */
 import './FarmerCard.styles.scss';
-
-/* IonIcons Imports */
-import Pin from 'react-ionicons/lib/Pin';
 
 const FarmerCard = ({ farmer }) => {
   const imageSrc = `/uploads/${farmer.slug.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`;
@@ -20,7 +18,7 @@ const FarmerCard = ({ farmer }) => {
         <div className="find-farmer__container__item--ratings">⭐⭐⭐⭐⭐</div>
         <h3 className="find-farmer__container__item--name">{farmer.name}</h3>
         <div className="find-farmer__container__item__location">
-          <Pin fontSize="15px" color="white" className="find-farmer__container__item__location--icon" />
+          <Icon icon={['fas', 'location-dot']} className="find-farmer__container__item__location--icon" />
           Berlin, GERMANY
         </div>
 
