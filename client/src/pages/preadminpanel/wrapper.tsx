@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -14,7 +13,7 @@ import './wrapper.styles.scss';
 const FarmerAdmin = React.lazy(() => import('pages/farmeradmin/wrapper'));
 
 const PreAdminPanel = () => {
-  const currentUser = useSelector(({ login }) => login.user);
+  const currentUser = useSelector((state: any) => state.login.user);
 
   return currentUser && currentUser.data.role === 'farmer' ? (
     <FarmerAdmin />

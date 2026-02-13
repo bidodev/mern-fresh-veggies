@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -10,7 +9,7 @@ import CustomButton from 'components/UI/custom-button/custom-button.component';
 import './story.styles.scss';
 
 const Story = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
 
   const signUpAsFarmer = () => {
     dispatch({ type: 'SHOW_AUTH' });

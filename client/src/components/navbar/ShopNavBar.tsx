@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from 'components/modal/modal.component';
 
 import './ShopNavBar.styles.scss';
-const ShopNavBar = ({ children, totalQuantity }) => {
+const ShopNavBar = ({ children, totalQuantity = 0 }: { children?: React.ReactNode; totalQuantity?: number }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
