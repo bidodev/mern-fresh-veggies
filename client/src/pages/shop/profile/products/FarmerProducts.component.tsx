@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 
 /* Styles */
@@ -9,13 +8,13 @@ import FilterProductsDietBased from './filters/FilterProductsDietBased';
 import EmptyStore from './EmptyStore';
 
 /* Component Farmer Products List */
-const FarmerProducts = ({ farmer }) => {
+const FarmerProducts = ({ farmer }: { farmer: any }) => {
   const { name, products, slug } = farmer;
 
   //const [filteredProducts, setFilteredProducts] = useState([]);
   const [searchProductField, setFilterProduct] = useState('');
 
-  const filteredProducts = products.filter((product) =>
+  const filteredProducts = products.filter((product: any) =>
     product.name.toLowerCase().includes(searchProductField.toLowerCase())
   );
 
@@ -33,7 +32,7 @@ const FarmerProducts = ({ farmer }) => {
               className={'farmer-profile__section-products-farmer__has-products__filters__search-bar'}
             />
             <hr />
-            <LoadingMore products={filteredProducts} name={name} slug={slug} />
+            <LoadingMore products={filteredProducts} slug={slug} />
           </div>
         </>
       ) : (

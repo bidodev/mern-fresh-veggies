@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 
 /* Styles */
@@ -8,12 +7,14 @@ import './PhotosGallery.styles.scss';
 import WithScrollbar from './WithScrollbar.component';
 import Section from './Section.component';
 
-const PhotosGallery = ({ images, name, slug, deviceType }) => {
+const PhotosGallery = ({ images, slug }: { images: any[]; slug: string }) => {
+  const GalleryWithScrollbar = WithScrollbar as any;
+
   return (
     <div className="farmer-profile__gallery">
       <h2>Discover my Farm</h2>
       <Section>
-        <WithScrollbar images={images} slug={slug} />
+        <GalleryWithScrollbar images={images} slug={slug} />
       </Section>
     </div>
   );

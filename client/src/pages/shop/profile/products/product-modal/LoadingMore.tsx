@@ -6,7 +6,7 @@ import ProductsToShow from '../ProductsToShow.component';
 let arrayForHoldingProducts: any[] = [];
 const productsPerPage = 4;
 
-function LoadingMore({ products, name, slug }: { products: any[]; name: string; slug: string }) {
+function LoadingMore({ products, slug }: { products: any[]; slug: string }) {
   const [isLoadingMoreItems, setIsLoadingMoreItems] = useState(false);
   const [productsToShow, setProductsToShow] = useState<any[]>([]);
   const [next, setNext] = useState(4);
@@ -41,7 +41,7 @@ function LoadingMore({ products, name, slug }: { products: any[]; name: string; 
 
   return (
     <React.Fragment>
-      <ProductsToShow products={productsToShow} farmerName={name} slug={slug} />
+      <ProductsToShow products={productsToShow} slug={slug} />
 
       <div className="farmer-profile__section-products-farmer__has-products__load-more">
         {hasMoreProductsToShow && (

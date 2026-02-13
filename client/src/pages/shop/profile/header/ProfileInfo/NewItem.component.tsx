@@ -6,7 +6,7 @@ import './NewItem.styles.scss';
 /* Component Imports */
 import ProductModal from 'pages/shop/profile/products/product-modal/ProductModal.component';
 
-const NewItem = ({ product, name, slug }: { product: any; name: string; slug: string }) => {
+const NewItem = ({ product, slug }: { product: any; slug: string }) => {
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
 
@@ -27,7 +27,7 @@ const NewItem = ({ product, name, slug }: { product: any; name: string; slug: st
         </p>
       </div>
       {modalStatus && (
-        <ProductModal modalStatus={modalStatus} toggleModal={toggleModal} product={product} farmerName={name} slug={slug}/>
+        <ProductModal modalStatus={modalStatus} toggleModal={toggleModal} product={product} slug={slug} />
       )}
     </>
   );

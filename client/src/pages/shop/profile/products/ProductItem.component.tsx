@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 import { limitResults } from 'utils/limiteDesc';
 
@@ -8,7 +7,7 @@ import './ProductItem.styles.scss';
 /* Component Imports */
 import ProductModal from './product-modal/ProductModal.component';
 
-const ProductItem = ({ product, farmerName, slug }) => {
+const ProductItem = ({ product, slug }: { product: any; slug: string }) => {
   const { name, photo, description } = product;
 
   /* Modal */
@@ -34,7 +33,6 @@ const ProductItem = ({ product, farmerName, slug }) => {
           toggleModal={toggleModal}
           product={product}
           slug={slug}
-          farmerName={farmerName}
         />
       )}
     </>

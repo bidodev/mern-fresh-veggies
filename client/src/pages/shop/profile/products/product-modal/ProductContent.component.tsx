@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -7,17 +6,17 @@ import { limitResults } from 'utils/limiteDesc';
 /* Styles */
 import './ProductContent.styles.scss';
 
-const ProductContent = ({ product, onClose, slug }) => {
+const ProductContent = ({ product, onClose, slug }: { product: any; onClose: () => void; slug: string }) => {
   const { _id, name, photo, type, description, price, unit } = product;
   const farmerId = 1;
 
-  const [success, setSuccess] = useState(null);
-  const [isAdding, setIsadding] = useState(null);
+  const [success, setSuccess] = useState<boolean | null>(null);
+  const [isAdding, setIsadding] = useState<boolean | null>(null);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const [quantity, setQuantity] = useState(1);
 
-  const handleShowMoreProducts = (id, farmerId) => {
+  const handleShowMoreProducts = (id: string, farmerId: number) => {
     setIsadding(true);
     dispatch({ type: 'ADD_ITEM', payload: { id, name, quantity, farmerId, price, unit } });
 
