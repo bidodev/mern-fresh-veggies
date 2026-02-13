@@ -15,6 +15,9 @@ type ShowModalProps = {
 };
 
 const ShowModal = ({ modalStatus, closeModal, children, styles, className, overlayClassName }: ShowModalProps) => {
+  const modalClassName = className ? `app-modal ${className}` : 'app-modal';
+  const modalOverlayClassName = overlayClassName ? `app-modal-overlay ${overlayClassName}` : 'app-modal-overlay';
+
   return (
     <Modal
       isOpen={modalStatus}
@@ -30,8 +33,8 @@ const ShowModal = ({ modalStatus, closeModal, children, styles, className, overl
          you may introduce an accessibility issue. */
       }
       style={styles}
-      className={className}
-      overlayClassName={overlayClassName}
+      className={modalClassName}
+      overlayClassName={modalOverlayClassName}
     >
       {children}
     </Modal>

@@ -13,29 +13,92 @@
 
 html {
   box-sizing: border-box;
-  font-size: 100%; //define the 1rem value = 10px
+  font-size: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Nunito Sans', sans-serif;
   overflow-x: hidden;
-  user-select: none;
-  //considering using this color for background, less white
-  // background-color: #fafbfd;
-  scroll-behavior: smooth;
-  ///this will hide the scroll bar
+  user-select: auto;
+  min-height: 100vh;
+  color: var(--text-body);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--surface-0);
+  background-image: radial-gradient(circle at 12% -15%, rgba(247, 181, 58, 0.12), transparent 42%),
+    radial-gradient(circle at 90% 0%, rgba(30, 91, 69, 0.12), transparent 34%);
+
   &::-webkit-scrollbar {
-    width: 0px; /* Remove scrollbar space */
-    background: transparent; /* Optional: just make scrollbar invisible */
+    width: 0.55rem;
+    background: transparent;
   }
-  /* Optional: show position indicator in orange in case width is > 0 */
+
   &::-webkit-scrollbar-thumb {
-    background: #f75d37;
+    background: rgba(30, 91, 69, 0.38);
+    border-radius: var(--radius-pill);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(30, 91, 69, 0.6);
   }
 }
 
 a {
   text-decoration: none;
   color: #181818;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+a:hover {
+  color: var(--accent-orange);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role='button']:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+::selection {
+  color: #1c1c1c;
+  background-color: rgba(247, 93, 55, 0.22);
+}
+
+.app-modal {
+  border: none;
+}
+
+.app-modal-overlay {
+  animation: overlay-fade var(--duration-fast) var(--ease-standard);
+}
+
+@keyframes overlay-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

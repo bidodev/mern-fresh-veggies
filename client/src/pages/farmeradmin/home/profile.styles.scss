@@ -1,22 +1,22 @@
 .panel-profile {
-  padding-top: 8vh;
+  padding-top: calc(var(--nav-height) + var(--space-3));
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fff;
   @media (max-width: 1050px) {
-    padding-top: 6vh;
+    padding-top: calc(var(--nav-height) + var(--space-2));
   }
 
   &__wrapper {
-    margin: 2vh 0;
+    margin: var(--space-4) 0;
     width: 75%;
     height: 100%;
     background-color: #fff;
     box-shadow: 0 12px 16px -1px rgba(0, 0, 0, 0.3);
     @media (max-width: 1050px) {
       width: 100%;
-      padding-left: 4rem;
+      padding-left: 0;
     }
   }
 

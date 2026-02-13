@@ -1,28 +1,24 @@
 .authentication-modal {
-  width: 60vw;
-  height: 70vh;
+  width: min(60rem, 90vw);
+  min-height: min(42rem, 86vh);
+  height: auto;
   position: fixed;
-  top: 15vh;
-  left: 20vw;
-  right: 10vw;
-  bottom: 20vh;
-  border: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: var(--border-soft);
   background-color: #fff;
   display: flex;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
   @media only screen and (max-width: 900px) {
-    width: 90vw;
-    top: 20vh;
-    left: 5vw;
-    right: 10vw;
-    bottom: 20vh;
+    width: 92vw;
+    min-height: min(40rem, 88vh);
   }
   @media only screen and (max-width: 500px) {
-    width: 90vw;
-    height: 90vh;
-    top: 5vh;
-    left: 5vw;
-    right: 10vw;
-    bottom: 5vh;
+    width: 94vw;
+    min-height: min(44rem, 92vh);
     flex-direction: column;
   }
   outline: none;
@@ -34,6 +30,7 @@
     right: 0px;
     bottom: 0px;
     background-color: var(--modal-overlay);
+    backdrop-filter: blur(2px);
     border: none;
     z-index: 9999;
   }

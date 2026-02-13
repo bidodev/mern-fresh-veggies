@@ -3,52 +3,76 @@
   min-width: 9rem;
   height: 3.1rem;
   margin: 1vh;
-  padding: 0 2rem 0 2rem;
-  border-radius: 3rem;
-  letter-spacing: 0.5px;
-  line-height: 50px;
-  font-size: 15px;
+  padding: 0 1.9rem;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  font-size: 0.94rem;
   text-transform: uppercase;
-  font-weight: 600;
-  background-color: #f75d37;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f75d37, #ff7a59);
   color: white;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 24px -18px rgba(247, 93, 55, 0.95);
+  transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+
   &:focus {
     outline: none;
     box-shadow: none;
   }
 
+  &:focus-visible {
+    box-shadow: var(--focus-ring), 0 14px 24px -18px rgba(247, 93, 55, 0.95);
+  }
+
   &.small {
-    height: 45px;
-    font-size: 1.6rem;
+    height: 2.8rem;
+    font-size: 1rem;
     line-height: 1.5;
-    border-radius: 3rem;
-    width: 10vw;
+    border-radius: var(--radius-pill);
+    width: 10rem;
     text-transform: none;
-    font-weight: normal;
-    letter-spacing: 0.2px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
   }
 
   &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 28px -20px rgba(247, 93, 55, 0.98);
     background-color: white;
     color: #f75d37;
     border: 1px solid #f75d37;
   }
+
+  &:active {
+    transform: translateY(0);
+  }
+
   &:disabled {
     appearance: button;
-    background: #eeeeee;
-    border: none;
-    color: rgba(19, 1, 1, 0.3);
+    background: #e8e8e8;
+    border: 1px solid #e1e1e1;
+    color: rgba(19, 1, 1, 0.45);
     cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
   }
+
   &.google-sign-in {
-    background-color: #606060;
+    background: #505050;
     color: white;
+    box-shadow: 0 12px 22px -17px rgba(26, 26, 26, 0.9);
 
     &:hover {
-      background-color: #909090;
-      border: none;
+      background: #3d3d3d;
+      color: white;
+      border-color: transparent;
     }
   }
 }

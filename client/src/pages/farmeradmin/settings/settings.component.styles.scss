@@ -1,9 +1,15 @@
 .admin__settings {
   width: 100%;
-  padding-top: 8vh;
+  padding-top: calc(var(--nav-height) + var(--space-3));
   padding-left: 4rem;
+  padding-right: var(--section-pad-x);
   background-color: #fff;
   display: flex;
+  min-height: 100vh;
+
+  @media (max-width: 1050px) {
+    padding-left: var(--section-pad-x);
+  }
 
   @media (max-width: 850px) {
     flex-direction: column;

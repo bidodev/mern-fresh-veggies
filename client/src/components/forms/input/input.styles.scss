@@ -2,32 +2,35 @@ $sub-color: #909090;
 $main-color: #f75d37;
 
 @mixin shrinkLabel {
-  top: -2rem;
-  font-size: 1.2rem;
+  top: -1.85rem;
+  font-size: 1rem;
   color: $main-color;
 }
 
 .group {
   position: relative;
-  margin: 4.5rem 0;
+  margin: 3.4rem 0;
   height: 2rem;
 
   .form-input {
-    background: none;
-    background-color: inherit;
-    color: $sub-color;
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
+    background-color: rgba(255, 255, 255, 0.92);
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.7rem 0.85rem;
     display: block;
     width: 100%;
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid $sub-color;
-    margin: 25px 0;
+    border: 1px solid rgba(80, 80, 80, 0.28);
+    border-radius: var(--radius-sm);
+    margin: 20px 0;
+    transition: border-color var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard);
 
     &:focus {
       outline: none;
-      background-color: transparent;
+      background-color: #fff;
+      border-color: rgba(247, 93, 55, 0.75);
+      box-shadow: var(--focus-ring);
     }
 
     &:valid {
@@ -49,13 +52,15 @@ $main-color: #f75d37;
 
   .form-input-label {
     color: $sub-color;
-    font-size: 16px;
+    font-size: 0.95rem;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
-    left: 5px;
-    top: 10px;
+    left: 0.75rem;
+    top: 0.7rem;
     transition: 300ms ease all;
+    background-color: #fff;
+    padding: 0 0.3rem;
 
     &.shrink {
       @include shrinkLabel();

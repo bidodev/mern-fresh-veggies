@@ -1,10 +1,7 @@
 .farmer-public {
   &__header {
-    height: 25rem;
+    height: clamp(15rem, 40vw, 25rem);
     position: relative;
-    @media (max-width: 750px) {
-      height: 15rem;
-    }
 
     &__cover {
       width: 100%;
@@ -17,19 +14,17 @@
     }
 
     &__avatar {
-      width: 12rem;
-      height: 12rem;
+      width: clamp(6rem, 16vw, 12rem);
+      height: clamp(6rem, 16vw, 12rem);
       position: absolute;
-      left: 1.6rem;
-      top: 18.5rem;
+      left: clamp(0.8rem, 2vw, 1.6rem);
+      bottom: clamp(-3.4rem, -9vw, -1.8rem);
       box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.3);
       border-radius: 50%;
       overflow: hidden;
       z-index: 1;
       @media (max-width: 750px) {
-        width: 6rem;
-        height: 6rem;
-        top: 11.8rem;
+        bottom: -2.2rem;
       }
       img {
         width: 100%;

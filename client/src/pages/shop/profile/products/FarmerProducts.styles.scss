@@ -1,11 +1,12 @@
 .farmer-profile__section-products {
   &__header {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1.3rem;
     color: var(--text-header);
-    font-size: 2rem;
+    font-size: 1.9rem;
     background-color: var(--header);
     text-transform: uppercase;
+    letter-spacing: 0.04em;
     @media (max-width: 550px) {
       font-size: 1.3rem;
       padding: 1rem;
@@ -31,17 +32,18 @@
           .searchTerm {
             width: 100%;
             height: 100%;
-            border: 1px solid rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.18);
             border-right: none;
-            padding: 7px;
-            border-radius: 5px 0 0 5px;
+            padding: 0.55rem 0.7rem;
+            border-radius: var(--radius-sm) 0 0 var(--radius-sm);
             outline: none;
             color: var(--header);
+            background-color: rgba(255, 255, 255, 0.95);
           }
 
           .searchTerm:focus {
             color: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.4);
           }
 
           .searchButton {
@@ -50,7 +52,7 @@
             background: var(--header);
             text-align: center;
             color: #fff;
-            border-radius: 0 5px 5px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
             pointer-events: none;
             font-size: 0.9rem;
           }
@@ -67,7 +69,6 @@
       }
 
       &__load-more {
-        //border: 1px solid green;
         height: 10rem;
         display: flex;
         align-items: center;
@@ -93,11 +94,11 @@
 button.button {
   box-sizing: border-box;
   display: inline-block;
-  width: 8em;
+  width: 8.5em;
   height: 2.25em;
   padding: 0.5em 1em;
   background-color: var(--header);
-  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   text-align: center;
   color: var(--text-header);
   white-space: nowrap;
@@ -113,13 +114,13 @@ button.button {
 
   &:focus {
     outline: none;
-    border-color: #ddd;
+    border-color: rgba(0, 0, 0, 0.2);
   }
   &:hover {
-    color: #1e5b45;
+    color: var(--header);
     background-color: #fff;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.95;
   }
 
   &.loading {

@@ -1,11 +1,16 @@
 .stock {
-  padding-top: 8vh;
+  padding-top: calc(var(--nav-height) + var(--space-4));
   min-height: 100vh;
   margin-left: 4rem;
+  width: calc(100% - 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #fff;
+  @media (max-width: 850px) {
+    margin-left: 0;
+    width: 100%;
+  }
 
   &--title {
     margin: 1rem 0;
@@ -24,19 +29,20 @@
   }
 
   &-overview {
-    padding-top: 10rem;
+    padding-top: clamp(7rem, 12vh, 10rem);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 
     &__header {
-      height: 10rem;
-      width: 100%;
+      min-height: clamp(7rem, 12vh, 10rem);
+      width: inherit;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
+      padding: var(--space-3) var(--section-pad-x);
       color: var(--header);
       background-color: #fff;
       position: fixed;
@@ -57,8 +63,8 @@
 }
 
 .add-product__modal {
-  width: 35rem;
-  padding: 1.5rem;
+  width: min(35rem, 92vw);
+  padding: var(--space-5);
   display: flex;
   position: fixed;
   top: 50%;
@@ -70,7 +76,7 @@
   border: none;
   background-color: #f0f0f0;
   @media (max-width: 650px) {
-    width: 20rem;
+    width: min(22rem, 92vw);
   }
 
   &--overlay {
@@ -87,7 +93,7 @@
 
 /*Resize the wrap to see the search bar change!*/
 .stock-search-wrapper {
-  width: 22rem;
+  width: min(22rem, 92vw);
   @media (max-width: 650px) {
     width: 15rem;
   }
@@ -103,8 +109,8 @@
     height: 100%;
     border: 1px solid var(--header);
     border-right: none;
-    padding: 7px;
-    border-radius: 5px 0 0 5px;
+    padding: 0.55rem 0.7rem;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
     outline: none;
     color: var(--header);
   }
@@ -120,7 +126,7 @@
     background: var(--header);
     text-align: center;
     color: #fff;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     cursor: pointer;
     font-size: 15px;
   }
