@@ -1,9 +1,8 @@
-// @ts-nocheck
 import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 
-export default function UploadButtons({ onSelectFile }) {
+export default function UploadButtons({ onSelectFile }: { onSelectFile: (event: React.ChangeEvent<HTMLInputElement>) => void }) {
 
   return (
     <div>

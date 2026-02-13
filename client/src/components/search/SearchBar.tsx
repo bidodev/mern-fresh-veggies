@@ -1,10 +1,14 @@
-// @ts-nocheck
 import React from 'react';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
-const SearchBar = ({ onSearch, className }) => {
+type SearchBarProps = {
+  onSearch: (value: string) => void;
+  className?: string;
+};
 
-  const handleChange = (event) => {
+const SearchBar = ({ onSearch, className }: SearchBarProps) => {
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onSearch(event.target.value);
   };
 
