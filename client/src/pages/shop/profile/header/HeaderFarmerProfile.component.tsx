@@ -1,10 +1,9 @@
-// @ts-nocheck
 import React from 'react';
 
 /* Styles */
 import './HeaderFarmerProfile.styles.scss';
 
-const HeaderFarmerProfile = ({ slug, images }) => {
+const HeaderFarmerProfile = ({ slug, images }: { slug: string; images: any }) => {
   return (
     <>
       <header className="farmer-public__header">

@@ -11,7 +11,7 @@
     "skipLibCheck": true,
     "allowJs": false,
     "noEmit": true,
-    "types": ["vite/client", "node"]
+    "types": ["vite/client", "node", "jest"]
   },
   "include": ["src", "vite.config.ts"]
 }

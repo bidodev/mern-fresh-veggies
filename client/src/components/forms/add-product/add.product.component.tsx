@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -40,7 +39,7 @@ const AddForm = () => {
     axios
       .post('/farmers/products', data)
       .then((res) => {
-        console.log(res.response);
+        console.log(res.data);
       })
       .catch((err) => console.log(err.response.data.message));
   };

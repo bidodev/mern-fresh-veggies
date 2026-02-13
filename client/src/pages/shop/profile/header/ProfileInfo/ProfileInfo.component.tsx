@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 
 /* Styles */
@@ -7,14 +6,14 @@ import './ProfileInfo.styles.scss';
 /* Component Imports */
 import NewItem from './NewItem.component';
 
-const NewProductsList = ({ products, name, slug }) => {
+const NewProductsList = ({ products, slug }: { products: any[]; slug: string }) => {
   return [...products]
     .reverse()
     .slice(0, 6)
-    .map((product, index) => <NewItem key={index} product={product} slug={slug} name={name} />);
+    .map((product: any, index: number) => <NewItem key={index} product={product} slug={slug} />);
 };
 
-const EmptyProductsList = ({ name }) => {
+const EmptyProductsList = ({ name }: { name: string }) => {
   return (
     <div className="public-farmer__main__right__container__empty-list">
       <img src="/images/layout/noitems.png" alt="no-items" />
@@ -23,7 +22,7 @@ const EmptyProductsList = ({ name }) => {
   );
 };
 
-const ProfileInfo = ({ name, products, slug }) => {
+const ProfileInfo = ({ name, products, slug }: { name: string; products: any[]; slug: string }) => {
   return (
     <>
       <header className="public-farmer">
@@ -101,7 +100,7 @@ const ProfileInfo = ({ name, products, slug }) => {
           <div className="public-farmer__main__right__container">
             {/* create a shallow copy of the array and reverse to show the last added first */}
             {products.length > 0 ? (
-              <NewProductsList products={products} name={name} slug={slug} />
+              <NewProductsList products={products} slug={slug} />
             ) : (
               <EmptyProductsList name={name} />
             )}

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -101,7 +100,7 @@ const Checkout = () => {
               onFocus={(e) => handleInputFocus(e)}
             />
 
-            <input type="hidden" name="issuer" value />
+            <input type="hidden" name="issuer" value="" />
             <div className="form-actions">
               <CustomButton type="submit">PAY NOW</CustomButton>
             </div>

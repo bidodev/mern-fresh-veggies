@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -129,7 +128,6 @@ const AccountSetting = ({ user }) => {
       </div>
 
       <Modal
-        handleEmail={handleEmail}
         modalStatus={modalStatus}
         closeModal={toggleModal}
         className={'modal__email'}

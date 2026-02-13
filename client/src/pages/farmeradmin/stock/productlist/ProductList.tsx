@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import ProductItem from 'pages/farmeradmin/stock/product/ProductItem';
 

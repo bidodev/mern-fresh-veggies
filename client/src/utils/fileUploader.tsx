@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState, useCallback } from 'react';
 import axios from 'axios';
 import Modal from 'components/modal/modal.component';

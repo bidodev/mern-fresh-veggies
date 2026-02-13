@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 
 /* Styles */
@@ -47,7 +46,13 @@ const HeaderFarmerProfile = ({ slug, images }) => {
           )}
         </div>
       </header>
-      <FileUploader toggleModal={toggleModal} modalStatus={modalStatus} photo={src} heading={'Profile'} />
+      <FileUploader
+        toggleModal={toggleModal}
+        modalStatus={modalStatus}
+        photo={src}
+        heading={'Profile'}
+        photoName={images?.profile || 'profile'}
+      />
     </>
   );
 };

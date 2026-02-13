@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { Component } from 'react';
 import Carousel from 'react-multi-carousel';
 
@@ -20,12 +19,38 @@ const responsive = {
   },
 };
 
-class WithScrollbar extends Component {
-  state = { additionalTransform: 0 };
+type GalleryImage = {
+  name: string;
+  path: string;
+};
+
+type WithScrollbarProps = {
+  images: {
+    gallery: GalleryImage[];
+  };
+  slug: string;
+};
+
+type WithScrollbarState = {
+  additionalTransform: number;
+};
+
+class WithScrollbar extends Component<WithScrollbarProps, WithScrollbarState> {
+  Carousel: any = null;
+
+  state: WithScrollbarState = { additionalTransform: 0 };
+
   render() {
-    const CustomSlider = ({ carouselState }) => {
-      let value = 0;
+    const CustomSlider = ({ carouselState }: { carouselState?: any }) => {
+      const currentCarouselState = carouselState || {
+        transform: 0,
+        totalItems: 0,
+        slidesToShow: 1,
+      };
+
+      let sliderUnit = 1;
       let carouselItemWidth = 0;
+
       if (this.Carousel) {
         carouselItemWidth = this.Carousel.state.itemWidth;
         // We don't over-slide
@@ -33,31 +58,38 @@ class WithScrollbar extends Component {
           carouselItemWidth * (this.Carousel.state.totalItems - this.Carousel.state.slidesToShow) + 150
         );
         // Calculate the unit of transform for the slider
-        value = maxTranslateX / 100;
+        sliderUnit = maxTranslateX / 100 || 1;
       }
-      const { transform } = carouselState;
+
+      const transform = Number(currentCarouselState.transform || 0);
 
       return (
         <div className="custom-slider">
           <input
             type="range"
-            value={Math.round(Math.abs(transform) / value)}
+            value={Math.round(Math.abs(transform) / sliderUnit)}
             defaultValue={0}
             max={
-              (carouselItemWidth * (carouselState.totalItems - carouselState.slidesToShow) +
+              (carouselItemWidth * (currentCarouselState.totalItems - currentCarouselState.slidesToShow) +
                 (this.state.additionalTransform === 150 ? 0 : 150)) /
-              value
+              sliderUnit
             }
             onChange={(e) => {
+              if (!this.Carousel) return;
+
               if (this.Carousel.isAnimationAllowed) {
                 this.Carousel.isAnimationAllowed = false;
               }
-              const nextTransform = e.target.value * value;
-              const nextSlide = Math.round(nextTransform / carouselItemWidth);
-              if (e.target.value === 0 && this.state.additionalTransform === 150) {
+
+              const currentValue = Number(e.target.value);
+              const nextTransform = currentValue * sliderUnit;
+              const nextSlide = carouselItemWidth ? Math.round(nextTransform / carouselItemWidth) : 0;
+
+              if (currentValue === 0 && this.state.additionalTransform === 150) {
                 this.Carousel.isAnimationAllowed = true;
                 this.setState({ additionalTransform: 0 });
               }
+
               this.Carousel.setState({
                 transform: -nextTransform, // padding 20px and 5 items.
                 currentSlide: nextSlide,
@@ -71,13 +103,15 @@ class WithScrollbar extends Component {
     return (
       <Carousel
         ssr={false}
-        ref={(el) => (this.Carousel = el)}
+        ref={(el) => {
+          this.Carousel = el;
+        }}
         partialVisbile={false}
         customButtonGroup={<CustomSlider />}
         itemClass="slider-image-item"
         responsive={responsive}
         containerClass="carousel-container-with-scrollbar"
-        additionalTransform={-this.state.additionalTransform}
+        additionalTransfrom={-this.state.additionalTransform}
         beforeChange={(nextSlide) => {
           if (nextSlide !== 0 && this.state.additionalTransform !== 150) {
             this.setState({ additionalTransform: 150 });

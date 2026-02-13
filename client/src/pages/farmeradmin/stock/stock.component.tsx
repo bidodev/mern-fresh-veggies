@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { getStockProducts } from 'utils/services';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';

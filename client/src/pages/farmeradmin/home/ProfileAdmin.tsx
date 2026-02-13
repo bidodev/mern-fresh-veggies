@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,12 +13,12 @@ import Spinner from 'components/UI/spinner/spinner.component';
 import './profile.styles.scss';
 
 const ProfileAdmin = () => {
-  const dispatch = useDispatch();
-  const { isPending } = useSelector((state) => state.farmerPanel);
-  const { data } = useSelector((state) => state.farmerPanel);
+  const dispatch = useDispatch<any>();
+  const { isPending } = useSelector((state: any) => state.farmerPanel);
+  const { data } = useSelector((state: any) => state.farmerPanel);
 
   useEffect(() => {
-    dispatch(requestFarmer);
+    dispatch(requestFarmer as any);
   }, [dispatch]);
 
   return (

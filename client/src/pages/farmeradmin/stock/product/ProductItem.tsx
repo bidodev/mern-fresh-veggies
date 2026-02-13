@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 import { removeProduct } from 'utils/services';
 import { useSelector } from 'react-redux';

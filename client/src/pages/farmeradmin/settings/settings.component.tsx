@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
