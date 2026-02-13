@@ -1,7 +1,6 @@
-// @ts-nocheck
-import React from 'react'
+import React from 'react';
 
-const EmptyStore = ({ name }) => {
+const EmptyStore = ({ name }: { name: string }) => {
     return (
       <div className="farmer-profile__section-products-farmer__empty-store">
         <p>{name} did not add products to the store!!</p>

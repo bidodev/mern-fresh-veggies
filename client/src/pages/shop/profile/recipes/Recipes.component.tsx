@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 import recipesData from 'dev-data/recipes.json';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -10,15 +9,15 @@ import './Recipes.styles.scss';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import LoadRecipes from './LoadRecipes.component';
 
-const Recipes = ({ farmer }) => {
+const Recipes = ({ farmer }: { farmer: any }) => {
   const { products } = farmer;
   const farmerHasAtLeastProducts = 2;
 
   /* Return an array with products names */
   const farmerProductsList = products.map(({ name }) => name.toLowerCase());
-  const resultRecipes = recipesData.filter((recipe) => {
+  const resultRecipes = recipesData.filter((recipe: any) => {
     let countIngredients = 0;
-    recipe.ingredients.forEach((ingredient) =>
+    recipe.ingredients.forEach((ingredient: any) =>
       farmerProductsList.includes(ingredient.name) ? countIngredients++ : countIngredients
     );
     /* Displayed if the recipe has more than 2 ingredients that match with farmers products */
@@ -27,7 +26,7 @@ const Recipes = ({ farmer }) => {
 
   /* Scroll on demand */
   const [hasMore, setHasMore] = useState(true);
-  const [recipesToShow, setRecipesToShow] = useState([]);
+  const [recipesToShow, setRecipesToShow] = useState<any[]>([]);
 
   const fetchMoreData = () => {
     if (recipesToShow.length >= resultRecipes.length) {
@@ -57,7 +56,7 @@ const Recipes = ({ farmer }) => {
       </p>
       <div className="recipes-section__main-container">
         <InfiniteScroll dataLength={recipesToShow.length} next={fetchMoreData} hasMore={hasMore} loader={<Loader />}>
-          {recipesToShow.map((recipe, index) => (
+          {recipesToShow.map((recipe: any, index: number) => (
             <LoadRecipes key={index} recipe={recipe} />
           ))}
         </InfiniteScroll>

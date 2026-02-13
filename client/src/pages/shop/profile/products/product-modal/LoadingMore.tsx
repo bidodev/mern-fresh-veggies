@@ -1,18 +1,17 @@
-// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 
 /* Component Imports */
 import ProductsToShow from '../ProductsToShow.component';
 
-let arrayForHoldingProducts = [];
+let arrayForHoldingProducts: any[] = [];
 const productsPerPage = 4;
 
-function LoadingMore({ products, name, slug }) {
+function LoadingMore({ products, name, slug }: { products: any[]; name: string; slug: string }) {
   const [isLoadingMoreItems, setIsLoadingMoreItems] = useState(false);
-  const [productsToShow, setProductsToShow] = useState([]);
+  const [productsToShow, setProductsToShow] = useState<any[]>([]);
   const [next, setNext] = useState(4);
 
-  const loopWithSlice = (start, end) => {
+  const loopWithSlice = (start: number, end: number) => {
     const slicedProducts = products.slice(start, end);
     arrayForHoldingProducts = [...arrayForHoldingProducts, ...slicedProducts];
     setProductsToShow(arrayForHoldingProducts);

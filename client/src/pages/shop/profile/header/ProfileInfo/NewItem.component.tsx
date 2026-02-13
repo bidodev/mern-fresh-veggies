@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 
 /* Styles */
@@ -7,7 +6,7 @@ import './NewItem.styles.scss';
 /* Component Imports */
 import ProductModal from 'pages/shop/profile/products/product-modal/ProductModal.component';
 
-const NewItem = ({ product, name, slug }) => {
+const NewItem = ({ product, name, slug }: { product: any; name: string; slug: string }) => {
   /* Modal */
   const [modalStatus, setIsOpen] = useState(false);
 

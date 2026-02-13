@@ -1,10 +1,9 @@
-// @ts-nocheck
 import React from 'react';
 
 /* Styles */
 import './LoadRecipes.styles.scss';
 
-const LoadRecipe = ({ recipe }) => {
+const LoadRecipe = ({ recipe }: { recipe: any }) => {
   const { coverImage, recipeName, ingredients, preparation } = recipe;
 
   return (
@@ -17,7 +16,7 @@ const LoadRecipe = ({ recipe }) => {
           <h2 className="recipes__card__info-container__name">{recipeName}</h2>
           <h3 className="recipes__card__info-container__ingredients-header">Ingredients</h3>
           <div className="recipes__card__info-container__ingredients">
-            {ingredients.map((item, index) => {
+            {ingredients.map((item: any, index: number) => {
               return (
                 <div key={index} className="recipes__card__info-container__ingredients__list">
                   {item.name}: {item.quantity}
