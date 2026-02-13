@@ -1,15 +1,13 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "api/index.js", "use": "@vercel/node" },
-    { "src": "client/package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/account/(.*)", "dest": "/api/index.js" },
-    { "src": "/farmers/(.*)", "dest": "/api/index.js" },
-    { "src": "/users/(.*)", "dest": "/api/index.js" },
-    { "src": "/uploads/(.*)", "dest": "/api/index.js" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run client-install && npm run build",
+  "outputDirectory": "client/dist",
+  "rewrites": [
+    { "source": "/account/:path*", "destination": "/api/index" },
+    { "source": "/farmers/:path*", "destination": "/api/index" },
+    { "source": "/users/:path*", "destination": "/api/index" },
+    { "source": "/uploads/:path*", "destination": "/api/index" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
