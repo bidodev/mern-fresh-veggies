@@ -2,34 +2,22 @@
 // ************* FLEX BOX VERSION *****
 .hero-class {
   width: 100%;
-  min-height: 100dvh;
-  height: auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 
   .hero-component {
     width: 100%;
-    min-height: 100dvh;
-    height: auto;
+    height: 100vh;
     display: block;
     position: relative;
-
-    &:before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.75));
-      pointer-events: none;
-      z-index: -1;
-    }
-
     &:after {
       content: '';
       background-image: url('./hero.jpg');
-      background-size: cover;
+      background-size: contain;
       background-repeat: no-repeat;
       background-position: right;
-      opacity: 0.78;
+      opacity: 0.9;
       top: 0;
       left: 0;
       bottom: 0;
@@ -73,123 +61,89 @@
     }
     header {
       width: 100%;
-      height: clamp(4.6rem, 10vh, 6rem);
+      height: 6rem;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-
       .hero-component__header {
-        width: 30rem;
-        margin-right: 2rem;
-        padding: 0.3rem 0.6rem;
+        width: 30%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
-        background-color: rgba(255, 255, 255, 0.74);
-        border: var(--border-soft);
-        border-radius: var(--radius-pill);
-        box-shadow: var(--shadow-soft);
-        backdrop-filter: blur(8px);
-
         .hero-component__header__button {
           color: #1e5b45;
-          font-weight: 700;
-          letter-spacing: 0.02em;
-          padding: 0.55rem 0.65rem;
-          border-radius: var(--radius-pill);
-          transition: color var(--duration-fast) var(--ease-standard),
-            background-color var(--duration-fast) var(--ease-standard);
-
+          font-weight: bold;
           &:hover {
-            color: var(--accent-orange);
-            background-color: rgba(247, 93, 55, 0.1);
+            color: #52a47e;
           }
         }
-
         @media (max-width: 1300px) {
           width: 25rem;
-          margin-right: 1rem;
-        }
-
-        @media (max-width: 680px) {
-          width: 21rem;
-          justify-content: space-between;
-          padding: 0.3rem 0.5rem;
-          margin-right: 0.5rem;
         }
       }
     }
 
     &__main {
-      width: min(44rem, calc(100% - (var(--section-pad-x) * 2)));
-      min-height: calc(100dvh - var(--nav-height));
+      width: 40%;
+      height: 90%;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin-left: clamp(0.75rem, 3vw, 3rem);
+      margin-left: 3rem;
       @media (max-width: 1200px) {
         align-items: flex-start;
-        margin-top: clamp(1rem, 4vh, 3rem);
+        margin-top: 5rem;
       }
       @media (max-width: 900px) {
-        width: calc(100% - (var(--section-pad-x) * 2));
-        min-height: 68vh;
+        width: 90%;
+        height: 80vh;
         align-items: flex-end;
       }
       @media (max-width: 600px) {
         align-items: center;
         justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: var(--space-4);
+        margin-left: 1rem;
+        margin-top: 3rem;
       }
       @media (max-height: 700px) {
-        min-height: 64vh;
+        height: 70%;
       }
 
       &__text-component {
-        width: min(50rem, 100%);
-        min-height: clamp(26rem, 62vh, 40rem);
+        width: 50rem;
+        height: 50rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        gap: clamp(1rem, 2.4vh, 2rem);
-        padding: clamp(1rem, 3vh, 2rem) clamp(1rem, 2.5vw, 2rem);
-        border-radius: var(--radius-lg);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.78));
-        border: var(--border-soft);
-        box-shadow: var(--shadow-card);
-        animation: hero-reveal 650ms var(--ease-standard) both;
-
         @media (max-width: 1600px) {
-          width: min(40rem, 100%);
-          min-height: clamp(25rem, 52vh, 35rem);
+          width: 40rem;
+          height: 35rem;
         }
         @media (max-width: 1200px) {
-          width: min(35rem, 100%);
-          min-height: clamp(24rem, 55vh, 35rem);
+          width: 35rem;
+          height: 35rem;
         }
         @media (max-width: 1000px) {
-          width: min(40rem, 100%);
+          width: 40rem;
+          // height: 30rem;
         }
         @media (max-width: 900px) {
-          width: 100%;
+          width: 90%;
         }
 
         p {
-          font-size: clamp(3.3rem, 6vw, 6rem);
+          font-size: 6vw;
           font-family: 'Nothing You Could Do', cursive;
-          font-weight: 700;
+          font-weight: bold;
           justify-content: center;
           color: #f7b53a;
-          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 
           @media (max-width: 900px) {
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.582);
             width: fit-content;
-            font-size: clamp(3.2rem, 8vw, 5rem);
+            font-size: 5rem;
           }
           @media (max-width: 700px) {
             text-align: center;
@@ -199,7 +153,7 @@
           }
           span {
             display: block;
-            font-size: clamp(3.8rem, 8vw, 7rem);
+            font-size: 8vw;
             text-align: center;
             @media (max-width: 700px) {
               font-size: 4rem;
@@ -207,25 +161,23 @@
           }
         }
         &--sub-heading {
-          width: min(34rem, 86%);
+          width: 33vw;
           text-align: center;
           color: #404040;
-          font-size: 1.2rem;
-          line-height: 1.6;
+          font-size: 1.3rem;
 
           @media (max-width: 1300px) {
-            width: min(30rem, 88%);
+            width: 27vw;
           }
           @media (max-width: 900px) {
-            width: min(28rem, 92%);
-            font-size: 1.2rem;
+            width: 60%;
+            font-size: 1.5rem;
             color: rgb(51, 49, 49);
           }
 
           @media (max-width: 700px) {
             width: 90%;
           }
-
           @media (max-width: 700px) {
             font-size: 1.2rem;
           }
@@ -238,17 +190,5 @@
         }
       }
     }
-  }
-}
-
-@keyframes hero-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(0.8rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
