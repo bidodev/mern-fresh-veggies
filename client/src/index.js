@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import * as serviceWorker from './serviceWorker';
 
 /* React Router Dom */
@@ -17,15 +17,20 @@ import './lib/icons';
 import App from './App';
 import './scss/index.scss';
 
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+  throw new Error('Root element #root not found');
+}
+
+createRoot(rootElement).render(
   <Provider store={store}>
     <Router>
       <PersistGate persistor={persistor}>
         <App />
       </PersistGate>
     </Router>
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 );
 
 serviceWorker.register();
