@@ -2,14 +2,19 @@
   "name": "final-project",
   "version": "1.0.0",
   "description": "## About:",
-  "main": "app.js",
+  "main": "app.ts",
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "node ./bin/www",
-    "start:server": "NODE_ENV=development nodemon ./bin/www",
-    "start:client": "npm start --prefix client",
+    "start": "tsx ./bin/www.ts",
+    "start:server": "NODE_ENV=development tsx watch ./bin/www.ts",
+    "start:client": "npm run dev --prefix client",
     "dev": "concurrently -n server,client -c \"bgGreen.bold,bgRed.bold\" \"npm run start:server\" \"npm run start:client\"",
     "build": "npm run build --prefix client",
+    "typecheck:server": "tsc -p tsconfig.json --noEmit",
+    "typecheck:client": "tsc -p client/tsconfig.json --noEmit",
+    "typecheck": "npm run typecheck:server && npm run typecheck:client",
+    "lint": "oxlint app.ts api controllers models routes utils bin client/src client/vite.config.ts",
+    "lint:ci": "npm run lint && npm run typecheck",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
@@ -44,5 +49,17 @@
     "nodemailer": "^8.0.1",
     "pug": "^3.0.3",
     "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.4",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.5.2",
+    "@types/nodemailer": "^7.0.2",
+    "oxlint": "^1.19.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
   }
 }

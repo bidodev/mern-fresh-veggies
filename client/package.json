@@ -41,7 +41,10 @@
     "typeface-nunito-sans": "^1.1.13"
   },
   "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react": "^5.1.4",
+    "typescript": "^5.9.2",
     "vite": "^7.3.1",
     "vite-tsconfig-paths": "^6.1.1"
   },
