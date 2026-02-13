@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useRef, useEffect } from 'react';
 
 export function useFirstRender() {

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useEffect } from 'react';
 import './success.style.scss';
 import { useNavigate } from 'react-router-dom';

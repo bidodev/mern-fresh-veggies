@@ -1,14 +1,20 @@
-// @ts-nocheck
 import React from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 /* Styles */
 import './custom-button.styles.scss';
 
-function CustomButton({ children, isGoogleSingIn, size, ...restProps }) {
+type CustomButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: ReactNode;
+  isGoogleSingIn?: boolean;
+  size?: string;
+};
+
+function CustomButton({ children, isGoogleSingIn = false, size = '', ...restProps }: CustomButtonProps) {
   return (
     <button
       className={`${isGoogleSingIn ? 'google-sign-in' : ''} 
-      ${size ? size : ''} custom-button `}
+      ${size} custom-button `}
       {...restProps}
     >
       {children}

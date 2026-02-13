@@ -1,5 +1,4 @@
-// @ts-nocheck
-export const styles = theme => ({
+export const styles = (theme: any) => ({
     cropContainer: {
       position: 'absolute',
       width: '100%',
@@ -42,5 +41,5 @@ export const styles = theme => ({
         margin: '0 16px',
       },
     },
-  })
+  });
   

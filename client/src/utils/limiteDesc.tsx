@@ -1,5 +1,4 @@
-// @ts-nocheck
-export const limitResults = (str, limit) => {
+export const limitResults = (str: string, limit: number) => {
     const res = [];
   
     if (str.length > limit) {
