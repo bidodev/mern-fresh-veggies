@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { REQUEST_FARMER_PENDING, REQUEST_FARMER_SUCCESS, REQUEST_FARMER_FAILED } from 'redux/constants';
 
 const INITIAL_STATE = {
@@ -7,7 +6,9 @@ const INITIAL_STATE = {
   data: {},
 };
 
-const requestFarmer = (state = INITIAL_STATE, action) => {
+type Action = { type: string; payload?: any };
+
+const requestFarmer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case REQUEST_FARMER_PENDING:
       return {

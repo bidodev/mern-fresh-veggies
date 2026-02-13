@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { addItemToCart, removeItemFromCart } from './cart.utils';
 
 const INITIAL_STATE = {
@@ -6,7 +5,9 @@ const INITIAL_STATE = {
   show: false,
 };
 
-const cartReducer = (state = INITIAL_STATE, action) => {
+type Action = { type: string; payload?: any };
+
+const cartReducer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case 'TOGGLE_CART_HIDDEN':
       return {

@@ -1,11 +1,12 @@
-// @ts-nocheck
 // this is to switch between login modal and register modal for client
 const INITIAL_STATE = {
   show: false,
   switch: false,
 };
 
-const switchReducer = (state = INITIAL_STATE, action) => {
+type Action = { type: string; payload?: any };
+
+const switchReducer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case 'SHOW_AUTH':
       return {

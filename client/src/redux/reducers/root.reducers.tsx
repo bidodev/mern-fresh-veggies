@@ -1,4 +1,3 @@
-// @ts-nocheck
 /* Redux Imports */
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
@@ -12,7 +11,7 @@ import modalReducer from 'redux/reducers/modal.reducer';
 import statusReducer from 'redux/reducers/status.reducer';
 import farmerPanelReducer from 'redux/reducers/farmer/farmerPanel.reducer';
 
-const persistConfig = {
+const persistConfig: any = {
   key: 'root',
   storage,
   whitelist: ['login', 'cart', 'status'],

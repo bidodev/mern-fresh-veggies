@@ -1,10 +1,11 @@
-// @ts-nocheck
 const INITIAL_STATE = {
   user: null,
   adminPanelData: null,
 };
 
-const loginReducer = (state = INITIAL_STATE, action) => {
+type Action = { type: string; payload?: any };
+
+const loginReducer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case 'LOGIN_USER':
       return {

@@ -1,8 +1,7 @@
-// @ts-nocheck
 import { REQUEST_FARMER_PENDING, REQUEST_FARMER_SUCCESS, REQUEST_FARMER_FAILED } from 'redux/constants';
 import axios from 'axios';
 
-export const requestFarmer = (dispatch) => {
+export const requestFarmer = (dispatch: any) => {
   dispatch({ type: REQUEST_FARMER_PENDING });
 
   axios

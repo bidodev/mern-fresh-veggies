@@ -1,9 +1,11 @@
-// @ts-nocheck
 const INITIAL_STATE = {
   color: 'green',
+  avatar: {},
 };
 
-const statusReducer = (state = INITIAL_STATE, action) => {
+type Action = { type: string; payload?: any };
+
+const statusReducer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case 'SET_AVATAR':
       return {

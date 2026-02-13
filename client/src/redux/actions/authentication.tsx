@@ -1,3 +1,2 @@
-// @ts-nocheck
-export const loginUser = (user) => ({ type: 'LOGIN_USER', payload: user });
+export const loginUser = (user: any) => ({ type: 'LOGIN_USER', payload: user });
 export const logoutUser = () => ({ type: 'LOGOUT_USER' });

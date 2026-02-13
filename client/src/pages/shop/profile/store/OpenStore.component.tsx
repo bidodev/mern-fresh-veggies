@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 
 /* Component Imports */
@@ -8,7 +7,7 @@ import PhotosGallery from 'pages/shop/profile/gallery/PhotosGallery.component';
 import FarmerProducts from 'pages/shop/profile/products/FarmerProducts.component';
 import Recipes from 'pages/shop/profile/recipes/Recipes.component';
 
-const OpenStore = ({ farmer }) => {
+const OpenStore = ({ farmer }: { farmer: any }) => {
   const { recipes, gallery, products } = farmer.config;
 
   return (

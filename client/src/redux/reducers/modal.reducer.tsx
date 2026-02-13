@@ -1,9 +1,10 @@
-// @ts-nocheck
 const INITIAL_STATE = {
     show: false
   };
   
-const ModalReducer = (state = INITIAL_STATE, action) => {
+type Action = { type: string; payload?: any };
+
+const ModalReducer = (state = INITIAL_STATE, action: Action) => {
     switch (action.type) {
       case 'TOGGLE_MODAL':
         return {
