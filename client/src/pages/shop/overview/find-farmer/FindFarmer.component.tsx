@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 
 /* http services */
@@ -12,11 +11,11 @@ import Spinner from 'components/UI/spinner/spinner.component';
 import FarmersList from './FarmersList.component';
 
 const FindYourFarmer = () => {
-  const [farmers, setFarmers] = useState(null);
+  const [farmers, setFarmers] = useState<any[] | null>(null);
 
   /* Load all the farmers */
   useEffect(() => {
-    loadAllFarmersProfile().then(({ data }) => {
+    loadAllFarmersProfile().then(({ data }: any) => {
       setFarmers(data.farmers);
     });
   }, []);

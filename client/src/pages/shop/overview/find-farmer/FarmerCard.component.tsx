@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -6,7 +5,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 /* Styles */
 import './FarmerCard.styles.scss';
 
-const FarmerCard = ({ farmer }) => {
+const FarmerCard = ({ farmer }: { farmer: any }) => {
   const imageSrc = `/uploads/${farmer.slug.toLowerCase()}/images/gallery/${farmer.images.gallery[1].path}`;
 
   return (
