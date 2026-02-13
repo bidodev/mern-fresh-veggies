@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -28,8 +27,8 @@ const ClientSignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
 
-  const dispatch = useDispatch();
-  const handleSubmit = async (event) => {
+  const dispatch = useDispatch<any>();
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
 
     // Connecting CLIENT with the API
@@ -45,7 +44,7 @@ const ClientSignUp = () => {
         dispatch({ type: 'LOGIN_USER', payload: data });
         toggleAuthenticationModal();
       })
-      .catch((error) => {
+      .catch((error: any) => {
         setError(error.response.data.errors);
         setTimeout(() => {
           setError(null);
@@ -54,7 +53,7 @@ const ClientSignUp = () => {
   };
 
   // Update localState
-  const handleInputValue = (event) => {
+  const handleInputValue = (event: any) => {
     const { value, name } = event.target;
 
     switch (name) {
@@ -116,7 +115,9 @@ const ClientSignUp = () => {
               <CustomButton type="submit">Sign Up</CustomButton>
             </div>
           </form>
-          <div className="alert-error">{error && error.map((error) => <h5>{`${error.param}: ${error.msg}`}</h5>)}</div>
+          <div className="alert-error">
+            {error && error.map((err: any, index: number) => <h5 key={`${err.param}-${index}`}>{`${err.param}: ${err.msg}`}</h5>)}
+          </div>
         </div>
       </div>
       <div className="sign-up__animation"></div>

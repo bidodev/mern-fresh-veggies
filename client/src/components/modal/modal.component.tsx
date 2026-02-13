@@ -1,11 +1,20 @@
-// @ts-nocheck
 import React from 'react';
 import Modal from 'react-modal';
+import type { ReactNode } from 'react';
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root');
 
-const ShowModal = ({ modalStatus, closeModal, children, styles, className, overlayClassName }) => {
+type ShowModalProps = {
+  modalStatus: boolean;
+  closeModal: () => void;
+  children: ReactNode;
+  styles?: any;
+  className?: string;
+  overlayClassName?: string;
+};
+
+const ShowModal = ({ modalStatus, closeModal, children, styles, className, overlayClassName }: ShowModalProps) => {
   return (
     <Modal
       isOpen={modalStatus}

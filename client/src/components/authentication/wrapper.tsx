@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import './wrapper.styles.scss';
 
@@ -13,10 +12,10 @@ import DisplayModal from 'components/modal/modal.component';
 const AuthenticationWrapper = () => {
   
   /* Pull out if the authentication is showing and which component is showing */
-  const isAuthenticationModalShowing = useSelector(({ authentication }) => authentication.show);
-  const isAuthenticationStatusSwitched = useSelector(({ authentication }) => authentication.switch);
+  const isAuthenticationModalShowing = useSelector((state: any) => state.authentication.show);
+  const isAuthenticationStatusSwitched = useSelector((state: any) => state.authentication.switch);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
 
   /* show or hidden the authentication modal  */
   const toggleAuthenticationModal = () => dispatch({ type: 'SHOW_AUTH' });

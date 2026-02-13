@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
@@ -17,7 +16,7 @@ const ClientLogin = () => {
   const [error, setError] = useState(null);
   const [signin, setIsSignin] = useState(false);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
 
   /* show or hidden the authentication modal  */
   const toggleAuthenticationModal = () => dispatch({ type: 'SHOW_AUTH' });
@@ -26,7 +25,7 @@ const ClientLogin = () => {
   const toggleAuthenticationState = () => dispatch({ type: 'SWITCH_AUTH' });
 
   // grabbing the form data and send it to the database
-  const handleLoginData = async (event) => {
+  const handleLoginData = async (event: any) => {
     event.preventDefault();
 
     const data = {
@@ -42,7 +41,7 @@ const ClientLogin = () => {
         toggleAuthenticationModal();
         setIsSignin(false);
       })
-      .catch((error) => {
+      .catch((error: any) => {
         setError(error.response.data.errors);
         setIsSignin(false);
         setTimeout(() => {
@@ -52,7 +51,7 @@ const ClientLogin = () => {
   };
 
   // update localState
-  const handleInputValue = (event) => {
+  const handleInputValue = (event: any) => {
     const { value, name } = event.target;
 
     switch (name) {
